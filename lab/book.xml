@@ -1,4 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<book>
-	<info>Informação</info>
-</book>
+<livro>
+	<!-- Grupo de informações do livro -->
+	<informacoes>
+		<!-- Título do livro -->
+		<titulo></titulo>
+
+		<!-- Lista de autores -->
+		<autor_list>
+
+			<!-- Informações do autor -->
+			<autor_item ordem="">
+
+				<!-- Nome do autor -->
+				<nome>
+					<completo></completo>
+					<curto></curto>
+				</nome>
+
+				<!-- lLista de titulação -->
+				<tiulacao_list>
+					<tiulacao_item></tiulacao_item>
+				</tiulacao_list>
+			</autor_item>
+		</autor_list>
+	</informacoes>
+
+	<!-- Conteúdo do livro -->
+	<unidade capitulo="">
+		
+	</unidade>
+</livro>
