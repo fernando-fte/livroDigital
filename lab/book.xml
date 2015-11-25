@@ -13,13 +13,19 @@
 
 				<!-- Nome do autor -->
 				<nome>
+
+					<!-- Nome completo -->
 					<completo></completo>
+
+					<!-- Abreveatura do nome -->
 					<curto></curto>
 				</nome>
 
-				<!-- lLista de titulação -->
+				<!-- Lista de titulação -->
 				<tiulacao_list>
-					<tiulacao_item></tiulacao_item>
+
+					<!-- Cada títulação -->
+					<tiulacao_item ordem=""></tiulacao_item>
 				</tiulacao_list>
 			</autor_item>
 		</autor_list>
