@@ -1,3 +1,5 @@
+temp = {}
+
 # # # # # # # # # # # # # # #
 # # # # # # # # # # # # # # #
 #// Define livro
@@ -28,6 +30,23 @@ $.book.library = $.book.importa 'book.xml'
 # # # # # # # # # # # # # # #
 # # # # # # # # # # # # # # #
 
+$.book.data = {}
+
+temp.info = $($.book.library).find('informacoes')
+temp.autores = $(temp.info).find('autor_list').find('autor_item')
+
+$.book.data['nome do livro'] = $(temp.info).find('titulo').text()
+
+
+console.log temp
+
+temp.list = temp.autores
+
+
+
+
+
+# console.log $.book.data
 
 # # # # # # # # # # # # # # #
 # # # # # # # # # # # # # # #

@@ -1,38 +1,123 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<livro>
+<book>
 	<!-- Grupo de informações do livro -->
-	<informacoes>
-		<!-- Título do livro -->
-		<titulo></titulo>
+	<info>
 
-		<!-- Lista de autores -->
-		<autor_list>
+		<!-- Dados da instituição -->
+		<instituicao>
 
-			<!-- Informações do autor -->
-			<autor_item ordem="">
+			<!-- Nome da instituição -->
+			<nome>
 
-				<!-- Nome do autor -->
-				<nome>
+				<!-- Nome completo -->
+				<completo></completo>
 
-					<!-- Nome completo -->
-					<completo></completo>
+				<!-- Abreveatura do nome -->
+				<curto></curto>
+			</nome>
 
-					<!-- Abreveatura do nome -->
-					<curto></curto>
-				</nome>
+			<!-- Gropo de imagens -->
+			<figura>
 
-				<!-- Lista de titulação -->
-				<tiulacao_list>
+				<!-- figura / src[$local.nome]; tipo[logo-portrade|logo-landscape]; -->
+				<img src="" tipo=""/>
+			</figura>
 
-					<!-- Cada títulação -->
-					<tiulacao_item ordem=""></tiulacao_item>
-				</tiulacao_list>
-			</autor_item>
-		</autor_list>
-	</informacoes>
+			<!-- Lista para abertura -->
+			<abertura_list>
+				
+				<!-- Itens de abertura -->
+				<abertura_item ordem="">
 
-	<!-- Conteúdo do livro -->
-	<unidade capitulo="">
-		
+					<!-- Título da abertura / #>Reitoria|Coordenação<# -->
+					<titulo></titulo>
+
+					<!-- Sub título da abertura / #>{nome, profissão ...}o<# -->
+					<sub_titulo></sub_titulo>
+
+					<!-- Vídeo de abertura / src[{url}]-->
+					<video src=""/>
+
+					<!-- Texo da abertura -->
+					<abertura><!-- [HTML] --></abertura>
+				</abertura_item>
+			</abertura_list>
+		</instituicao>
+
+		<livro>
+			<!-- Título do livro -->
+			<titulo></titulo>
+
+			<!-- Lista de autores -->
+			<autor_list>
+
+				<!-- Informações do autor / ordem[0-9] -->
+				<autor_item ordem="">
+
+					<!-- Nome do autor -->
+					<nome>
+
+						<!-- Nome completo -->
+						<completo></completo>
+
+						<!-- Abreveatura do nome -->
+						<curto></curto>
+					</nome>
+
+					<!-- Lista de titulação -->
+					<tiulacao_list>
+
+						<!-- Cada títulação / ordem[0-9]; tipo[doutor|mestre|pos] -->
+						<tiulacao_item ordem="" tipo=""></tiulacao_item>
+					</tiulacao_list>
+
+					<!-- Informações sobre o livro -->
+					<sobre><!-- [HTML] --></sobre>
+
+					<!-- Gropo de imagens -->
+					<figura>
+
+						<!-- figura / src[{url}]; tipo[avatar]; -->
+						<img src="" tipo=""/>
+					</figura>
+
+					<!-- Lista das unidades produzidas -->
+					<unidade_list>
+
+						<!-- Cada unidade produzida -->
+						<unidade_item ordem=""><!-- [NUM] --></unidade_item>
+					</unidade_list>
+				</autor_item>
+			</autor_list>
+
+			<!-- Lista de unidades -->
+			<unidade_list>
+
+				<!-- Unidade item / ordem[0-9] -->
+				<unidade_item ordem="">
+
+					<!-- Título da unidade -->
+					<titulo></titulo>
+
+					<!-- Corpo da introdução -->
+					<introducao><!-- [HTML] --></introducao>
+				</unidade_item>
+			</unidade_list>
+		</livro>
+	</info>
+
+	<!-- Conteúdo do livro capitulo[0-9]-->
+	<unidade ordem="">
+		<!-- [HTML] 
+		<article>
+			<h1></h1>
+			<p></p>
+			<blockquote></blockquote>
+			<article>
+				<h2></h2>
+				<p></p>
+			</article>
+		</article>
+		-->
 	</unidade>
-</livro>
+</book>

@@ -23,3 +23,8 @@
 #   return false
 
 ############################################
+
+# procura todos os comentários
+# <!-- [\S* ]* -->
+
+
