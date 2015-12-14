@@ -38,10 +38,6 @@ temp.autores = $(temp.info).find('autor_list').find('autor_item')
 $.book.data['nome do livro'] = $(temp.info).find('titulo').text()
 
 
-console.log temp
-
-temp.list = temp.autores
-
 
 
 
