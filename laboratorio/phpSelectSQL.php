@@ -2639,26 +2639,6 @@ function trata_query($post, $print){
             # # 
             # valida os campos que podem ser reconfigurados conforme um padrão
 
-            # valida se não existe "regra" em @post, deve conter as configurações a mais
-            if (!array_key_exists('regra', $post)) {
-
-                # define @post>regra>relative como false
-                $post['regra']['relative'] = false;
-
-                # define @post>regra>order como false
-                $post['regra']['order'] = false;
-
-                # define @post>regra>limine com 1
-                $post['regra']['limit'] = "1";
-
-
-                # adiciona em @return>warning>[@~length]>type o um relato do que houve
-                $return['warning'][$return['warning']['length']]['type'] = 'Não foi passado nem um parametro regra, assim sendo definido todos com as configurações padrões ';
-
-                # adiciona +1 em $return>error>length
-                $return['warning']['length']++;
-            }
-
             # valida se existe "regra" em @post, deve conter as configurações a mais
             if (array_key_exists('regra', $post)) {
 
@@ -2671,20 +2651,6 @@ function trata_query($post, $print){
 
                     # adiciona em @return>warning>[@~length]>type o um relato do que houve
                     $return['warning'][$return['warning']['length']]['type'] = 'Não foi definido a regra para busca relativa ou especifica, assim por padrão ficando estabelecida como especifica';
-
-                    # adiciona +1 em $return>error>length
-                    $return['warning']['length']++;
-                }
-
-                # valida se não existe "order" em @post>regra, que deve conter as regras de ordenação
-                if (!array_key_exists('order', $post['regra'])) {
-
-                    # define @post>regra>order como false
-                    $post['regra']['order'] = false;
-
-
-                    # adiciona em @return>warning>[@~length]>type o um relato do que houve
-                    $return['warning'][$return['warning']['length']]['type'] = 'Não foi encontrado o parametro "order", assim defininco com sem ordenação para seleção';
 
                     # adiciona +1 em $return>error>length
                     $return['warning']['length']++;
@@ -2722,15 +2688,15 @@ function trata_query($post, $print){
                     }
                 }
 
-                # valida se não existe "limit" em @post>regra, deve conter as regras de quantos itens a ser encontrados
-                if (!array_key_exists('limit', $post['regra'])) {
+                # valida se não existe "order" em @post>regra, que deve conter as regras de ordenação
+                if (!array_key_exists('order', $post['regra'])) {
 
-                    # define @post>regra>limit como 1
-                    $post['regra']['limit'] = "1";
+                    # define @post>regra>order como false
+                    $post['regra']['order'] = false;
 
 
                     # adiciona em @return>warning>[@~length]>type o um relato do que houve
-                    $return['warning'][$return['warning']['length']]['type'] = ' Não foi definido a regra para limite de impressão da busca do sql, assim sendo setada com limite igual a 1 (um)';
+                    $return['warning'][$return['warning']['length']]['type'] = 'Não foi encontrado o parametro "order", assim defininco com sem ordenação para seleção';
 
                     # adiciona +1 em $return>error>length
                     $return['warning']['length']++;
@@ -2746,17 +2712,37 @@ function trata_query($post, $print){
                         $post['regra']['limit'] = false;
                     }
                 }
+
+                # valida se não existe "limit" em @post>regra, deve conter as regras de quantos itens a ser encontrados
+                if (!array_key_exists('limit', $post['regra'])) {
+
+                    # define @post>regra>limit como 1
+                    $post['regra']['limit'] = "1";
+
+
+                    # adiciona em @return>warning>[@~length]>type o um relato do que houve
+                    $return['warning'][$return['warning']['length']]['type'] = ' Não foi definido a regra para limite de impressão da busca do sql, assim sendo setada com limite igual a 1 (um)';
+
+                    # adiciona +1 em $return>error>length
+                    $return['warning']['length']++;
+                }
             }
 
-            # valida se não existe @post>return, contem a lista de campos a serem retornados
-            if (!array_key_exists('return', $post)) {
+            # valida se não existe "regra" em @post, deve conter as configurações a mais
+            if (!array_key_exists('regra', $post)) {
 
-                # adiciona em @post>regra a array como lista com valor 1
-                $post['return'] = array("*");
+                # define @post>regra>relative como false
+                $post['regra']['relative'] = false;
+
+                # define @post>regra>order como false
+                $post['regra']['order'] = false;
+
+                # define @post>regra>limine com 1
+                $post['regra']['limit'] = "1";
 
 
                 # adiciona em @return>warning>[@~length]>type o um relato do que houve
-                $return['warning'][$return['warning']['length']]['type'] = 'Não foi definido os campos a serem retornados, assim sendo setado com um retorno de todos os campos da tabela selecionada';
+                $return['warning'][$return['warning']['length']]['type'] = 'Não foi passado nem um parametro regra, assim sendo definido todos com as configurações padrões ';
 
                 # adiciona +1 em $return>error>length
                 $return['warning']['length']++;
@@ -2818,6 +2804,19 @@ function trata_query($post, $print){
                 }
             }
 
+            # valida se não existe @post>return, contem a lista de campos a serem retornados
+            if (!array_key_exists('return', $post)) {
+
+                # adiciona em @post>regra a array como lista com valor 1
+                $post['return'] = array("*");
+
+
+                # adiciona em @return>warning>[@~length]>type o um relato do que houve
+                $return['warning'][$return['warning']['length']]['type'] = 'Não foi definido os campos a serem retornados, assim sendo setado com um retorno de todos os campos da tabela selecionada';
+
+                # adiciona +1 em $return>error>length
+                $return['warning']['length']++;
+            }
 
             # valida os campos que podem ser reconfigurados conforme um padrão
             # # 
