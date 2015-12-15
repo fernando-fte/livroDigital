@@ -12,9 +12,9 @@ Criar rotina de leitura e gravação no banco
 OS SEGMENTOS
 0 => SKU
 1 => Valores
-2 => Sessão
+2 => Segmento
 3 => Grupo
-4 => Tipo
+4 => Classe
 5 => Ordem
 
 TODO: Cria mapa para ler os segmentos de numero pelo nome
