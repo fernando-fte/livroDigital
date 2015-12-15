@@ -758,22 +758,17 @@ function select($post, $print){
                     while ($temp['select']['content'] = mysql_fetch_array($temp['select']['result']['result'])) {
 
                         # adiciona em @retrurn>result>@~count para selcionar cada valor capturado no loop
-                        $return['result'][$temp['select']['count']] = $temp['select']['content'];
-
-
-                        # remove todos os resultados numéricos
-                        for ($i=0; $i < $return['result']['labels']['length']; $i++) { 
-
-                            # apaga @return>result>@~count>@~ na posição atual
-                            unset($return['result'][$temp['select']['count']][$i]);
-                        }
-
-                        # apaga @i criado em for()
-                        unset($i);
+                        $return['result'][($temp['select']['count'] - 1)] = $temp['select']['content'];
 
                         # adiciona +1 em @temp>select>count
                         $temp['select']['count']++;
                     }
+
+                    # adiciona em @return>result>labels os campos retornados em @return>result>0
+                    $return['result']['labels'] = array_keys($return['result']['0']);
+
+                    # adiciona em @return>result>labels>length a contagem dos valores de chaves para @return>result>labels
+                    $return['result']['labels']['length'] = count($return['result']['labels']);
                 }
             }
         }
