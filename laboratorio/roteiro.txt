@@ -39,16 +39,16 @@ TODO: Envia dados para o json
 **/
 
 # configura local do phpmyadmin
-$connect['host'] = 'localhost'; 
+$connect['host'] = 'localhost';
 
 # usuario do servidor
-$connect['user'] = 'root'; 
+$connect['user'] = 'root';
 
 # senha do servidor
-$connect['pasword'] = ''; 
+$connect['pasword'] = '';
 
 # banco de dados
-$connect['database'] = 'meubanco'; 
+$connect['database'] = 'meubanco';
 
 /**
 # CONFIGURAÇÃO DE CONEXÃO COM O SERVIDOR
