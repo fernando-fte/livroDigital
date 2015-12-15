@@ -18,6 +18,9 @@ MAPA INSERT
 
 MAPA UPDATE
 {"._.list":["table","where","values","return","regra"],"table":{"._.//":"Dados para tabela a ser selecionada","._.required":true,"._.type":["string"]},"where":{"._.//":"Campos vs valores dos campos da tabela","._.required":true,"._.type":["array"]},"values":{"._.//":"Campos vs valores, relativos aos dados a serem inseridos","._.required":true,"._.type":["array"]},"regra":{"._.//":"Conjunto de regras para solicitação do sql","._.required":false,"._.type":["array"],"._.list":["order","limit"],"order":{"._.//":"Ordena as respostas recebidas a partir de array(\"to\", \"by\")","._.required":false,"._.type":["array"],"._.list":["to","by"],"to":{"._.//":"Define o campo a ser ordenado","._.required":false,"._.type":["string"]},"by":{"._.//":"Define a ordem ASC (crescente) ou DESC (decrecente)","._.required":false,"._.type":["string"]}},"limit":{"._.//":"Define o limite de respostas por solicitação, por default não ha limites de resposta","._.required":false,"._.type":["integer"]}}}
+
+MAPA DELETE
+{"._.list":["table","where","regra"],"table":{"._.//":"Dados para tabela a ser selecionada","._.required":true,"._.type":["string"]},"where":{"._.//":"Campos vs valores dos campos da tabela","._.required":true,"._.type":["array"]},"regra":{"._.//":"Conjunto de regras para solicitação do sql","._.required":false,"._.type":["array"],"._.list":["order","limit"],"order":{"._.//":"Ordena as respostas recebidas a partir de array(\"to\", \"by\")","._.required":false,"._.type":["array"],"._.list":["to","by"],"to":{"._.//":"Define o campo a ser ordenado","._.required":false,"._.type":["string"]},"by":{"._.//":"Define a ordem ASC (crescente) ou DESC (decrecente)","._.required":false,"._.type":["string"]}},"limit":{"._.//":"Define o limite de respostas por solicitação, por default não ha limites de resposta","._.required":false,"._.type":["integer"]}}}
 */
 
 #
