@@ -29,7 +29,7 @@ $.form = (post) ->
 	return done
 
 
-$('#send').click ->
+$('#form-envia').click ->
 
 	# declara estrutura
 	# form = {"ajax":{"user":{"nome":null,"log":null},"action":{"type":null,"change":{"segmento":null,"grupo":null,"classe":null,"ordem":null,"valores":{"_.method":null, "serialize":null}}}}}
@@ -39,7 +39,7 @@ $('#send').click ->
 	form.ajax.user.nome = 'Fernando Truculo Evangelista'
 	form.ajax.user.log = '@log{0001}'
 
-	form.ajax.action.type = $("#action").val()
+	form.ajax.action.type = $("input[name=input-action]").val()
 	form.ajax.action.method = 'serialize'
 
 	# form.ajax.action.change.segmento = 'Livro'

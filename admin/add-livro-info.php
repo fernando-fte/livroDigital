@@ -29,40 +29,34 @@
 			<form class="form-horizontal">
 				<fieldset>
 
+					<input type="hidden" name="input-action" value="insert">
+
 					<!-- Form Name -->
 					<legend>Informações do livro</legend>
 
-					<input id="action" type="hidden" name="_settings[action]" value='insert'>
-
-					<input type="hidden" name="_settings[select][sku][._.action]" value='{"type":"sku"}'>
-					<input type="hidden" name="_settings[select][segmento][._.action]" value='{"type":"md5", "values":["segmento", "grupo"]}'>
-					<input type="hidden" name="_settings[select][grupo][._.action]" value='{"type":"relative", "values":[{"autor":{"nome":null}}]}'>
-					<input type="hidden" name="_settings[select][classe]" value="info">
-					<input type="hidden" name="_settings[select][ordem][._.action]" value='{"type":"sequencia", "ordem":"decrescente"}'>
-
 					<!-- Text input-->
 					<div class="form-group">
-						<label class="col-md-4 control-label" for="livro"></label>  
+						<label class="col-md-4 control-label" for="input-livro"></label>  
 						<div class="col-md-6">
-							<input id="livro" name="livro" type="text" placeholder="Nome do livro" class="form-control input-md" required="">
+							<input id="input-livro" name="input-livro" type="text" placeholder="Nome do livro" class="form-control input-md" required="">
 							<span class="help-block">Nome completo do livro</span>  
 						</div>
 					</div>
 
 					<!-- Text input-->
 					<div class="form-group">
-						<label class="col-md-4 control-label" for="isbn"></label>  
+						<label class="col-md-4 control-label" for="input-isbn"></label>  
 						<div class="col-md-6">
-							<input id="isbn" name="isbn" type="text" placeholder="ISBN" class="form-control input-md">
+							<input id="input-isbn" name="input-isbn" type="text" placeholder="ISBN" class="form-control input-md">
 							<span class="help-block">Insira o isbn do livro</span>  
 						</div>
 					</div>
 
 					<!-- Text input-->
 					<div class="form-group">
-						<label class="col-md-4 control-label" for="autor[nome]"></label>  
+						<label class="col-md-4 control-label" for="input-autor-nome"></label>  
 						<div class="col-md-6">
-							<input id="autor[nome]" name="autor[nome]" type="text" placeholder="Nome do autor" class="form-control input-md" required="">
+							<input id="input-autor-nome" name="input-autor-nome" type="text" placeholder="Nome do autor" class="form-control input-md" required="">
 							<span class="help-block">Insira o nome completo do autor</span>  
 						</div>
 					</div>
@@ -74,44 +68,43 @@
 							<div class="col-md-12">
 
 								<!-- DOUTOR -->
-								<label class="radio-inline" for="autor[titulacao][tipo][doutor]">
-									<input type="radio" name="autor[titulacao][tipo]" id="autor[titulacao][tipo][doutor]" value="doutor"> Doutor
+								<label class="radio-inline" for="input-autor-titulacao-doutor">
+									<input type="radio" name="input-autor-titulacao" id="input-autor-titulacao-doutor" value="doutor"> Doutor
 								</label>
 
 								<!-- MESTRE -->
-								<label class="radio-inline" for="autor[titulacao][tipo][mestre]">
-									<input type="radio" name="autor[titulacao][tipo]" id="autor[titulacao][tipo][mestre]" value="mestre" checked="checked"> Mestre
+								<label class="radio-inline" for="input-autor-titulacao-mestre">
+									<input type="radio" name="input-autor-titulacao" id="input-autor-titulacao-mestre" value="mestre" checked="checked"> Mestre
 								</label>
 							</div>
 
 							<!-- Area da titulação-->
 							<div class="col-md-7">
-								<input id="autor[titulacao][area]" name="autor[titulacao][area]" type="text" placeholder="Área da formação" class="form-control input-md">
+								<input id="input-autor-titulacao-area" name="input-autor-titulacao-area" type="text" placeholder="Área da formação" class="form-control input-md">
 							</div>
 
 							<!-- Instituição da titulação-->
 							<div class="col-md-5">
-								<input id="autor[titulacao][instituicao]" name="autor[titulacao][instituicao]" type="text" placeholder="Instituição da graduação" class="form-control input-md">
+								<input id="input-autor-titulacao-instituicao" name="input-autor-titulacao-instituicao" type="text" placeholder="Instituição da graduação" class="form-control input-md">
 							</div>
 						</div>
 					</div>
 
 					<!-- Sobre o autor -->
 					<div class="form-group">
-						<label class="col-md-4 control-label" for="autor[sobre]"></label>
+						<label class="col-md-4 control-label" for="input-autor-sobre"></label>
 						<div class="col-md-6">
-							<textarea class="form-control" id="autor[sobre]" name="autor[sobre]" placeholder="Sobre o autor"></textarea>
+							<textarea class="form-control" id="input-autor-sobre" name="input-autor-sobre" placeholder="Sobre o autor"></textarea>
 						</div>
 					</div>
 
 					<!-- Button (Double) -->
 					<div class="form-group">
-						<label class="col-md-4 control-label" for="send"></label>
 
-						<div class="col-md-8">
+						<div class="col-md-offset-8 col-md-8">
 							<!-- <button id="send" name="send" class="btn btn-info">Salvar</button> -->
-							<a id="send" class="btn btn-info" href="?page=edt-livro-info">Salvar</a>
-							<a id="cancel" class="btn btn-danger" href="?page=add-livro-info">Cancelar</a>
+							<a id="form-envia" class="btn btn-info" href="?page=edt-livro-info">Salvar</a>
+							<a id="form-cancela" class="btn btn-danger" href="?page=add-livro-info">Cancelar</a>
 						</div>
 					</div>
 				</fieldset>
