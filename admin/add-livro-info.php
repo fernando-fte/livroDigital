@@ -58,9 +58,9 @@
 
 					<!-- Text input-->
 					<div class="form-group">
-						<label class="col-md-4 control-label" for="input-autor-nome"></label>  
+						<label class="col-md-4 control-label" for="input-autor-0-nome"></label>  
 						<div class="col-md-6">
-							<input id="input-autor-nome" name="input-autor-nome" type="text" placeholder="Nome do autor" class="form-control input-md" required="">
+							<input id="input-autor-0-nome" name="input-autor-0-nome" type="text" placeholder="Nome do autor" class="form-control input-md" required="">
 							<span class="help-block">Insira o nome completo do autor</span>  
 						</div>
 					</div>
@@ -72,33 +72,33 @@
 							<div class="col-md-12">
 
 								<!-- DOUTOR -->
-								<label class="radio-inline" for="input-autor-titulacao-doutor">
-									<input type="radio" name="input-autor-titulacao" id="input-autor-titulacao-doutor" value="doutor"> Doutor
+								<label class="radio-inline" for="input-autor-0-titulacao-0-doutor">
+									<input type="radio" name="input-autor-0-titulacao-0" id="input-autor-0-titulacao-0-doutor" value="doutor"> Doutor
 								</label>
 
 								<!-- MESTRE -->
-								<label class="radio-inline" for="input-autor-titulacao-mestre">
-									<input type="radio" name="input-autor-titulacao" id="input-autor-titulacao-mestre" value="mestre" checked="checked"> Mestre
+								<label class="radio-inline" for="input-autor-0-titulacao-0-mestre">
+									<input type="radio" name="input-autor-0-titulacao-0" id="input-autor-0-titulacao-0-mestre" value="mestre" checked="checked"> Mestre
 								</label>
 							</div>
 
 							<!-- Area da titulação-->
 							<div class="col-md-7">
-								<input id="input-autor-titulacao-area" name="input-autor-titulacao-area" type="text" placeholder="Área da formação" class="form-control input-md">
+								<input id="input-autor-0-titulacao-0-area" name="input-autor-0-titulacao-0-area" type="text" placeholder="Área da formação" class="form-control input-md">
 							</div>
 
 							<!-- Instituição da titulação-->
 							<div class="col-md-5">
-								<input id="input-autor-titulacao-instituicao" name="input-autor-titulacao-instituicao" type="text" placeholder="Instituição da graduação" class="form-control input-md">
+								<input id="input-autor-0-titulacao-0-instituicao" name="input-autor-0-titulacao-0-instituicao" type="text" placeholder="Instituição da graduação" class="form-control input-md">
 							</div>
 						</div>
 					</div>
 
 					<!-- Sobre o autor -->
 					<div class="form-group">
-						<label class="col-md-4 control-label" for="input-autor-sobre"></label>
+						<label class="col-md-4 control-label" for="input-autor-0-sobre"></label>
 						<div class="col-md-6">
-							<textarea class="form-control" id="input-autor-sobre" name="input-autor-sobre" placeholder="Sobre o autor"></textarea>
+							<textarea class="form-control" id="input-autor-0-sobre" name="input-autor-0-sobre" placeholder="Sobre o autor"></textarea>
 						</div>
 					</div>
 

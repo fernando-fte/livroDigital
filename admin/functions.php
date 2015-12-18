@@ -43,6 +43,8 @@ function load_pages($post, $return) {
 function form_livro($post, $return) {
 
 	$temp['._.process'] = false;
+	// $temp['._.process']['F_form_serialize'] = false;
+
 	$temp['._.success'] = false;
 	$temp['._.erro'] = false;
 	$temp['._.warning'] = false;
@@ -50,17 +52,29 @@ function form_livro($post, $return) {
 	$temp['._.done'] = null;
 	$temp['._.backup'] = $post;
 
-	// $temp['._.process']['F_from_serialize']
+	// $temp['._.process']['F_form_serialize']
 	// $temp['._.process']['F_form_monta_parametros']
 
 	# valida e prepara os parametros
 
-	$temp['._.done'] = form_serialize($post['action'], true);
+	$temp['F_form_serialize'] = form_serialize($post['action'], false);
 
+	$temp['._.process']['F_form_serialize'] = $temp['F_form_serialize']['success'];
+
+	# adiciona erro caso não aconteça serialize
+	if (!$temp['._.process']['F_form_serialize']) { $temp['._.erro']['F_form_serialize'] = (array_key_exists('valida_post', $temp['F_form_serialize']['erro']) ? $temp['F_form_serialize']['erro']['valida_post'] : $temp['F_form_serialize']['erro']); }
+
+
+	# #
+	if ($temp['._.process']['F_form_serialize']) {
+		
+		// $temp['F_form_monta_parametros'] = form_monta_parametros($temp['F_form_serialize']['done'], false);
+		$temp['._.done'] = form_monta_parametros($temp['F_form_serialize']['done'], 'log');
+	}
 
 
 	// $done = $temp['._.process'];
-	$done = $temp['._.done'];
+	$done = retorna_funcao($temp, 'done');
 
 	if (gettype($return) == 'boolean') {
 
@@ -160,16 +174,75 @@ function form_monta_parametros($post, $return) {
 
 	// {"._.list":["serialize"]}
 
+	switch ($post['input-from-id']) {
 
+		case '@insert#livro':
 
-	// $done = $temp['._.process'];
-	$done = $temp['._.done'];
+			// values
+				$temp['values']['titulo do livro'] = $post['input-livro'];
+				$temp['values']['isbn'] = $post['input-isbn'];
 
-	if (gettype($return) == 'boolean') {
+				# # # #
+				# # trata autores
+				for ($i=0; $i < 1000; $i++) {
 
-		if ($return) { print_r($done); }
-		else{ return $done; }
+					if (array_key_exists('input-autor-'.$i.'-nome', $post)) {
+						
+						$temp['values']['autor']['._.list'][$i] = $post['input-autor-'.$i.'-nome'];
+						$temp['values']['autor'][$post['input-autor-'.$i.'-nome']]['nome']['completo'] = $post['input-autor-'.$i.'-nome'];
+						// TODO: $temp['values']['autor'][$post['input-autor-'.$i.'-nome']]['nome']['curto'] = $post['input-autor-'.$i.'-nome'];
+						$temp['values']['autor'][$post['input-autor-'.$i.'-nome']]['sobre'] = $post['input-autor-'.$i.'-sobre'];
+
+						for ($b=0; $b < 1000; $b++) { 
+
+							if (array_key_exists('input-autor-'.$i.'-titulacao-'.$b, $post)) {
+								$temp['sort']['titulacao']['tipo'] = $post['input-autor-'.$i.'-titulacao-'.$b];
+								$temp['sort']['titulacao']['area'] = $post['input-autor-'.$i.'-titulacao-'.$b.'-area'];
+								$temp['sort']['titulacao']['instituicao'] = $post['input-autor-'.$i.'-titulacao-'.$b.'-instituicao'];
+
+								$temp['values']['autor'][$post['input-autor-'.$i.'-nome']]['titulacao'][$temp['sort']['titulacao']['tipo']]['._.list'][$i] = $temp['sort']['titulacao']['area'];
+								$temp['values']['autor'][$post['input-autor-'.$i.'-nome']]['titulacao'][$temp['sort']['titulacao']['tipo']][$temp['sort']['titulacao']['area']]['area'] = $temp['sort']['titulacao']['area'];
+								$temp['values']['autor'][$post['input-autor-'.$i.'-nome']]['titulacao'][$temp['sort']['titulacao']['tipo']][$temp['sort']['titulacao']['area']]['instituicao'] = $temp['sort']['titulacao']['instituicao'];
+
+							} 
+							else{ $b = 1001; }
+
+						}
+						unset($b);
+
+					}
+
+					else{ $i = 1001; }
+				}
+				unset($i);
+				# # trata autores
+				# # # #
+
+			// seletores
+			// $temp['monta']['']
+
+                    // $post['input-from-id'];
+                    // $post['input-from-action'];
+
+                    // $post['input-select-segmento'];
+                    // $post['input-select-classe'];
+
+                    // $post['input-livro'];
+                    // $post['input-isbn'];
+
+                    // $post['input-autor-0-nome'];
+                    // $post['input-autor-0-titulacao-0'];
+                    // $post['input-autor-titulacao-area'];
+                    // $post['input-autor-titulacao-instituicao'];
+                    // $post['input-autor-sobre'];
+			break;
+		
+		default:
+			# code...
+			break;
 	}
+
+	return retorna_funcao($temp, $return);
 }
 
 
@@ -206,17 +279,18 @@ function retorna_funcao($post, $return) {
 
 			$done['success'] = $post['._.success'];
 			$done['done'] = $post['._.done'];
-			$done = $done;
+
+			if ($post['._.erro']['length'] > 0) { $done['erro'] = $post['._.erro']; }
+			if ($post['._.warning']['length'] > 0) { $done['warning'] = $post['._.warning']; }
 		}
 
 		if ($return == true) {
 
-			$done['process'] = $post['._.process'];
 			$done['success'] = $post['._.success'];
 			$done['erro'] = $post['._.erro'];
 			$done['warning'] = $post['._.warning'];
+			$done['process'] = $post['._.process'];
 			$done['done'] = $post['._.done'];
-			$done = $done;
 		}
 	}
 
@@ -230,32 +304,32 @@ function retorna_funcao($post, $return) {
 
 			case 'success':
 
-				$done = $post['._.success'];
+				$done['success'] = $post['._.success'];
 			break;
 
 			case 'erro':
 
-				$done = $post['._.erro'];
+				$done['erro'] = $post['._.erro'];
 			break;
 
 			case 'warning':
 
-				$done = $post['._.warning'];
+				$done['warning'] = $post['._.warning'];
 			break;
 
 			case 'backup':
 
-				$done = $post['._.backup'];
+				$done['backup'] = $post['._.backup'];
 			break;
 
 			case 'process':
 
-				$done = $post['._.process'];
+				$done['process'] = $post['._.process'];
 			break;
 
 			case 'done':
 
-				$done = $post['._.done'];
+				$done['done'] = $post['._.done'];
 			break;
 
 			case 'echo':
