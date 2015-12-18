@@ -27,14 +27,11 @@
 
 			$done = form_livro($post['ajax'], false);
 
-			/**
-			TODO: Validar os erros antes de retornar em $done
-			**/
+			// TODO: Validar os erros antes de retornar em $done
 		}
 
 		# imprime valores para o ajax
 		print_r($done);
-		// print_r($temp);
 	}
 
 

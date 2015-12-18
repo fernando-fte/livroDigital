@@ -39,7 +39,7 @@ $('#form-envia').click ->
 	form.ajax.user.nome = 'Fernando Truculo Evangelista'
 	form.ajax.user.log = '@log{0001}'
 
-	form.ajax.action.type = $("input[name=input-action]").val()
+	form.ajax.action.type = $("input[name=input-from-action]").val()
 	form.ajax.action.method = 'serialize'
 
 	# form.ajax.action.change.segmento = 'Livro'
@@ -47,7 +47,7 @@ $('#form-envia').click ->
 	# form.ajax.action.change.classe = 'info'
 	# form.ajax.action.change.ordem = '0'
 
-	form.ajax.action.data = $('form').serialize()
+	form.ajax.action.serialize = $('form').serialize()
 
 	console.log $.form form
 
