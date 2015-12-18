@@ -1,3 +1,4 @@
+<?php include '._.config.php'; ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 	<head>
@@ -8,7 +9,7 @@
 		<title></title>
 
 		<!-- VENDOR less: Bootstrap LESS -->
-		<link rel="stylesheet" href="http://localhost/vg/livroDigital/assets/vendor/bootstrap/css/bootstrap.css">
+		<link rel="stylesheet" href="<?php echo $settings['wwwroot']?>/assets/vendor/bootstrap/css/bootstrap.css">
 
 		<!-- VENDOR: Bootstrap LESS -->
 		<!-- <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css"> -->
@@ -116,16 +117,16 @@
 		</div>
 
 		<!-- VENDOR: jQuery -->
-		<script src="http://localhost/vg/livroDigital/assets/vendor/js/jquery.min.js"></script>
+		<script src="<?php echo $settings['wwwroot']?>/assets/vendor/js/jquery.min.js"></script>
 
 		<!-- VENDOR: Latest compiled and minified Bootstrap JavaScript -->
-		<script src="http://localhost/vg/livroDigital/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+		<script src="<?php echo $settings['wwwroot']?>/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
 
 		<!-- VENDOR: CoffeeScript -->
 		<script src="http://coffeescript.org/extras/coffee-script.js"></script>
 
 		<!-- VENDOR: CSS Less-->
-		<script src="http://localhost/vg/livroDigital/assets/vendor/js/less.min.js"></script>
+		<script src="<?php echo $settings['wwwroot']?>/assets/vendor/js/less.min.js"></script>
 
 		<!-- APP: CoffeeScript -->
 		<script type="text/coffeescript" src="scripts/default.coffee"></script>
