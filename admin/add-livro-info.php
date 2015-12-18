@@ -29,7 +29,11 @@
 			<form class="form-horizontal">
 				<fieldset>
 
-					<input type="hidden" name="input-action" value="insert">
+					<input type="hidden" name="input-from-id" value="@insert#livro">
+					<input type="hidden" name="input-from-action" value="insert">
+
+					<input type="hidden" name="input-select-segmento" value="livro">
+					<input type="hidden" name="input-select-classe" value="info">
 
 					<!-- Form Name -->
 					<legend>Informações do livro</legend>

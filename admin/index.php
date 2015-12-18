@@ -16,32 +16,10 @@
 	# # # # # # # # # # # # # # # # # 
 
 	if (array_key_exists('ajax', $post)) {
+		// {"._.list":["ajax"], "ajax":{"._.type":["array"], "._.required":true, "._.list":["user", "action", "method", "values"], [TODO:]}}
 
-		// 
-
-		/**
-		TODO: Validar $post
-		TODO: Validar usuario e retornar o sku + o grupo de permissoes
-		**/
-
-
-		# # # # # # # # # # # # #
-		# # # INSERT  # # # # # #
-
-		// parse_str($post['ajax']['action']['change']['valores']['serialize'], $temp['change']);
-
-		# # # # # # # # # # # #
-		# # GLOBAIS
-		$temp['._.process'] = false;
-		$temp['._.success'] = false;
-		$temp['._.erro'] = false;
-		$temp['._.warning'] = false;
-		$temp['._.reserve'] = false;
-		$temp['._.done'] = null;
-		$temp['._.backup'] = $post;
-		# # GLOBAIS
-		# # # # # # # # # # # #
-
+		// TODO: Validar $post
+		// TODO: Validar usuario e retornar o sku + o grupo de permissoes
 
 		# # # 
 		# valida se o parametro é de selção ou de inserção

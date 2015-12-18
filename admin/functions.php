@@ -52,56 +52,11 @@ function form_livro($post, $return) {
 
 
 
-	# # trata dalores de done
-	if ($post['action']['method'] == 'serialize') {
 
-		parse_str($post['action']['data'], $temp['post']);
-
-		// TODO: Valida se a estrutura corresponde ao esperado
-		// $temp['._.erro']['serialize']['type'] = 'Os dados recebidos não estão completos';
-		$temp['._.process']['serialize']['success'] = true;
-
-		# # # #
-		# # converte actions de _settings->selects em array
-		if ($temp['._.process']['serialize']['success']) {
-
-			$temp['select']['chave'] = array_keys($temp['post']['_settings']['select']);
-
-
-			for ($i=0; $i < count($temp['select']['chave']); $i++) { 
-
-				if (gettype($temp['post']['_settings']['select'][$temp['select']['chave'][$i]]) == 'array') {
-
-					$temp['._.process']['converte json action'][$temp['select']['chave'][$i]] = json_decode($temp['post']['_settings']['select'][$temp['select']['chave'][$i]]['._.action'], true);
-
-					if (gettype($temp['._.process']['converte json action'][$temp['select']['chave'][$i]]) != 'array') {
-
-						$temp['._.erro']['converte json action'] = 'O json "'.$temp['post']['_settings']['select'][$temp['select']['chave'][$i]]['._.action'].'" de "'.$temp['select']['chave'][$i].'" está com a sintax errada';
-					}
-				}
-
-				else { $temp['._.process']['converte json action'][$temp['select']['chave'][$i]] = $temp['post']['_settings']['select'][$temp['select']['chave'][$i]]; }
-			}
-
-
-			unset($i);
-			unset($temp['select']);
-		}
-
-		# # FIM: trata cada valor de "settings">"select" e converte actions em array
-		# # # #
-	}
-
-
-
-
-
-	// $temp['keys'] = array_keys($temp);
-	// $done = $temp['keys'];
 
 
 	// $done = $temp['._.process'];
-	$done = $temp;
+	$done = $temp['._.done'];
 
 	if (gettype($return) == 'boolean') {
 
