@@ -5,8 +5,8 @@
 */
 
 
-# # # # # # # # # # # # # # # # # # #
-# # # # # # IMPORTA PAGINAS # # # # #
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# # # # # # # # # # # # # IMPORTA PAGINAS # # # # # # # # # # # # # #
 function load_pages($post, $return) {
 	// {"._.list":["go","pages"],"go":{"._.//":"Apelido da pagina a ser redirecionado \"login\", \"add-usuario\"","._.required":true,"._.type":["string"]},"pages":{"._.//":"Campos vs valores, onde campo é o apelido e o valor é o arquivo","._.required":true,"._.type":["array"]}}
 
@@ -34,12 +34,11 @@ function load_pages($post, $return) {
 		}
 	}
 }
-# # # # # # IMPORTA PAGINAS # # # # #
-# # # # # # # # # # # # # # # # # # #
+# # # # # # # # # # # # # IMPORTA PAGINAS # # # # # # # # # # # # # #
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
 
-# # # # # # # # # # # # # # # # # # #
-# # # # # # FORMULARIO DE LIVROS # # # # #
+
 function form_livro($post, $return) {
 
 	$temp['._.process'] = false;
@@ -68,13 +67,40 @@ function form_livro($post, $return) {
 	# #
 	if ($temp['._.process']['F_form_serialize']) {
 		
-		// $temp['F_form_monta_parametros'] = form_monta_parametros($temp['F_form_serialize']['done'], false);
-		$temp['._.done'] = form_monta_parametros($temp['F_form_serialize']['done'], 'log');
+		$temp['F_form_monta_parametros'] = form_monta_parametros($temp['F_form_serialize']['done'], false);
+
+		$temp['._.process']['F_form_monta_parametros'] = $temp['F_form_monta_parametros']['success'];
+
+		# adiciona erro caso não aconteça serialize
+		if (!$temp['._.process']['F_form_monta_parametros']) { $temp['._.erro']['F_form_monta_parametros'] = (array_key_exists('valida_post', $temp['F_form_monta_parametros']['erro']) ? $temp['F_form_monta_parametros']['erro']['valida_post'] : $temp['F_form_monta_parametros']['erro']); }
 	}
 
+	# #
+	if ($temp['._.process']['F_form_monta_parametros']) {
+
+		switch ($post['action']['type']) {
+
+			case 'insert':
+
+				$temp['insert']['table'] = 'base';
+				$temp['insert']['values'] = $temp['F_form_monta_parametros']['done'];
+
+				// Trata done
+				$temp['F_insert'] = insert($temp['insert'], false);
+				// TODO: Valida parametros
+
+				$temp['._.done']['sku'] = $temp['F_form_monta_parametros']['done']['0'];
+				break;
+			
+			default:
+				# code...
+				break;
+		}
+
+	}
 
 	// $done = $temp['._.process'];
-	$done = retorna_funcao($temp, 'done');
+	$done = retorna_funcao($temp, false);
 
 	if (gettype($return) == 'boolean') {
 
@@ -82,10 +108,96 @@ function form_livro($post, $return) {
 		else{ return $done; }
 	}
 }
-# # # # # # FORMULARIO DE LIVROS  # # # #
-# # # # # # # # # # # # # # # # # # # # # 
 
 
+
+function form_monta_parametros($post, $return) {
+
+	$temp['._.process'] = false;
+	$temp['._.success'] = false;
+	$temp['._.erro'] = false;
+	$temp['._.warning'] = false;
+	$temp['._.reserve'] = false;
+	$temp['._.done'] = null;
+	$temp['._.backup'] = $post;
+
+	// {"._.list":["serialize"]}
+
+	switch ($post['input-from-id']) {
+
+		case '@insert#livro':
+
+			# # # #
+			# # values
+			$temp['valores']['titulo do livro'] = $post['input-livro'];
+			$temp['valores']['isbn'] = $post['input-isbn'];
+
+			# # trata autores
+			for ($i=0; $i < 1000; $i++) {
+
+				if (array_key_exists('input-autor-'.$i.'-nome', $post)) {
+					
+					$temp['valores']['autor']['._.list'][$i] = $post['input-autor-'.$i.'-nome'];
+					$temp['valores']['autor'][$post['input-autor-'.$i.'-nome']]['nome']['completo'] = $post['input-autor-'.$i.'-nome'];
+					// TODO: $temp['valores']['autor'][$post['input-autor-'.$i.'-nome']]['nome']['curto'] = $post['input-autor-'.$i.'-nome'];
+					$temp['valores']['autor'][$post['input-autor-'.$i.'-nome']]['sobre'] = $post['input-autor-'.$i.'-sobre'];
+
+					# # trata titulação
+					for ($b=0; $b < 1000; $b++) { 
+
+						if (array_key_exists('input-autor-'.$i.'-titulacao-'.$b, $post)) {
+							$temp['short']['titulacao']['tipo'] = $post['input-autor-'.$i.'-titulacao-'.$b];
+							$temp['short']['titulacao']['area'] = $post['input-autor-'.$i.'-titulacao-'.$b.'-area'];
+							$temp['short']['titulacao']['instituicao'] = $post['input-autor-'.$i.'-titulacao-'.$b.'-instituicao'];
+
+							$temp['valores']['autor'][$post['input-autor-'.$i.'-nome']]['titulacao'][$temp['short']['titulacao']['tipo']]['._.list'][$i] = $temp['short']['titulacao']['area'];
+							$temp['valores']['autor'][$post['input-autor-'.$i.'-nome']]['titulacao'][$temp['short']['titulacao']['tipo']][$temp['short']['titulacao']['area']]['area'] = $temp['short']['titulacao']['area'];
+							$temp['valores']['autor'][$post['input-autor-'.$i.'-nome']]['titulacao'][$temp['short']['titulacao']['tipo']][$temp['short']['titulacao']['area']]['instituicao'] = $temp['short']['titulacao']['instituicao'];
+
+						} 
+						else{ $b = 1001; }
+
+					}
+
+					unset($temp['short']['titulacao']);
+					unset($b);
+				}
+				else{ $i = 1001; }
+			}
+			unset($i);
+
+
+			# # # #
+			# # seletores
+			$temp['seletores']['2'] = $post['input-select-segmento'];
+			$temp['seletores']['3'] = $post['input-livro']; // Nome do livro
+			$temp['seletores']['4'] = $post['input-select-classe'];
+			$temp['seletores']['5'] = $post['input-select-ordem']; // Caso a ordem seja 
+			$temp['seletores']['0'] = md5($temp['seletores']['2'] + $temp['seletores']['3'] + $temp['seletores']['4'] + $temp['seletores']['5'] + microtime());
+
+			$temp['monta']['values'] = $temp['valores'];
+			$temp['monta']['values']['._.settings']['._.selectors'] = $temp['seletores'];
+			$temp['short']['date'] = date('c');
+			$temp['monta']['values']['._.settings']['._.history']['create'] = $temp['short']['date'];
+			$temp['monta']['values']['._.settings']['._.history']['modified'] = null;
+			// TODO: Capturar informação do usuario
+			// $temp['monta']['values']['._.settings']['._.history'][$temp['short']['date']]['user'] = '#idUSERsku';
+
+			$temp['._.done'] = $temp['seletores'];
+			$temp['._.done']['1'] = json_encode($temp['monta']['values']);
+
+			break;
+		
+		default:
+			# code...
+			break;
+	}
+
+	return retorna_funcao($temp, $return);
+}
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# # # FUNÇÃO DE TRATAMENTO DOS DADOS VINDOS DE FORMULARIO # # # # # #
 function form_serialize($post, $return) {
 	// $post => {"._.list":["serialize"], "serialize":{"._.type":["string"], "._.required":true}}
 
@@ -160,91 +272,8 @@ function form_serialize($post, $return) {
 
 	return retorna_funcao($temp, $return);
 }
-
-
-function form_monta_parametros($post, $return) {
-
-	$temp['._.process'] = false;
-	$temp['._.success'] = false;
-	$temp['._.erro'] = false;
-	$temp['._.warning'] = false;
-	$temp['._.reserve'] = false;
-	$temp['._.done'] = null;
-	$temp['._.backup'] = $post;
-
-	// {"._.list":["serialize"]}
-
-	switch ($post['input-from-id']) {
-
-		case '@insert#livro':
-
-			// values
-				$temp['values']['titulo do livro'] = $post['input-livro'];
-				$temp['values']['isbn'] = $post['input-isbn'];
-
-				# # # #
-				# # trata autores
-				for ($i=0; $i < 1000; $i++) {
-
-					if (array_key_exists('input-autor-'.$i.'-nome', $post)) {
-						
-						$temp['values']['autor']['._.list'][$i] = $post['input-autor-'.$i.'-nome'];
-						$temp['values']['autor'][$post['input-autor-'.$i.'-nome']]['nome']['completo'] = $post['input-autor-'.$i.'-nome'];
-						// TODO: $temp['values']['autor'][$post['input-autor-'.$i.'-nome']]['nome']['curto'] = $post['input-autor-'.$i.'-nome'];
-						$temp['values']['autor'][$post['input-autor-'.$i.'-nome']]['sobre'] = $post['input-autor-'.$i.'-sobre'];
-
-						for ($b=0; $b < 1000; $b++) { 
-
-							if (array_key_exists('input-autor-'.$i.'-titulacao-'.$b, $post)) {
-								$temp['sort']['titulacao']['tipo'] = $post['input-autor-'.$i.'-titulacao-'.$b];
-								$temp['sort']['titulacao']['area'] = $post['input-autor-'.$i.'-titulacao-'.$b.'-area'];
-								$temp['sort']['titulacao']['instituicao'] = $post['input-autor-'.$i.'-titulacao-'.$b.'-instituicao'];
-
-								$temp['values']['autor'][$post['input-autor-'.$i.'-nome']]['titulacao'][$temp['sort']['titulacao']['tipo']]['._.list'][$i] = $temp['sort']['titulacao']['area'];
-								$temp['values']['autor'][$post['input-autor-'.$i.'-nome']]['titulacao'][$temp['sort']['titulacao']['tipo']][$temp['sort']['titulacao']['area']]['area'] = $temp['sort']['titulacao']['area'];
-								$temp['values']['autor'][$post['input-autor-'.$i.'-nome']]['titulacao'][$temp['sort']['titulacao']['tipo']][$temp['sort']['titulacao']['area']]['instituicao'] = $temp['sort']['titulacao']['instituicao'];
-
-							} 
-							else{ $b = 1001; }
-
-						}
-						unset($b);
-
-					}
-
-					else{ $i = 1001; }
-				}
-				unset($i);
-				# # trata autores
-				# # # #
-
-			// seletores
-			// $temp['monta']['']
-
-                    // $post['input-from-id'];
-                    // $post['input-from-action'];
-
-                    // $post['input-select-segmento'];
-                    // $post['input-select-classe'];
-
-                    // $post['input-livro'];
-                    // $post['input-isbn'];
-
-                    // $post['input-autor-0-nome'];
-                    // $post['input-autor-0-titulacao-0'];
-                    // $post['input-autor-titulacao-area'];
-                    // $post['input-autor-titulacao-instituicao'];
-                    // $post['input-autor-sobre'];
-			break;
-		
-		default:
-			# code...
-			break;
-	}
-
-	return retorna_funcao($temp, $return);
-}
-
+# # # FUNÇÃO DE TRATAMENTO DOS DADOS VINDOS DE FORMULARIO # # # # # #
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # # # FUNÇÃO DE TRATAMENTO DO RETORNO DE OUTRAS FUNÇÕES # # # # # # #
@@ -351,7 +380,5 @@ function retorna_funcao($post, $return) {
 }
 # # # FUNÇÃO DE TRATAMENTO DO RETORNO DE OUTRAS FUNÇÕES # # # # # # #
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-
-
 
 ?>
