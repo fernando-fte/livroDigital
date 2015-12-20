@@ -35,6 +35,7 @@
 
 					<input type="hidden" name="input-select-segmento" value="livro">
 					<input type="hidden" name="input-select-classe" value="info">
+					<input type="hidden" name="input-select-ordem" value="0">
 
 					<!-- Form Name -->
 					<legend>Informações do livro</legend>
