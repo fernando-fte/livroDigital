@@ -1,0 +1,18 @@
+PARA apresentaçao
+{
+2 => "Livro": // $[nome do livro]
+3 => "Seção": // = apresentação
+4 => "Tipo": // = Reitoria | Introdução | Professores
+5 => "Titulo": // Sub nome para [Reitoria | Introdução | Professores], pode ser professor, reitor ....
+6 => "Ordem": // relativa ao $[4]
+}
+
+PARA Capitulos
+{
+2 => "Livro": // $[nome do livro]
+3 => "Seção": // = capitulo
+4 => "Tipo": // = Capituo [I-8]
+5 => "Capitulo": // = $[titulo do capitulo]
+6 => "Ordem": // relativa ao $[3]
+}
+
