@@ -98,7 +98,7 @@
 
 		<!-- Contents para  -->
 		<!-- TODO SUBSTITUIR NOME -->
-		<div id="contents" class="contents">
+		<div id="contents" class="container">
 
 			<!-- Barra de navegação -->
 			<div id="bar-nav" class="contents-nav">
@@ -209,7 +209,7 @@
 					</ul>
 				</section>
 
-				<!-- Seção do tipo abertura -->
+				<!-- Seção do tipo apresentação -->
 				<section id="#{$apresentacao[Tipo]}" class="page-apresentacao">
 
 					<!-- Informações da seção -->
@@ -237,6 +237,421 @@
 					<!-- texto da seção -->
 					<article id="#{$apresentacao[Seção][titulo]}-texto" class="apresentacao-texto">
 						<p id="#{sku-do-paragrafo}">[text]</p>
+					</article>
+				</section>
+
+				<!-- Seção do tipo capitulo -->
+				<section id="capitulos" class="page-capitulo">
+
+					<!-- Capitulo $[1-5] -->
+					<div id="capitulo-#{$capitulo[ordem]}">
+
+						<!-- Informações da seção -->
+						<div id="capitulo-#{$capitulo[ordem]}-abertura" class="capitulo-introducao">
+
+							<div class="capitulo-introducao-capa">
+
+								<!-- Nome da seção (UNIDADE I / II / III / ...) -->
+								<span class="label"></span>
+
+								<!-- Tpitulo da unidade -->
+								<span class="titulo"></span>
+
+								<!-- Titulo da unidade -->
+								<span class="autor"></span>
+							</div>
+
+							<div class="capitulo-introducao-texto">
+								<h1 class="hidden">Introdução</h1>
+
+								<p id="#{sku-do-paragrafo}">[text]</p>
+							</div>
+						</div>
+
+						<article>
+							<h1 id="#{sku-do-paragrafo}"></h1>
+							<p id="#{sku-do-paragrafo}"></p>
+							<p id="#{sku-do-paragrafo}"></p>
+							<p id="#{sku-do-paragrafo}"></p>
+
+							<article>
+								<h2 id="#{sku-do-paragrafo}"></h2>
+								<p id="#{sku-do-paragrafo}"></p>
+								<p id="#{sku-do-paragrafo}"></p>
+								<p id="#{sku-do-paragrafo}"></p>
+							</article>
+
+							<div class="grapc-content grapc-content-figure">
+
+								<div class="grapc-content-bkp hidden">
+	
+									<!-- recebe assim e anipula para caber dentro do html 
+									<img src="#{figure-name}" data-grapc-caption='{"label":"", "font":""}'>				
+									-->
+								</div>
+
+								<div class="grapc-content-nav">
+									<span class="before"><i class="fa angle-left"></i></span>
+									<span class="next"><i class="fa angle-right"></i></span>
+
+									<img class="show" src="#{figure-name}">
+									<img class="hidden" src="#{figure-name}">
+								</div>
+
+								<div class="grapc-content-caption">
+									<span class="sequence">
+										<span class="sequence-this"></span> / 
+										<span class="sequence-all"></span>
+									</span>
+									<span class="label"></span>
+									<span class="font"></span>
+								</div>
+							</div>
+
+							<div class="grapc-content grapc-content-table">
+
+								<div class="grapc-content-bkp hidden">
+
+								<!-- VINDO
+								<table data-grapc-caption='{"label":"", "font":""}'>
+
+									<thead>
+										<td></td>
+										<td></td>
+										<td></td>
+									</thead>
+
+									<tbody>
+
+										<tr>
+											<td data-tb-col-title></td>
+											<td data-tb-col-title></td>
+											<td data-tb-col-title></td>
+										</tr>
+
+										<tr data-tb-row-dad="#{titulo-da-linha}">
+											<td data-tb-row-title></td>
+											<td></td>
+											<td></td>
+										</tr>
+
+										<tr data-tb-row-child="#{titulo-da-linha}">
+											<td data-tb-row-title></td>
+											<td></td>
+											<td></td>
+										</tr>
+
+										<tr data-tb-row-child="#{titulo-da-linha}">
+											<td data-tb-row-title></td>
+											<td></td>
+											<td></td>
+										</tr>
+
+										<tr data-tb-row-child="#{titulo-da-linha}">
+											<td data-tb-row-title></td>
+											<td></td>
+											<td></td>
+										</tr>
+
+										<tr>
+											<td data-tb-row-title></td>
+											<td></td>
+											<td></td>
+										</tr>
+
+										<tr data-tb-row-result>
+											<td data-tb-row-title></td>
+											<td></td>
+											<td></td>
+										</tr>
+									</tbody>
+								</table>
+								-->
+								</div>
+
+								<div class="grapc-content-nav">
+									<span class="before"><i class="fa angle-left"></i></span>
+									<span class="next"><i class="fa angle-right"></i></span>
+
+									<table class="table table-bordered">
+										
+										<thead>
+											<td class="tb-control-display-row"><span class="fa-stack fa-lg"><i class="fa fa-square-o fa-stack-1x"></i><i class="fa fa-check fa-stack-1x"></i></span></td>
+											<td class="tb-content tb-title"></td>
+											<td class="tb-control-slide"><i class="fa fa-chevron-down"></i></td>
+											<td class="tb-content tb-title"></td>
+											<td class="tb-content tb-title"></td>
+											<td class="tb-content tb-title"></td>
+											<td class="tb-content tb-title"></td>
+										</thead>
+
+										<tbody>
+											<tr class="tb-title-row-group">
+												<td class="tb-control-display-row"><span class="fa-stack fa-lg"><i class="fa fa-square-o fa-stack-1x"></i><i class="fa fa-check fa-stack-1x"></i></span></td>
+												<td class="tb-content tb-title-col"></td>
+												<td class="tb-control-slide"><i class="fa fa-chevron-down"></i></td>
+												<td class="tb-content tb-title-col"></td>
+												<td class="tb-content tb-title-col"></td>
+												<td class="tb-content tb-title-col"></td>
+												<td class="tb-content tb-title-col"></td>
+											</tr>
+
+											<tr class="tb-contents">
+												<td class="tb-control-display-row"><span class="fa-stack fa-lg"><i class="fa fa-square-o fa-stack-1x"></i><i class="fa fa-check fa-stack-1x"></i></span></td>
+												<td class="tb-content tb-title-row"></td>
+												<td class="tb-control-slide"><i class="fa fa-chevron-down"></i></td>
+												<td class="tb-content"></td>
+												<td class="tb-content"></td>
+												<td class="tb-content"></td>
+												<td class="tb-content"></td>
+											</tr>
+
+											<tr class="tb-contents">
+												<td class="tb-control-display-row"><span class="fa-stack fa-lg"><i class="fa fa-square-o fa-stack-1x"></i><i class="fa fa-check fa-stack-1x"></i></span></td>
+												<td class="tb-content tb-title-row"></td>
+												<td class="tb-control-slide"><i class="fa fa-chevron-down"></i></td>
+												<td class="tb-content"></td>
+												<td class="tb-content"></td>
+												<td class="tb-content"></td>
+												<td class="tb-content"></td>
+											</tr>
+
+											<tr class="tb-contents">
+												<td class="tb-control-display-row"><span class="fa-stack fa-lg"><i class="fa fa-square-o fa-stack-1x"></i><i class="fa fa-check fa-stack-1x"></i></span></td>
+												<td class="tb-content tb-title-row"></td>
+												<td class="tb-control-slide"><i class="fa fa-chevron-down"></i></td>
+												<td class="tb-content"></td>
+												<td class="tb-content"></td>
+												<td class="tb-content"></td>
+												<td class="tb-content"></td>
+											</tr>
+
+											<tr class="tb-result">
+												<td class="tb-control-display-row"><span class="fa-stack fa-lg"><i class="fa fa-square-o fa-stack-1x"></i><i class="fa fa-check fa-stack-1x"></i></span></td>
+												<td class="tb-content tb-title-result"></td>
+												<td class="tb-control-slide"><i class="fa fa-chevron-down"></i></td>
+												<td class="tb-content tb-result"></td>
+												<td class="tb-content tb-result"></td>
+												<td class="tb-content tb-result"></td>
+												<td class="tb-content tb-result"></td>
+											</tr>
+
+											<tr class="tb-control-display">
+												<td class="tb-empty"></td>
+												<td class="tb-control-display-col"><span class="fa-stack fa-lg"><i class="fa fa-square-o fa-stack-1x"></i><i class="fa fa-check fa-stack-1x"></i></span></td>
+												<td class="tb-control-slide"><i class="fa fa-chevron-down"></i></td>
+												<td class="tb-control-display-col"><span class="fa-stack fa-lg"><i class="fa fa-square-o fa-stack-1x"></i><i class="fa fa-check fa-stack-1x"></i></span></td>
+												<td class="tb-control-display-col"><span class="fa-stack fa-lg"><i class="fa fa-square-o fa-stack-1x"></i><i class="fa fa-check fa-stack-1x"></i></span></td>
+												<td class="tb-control-display-col"><span class="fa-stack fa-lg"><i class="fa fa-square-o fa-stack-1x"></i><i class="fa fa-check fa-stack-1x"></i></span></td>
+												<td class="tb-control-display-col"><span class="fa-stack fa-lg"><i class="fa fa-square-o fa-stack-1x"></i><i class="fa fa-check fa-stack-1x"></i></span></td>
+											</tr>
+										</tbody>
+									</table>
+
+									<div class="grapc-content-control">
+										<span class="btn btn-danger grapc-content-control-active"><i class="fa fa-pencil"></i></span>
+										<span class="btn btn-danger grapc-content-control-change">Ocultar</span>
+									</div>
+								</div>
+
+								<div class="grapc-content-caption">
+									<span class="sequence">
+										<span class="sequence-this"></span>
+										<span class="sequence-all"></span>
+									</span>
+									<span class="label"></span>
+									<span class="font"></span>
+								</div>
+							</div>
+
+							<blockquote id="#{sku-do-paragrafo}" cite="fonte">
+								<p id="#{sku-do-paragrafo}"></p>
+								<p id="#{sku-do-paragrafo}"></p>
+								<p id="#{sku-do-paragrafo}"></p>
+							</blockquote>
+
+							<p id="#{sku-do-paragrafo}"></p>
+							<p id="#{sku-do-paragrafo}"></p>
+							<p id="#{sku-do-paragrafo}"></p>
+							<p id="#{sku-do-paragrafo}"></p>
+
+							<div class="box-section">
+
+								<div class="grapc-section-head">
+									<span class="grapc-section-head-icon"><i class="fa fa-paragraph"></i></span>
+									<span class="grapc-section-head-title"></span>
+								</div>
+
+								<div class="grapc-section-content">
+									<h1 id="#{sku-do-paragrafo}"></h1>
+									<p id="#{sku-do-paragrafo}"></p>
+									<p id="#{sku-do-paragrafo}"></p>
+									<p id="#{sku-do-paragrafo}"></p>
+									<p id="#{sku-do-paragrafo}"></p>
+								</div>
+							</div>
+
+							<div class="box-atividade">
+
+								<div class="box-section-head">
+									<span class="box-section-head-icon"><i class="fa fa-pencil"></i></span>
+									<span class="box-section-head-title"></span>
+								</div>
+
+								<div class="atividade-content-group">
+
+									<div class="atividade-content-item">
+										<p class="atividade-enunciado"></p>
+
+										<ul class="atividade-alternativa-group">
+
+											<li class="atividade-alternativa-item" data-atividade-correct>
+												<span class="atividade-alternativa-text"></span>
+												<span class="atividade-alternativa-feedback"></span>
+											</li>
+
+											<li class="atividade-alternativa-item">
+												<span class="atividade-alternativa-text"></span>
+												<span class="atividade-alternativa-feedback"></span>
+											</li>
+
+											<li class="atividade-alternativa-item" data-atividade-correct>
+												<span class="atividade-alternativa-text"></span>
+												<span class="atividade-alternativa-feedback"></span>
+											</li>
+
+											<li class="atividade-alternativa-item">
+												<span class="atividade-alternativa-text"></span>
+												<span class="atividade-alternativa-feedback"></span>
+											</li>
+										</ul>
+									</div>
+
+									<div class="atividade-content-item">
+										<p class="atividade-enunciado"></p>
+
+										<ul class="atividade-alternativa-group">
+
+											<li class="atividade-alternativa-item" data-atividade-correct>
+												<span class="atividade-alternativa-text"></span>
+												<span class="atividade-alternativa-feedback"></span>
+											</li>
+
+											<li class="atividade-alternativa-item">
+												<span class="atividade-alternativa-text"></span>
+												<span class="atividade-alternativa-feedback"></span>
+											</li>
+
+											<li class="atividade-alternativa-item" data-atividade-correct>
+												<span class="atividade-alternativa-text"></span>
+												<span class="atividade-alternativa-feedback"></span>
+											</li>
+
+											<li class="atividade-alternativa-item">
+												<span class="atividade-alternativa-text"></span>
+												<span class="atividade-alternativa-feedback"></span>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</article>
+					</div>
+				</section>
+
+				<!-- Seção do tipo atividade -->
+				<section id="atividade" class="page-atividades">
+
+					<!-- Informações da seção -->
+					<div class="section-info hidden">
+
+						<!-- Nome da seção (Atividade) -->
+						<h1 class="section-label">Atividades</h1>
+					</div>
+
+					<!-- texto da seção -->
+					<div id="atividade-capitulo-#{$capitulo[ordem]}" class="atividade-section">
+
+						<div class="atividade-section-head">
+							<span class="box-section-head-icon"><i class="fa fa-pencil"></i></span>
+							<span class="box-section-head-title"></span>
+						</div>
+
+						<div class="atividade-content-group">
+
+							<div class="atividade-content-item">
+								<p class="atividade-enunciado"></p>
+
+								<ul class="atividade-alternativa-group">
+
+									<li class="atividade-alternativa-item" data-atividade-correct>
+										<span class="atividade-alternativa-text"></span>
+										<span class="atividade-alternativa-feedback"></span>
+									</li>
+
+									<li class="atividade-alternativa-item">
+										<span class="atividade-alternativa-text"></span>
+										<span class="atividade-alternativa-feedback"></span>
+									</li>
+
+									<li class="atividade-alternativa-item" data-atividade-correct>
+										<span class="atividade-alternativa-text"></span>
+										<span class="atividade-alternativa-feedback"></span>
+									</li>
+
+									<li class="atividade-alternativa-item">
+										<span class="atividade-alternativa-text"></span>
+										<span class="atividade-alternativa-feedback"></span>
+									</li>
+								</ul>
+							</div>
+
+							<div class="atividade-content-item">
+								<p class="atividade-enunciado"></p>
+
+								<ul class="atividade-alternativa-group">
+
+									<li class="atividade-alternativa-item" data-atividade-correct>
+										<span class="atividade-alternativa-text"></span>
+										<span class="atividade-alternativa-feedback"></span>
+									</li>
+
+									<li class="atividade-alternativa-item">
+										<span class="atividade-alternativa-text"></span>
+										<span class="atividade-alternativa-feedback"></span>
+									</li>
+
+									<li class="atividade-alternativa-item" data-atividade-correct>
+										<span class="atividade-alternativa-text"></span>
+										<span class="atividade-alternativa-feedback"></span>
+									</li>
+
+									<li class="atividade-alternativa-item">
+										<span class="atividade-alternativa-text"></span>
+										<span class="atividade-alternativa-feedback"></span>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- Seção do tipo apresentação -->
+				<section id="referencias" class="page-referencias">
+
+					<!-- Informações da seção -->
+					<div class="section-info">
+
+						<!-- Nome da seção (professores / abertura ...) -->
+						<h1 class="section-label">Referências</h1>
+					</div>
+
+					<!-- texto da seção -->
+					<article id="#{$apresentacao[Seção][titulo]}-texto" class="referencias-group">
+						<p class="referencias-item"></p>
+						<p class="referencias-item"></p>
+						<p class="referencias-item"></p>
+						<p class="referencias-item"></p>
 					</article>
 				</section>
 			</div>
