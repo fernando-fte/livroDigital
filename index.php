@@ -10,8 +10,11 @@
 
 		<title></title>
 
-		<!-- VENDOR less: Bootstrap LESS -->
-		<link rel="stylesheet" href="<?php echo $settings['wwwroot']?>/assets/style/bootstrap.less">
+		<!-- STYLE Bootstrap: Bootstrap LESS -->
+		<link rel="stylesheet" href="<?php echo $settings['wwwroot']?>/style/bootstrap.less">
+
+		<!-- STYLE app: app LESS -->
+		<link rel="stylesheet" href="<?php echo $settings['wwwroot']?>/style/app.less">
 
 		<!-- VENDOR CSS: Fontawesome -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -39,16 +42,16 @@
 		</div>
 
 		<!-- VENDOR: jQuery -->
-		<script src="<?php echo $settings['wwwroot']?>/assets/vendor/js/jquery.min.js"></script>
+		<script src="<?php echo $settings['wwwroot']?>/vendor/js/jquery.min.js"></script>
 
 		<!-- VENDOR: Latest compiled and minified Bootstrap JavaScript -->
-		<script src="<?php echo $settings['wwwroot']?>/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+		<script src="<?php echo $settings['wwwroot']?>/vendor/bootstrap/js/bootstrap.min.js"></script>
 
 		<!-- VENDOR: CoffeeScript -->
 		<script src="http://coffeescript.org/extras/coffee-script.js"></script>
 
 		<!-- VENDOR: CSS Less-->
-		<script src="<?php echo $settings['wwwroot']?>/assets/vendor/js/less.min.js"></script>
+		<script src="<?php echo $settings['wwwroot']?>/vendor/js/less.min.js"></script>
 
 		<!-- APP: CoffeeScript 
 		<script type="text/coffeescript" src="scripts/default.coffee"></script>
