@@ -11,10 +11,10 @@
 		<title></title>
 
 		<!-- STYLE Bootstrap: Bootstrap LESS -->
-		<link rel="stylesheet" href="<?php echo $settings['wwwroot']?>/style/bootstrap.less">
+		<link rel="stylesheet/less" href="<?php echo $settings['wwwroot']?>/style/bootstrap.less">
 
 		<!-- STYLE app: app LESS -->
-		<link rel="stylesheet" href="<?php echo $settings['wwwroot']?>/style/app.less">
+		<link rel="stylesheet/less" href="<?php echo $settings['wwwroot']?>/style/app.less">
 
 		<!-- VENDOR CSS: Fontawesome -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">

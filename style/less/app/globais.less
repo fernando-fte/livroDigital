@@ -25,7 +25,7 @@
 @app-cor-preto-80: #47464A;
 @app-cor-preto-60: #757477;
 @app-cor-preto-40: #A3A2A4;
-@app-cor-preto-20: #D1D1D2
+@app-cor-preto-20: #D1D1D2;
 @app-cor-preto-10: #E8E8E8;
 
 //## Cor da instituição (UNIPAR), e lista de derivações menos densa.
@@ -65,19 +65,20 @@
 //
 //## Familia de fontes padrão do aplicativo
 @app-font-app: "PF BeauSans Pro";
-@app-font-app-patch: "$caminho";
+@app-font-app-path: "$caminho";
 @app-font-app-file: "$nome";
 //
 // Importa fontes padrão
-@font-face {
-  font-family: @app-font-app;
-  src: url('@{app-font-app-path}@{app-font-app-file}.eot');
-  src: url('@{app-font-app-path}@{app-font-app-file}.eot?#iefix') format('embedded-opentype'),
-       url('@{app-font-app-path}@{app-font-app-file}.woff2') format('woff2'),
-       url('@{app-font-app-path}@{app-font-app-file}.woff') format('woff'),
-       url('@{app-font-app-path}@{app-font-app-file}.ttf') format('truetype'),
-       url('@{app-font-app-path}@{app-font-app-file}.svg#@{icon-font-svg-id}') format('svg');
-}
+// @font-face {
+//   font-family: @app-font-app;
+//   src: url('@{app-font-app-path}@{app-font-app-file}.eot');
+//   src: url('@{app-font-app-path}@{app-font-app-file}.eot?#iefix') format('embedded-opentype'),
+//        url('@{app-font-app-path}@{app-font-app-file}.woff2') format('woff2'),
+//        url('@{app-font-app-path}@{app-font-app-file}.woff') format('woff'),
+//        url('@{app-font-app-path}@{app-font-app-file}.ttf') format('truetype'),
+//        url('@{app-font-app-path}@{app-font-app-file}.svg#@{icon-font-svg-id}') format('svg');
+// };
+
 
 //## Familia de fontes do texto
 @app-font-normal: "Josefin Slab";
@@ -86,4 +87,18 @@
 @app-font-legenda: "Maven Pro";
 @app-font-fonte: "Jura";
 
+// Importa "Josefin Slab"
+@import url(https://fonts.googleapis.com/css?family=Josefin+Slab:400,100,100italic,300,300italic,400italic,600,600italic,700,700italic);
+
+// Importa "Josefin Sans"
+@import url(https://fonts.googleapis.com/css?family=Josefin+Sans:400,100italic,100,300,300italic,400italic,600,600italic,700,700italic);
+
+// Importa "Dosis"
+@import url(https://fonts.googleapis.com/css?family=Dosis:400,200,300,500,600,700,800);
+
+// Importa "Maven Pro"
+@import url(https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900);
+
+// Importa "Jura"
+@import url(https://fonts.googleapis.com/css?family=Jura:400,300,500,600);
 
