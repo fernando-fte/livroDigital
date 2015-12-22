@@ -5,57 +5,85 @@
 //== Cores
 //
 //## Cor padrão do aplicativo (vermelho escuro derivada da UNIPAR), e lista de derivações menos densa.
-@app-padrao: #A11314;
-@app-padrao-80: #B44243;
-@app-padrao-60: #C77172;
-@app-padrao-40: #D9A1A1;
-@app-padrao-20: #ECD0D0;
-@app-padrao-10: #F6E7E7;
+@app-cor-padrao: #A11314;
+@app-cor-padrao-80: #B44243;
+@app-cor-padrao-60: #C77172;
+@app-cor-padrao-40: #D9A1A1;
+@app-cor-padrao-20: #ECD0D0;
+@app-cor-padrao-10: #F6E7E7;
 
 //## Cor mais clara padrão do aplicativo (vermelho escuro derivada da UNIPAR), e lista de derivações menos densa.
-@app-padrao-fraco: #C0504D;
-@app-padrao-fraco-80: #CA7066;
-@app-padrao-fraco-60: #D48E82;
-@app-padrao-fraco-40: #E0AFA4;
-@app-padrao-fraco-20: #EDD3CB;
-@app-padrao-fraco-10: #F4E6E2;
+@app-cor-padrao-fraco: #C0504D;
+@app-cor-padrao-fraco-80: #CA7066;
+@app-cor-padrao-fraco-60: #D48E82;
+@app-cor-padrao-fraco-40: #E0AFA4;
+@app-cor-padrao-fraco-20: #EDD3CB;
+@app-cor-padrao-fraco-10: #F4E6E2;
 
 //## Cor preto padrão do aplicativo (vermelho escuro derivada da UNIPAR), e lista de derivações menos densa.
-@app-preto: #19181C;
-@app-preto-80: #47464A;
-@app-preto-60: #757477;
-@app-preto-40: #A3A2A4;
-@app-preto-20: #D1D1D2
-@app-preto-10: #E8E8E8;
+@app-cor-preto: #19181C;
+@app-cor-preto-80: #47464A;
+@app-cor-preto-60: #757477;
+@app-cor-preto-40: #A3A2A4;
+@app-cor-preto-20: #D1D1D2
+@app-cor-preto-10: #E8E8E8;
 
 //## Cor da instituição (UNIPAR), e lista de derivações menos densa.
-@app-instituicao: #EE3435;
-@app-instituicao-80: #F25D5E;
-@app-instituicao-60: #F58586;
-@app-instituicao-40: #F8AEAE;
-@app-instituicao-20: #FCD6D7;
-@app-instituicao-10: #FDEBEB;
+@app-cor-instituicao: #EE3435;
+@app-cor-instituicao-80: #F25D5E;
+@app-cor-instituicao-60: #F58586;
+@app-cor-instituicao-40: #F8AEAE;
+@app-cor-instituicao-20: #FCD6D7;
+@app-cor-instituicao-10: #FDEBEB;
 
 //## Cor verde padrão do aplicativo
-@app-verde: #32824C;
-@app-verde-80: #5B9B70;
-@app-verde-60: #84B494;
-@app-verde-40: #ADCDB7;
-@app-verde-20: #D6E6DB;
-@app-verde-10: #EAF3ED;
+@app-cor-verde: #32824C;
+@app-cor-verde-80: #5B9B70;
+@app-cor-verde-60: #84B494;
+@app-cor-verde-40: #ADCDB7;
+@app-cor-verde-20: #D6E6DB;
+@app-cor-verde-10: #EAF3ED;
 
 //## Cor azul padrão do aplicativo
-@app-azul: #4D7CBB;
-@app-azul-80: #7196C9;
-@app-azul-60: #94B0D6;
-@app-azul-40: #B8CBE4;
-@app-azul-20: #DBE5F1;
-@app-azul-10: #EDF2F8;
+@app-cor-azul: #4D7CBB;
+@app-cor-azul-80: #7196C9;
+@app-cor-azul-60: #94B0D6;
+@app-cor-azul-40: #B8CBE4;
+@app-cor-azul-20: #DBE5F1;
+@app-cor-azul-10: #EDF2F8;
 
 //## Cor vermelho padrão do aplicativo
-@app-vermelho: @app-padrao-fraco;
-@app-vermelho-80: @app-padrao-fraco-80;
-@app-vermelho-60: @app-padrao-fraco-60;
-@app-vermelho-40: @app-padrao-fraco-40;
-@app-vermelho-20: @app-padrao-fraco-20;
-@app-vermelho-10: @app-padrao-fraco-10;
+@app-cor-vermelho: @app-cor-padrao-fraco;
+@app-cor-vermelho-80: @app-cor-padrao-fraco-80;
+@app-cor-vermelho-60: @app-cor-padrao-fraco-60;
+@app-cor-vermelho-40: @app-cor-padrao-fraco-40;
+@app-cor-vermelho-20: @app-cor-padrao-fraco-20;
+@app-cor-vermelho-10: @app-cor-padrao-fraco-10;
+
+
+//== Fonts
+//
+//## Familia de fontes padrão do aplicativo
+@app-font-app: "PF BeauSans Pro";
+@app-font-app-patch: "$caminho";
+@app-font-app-file: "$nome";
+//
+// Importa fontes padrão
+@font-face {
+  font-family: @app-font-app;
+  src: url('@{app-font-app-path}@{app-font-app-file}.eot');
+  src: url('@{app-font-app-path}@{app-font-app-file}.eot?#iefix') format('embedded-opentype'),
+       url('@{app-font-app-path}@{app-font-app-file}.woff2') format('woff2'),
+       url('@{app-font-app-path}@{app-font-app-file}.woff') format('woff'),
+       url('@{app-font-app-path}@{app-font-app-file}.ttf') format('truetype'),
+       url('@{app-font-app-path}@{app-font-app-file}.svg#@{icon-font-svg-id}') format('svg');
+}
+
+//## Familia de fontes do texto
+@app-font-normal: "Josefin Slab";
+@app-font-especial: "Josefin Sans";
+@app-font-titulo: "Dosis";
+@app-font-legenda: "Maven Pro";
+@app-font-fonte: "Jura";
+
+
