@@ -1,0 +1,68 @@
+//
+// Typography
+// --------------------------------------------------
+
+
+// Titulos
+// -------------------------
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+	font-family: @app-titulo-font;
+	line-height: @app-titulo-line-height;
+	color: @app-titulo-cor;
+	margin-top: 0;
+	margin-bottom: floor((@app-line-height-computed / 3));
+
+	small,
+	.small {
+		font-weight: normal;
+		line-height: 1;
+		color: @app-titulo-cor-fraco;
+	}
+}
+
+h1, .h1 { font-size: @app-font-size-h1; font-weight: 700; }
+h2, .h2 { font-size: @app-font-size-h2; font-weight: 600; }
+h3, .h3 { font-size: @app-font-size-h3; font-weight: 500; }
+h4, .h4 { font-size: @app-font-size-h4; font-weight: 400; }
+h5, .h5 { font-size: @app-font-size-h5; font-weight: 400; }
+h6, .h6 { font-size: @app-font-size-h6; font-weight: 300; }
+
+h1.sub, .h1-sub { font-size: @app-font-size-h1-sub; font-weight: 600; color: @app-titulo-cor-fraco}
+h2.sub, .h2-sub { font-size: @app-font-size-h2-sub; font-weight: 600; color: @app-titulo-cor-fraco}
+h3.sub, .h3-sub { font-size: @app-font-size-h3-sub; font-weight: 600; color: @app-titulo-cor-fraco}
+
+
+// Corpo do texto
+// -------------------------
+p {
+	font-family: @app-font-normal;
+	font-size: @app-font-size-base;
+	font-weight: 600;
+	text-align: justify;
+	color: @app-cor-preto;
+}
+
+cite, blockquote {
+	font-family: @app-font-especial;
+	font-size: @app-font-size-base;
+	color: @app-cor-preto-80;
+
+	b, strong {
+		color: @app-cor-padrao-40;
+	}
+}
+
+a, .link {
+	color: @app-cor-azul;
+	font-weight: bold;
+}
+
+
+// Itens
+// -------------------------
+.app-legenda, .app-font {
+	font-family: @app-font-app;
+	font-size: (@app-font-size-base / 0.7);
+}

@@ -60,10 +60,11 @@
 @app-cor-vermelho-20: @app-cor-padrao-fraco-20;
 @app-cor-vermelho-10: @app-cor-padrao-fraco-10;
 
-
-//== Fonts
+//== Typography
 //
-//## Familia de fontes padrão do aplicativo
+//## Font, line-height, and color for body text, headings, and more.
+
+//** Familia de fontes padrão do aplicativo
 @app-font-app: "PF BeauSans Pro";
 @app-font-app-path: "$caminho";
 @app-font-app-file: "$nome";
@@ -80,7 +81,7 @@
 // };
 
 
-//## Familia de fontes do texto
+//** Familia de fontes do texto
 @app-font-normal: "Josefin Slab";
 @app-font-especial: "Josefin Sans";
 @app-font-titulo: "Dosis";
@@ -106,4 +107,36 @@
 //
 // Importa FontAwesome
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css);
+
+
+//** Configura tamanhos
+@app-font-size-base: 19px;
+@app-font-size-large: ceil((@app-font-size-base * 1.25)); // ~18px
+@app-font-size-small: ceil((@app-font-size-base * 0.85)); // ~12px
+
+@app-font-size-h1: floor((@app-font-size-base * 2.6)); // ~36px
+@app-font-size-h2: floor((@app-font-size-base * 2.3)); // ~32px
+@app-font-size-h3: floor((@app-font-size-base * 2)); // ~28px
+@app-font-size-h4: ceil((@app-font-size-base * 1.7)); // ~24px
+@app-font-size-h5: ceil((@app-font-size-base * 1.4)); // ~20px
+@app-font-size-h6: ceil((@app-font-size-base * 1.14)); // ~16px
+
+@app-font-size-h1-sub: floor((@app-font-size-base * 1.4)); // ~20px
+@app-font-size-h2-sub: floor((@app-font-size-base * 1.14)); // ~16px
+@app-font-size-h3-sub: ceil((@app-font-size-base * 0.85)); // ~12px
+
+
+//** Unit-less `line-height` for use in components like buttons.
+@app-line-height-base: 1.428571429; // 20/14
+
+//** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
+@app-line-height-computed: floor((@app-font-size-base * @app-line-height-base)); // ~20px
+
+//** By default, this inherits from the `<body>`.
+@app-titulo-font: @app-font-titulo;
+
+// @app-titulo-font-weight: 700;
+@app-titulo-line-height: 1.1;
+@app-titulo-cor: @app-cor-preto;
+@app-titulo-cor-fraco: @app-cor-preto-60;
 
