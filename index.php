@@ -17,7 +17,7 @@
 		<link rel="stylesheet/less" href="<?php echo $settings['wwwroot']?>/style/app.less">
 
 		<!-- VENDOR CSS: Fontawesome -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"> -->
 
 		<!-- <link rel="stylesheet" href="animate.css"> -->
 
