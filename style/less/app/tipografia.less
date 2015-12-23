@@ -61,6 +61,52 @@ a, .link {
 	font-weight: bold;
 }
 
+// Configuração da tabela
+// zera paragrafo
+table.tb {
+	p {
+		color: inherit;
+		font-family: inherit;
+		font-size: inherit;
+		text-transform: inherit;
+		font-weight: inherit;
+		text-align: inherit;
+		margin-bottom: 0px;
+	}
+}
+
+//** tipo da fonte
+.tb-header, .tb-destaque, .tb-titulo-result,
+.tb-titulo-tr, .tb-titulo-tr-2, .tb-titulo-tr-3,
+.tb-titulo-td, .tb-titulo-td-2, .tb-titulo-td-3 { font-family: @app-font-titulo; }
+.tb-td-result, .tb-td, .tb-td-2, .tb-td-3 { font-family: @app-font-especial; }
+
+//** tamanhos da fonte
+.tb-header, .tb-destaque { font-size: @app-font-size-tb-h1; }
+.tb-titulo-tr, .tb-titulo-td, .tb-titulo-result, .tb-td-result, .tb-td { font-size: @app-font-size-tb-1; }
+.tb-titulo-tr-2, .tb-titulo-td-2, .tb-td-result-2, .tb-td-2 { font-size: @app-font-size-tb-2; }
+.tb-titulo-tr-3, .tb-titulo-td-3, .tb-td-result-3, .tb-td-3 { font-size: @app-font-size-tb-3; }
+
+//** força da fonte
+.tb-titulo-result, .tb-titulo-td, .tb-titulo-td-2, .tb-titulo-td-3 { font-weight: 400; }
+.tb-header, .tb-titulo-tr, .tb-titulo-tr-2, .tb-titulo-tr-3 { font-weight: bold; }
+.tb-destaque { font-weight: 300; }
+
+//** sentese case // upercase
+.tb-header, .tb-destaque, .tb-titulo-tr, .tb-titulo-tr-2, .tb-titulo-tr-3 { text-transform: uppercase; }
+
+//** cor da fonte
+.tb-header, .tb-destaque { color: @app-cor-padrao-80; }
+.tb-td-result, .tb-td { color: @app-cor-preto; }
+.tb-titulo-tr-2, .tb-td-result-2, .tb-td-2 { color: @app-cor-preto-80; }
+.tb-titulo-tr-3, .tb-td-result-3, .tb-td-3 { color: @app-cor-preto-60; }
+.tb-titulo-result, .tb-titulo-tr, .tb-titulo-td, .tb-titulo-td-2, .tb-titulo-td-3 { color: @app-cor-preto-0; }
+
+//** alinhamento da fonte
+.tb-destaque, .tb-titulo-tr, .tb-titulo-tr-2, .tb-titulo-tr-3,
+.tb-td-result, .tb-td, .tb-td-2, .tb-td-3 { vertical-align: center; text-align: center; }
+.tb-titulo-result, .tb-titulo-td, .tb-titulo-td-2, .tb-titulo-td-3 { vertical-align: center; text-align: right; }
+.tb-header { vertical-align: bottom; text-align: left; }
 
 // Configuração das seções
 // -------------------------
@@ -160,6 +206,7 @@ a, .link {
 	p { 
 		font-family: @app-font-especial; 
 		font-size: ceil((@app-font-size-base * 0.78));
+	    font-weight: normal;
 		b, strong { color: @app-cor-preto-80; }
 	}
 }
