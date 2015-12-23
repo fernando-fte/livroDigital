@@ -27,6 +27,7 @@
 @app-cor-preto-40: #A3A2A4;
 @app-cor-preto-20: #D1D1D2;
 @app-cor-preto-10: #E8E8E8;
+@app-cor-preto-0: #FFFFFF;
 
 //## Cor da instituição (UNIPAR), e lista de derivações menos densa.
 @app-cor-instituicao: #EE3435;
@@ -66,7 +67,7 @@
 
 //** Familia de fontes padrão do aplicativo
 @app-font-app: "PF BeauSans Pro";
-@app-font-app-path: "http://localhost/livroDigital/fonts/";
+@app-font-app-path: "http://localhost/vg/livroDigital/fonts/";
 @app-font-app-file: "pf-beau-sans-pro";
 //
 // Importa fontes padrão
@@ -87,6 +88,7 @@
 @app-font-titulo: "Dosis";
 @app-font-legenda: "Maven Pro";
 @app-font-fonte: "Jura";
+@app-font-ico: "FontAwesome";
 
 // Importa "Josefin Slab"
 @import url(https://fonts.googleapis.com/css?family=Josefin+Slab:400,100,100italic,300,300italic,400italic,600,600italic,700,700italic);
@@ -110,7 +112,10 @@
 
 
 //** Configura tamanhos
-@app-font-size-base: 19px;
+
+@app-size-base: 14px;
+
+@app-font-size-base: ceil((@app-size-base * 1.35)); // ~19px
 @app-font-size-large: ceil((@app-font-size-base * 1.25)); // ~18px
 @app-font-size-small: ceil((@app-font-size-base * 0.85)); // ~12px
 
@@ -139,4 +144,15 @@
 @app-titulo-line-height: 1.1;
 @app-titulo-cor: @app-cor-preto;
 @app-titulo-cor-fraco: @app-cor-preto-60;
+
+
+//== Icones
+//
+@app-ico-atividade: "\F10C";
+@app-ico-atividade-hover: "\F192";
+@app-ico-atividade-certa: "\F058";
+@app-ico-atividade-errada: "\F057";
+@app-ico-atividade-avaliar: "\F05D";
+@app-ico-atividade-avaliar-hover: "\F058";
+
 
