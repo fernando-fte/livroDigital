@@ -119,11 +119,14 @@ a, .link {
 }
 
 .app-btn-atividade {
-
-    color: @app-cor-verde;
+	
+	font-family: @app-font-app;
+	font-size: ceil((@app-font-size-base / 1.2));
+    color: @app-cor-padrao;
     background-color: @app-cor-preto-0;
-    border-color: @app-cor-verde;
+    border-color: @app-cor-padrao;
     text-transform: uppercase;
+    font-weight: bold;
 
 	&:before {
 		padding-right: ceil((@app-font-size-base / 1.2));
@@ -133,7 +136,7 @@ a, .link {
 	}
 
     &:hover { 
-		color: @app-cor-verde-80;
+		color: @app-cor-padrao-80;
 
 		&:before { content: @app-ico-atividade-avaliar-hover; }
 	}
