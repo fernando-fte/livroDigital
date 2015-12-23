@@ -66,19 +66,19 @@
 
 //** Familia de fontes padrão do aplicativo
 @app-font-app: "PF BeauSans Pro";
-@app-font-app-path: "$caminho";
-@app-font-app-file: "$nome";
+@app-font-app-path: "http://localhost/livroDigital/fonts/";
+@app-font-app-file: "pf-beau-sans-pro";
 //
 // Importa fontes padrão
-// @font-face {
-//   font-family: @app-font-app;
-//   src: url('@{app-font-app-path}@{app-font-app-file}.eot');
-//   src: url('@{app-font-app-path}@{app-font-app-file}.eot?#iefix') format('embedded-opentype'),
-//        url('@{app-font-app-path}@{app-font-app-file}.woff2') format('woff2'),
-//        url('@{app-font-app-path}@{app-font-app-file}.woff') format('woff'),
-//        url('@{app-font-app-path}@{app-font-app-file}.ttf') format('truetype'),
-//        url('@{app-font-app-path}@{app-font-app-file}.svg#@{icon-font-svg-id}') format('svg');
-// };
+@font-face {
+  font-family: @app-font-app;
+  src: url('@{app-font-app-path}@{app-font-app-file}.eot');
+  src: url('@{app-font-app-path}@{app-font-app-file}.eot?#iefix') format('embedded-opentype'),
+       url('@{app-font-app-path}@{app-font-app-file}.woff2') format('woff2'),
+       url('@{app-font-app-path}@{app-font-app-file}.woff') format('woff'),
+       url('@{app-font-app-path}@{app-font-app-file}.ttf') format('truetype'),
+       url('@{app-font-app-path}@{app-font-app-file}.svg') format('svg');
+};
 
 
 //** Familia de fontes do texto

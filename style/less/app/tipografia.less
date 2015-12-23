@@ -62,7 +62,12 @@ a, .link {
 
 // Itens
 // -------------------------
-.app-legenda, .app-font {
-	font-family: @app-font-app;
-	font-size: (@app-font-size-base / 0.7);
+.app-legenda, .app-fonte { 
+	font-size: (@app-font-size-base / 1.5);
+	font-weight: normal;
+	margin: 0px;
+
+	.label { color: @app-cor-padrao-fraco-60; text-transform: uppercase; font-weight: bold; }
 }
+.app-legenda { font-family: @app-font-app; }
+.app-fonte { font-family: @app-font-fonte; }
