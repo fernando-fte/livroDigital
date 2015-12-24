@@ -144,23 +144,23 @@ table.tb {
 
 	&:before {
 		font-family: @app-font-ico;
-		content: @app-ico-atividade;
+		content: @app-ico-alternativa;
 		padding-right:  @app-font-size-base;
 		margin-left:  -(@app-font-size-base * 2);
 	}
 
-	&:hover:before { content: @app-ico-atividade-hover; }
+	&:hover:before { content: @app-ico-alternativa-hover; }
 
 	&.true, &.false { font-weight: bold; cursor: default; .feedback {display: block;} &:hover:before { content: inherit;}}
 
 	&.true {
 		color: @app-cor-verde;
-		&:before { content: @app-ico-atividade-certa }
+		&:before { content: @app-ico-alternativa-certa }
 	}
 
 	&.false {
 		color: @app-cor-vermelho;
-		&:before { content: @app-ico-atividade-errada }
+		&:before { content: @app-ico-alternativa-errada }
 	}
 }
 
@@ -178,13 +178,13 @@ table.tb {
 		padding-right: ceil((@app-font-size-base / 1.2));
 		font-size: @app-font-size-base;
 		font-family: @app-font-ico;
-		content: @app-ico-atividade-avaliar;
+		content: @app-ico-alternativa-avaliar;
 	}
 
     &:hover { 
 		color: @app-cor-padrao-80;
 
-		&:before { content: @app-ico-atividade-avaliar-hover; }
+		&:before { content: @app-ico-alternativa-avaliar-hover; }
 	}
 }
 

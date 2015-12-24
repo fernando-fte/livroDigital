@@ -1,30 +1,52 @@
+//== Configura paginas
 html > * { display: none; }
 html > body { display: block; }
 html, body, .app-page { height: 100%; }
 
+//** Remove os espaços das colunas responsivas
 .col-notspace { margin: 0px; padding: 0;}
 
-.app-page {
-	background-color: red;
-	position: fixed;
-	width: 100%;
+.app-page { background-color: @app-cor-preto; position: fixed; width: 100%; }
 
-}
-.app-cover {
+.app-cover { background-size: cover; background-repeat: no-repeat; background-position: center; }
 
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
-}
+//== Trata elementos da capa
+@app-font-size-app: ceil((@app-size-base * 1.42)); // ~20px
+@app-height-size-app: @app-font-size-app; // ~20px
 
-.app-page, .app-text-livro, .app-text-livro, .cover-btn-nav { font-family: @app-font-app; }
 
-.cover-contents { margin-top: ceil((@app-size-base * 4.85)); }
+//** Configura a fachada da capa
+@app-cover-fachada-pdd-l: ceil((@app-height-size-app * 8.35)); // ~167px
+@app-cover-fachada-pdd-r: ceil((@app-height-size-app * 9.8)); // ~196px
 
-.cover-faixa {
+@app-cover-livro-font: ceil((@app-font-size-app * 2.6)); // ~52px
+@app-cover-livro-pdd: ceil((@app-height-size-app * 3)); // ~60px
+
+@app-cover-autor-font: ceil((@app-font-size-app * 0.8)); // ~16px
+@app-cover-autor-pdd: ceil((@app-height-size-app * 0.37)); // ~7.5px
+
+//**configrua os bototoes de navegação
+@app-cover-btn-font: ceil((@app-font-size-app * 2.1)); // ~42px
+@app-cover-btn-pdd: ceil((@app-height-size-app * 0.26)); // ~5.5px
+@app-cover-btn-mrg: ceil((@app-height-size-app * 1.9)); // ~30px
+
+@app-cover-toltip-font: ceil((@app-font-size-app * 0.9));//~18px
+@app-cover-toltip-pdd: ceil((@app-font-size-app * 0.87));//~53px
+@app-cover-toltip-top: ceil((@app-font-size-app * 2.2));//~53px
+@app-cover-toltip-width: ceil((@app-font-size-app * 15));//~300px
+@app-cover-toltip-height: ceil((@app-cover-toltip-font + (@app-cover-toltip-pdd*2))); //~54px
+
+//** Define a fonte padrão
+.app-cover, .app-text-livro, .app-text-livro, .cover-btn-nav { font-family: @app-font-app; }
+
+//** posiciona os elementos
+.cover-contents { margin-top: ceil((@app-height-size-app * 3.4)); }
+
+//** Configrua fachada
+.cover-fachada {
 	// padding: 20px;
-	padding-left: ceil((@app-size-base * 11.42));
-	padding-right: ceil((@app-size-base * 11.42));
+	padding-left: @app-cover-fachada-pdd-l;
+	padding-right: @app-cover-fachada-pdd-r; // 
 
     width: 100%;
     display: block;
@@ -32,84 +54,85 @@ html, body, .app-page { height: 100%; }
 	&.app-text-livro, &.app-text-autor { color: @app-cor-preto-0; }
 
     &.app-text-livro {
-		padding-top: ceil((@app-size-base * 2.71));
-		padding-bottom: ceil((@app-size-base * 2.71));
-
+    	font-size: @app-cover-livro-font;
+		line-height: @app-cover-livro-font;
+		padding-top: @app-cover-livro-pdd;
+		padding-bottom: @app-cover-livro-pdd;
 		background-color: @app-cor-padrao;
-    	font-size: ceil((@app-size-base * 3.17));
     	font-weight: bold;
     }
 
     &.app-text-autor {
-		padding-top: ceil((@app-size-base * 0.71));
-		padding-bottom: ceil((@app-size-base * 0.71));
-
+    	font-size: @app-cover-autor-font;
+		line-height: @app-cover-autor-font;
+		padding-top: @app-cover-autor-pdd;
+		padding-bottom: @app-cover-autor-pdd;
 		margin-top: -1px;
 
 		background-color: @app-cor-padrao-fraco;
-    	font-size: ceil((@app-size-base * 1.14));
     	font-style: italic;
     }
 }
 
-.app-var-ico (@ico, @text) {
+//** Variavel de configuração para icones
+.app-var-ico (@ico) {
 
-	&:before {
-
-		// padding-right: ceil((@app-font-size-base / 1.2));
-		font-family: @app-font-ico;
-		content: @ico;
-	}
-
-	&:after { content: @text; }
+	&:before { font-family: @app-font-ico; content: @ico; }
 }
 
+//** Cofigura colula de botões
+.cover-nav-bar { background-color: rgba(0, 0, 0, 0.5); height: 100%; }
 .cover-btn-nav {
 
     display: block;
     text-align: center;
-    padding: 10px 0px;
-    margin: 15px 0;
+    padding: @app-cover-btn-pdd 0px;
+    margin-bottom: @app-cover-btn-mrg;
+    line-height: @app-cover-btn-font;
 
 	// &:after { display: none; }
-	
-
-	&:before {
-
-		font-size: 42px; // ~42px
-		color: @app-cor-preto-0;
-	}
-
-	&:after {
-	    display: block;
-	    position: relative;
-	    background-color: red;
-	    top: -57px;
-	    right: 300px;
-	    width: 300px;
-	    font-size: 18px;
-	    color: white;
-	    padding: 15px;
-	    float: left;
-	}
 
 	&:hover{
 		background-color:  @app-cor-padrao-fraco;
-		:after { display: block; }
+		.cover-btn-toltip {display: inline;}
 	}
-
-	&.app-ico-menu { .app-var-ico (@app-ico-menu, @app-ico-menu-text); padding: 5px 0px; margin-top: 5px; margin-bottom: 200px; }
-	&.app-ico-sumario { .app-var-ico (@app-ico-sumario, @app-ico-sumario-text); }
-	&.app-ico-atividade { .app-var-ico (@app-ico-atividade, @app-ico-atividade-text); }
-	&.app-ico-marcador { .app-var-ico (@app-ico-marcador, @app-ico-marcador-text); }
-	&.app-ico-anotacao { .app-var-ico (@app-ico-anotacao, @app-ico-anotacao-text); }
-	&.app-ico-referencia { .app-var-ico (@app-ico-referencia, @app-ico-referencia-text); }
 }
 
-.cover-nav-bar {
+//** Configura botões
+.tomanocu{ margin-bottom: ceil((@app-cover-btn-mrg * 5.78)); }
+.app-ico-menu, .app-ico-sumario, .app-ico-atividade, .app-ico-marcador, .app-ico-anotacao, .app-ico-referencia {
+	&:before { display: block; font-size: @app-cover-btn-font; color: @app-cor-preto-0; }
+}
+.app-ico-menu { .app-var-ico (@app-ico-menu);}
+.app-ico-sumario { .app-var-ico (@app-ico-sumario); }
+.app-ico-atividade { .app-var-ico (@app-ico-atividade); }
+.app-ico-marcador { .app-var-ico (@app-ico-marcador); }
+.app-ico-anotacao { .app-var-ico (@app-ico-anotacao); }
+.app-ico-referencia { .app-var-ico (@app-ico-referencia); }
 
-	background-color: rgba(0, 0, 0, 0.5);
-	height: 100%;
+//** Configura Toltip
+.cover-btn-toltip {
+	display: none;
+	font-size: @app-cover-toltip-font;
+	line-height: @app-cover-toltip-font;
+	padding: @app-cover-toltip-pdd 0px;
+	text-transform: uppercase;
+	top: -(@app-cover-toltip-top);
+	background-color: @app-cor-padrao-fraco;
+	right: ceil(@app-cover-toltip-width + ceil((@app-cover-toltip-height * 0.51)));
+	width: @app-cover-toltip-width;
+	color: @app-cor-preto-0;
+	position: relative;
+	float: left;
+
+	&:after {
+	    border: ceil((@app-cover-toltip-height * 0.51)) solid transparent;
+	    border-left-color: @app-cor-padrao-fraco;
+	    left: (@app-cover-toltip-width - 1);
+	    position: absolute;
+	    content: "";
+	    top: -(ceil((@app-cover-toltip-height * 0.01)));
+	}
 }
 
 .cover-btn-ler, .cover-logo {

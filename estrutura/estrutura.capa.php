@@ -8,8 +8,8 @@
 
 	<!-- Conteudo da capa (titulo e autores) -->
 	<div class="cover-contents col-md-11 col-notspace">
-		<span class="cover-faixa app-text-livro">Finanças Empresariais</span>
-		<span class="cover-faixa app-text-autor">Marcela Ribeiro de Albuquerque</span>
+		<span class="cover-fachada app-text-livro">Finanças Empresariais</span>
+		<span class="cover-fachada app-text-autor">Marcela Ribeiro de Albuquerque</span>
 	</div>
 
 	<!-- Botão iniciar leitura -->
@@ -25,21 +25,38 @@
 	<div class="cover-nav-bar col-md-1 col-notspace row">
 
 		<!-- Botão do menu -->
-		<span class="cover-btn-nav app-ico-menu"></span>
+		<span class="cover-btn-nav tomanocu">
+			<span class="app-ico-menu"></span>
+		</span>
 
 		<!-- Botão para sumário -->
-		<span class="cover-btn-nav app-ico-sumario"></span>
+		<span class="cover-btn-nav">
+			<span class="app-ico-sumario"></span>
+			<span class="cover-btn-toltip">Sumário</span>
+		</span>
 
 		<!-- Botão para atividades -->
-		<span class="cover-btn-nav app-ico-atividade"></span>
+		<span class="cover-btn-nav">
+			<span class="app-ico-atividade"></span>
+			<span class="cover-btn-toltip">Atividades</span>
+		</span>
 
 		<!-- Botão para continuar leitura -->
-		<span class="cover-btn-nav app-ico-marcador"></span>
+		<span class="cover-btn-nav">
+			<span class="app-ico-marcador"></span>
+			<span class="cover-btn-toltip">Condinuar de onde parei</span>
+		</span>
 
 		<!-- Botão para anotações -->
-		<span class="cover-btn-nav app-ico-anotacao"></span>
+		<span class="cover-btn-nav">
+			<span class="app-ico-anotacao"></span>
+			<span class="cover-btn-toltip">Anotações</span>
+		</span>
 
 		<!-- Botão para refrerências -->
-		<span class="cover-btn-nav app-ico-referencia"></span>
+		<span class="cover-btn-nav">
+			<span class="app-ico-referencia"></span>
+			<span class="cover-btn-toltip">Referências</span>
+		</span>
 	</div>
 </div>
