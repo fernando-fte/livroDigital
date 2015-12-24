@@ -1,0 +1,120 @@
+html > * { display: none; }
+html > body { display: block; }
+html, body, .app-page { height: 100%; }
+
+.col-notspace { margin: 0px; padding: 0;}
+
+.app-page {
+	background-color: red;
+	position: fixed;
+	width: 100%;
+
+}
+.app-cover {
+
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.app-page, .app-text-livro, .app-text-livro, .cover-btn-nav { font-family: @app-font-app; }
+
+.cover-contents { margin-top: ceil((@app-size-base * 4.85)); }
+
+.cover-faixa {
+	// padding: 20px;
+	padding-left: ceil((@app-size-base * 11.42));
+	padding-right: ceil((@app-size-base * 11.42));
+
+    width: 100%;
+    display: block;
+
+	&.app-text-livro, &.app-text-autor { color: @app-cor-preto-0; }
+
+    &.app-text-livro {
+		padding-top: ceil((@app-size-base * 2.71));
+		padding-bottom: ceil((@app-size-base * 2.71));
+
+		background-color: @app-cor-padrao;
+    	font-size: ceil((@app-size-base * 3.17));
+    	font-weight: bold;
+    }
+
+    &.app-text-autor {
+		padding-top: ceil((@app-size-base * 0.71));
+		padding-bottom: ceil((@app-size-base * 0.71));
+
+		margin-top: -1px;
+
+		background-color: @app-cor-padrao-fraco;
+    	font-size: ceil((@app-size-base * 1.14));
+    	font-style: italic;
+    }
+}
+
+.app-var-ico (@ico, @text) {
+
+	&:before {
+
+		// padding-right: ceil((@app-font-size-base / 1.2));
+		font-family: @app-font-ico;
+		content: @ico;
+	}
+
+	&:after { content: @text; }
+}
+
+.cover-btn-nav {
+
+    display: block;
+    text-align: center;
+    padding: 10px 0px;
+    margin: 15px 0;
+
+	// &:after { display: none; }
+	
+
+	&:before {
+
+		font-size: 42px; // ~42px
+		color: @app-cor-preto-0;
+	}
+
+	&:after {
+	    display: block;
+	    position: relative;
+	    background-color: red;
+	    top: -57px;
+	    right: 300px;
+	    width: 300px;
+	    font-size: 18px;
+	    color: white;
+	    padding: 15px;
+	    float: left;
+	}
+
+	&:hover{
+		background-color:  @app-cor-padrao-fraco;
+		:after { display: block; }
+	}
+
+	&.app-ico-menu { .app-var-ico (@app-ico-menu, @app-ico-menu-text); padding: 5px 0px; margin-top: 5px; margin-bottom: 200px; }
+	&.app-ico-sumario { .app-var-ico (@app-ico-sumario, @app-ico-sumario-text); }
+	&.app-ico-atividade { .app-var-ico (@app-ico-atividade, @app-ico-atividade-text); }
+	&.app-ico-marcador { .app-var-ico (@app-ico-marcador, @app-ico-marcador-text); }
+	&.app-ico-anotacao { .app-var-ico (@app-ico-anotacao, @app-ico-anotacao-text); }
+	&.app-ico-referencia { .app-var-ico (@app-ico-referencia, @app-ico-referencia-text); }
+}
+
+.cover-nav-bar {
+
+	background-color: rgba(0, 0, 0, 0.5);
+	height: 100%;
+}
+
+.cover-btn-ler, .cover-logo {
+	position: fixed;
+	left: center;
+}
+
+

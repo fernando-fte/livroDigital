@@ -31,15 +31,15 @@
 
 	<body>
 
-		<div class="container">
-			<?php 
-				if (array_key_exists('page', $get)) {
 
-					if (array_key_exists($get['page'], $settings['pages'])) { include 'estrutura/'.$settings['pages'][$get['page']]; }
-					else { echo 'A pagina '.$get['page'].'não foi declarada'; }
-				}
-			?>
-		</div>
+	<?php 
+		if (array_key_exists('page', $get)) {
+
+			if (array_key_exists($get['page'], $settings['pages'])) { include 'estrutura/'.$settings['pages'][$get['page']]; }
+			else { echo 'A pagina '.$get['page'].'não foi declarada'; }
+		}
+	?>
+
 
 		<!-- VENDOR: jQuery -->
 		<script src="<?php echo $settings['wwwroot']?>/vendor/js/jquery.min.js"></script>
