@@ -1,10 +1,5 @@
 <!-- Contents para capa -->
-<div id="capa" class="app-page app-cover" style="background-image: url(https://docs.google.com/uc?id=0B0saOBoxeYS_VHRoZGlVbVpVams)">
-
-	<!-- MOBILE: Content logo para  -->
-	<div class="cover-logo cover-logo-top">
-		<img src="https://placeholdit.imgix.net/~text?txtsize=15&txt=logo-white-unipar&w=165&h=39">
-	</div>
+<div id="capa" class="app-page app-cover" style="background-image: url(<?php echo $settings['wwwroot']?>/img/cover.book.jpg)">
 
 	<!-- Conteudo da capa (titulo e autores) -->
 	<div class="cover-contents col-md-11 col-notspace">
@@ -16,9 +11,10 @@
 	<span class="col-md-offset-5 col-md-2 cover-btn-iniciar app-ico-iniciar"></span>
 
 	<!-- Contents para "pos" e logo -->
-	<div class="cover-logo cover-logo-bottom">
-		<img src="https://placeholdit.imgix.net/~text?txtsize=15&txt=logo-white-pos&w=165&h=39">
-		<img src="https://placeholdit.imgix.net/~text?txtsize=15&txt=logo-white-unipar&w=165&h=39">
+	<div class="cover-logo-group">
+
+		<img  class="cover-logo-item logo-pos" src="<?php echo $settings['wwwroot']?>/img/logo.pos.white.svg">
+		<img  class="cover-logo-item logo-instituicao" src="<?php echo $settings['wwwroot']?>/img/logo.white.svg">
 	</div>
 
 	<!-- Botão do grupo de botões da navegação -->

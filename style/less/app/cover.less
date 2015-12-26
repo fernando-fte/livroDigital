@@ -1,56 +1,5 @@
-//== Configura paginas
-html > * { display: none; }
-html > body { display: block; }
-html, body, .app-page { height: 100%; }
-
-//** Remove os espaços das colunas responsivas
-.col-notspace { margin: 0px; padding: 0;}
-
-.app-page { background-color: @app-cor-preto; position: fixed; width: 100%; }
-
-.app-cover { background-size: cover; background-repeat: no-repeat; background-position: center; }
-
-//== Trata elementos da capa
-@app-font-size-app: ceil((@app-size-base * 1.42)); // ~20px
-@app-height-size-app: @app-font-size-app; // ~20px
-
-
-//** Configura a fachada da capa
-@app-cover-fachada-pdd-l: ceil((@app-height-size-app * 8.35)); // ~167px
-@app-cover-fachada-pdd-r: ceil((@app-height-size-app * 9.8)); // ~196px
-
-@app-cover-livro-font: ceil((@app-font-size-app * 2.6)); // ~52px
-@app-cover-livro-pdd: ceil((@app-height-size-app * 3)); // ~60px
-
-@app-cover-autor-font: ceil((@app-font-size-app * 0.8)); // ~16px
-@app-cover-autor-pdd: ceil((@app-height-size-app * 0.37)); // ~7.5px
-
-//**configrua os bototoes de navegação
-@app-cover-btn-font: ceil((@app-font-size-app * 2.1)); // ~42px
-@app-cover-btn-pdd: ceil((@app-height-size-app * 1)); // ~20px
-@app-cover-btn-mrg: ceil((@app-height-size-app * 1.9)); // ~30px
-@app-cover-btn-mrg-menu: ceil((@app-cover-btn-mrg * 7.33 )); //250px
-
-//** Configrua toltip dos botoes da navegação
-@app-cover-toltip-font: ceil((@app-font-size-app * 0.9));//~18px
-@app-cover-toltip-pdd: ceil((@app-cover-btn-pdd + ((@app-cover-btn-font - @app-cover-toltip-font) / 2)) * 0.55); //~20px
-@app-cover-toltip-top: ceil((@app-height-size-app * 2.25)); //~45px
-@app-cover-toltip-width: ceil((@app-font-size-app * 15)); //~300px
-@app-cover-toltip-height: ceil((@app-cover-toltip-font + (@app-cover-toltip-pdd*2))); //~54px
-
-
-//** COnfigrua botão de iniciar leitura
-@app-cover-iniciar-font: ceil((@app-font-size-app * 1.4)); // ~28px
-@app-cover-iniciar-ico: ceil((@app-cover-iniciar-font * 2.5)); // ~70px
-@app-cover-iniciar-pdd: ceil((@app-height-size-app * 1.25)); // ~25px
-@app-cover-iniciar-pdd-l: ceil((@app-height-size-app * 2.5)); // ~50px
-@app-cover-iniciar-pdd-r: ceil((@app-height-size-app * 3.15)); // ~63px
-@app-cover-iniciar-width: ceil((@app-cover-iniciar-font * 12.14)); // ~340px
-
-// ~78px
-
 //** Define a fonte padrão
-.app-cover, .app-text-livro, .app-text-livro, .cover-btn-nav { font-family: @app-font-app; }
+.app-cover, .app-text-livro, .app-text-livro, .cover-btn-nav { font-family: @app-font-app; .app-play-fadeInRight();}
 
 //** posiciona os elementos
 .cover-contents { width: 95%; position: absolute; top: 10%;}
@@ -155,13 +104,7 @@ html, body, .app-page { height: 100%; }
 	}
 }
 
-.cover-btn-ler, .cover-logo {
-	position: fixed;
-	left: center;
-}
-
-
-
+//** Configrua botão iniciar
 .cover-btn-iniciar {
 	position: fixed;
 	bottom: 30%;
@@ -199,3 +142,24 @@ html, body, .app-page { height: 100%; }
     	right: 0px;
 	}
 }
+
+//** COnfigura logo do rodapé
+.cover-logo-group {
+
+	.cover-logo-item {
+
+		position: absolute;
+		bottom: 5px;
+		left: @app-cover-logo-left;
+		width: @app-cover-logo-width;
+
+		text-align: center;
+
+		&.logo-pos { }
+
+		&.logo-instituicao {
+			margin-left: (@app-cover-logo-width + 10);
+		}
+	}
+}
+

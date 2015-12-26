@@ -189,3 +189,46 @@
 
 @app-ico-iniciar: @app-ico-v-direita;
 @app-ico-iniciar-text: "Iniciar Leitura";
+
+
+//== Trata elementos da capa
+@app-font-size-app: ceil((@app-size-base * 1.42)); // ~20px
+@app-height-size-app: @app-font-size-app; // ~20px
+
+
+//** Configura a fachada da capa
+@app-cover-fachada-pdd-l: ceil((@app-height-size-app * 8.35)); // ~167px
+@app-cover-fachada-pdd-r: ceil((@app-height-size-app * 9.8)); // ~196px
+
+@app-cover-livro-font: ceil((@app-font-size-app * 2.6)); // ~52px
+@app-cover-livro-pdd: ceil((@app-height-size-app * 3)); // ~60px
+
+@app-cover-autor-font: ceil((@app-font-size-app * 0.8)); // ~16px
+@app-cover-autor-pdd: ceil((@app-height-size-app * 0.37)); // ~7.5px
+
+//**configrua os bototoes de navegação
+@app-cover-btn-font: ceil((@app-font-size-app * 2.1)); // ~42px
+@app-cover-btn-pdd: ceil((@app-height-size-app * 1)); // ~20px
+@app-cover-btn-mrg: ceil((@app-height-size-app * 1.9)); // ~30px
+@app-cover-btn-mrg-menu: ceil((@app-cover-btn-mrg * 7.33 )); //250px
+
+//** Configrua toltip dos botoes da navegação
+@app-cover-toltip-font: ceil((@app-font-size-app * 0.9));//~18px
+@app-cover-toltip-pdd: ceil((@app-cover-btn-pdd + ((@app-cover-btn-font - @app-cover-toltip-font) / 2)) * 0.55); //~20px
+@app-cover-toltip-top: ceil((@app-height-size-app * 2.25)); //~45px
+@app-cover-toltip-width: ceil((@app-font-size-app * 15)); //~300px
+@app-cover-toltip-height: ceil((@app-cover-toltip-font + (@app-cover-toltip-pdd*2))); //~54px
+
+
+//** COnfigrua botão de iniciar leitura
+@app-cover-iniciar-font: ceil((@app-font-size-app * 1.4)); // ~28px
+@app-cover-iniciar-ico: ceil((@app-cover-iniciar-font * 2.5)); // ~70px
+@app-cover-iniciar-pdd: ceil((@app-height-size-app * 1.25)); // ~25px
+@app-cover-iniciar-pdd-l: ceil((@app-height-size-app * 2.5)); // ~50px
+@app-cover-iniciar-pdd-r: ceil((@app-height-size-app * 3.15)); // ~63px
+@app-cover-iniciar-width: ceil((@app-cover-iniciar-font * 12.14)); // ~340px
+
+//** Configrua logos da capa
+@app-cover-logo-left: 40%; //40%
+@app-cover-logo-width: 170px; //170px
+

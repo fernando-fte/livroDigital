@@ -1,0 +1,15 @@
+//== Configura paginas
+html > * { display: none; }
+html > body { display: block; }
+html, body, .app-page { height: 100%; }
+
+//** Remove os espaços das colunas responsivas
+.col-notspace { margin: 0px; padding: 0;}
+
+.app-page { background-color: @app-cor-preto; position: fixed; width: 100%; }
+
+.app-cover { background-size: cover; background-repeat: no-repeat; background-position: center; }
+
+
+// Adiciona configruação da capa
+@import "cover.less";
