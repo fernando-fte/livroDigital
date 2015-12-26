@@ -27,20 +27,33 @@ html, body, .app-page { height: 100%; }
 
 //**configrua os bototoes de navegação
 @app-cover-btn-font: ceil((@app-font-size-app * 2.1)); // ~42px
-@app-cover-btn-pdd: ceil((@app-height-size-app * 0.26)); // ~5.5px
+@app-cover-btn-pdd: ceil((@app-height-size-app * 1)); // ~20px
 @app-cover-btn-mrg: ceil((@app-height-size-app * 1.9)); // ~30px
+@app-cover-btn-mrg-menu: ceil((@app-cover-btn-mrg * 7.33 )); //250px
 
+//** Configrua toltip dos botoes da navegação
 @app-cover-toltip-font: ceil((@app-font-size-app * 0.9));//~18px
-@app-cover-toltip-pdd: ceil((@app-font-size-app * 0.87));//~53px
-@app-cover-toltip-top: ceil((@app-font-size-app * 2.2));//~53px
-@app-cover-toltip-width: ceil((@app-font-size-app * 15));//~300px
+@app-cover-toltip-pdd: ceil((@app-cover-btn-pdd + ((@app-cover-btn-font - @app-cover-toltip-font) / 2)) * 0.55); //~20px
+@app-cover-toltip-top: ceil((@app-height-size-app * 2.25)); //~45px
+@app-cover-toltip-width: ceil((@app-font-size-app * 15)); //~300px
 @app-cover-toltip-height: ceil((@app-cover-toltip-font + (@app-cover-toltip-pdd*2))); //~54px
+
+
+//** COnfigrua botão de iniciar leitura
+@app-cover-iniciar-font: ceil((@app-font-size-app * 1.4)); // ~28px
+@app-cover-iniciar-ico: ceil((@app-cover-iniciar-font * 2.5)); // ~70px
+@app-cover-iniciar-pdd: ceil((@app-height-size-app * 1.25)); // ~25px
+@app-cover-iniciar-pdd-l: ceil((@app-height-size-app * 2.5)); // ~50px
+@app-cover-iniciar-pdd-r: ceil((@app-height-size-app * 3.15)); // ~63px
+@app-cover-iniciar-width: ceil((@app-cover-iniciar-font * 12.14)); // ~340px
+
+// ~78px
 
 //** Define a fonte padrão
 .app-cover, .app-text-livro, .app-text-livro, .cover-btn-nav { font-family: @app-font-app; }
 
 //** posiciona os elementos
-.cover-contents { margin-top: ceil((@app-height-size-app * 3.4)); }
+.cover-contents { width: 95%; position: absolute; top: 10%;}
 
 //** Configrua fachada
 .cover-fachada {
@@ -81,7 +94,7 @@ html, body, .app-page { height: 100%; }
 }
 
 //** Cofigura colula de botões
-.cover-nav-bar { background-color: rgba(0, 0, 0, 0.5); height: 100%; }
+.cover-nav-bar { background-color: rgba(0, 0, 0, 0.5); height: 100%; width: 5%; float: right;}
 .cover-btn-nav {
 
     display: block;
@@ -89,17 +102,17 @@ html, body, .app-page { height: 100%; }
     padding: @app-cover-btn-pdd 0px;
     margin-bottom: @app-cover-btn-mrg;
     line-height: @app-cover-btn-font;
-
-	// &:after { display: none; }
+    cursor: pointer;
 
 	&:hover{
 		background-color:  @app-cor-padrao-fraco;
-		.cover-btn-toltip {display: inline;}
+		.cover-btn-toltip {display: block;}
 	}
 }
 
 //** Configura botões
-.tomanocu{ margin-bottom: ceil((@app-cover-btn-mrg * 5.78)); }
+.btn-nav-menu{ margin-bottom: @app-cover-btn-mrg-menu; }
+
 .app-ico-menu, .app-ico-sumario, .app-ico-atividade, .app-ico-marcador, .app-ico-anotacao, .app-ico-referencia {
 	&:before { display: block; font-size: @app-cover-btn-font; color: @app-cor-preto-0; }
 }
@@ -114,24 +127,31 @@ html, body, .app-page { height: 100%; }
 .cover-btn-toltip {
 	display: none;
 	font-size: @app-cover-toltip-font;
+	text-transform: uppercase;
+
 	line-height: @app-cover-toltip-font;
 	padding: @app-cover-toltip-pdd 0px;
-	text-transform: uppercase;
-	top: -(@app-cover-toltip-top);
-	background-color: @app-cor-padrao-fraco;
-	right: ceil(@app-cover-toltip-width + ceil((@app-cover-toltip-height * 0.51)));
+	
 	width: @app-cover-toltip-width;
-	color: @app-cor-preto-0;
-	position: relative;
+	height: @app-cover-toltip-height;
+	
 	float: left;
+	position: relative;
+	top: -(@app-cover-toltip-top);
+	right: ceil(@app-cover-toltip-width + ceil((@app-cover-toltip-height * 0.51)));
+	
+	background-color: @app-cor-padrao-fraco;
+	color: @app-cor-preto-0;
+
+	.app-play-flipInX();
 
 	&:after {
-	    border: ceil((@app-cover-toltip-height * 0.51)) solid transparent;
+	    border: ceil((@app-cover-toltip-height * 0.50)) solid transparent;
 	    border-left-color: @app-cor-padrao-fraco;
-	    left: (@app-cover-toltip-width - 1);
+	    left: @app-cover-toltip-width;
 	    position: absolute;
 	    content: "";
-	    top: -(ceil((@app-cover-toltip-height * 0.01)));
+	    top: 0;
 	}
 }
 
@@ -141,3 +161,41 @@ html, body, .app-page { height: 100%; }
 }
 
 
+
+.cover-btn-iniciar {
+	position: fixed;
+	bottom: 30%;
+
+	display: block;
+	font-family: @app-font-app;
+	font-size: @app-cover-iniciar-font;
+	text-transform: uppercase;
+
+	line-height:  @app-cover-iniciar-font;
+	padding: @app-cover-iniciar-pdd;
+	padding-left: @app-cover-iniciar-pdd-l;
+	padding-right: @app-cover-iniciar-pdd-r;
+	min-width: @app-cover-iniciar-width;
+
+	color: @app-cor-preto-0;
+	background-color: @app-cor-padrao-40;
+
+	&:hover { cursor: pointer; background-color: @app-cor-padrao-60; }
+
+	&:before {
+		content: @app-ico-iniciar-text;
+		text-align: center;
+	}
+	&:after {
+		font-family: @app-font-ico; 
+		font-size: @app-cover-iniciar-ico;
+		content: @app-ico-iniciar;
+		background-color:  @app-cor-padrao-60;
+		padding: @app-cover-iniciar-pdd ceil((@app-cover-iniciar-pdd * 0.8));
+		float: left;
+
+		position: absolute;
+    	top: 0px;
+    	right: 0px;
+	}
+}

@@ -13,7 +13,7 @@
 	</div>
 
 	<!-- Botão iniciar leitura -->
-	<span class="cover-btn-ler app-ico-ler"></span>
+	<span class="col-md-offset-5 col-md-2 cover-btn-iniciar app-ico-iniciar"></span>
 
 	<!-- Contents para "pos" e logo -->
 	<div class="cover-logo cover-logo-bottom">
@@ -25,7 +25,7 @@
 	<div class="cover-nav-bar col-md-1 col-notspace row">
 
 		<!-- Botão do menu -->
-		<span class="cover-btn-nav tomanocu">
+		<span class="cover-btn-nav btn-nav-menu">
 			<span class="app-ico-menu"></span>
 		</span>
 
