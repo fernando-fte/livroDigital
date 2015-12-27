@@ -36,11 +36,6 @@
     }
 }
 
-//** Variavel de configuração para icones
-.app-var-ico (@ico) {
-
-	&:before { font-family: @app-font-ico; content: @ico; }
-}
 
 //** Cofigura colula de botões
 .cover-nav-bar { background-color: rgba(0, 0, 0, 0.5); height: 100%; width: 5%; float: right;}
@@ -57,20 +52,14 @@
 		background-color:  @app-cor-padrao-fraco;
 		.cover-btn-toltip {display: block;}
 	}
+
+	//** Configura botões
+	.app-ico-menu, .app-ico-sumario, .app-ico-atividade, .app-ico-marcador, .app-ico-anotacao, .app-ico-referencia { font-size: @app-cover-btn-font; color: @app-cor-preto-0; &:after{display: block; line-height: @app-cover-btn-font;}}
+	&.btn-nav-menu{  margin-bottom: @app-cover-btn-mrg-menu; }
 }
 
-//** Configura botões
-.btn-nav-menu{ margin-bottom: @app-cover-btn-mrg-menu; }
 
-.app-ico-menu, .app-ico-sumario, .app-ico-atividade, .app-ico-marcador, .app-ico-anotacao, .app-ico-referencia {
-	&:before { display: block; font-size: @app-cover-btn-font; color: @app-cor-preto-0; }
-}
-.app-ico-menu { .app-var-ico (@app-ico-menu);}
-.app-ico-sumario { .app-var-ico (@app-ico-sumario); }
-.app-ico-atividade { .app-var-ico (@app-ico-atividade); }
-.app-ico-marcador { .app-var-ico (@app-ico-marcador); }
-.app-ico-anotacao { .app-var-ico (@app-ico-anotacao); }
-.app-ico-referencia { .app-var-ico (@app-ico-referencia); }
+
 
 //** Configura Toltip
 .cover-btn-toltip {
@@ -94,7 +83,7 @@
 
 	.app-play-flipInX();
 
-	&:after {
+	&:before {
 	    border: ceil((@app-cover-toltip-height * 0.50)) solid transparent;
 	    border-left-color: @app-cor-padrao-fraco;
 	    left: @app-cover-toltip-width;

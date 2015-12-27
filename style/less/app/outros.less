@@ -1,0 +1,22 @@
+//== Pre configura icones
+//** Variavel de configuração para icones
+.app-var-ico (@ico) {
+
+	&:after { font-family: @app-font-ico; content: @ico; }
+}
+
+.app-ico-menu { .app-var-ico (@app-ico-menu);}
+.app-ico-menu-short { .app-var-ico (@app-ico-menu-short);}
+.app-ico-sumario { .app-var-ico (@app-ico-sumario); }
+.app-ico-atividade { .app-var-ico (@app-ico-atividade); }
+.app-ico-marcador { .app-var-ico (@app-ico-marcador); }
+.app-ico-anotacao { .app-var-ico (@app-ico-anotacao); }
+.app-ico-referencia { .app-var-ico (@app-ico-referencia); }
+.app-ico-config_leitura { .app-var-ico (@app-ico-referencia); }
+
+
+//** COnfigrua barra de navegação
+
+
+.app-nav-logo, .app-nav-section, .app-nav-btn-group, .app-nav-menu { border: 1px solid red; height: 40px }
+* { border: 1px solid green; height: 20px }
