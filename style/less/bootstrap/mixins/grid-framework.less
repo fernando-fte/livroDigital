@@ -74,6 +74,19 @@
   }
 }
 
+.calc-grid-column(@index, @class, @type) when (@type = min) {
+  .col-@{class}-@{index} {
+    min-height: percentage((@index / @grid-columns));
+    // width: inherit;
+  }
+}
+.calc-grid-column(@index, @class, @type) when (@type = fix) {
+  .col-@{class}-fix-@{index} {
+    height: percentage((@index / @grid-columns));
+    // width: inherit;
+  }
+}
+
 // Basic looping in LESS
 .loop-grid-columns(@index, @class, @type) when (@index >= 0) {
   .calc-grid-column(@index, @class, @type);
@@ -89,3 +102,27 @@
   .loop-grid-columns(@grid-columns, @class, push);
   .loop-grid-columns(@grid-columns, @class, offset);
 }
+
+.make-grid-row(@class) {
+  .float-grid-columns(@class);
+  .loop-grid-columns(@grid-columns, @class, min);
+  .loop-grid-columns(@grid-columns, @class, fix);
+}
+
+
+
+
+
+
+// // Grid de linhas
+// .col-row-1 { min-height: percentage((1 / @grid-columns)); }
+// .col-row-2 { min-height: percentage((2 / @grid-columns)); }
+// .col-row-3 { min-height: percentage((3 / @grid-columns)); }
+// .col-row-4 { min-height: percentage((4 / @grid-columns)); }
+// .col-row-5 { min-height: percentage((5 / @grid-columns)); }
+// .col-row-6 { min-height: percentage((6 / @grid-columns)); }
+
+
+
+
+

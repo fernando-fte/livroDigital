@@ -11,7 +11,6 @@
 		<title></title>
 
 		<!-- STYLE Bootstrap: Bootstrap LESS -->
-		<link rel="stylesheet/less" href="<?php echo $settings['wwwroot']?>/style/bootstrap.less">
 
 		<!-- STYLE app: app LESS -->
 		<link rel="stylesheet/less" href="<?php echo $settings['wwwroot']?>/style/app.less">
