@@ -12,9 +12,24 @@
 .app-ico-marcador { .app-var-ico (@app-ico-marcador); }
 .app-ico-anotacao { .app-var-ico (@app-ico-anotacao); }
 .app-ico-referencia { .app-var-ico (@app-ico-referencia); }
-.app-ico-config_leitura { .app-var-ico (@app-ico-referencia); }
+.app-ico-config_leitura { .app-var-ico (@app-ico-config_leitura); }
 
 
 //** Configrua barra de navegação
-.app-nav-logo, .app-nav-section, .app-nav-btn-group, .app-nav-menu { border: 1px solid red; height: 40px }
+.app-nav-bar {
+    display: block;
+    -webkit-box-shadow: 0px 2px 14px -2px rgba(0,0,0,0.66);
+    -moz-box-shadow: 0px 2px 14px -2px rgba(0,0,0,0.66);
+    box-shadow: 0px 2px 14px -2px rgba(0,0,0,0.66);
+    padding: 5px 0;
+    display: block;
+    position: fixed;
+    width: 100%;
+    top: 0px;
+}
 
+.app-nav-logo, .app-nav-section, .app-nav-btn-group, .app-nav-btn-group-item, .app-nav-menu { height: 47px;}
+
+.app-nav-btn-item:hover { cursor: pointer; color: @app-cor-padrao-80; }
+
+.app-nav-logo img { max-width: 100%;  max-height: 100%; }
