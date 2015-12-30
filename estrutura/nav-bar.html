@@ -2,61 +2,70 @@
 <div id="bar-nav" class="app-nav-bar clearfix">
 
 	<!-- Content para logo -->
-	<div class="app-nav-logo col-sm-2 hidden-xs">
+	<div class="app-nav-logo col-md-2 col-sm-3 hidden-ss hidden-xs">
 		<img src="<?php echo $settings['wwwroot']?>/img/logo.color.svg">
 	</div>
 
 	<!-- Titulo da seção -->
-	<div class="app-nav-section col-sm-6 col-xs-4">
+	<div class="app-nav-section col-md-6 col-sm-5 col-ss-6 col-xs-4">
 
 		<!-- Informações do livro -->
 		<div class="app-nav-section-info app-font-app">
 
 			<!-- Informações do livro -->
-			<div class="app-nav-section-livro hidden-xs app-cor-black-80 font-md-small-2">
+			<div class="app-nav-section-livro app-cor-black-80 font-md-small-2 font-sm-small-2 font-ss-1 hidden-xs">
 				<span class="app-nav-section-item app-livro text-uppercase text-bold">Finanças Empresariais</span>
-				<span class="app-nav-section-item">•</span>
-				<span class="app-nav-section-item app-autor text-italic">Albuquerque M. R</span>
+				<span class="app-nav-section-item hidden-ss hidden-xs">•</span>
+				<span class="app-nav-section-item app-autor text-italic hidden-ss hidden-xs">Albuquerque M. R</span>
 			</div>
 
 			<!-- Informações da seção -->
-			<div class="app-nav-section-secao app-cor-pattern-80 font-md-small-5">
+			<div class="app-nav-section-secao app-cor-pattern-80 font-md-small-5 font-sm-small-4 font-ss-4 font-xs-3">
 				<span class="app-nav-section-item app-secao text-uppercase text-bold">Abertura</span>
-				<span class="app-nav-section-item">•</span>
-				<span class="app-nav-section-item app-titulo hidden-xs">Reitoria</span>
+				<span class="app-nav-section-item hidden-ss hidden-xs">•</span>
+				<span class="app-nav-section-item app-titulo hidden-ss hidden-xs">Reitoria</span>
 			</div>
 		</div>
 	</div>
 
 	<!-- Botão do grupo de botões da navegação -->
-	<div class="app-nav-btn-group col-sm-4 col-xs-8 app-cor-pattern">
+	<div class="app-nav-btn-group col-md-4 col-sm-4 col-ss-6 col-xs-8 app-cor-pattern text-center font-md-5 font-sm-4 font-ss-4 font-xs-4">
 
 		<!-- Botão para configurar leitura -->
-		<div class="app-nav-btn-item nav-btn-sumario col-sm-2 col-xs-2 text-left">
-			<span class="app-ico-sumario font-sm-6 font-xs-3"></span>
+		<div class="app-nav-btn-item nav-btn-sumario col-md-2 col-sm-2 col-ss-2 col-xs-2">
+			<span class="app-ico-sumario font-md-6 font-sm-5 font-ss-5 font-xs-small-4"></span>
 		</div>
 
-		<span class="col-sm-2 col-xs-1"></span>
+		<span class="col-sm-2 col-xs-2"></span>
 
 		<!-- Botão para configurar leitura -->
-		<div class="app-nav-btn-item col-sm-2 col-xs-2 text-center">
-			<span class="app-ico-config_leitura font-md-5"></span>
+		<div class="app-nav-btn-item nav-btn-action text-center col-md-2 col-sm-2 col-ss-2 col-xs-2">
+			<span class="app-ico-config_leitura"></span>
+			<div class="app-nav-toltip nav-toltip-leitura hidden">
+				<div class="app-nav-toltip-contents"></div>
+			</div>
 		</div>
 
 		<!-- Botão para anotações -->
-		<div class="app-nav-btn-item col-sm-2 col-xs-2 text-center">
-			<span class="app-ico-anotacao font-md-5"></span>
+		<div class="app-nav-btn-item nav-btn-action col-md-2 col-sm-2 col-ss-2 col-xs-2">
+			<span class="app-ico-anotacao"></span>
+			<div class="app-nav-toltip nav-toltip-anotacao">
+				<div class="app-nav-toltip-contents"></div>
+			</div>
 		</div>
 
 		<!-- Botão para continuar leitura -->
-		<div class="app-nav-btn-item col-sm-2 col-xs-2 text-center">
-			<span class="app-ico-marcador font-md-5"></span>
+		<div class="app-nav-btn-item nav-btn-action col-md-2 col-sm-2 col-ss-2 col-xs-2">
+			<span class="app-ico-marcador"></span>
+			<div class="app-nav-toltip nav-toltip-posicao hidden">
+				<div class="app-nav-toltip-contents"></div>
+			</div>
 		</div>
 
 		<!-- Botão para continuar leitura -->
-		<div class="app-nav-btn-item nav-btn-menu col-sm-2 col-xs-2 text-right">
-			<span class="app-ico-menu hidden-xs font-sm-7"></span>
-			<span class="app-ico-menu-short hidden-sm hidden-md hidden-lg"></span>
+		<div class="app-nav-btn-item nav-btn-menu col-md-2 col-sm-2 col-ss-2 col-xs-2">
+			<span class="app-ico-menu hidden-ss hidden-xs font-sm-7 font-sm-6"></span>
+			<span class="app-ico-menu-short hidden-sm hidden-md hidden-lg font-ss-5"></span>
 		</div>
 	</div>
 </div>
