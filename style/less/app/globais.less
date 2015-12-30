@@ -152,48 +152,6 @@
 @app-titulo-cor-fraco: @app-cor-preto-60;
 
 
-//== Icones
-//
-@app-ico-alternativa: "\F10C";
-@app-ico-alternativa-hover: "\F192";
-@app-ico-alternativa-certa: "\F058";
-@app-ico-alternativa-errada: "\F057";
-@app-ico-alternativa-avaliar: "\F05D";
-@app-ico-alternativa-avaliar-hover: "\F058";
-
-@app-ico-v-baixo: "\F107";
-@app-ico-v-cima: "\F106";
-@app-ico-v-esquerda: "\F104";
-@app-ico-v-direita: "\F105";
-
-@app-ico-check-on: "\F14A";
-@app-ico-check-off: "\F096";
-
-@app-ico-menu: "\F0C9";
-@app-ico-menu-short: "\F142";
-@app-ico-menu-text: "Menu";
-
-@app-ico-sumario: "\F0CA";
-@app-ico-sumario-text: "Sumário";
-
-@app-ico-atividade: "\F040";
-@app-ico-atividade-text: "Atividades";
-
-@app-ico-marcador: "\F041";
-@app-ico-marcador-text: "Condinuar de onde parei";
-
-@app-ico-anotacao: "\F097";
-@app-ico-anotacao-text: "Anotações";
-
-@app-ico-referencia: "\F20E";
-@app-ico-referencia-text: "Referências";
-
-@app-ico-iniciar: @app-ico-v-direita;
-@app-ico-iniciar-text: "Iniciar Leitura";
-
-@app-ico-config_leitura: "\F1DE";
-@app-ico-config_leitura-text: "Configurar leitura";
-
 
 //== Trata elementos da capa
 @app-font-size-app: ceil((@app-size-base * 1.42)); // ~20px
@@ -216,12 +174,12 @@
 @app-cover-btn-mrg: ceil((@app-height-size-app * 1.5)); // ~30px
 @app-cover-btn-mrg-menu: ceil((@app-cover-btn-mrg * 7.33 )); //250px
 
-//** Configrua toltip dos botoes da navegação
-@app-cover-toltip-font: ceil((@app-font-size-app * 0.9));//~18px
-@app-cover-toltip-pdd: ceil((@app-cover-btn-pdd + ((@app-cover-btn-font - @app-cover-toltip-font) / 2)) * 0.55); //~20px
-@app-cover-toltip-top: ceil((@app-height-size-app * 2.25)); //~45px
-@app-cover-toltip-width: ceil((@app-font-size-app * 15)); //~300px
-@app-cover-toltip-height: ceil((@app-cover-toltip-font + (@app-cover-toltip-pdd*2))); //~54px
+//** Configrua tooltip dos botoes da navegação
+@app-cover-tooltip-font: ceil((@app-font-size-app * 0.9));//~18px
+@app-cover-tooltip-pdd: ceil((@app-cover-btn-pdd + ((@app-cover-btn-font - @app-cover-tooltip-font) / 2)) * 0.55); //~20px
+@app-cover-tooltip-top: ceil((@app-height-size-app * 2.25)); //~45px
+@app-cover-tooltip-width: ceil((@app-font-size-app * 15)); //~300px
+@app-cover-tooltip-height: ceil((@app-cover-tooltip-font + (@app-cover-tooltip-pdd*2))); //~54px
 
 
 //** COnfigrua botão de iniciar leitura

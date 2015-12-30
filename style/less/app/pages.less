@@ -4,6 +4,7 @@ html > body { display: block; }
 html, body, .app-page { height: 100%; }
 
 //** Remove os espaços das colunas responsivas
+//TODO: Substituir por paddin-none
 .col-notspace { margin: 0px; padding: 0;}
 
 .app-page { background-color: @app-cor-preto; position: fixed; width: 100%; }
@@ -13,3 +14,6 @@ html, body, .app-page { height: 100%; }
 
 // Adiciona configruação da capa
 @import "cover.less";
+
+// Adiciona configurações da barra de menu
+@import "nav-bar.less";

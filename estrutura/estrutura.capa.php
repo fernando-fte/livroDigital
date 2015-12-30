@@ -28,31 +28,31 @@
 		<!-- Botão para sumário -->
 		<span class="cover-btn-nav">
 			<span class="app-ico-sumario"></span>
-			<span class="cover-btn-toltip">Sumário</span>
+			<span class="cover-btn-tooltip">Sumário</span>
 		</span>
 
 		<!-- Botão para atividades -->
 		<span class="cover-btn-nav">
 			<span class="app-ico-atividade"></span>
-			<span class="cover-btn-toltip">Atividades</span>
+			<span class="cover-btn-tooltip">Atividades</span>
 		</span>
 
 		<!-- Botão para continuar leitura -->
 		<span class="cover-btn-nav">
 			<span class="app-ico-marcador"></span>
-			<span class="cover-btn-toltip">Condinuar de onde parei</span>
+			<span class="cover-btn-tooltip">Continuar de onde parei</span>
 		</span>
 
 		<!-- Botão para anotações -->
 		<span class="cover-btn-nav">
 			<span class="app-ico-anotacao"></span>
-			<span class="cover-btn-toltip">Anotações</span>
+			<span class="cover-btn-tooltip">Anotações</span>
 		</span>
 
 		<!-- Botão para refrerências -->
 		<span class="cover-btn-nav">
 			<span class="app-ico-referencia"></span>
-			<span class="cover-btn-toltip">Referências</span>
+			<span class="cover-btn-tooltip">Referências</span>
 		</span>
 	</div>
 </div>

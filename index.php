@@ -46,6 +46,14 @@
 		<!-- VENDOR: Latest compiled and minified Bootstrap JavaScript -->
 		<script src="<?php echo $settings['wwwroot']?>/vendor/bootstrap/js/bootstrap.min.js"></script>
 
+
+		<!-- VENDOR: http://seiyria.com/bootstrap-slider/ Bootstrap Slider -->
+		<script src="<?php echo $settings['wwwroot']?>/vendor/bootstrap/js/bootstrap.slider.min.js"></script>
+		<script type="text/javascript">
+			// Adiciona slider na barra do menu
+			$('#app-nav-light-density').slider({ formatter: function(value) { return 'Densidade da luz: ' + value; } });
+		</script>
+
 		<!-- VENDOR: CoffeeScript -->
 		<script src="http://coffeescript.org/extras/coffee-script.js"></script>
 

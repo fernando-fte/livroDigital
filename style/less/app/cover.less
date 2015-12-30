@@ -50,7 +50,7 @@
 
 	&:hover{
 		background-color:  @app-cor-padrao-fraco;
-		.cover-btn-toltip {display: block;}
+		.cover-btn-tooltip {display: block;}
 	}
 
 	//** Configura botões
@@ -61,22 +61,22 @@
 
 
 
-//** Configura Toltip
-.cover-btn-toltip {
+//** Configura tooltip
+.cover-btn-tooltip {
 	display: none;
-	font-size: @app-cover-toltip-font;
+	font-size: @app-cover-tooltip-font;
 	text-transform: uppercase;
 
-	line-height: @app-cover-toltip-font;
-	padding: @app-cover-toltip-pdd 0px;
+	line-height: @app-cover-tooltip-font;
+	padding: @app-cover-tooltip-pdd 0px;
 	
-	width: @app-cover-toltip-width;
-	height: @app-cover-toltip-height;
+	width: @app-cover-tooltip-width;
+	height: @app-cover-tooltip-height;
 	
 	float: left;
 	position: relative;
-	top: -(@app-cover-toltip-top);
-	right: ceil(@app-cover-toltip-width + ceil((@app-cover-toltip-height * 0.51)));
+	top: -(@app-cover-tooltip-top);
+	right: ceil(@app-cover-tooltip-width + ceil((@app-cover-tooltip-height * 0.51)));
 	
 	background-color: @app-cor-padrao-fraco;
 	color: @app-cor-preto-0;
@@ -84,9 +84,9 @@
 	.app-play-flipInX();
 
 	&:before {
-	    border: ceil((@app-cover-toltip-height * 0.50)) solid transparent;
+	    border: ceil((@app-cover-tooltip-height * 0.50)) solid transparent;
 	    border-left-color: @app-cor-padrao-fraco;
-	    left: @app-cover-toltip-width;
+	    left: @app-cover-tooltip-width;
 	    position: absolute;
 	    content: "";
 	    top: 0;

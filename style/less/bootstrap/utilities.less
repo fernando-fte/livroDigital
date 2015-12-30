@@ -65,3 +65,75 @@
 
   .center-vertical();
 }
+
+//
+//
+//== Configrua botões do aplicativo
+.btn-app {
+  font-family: @app-font-app;
+  text-transform: uppercase;
+  border: 1px solid @app-cor-padrao;
+  background-color: @app-cor-preto-0;
+  color: @app-cor-padrao;
+
+  &:hover {
+    background-color:  @app-cor-padrao;
+    color: @app-cor-preto-0;
+  }
+}
+
+//** Botão azul
+.btn-app-new {
+  font-family: @app-font-app;
+  text-transform: uppercase;
+  border: 1px solid @app-cor-azul;
+  background-color: @app-cor-preto-0;
+  color: @app-cor-azul;
+
+  &:hover {
+    background-color:  @app-cor-azul;
+    color: @app-cor-preto-0;
+  }
+}
+
+//** Botão verde
+.btn-app-change {
+  font-family: @app-font-app;
+  text-transform: uppercase;
+  border: 1px solid @app-cor-verde;
+  background-color: @app-cor-preto-0;
+  color: @app-cor-verde;
+
+  &:hover {
+    background-color:  @app-cor-verde;
+    color: @app-cor-preto-0;
+  }
+}
+
+//
+//
+//== Divisor de itens
+.app-variant-divisor(@direction) {
+  border-@{direction}: 1px solid @app-cor-preto-10;
+    margin-@{direction}: 5px;
+}
+
+.app-divisor-bottom { .app-variant-divisor(bottom); }
+.app-divisor-top { .app-variant-divisor(top); }
+.app-divisor-left { .app-variant-divisor(left); }
+.app-divisor-right { .app-variant-divisor(right); }
+
+//== Configuração de padding
+.padding-variant-none (@direction) {
+  padding-@{direction}: 0px;
+}
+
+.padding-none-top { .padding-variant-none(top); }
+.padding-none-bottom { .padding-variant-none(bottom); }
+.padding-none-left { .padding-variant-none(left); }
+.padding-none-right { .padding-variant-none(right); }
+
+.padding-none-height { .padding-variant-none(top); .padding-variant-none(bottom); }
+.padding-none-width { .padding-variant-none(left); .padding-variant-none(right); }
+.padding-none-all { .padding-variant-none(top); .padding-variant-none(bottom); .padding-variant-none(left); .padding-variant-none(right); }
+

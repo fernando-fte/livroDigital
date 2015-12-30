@@ -54,6 +54,14 @@
 @app-cor-azul-20: #DBE5F1;
 @app-cor-azul-10: #EDF2F8;
 
+//## Cor light padrão do aplicativo
+@app-cor-light: #f5f45e;
+@app-cor-light-80: #f6f67a;
+@app-cor-light-60: #f9f898;
+@app-cor-light-40: #fbfaba;
+@app-cor-light-20: #fdfcdc;
+@app-cor-light-10: #fdfded;
+
 //## Cor vermelho padrão do aplicativo
 @app-cor-vermelho: @app-cor-padrao-fraco;
 @app-cor-vermelho-80: @app-cor-padrao-fraco-80;
@@ -614,9 +622,11 @@
 //** Tooltip max width
 @tooltip-max-width:           200px;
 //** Tooltip text color
-@tooltip-color:               #fff;
+// @tooltip-color:               #fff;
+@tooltip-color:               @app-cor-preto-0;
 //** Tooltip background color
-@tooltip-bg:                  #000;
+// @tooltip-bg:                  #000;
+@tooltip-bg:                  @app-cor-padrao-fraco;
 @tooltip-opacity:             .9;
 
 //** Tooltip arrow width
