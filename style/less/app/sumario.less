@@ -2,12 +2,49 @@
 	.clearfix();
 	border: 1px solid red;
 	min-height: 100%;
+	width: 2490px; // R:LG
+
+	.app-sum-section-item {
+
+		height: 40px; // R:LG
+		border-bottom: 1px solid @app-cor-padrao-40;
+
+		&.app-sum-section-header {
+			
+			height: 80px; // R:LG
+		    margin-bottom: 25px;
+		    margin-top: 5px;
+		    padding-top: 5px;
+		    border-top: 5px solid @app-cor-padrao;
+			border-bottom: 0px;
+		}
+	}
+
 }
 
-.app-sum-btn-icon {
+.app-sum-btn-icon, .app-sum-btn-icon-marcador, .app-sum-btn-icon-sub  {
 	.clearfix();
 	height: 100%;
+	padding: 0px;
+	padding-top: 5px;
+	cursor: pointer;
+	&:after{ text-align: center; display: block;}
 }
+
+.app-sum-btn-icon {.app-var-ico(@app-ico-ir);}
+.app-sum-btn-icon-marcador {.app-var-ico(@app-ico-ir);}
+
+.app-sum-btn-icon-sub {
+	height: 90%;
+    border-left: 1px solid @app-cor-padrao-40;
+	.app-var-ico(@app-ico-v-baixo);
+}
+
+/*
+.app-sum-section-item &.sub-display // quando estiver ativo o sub
+.app-sum-section-item &.off // quando ainda nao estiver lido
+	.app-sum-btn-icon-sub {.app-var-ico(@app-ico-v-cima);}
+*/
 
 
 //== Configruações responsivas
@@ -33,7 +70,7 @@
 
 // Large grid (LG)
 @media (min-width: @screen-lg-min) {
-	.app-sum-contents { width: 2490px };
+	// .app-sum-contents { width: 2490px; height:  };
 }
 
 
