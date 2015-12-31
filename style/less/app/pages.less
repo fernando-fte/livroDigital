@@ -1,7 +1,7 @@
 //== Configura paginas
 html > * { display: none; }
 html > body { display: block; }
-html, body, .app-page { height: 100%; }
+html, body, .app-page { height: 100%; overflow: hidden;}
 
 //** Remove os espaços das colunas responsivas
 //TODO: Substituir por paddin-none
@@ -11,7 +11,7 @@ html, body, .app-page { height: 100%; }
 
 .app-cover { background-size: cover; background-repeat: no-repeat; background-position: center; }
 
-.contents { display: block; height: 100%; border: 1px solid red; position: absolute; bottom: 0px; padding-top: 57px; width: 100%; }
+.contents { display: block; height: 100%; border: 1px solid red; position: absolute; bottom: 0px; padding-top: 57px; width: 100%;  overflow: scroll;}
 
 
 
@@ -19,13 +19,13 @@ html, body, .app-page { height: 100%; }
 
 //== Configruações responsivas
 // Min Min grid (XS)
-@media (max-width: @screen-xs-max) { .contents { padding-top: @app-nav-height-xs; } } // TODO: COnfigruar proporção de tamanhos
+@media (max-width: @screen-xs-max) { .contents { padding-top: (@app-nav-height-xs + 13); } } // TODO: COnfigruar proporção de tamanhos
  
 // Min Min grid (SS)
-@media (min-width: @screen-ss-min) { .contents { padding-top: @app-nav-height-ss; } } // TODO: COnfigruar proporção de tamanhos
+@media (min-width: @screen-ss-min) { .contents { padding-top: (@app-nav-height-ss + 13); } } // TODO: COnfigruar proporção de tamanhos
 
 // Min grid (SM)
-@media (min-width: @screen-sm-min) { .contents { padding-top: @app-nav-height-sm; } } // TODO: COnfigruar proporção de tamanhos
+@media (min-width: @screen-sm-min) { .contents { padding-top: (@app-nav-height-sm + 13); } } // TODO: COnfigruar proporção de tamanhos
 
 // Medium grid (MD)
 @media (min-width: @screen-md-min) { .contents { padding-top: (@app-nav-height-md + 13); } } // TODO: COnfigruar proporção de tamanhos

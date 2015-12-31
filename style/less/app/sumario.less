@@ -1,120 +1,199 @@
-.app-sum-contents {
-	.clearfix();
-	border: 1px solid red;
-	min-height: 100%;
-	width: 2490px; // R:LG
+.app-variant-sum-responsive (@width-contents, @width-itens) {
+	//== COnfigura pagina do sumario
+	.app-sum-contents {
+		.clearfix();
+		min-height: 100%;
+		// width: 2490px; // R:LG
+		width: @width-contents; // R:LG
 
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+
+	//** Configura blocos de itens do sumario
+	.app-sum-section {
+		.clearfix();
+		width: @width-itens; // 5 sections
+		margin-top: 5px;
+
+		padding-top: 5px;
+		padding-left: 10px;
+		padding-right: 10px;
+
+		float: left;
+
+		&:before {
+			content: " ";
+			display: block;
+			width: 100%;
+			margin-bottom: 5px;
+			margin-top: 5px;
+			border-bottom: 8px solid @app-cor-padrao;
+		}
+	}
+
+	//** Configrua bloco de sub itens
+	.app-sum-section-sub {
+		display: none;
+		margin-top: 10px;
+	}
+
+	//**Configura o bloco de pre textuais
+	.app-sum-section-sections {
+
+		background-color: @app-cor-padrao-10;
+	    padding-top: 35px;
+	    padding-bottom: 35px;
+		// margin-left: 20px;
+
+	    &:before {display: none;}
+
+	    .app-sum-section-header {
+	    	margin-bottom: 0px;
+	    	margin-top: 35px;
+	    	&:first-child {margin-top: 0px;}
+	    }
+	}
+
+
+	//== Configura todos os itens do sumario
 	.app-sum-section-item {
-		height: 40px; // R:LG
+		.clearfix();
+		padding-top: 5px;
+		padding-bottom: 5px;
+
+		margin-bottom: 1px;
+
+		border-left: 25px solid @app-cor-padrao-40;
 		border-bottom: 1px solid @app-cor-padrao-40;
 
+		//** Configrua botão
+		.app-var-ico-before(@app-ico-ir);
+		&:before {
+			display: block;
+			position: absolute;
+			float: left;
+			top: 5px;
+			left: -18px;
+			color: white;
+		}
+		&.app-sum-marcador { .app-var-ico-before(@app-ico-marcador) }
+		&.app-sum-atividade { .app-var-ico-before(@app-ico-atividade) }
+
 		&:hover { cursor: pointer; background-color: @app-cor-padrao-40; }
+	}
 
-		&.app-sum-section-header {
-			
-			height: 80px; // R:LG
-			margin-bottom: 25px;
-			margin-top: 5px;
-			padding-top: 5px;
-			padding-bottom: 5px;
-			border-top: 5px solid @app-cor-padrao;
-			border-bottom: 0px;
+	//** Item quando for titulo da seção
+	.app-sum-section-header {
 
-			&:hover { 
-				background-color: @app-cor-padrao-60; 
-				* {color: @app-cor-preto-0;} 
-				.app-sum-btn-icon { background-color: @app-cor-padrao-60;}
-			}
-		}
+		margin-bottom: 25px;
 
-		&.sub-display {
-			// height: auto;
+		border-color: @app-cor-preto-60;
+		border-bottom: 0px;
 
-			.app-sum-section-sub {display: block;}
-			.app-sum-btn-icon-sub { .app-var-ico(@app-ico-v-cima); }
-		}
-
-		.app-sum-section-sub { 
-			display: none;
-			padding-top: 5px; 
-			padding-bottom: 5px;
-			background-color: @app-cor-padrao-20;
-
-			.app-sum-section-sub-item {
-				padding-top: 6px; // R:LG
-				padding-bottom: 6px; // R:LG
-				border-bottom: 1px solid @app-cor-preto-40;
-
-				.app-sum-btn-icon { 
-					padding-top: 3px; 
-					&:after {color: @app-cor-padrao;}
-				}
-				&:last-child{ border-bottom: 0px; }
-
-				&:hover{
-					.app-sum-btn-icon {  &:after {color: @app-cor-preto-0;} }
-					border-bottom: 2px solid @app-cor-padrao-40;
-				}
-			}
+		&:hover { 
+			background-color: @app-cor-padrao-80; 
+			* {color: @app-cor-preto-0;} 
 		}
 	}
-}
 
-.app-sum-btn-icon, .app-sum-btn-icon-marcador, .app-sum-btn-icon-sub  {
-	.clearfix();
-	height: 100%;
-	padding: 0px;
-	padding-top: 5px;
-	&:after{ text-align: center; display: block;}
-}
+	//** Quando for um sub item
+	.app-sum-section-sub-item {
 
-.app-sum-btn-icon {.app-var-ico(@app-ico-ir);}
-.app-sum-btn-icon-marcador {.app-var-ico(@app-ico-ir);}
+	    border-color: @app-cor-preto-60;
+	    border-left-color: @app-cor-padrao-10;
+	    &:last-child { border-bottom: 0px; }
 
-.app-sum-btn-icon-sub {
-	border-left: 1px solid @app-cor-padrao-40;
+	    // configrua cor do botão
+	    &:before { color: @app-cor-padrao-80; }
 
-	.app-var-ico(@app-ico-v-baixo);
-	&:hover {
-		cursor: pointer;
-		color: @app-cor-preto-0;
+	    // Qunado clicado
+		&:hover { border-left-color: @app-cor-padrao-40; }
+	}
+
+	//** Exibe sub itens
+	.display-sub {
+
+		// Configrua quando estiver exibindo o sub item
+		padding-bottom: 5px;
+		background-color: @app-cor-padrao-10;
+		&:hover { background-color: @app-cor-padrao-10; }
+
+		// Exibe o box do sub item
+		.app-sum-section-sub {display: block;}
+
+		// Configura botão sub
+		.app-sum-btn-icon-sub { .app-var-ico(@app-ico-v-cima); }
+	}
+
+	.app-sum-btn-icon-sub {
+		border-left: 1px solid @app-cor-padrao-80;
+	    padding: 2px;
+	    text-align: center;
+		color: @app-cor-padrao;
+	    line-height: 12px;
+	    position: absolute;
+	    bottom: 4px;
+
+		.app-var-ico(@app-ico-v-baixo);
+
+		// Quando encima
+		&:hover:after{.app-play-bounce()};
+	}
+
+	// Quando um item for novo
+	.app-sum-item-new {
+
+		border-color: @app-cor-padrao;
 		background-color: @app-cor-padrao;
+		*{ color: @app-cor-preto-0; }
 	}
 }
 
-
-
-/*
-.app-sum-section-item &.sub-display // quando estiver ativo o sub
-.app-sum-section-item &.off // quando ainda nao estiver lido
-	.app-sum-btn-icon-sub {.app-var-ico(@app-ico-v-cima);}
-*/
 
 
 //== Configruações responsivas
 // Min Min grid (XS)
 @media (max-width: @screen-xs-max) {
+	@width-itens: 100%; // 5 sections
+	@width-contents: 100%;
+	.app-variant-sum-responsive (@width-contents, @width-itens);
 
+	.app-sum-contents { padding-left: 5%; padding-right: 5%; }
+	.app-sum-section { margin-bottom: 10%; }
+	.app-sum-section-sections { border-radius: 10px; }
 }
  
 // Min Min grid (SS)
 @media (min-width: @screen-ss-min) {
+	@width-itens: 100%; // 5 sections
+	@width-contents: 100%;
+	.app-variant-sum-responsive (@width-contents, @width-itens);
 
+	.app-sum-contents { padding-left: 10%; padding-right: 10%; }
+	.app-sum-section { margin-bottom: 10%; }
+	.app-sum-section-sections { border-radius: 10px; }
 }
 
 // Min grid (SM)
 @media (min-width: @screen-sm-min) {
-
+	@width-itens: (100% / 5); // 5 sections
+	@width-contents: 1600px;
+	.app-variant-sum-responsive (@width-contents, @width-itens);
 }
 
 // Medium grid (MD)
 @media (min-width: @screen-md-min) {
-
+	@width-itens: (100% / 5); // 5 sections
+	@width-contents: 1600px;
+	.app-variant-sum-responsive (@width-contents, @width-itens);
 }
 
 // Large grid (LG)
 @media (min-width: @screen-lg-min) {
-	// .app-sum-contents { width: 2490px; height:  };
+	@width-itens: (100% / 5); // 5 sections
+	@width-contents: 1600px;
+	.app-variant-sum-responsive (@width-contents, @width-itens);
 }
 
 

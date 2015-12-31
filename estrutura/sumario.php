@@ -7,49 +7,777 @@
 	<section id="sumario" class="app-sum-contents section-page">
 
 		<!-- Gruop para cada capitulo -->
-		<div class="app-sum-section | col-md-2 col-sm-2 col-ss-2 col-xs-2">
+		<div class="app-sum-section app-sum-section-sections">
 
 			<!-- Titulo do capitulo -->
-			<div class="app-sum-section-item app-sum-section-header | app-font-app | padding-none-width | col-md-12 col-sm-12 col-ss-12 col-xs-12">
+			<div class="app-sum-section-item app-sum-section-header | app-font-app | padding-none-right | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-2 font-md-small-2 font-sm-small-2 font-ss-small-2 font-xs-small-2">
 
-				<!-- Icone do botão indicador -->
-				<span class="app-sum-btn-icon | app-bg-black-60 app-cor-white | col-md-1 col-sm-1 col-ss-1 col-xs-1 | font-md-2 font-sm-2 font-ss-2 font-xs-2"></span>
+				<!-- Nome da seção (unidade I|II|III / abertura ...) -->
+				<span class="app-sum-section-secao | app-cor-black-80 | text-uppercase text-bold | padding-none-width | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-4 font-md-small-3 font-sm-2 font-ss-small-4 font-xs-small-4">Abertura</span>
+			</div>
 
-				<!-- COntents do header -->
-				<div class="app-sum-section-header-contents | col-md-11 col-sm-11 col-ss-11 col-xs-11">
-					
-					<!-- Nome da seção (unidade I|II|III / abertura ...) -->
-					<span class="app-sum-section-secao | app-cor-black-80 | text-uppercase text-bold | padding-none-width | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-md-3 font-sm-3 font-ss-3 font-xs-3">Capítulo I</span>
+			<!-- Itens do sumario -->
+			<div class="app-sum-section-item | app-font-header | padding-none-width | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-2 font-md-2 font-sm-2 font-ss-2 font-xs-2">
 
-					<!-- Nome caso seja titulo -->
-					<span class="app-sum-section-titulo | app-cor-black-60 | padding-none-width | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-md-small-4 font-sm-small-4 font-ss-small-4 font-xs-small-4">A função financeira, análise das demonstrações financeiras</span>
+				<!-- Nome da seção -->
+				<span class="sum-section-name | app-cor-black-80 | text-uppercase text-bold | col-md-11 col-sm-11 col-ss-11 col-xs-11">Reitoria</span>
+
+				<!-- Icone do botão -->
+				<span class="app-sum-btn-icon-sub | col-md-1 col-sm-1 col-ss-1 col-xs-1 | font-md-4 font-sm-4 font-ss-4 font-xs-4"></span>
+			</div>
+
+			<!-- Itens do sumario -->
+			<div class="app-sum-section-item | app-font-header | padding-none-width | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-2 font-md-2 font-sm-2 font-ss-2 font-xs-2">
+
+				<!-- Nome da seção -->
+				<span class="sum-section-name | app-cor-black-80 | text-uppercase text-bold | col-md-11 col-sm-11 col-ss-11 col-xs-11">Coordenadoria Geral da EAD</span>
+
+				<!-- Icone do botão -->
+				<span class="app-sum-btn-icon-sub | col-md-1 col-sm-1 col-ss-1 col-xs-1 | font-md-4 font-sm-4 font-ss-4 font-xs-4"></span>
+			</div>
+
+
+
+			<!-- Titulo do capitulo -->
+			<div class="app-sum-section-item app-sum-section-header | app-font-app | padding-none-right | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-2 font-md-small-2 font-sm-small-2 font-ss-small-2 font-xs-small-2">
+
+				<!-- Nome da seção (unidade I|II|III / abertura ...) -->
+				<span class="app-sum-section-secao | app-cor-black-80 | text-uppercase text-bold | padding-none-width | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-4 font-md-small-3 font-sm-2 font-ss-small-4 font-xs-small-4">Professores</span>
+			</div>
+
+			<!-- Itens do sumario -->
+			<div class="app-sum-section-item | app-font-header | padding-none-width | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-2 font-md-2 font-sm-2 font-ss-2 font-xs-2">
+
+				<!-- Nome da seção -->
+				<span class="sum-section-name | app-cor-black-80 | text-uppercase text-bold | col-md-11 col-sm-11 col-ss-11 col-xs-11">Marcela Ribeiro de Albuquerque</span>
+
+				<!-- Icone do botão -->
+				<span class="app-sum-btn-icon-sub | col-md-1 col-sm-1 col-ss-1 col-xs-1 | font-md-4 font-sm-4 font-ss-4 font-xs-4"></span>
+			</div>
+
+
+			<!-- Titulo do capitulo -->
+			<div class="app-sum-section-item app-sum-section-header | app-font-app | padding-none-right | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-2 font-md-small-2 font-sm-small-2 font-ss-small-2 font-xs-small-2">
+
+				<!-- Nome da seção (unidade I|II|III / abertura ...) -->
+				<span class="app-sum-section-secao | app-cor-black-80 | text-uppercase text-bold | padding-none-width | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-4 font-md-small-3 font-sm-2 font-ss-small-4 font-xs-small-4">Introdução</span>
+			</div>
+
+			<!-- Titulo do capitulo -->
+			<div class="app-sum-section-item app-sum-section-header | app-font-app | padding-none-right | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-2 font-md-small-2 font-sm-small-2 font-ss-small-2 font-xs-small-2">
+
+				<!-- Nome da seção (unidade I|II|III / abertura ...) -->
+				<span class="app-sum-section-secao | app-cor-black-80 | text-uppercase text-bold | padding-none-width | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-4 font-md-small-3 font-sm-2 font-ss-small-4 font-xs-small-4">Atividades</span>
+			</div>
+
+			<!-- Titulo do capitulo -->
+			<div class="app-sum-section-item app-sum-section-header | app-font-app | padding-none-right | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-2 font-md-small-2 font-sm-small-2 font-ss-small-2 font-xs-small-2">
+
+				<!-- Nome da seção (unidade I|II|III / abertura ...) -->
+				<span class="app-sum-section-secao | app-cor-black-80 | text-uppercase text-bold | padding-none-width | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-4 font-md-small-3 font-sm-2 font-ss-small-4 font-xs-small-4">Referências</span>
+			</div>
+		</div>
+
+		<!-- Gruop para cada capitulo -->
+		<div class="app-sum-section">
+
+			<!-- Titulo do capitulo -->
+			<div class="app-sum-section-item app-sum-section-header | app-font-app | padding-none-right | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-2 font-md-small-2 font-sm-small-2 font-ss-small-2 font-xs-small-2">
+
+				<!-- Nome da seção (unidade I|II|III / abertura ...) -->
+				<span class="app-sum-section-secao | app-cor-black-80 | text-uppercase text-bold | padding-none-width | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-4 font-md-small-3 font-sm-2 font-ss-small-4 font-xs-small-4">Capítulo I</span>
+
+				<!-- Nome caso seja titulo -->
+				<span class="app-sum-section-titulo | app-cor-black-60 | padding-none-width | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-4 font-md-3 font-sm-3 font-ss-4 font-xs-4">A função financeira, análise das demonstrações financeiras</span>
+			</div>
+
+			<!-- Itens do sumario -->
+			<div class="app-sum-section-item display-sub | app-font-header | padding-none-width | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">
+
+				<!-- Nome da seção -->
+				<span class="sum-section-name | app-cor-black-80 | text-uppercase text-bold | col-md-11 col-sm-11 col-ss-11 col-xs-11">Objetivos da administração financeira e seus conflitos</span>
+
+				<!-- Icone do botão -->
+				<span class="app-sum-btn-icon-sub | col-md-1 col-sm-1 col-ss-1 col-xs-1 | font-md-4 font-sm-4 font-ss-4 font-xs-4"></span>
+
+
+				<div class="app-sum-section-sub | col-md-12 col-sm-12 col-ss-12 col-xs-12 |">
+
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Introdução</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Objetivos da administração financeira e seus conflitos</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Organização da função financeira</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Análise horizontal e vertical</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Análise por meio de índices</span>
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Fator de insolvência de kanitz</span>
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Fórmula dupont</span>
 				</div>
 			</div>
 
 			<!-- Itens do sumario -->
-			<div class="app-sum-section-item | app-font-header | padding-none-width | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-md-2 font-sm-2 font-ss-2 font-xs-2 sub-display">
-
-				<!-- Icone do botão indicador -->
-				<span class="app-sum-btn-icon |  app-bg-pattern-40 app-cor-white | col-md-1 col-sm-1 col-ss-1 col-xs-1"></span>
+			<div class="app-sum-section-item | app-font-header | padding-none-width | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-2 font-md-2 font-sm-2 font-ss-2 font-xs-2">
 
 				<!-- Nome da seção -->
-				<span class="sum-section-name | app-cor-black-80 | text-uppercase text-bold | col-md-10 col-sm-10 col-ss-10 col-xs-10">Objetivos da administração financeira e seus conflitos</span>
+				<span class="sum-section-name | app-cor-black-80 | text-uppercase text-bold | col-md-11 col-sm-11 col-ss-11 col-xs-11">Objetivos da administração financeira e seus conflitos</span>
 
 				<!-- Icone do botão -->
-				<span class="app-sum-btn-icon-sub | app-cor-pattern | col-md-1 col-sm-1 col-ss-1 col-xs-1 | font-md-4 font-sm-4 font-ss-4 font-xs-4"></span>
+				<span class="app-sum-btn-icon-sub | col-md-1 col-sm-1 col-ss-1 col-xs-1 | font-md-4 font-sm-4 font-ss-4 font-xs-4"></span>
 
-				<!-- Gruop para cada capitulo -->
-				<div class="app-sum-section-sub | padding-none-width | col-md-12 col-sm-12 col-ss-12 col-xs-12">
 
-					<!-- Sub-itens do sumario -->
-					<div class="app-sum-section-sub-item | app-font-header | padding-none-width | col-md-11 col-sm-11 col-ss-11 col-xs-11 | col-md-offset-1 col-sm-offset-1 col-ss-offset-1 col-xs-offset-1">
+				<div class="app-sum-section-sub | col-md-12 col-sm-12 col-ss-12 col-xs-12 |">
 
-						<!-- Icone do botão indicador -->
-						<span class="app-sum-btn-icon | app-cor-black-80 | col-md-1 col-sm-1 col-ss-1 col-xs-1 | font-md-small-2 font-sm-small-2 font-ss-small-2 font-xs-small-2"></span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Introdução</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Objetivos da administração financeira e seus conflitos</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Organização da função financeira</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Análise horizontal e vertical</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Análise por meio de índices</span>
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Fator de insolvência de kanitz</span>
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Fórmula dupont</span>
+				</div>
+			</div>
 
-						<!-- Nome da seção -->
-						<span class="app-sum-section-sub-name | col-md-11 col-sm-11 col-ss-11 col-xs-11 | font-md-2 font-sm-2 font-ss-2 font-xs-2">Objetivos da administração financeira e seus conflitos</span>
-					</div>
+			<!-- Itens do sumario -->
+			<div class="app-sum-section-item | app-font-header | padding-none-width | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-2 font-md-2 font-sm-2 font-ss-2 font-xs-2">
+
+				<!-- Nome da seção -->
+				<span class="sum-section-name | app-cor-black-80 | text-uppercase text-bold | col-md-11 col-sm-11 col-ss-11 col-xs-11">Objetivos da administração financeira e seus conflitos</span>
+
+				<!-- Icone do botão -->
+				<span class="app-sum-btn-icon-sub | col-md-1 col-sm-1 col-ss-1 col-xs-1 | font-md-4 font-sm-4 font-ss-4 font-xs-4"></span>
+
+
+				<div class="app-sum-section-sub | col-md-12 col-sm-12 col-ss-12 col-xs-12 |">
+
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Introdução</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Objetivos da administração financeira e seus conflitos</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Organização da função financeira</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Análise horizontal e vertical</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Análise por meio de índices</span>
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Fator de insolvência de kanitz</span>
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Fórmula dupont</span>
+				</div>
+			</div>
+
+			<!-- Itens do sumario -->
+			<div class="app-sum-section-item  app-sum-marcador | app-font-header | padding-none-width | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-md-2 font-sm-2 font-ss-2 font-xs-2">
+
+				<!-- Nome da seção -->
+				<span class="sum-section-name | app-cor-black-80 | text-uppercase text-bold | col-md-11 col-sm-11 col-ss-11 col-xs-11">Objetivos da administração financeira e seus conflitos</span>
+
+				<!-- Icone do botão -->
+				<span class="app-sum-btn-icon-sub | col-md-1 col-sm-1 col-ss-1 col-xs-1 | font-md-4 font-sm-4 font-ss-4 font-xs-4"></span>
+
+
+				<div class="app-sum-section-sub | col-md-12 col-sm-12 col-ss-12 col-xs-12 |">
+
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Introdução</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Objetivos da administração financeira e seus conflitos</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Organização da função financeira</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Análise horizontal e vertical</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Análise por meio de índices</span>
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Fator de insolvência de kanitz</span>
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Fórmula dupont</span>
+				</div>
+			</div>
+
+			<!-- Itens do sumario -->
+			<div class="app-sum-section-item | app-font-header | padding-none-width | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-2 font-md-2 font-sm-2 font-ss-2 font-xs-2">
+
+				<!-- Nome da seção -->
+				<span class="sum-section-name | app-cor-black-80 | text-uppercase text-bold | col-md-11 col-sm-11 col-ss-11 col-xs-11">Objetivos da administração financeira e seus conflitos</span>
+
+				<!-- Icone do botão -->
+				<span class="app-sum-btn-icon-sub | col-md-1 col-sm-1 col-ss-1 col-xs-1 | font-md-4 font-sm-4 font-ss-4 font-xs-4"></span>
+
+
+				<div class="app-sum-section-sub | col-md-12 col-sm-12 col-ss-12 col-xs-12 |">
+
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Introdução</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Objetivos da administração financeira e seus conflitos</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Organização da função financeira</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Análise horizontal e vertical</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Análise por meio de índices</span>
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Fator de insolvência de kanitz</span>
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Fórmula dupont</span>
+				</div>
+			</div>
+
+			<!-- Itens do sumario -->
+			<div class="app-sum-section-item app-sum-item-new | app-font-header | padding-none-width | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-md-2 font-sm-2 font-ss-2 font-xs-2">
+
+				<!-- Nome da seção -->
+				<span class="sum-section-name | app-cor-black-80 | text-uppercase text-bold | col-md-11 col-sm-11 col-ss-11 col-xs-11">Objetivos da administração financeira e seus conflitos</span>
+
+				<!-- Icone do botão -->
+				<span class="app-sum-btn-icon-sub | col-md-1 col-sm-1 col-ss-1 col-xs-1 | font-md-4 font-sm-4 font-ss-4 font-xs-4"></span>
+
+
+				<div class="app-sum-section-sub | col-md-12 col-sm-12 col-ss-12 col-xs-12 |">
+
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Introdução</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Objetivos da administração financeira e seus conflitos</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Organização da função financeira</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Análise horizontal e vertical</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Análise por meio de índices</span>
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Fator de insolvência de kanitz</span>
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Fórmula dupont</span>
+				</div>
+			</div>
+		</div>
+
+		<!-- Gruop para cada capitulo -->
+		<div class="app-sum-section">
+
+			<!-- Titulo do capitulo -->
+			<div class="app-sum-section-item app-sum-section-header | app-font-app | padding-none-right | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-2 font-md-small-2 font-sm-small-2 font-ss-small-2 font-xs-small-2">
+
+				<!-- Nome da seção (unidade I|II|III / abertura ...) -->
+				<span class="app-sum-section-secao | app-cor-black-80 | text-uppercase text-bold | padding-none-width | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-4 font-md-small-3 font-sm-2 font-ss-small-4 font-xs-small-4">Capítulo II</span>
+
+				<!-- Nome caso seja titulo -->
+				<span class="app-sum-section-titulo | app-cor-black-60 | padding-none-width | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-4 font-md-3 font-sm-3 font-ss-4 font-xs-4">A função financeira, análise das demonstrações financeiras</span>
+			</div>
+
+			<!-- Itens do sumario -->
+			<div class="app-sum-section-item | app-font-header | padding-none-width | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-2 font-md-2 font-sm-2 font-ss-2 font-xs-2">
+
+				<!-- Nome da seção -->
+				<span class="sum-section-name | app-cor-black-80 | text-uppercase text-bold | col-md-11 col-sm-11 col-ss-11 col-xs-11">Objetivos da administração financeira e seus conflitos</span>
+
+				<!-- Icone do botão -->
+				<span class="app-sum-btn-icon-sub | col-md-1 col-sm-1 col-ss-1 col-xs-1 | font-md-4 font-sm-4 font-ss-4 font-xs-4"></span>
+
+
+				<div class="app-sum-section-sub | col-md-12 col-sm-12 col-ss-12 col-xs-12 |">
+
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Introdução</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Objetivos da administração financeira e seus conflitos</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Organização da função financeira</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Análise horizontal e vertical</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Análise por meio de índices</span>
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Fator de insolvência de kanitz</span>
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Fórmula dupont</span>
+				</div>
+			</div>
+
+			<!-- Itens do sumario -->
+			<div class="app-sum-section-item | app-font-header | padding-none-width | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-2 font-md-2 font-sm-2 font-ss-2 font-xs-2">
+
+				<!-- Nome da seção -->
+				<span class="sum-section-name | app-cor-black-80 | text-uppercase text-bold | col-md-11 col-sm-11 col-ss-11 col-xs-11">Objetivos da administração financeira e seus conflitos</span>
+
+				<!-- Icone do botão -->
+				<span class="app-sum-btn-icon-sub | col-md-1 col-sm-1 col-ss-1 col-xs-1 | font-md-4 font-sm-4 font-ss-4 font-xs-4"></span>
+
+
+				<div class="app-sum-section-sub | col-md-12 col-sm-12 col-ss-12 col-xs-12 |">
+
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Introdução</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Objetivos da administração financeira e seus conflitos</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Organização da função financeira</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Análise horizontal e vertical</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Análise por meio de índices</span>
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Fator de insolvência de kanitz</span>
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Fórmula dupont</span>
+				</div>
+			</div>
+
+			<!-- Itens do sumario -->
+			<div class="app-sum-section-item | app-font-header | padding-none-width | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-2 font-md-2 font-sm-2 font-ss-2 font-xs-2">
+
+				<!-- Nome da seção -->
+				<span class="sum-section-name | app-cor-black-80 | text-uppercase text-bold | col-md-11 col-sm-11 col-ss-11 col-xs-11">Objetivos da administração financeira e seus conflitos</span>
+
+				<!-- Icone do botão -->
+				<span class="app-sum-btn-icon-sub | col-md-1 col-sm-1 col-ss-1 col-xs-1 | font-md-4 font-sm-4 font-ss-4 font-xs-4"></span>
+
+
+				<div class="app-sum-section-sub | col-md-12 col-sm-12 col-ss-12 col-xs-12 |">
+
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Introdução</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Objetivos da administração financeira e seus conflitos</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Organização da função financeira</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Análise horizontal e vertical</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Análise por meio de índices</span>
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Fator de insolvência de kanitz</span>
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Fórmula dupont</span>
+				</div>
+			</div>
+
+			<!-- Itens do sumario -->
+			<div class="app-sum-section-item  app-sum-marcador | app-font-header | padding-none-width | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-md-2 font-sm-2 font-ss-2 font-xs-2">
+
+				<!-- Nome da seção -->
+				<span class="sum-section-name | app-cor-black-80 | text-uppercase text-bold | col-md-11 col-sm-11 col-ss-11 col-xs-11">Objetivos da administração financeira e seus conflitos</span>
+
+				<!-- Icone do botão -->
+				<span class="app-sum-btn-icon-sub | col-md-1 col-sm-1 col-ss-1 col-xs-1 | font-md-4 font-sm-4 font-ss-4 font-xs-4"></span>
+
+
+				<div class="app-sum-section-sub | col-md-12 col-sm-12 col-ss-12 col-xs-12 |">
+
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Introdução</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Objetivos da administração financeira e seus conflitos</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Organização da função financeira</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Análise horizontal e vertical</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Análise por meio de índices</span>
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Fator de insolvência de kanitz</span>
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Fórmula dupont</span>
+				</div>
+			</div>
+
+			<!-- Itens do sumario -->
+			<div class="app-sum-section-item | app-font-header | padding-none-width | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-2 font-md-2 font-sm-2 font-ss-2 font-xs-2">
+
+				<!-- Nome da seção -->
+				<span class="sum-section-name | app-cor-black-80 | text-uppercase text-bold | col-md-11 col-sm-11 col-ss-11 col-xs-11">Objetivos da administração financeira e seus conflitos</span>
+
+				<!-- Icone do botão -->
+				<span class="app-sum-btn-icon-sub | col-md-1 col-sm-1 col-ss-1 col-xs-1 | font-md-4 font-sm-4 font-ss-4 font-xs-4"></span>
+
+
+				<div class="app-sum-section-sub | col-md-12 col-sm-12 col-ss-12 col-xs-12 |">
+
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Introdução</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Objetivos da administração financeira e seus conflitos</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Organização da função financeira</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Análise horizontal e vertical</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Análise por meio de índices</span>
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Fator de insolvência de kanitz</span>
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Fórmula dupont</span>
+				</div>
+			</div>
+
+			<!-- Itens do sumario -->
+			<div class="app-sum-section-item app-sum-item-new | app-font-header | padding-none-width | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-md-2 font-sm-2 font-ss-2 font-xs-2">
+
+				<!-- Nome da seção -->
+				<span class="sum-section-name | app-cor-black-80 | text-uppercase text-bold | col-md-11 col-sm-11 col-ss-11 col-xs-11">Objetivos da administração financeira e seus conflitos</span>
+
+				<!-- Icone do botão -->
+				<span class="app-sum-btn-icon-sub | col-md-1 col-sm-1 col-ss-1 col-xs-1 | font-md-4 font-sm-4 font-ss-4 font-xs-4"></span>
+
+
+				<div class="app-sum-section-sub | col-md-12 col-sm-12 col-ss-12 col-xs-12 |">
+
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Introdução</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Objetivos da administração financeira e seus conflitos</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Organização da função financeira</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Análise horizontal e vertical</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Análise por meio de índices</span>
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Fator de insolvência de kanitz</span>
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Fórmula dupont</span>
+				</div>
+			</div>
+		</div>
+
+		<!-- Gruop para cada capitulo -->
+		<div class="app-sum-section">
+
+			<!-- Titulo do capitulo -->
+			<div class="app-sum-section-item app-sum-section-header | app-font-app | padding-none-right | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-2 font-md-small-2 font-sm-small-2 font-ss-small-2 font-xs-small-2">
+
+				<!-- Nome da seção (unidade I|II|III / abertura ...) -->
+				<span class="app-sum-section-secao | app-cor-black-80 | text-uppercase text-bold | padding-none-width | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-4 font-md-small-3 font-sm-2 font-ss-small-4 font-xs-small-4">Capítulo III</span>
+
+				<!-- Nome caso seja titulo -->
+				<span class="app-sum-section-titulo | app-cor-black-60 | padding-none-width | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-4 font-md-3 font-sm-3 font-ss-4 font-xs-4">A função financeira, análise das demonstrações financeiras</span>
+			</div>
+
+			<!-- Itens do sumario -->
+			<div class="app-sum-section-item | app-font-header | padding-none-width | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-2 font-md-2 font-sm-2 font-ss-2 font-xs-2">
+
+				<!-- Nome da seção -->
+				<span class="sum-section-name | app-cor-black-80 | text-uppercase text-bold | col-md-11 col-sm-11 col-ss-11 col-xs-11">Objetivos da administração financeira e seus conflitos</span>
+
+				<!-- Icone do botão -->
+				<span class="app-sum-btn-icon-sub | col-md-1 col-sm-1 col-ss-1 col-xs-1 | font-md-4 font-sm-4 font-ss-4 font-xs-4"></span>
+
+
+				<div class="app-sum-section-sub | col-md-12 col-sm-12 col-ss-12 col-xs-12 |">
+
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Introdução</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Objetivos da administração financeira e seus conflitos</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Organização da função financeira</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Análise horizontal e vertical</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Análise por meio de índices</span>
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Fator de insolvência de kanitz</span>
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Fórmula dupont</span>
+				</div>
+			</div>
+
+			<!-- Itens do sumario -->
+			<div class="app-sum-section-item | app-font-header | padding-none-width | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-2 font-md-2 font-sm-2 font-ss-2 font-xs-2">
+
+				<!-- Nome da seção -->
+				<span class="sum-section-name | app-cor-black-80 | text-uppercase text-bold | col-md-11 col-sm-11 col-ss-11 col-xs-11">Objetivos da administração financeira e seus conflitos</span>
+
+				<!-- Icone do botão -->
+				<span class="app-sum-btn-icon-sub | col-md-1 col-sm-1 col-ss-1 col-xs-1 | font-md-4 font-sm-4 font-ss-4 font-xs-4"></span>
+
+
+				<div class="app-sum-section-sub | col-md-12 col-sm-12 col-ss-12 col-xs-12 |">
+
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Introdução</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Objetivos da administração financeira e seus conflitos</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Organização da função financeira</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Análise horizontal e vertical</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Análise por meio de índices</span>
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Fator de insolvência de kanitz</span>
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Fórmula dupont</span>
+				</div>
+			</div>
+
+			<!-- Itens do sumario -->
+			<div class="app-sum-section-item | app-font-header | padding-none-width | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-2 font-md-2 font-sm-2 font-ss-2 font-xs-2">
+
+				<!-- Nome da seção -->
+				<span class="sum-section-name | app-cor-black-80 | text-uppercase text-bold | col-md-11 col-sm-11 col-ss-11 col-xs-11">Objetivos da administração financeira e seus conflitos</span>
+
+				<!-- Icone do botão -->
+				<span class="app-sum-btn-icon-sub | col-md-1 col-sm-1 col-ss-1 col-xs-1 | font-md-4 font-sm-4 font-ss-4 font-xs-4"></span>
+
+
+				<div class="app-sum-section-sub | col-md-12 col-sm-12 col-ss-12 col-xs-12 |">
+
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Introdução</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Objetivos da administração financeira e seus conflitos</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Organização da função financeira</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Análise horizontal e vertical</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Análise por meio de índices</span>
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Fator de insolvência de kanitz</span>
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Fórmula dupont</span>
+				</div>
+			</div>
+
+			<!-- Itens do sumario -->
+			<div class="app-sum-section-item  app-sum-marcador | app-font-header | padding-none-width | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-md-2 font-sm-2 font-ss-2 font-xs-2">
+
+				<!-- Nome da seção -->
+				<span class="sum-section-name | app-cor-black-80 | text-uppercase text-bold | col-md-11 col-sm-11 col-ss-11 col-xs-11">Objetivos da administração financeira e seus conflitos</span>
+
+				<!-- Icone do botão -->
+				<span class="app-sum-btn-icon-sub | col-md-1 col-sm-1 col-ss-1 col-xs-1 | font-md-4 font-sm-4 font-ss-4 font-xs-4"></span>
+
+
+				<div class="app-sum-section-sub | col-md-12 col-sm-12 col-ss-12 col-xs-12 |">
+
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Introdução</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Objetivos da administração financeira e seus conflitos</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Organização da função financeira</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Análise horizontal e vertical</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Análise por meio de índices</span>
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Fator de insolvência de kanitz</span>
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Fórmula dupont</span>
+				</div>
+			</div>
+
+			<!-- Itens do sumario -->
+			<div class="app-sum-section-item | app-font-header | padding-none-width | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-2 font-md-2 font-sm-2 font-ss-2 font-xs-2">
+
+				<!-- Nome da seção -->
+				<span class="sum-section-name | app-cor-black-80 | text-uppercase text-bold | col-md-11 col-sm-11 col-ss-11 col-xs-11">Objetivos da administração financeira e seus conflitos</span>
+
+				<!-- Icone do botão -->
+				<span class="app-sum-btn-icon-sub | col-md-1 col-sm-1 col-ss-1 col-xs-1 | font-md-4 font-sm-4 font-ss-4 font-xs-4"></span>
+
+
+				<div class="app-sum-section-sub | col-md-12 col-sm-12 col-ss-12 col-xs-12 |">
+
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Introdução</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Objetivos da administração financeira e seus conflitos</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Organização da função financeira</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Análise horizontal e vertical</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Análise por meio de índices</span>
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Fator de insolvência de kanitz</span>
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Fórmula dupont</span>
+				</div>
+			</div>
+
+			<!-- Itens do sumario -->
+			<div class="app-sum-section-item app-sum-item-new | app-font-header | padding-none-width | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-md-2 font-sm-2 font-ss-2 font-xs-2">
+
+				<!-- Nome da seção -->
+				<span class="sum-section-name | app-cor-black-80 | text-uppercase text-bold | col-md-11 col-sm-11 col-ss-11 col-xs-11">Objetivos da administração financeira e seus conflitos</span>
+
+				<!-- Icone do botão -->
+				<span class="app-sum-btn-icon-sub | col-md-1 col-sm-1 col-ss-1 col-xs-1 | font-md-4 font-sm-4 font-ss-4 font-xs-4"></span>
+
+
+				<div class="app-sum-section-sub | col-md-12 col-sm-12 col-ss-12 col-xs-12 |">
+
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Introdução</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Objetivos da administração financeira e seus conflitos</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Organização da função financeira</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Análise horizontal e vertical</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Análise por meio de índices</span>
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Fator de insolvência de kanitz</span>
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Fórmula dupont</span>
+				</div>
+			</div>
+		</div>
+
+		<!-- Gruop para cada capitulo -->
+		<div class="app-sum-section">
+
+			<!-- Titulo do capitulo -->
+			<div class="app-sum-section-item app-sum-section-header | app-font-app | padding-none-right | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-2 font-md-small-2 font-sm-small-2 font-ss-small-2 font-xs-small-2">
+
+				<!-- Nome da seção (unidade I|II|III / abertura ...) -->
+				<span class="app-sum-section-secao | app-cor-black-80 | text-uppercase text-bold | padding-none-width | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-4 font-md-small-3 font-sm-2 font-ss-small-4 font-xs-small-4">Capítulo IV</span>
+
+				<!-- Nome caso seja titulo -->
+				<span class="app-sum-section-titulo | app-cor-black-60 | padding-none-width | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-4 font-md-3 font-sm-3 font-ss-4 font-xs-4">A função financeira, análise das demonstrações financeiras</span>
+			</div>
+
+			<!-- Itens do sumario -->
+			<div class="app-sum-section-item | app-font-header | padding-none-width | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-2 font-md-2 font-sm-2 font-ss-2 font-xs-2">
+
+				<!-- Nome da seção -->
+				<span class="sum-section-name | app-cor-black-80 | text-uppercase text-bold | col-md-11 col-sm-11 col-ss-11 col-xs-11">Objetivos da administração financeira e seus conflitos</span>
+
+				<!-- Icone do botão -->
+				<span class="app-sum-btn-icon-sub | col-md-1 col-sm-1 col-ss-1 col-xs-1 | font-md-4 font-sm-4 font-ss-4 font-xs-4"></span>
+
+
+				<div class="app-sum-section-sub | col-md-12 col-sm-12 col-ss-12 col-xs-12 |">
+
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Introdução</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Objetivos da administração financeira e seus conflitos</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Organização da função financeira</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Análise horizontal e vertical</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Análise por meio de índices</span>
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Fator de insolvência de kanitz</span>
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Fórmula dupont</span>
+				</div>
+			</div>
+
+			<!-- Itens do sumario -->
+			<div class="app-sum-section-item | app-font-header | padding-none-width | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-2 font-md-2 font-sm-2 font-ss-2 font-xs-2">
+
+				<!-- Nome da seção -->
+				<span class="sum-section-name | app-cor-black-80 | text-uppercase text-bold | col-md-11 col-sm-11 col-ss-11 col-xs-11">Objetivos da administração financeira e seus conflitos</span>
+
+				<!-- Icone do botão -->
+				<span class="app-sum-btn-icon-sub | col-md-1 col-sm-1 col-ss-1 col-xs-1 | font-md-4 font-sm-4 font-ss-4 font-xs-4"></span>
+
+
+				<div class="app-sum-section-sub | col-md-12 col-sm-12 col-ss-12 col-xs-12 |">
+
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Introdução</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Objetivos da administração financeira e seus conflitos</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Organização da função financeira</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Análise horizontal e vertical</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Análise por meio de índices</span>
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Fator de insolvência de kanitz</span>
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Fórmula dupont</span>
+				</div>
+			</div>
+
+			<!-- Itens do sumario -->
+			<div class="app-sum-section-item | app-font-header | padding-none-width | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-2 font-md-2 font-sm-2 font-ss-2 font-xs-2">
+
+				<!-- Nome da seção -->
+				<span class="sum-section-name | app-cor-black-80 | text-uppercase text-bold | col-md-11 col-sm-11 col-ss-11 col-xs-11">Objetivos da administração financeira e seus conflitos</span>
+
+				<!-- Icone do botão -->
+				<span class="app-sum-btn-icon-sub | col-md-1 col-sm-1 col-ss-1 col-xs-1 | font-md-4 font-sm-4 font-ss-4 font-xs-4"></span>
+
+
+				<div class="app-sum-section-sub | col-md-12 col-sm-12 col-ss-12 col-xs-12 |">
+
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Introdução</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Objetivos da administração financeira e seus conflitos</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Organização da função financeira</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Análise horizontal e vertical</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Análise por meio de índices</span>
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Fator de insolvência de kanitz</span>
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Fórmula dupont</span>
+				</div>
+			</div>
+
+			<!-- Itens do sumario -->
+			<div class="app-sum-section-item  app-sum-marcador | app-font-header | padding-none-width | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-md-2 font-sm-2 font-ss-2 font-xs-2">
+
+				<!-- Nome da seção -->
+				<span class="sum-section-name | app-cor-black-80 | text-uppercase text-bold | col-md-11 col-sm-11 col-ss-11 col-xs-11">Objetivos da administração financeira e seus conflitos</span>
+
+				<!-- Icone do botão -->
+				<span class="app-sum-btn-icon-sub | col-md-1 col-sm-1 col-ss-1 col-xs-1 | font-md-4 font-sm-4 font-ss-4 font-xs-4"></span>
+
+
+				<div class="app-sum-section-sub | col-md-12 col-sm-12 col-ss-12 col-xs-12 |">
+
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Introdução</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Objetivos da administração financeira e seus conflitos</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Organização da função financeira</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Análise horizontal e vertical</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Análise por meio de índices</span>
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Fator de insolvência de kanitz</span>
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Fórmula dupont</span>
+				</div>
+			</div>
+
+			<!-- Itens do sumario -->
+			<div class="app-sum-section-item | app-font-header | padding-none-width | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-2 font-md-2 font-sm-2 font-ss-2 font-xs-2">
+
+				<!-- Nome da seção -->
+				<span class="sum-section-name | app-cor-black-80 | text-uppercase text-bold | col-md-11 col-sm-11 col-ss-11 col-xs-11">Objetivos da administração financeira e seus conflitos</span>
+
+				<!-- Icone do botão -->
+				<span class="app-sum-btn-icon-sub | col-md-1 col-sm-1 col-ss-1 col-xs-1 | font-md-4 font-sm-4 font-ss-4 font-xs-4"></span>
+
+
+				<div class="app-sum-section-sub | col-md-12 col-sm-12 col-ss-12 col-xs-12 |">
+
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Introdução</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Objetivos da administração financeira e seus conflitos</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Organização da função financeira</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Análise horizontal e vertical</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Análise por meio de índices</span>
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Fator de insolvência de kanitz</span>
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Fórmula dupont</span>
+				</div>
+			</div>
+
+			<!-- Itens do sumario -->
+			<div class="app-sum-section-item app-sum-item-new | app-font-header | padding-none-width | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-md-2 font-sm-2 font-ss-2 font-xs-2">
+
+				<!-- Nome da seção -->
+				<span class="sum-section-name | app-cor-black-80 | text-uppercase text-bold | col-md-11 col-sm-11 col-ss-11 col-xs-11">Objetivos da administração financeira e seus conflitos</span>
+
+				<!-- Icone do botão -->
+				<span class="app-sum-btn-icon-sub | col-md-1 col-sm-1 col-ss-1 col-xs-1 | font-md-4 font-sm-4 font-ss-4 font-xs-4"></span>
+
+
+				<div class="app-sum-section-sub | col-md-12 col-sm-12 col-ss-12 col-xs-12 |">
+
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Introdução</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Objetivos da administração financeira e seus conflitos</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Organização da função financeira</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Análise horizontal e vertical</span>
+					<!-- Sub seção do livro -->
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Análise por meio de índices</span>
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Fator de insolvência de kanitz</span>
+					<span class="app-sum-section-item app-sum-section-sub-item | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-small-3">Fórmula dupont</span>
 				</div>
 			</div>
 		</div>
