@@ -13,7 +13,7 @@
 			<div class="app-sum-section-item app-sum-section-header | app-font-app | col-md-12 col-sm-12 col-ss-12 col-xs-12">
 
 				<!-- Icone do botão indicador -->
-				<span class="app-sum-btn-icon | col-md-1 col-sm-1 col-ss-1 col-xs-1 | font-md-2 font-sm-2 font-ss-2 font-xs-2"></span>
+				<span class="app-sum-btn-icon | app-bg-black-60 | col-md-1 col-sm-1 col-ss-1 col-xs-1 | font-md-2 font-sm-2 font-ss-2 font-xs-2"></span>
 
 				<!-- COntents do header -->
 				<div class="app-sum-section-header-contents | col-md-11 col-sm-11 col-ss-11 col-xs-11">
