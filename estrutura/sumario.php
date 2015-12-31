@@ -27,7 +27,7 @@
 			</div>
 
 			<!-- Itens do sumario -->
-			<div class="app-sum-section-item | app-font-header | padding-none-width | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-md-2 font-sm-2 font-ss-2 font-xs-2">
+			<div class="app-sum-section-item | app-font-header | padding-none-width | col-md-12 col-sm-12 col-ss-12 col-xs-12 | font-md-2 font-sm-2 font-ss-2 font-xs-2 sub-display">
 
 				<!-- Icone do botão indicador -->
 				<span class="app-sum-btn-icon |  app-bg-pattern-40 app-cor-white | col-md-1 col-sm-1 col-ss-1 col-xs-1"></span>
@@ -36,10 +36,10 @@
 				<span class="sum-section-name | app-cor-black-80 | text-uppercase text-bold | col-md-10 col-sm-10 col-ss-10 col-xs-10">Objetivos da administração financeira e seus conflitos</span>
 
 				<!-- Icone do botão -->
-				<span class="app-sum-btn-icon-sub | app-cor-pattern | col-md-1 col-sm-1 col-ss-1 col-xs-1 | font-md-3 font-sm-3 font-ss-3 font-xs-3"></span>
+				<span class="app-sum-btn-icon-sub | app-cor-pattern | col-md-1 col-sm-1 col-ss-1 col-xs-1 | font-md-4 font-sm-4 font-ss-4 font-xs-4"></span>
 
 				<!-- Gruop para cada capitulo -->
-				<div class="app-sum-section-sub | col-md-12 col-sm-12 col-ss-12 col-xs-12">
+				<div class="app-sum-section-sub | padding-none-width | col-md-12 col-sm-12 col-ss-12 col-xs-12">
 
 					<!-- Sub-itens do sumario -->
 					<div class="app-sum-section-sub-item | app-font-header | padding-none-width | col-md-11 col-sm-11 col-ss-11 col-xs-11 | col-md-offset-1 col-sm-offset-1 col-ss-offset-1 col-xs-offset-1">
