@@ -138,7 +138,7 @@
 //== Configruações responsivas
 // Min Min grid (XS)
 @media (max-width: @screen-xs-max) {
-	.app-variant-nav-grid (34px);
+	.app-variant-nav-grid (@app-nav-height-xs); // 34px
 	.app-nav-section-item.app-secao { text-transform: none; margin-top: 8px; display: block; font-weight: normal;}
 
 	.app-nav-tooltip {
@@ -160,7 +160,7 @@
 
 // Min Min grid (SS)
 @media (min-width: @screen-ss-min) {
-	.app-variant-nav-grid (38px);
+	.app-variant-nav-grid (@app-nav-height-ss); // 38px
 
 	.app-nav-tooltip {
 		@top: 71px;
@@ -193,7 +193,7 @@
 
 // Min grid (SM)
 @media (min-width: @screen-sm-min) {
-	.app-variant-nav-grid (38px);
+	.app-variant-nav-grid (@app-nav-height-sm); // 38px
 
 	.app-nav-tooltip {
 		@top: 71px;
@@ -225,7 +225,7 @@
 
 // Medium grid (MD)
 @media (min-width: @screen-md-min) {
-	.app-variant-nav-grid (47px);
+	.app-variant-nav-grid (@app-nav-height-md); // 47px
 
 
 	.app-nav-tooltip {
@@ -254,7 +254,7 @@
 
 // Large grid (LG)
 @media (min-width: @screen-lg-min) {
-  .app-variant-nav-grid (47px);
+  .app-variant-nav-grid (@app-nav-height-lg); // 47px
 
 	.app-nav-tooltip {
 
