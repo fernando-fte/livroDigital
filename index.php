@@ -43,6 +43,31 @@
 		<!-- VENDOR: jQuery -->
 		<script src="<?php echo $settings['wwwroot']?>/vendor/js/jquery.min.js"></script>
 
+		<!-- VENDOR: ScollBar -->
+		<script src="<?php echo $settings['wwwroot']?>/vendor/js/perfect-scrollbar.min.js"></script>
+		<script type="text/javascript">
+			function changeSize() {
+				var width = parseInt($("#Width").val());
+				var height = parseInt($("#Height").val());
+
+				$(".add-scroll").width(width).height(height);
+
+				// update scrollbars
+				$('.add-scroll').perfectScrollbar('update');
+
+				// or even with vanilla JS!
+				Ps.update(document.getElementById('add-scroll'));
+			}
+
+			$(function() {
+				$('.add-scroll').perfectScrollbar();
+
+				// with vanilla JS!
+				Ps.initialize(document.getElementById('add-scroll'));
+			});
+		</script>
+
+
 		<!-- VENDOR: Latest compiled and minified Bootstrap JavaScript -->
 		<script src="<?php echo $settings['wwwroot']?>/vendor/bootstrap/js/bootstrap.min.js"></script>
 
@@ -63,6 +88,5 @@
 		<!-- APP: CoffeeScript 
 		<script type="text/coffeescript" src="scripts/default.coffee"></script>
 		-->
-
 	</body>
 </html>

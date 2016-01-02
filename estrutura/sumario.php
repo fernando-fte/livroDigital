@@ -1,7 +1,7 @@
 <?php include $settings['pages']['menu'] ?>
 
 <!-- Reservatório de conteúdos -->
-<div class="contents">
+<div class="contents add-scroll">
 
 	<!-- Sumario -->
 	<section id="sumario" class="app-sum-contents section-page">
