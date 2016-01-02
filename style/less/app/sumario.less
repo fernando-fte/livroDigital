@@ -123,7 +123,7 @@
 		.app-sum-section-sub {display: block;}
 
 		// Configura botão sub
-		.app-sum-btn-icon-sub { .app-var-ico(@app-ico-v-cima); }
+		.app-sum-btn-icon-sub { .app-var-ico(@app-ico-v-cima); bottom: inherit; top: 4px;}
 	}
 
 	.app-sum-btn-icon-sub {
@@ -185,14 +185,14 @@
 // Medium grid (MD)
 @media (min-width: @screen-md-min) {
 	@width-itens: (100% / 5); // 5 sections
-	@width-contents: 1600px;
+	@width-contents: 1800px;
 	.app-variant-sum-responsive (@width-contents, @width-itens);
 }
 
 // Large grid (LG)
 @media (min-width: @screen-lg-min) {
 	@width-itens: (100% / 5); // 5 sections
-	@width-contents: 1600px;
+	@width-contents: 2200px;
 	.app-variant-sum-responsive (@width-contents, @width-itens);
 }
 
