@@ -45,7 +45,7 @@ function construct_html($post, $return) {
 
 		$temp['._.process']['html_attr'] = (array_key_exists('attr', $temp['post']) ? true:null);
 
-		$temp['._.process']['action'] = (array_key_exists('action', $temp['post']) ? true:null);
+		$temp['._.process']['action'] = (array_key_exists('._.action', $temp['post']) ? true:null);
 
 
 		# # # # # # # # # # # # # # # # #
@@ -134,6 +134,8 @@ function construct_html($post, $return) {
 
 				# loop para montar cada instancia da classe
 				for ($i=0; $i < count($temp['post']['attr']); $i++) { 
+
+					// TODO: Modifica syntax do attr quando for array
 
 					# Caso o atributo tenha valores
 					if (gettype($temp['post']['attr'][$i]) != 'string') {
@@ -288,6 +290,7 @@ function construct_html($post, $return) {
 
 					$temp['._.reserve']['content'] .= $temp['F:construct_html'][$i]['done'];
 				}
+				unset($temp['F:construct_html']);
 			}
 		}
 		else { unset($temp['._.process']['html_content']);  }
@@ -299,20 +302,128 @@ function construct_html($post, $return) {
 		# # # # # # # # # # # # # # # # #
 
 		# # # # # # # # # # # # # # # # #
-		# # # # TRATA ACTIONS  # # # # #
+		# # # # # TRATA AÇÕES # # # # # #
 
-		# inicia tratamento de action
+		# # # # 
+		# # inicia tratamento de action
 		if ($temp['._.process']['action'] == true) {
+
+			// {"._.list":["source","get"],"source":{"._.//":"Nome do arquivo a ser importado, ou uma lista contendo os valores","._.required":true,"._.type":["string","array"],"._.exact":{"array":{"._.type":"string"}}},"content":{"._.//":"Refere-se ao local onde será inserido o valor","._.required":true,"._.type":["string"],"._.exact":{"string":{"._.text":["after","before","replace"]}}}}
 
 			# # # 
 			# # Action import source
 			if (array_key_exists('._.import', $temp['post']['._.action'])) {
 
+				// TODO: Valida parametros de "._.import"
 				// TODO: Importa arquivos
+
+				$temp['._.process']['._.action']['._.import'] = false;
+
+				# # Trata parametros de importação caso o nome do arquivo seja mais de um
+				if (gettype($temp['post']['._.action']['._.import']['source']) == 'array') {
+
+					for ($i=0; $i < count($temp['post']['._.action']['._.import']['source']); $i++) { 
+
+						$temp['short']['input']['name'] =  $temp['post']['._.action']['._.import']['source'][$i];
+						$temp['short']['input']['type'] = 'source';
+						$temp['short']['input']['action']['open'] = true;
+
+						$temp['short']['F:file_open'] = file_open($temp['short']['input'], false);
+
+						if ($temp['short']['F:file_open']['success'] == true) {
+
+							$temp['._.reserve']['._.action']['._.import'][$i] = $temp['short']['F:file_open']['done'];
+							$temp['._.process']['._.action']['._.import'] = true;
+						}
+						else { $temp['._.warning']['F:file_open'][$i] = $temp['short']['F:file_open'];  }
+
+						unset($temp['short']);
+					}
+					unset($i);
+				}
+
+				# # Trata parametros de importação caso o nome do arquivo seja apenas um
+				if (gettype($temp['post']['._.action']['._.import']['source']) == 'string') {
+
+					$temp['short']['input']['name'] =  $temp['post']['._.action']['._.import']['source'];
+					$temp['short']['input']['type'] = 'source';
+					$temp['short']['input']['action']['open'] = true;
+
+					$temp['short']['F:file_open'] = file_open($temp['short']['input'], false);
+
+					if ($temp['short']['F:file_open']['success'] == true) {
+
+						$temp['._.reserve']['._.action']['._.import'] = $temp['short']['F:file_open']['done'];
+						$temp['._.process']['._.action']['._.import'] = true;
+					}
+					else { $temp['._.warning']['F:file_open'] = $temp['short']['F:file_open'];  }
+
+					unset($temp['short']);
+				}
+
+				# # # #
+				# # Inicia tratamento dos parametros resgatados de import
+				if ($temp['._.process']['._.action']['._.import'] == true) {
+
+					# # # 
+					# # Trata cada parametro adicionado na importação
+					for ($i=0; $i < count($temp['._.reserve']['._.action']['._.import']); $i++) { 
+
+						# converte o arquivo importados
+						$temp['short']['import'] = json_decode($temp['._.reserve']['._.action']['._.import'], true);
+
+						# Valida se os parametros importados estejam estruturados como uma array
+						if (gettype($temp['short']['import']) == 'array') {
+
+							# inicia processo como false
+							$temp['._.process']['._.action']['converter_._.import'][$i] = false;
+
+							# Reserva parametros de contents já "reservados"
+							$temp['short']['content'] = (array_key_exists('content', $temp['._.reserve']) ? $temp['._.reserve']['content']:null);
+
+							# # #
+							# Transforma dados recebidos na importação
+							$temp['F:construct_html'] = construct_html(array('input' => $temp['short']['import']), false);
+							# # #
+
+							# valida se os dados recebudos da função
+							if ($temp['F:construct_html']['success'] == true) {
+
+								# inclui dados da função em import
+								$temp['short']['import'] = $temp['F:construct_html']['done'];
+
+								# caso seja para adicionar depois
+								if ($temp['post']['._.action']['._.import']['content'] == 'after') {
+
+									$temp['._.reserve']['content'] = $temp['short']['content'].$temp['short']['import'];
+								}
+
+								# caso seja para adicionar antes
+								if ($temp['post']['._.action']['._.import']['content'] == 'before') {
+
+									$temp['._.reserve']['content'] = $temp['short']['import'].$temp['short']['content'];
+								}
+
+								# caso seja para subistitir
+								if ($temp['post']['._.action']['._.import']['content'] == 'replace') {
+
+									$temp['._.reserve']['content'] = $temp['short']['import'];
+								}
+							}
+							unset($temp['F:construct_html']);
+						}
+						# Caso os parametros recebidos da importação estajam com a syntax incorretas
+						else { $temp['._.process']['._.action']['converter_._.import'][$i] = false; $temp['._.warning']['._.action']['converter_._.import'][$i] = 'Não foi possivel converter a importação'; }
+					}
+					unset($i);
+					# # # 
+				}
+				# # # #
 			}
 		}
 		else { unset($temp['._.process']['action']);  }
-		# # # FIM: TRATA ACTIONS # # # #
+
+		# # # # FIM: TRATA AÇÕES ## # # #
 		# # # # # # # # # # # # # # # # #
 
 		# # # # # # # # # # # # # # # # #
@@ -481,12 +592,14 @@ function file_open($post, $return) {
 
 // $temp['file'] = json_decode('{"name":"jquery", "type":"js", "action":{"path":"dist"}}', true);
 $temp['file'] = json_decode('{"name":"jquery", "type":"js", "action":{"open":true}}', true);
-$temp['file']['output'] = file_open($temp['file'], 'done');
+// $temp['file']['output'] = file_open($temp['file'], 'done');
 
 # # # #
 # chama função de contrução html
-$temp['html']['input'] = '{"html":"div","class":[".app-tipo-div",".text-bold"],"attr":[{"name":"name","value":{"v":"ob"}},{"name":"name","value":{"v":"ob"}},{"name":"name","value":"oi"}],"data-html":[{"name":"htmlgetsql","value":true}],"content":[{"html":"span","content":"Esse é um texto simples","class":"app-tipo-span"},{"html":null,"content":"Esse é um texto depois do elemento atual"},{"html":"span","class":".fa .fa-ico","id":"btn"}]}';
-$temp['html']['output'] = construct_html($temp['html'], 'done');
+$temp['html']['input'] = '{"html":"div","class":[".app-tipo-div",".text-bold"],"attr":[{"name":"name","value":{"v":"ob"}},{"name":"name","value":{"v":"ob"}},{"name":"name","value":"oi"}],"data-html":[{"name":"htmlgetsql","value":true}],"content":[{"html":"span","content":"Esse é um texto simples","class":"app-tipo-span"},{"html":null,"content":"Esse é um texto depois do elemento atual"},{"html":"span","class":".fa .fa-ico","id":"btn"}],"._.action":{"._.import":{"source":"Barra do menu","content":"after"}}}';
+// $temp['html']['input'] = '{"html":"div","class":[".app-tipo-div",".text-bold"],"attr":[{"name":"name","value":{"v":"ob"}},{"name":"name","value":{"v":"ob"}},{"name":"name","value":"oi"}],"data-html":[{"name":"htmlgetsql","value":true}],"content":[{"html":"span","content":"Esse é um texto simples","class":"app-tipo-span"},{"html":null,"content":"Esse é um texto depois do elemento atual"},{"html":"span","class":".fa .fa-ico","id":"btn"}],"._.action":{}}';
+// $temp['html']['output'] = construct_html($temp['html'], true);
+$temp['html']['output'] = construct_html($temp['html'], 'print');
 
 ?>
 
