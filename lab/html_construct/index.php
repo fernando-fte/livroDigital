@@ -77,6 +77,7 @@ function construct_html ($post, $return) {
 
 		$temp['._.process']['html_attr'] = (array_key_exists('attr', $temp['post']) ? true:null);
 
+		$temp['._.process']['action'] = (array_key_exists('action', $temp['post']) ? true:null);
 
 
 		# # # # # # # # # # # # # # # # #
@@ -289,7 +290,8 @@ function construct_html ($post, $return) {
 		# # # FIM: TRARA ATRIBUTOS  # # #
 		# # # # # # # # # # # # # # # # #
 
-		
+
+
 		# # # # # # # # # # # # # # # # #
 		# # # # TRATA CONTEUDO  # # # # #
 
@@ -320,14 +322,30 @@ function construct_html ($post, $return) {
 				}
 			}
 		}
+		else { unset($temp['._.process']['html_content']);  }
 
 		# # trata conteudo
 		# # #
 
-
 		# # # FIM: TRATA CONTEUDO # # # #
 		# # # # # # # # # # # # # # # # #
 
+		# # # # # # # # # # # # # # # # #
+		# # # # TRATA ACTIONS  # # # # #
+
+		# inicia tratamento de action
+		if ($temp['._.process']['action'] == true) {
+
+			# # # 
+			# # Action import source
+			if (array_key_exists('._.import', $temp['post']['._.action'])) {
+
+				// TODO: Importa arquivos
+			}
+		}
+		else { unset($temp['._.process']['action']);  }
+		# # # FIM: TRATA ACTIONS # # # #
+		# # # # # # # # # # # # # # # # #
 
 		# # # # # # # # # # # # # # # # #
 		# # # # # # TRATA HTML  # # # # #
@@ -367,11 +385,11 @@ function construct_html ($post, $return) {
 	# caso o json tenha sido convertido
 	else { $temp['._.erro']['json_decode'] = 'O arquivo está corrompido verifique se a syntax esta correta';  }
 
-
 	return retorna_funcao($temp, $return);
 }
 
 
+// construct_html($post, 'print');
 print_r(construct_html($post, 'done'));
 
 ?>
