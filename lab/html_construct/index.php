@@ -141,7 +141,7 @@ function construct_html ($post, $return) {
 			# caso o formato não seja o esperado
 			else {
 				$temp['._.process']['html_data'] = false;
-				$temp['._.erro']['html_data'] = 'Foi recebido de data-html "'.gettype($temp['post']['data-html']).'" mas era esperado um array ou string';  
+				$temp['._.warning']['html_data'] = 'Foi recebido de data-html "'.gettype($temp['post']['data-html']).'" mas era esperado um array ou string';  
 			}
 		}
 		# remove processo DATA-HTML
@@ -204,7 +204,7 @@ function construct_html ($post, $return) {
 			# caso o formato não seja o esperado
 			else {
 				$temp['._.process']['html_attr'] = false;
-				$temp['._.erro']['html_attr'] = 'Foi recebido de attr "'.gettype($temp['post']['attr']).'" mas era esperado um array ou string';  
+				$temp['._.warning']['html_attr'] = 'Foi recebido de attr "'.gettype($temp['post']['attr']).'" mas era esperado um array ou string';  
 			}
 		}
 		# remove processo ATTR
@@ -292,7 +292,6 @@ function construct_html ($post, $return) {
 		
 		# # # # # # # # # # # # # # # # #
 		# # # # TRATA CONTEUDO  # # # # #
-
 
 		# cria elemento de reserva para os conteudos do html
 		$temp['._.reserve']['content'] = ($temp['._.process']['html_content'] == true ? '':null);
