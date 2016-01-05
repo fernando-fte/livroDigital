@@ -3,7 +3,7 @@
   //== Especificações da estrutura de comando para contrução do html
   //{"._.list":["html","id","content","after","before","style","attr","html-data","._.action"],"html":{"._.//":"Tipo de elemento que pode [html, p, h1] ou null para texto puro","._.required":true,"._.type":["NULL","string"]},"id":{"._.//":"Identificação do elemento, usado apenas caso o html seja valido","._.required":false,"._.type":["string"]},"content":{"._.//":"Valor tipo texto para ser inserido no elemento","._.required":false,"._.type":["string"]},"after":{"._.//":"Adiciona antes deste contexto um novo indice","._.required":false,"._.type":["array","string"]},"before":{"._.//":"Adiciona após este contexto um novo indice","._.required":false,"._.type":["array","string"]},"style":{"._.//":"Conjunto de estilos inline","._.required":false,"._.type":["object"],"._.list":["class","inline"],"class":{"._.//":"Define conjunto de classes que deve ser descrito da seguinte forma [.classe .classe2]","._.required":false,"._.type":["array","string"]},"inline":{"._.//":"Define um conjunto de regras css inline","._.required":false,"._.type":["string"]}},"attr":{"._.//":"Adiciona atributos no elemento atual","._.required":false,"._.type":["array","object"]},"html-data":{"._.//":"Adiciona especificamente um atributo do tipo data-html","._.required":false,"._.type":["object","string"]},"._.action":{"._.//":"Adiciona um conjunto de regras para manipulação da estrutura atual","._.required":false,"._.type":["object"]}}
 
-  $post = '
+  $post['input'] = '
 {
   "html": "div",
   "class": [
@@ -54,7 +54,7 @@ function construct_html ($post, $return) {
 	// TODO: Adiciona validação do post
 
 	# # # Converte post json em array
-	$temp['post'] = (gettype($post) == 'array' ? $post:json_decode($post, true));
+	$temp['post'] = (gettype($post['input']) == 'array' ? $post['input']:json_decode($post['input'], true));
 
 	# valida processo de conversão do json
 	$temp['._.process']['json_decode'] = (gettype($temp['post']) == 'array' ? true:false);
@@ -315,8 +315,7 @@ function construct_html ($post, $return) {
 
 				for ($i=0; $i < count($temp['post']['content']); $i++) { 
 
-					//TODO loop da função
-					$temp['F:construct_html'][$i] = construct_html($temp['post']['content'][$i], true);
+					$temp['F:construct_html'][$i] = construct_html(array('input'=>$temp['post']['content'][$i]), true);
 
 					$temp['._.reserve']['content'] .= $temp['F:construct_html'][$i]['done'];
 				}
