@@ -13,6 +13,7 @@ $settings['wwwroot'] = 'http://192.168.100.3/vg/livroDigital/';
 # # # # # FUNÇÃO DE CONSTRUÇÃO DE HTML APARTIR DE JSON  # # # # # # #
 function construct_html($post, $return) {
 	// {"._.list":["input"],"input":{"._.//":"Content principal dos parametros para construção do html","._.required":true,"._.type":["string","array"],"._.list":["html","id","css","class","attr","content","data-html","._.action"],"html":{"._.//":"Tipo de elemento que pode [html, p, h1] ou null para texto puro","._.required":true,"._.type":["NULL","string"]},"id":{"._.//":"Identificação do elemento, usado apenas caso o html seja valido","._.required":false,"._.type":["string"]},"content":{"._.//":"Valor a ser inserido dentro do html, podendo ser um texto simples ou uma array contendo todas as regras atuais listadas","._.required":false,"._.type":["string","array"]},"css":{"._.//":"Define um conjunto de regras css inline","._.required":false,"._.type":["string"]},"class":{"._.//":"Define conjunto de classes que deve ser descrito da seguinte forma [.classe .classe2]","._.required":false,"._.type":["array","string"]},"attr":{"._.//":"Adiciona atributos no elemento atual","._.required":false,"._.type":["array","object"]},"data-html":{"._.//":"Adiciona especificamente um atributo do tipo data-html","._.required":false,"._.type":["object","string"]},"._.action":{"._.//":"Adiciona um conjunto de regras para manipulação da estrutura atual","._.required":false,"._.type":["object"]}}}
+	// TODO: Adiciona validação do post
 
 
 	$temp['._.process'] = false;
@@ -28,11 +29,6 @@ function construct_html($post, $return) {
 	$temp['._.reserve'] = false;
 	$temp['._.done'] = null;
 	$temp['._.backup'] = $post;
-
-	// $temp['._.process']['F_form_serialize']
-	// $temp['._.process']['F_form_monta_parametros']
-
-	// TODO: Adiciona validação do post
 
 	# # # Converte post json em array
 	$temp['post'] = (gettype($post['input']) == 'array' ? $post['input']:json_decode($post['input'], true));
@@ -366,6 +362,7 @@ function construct_html($post, $return) {
 	# caso o json tenha sido convertido
 	else { $temp['._.erro']['json_decode'] = 'O arquivo está corrompido verifique se a syntax esta correta';  }
 
+	# retorna função
 	return retorna_funcao($temp, $return);
 }
 # # # # # FUNÇÃO DE CONSTRUÇÃO DE HTML APARTIR DE JSON  # # # # # # #
