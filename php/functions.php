@@ -923,102 +923,132 @@ function file_open($post, $return) {
 
 	# # #
 	# global do nome do mapa
-	$global['name']['map'] = 'map.src';
-	$global['path']['map'] = '';
-	$global['path_map'] = $global['name']['map'].$global['path']['map'];
-	$global['map'] = false;
+	$temp['file_map']['name'] = 'map.src';
+	$temp['file_map']['path'] = '';
+	$temp['file_map']['path_map'] = $temp['file_map']['name'].$temp['file_map']['path'];
+	$temp['map'] = false;
 	# # #
+
+	# # Adiciona processo para maps em globals como false
+	$temp['._.process']['globals_map'] = false;
 
 	# # # #
-	# # Abre o mapa de arquivos
+	# # # Valida settings em globais
+	if (array_key_exists('settings', $GLOBALS)) {
 
-	# # #
-	# Valida se o arquivo map existe
-	$temp['._.process']['exist_map'] = (file_exists($global['path_map']) ? true:false);
-	# # #
+		# # # Valida se map ja foi adicionado em $globais
+		if (array_key_exists('map', $GLOBALS['settings'])) {
 
-	# abre o mapa caso ele exista
-	if ($temp['._.process']['exist_map'] == true) {
-		
-		# importa conteudo do mapa
-		$temp['open'] = file_get_contents($global['path_map']);
+			$temp['._.process']['globals_map'] = true;
+		}
 
-		# transforma mapa em array
-		$global['map'] = json_decode($temp['open'], true);
+		# # # valida se local foi definido em settings
+		if (array_key_exists('wwwmap', $GLOBALS['settings'])) {
 
-		# apaga open
-		unset($temp['open']);
+			$temp['file_map']['path_map'] = $GLOBALS['settings']['wwwmap'];
+		}
 	}
-	# Retorna erro caso o mapa não abra
-	else {$temp['._.erro']['exist_map'] = 'O mapa de arquivos nao foi encontrado'; }
-
-	# # FIM: Abre o mapa de arquivos
 	# # # #
+
+	# # #
+	# # Inicia importação caso map não tenha sido adicionado em 
+	if ($temp['._.process']['globals_map'] == false) {
+
+		# # #
+		# Valida se o arquivo map existe
+		$temp['._.process']['exist_map'] = (file_exists($temp['file_map']['path_map']) ? true:false);
+		# # #
+
+		# abre o mapa caso ele exista
+		if ($temp['._.process']['exist_map'] == true) {
+
+			# importa conteudo do mapa
+			$temp['open'] = file_get_contents($temp['file_map']['path_map']);
+
+
+			# transforma mapa em array
+			$GLOBALS['settings']['map'] = json_decode($temp['open'], true);
+
+			# apaga open
+			unset($temp['open']);
+		}
+		# Retorna erro caso o mapa não abra
+		else {$temp['._.erro']['exist_map'] = 'O mapa de arquivos nao foi encontrado'; }
+
+		# # FIM: Abre o mapa de arquivos
+		# # # #
+	}
+	else {  unset($temp['._.process']['globals_map']); }
 
 	# # #
 	# valida se o mapa foi transformado
-	$temp['._.process']['converter_map'] = (gettype($global['map']) == 'array' ? true:false);
+	$temp['._.process']['converter_map'] = (gettype($GLOBALS['settings']['map']) == 'array' ? true:false);
 	# # #
 
 	# # # # # # # # #
 	# # #  inicia tratamentos
 	if ($temp['._.process']['converter_map'] == true) {
 
-		# # # #
-		# # Trata do tipo retorna path
-		if (array_key_exists('path', $post['action'])) {
+		# # # Valida se a solicitação esta sendo feita pra wwroot
+		if ($post['name'] != 'wwwroot') {
+			# # # #
+			# # Trata do tipo retorna path
+			if (array_key_exists('path', $post['action'])) {
 
-			$temp['._.process']['return_path'] = false;
+				$temp['._.process']['return_path'] = false;
 
-			# configrua quando a soliciatação de path for para prod
-			if ($post['action']['path'] == 'prod') {
+				# configrua quando a soliciatação de path for para prod
+				if ($post['action']['path'] == 'prod') {
 
-				$temp['._.done'] = $global['map']['wwwroot'].$global['map'][$post['type']][$post['name']]['prod'];
-				$temp['._.process']['return_path'] = true;
+					$temp['._.done'] = $GLOBALS['settings']['wwwroot'].$GLOBALS['settings']['map'][$post['type']][$post['name']]['prod'];
+					$temp['._.process']['return_path'] = true;
+				}
+
+				# configrua quando a soliciatação de path for para prod
+				else if ($post['action']['path'] == 'dist') {
+
+					$temp['._.done'] = $GLOBALS['settings']['map'][$post['type']][$post['name']]['dist'];
+					$temp['._.process']['return_path'] = true;
+				}
+
+				else {$temp['._.erro']['return_path'] = 'O tipo de retorno é invalido, é esperado uma array "(prod) para produção ou (dist) pra distribuição"';}
 			}
+			// TODO: Validar se a estritura até path existe com "F:array_key_exists"
+			# # Trata do tipo retorna path
+			# # # #
 
-			# configrua quando a soliciatação de path for para prod
-			else if ($post['action']['path'] == 'dist') {
+			# # # #
+			# # Trata actions do tipo abrir arquivo
+			if (array_key_exists('open', $post['action'])) {
 
-				$temp['._.done'] = $global['map'][$post['type']][$post['name']]['dist'];
-				$temp['._.process']['return_path'] = true;
+				$temp['._.process']['open'] = false;
+
+				if (gettype($post['action']['open']) == 'boolean' && $post['action']['open'] == true) {
+			
+					// TODO: Validar se a estritura até path existe com "F:array_key_exists"
+
+					# importa conteudo do mapa
+					$temp['open'] = file_get_contents($GLOBALS['settings']['wwwroot'].$GLOBALS['settings']['map'][$post['type']][$post['name']]['prod']);
+
+					# Adiciona os dados importados em done caso tenha dado certo
+					$temp['._.done'] = ($temp['open'] ? $temp['open']:false);
+
+					if ($temp['._.done'] == false) {  $temp['._.erro']['open'] = 'Não foi possivel abrir o arquivo'; }
+					else { $temp['._.process']['open'] = true; }
+
+					# apaga open
+					unset($temp['open']);
+				}
 			}
-
-			else {$temp['._.erro']['return_path'] = 'O tipo de retorno é invalido, é esperado uma array "(prod) para produção ou (dist) pra distribuição"';}
+			# # Trata actions do tipo abrir arquivo
+				# # # #
 		}
-		// TODO: Validar se a estritura até path existe com "F:array_key_exists"
-		# # Trata do tipo retorna path
-		# # # #
 
-		# # # #
-		# # Trata actions do tipo abrir arquivo
-		if (array_key_exists('open', $post['action'])) {
-
-			$temp['._.process']['open'] = false;
-
-			if (gettype($post['action']['open']) == 'boolean' && $post['action']['open'] == true) {
-		
-				// TODO: Validar se a estritura até path existe com "F:array_key_exists"
-
-				# importa conteudo do mapa
-				$temp['open'] = file_get_contents($global['map']['wwwroot'].$global['map'][$post['type']][$post['name']]['prod']);
-
-				# Adiciona os dados importados em done caso tenha dado certo
-				$temp['._.done'] = ($temp['open'] ? $temp['open']:false);
-
-				if ($temp['._.done'] == false) {  $temp['._.erro']['open'] = 'Não foi possivel abrir o arquivo'; }
-				else { $temp['._.process']['open'] = true; }
-
-				# apaga open
-				unset($temp['open']);
-			}
-		}
-		# # Trata actions do tipo abrir arquivo
-		# # # #
-
+		# # # Caso a solicitação seja pra root
+		if ($post['name'] == 'wwwroot') { $temp['._.done'] = $GLOBALS['settings']['wwwroot']; }
 	}
 	# Retorna erro caso o mapa não abra
-	else {$temp['._.erro']['converter_map'] = 'O map é um "'.gettype($global['map']).'" mas era esperado uma array na conversão do json'; }
+	else {$temp['._.erro']['converter_map'] = 'O map é um "'.gettype($GLOBALS['settings']['map']).'" mas era esperado uma array na conversão do json'; }
 
 
 	return retorna_funcao($temp, $return);

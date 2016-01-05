@@ -7,13 +7,20 @@
 	include '._.config.php';
 
 	# Adiciona conjunto de regras para select
-	include '..\assets\vendor\php\phpSelectSQL.php';
+	include '..\vendor\php\phpSelectSQL.php';
 
 	# Adiciona conjunto de funções
 	include 'functions.php';
 
 	# # # # INCLUDES  # # # # # # # #
 	# # # # # # # # # # # # # # # # # 
+
+	# # # # # # # # # # # # # # # # # 
+	# # # CONFIGURA MAP-FILES # # # #
+	file_open(array('name'=>'wwwroot'), true);
+	# # # CONFIGURA MAP-FILES # # # #
+	# # # # # # # # # # # # # # # # # 
+
 
 	if (array_key_exists('ajax', $post)) {
 		// {"._.list":["ajax"], "ajax":{"._.type":["array"], "._.required":true, "._.list":["user", "action", "method", "values"], [TODO:]}}
@@ -55,5 +62,4 @@
 
 	# # # # LOAD PAGES  # # # # # # #
 	# # # # # # # # # # # # # # # # #
-
 ?>
