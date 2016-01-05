@@ -1,14 +1,5 @@
 <?php
 
-# # Localhost
-// $settings['wwwroot'] = 'http://localhost/vg/livroDigital/';
-$settings['wwwroot'] = 'http://192.168.100.3/vg/livroDigital/';
-
-$settings['wwwroot'] = 'http://192.168.100.3/vg/livroDigital/';
-
-
-
-
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # # # # # FUNÇÃO DE CONSTRUÇÃO DE HTML APARTIR DE JSON  # # # # # # #
 function construct_html($post, $return) {
@@ -368,6 +359,8 @@ function construct_html($post, $return) {
 # # # # # FUNÇÃO DE CONSTRUÇÃO DE HTML APARTIR DE JSON  # # # # # # #
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# # # # # FUNÇÃO DE IMPORTAÇÃO E ABERTURA DE ARQUIVOS # # # # # # # #
 function file_open($post, $return) {
 	//{"._.list":["name", "type", "action"], "name":{"._.required":true, "._.type":["syting"]}}
 	// TODO: Validar o post
@@ -482,6 +475,9 @@ function file_open($post, $return) {
 
 	return retorna_funcao($temp, $return);
 }
+# # # # # FUNÇÃO DE IMPORTAÇÃO E ABERTURA DE ARQUIVOS # # # # # # # #
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+
 
 // $temp['file'] = json_decode('{"name":"jquery", "type":"js", "action":{"path":"dist"}}', true);
 $temp['file'] = json_decode('{"name":"jquery", "type":"js", "action":{"open":true}}', true);
