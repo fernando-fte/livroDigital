@@ -1,12 +1,17 @@
 <?php
 
-  //== Especificações da estrutura de comando para contrução do html
-  //{"._.list":["html","id","content","after","before","style","attr","html-data","._.action"],"html":{"._.//":"Tipo de elemento que pode [html, p, h1] ou null para texto puro","._.required":true,"._.type":["NULL","string"]},"id":{"._.//":"Identificação do elemento, usado apenas caso o html seja valido","._.required":false,"._.type":["string"]},"content":{"._.//":"Valor tipo texto para ser inserido no elemento","._.required":false,"._.type":["string"]},"after":{"._.//":"Adiciona antes deste contexto um novo indice","._.required":false,"._.type":["array","string"]},"before":{"._.//":"Adiciona após este contexto um novo indice","._.required":false,"._.type":["array","string"]},"style":{"._.//":"Conjunto de estilos inline","._.required":false,"._.type":["object"],"._.list":["class","inline"],"class":{"._.//":"Define conjunto de classes que deve ser descrito da seguinte forma [.classe .classe2]","._.required":false,"._.type":["array","string"]},"inline":{"._.//":"Define um conjunto de regras css inline","._.required":false,"._.type":["string"]}},"attr":{"._.//":"Adiciona atributos no elemento atual","._.required":false,"._.type":["array","object"]},"html-data":{"._.//":"Adiciona especificamente um atributo do tipo data-html","._.required":false,"._.type":["object","string"]},"._.action":{"._.//":"Adiciona um conjunto de regras para manipulação da estrutura atual","._.required":false,"._.type":["object"]}}
+# # Localhost
+// $settings['wwwroot'] = 'http://localhost/vg/livroDigital/';
+$settings['wwwroot'] = 'http://192.168.100.3/vg/livroDigital/';
+
+$settings['wwwroot'] = 'http://192.168.100.3/vg/livroDigital/';
+
+
 
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # # # # # FUNÇÃO DE CONSTRUÇÃO DE HTML APARTIR DE JSON  # # # # # # #
-function construct_html ($post, $return) {
+function construct_html($post, $return) {
 	// {"._.list":["input"],"input":{"._.//":"Content principal dos parametros para construção do html","._.required":true,"._.type":["string","array"],"._.list":["html","id","css","class","attr","content","data-html","._.action"],"html":{"._.//":"Tipo de elemento que pode [html, p, h1] ou null para texto puro","._.required":true,"._.type":["NULL","string"]},"id":{"._.//":"Identificação do elemento, usado apenas caso o html seja valido","._.required":false,"._.type":["string"]},"content":{"._.//":"Valor a ser inserido dentro do html, podendo ser um texto simples ou uma array contendo todas as regras atuais listadas","._.required":false,"._.type":["string","array"]},"css":{"._.//":"Define um conjunto de regras css inline","._.required":false,"._.type":["string"]},"class":{"._.//":"Define conjunto de classes que deve ser descrito da seguinte forma [.classe .classe2]","._.required":false,"._.type":["array","string"]},"attr":{"._.//":"Adiciona atributos no elemento atual","._.required":false,"._.type":["array","object"]},"data-html":{"._.//":"Adiciona especificamente um atributo do tipo data-html","._.required":false,"._.type":["object","string"]},"._.action":{"._.//":"Adiciona um conjunto de regras para manipulação da estrutura atual","._.required":false,"._.type":["object"]}}}
 
 
@@ -366,16 +371,129 @@ function construct_html ($post, $return) {
 # # # # # FUNÇÃO DE CONSTRUÇÃO DE HTML APARTIR DE JSON  # # # # # # #
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
+function file_open($post, $return) {
+	//{"._.list":["name", "type", "action"], "name":{"._.required":true, "._.type":["syting"]}}
+	// TODO: Validar o post
+
+	$temp['._.process'] = false;
+	$temp['._.success'] = false;
+	$temp['._.erro'] = false;
+	$temp['._.warning'] = false;
+	$temp['._.reserve'] = false;
+	$temp['._.done'] = null;
+	$temp['._.backup'] = $post;
+
+	# # #
+	# global do nome do mapa
+	$global['name']['map'] = 'map.src';
+	$global['path']['map'] = '';
+	$global['path_map'] = $global['name']['map'].$global['path']['map'];
+	$global['map'] = false;
+	# # #
+
+	# # # #
+	# # Abre o mapa de arquivos
+
+	# # #
+	# Valida se o arquivo map existe
+	$temp['._.process']['exist_map'] = (file_exists($global['path_map']) ? true:false);
+	# # #
+
+	# abre o mapa caso ele exista
+	if ($temp['._.process']['exist_map'] == true) {
+		
+		# importa conteudo do mapa
+		$temp['open'] = file_get_contents($global['path_map']);
+
+		# transforma mapa em array
+		$global['map'] = json_decode($temp['open'], true);
+
+		# apaga open
+		unset($temp['open']);
+	}
+	# Retorna erro caso o mapa não abra
+	else {$temp['._.erro']['exist_map'] = 'O mapa de arquivos nao foi encontrado'; }
+
+	# # FIM: Abre o mapa de arquivos
+	# # # #
+
+	# # #
+	# valida se o mapa foi transformado
+	$temp['._.process']['converter_map'] = (gettype($global['map']) == 'array' ? true:false);
+	# # #
+
+	# # # # # # # # #
+	# # #  inicia tratamentos
+	if ($temp['._.process']['converter_map'] == true) {
+
+		# # # #
+		# # Trata do tipo retorna patch
+		if (array_key_exists('path', $post['action'])) {
+
+			$temp['._.process']['return_path'] = false;
+
+			# configrua quando a soliciatação de patch for para prod
+			if ($post['action']['path'] == 'prod') {
+
+				$temp['._.done'] = $global['map']['wwwroot'].$global['map'][$post['type']][$post['name']]['prod'];
+				$temp['._.process']['return_path'] = true;
+			}
+
+			# configrua quando a soliciatação de patch for para prod
+			else if ($post['action']['path'] == 'dist') {
+
+				$temp['._.done'] = $global['map'][$post['type']][$post['name']]['dist'];
+				$temp['._.process']['return_path'] = true;
+			}
+
+			else {$temp['._.erro']['return_path'] = 'O tipo de retorno é invalido, é esperado uma array "(prod) para produção ou (dist) pra distribuição"';}
+		}
+		// TODO: Validar se a estritura até path existe com "F:array_key_exists"
+		# # Trata do tipo retorna patch
+		# # # #
+
+		# # # #
+		# # Trata actions do tipo abrir arquivo
+		if (array_key_exists('open', $post['action'])) {
+
+			$temp['._.process']['open'] = false;
+
+			if (gettype($post['action']['open']) == 'boolean' && $post['action']['open'] == true) {
+		
+				// TODO: Validar se a estritura até path existe com "F:array_key_exists"
+
+				# importa conteudo do mapa
+				$temp['open'] = file_get_contents($global['map']['wwwroot'].$global['map'][$post['type']][$post['name']]['prod']);
+
+				# Adiciona os dados importados em done caso tenha dado certo
+				$temp['._.done'] = ($temp['open'] ? $temp['open']:false);
+
+				if ($temp['._.done'] == false) {  $temp['._.erro']['open'] = 'Não foi possivel abrir o arquivo'; }
+				else { $temp['._.process']['open'] = true; }
+
+				# apaga open
+				unset($temp['open']);
+			}
+		}
+		# # Trata actions do tipo abrir arquivo
+		# # # #
+
+	}
+	# Retorna erro caso o mapa não abra
+	else {$temp['._.erro']['converter_map'] = 'O map é um "'.gettype($global['map']).'" mas era esperado uma array na conversão do json'; }
 
 
+	return retorna_funcao($temp, $return);
+}
 
+// $temp['file'] = json_decode('{"name":"jquery", "type":"js", "action":{"path":"dist"}}', true);
+$temp['file'] = json_decode('{"name":"jquery", "type":"js", "action":{"open":true}}', true);
+$temp['file']['output'] = file_open($temp['file'], 'done');
 
-
-
-
+# # # #
+# chama função de contrução html
 $temp['html']['input'] = '{"html":"div","class":[".app-tipo-div",".text-bold"],"attr":[{"name":"name","value":{"v":"ob"}},{"name":"name","value":{"v":"ob"}},{"name":"name","value":"oi"}],"data-html":[{"name":"htmlgetsql","value":true}],"content":[{"html":"span","content":"Esse é um texto simples","class":"app-tipo-span"},{"html":null,"content":"Esse é um texto depois do elemento atual"},{"html":"span","class":".fa .fa-ico","id":"btn"}]}';
-// construct_html($post, 'print');
-print_r(construct_html($temp['html'], 'done'));
+$temp['html']['output'] = construct_html($temp['html'], 'done');
 
 ?>
 
