@@ -12,7 +12,7 @@
   ],
   "attr":[{"name":"name", "value":{"v":"ob"}}, {"name":"name", "value":{"v":"ob"}}, {"name":"name", "value":"oi"}],
   "data-html":[{"name":"htmlgetsql", "value":true}],
-  "after": [
+  "content": [
     {
       "html": "span",
       "content": "Esse é um texto simples",
@@ -51,8 +51,10 @@ function construct_html ($post, $return) {
 	// $temp['._.process']['F_form_serialize']
 	// $temp['._.process']['F_form_monta_parametros']
 
+	// TODO: Adiciona validação do post
+
 	# # # Converte post json em array
-	$temp['post'] = (gettype($temp['post']) == 'array' ? $temp['post']:json_decode($post, true);
+	$temp['post'] = (gettype($post) == 'array' ? $post:json_decode($post, true));
 
 	# valida processo de conversão do json
 	$temp['._.process']['json_decode'] = (gettype($temp['post']) == 'array' ? true:false);
@@ -261,7 +263,7 @@ function construct_html ($post, $return) {
 					$temp['._.reserve']['attr_html'] .= $temp['post']['class'][$i];
 
 					# se for o fim fecha aspas e adiciona um espaço se nao, nao faz nada
-					$temp['._.reserve']['attr_html'] .= (($i + 1) == count($temp['post']['class']) ? '" ':'');
+					$temp['._.reserve']['attr_html'] .= (($i + 1) == count($temp['post']['class']) ? '"':'');
 				}
 			}
 
@@ -289,7 +291,7 @@ function construct_html ($post, $return) {
 
 		
 		# # # # # # # # # # # # # # # # #
-		# # # # TRARA CONTEUDO  # # # # #
+		# # # # TRATA CONTEUDO  # # # # #
 
 
 		# cria elemento de reserva para os conteudos do html
@@ -297,21 +299,26 @@ function construct_html ($post, $return) {
 
 		# # #
 		# # trata conteudo
-			
+
+		# caso seja enviado um parametro do tipo content
 		if ($temp['._.process']['html_content'] == true) {
 			
 			# valida se contents é uma string 
-			if (gettype($temp['._.reserve']['content']) == 'string') {
+			if (gettype($temp['post']['content']) == 'string') {
 
 				# O contents é um texto simples
-				$temp['._.reserve']['content'] .= $temp['._.process']['html_content'];
+				$temp['._.reserve']['content'] .= $temp['post']['content'];
 			}
 
-			else if (gettype($temp['._.reserve']['content']) == 'array') {
+			# valida se contents é uma array
+			else if (gettype($temp['post']['content']) == 'array') {
 
-				for ($i=0; $i < count($temp['._.reserve']['content']); $i++) { 
-					
+				for ($i=0; $i < count($temp['post']['content']); $i++) { 
+
 					//TODO loop da função
+					$temp['F:construct_html'][$i] = construct_html($temp['post']['content'][$i], true);
+
+					$temp['._.reserve']['content'] .= $temp['F:construct_html'][$i]['done'];
 				}
 			}
 		}
@@ -319,30 +326,55 @@ function construct_html ($post, $return) {
 		# # trata conteudo
 		# # #
 
-		# # # FIM: TRARA CONTEUDO # # # #
+
+		# # # FIM: TRATA CONTEUDO # # # #
 		# # # # # # # # # # # # # # # # #
 
 
-		# # #
-		# # trata after
+		# # # # # # # # # # # # # # # # #
+		# # # # # # TRATA HTML  # # # # #
 
-		if ($temp['._.process']['html_style_class'] == true) { 
+		# Inicia tratamento dos parmetros de html
+		if ($temp['._.process']['html_element'] == true) { 
 
+			# inicia a tag do html e adiciona atributos
+			$temp['._.done'] = '<'.$temp['post']['html'].$temp['._.reserve']['attr_html'];
+
+			# # define o html como aberto
+			$temp['fechado'] = false;
+
+			# # valida condições para html fechado
+			$temp['fechado'] = ($temp['post']['html'] == 'img' ? true:$temp['fechado']);
+			$temp['fechado'] = ($temp['post']['html'] == 'input' ? true:$temp['fechado']);
+			$temp['fechado'] = ($temp['post']['html'] == 'select' ? true:$temp['fechado']);
+			$temp['fechado'] = ($temp['post']['html'] == 'button' ? true:$temp['fechado']);
+
+			# Finaliza html de acordo com sua estrutura "aberto/fechado"
+			$temp['._.done'] .= ($temp['fechado'] == false ? '>'.$temp['._.reserve']['content'].'</'.$temp['post']['html'].'>':'/>'.$temp['._.reserve']['content']);
+
+			$temp['._.process']['html_construc'] = true;
 		}
 
-		# # FIM: trata after
-		# # #
+		# caso o parametro solicite apenas contents "pode ser um texto"
+		if ($temp['._.process']['html_element'] == null)  {
+
+			# adiciona os valores de contents
+			$temp['._.done'] = $temp['._.reserve']['content'];
+		}
+
+		# # # # # # TRATA HTML  # # # # #
+		# # # # # # # # # # # # # # # # #
 	}
 
 	# caso o json tenha sido convertido
 	else { $temp['._.erro']['json_decode'] = 'O arquivo está corrompido verifique se a syntax esta correta';  }
 
 
-	retorna_funcao($temp, $return);
+	return retorna_funcao($temp, $return);
 }
 
 
-construct_html($post, 'print');
+print_r(construct_html($post, 'done'));
 
 ?>
 
