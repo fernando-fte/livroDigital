@@ -3,36 +3,12 @@
   //== Especificações da estrutura de comando para contrução do html
   //{"._.list":["html","id","content","after","before","style","attr","html-data","._.action"],"html":{"._.//":"Tipo de elemento que pode [html, p, h1] ou null para texto puro","._.required":true,"._.type":["NULL","string"]},"id":{"._.//":"Identificação do elemento, usado apenas caso o html seja valido","._.required":false,"._.type":["string"]},"content":{"._.//":"Valor tipo texto para ser inserido no elemento","._.required":false,"._.type":["string"]},"after":{"._.//":"Adiciona antes deste contexto um novo indice","._.required":false,"._.type":["array","string"]},"before":{"._.//":"Adiciona após este contexto um novo indice","._.required":false,"._.type":["array","string"]},"style":{"._.//":"Conjunto de estilos inline","._.required":false,"._.type":["object"],"._.list":["class","inline"],"class":{"._.//":"Define conjunto de classes que deve ser descrito da seguinte forma [.classe .classe2]","._.required":false,"._.type":["array","string"]},"inline":{"._.//":"Define um conjunto de regras css inline","._.required":false,"._.type":["string"]}},"attr":{"._.//":"Adiciona atributos no elemento atual","._.required":false,"._.type":["array","object"]},"html-data":{"._.//":"Adiciona especificamente um atributo do tipo data-html","._.required":false,"._.type":["object","string"]},"._.action":{"._.//":"Adiciona um conjunto de regras para manipulação da estrutura atual","._.required":false,"._.type":["object"]}}
 
-  $post['input'] = '
-{
-  "html": "div",
-  "class": [
-    ".app-tipo-div",
-    ".text-bold"
-  ],
-  "attr":[{"name":"name", "value":{"v":"ob"}}, {"name":"name", "value":{"v":"ob"}}, {"name":"name", "value":"oi"}],
-  "data-html":[{"name":"htmlgetsql", "value":true}],
-  "content": [
-    {
-      "html": "span",
-      "content": "Esse é um texto simples",
-      "class": "app-tipo-span"
-    },
-    {
-      "html": null,
-      "content": "Esse é um texto depois do elemento atual"
-    },
-    {
-      "html": "span",
-      "class": ".fa .fa-ico",
-      "id": "btn"
-    }
-  ]
-}
-  ';
 
-
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# # # # # FUNÇÃO DE CONSTRUÇÃO DE HTML APARTIR DE JSON  # # # # # # #
 function construct_html ($post, $return) {
+	// {"._.list":["input"],"input":{"._.//":"Content principal dos parametros para construção do html","._.required":true,"._.type":["string","array"],"._.list":["html","id","css","class","attr","content","data-html","._.action"],"html":{"._.//":"Tipo de elemento que pode [html, p, h1] ou null para texto puro","._.required":true,"._.type":["NULL","string"]},"id":{"._.//":"Identificação do elemento, usado apenas caso o html seja valido","._.required":false,"._.type":["string"]},"content":{"._.//":"Valor a ser inserido dentro do html, podendo ser um texto simples ou uma array contendo todas as regras atuais listadas","._.required":false,"._.type":["string","array"]},"css":{"._.//":"Define um conjunto de regras css inline","._.required":false,"._.type":["string"]},"class":{"._.//":"Define conjunto de classes que deve ser descrito da seguinte forma [.classe .classe2]","._.required":false,"._.type":["array","string"]},"attr":{"._.//":"Adiciona atributos no elemento atual","._.required":false,"._.type":["array","object"]},"data-html":{"._.//":"Adiciona especificamente um atributo do tipo data-html","._.required":false,"._.type":["object","string"]},"._.action":{"._.//":"Adiciona um conjunto de regras para manipulação da estrutura atual","._.required":false,"._.type":["object"]}}}
+
 
 	$temp['._.process'] = false;
 	// $temp['._.process']['json_decode'] = false; // trata a conversão do json
@@ -387,10 +363,19 @@ function construct_html ($post, $return) {
 
 	return retorna_funcao($temp, $return);
 }
+# # # # # FUNÇÃO DE CONSTRUÇÃO DE HTML APARTIR DE JSON  # # # # # # #
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
 
+
+
+
+
+
+
+$temp['html']['input'] = '{"html":"div","class":[".app-tipo-div",".text-bold"],"attr":[{"name":"name","value":{"v":"ob"}},{"name":"name","value":{"v":"ob"}},{"name":"name","value":"oi"}],"data-html":[{"name":"htmlgetsql","value":true}],"content":[{"html":"span","content":"Esse é um texto simples","class":"app-tipo-span"},{"html":null,"content":"Esse é um texto depois do elemento atual"},{"html":"span","class":".fa .fa-ico","id":"btn"}]}';
 // construct_html($post, 'print');
-print_r(construct_html($post, 'done'));
+print_r(construct_html($temp['html'], 'done'));
 
 ?>
 
