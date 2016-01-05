@@ -45,6 +45,10 @@ function construct_html($post, $return) {
 
 		$temp['._.process']['html_attr'] = (array_key_exists('attr', $temp['post']) ? true:null);
 
+		$temp['._.process']['src'] = (array_key_exists('src', $temp['post']) ? true:null);
+
+		$temp['._.process']['href'] = (array_key_exists('href', $temp['post']) ? true:null);
+
 		$temp['._.process']['action'] = (array_key_exists('._.action', $temp['post']) ? true:null);
 
 
@@ -118,6 +122,60 @@ function construct_html($post, $return) {
 
 		# # FIM: trata data-html 
 		# # # 
+
+		# # #
+		# # trata src e href
+
+		# # # Trata SRC
+		if ($temp['._.process']['src'] == true) {
+			// {"._.list":["source", "path"], "source":{"._.required":true, "._.type":["string"]}, "path":{"._.required":false, "._.type":["string"]}}}
+
+			if (array_key_exists('path', $temp['post']['src'])) {
+
+				$temp['short']['input']['name'] = $temp['post']['src']['source'];
+				$temp['short']['input']['type'] = $temp['post']['src']['type'];
+				$temp['short']['input']['action']['path'] = $temp['post']['src']['path'];
+
+				$temp['short']['F:file_open'] = file_open($temp['short']['input'], $return);
+
+				if ($temp['short']['F:file_open']['success'] == true) {
+					$temp['._.reserve']['attr_html'] .= ' src="'.$temp['short']['F:file_open']['done'] .'"';
+				}
+				else { $temp['._.warning']['src'] = 'Não foi encontrado o local definico'; }
+
+				unset($temp['short']);
+			}
+			else { $temp['._.reserve']['attr_html'] .= ' src="'.$temp['post']['source'] .'"'; }
+		}
+		# remove processo SRC
+		else { unset($temp['._.process']['src']);  }
+
+		# # # Trata HREF
+		if ($temp['._.process']['href'] == true) {
+			// {"._.list":["source", "path"], "source":{"._.required":true, "._.type":["string"]}, "path":{"._.required":false, "._.type":["string"]}}}
+
+			if (array_key_exists('path', $temp['post']['href'])) {
+
+				$temp['short']['input']['name'] = $temp['post']['href']['source'];
+				$temp['short']['input']['type'] = $temp['post']['href']['type'];
+				$temp['short']['input']['action']['path'] = $temp['post']['href']['path'];
+
+				$temp['short']['F:file_open'] = file_open($temp['short']['input'], $return);
+
+				if ($temp['short']['F:file_open']['success'] == true) {
+					$temp['._.reserve']['attr_html'] .= ' href="'.$temp['short']['F:file_open']['done'] .'"';
+				}
+				else { $temp['._.warning']['href'] = 'Não foi encontrado o local definico'; }
+
+				unset($temp['short']);
+			}
+			else { $temp['._.reserve']['attr_html'] .= ' href="'.$temp['post']['source'] .'"'; }
+		}
+		# remove processo href
+		else { unset($temp['._.process']['href']);  }
+
+		# # trata src e href
+		# # #
 
 
 		# # #
@@ -473,7 +531,7 @@ function construct_html($post, $return) {
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # # # # # FUNÇÃO DE IMPORTAÇÃO E ABERTURA DE ARQUIVOS # # # # # # # #
 function file_open($post, $return) {
-	//{"._.list":["name", "type", "action"], "name":{"._.required":true, "._.type":["syting"]}}
+	//{"._.list":["name", "type", "action"], "name":{"._.required":true, "._.type":["syting"], "type":{"._.required":true, "._.type":["syting"], "action":{"._.required":true, "._.type":["array"] }}
 	// TODO: Validar o post
 
 	$temp['._.process'] = false;
@@ -528,19 +586,19 @@ function file_open($post, $return) {
 	if ($temp['._.process']['converter_map'] == true) {
 
 		# # # #
-		# # Trata do tipo retorna patch
+		# # Trata do tipo retorna path
 		if (array_key_exists('path', $post['action'])) {
 
 			$temp['._.process']['return_path'] = false;
 
-			# configrua quando a soliciatação de patch for para prod
+			# configrua quando a soliciatação de path for para prod
 			if ($post['action']['path'] == 'prod') {
 
 				$temp['._.done'] = $global['map']['wwwroot'].$global['map'][$post['type']][$post['name']]['prod'];
 				$temp['._.process']['return_path'] = true;
 			}
 
-			# configrua quando a soliciatação de patch for para prod
+			# configrua quando a soliciatação de path for para prod
 			else if ($post['action']['path'] == 'dist') {
 
 				$temp['._.done'] = $global['map'][$post['type']][$post['name']]['dist'];
@@ -550,7 +608,7 @@ function file_open($post, $return) {
 			else {$temp['._.erro']['return_path'] = 'O tipo de retorno é invalido, é esperado uma array "(prod) para produção ou (dist) pra distribuição"';}
 		}
 		// TODO: Validar se a estritura até path existe com "F:array_key_exists"
-		# # Trata do tipo retorna patch
+		# # Trata do tipo retorna path
 		# # # #
 
 		# # # #
@@ -598,8 +656,8 @@ $temp['file'] = json_decode('{"name":"jquery", "type":"js", "action":{"open":tru
 # chama função de contrução html
 $temp['html']['input'] = '{"html":"div","class":[".app-tipo-div",".text-bold"],"attr":[{"name":"name","value":{"v":"ob"}},{"name":"name","value":{"v":"ob"}},{"name":"name","value":"oi"}],"data-html":[{"name":"htmlgetsql","value":true}],"content":[{"html":"span","content":"Esse é um texto simples","class":"app-tipo-span"},{"html":null,"content":"Esse é um texto depois do elemento atual"},{"html":"span","class":".fa .fa-ico","id":"btn"}],"._.action":{"._.import":{"source":"Barra do menu","content":"after"}}}';
 // $temp['html']['input'] = '{"html":"div","class":[".app-tipo-div",".text-bold"],"attr":[{"name":"name","value":{"v":"ob"}},{"name":"name","value":{"v":"ob"}},{"name":"name","value":"oi"}],"data-html":[{"name":"htmlgetsql","value":true}],"content":[{"html":"span","content":"Esse é um texto simples","class":"app-tipo-span"},{"html":null,"content":"Esse é um texto depois do elemento atual"},{"html":"span","class":".fa .fa-ico","id":"btn"}],"._.action":{}}';
-// $temp['html']['output'] = construct_html($temp['html'], true);
-$temp['html']['output'] = construct_html($temp['html'], 'print');
+$temp['html']['output'] = construct_html($temp['html'], true);
+// $temp['html']['output'] = construct_html($temp['html'], 'print');
 
 ?>
 

@@ -1,4 +1,4 @@
 {
 	"html":"a",
-	"attr":[{"name":"src", "value":"/////"}]
+	"src":{"source":"bootstrap", "type":"js", "path":"prod"}
 }
