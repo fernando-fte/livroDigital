@@ -1,8 +1,8 @@
 {
 	"wwwroot": "http://192.168.100.3/vg/livroDigital/",
-	"js": {
+	"scripts": {
 
-		"._.list": ["jquery", "bootstrap"],
+		"._.list": ["jquery", "bootstrap", "coffeescript", "css less", "Bootstrap Slider", "Perfect Scrollbar", "ativa vendor", "app"],
 
 		"jquery": {
 			"dist": "js/jquery.min.js",
@@ -12,6 +12,36 @@
 		"bootstrap": {
 			"dist": "js/bootstrap.min.js",
 			"prod": "vendor/bootstrap/js/bootstrap.js"
+		},
+
+		"coffeescript": {
+			"dist": "vendor/js/coffee-script.js",
+			"prod": "vendor/js/coffee-script.js"
+		},
+
+		"css less": {
+			"dist": "vendor/js/less.min.js",
+			"prod": "vendor/js/less.min.js"
+		},
+
+		"Bootstrap Slider": {
+			"dist": "js/bootstrap.slider.min.js",
+			"prod": "vendor/bootstrap/js/bootstrap.slider.min.js"
+		},
+
+		"Perfect Scrollbar": {
+			"dist": "js/perfect-scrollbar.min.js",
+			"prod": "vendor/js/perfect-scrollbar.min.js"
+		},
+
+		"ativa vendor": {
+			"dist": "js/vendors.js",
+			"prod": "scripts/vendors.js"
+		},
+
+		"app": {
+			"dist": "js/app.min.js",
+			"prod": "scripts/app.coffee"
 		}
 	},
 
@@ -24,20 +54,42 @@
 		}
 	},
 
+	"img":{
+
+		"._.list":["Logo Branca", "Logo Colorida"],
+
+		"Logo branca":{
+			"dir": "img/logo.white.svg",
+			"prod": "img/logo.white.svg"
+		},
+
+		"Logo colorida":{
+			"dir": "img/logo.color.svg",
+			"prod": "img/logo.color.svg"
+		},
+
+		"Logo pós branca":{
+			"dir": "img/logo.pos.white.svg",
+			"prod": "img/logo.pos.white.svg"
+		}
+	},
+
 	"source": {
 
 		"._.list": ["Barra do menu"],
 
-		"Barra do menu": {
-			"prod": "sources/nav-bar.src"
-		},
+		"Barra do menu": { "prod": "sources/nav-bar.src" },
 
-		"Index Project": {
-			"prod": "sources/index_project.src"
-		},
+		"Index Project": { "prod": "sources/index_project.src" },
 
-		"Header": {
-			"prod": "sources/header.src"
-		}
+		"Header": { "prod": "sources/header.src" },
+
+		"Scripts da pagina": { "prod": "sources/scripts.src" },
+
+		"Capa": { "prod": "sources/capa.src" },
+
+		"Menu": { "prod": "sources/menu-bar.src" },
+
+		"Sumário": { "prod": "sources/sumario.src" }
 	}
 }
