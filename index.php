@@ -11,9 +11,12 @@
 
 	$temp['file'] = file_open($temp, 'done');
 
-	// $temp['done'] = construct_html(array('input' => $temp['file']['done']), 'print');
-	$temp['done'] = construct_html(array('input' => $temp['file']['done']), 'done')['done'];
+	$temp['html']['input'] = $temp['file']['done'];
+	// $temp['html']['pattern']['src']['path'] = "dist";
 
-	echo $temp['done'];
+	// $temp['done'] = construct_html($temp['html'], 'print');
+	$temp['done'] = construct_html($temp['html'], false)['done'];
+
+	print_r($temp['done']);
 ?>
 

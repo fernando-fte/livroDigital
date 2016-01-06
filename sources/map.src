@@ -15,6 +15,15 @@
 		}
 	},
 
+	"style":{
+		"._.list":["app"],
+
+		"app":{
+			"dist": "css/app.css",
+			"prod": "style/app.less"
+		}
+	},
+
 	"source": {
 
 		"._.list": ["Barra do menu"],
