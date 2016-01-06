@@ -8,20 +8,34 @@
 
 				"._.import":{
 					"source":"Header",
-					"content":"after"
+					"content":"replace"
 				}
 			}
 		},
 		{
 			"html":"body",
 			"content":[
+				{"html":null, "._.action":{"._.import":{"source":"Capa", "content":"replace" }}},
 				{
-					"html":"span",
-					"id":".app",
-					"class":".app",
-					"content":"OK"
+					"html":"div",
+					"class":["contents", "add-scroll"],
+					"content":[
+						{"html":null, "._.action":{"._.import":{"source":"Menu", "content":"replace" }}},
+						{"html":null, "._.action":{"._.import":{"source":"Sumário", "content":"replace" }}}
+					]
 				}
 			]
+		},
+		{
+			"html":null,
+
+			"._.action":{
+
+				"._.import":{
+					"source":"Scripts da pagina",
+					"content":"replace"
+				}
+			}
 		}
 	]
 }
