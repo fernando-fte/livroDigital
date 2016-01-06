@@ -382,7 +382,7 @@ function retorna_funcao($post, $return) {
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # # # # # FUNÇÃO DE CONSTRUÇÃO DE HTML APARTIR DE JSON  # # # # # # #
 function construct_html($post, $return) {
-	// {"._.list":["input"],"input":{"._.//":"Content principal dos parametros para construção do html","._.required":true,"._.type":["string","array"],"._.list":["html","id","css","class","attr","content","data-html","._.action"],"html":{"._.//":"Tipo de elemento que pode [html, p, h1] ou null para texto puro","._.required":true,"._.type":["NULL","string"]},"id":{"._.//":"Identificação do elemento, usado apenas caso o html seja valido","._.required":false,"._.type":["string"]},"content":{"._.//":"Valor a ser inserido dentro do html, podendo ser um texto simples ou uma array contendo todas as regras atuais listadas","._.required":false,"._.type":["string","array"]},"css":{"._.//":"Define um conjunto de regras css inline","._.required":false,"._.type":["string"]},"class":{"._.//":"Define conjunto de classes que deve ser descrito da seguinte forma [.classe .classe2]","._.required":false,"._.type":["array","string"]},"attr":{"._.//":"Adiciona atributos no elemento atual","._.required":false,"._.type":["array","object"]},"data-html":{"._.//":"Adiciona especificamente um atributo do tipo data-html","._.required":false,"._.type":["object","string"]},"._.action":{"._.//":"Adiciona um conjunto de regras para manipulação da estrutura atual","._.required":false,"._.type":["object"]}}}
+	// {"._.list":["input","pattern"],"input":{"._.//":"Content principal dos parametros para construção do html","._.required":true,"._.type":["string","array"],"._.list":["html","id","css","class","attr","content","data-html","._.action"],"html":{"._.//":"Tipo de elemento que pode [html, p, h1] ou null para texto puro","._.required":true,"._.type":["NULL","string"]},"id":{"._.//":"Identificação do elemento, usado apenas caso o html seja valido","._.required":false,"._.type":["string"]},"content":{"._.//":"Valor a ser inserido dentro do html, podendo ser um texto simples ou uma array contendo todas as regras atuais listadas","._.required":false,"._.type":["string","array"]},"css":{"._.//":"Define um conjunto de regras css inline","._.required":false,"._.type":["string"]},"class":{"._.//":"Define conjunto de classes que deve ser descrito da seguinte forma [.classe .classe2]","._.required":false,"._.type":["array","string"]},"attr":{"._.//":"Adiciona atributos no elemento atual","._.required":false,"._.type":["array","object"]},"data-html":{"._.//":"Adiciona especificamente um atributo do tipo data-html","._.required":false,"._.type":["object","string"]},"._.action":{"._.//":"Adiciona um conjunto de regras para manipulação da estrutura atual","._.required":false,"._.type":["object"]}},"pattern":{"._.//":"Configurações padrão que será repassada para todas as funções, porem nao possui obrigação de ter a mesma estrutura","._.required":true,"._.type":["string","array"],"._.list":["html","id","css","class","attr","content","data-html","._.action"],"html":{"._.//":"Tipo de elemento que pode [html, p, h1] ou null para texto puro","._.required":false,"._.type":["NULL","string"]},"id":{"._.//":"Identificação do elemento, usado apenas caso o html seja valido","._.required":false,"._.type":["string"]},"content":{"._.//":"Valor a ser inserido dentro do html, podendo ser um texto simples ou uma array contendo todas as regras atuais listadas","._.required":false,"._.type":["string","array"]},"css":{"._.//":"Define um conjunto de regras css inline","._.required":false,"._.type":["string"]},"class":{"._.//":"Define conjunto de classes que deve ser descrito da seguinte forma [.classe .classe2]","._.required":false,"._.type":["array","string"]},"attr":{"._.//":"Adiciona atributos no elemento atual","._.required":false,"._.type":["array","object"]},"data-html":{"._.//":"Adiciona especificamente um atributo do tipo data-html","._.required":false,"._.type":["object","string"]},"._.action":{"._.//":"Adiciona um conjunto de regras para manipulação da estrutura atual","._.required":false,"._.type":["object"]}}}
 	// TODO: Adiciona validação do post
 
 
@@ -405,6 +405,30 @@ function construct_html($post, $return) {
 
 	# valida processo de conversão do json
 	$temp['._.process']['json_decode'] = (gettype($temp['post']) == 'array' ? true:false);
+
+	# # # #
+	# # Valida e trata os parametros do tipo PATTERN
+	if ($temp['._.process']['json_decode'] == true) {
+		
+		if (array_key_exists('pattern', $post)) {
+
+			if ($post['pattern'] != false) {
+				// print_r($temp['post']);
+				// echo "-----";
+				// print_r($post['pattern']);
+				// echo "-----";
+				# valida pattern caso src
+				if (array_key_exists('src', $post['pattern']) == true && array_key_exists('src', $temp['post']) == true) {
+
+					# subistitui a estrutura de src para a de pattern
+					$temp['post']['src'] = array_replace_recursive($temp['post']['src'], $post['pattern']['src']);
+				}
+			}
+		}
+		else { $post['pattern'] = false; }
+	}
+	# # Valida e trata os parametros do tipo PATTERN
+	# # # #
 
 	# inicia tratamento
 	if ($temp['._.process']['json_decode'] == true) {
@@ -508,7 +532,7 @@ function construct_html($post, $return) {
 
 		# # # Trata SRC
 		if ($temp['._.process']['src'] == true) {
-			// {"._.list":["source", "path"], "source":{"._.required":true, "._.type":["string"]}, "path":{"._.required":false, "._.type":["string"]}}}
+			// {"._.list":["source", "type", "path"], "source":{"._.required":true, "._.type":["string"]}, "path":{"._.required":false, "._.type":["string"]}}}
 
 			if (array_key_exists('path', $temp['post']['src'])) {
 
@@ -731,7 +755,7 @@ function construct_html($post, $return) {
 
 				for ($i=0; $i < count($temp['post']['content']); $i++) { 
 
-					$temp['F:construct_html'][$i] = construct_html(array('input'=>$temp['post']['content'][$i]), true);
+					$temp['F:construct_html'][$i] = construct_html(array('input'=>$temp['post']['content'][$i], 'pattern'=>$post['pattern']), true);
 
 					$temp['._.reserve']['content'] .= $temp['F:construct_html'][$i]['done'];
 				}
@@ -754,6 +778,8 @@ function construct_html($post, $return) {
 		if ($temp['._.process']['action'] == true) {
 
 			// {"._.list":["source","get"],"source":{"._.//":"Nome do arquivo a ser importado, ou uma lista contendo os valores","._.required":true,"._.type":["string","array"],"._.exact":{"array":{"._.type":"string"}}},"content":{"._.//":"Refere-se ao local onde será inserido o valor","._.required":true,"._.type":["string"],"._.exact":{"string":{"._.text":["after","before","replace"]}}}}
+			// TODO: Criar função para tratar condições de validação
+			// {"._.list":["._.contition"],"condition":{"._.//":"Recebe os parametros de condição como if, while, for em fim","._.required":false,"._.type":["array"],"._.list":["if"],"if":{"._.//":"Valida um ou mais objetos para executar condição","._.required":false,"._.type":["array"],"._.list":["when","==","done"],"when":{"._.//":"Condição para validação","._.required":false,"._.type":["array","string"],"._.list":["ctrl_src"],"ctrl_src":{"._.//":"Seleciona a lista de strings globais, o valor deve ser setado previamente antes da solicitação da função de leitura","._.required":false,"._.type":["string"]}},"is":{"._.//":"Metodo de validação do tipo exatamente, caso array sera contado e selecionado cada um para validação do tipo or","._.required":false,"._.type":["array","string","boolean","null"]},"not":{"._.//":"Metodo de validação do tipo afirmativa negativa, caso array sera contado e selecionado cada um para validação do tipo or","._.required":false,"._.type":["array","string","boolean","null"]},"done":{"._.//":"Ação executada caso o verdadeiro qualquer uma das afirmações, e possui a mesma estrutura de \"._.action\"","._.required":true,"._.type":["array","string","boolean","null"]}}}}
 
 			# # # 
 			# # Action import source
@@ -828,7 +854,7 @@ function construct_html($post, $return) {
 
 							# # #
 							# Transforma dados recebidos na importação
-							$temp['F:construct_html'] = construct_html(array('input' => $temp['short']['import']), false);
+							$temp['F:construct_html'] = construct_html(array('input' => $temp['short']['import'], 'pattern' => $post['pattern']), false);
 							# # #
 
 							# valida se os dados recebudos da função
