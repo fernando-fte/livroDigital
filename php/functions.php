@@ -915,6 +915,7 @@ function construct_html($post, $return) {
 			$temp['fechado'] = ($temp['post']['html'] == 'select' ? true:$temp['fechado']);
 			$temp['fechado'] = ($temp['post']['html'] == 'button' ? true:$temp['fechado']);
 			$temp['fechado'] = ($temp['post']['html'] == 'meta' ? true:$temp['fechado']);
+			$temp['fechado'] = ($temp['post']['html'] == 'link' ? true:$temp['fechado']);
 
 			# Finaliza html de acordo com sua estrutura "aberto/fechado"
 			$temp['._.done'] .= ($temp['fechado'] == false ? '>'.$temp['._.reserve']['content'].'</'.$temp['post']['html'].'>':'/>'.$temp['._.reserve']['content']);
