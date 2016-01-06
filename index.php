@@ -3,7 +3,7 @@
 	include 'php/index.php';
 
 
-	$temp['name'] = 'Index Project';
+	$temp['name'] = 'Projeto';
 	$temp['type'] = 'source';
 	// $temp['action']['path'] = 'prod';
 	// $temp['action']['path'] = 'wwwpatern';

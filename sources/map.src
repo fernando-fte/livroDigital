@@ -76,11 +76,11 @@
 
 	"source": {
 
-		"._.list": ["Barra do menu"],
+		"._.list": ["Projeto", "Barra do menu", "Header", "Scripts da pagina", "Capa", "Menu", "Sumário"],
+
+		"Projeto": { "prod": "sources/index.project.src" },
 
 		"Barra do menu": { "prod": "sources/nav-bar.src" },
-
-		"Index Project": { "prod": "sources/index_project.src" },
 
 		"Header": { "prod": "sources/header.src" },
 
