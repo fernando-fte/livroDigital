@@ -1,0 +1,9 @@
+{
+	"html":"head",
+	"content":[
+		{ "html":"meta", "attr":[{"charset":"utf-8"}] },
+		{ "html":"meta", "attr":[{"http-equiv":"X-UA-Compatible"}, {"content":"IE=edge"}] },
+		{ "html":"meta", "attr":[{"name":"viewport"}, {"content":"width=device-width, initial-scale=1"}] },
+		{ "html":"title", "content":"Título da página" }
+	]
+}

@@ -504,6 +504,7 @@ function construct_html($post, $return) {
 
 		# # #
 		# # trata src e href
+		// TODO: O tipo de link de acordo com o html
 
 		# # # Trata SRC
 		if ($temp['._.process']['src'] == true) {
@@ -515,7 +516,7 @@ function construct_html($post, $return) {
 				$temp['short']['input']['type'] = $temp['post']['src']['type'];
 				$temp['short']['input']['action']['path'] = $temp['post']['src']['path'];
 
-				$temp['short']['F:file_open'] = file_open($temp['short']['input'], $return);
+				$temp['short']['F:file_open'] = file_open($temp['short']['input'], true);
 
 				if ($temp['short']['F:file_open']['success'] == true) {
 					$temp['._.reserve']['attr_html'] .= ' src="'.$temp['short']['F:file_open']['done'] .'"';
@@ -539,7 +540,7 @@ function construct_html($post, $return) {
 				$temp['short']['input']['type'] = $temp['post']['href']['type'];
 				$temp['short']['input']['action']['path'] = $temp['post']['href']['path'];
 
-				$temp['short']['F:file_open'] = file_open($temp['short']['input'], $return);
+				$temp['short']['F:file_open'] = file_open($temp['short']['input'], true);
 
 				if ($temp['short']['F:file_open']['success'] == true) {
 					$temp['._.reserve']['attr_html'] .= ' href="'.$temp['short']['F:file_open']['done'] .'"';
@@ -575,31 +576,38 @@ function construct_html($post, $return) {
 					// TODO: Modifica syntax do attr quando for array
 
 					# Caso o atributo tenha valores
-					if (gettype($temp['post']['attr'][$i]) != 'string') {
+					if (gettype($temp['post']['attr'][$i]) == 'array') {
 
 						# define aspas como dupla
 						$temp['aspas'] = '"';
 
+						# encurta valores encontrados atualmente
+						$temp['short']['name'] = array_keys($temp['post']['attr'][$i])['0'];
+						$temp['short']['value'] = array_values($temp['post']['attr'][$i])['0'];
+
 						# caso o value do atributo seja um array converte em string tipo json
-						if (gettype($temp['post']['attr'][$i]['value']) != 'string') {
+						if (gettype($temp['short']['value']) != 'string') {
 
 							# converte em string=> object
-							$temp['post']['attr'][$i]['value'] = json_encode($temp['post']['attr'][$i]['value']);
-							$temp['._.process']['html_attr_value'][$temp['post']['attr'][$i]['name']][$i] = true;
+							$temp['short']['value'] = json_encode($temp['short']['value']);
+							$temp['._.process']['html_attr_value'][$temp['short']['name']][$i] = true;
 
 							# define aspas como simples
 							$temp['aspas'] = '\'';
 						}
 
 						# adiciona os atributos
-						$temp['._.reserve']['attr_html'] .= ' '.$temp['post']['attr'][$i]['name'].'='.$temp['aspas'].$temp['post']['attr'][$i]['value'].$temp['aspas'];
+						$temp['._.reserve']['attr_html'] .= ' '.$temp['short']['name'].'='.$temp['aspas'].$temp['short']['value'].$temp['aspas'];
+
+						# apaga short
+						unset($temp['short']);
 					}
 
 					# caso o atributo nao tenha valores, adiciona ele sem sinal de "="
 					else { $temp['._.reserve']['attr_html'] .= ' '.$temp['post']['attr'][$i]; }
 				}
 
-				unset($temp['aspas']);
+				unset($temp['aspas'], $i);
 			}
 
 			# valida se o formato é do tipo string
@@ -880,6 +888,7 @@ function construct_html($post, $return) {
 			$temp['fechado'] = ($temp['post']['html'] == 'input' ? true:$temp['fechado']);
 			$temp['fechado'] = ($temp['post']['html'] == 'select' ? true:$temp['fechado']);
 			$temp['fechado'] = ($temp['post']['html'] == 'button' ? true:$temp['fechado']);
+			$temp['fechado'] = ($temp['post']['html'] == 'meta' ? true:$temp['fechado']);
 
 			# Finaliza html de acordo com sua estrutura "aberto/fechado"
 			$temp['._.done'] .= ($temp['fechado'] == false ? '>'.$temp['._.reserve']['content'].'</'.$temp['post']['html'].'>':'/>'.$temp['._.reserve']['content']);
@@ -1008,6 +1017,13 @@ function file_open($post, $return) {
 				else if ($post['action']['path'] == 'dist') {
 
 					$temp['._.done'] = $GLOBALS['settings']['map'][$post['type']][$post['name']]['dist'];
+					$temp['._.process']['return_path'] = true;
+				}
+
+				# configrua quando a soliciatação de path for para prod
+				else if ($post['action']['path'] == 'wwwpatern') {
+
+					$temp['._.done'] = $GLOBALS['settings']['wwwpatern'].$GLOBALS['settings']['map'][$post['type']][$post['name']]['prod'];
 					$temp['._.process']['return_path'] = true;
 				}
 

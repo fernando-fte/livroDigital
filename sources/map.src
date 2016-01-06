@@ -20,7 +20,15 @@
 		"._.list": ["Barra do menu"],
 
 		"Barra do menu": {
-			"prod": "source/nav-bar.src"
+			"prod": "sources/nav-bar.src"
+		},
+
+		"Index Project": {
+			"prod": "sources/index_project.src"
+		},
+
+		"Header": {
+			"prod": "sources/header.src"
 		}
 	}
 }

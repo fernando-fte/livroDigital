@@ -1,0 +1,28 @@
+{
+	"html":"html",
+	"content":[
+		{
+			"html":null,
+
+			"._.action":{
+
+				"._.import":{
+					"source":"Header",
+
+					"content":"after"
+				}
+			}
+		},
+		{
+			"html":"body",
+			"content":[
+				{
+					"html":"span",
+					"id":".app",
+					"class":".app",
+					"content":"OK"
+				}
+			]
+		}
+	]
+}

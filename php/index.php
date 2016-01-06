@@ -7,7 +7,7 @@
 	include '._.config.php';
 
 	# Adiciona conjunto de regras para select
-	include '..\vendor\php\phpSelectSQL.php';
+	include $settings['wwwpatern'].'vendor\php\phpSelectSQL.php';
 
 	# Adiciona conjunto de funções
 	include 'functions.php';

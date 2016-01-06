@@ -1,4 +1,5 @@
 {
 	"html":"a",
-	"src":{"source":"bootstrap", "type":"js", "path":"prod"}
+	"href":{"source":"bootstrap", "type":"js", "path":"prod"},
+	"content":"Ok"
 }

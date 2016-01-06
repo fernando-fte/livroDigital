@@ -27,6 +27,7 @@ function construct_html($post, $return) {
 	# valida processo de conversão do json
 	$temp['._.process']['json_decode'] = (gettype($temp['post']) == 'array' ? true:false);
 
+
 	# inicia tratamento
 	if ($temp['._.process']['json_decode'] == true) {
 
