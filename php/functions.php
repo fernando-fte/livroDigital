@@ -1180,6 +1180,9 @@ function file_open($post, $return) {
 					# # # #
 				}
 				else {$temp['._.erro']['new'] = 'A declaração de path "'.$post['action']['path'].'" está incorreta era esperado "dist" ou "prod"'; }
+
+				# apaga arquivos remanecentes
+				unset($temp['new']);
 			}
 			# # Trata quando for para criar arquivo
 			# # # #
