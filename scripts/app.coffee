@@ -37,19 +37,19 @@ $.form = (post) ->
 # # # #
 #  Cria arquivo compilado do less
 
-# declara eestrutura do objeto
-$.style = {"result":"null","seletor":null,"ajax":{"action":{"content":{}, "type":null}, "license":{}}}
+# # declara eestrutura do objeto
+# $.style = {"result":"null","seletor":null,"ajax":{"action":{"content":{}, "type":null}, "license":{}}}
 
-# define seletor do estilo less compilado
-$.style.seletor = $('style')['0']
+# # define seletor do estilo less compilado
+# $.style.seletor = $('style')['0']
 
-# adiciona o contéúdo compilado do style
-$.style.ajax.action.content.less = $($($.style.seletor)).text()
-$.style.ajax.action.type = 'less to css'
+# # adiciona o contéúdo compilado do style
+# $.style.ajax.action.content.less = $($($.style.seletor)).text()
+# $.style.ajax.action.type = 'less to css'
 
-$.style.result = $.form $.style.ajax
+# $.style.result = $.form $.style.ajax
 
-console.log $.style.result
+# console.log $.style.result
 
 #  Cria arquivo compilado do less
 # # # #

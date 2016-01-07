@@ -4,7 +4,6 @@
 		{"html":"script", "src":{"source":"jquery", "type":"scripts", "path":"prod"}, "attr":[{"type":"text/javascript"}]},
 		{"html":"script", "src":{"source":"bootstrap", "type":"scripts", "path":"prod"}, "attr":[{"type":"text/javascript"}]},
 		{"html":"script", "src":{"source":"coffeescript", "type":"scripts", "path":"prod"}, "attr":[{"type":"text/javascript"}]},
-		{"html":"script", "src":{"source":"css less", "type":"scripts", "path":"prod"}, "attr":[{"type":"text/javascript"}]},
 		{"html":"script", "src":{"source":"Perfect Scrollbar", "type":"scripts", "path":"prod"}, "attr":[{"type":"text/javascript"}]},
 		{"html":"script", "src":{"source":"Bootstrap Slider", "type":"scripts", "path":"prod"}, "attr":[{"type":"text/javascript"}]},
 		{"html":"script", "src":{"source":"app", "type":"scripts", "path":"prod"}, "attr":[{"type":"text/coffeescript"}]}

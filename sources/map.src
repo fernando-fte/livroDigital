@@ -50,7 +50,7 @@
 
 		"app":{
 			"dist": "css/app.min.css",
-			"prod": "style/app.less"
+			"prod": "style/app.css"
 		}
 	},
 
