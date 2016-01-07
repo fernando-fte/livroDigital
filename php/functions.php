@@ -545,7 +545,7 @@ function construct_html($post, $return) {
 				if ($temp['short']['F:file_open']['success'] == true) {
 					$temp['._.reserve']['attr_html'] .= ' src="'.$temp['short']['F:file_open']['done'] .'"';
 				}
-				else { $temp['._.warning']['src'] = 'Não foi encontrado o local definico'; }
+				else { $temp['._.warning']['src'] = 'Não foi encontrado o local definido'; }
 
 				unset($temp['short']);
 			}
@@ -569,7 +569,7 @@ function construct_html($post, $return) {
 				if ($temp['short']['F:file_open']['success'] == true) {
 					$temp['._.reserve']['attr_html'] .= ' href="'.$temp['short']['F:file_open']['done'] .'"';
 				}
-				else { $temp['._.warning']['href'] = 'Não foi encontrado o local definico'; }
+				else { $temp['._.warning']['href'] = 'Não foi encontrado o local definido'; }
 
 				unset($temp['short']);
 			}
@@ -1031,9 +1031,11 @@ function file_open($post, $return) {
 		# # # Valida se a solicitação esta sendo feita pra wwroot
 		if ($post['name'] != 'wwwroot') {
 
+
 			# # # #
-			# # Trata do tipo retorna path, caso o nome tenha sido declarado
-			if (gettype($post['name']) != 'NULL') {
+			# # Trata do tipo retorna path, caso o nome tenha sido declarado e não possua a solicitação open
+			/* !-- Não retorna os dados de path caso a solicitação seja open --! */
+			if (gettype($post['name']) != 'NULL' && array_key_exists('open', $post['action']) == false) {
 
 				$temp['._.process']['return_path'] = false;
 
