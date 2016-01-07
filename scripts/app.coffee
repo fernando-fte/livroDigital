@@ -1,7 +1,5 @@
-console.log $($('#less:vg-livroDigital-style-app'))
-
 # # #
-# Envia css compilado para o php
+# Função de tratamento de post para o php
 $.form = (post) ->
 
 	# FUNÇÃO ENVIAR PARA PHP #
@@ -25,28 +23,33 @@ $.form = (post) ->
 			post = data
 			# console.log post
 		# retorna post a solicitação com 'eval()'
-		# return eval(post)
-		return post
+		return $.parseJSON(post)
+		# return post
 
 
 	done = $.form.send {"ajax":post}
 
 	return done
 
-$('div').click ->
+# # # # # # # # # # # # # # # # # #
+# # # # # # # # # # # # # # # # # #
 
-	# declara eestrutura do objeto
-	style = {"result":"null","seletor":null,"ajax":{"action":{"content":{},"type":null},"license":{}}}
+# # # #
+#  Cria arquivo compilado do less
 
-	# define seletor do estilo less compilado
-	style.seletor = $('style')['0']
+# declara eestrutura do objeto
+$.style = {"result":"null","seletor":null,"ajax":{"action":{"content":{}, "type":null}, "license":{}}}
 
-	# adiciona o contéúdo compilado do style
-	style.ajax.action.content.less = $($(style.seletor)).text()
-	style.ajax.action.type = 'less to css'
+# define seletor do estilo less compilado
+$.style.seletor = $('style')['0']
 
-	style.result = $.form style.ajax
+# adiciona o contéúdo compilado do style
+$.style.ajax.action.content.less = $($($.style.seletor)).text()
+$.style.ajax.action.type = 'less to css'
 
-	console.log style.result
+$.style.result = $.form $.style.ajax
 
-	return false
+console.log $.style.result
+
+#  Cria arquivo compilado do less
+# # # #
