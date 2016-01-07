@@ -946,8 +946,11 @@ function construct_html($post, $return) {
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # # # # # FUNÇÃO DE IMPORTAÇÃO E ABERTURA DE ARQUIVOS # # # # # # # #
 function file_open($post, $return) {
-	//{"._.list":["name", "type", "action"], "name":{"._.required":true, "._.type":["syting"], "type":{"._.required":true, "._.type":["syting"], "action":{"._.required":true, "._.type":["array"] }}
 	// TODO: Validar o post
+	// {"._.list":["name","type","action","path","source","file"],"name":{"._.//":"Nome do arquivo a ser salvo, caso null será salvo como nome declarado em map, declare \"wwwroot\" para adicionar map a $GLOBALS","._.required":true,"._.type":["string","NULL"]},"type":{"._.//":"Tipo de arquivo a ser selecionado, esse nome é declarado na raiz da estrutura do map","._.required":true,"._.type":["string"]},"action":{"._.//":"Tipo de ação a ser executada","._.required":true,"._.type":["array"],"._.list":["path","open","new"],"path":{"._.//":"\"dist\" define o caminho de distribuição, \"prod\" define os caminhos de projeto, \"wwwpatern\" define o caminho de produção porem relativo ao solicitante","._.required":true,"._.type":["string"],"._.exacly":{"string":["dist","prod","wwwpatern"]}},"open":{"._.//":"Define que será aberto um arquivo da lista de map","._.required":false,"._.type":["boolean"],"._.exacly":{"boolean":true}},"new":{"._.//":"Define que vai ser criado um novo arquivo","._.required":false,"._.type":["array"],"._.list":["file"],"file":{"._.//":"Arquivo a ser criado alocado na string","._.type":["string"],"._.required":false},"source":{"._.//":"Caminho setado pelo cliente","._.required":true,"._.type":["string"],"._.relative":{"action":{"path":null}}}}}}
+	/*
+	// Requer $GLOBAL: requer a seguinte extrutura $GLOBALS['settings']['wwwmap'] = $"Caminho completo do mapa de arquivos"
+	*/
 
 	$temp['._.process'] = false;
 	$temp['._.success'] = false;
@@ -1027,9 +1030,10 @@ function file_open($post, $return) {
 
 		# # # Valida se a solicitação esta sendo feita pra wwroot
 		if ($post['name'] != 'wwwroot') {
+
 			# # # #
-			# # Trata do tipo retorna path
-			if (array_key_exists('path', $post['action'])) {
+			# # Trata do tipo retorna path, caso o nome tenha sido declarado
+			if (gettype($post['name']) != 'NULL') {
 
 				$temp['._.process']['return_path'] = false;
 
@@ -1066,7 +1070,8 @@ function file_open($post, $return) {
 
 				$temp['._.process']['open'] = false;
 
-				if (gettype($post['action']['open']) == 'boolean' && $post['action']['open'] == true) {
+				# Inicia o processo caso open seja true
+				if ($post['action']['open'] == true) {
 			
 					// TODO: Validar se a estritura até path existe com "F:array_key_exists"
 
@@ -1084,7 +1089,100 @@ function file_open($post, $return) {
 				}
 			}
 			# # Trata actions do tipo abrir arquivo
-				# # # #
+			# # # #
+
+			# # # #
+			# # Trata quando for para criar arquivo
+			if (array_key_exists('new', $post['action'])) {
+
+				# Delcara temp new como vazio
+				$temp['new'] = null;
+
+				# inicia processo de criação de arquivo como falso
+				$temp['._.process']['new'] = false;
+
+				// TODO: Valida a estrutura atual
+				# valida se o nome do arquivo e o local a ser salvo
+				if ($post['action']['path'] == 'dist' or $post['action']['path'] == 'prod') {
+
+					# # # #
+					# trata se o local a ser salvo é exatamente o 
+					if (gettype($post['name']) == 'NULL') {
+
+						# reserva nome do arquivo pre-declarado
+						$temp['new']['path'] = $GLOBALS['settings']['wwwpatern'].$post['action']['new']['source'];
+
+						# declara aviso que o cliente quem definiu o caminho
+						$temp['._.warning']['new'][] = 'O local foi definido pelo cliente';
+					}
+					// reserva path do caminho a ser salvo
+					else { $temp['new']['path'] = $GLOBALS['settings']['wwwpatern'].$temp['._.done'];}
+					# # # #
+
+					# # # #
+					# valida se o arquivo vai esta sendo recebido pelo cliente e não será uma cópia
+					if (array_key_exists('file', $post['action']['new'])) {
+
+						# adiciona o conteudo enviado pelo cliente
+						$temp['new']['file'] = $post['action']['new']['file'];
+
+						# declara aviso que o cliente quem definiu o caminho
+						$temp['._.warning']['new'][] = 'O arquivo está sendo enviado pelo client';
+
+
+						# inicia envido envio do arquivo
+						$temp['new']['fopen'] = fopen($temp['new']['path'], 'W');
+
+						# valida se foi possivel criar o arquivo
+						if ($temp['new']['fopen'] == false) {
+
+							# Escreve no arquivo
+							$temp['new']['fwrire'] = fwrite($temp['new']['fopen'], $temp['new']['file']);
+
+							# Valida se o arquivo foi escrito
+							if ($temp['new']['fwrire'] != false) {
+
+								# Define processo de criar um sucesso
+								$temp['._.process']['new'] = true;
+
+								$temp['._.done'] = true;
+							}
+							else { $temp['._.erro']['new'] = 'Não foi possivel escrever no arquivo'; }
+
+							# fecha o arquivo
+							fclose($temp['new']['fopen']);
+						}
+						else { $temp['._.erro']['new'] = 'Não foi possivel criar o arquivo "'.$temp['new']['path'].'"'; }
+					}
+
+					# # Valida se o arquivo vai ser apenas copiado
+					else {
+
+						# Reserva o oposto do arquivo a ser salvo, ou seja o local onde ele vai ser pego
+						$temp['new']['dist_prod'] = ($post['action']['path'] == 'dist' ? 'dist':'prod');
+
+						# Reserva caminho do arquivo
+						$temp['new']['file'] = $GLOBALS['settings']['wwwpatern'].$GLOBALS['settings']['map'][$post['type']][$post['name']][$temp['new']['dist_prod']];
+
+						# copia o arquivo
+						$temp['new']['copy'] = copy($temp['new']['file'], $temp['new']['path']);
+
+						# valida se o arquivo foi copiado
+						if ($temp['new']['copy'] == true) {
+
+							# Define processo de criar um sucesso
+							$temp['._.process']['new'] = true;
+
+							$temp['._.done'] = true;
+						}
+						else { $temp['._.erro']['new'] = 'O arquivo "'.$post['name'].'" não foi copiado'; }
+					}
+					# # # #
+				}
+				else {$temp['._.erro']['new'] = 'A declaração de path "'.$post['action']['path'].'" está incorreta era esperado "dist" ou "prod"'; }
+			}
+			# # Trata quando for para criar arquivo
+			# # # #
 		}
 
 		# # # Caso a solicitação seja pra root
