@@ -21,24 +21,52 @@
 	# # # CONFIGURA MAP-FILES # # # #
 	# # # # # # # # # # # # # # # # # 
 
-
+	# # # Quando receber uma solicitação ajax
 	if (array_key_exists('ajax', $post)) {
 		// {"._.list":["ajax"], "ajax":{"._.type":["array"], "._.required":true, "._.list":["user", "action", "method", "values"], [TODO:]}}
 
 		// TODO: Validar $post
 		// TODO: Validar usuario e retornar o sku + o grupo de permissoes
 
+		# define done como null
+		$ajax = null;
+
 		# # # 
 		# valida se o parametro é de selção ou de inserção
 		if ($post['ajax']['action']['type'] == 'select' or $post['ajax']['action']['type'] == 'insert' or $post['ajax']['action']['type'] == 'update' or $post['ajax']['action']['type'] == 'delete') {
 
-			$done = form_livro($post['ajax'], false);
+			$ajax = form_livro($post['ajax'], false);
 
-			// TODO: Validar os erros antes de retornar em $done
+			// TODO: Validar os erros antes de retornar em $ajax
+		}
+
+		if ($post['ajax']['action']['type'] == 'less to css') {
+
+			// $ajax = $post['ajax']['action']['content']['less'];
+
+			# cria temporario para o tratamento de less
+			$temp['less'] = null;
+
+			# define nome e tipo do arquivo
+			$temp['less']['F:file_open']['name'] = 'app';
+			$temp['less']['F:file_open']['type'] = 'style';
+			$temp['less']['F:file_open']['action']['path'] = 'dist';
+
+			# adiciona arquivo enviado pelo servidor
+			$temp['less']['F:file_open']['action']['new']['file'] = $post['ajax']['action']['content']['less'];
+
+			# envia dados para a função de arquivos
+			$temp['less']['success'] = file_open($temp['less']['F:file_open'], false);
+
+			# codifica o array e retorna em ajax os dados solicitados
+			$ajax = json_encode($temp['less']['success']);
+
+			# apaga temp=>less
+			unset($temp['less']);
 		}
 
 		# imprime valores para o ajax
-		print_r($done);
+		print_r($ajax);
 	}
 
 
