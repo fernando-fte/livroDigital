@@ -1131,6 +1131,11 @@ function file_open($post, $return) {
 						# declara aviso que o cliente quem definiu o caminho
 						$temp['._.warning']['new'][] = 'O arquivo está sendo enviado pelo client';
 
+						# # Apaga o arquivo caso exista
+						if (file_exists($temp['._.reserve']['new']['path']) == true) {
+
+							unlink($temp['._.reserve']['new']['path']);
+						}
 
 						# inicia envido envio do arquivo
 						$temp['._.reserve']['new']['fopen'] = fopen($temp['._.reserve']['new']['path'], 'a');
