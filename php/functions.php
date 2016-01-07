@@ -1098,27 +1098,27 @@ function file_open($post, $return) {
 			if (array_key_exists('new', $post['action'])) {
 
 				# Delcara temp new como vazio
-				$temp['new'] = null;
+				$temp['._.reserve']['new'] = null;
 
 				# inicia processo de criação de arquivo como falso
 				$temp['._.process']['new'] = false;
 
 				// TODO: Valida a estrutura atual
 				# valida se o nome do arquivo e o local a ser salvo
-				if ($post['action']['path'] == 'dist' or $post['action']['path'] == 'prod') {
+				if ($post['action']['path'] == 'dist' or $post['action']['path'] == 'wwwpatern') {
 
 					# # # #
 					# trata se o local a ser salvo é exatamente o 
 					if (gettype($post['name']) == 'NULL') {
 
 						# reserva nome do arquivo pre-declarado
-						$temp['new']['path'] = $GLOBALS['settings']['wwwpatern'].$post['action']['new']['source'];
+						$temp['._.reserve']['new']['path'] = $GLOBALS['settings']['wwwpatern'].'dist/'.$post['action']['new']['source'];
 
 						# declara aviso que o cliente quem definiu o caminho
 						$temp['._.warning']['new'][] = 'O local foi definido pelo cliente';
 					}
 					// reserva path do caminho a ser salvo
-					else { $temp['new']['path'] = $GLOBALS['settings']['wwwpatern'].$temp['._.done'];}
+					else { $temp['._.reserve']['new']['path'] = $GLOBALS['settings']['wwwpatern'].'dist/'.$temp['._.done']; }
 					# # # #
 
 					# # # #
@@ -1126,23 +1126,24 @@ function file_open($post, $return) {
 					if (array_key_exists('file', $post['action']['new'])) {
 
 						# adiciona o conteudo enviado pelo cliente
-						$temp['new']['file'] = $post['action']['new']['file'];
+						$temp['._.reserve']['new']['file'] = $post['action']['new']['file'];
 
 						# declara aviso que o cliente quem definiu o caminho
 						$temp['._.warning']['new'][] = 'O arquivo está sendo enviado pelo client';
 
 
 						# inicia envido envio do arquivo
-						$temp['new']['fopen'] = fopen($temp['new']['path'], 'W');
+						$temp['._.reserve']['new']['fopen'] = fopen($temp['._.reserve']['new']['path'], 'a');
 
 						# valida se foi possivel criar o arquivo
-						if ($temp['new']['fopen'] == false) {
+						if ($temp['._.reserve']['new']['fopen'] != false) {
 
 							# Escreve no arquivo
-							$temp['new']['fwrire'] = fwrite($temp['new']['fopen'], $temp['new']['file']);
+							$temp['._.reserve']['new']['fwrire'] = fwrite($temp['._.reserve']['new']['fopen'], $temp['._.reserve']['new']['file']);
+							// $temp['._.reserve']['new']['fwrire'] = fwrite($temp['._.reserve']['new']['fopen'], '{}');
 
 							# Valida se o arquivo foi escrito
-							if ($temp['new']['fwrire'] != false) {
+							if ($temp['._.reserve']['new']['fwrire'] != false) {
 
 								# Define processo de criar um sucesso
 								$temp['._.process']['new'] = true;
@@ -1152,25 +1153,24 @@ function file_open($post, $return) {
 							else { $temp['._.erro']['new'] = 'Não foi possivel escrever no arquivo'; }
 
 							# fecha o arquivo
-							fclose($temp['new']['fopen']);
+							fclose($temp['._.reserve']['new']['fopen']);
 						}
-						else { $temp['._.erro']['new'] = 'Não foi possivel criar o arquivo "'.$temp['new']['path'].'"'; }
+						else { $temp['._.erro']['new'] = 'Não foi possivel criar o arquivo "'.$temp['._.reserve']['new']['path'].'"'; }
 					}
-
 					# # Valida se o arquivo vai ser apenas copiado
 					else {
 
 						# Reserva o oposto do arquivo a ser salvo, ou seja o local onde ele vai ser pego
-						$temp['new']['dist_prod'] = ($post['action']['path'] == 'dist' ? 'dist':'prod');
+						$temp['._.reserve']['new']['dist_prod'] = ($post['action']['path'] == 'dist' ? 'dist':'prod');
 
 						# Reserva caminho do arquivo
-						$temp['new']['file'] = $GLOBALS['settings']['wwwpatern'].$GLOBALS['settings']['map'][$post['type']][$post['name']][$temp['new']['dist_prod']];
+						$temp['._.reserve']['new']['file'] = $GLOBALS['settings']['wwwpatern'].$GLOBALS['settings']['map'][$post['type']][$post['name']][$temp['._.reserve']['new']['dist_prod']];
 
 						# copia o arquivo
-						$temp['new']['copy'] = copy($temp['new']['file'], $temp['new']['path']);
+						$temp['._.reserve']['new']['copy'] = copy($temp['._.reserve']['new']['file'], $temp['._.reserve']['new']['path']);
 
 						# valida se o arquivo foi copiado
-						if ($temp['new']['copy'] == true) {
+						if ($temp['._.reserve']['new']['copy'] == true) {
 
 							# Define processo de criar um sucesso
 							$temp['._.process']['new'] = true;
@@ -1184,7 +1184,7 @@ function file_open($post, $return) {
 				else {$temp['._.erro']['new'] = 'A declaração de path "'.$post['action']['path'].'" está incorreta era esperado "dist" ou "prod"'; }
 
 				# apaga arquivos remanecentes
-				unset($temp['new']);
+				// unset($temp['._.reserve']['new']);
 			}
 			# # Trata quando for para criar arquivo
 			# # # #
@@ -1198,6 +1198,7 @@ function file_open($post, $return) {
 
 
 	return retorna_funcao($temp, $return);
+	// return $temp['._.reserve']['new']['file'];
 }
 # # # # # FUNÇÃO DE IMPORTAÇÃO E ABERTURA DE ARQUIVOS # # # # # # # #
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
