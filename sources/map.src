@@ -41,7 +41,7 @@
 
 		"app": {
 			"dist": "js/app.min.js",
-			"prod": "scripts/app.coffee"
+			"prod": "scripts/app.js"
 		}
 	},
 
