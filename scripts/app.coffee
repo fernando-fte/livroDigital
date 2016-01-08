@@ -53,3 +53,54 @@ $.form = (post) ->
 
 #  Cria arquivo compilado do less
 # # # #
+
+# # # # # # # # # # # # # # # # # # # # #
+# # Inicia tratamentos dos controles  # #
+
+$.appCtrl = {} if !$.appCtrl
+
+$.appCtrl.goto = {} if !$.appCtrl.goto
+
+# Inicia globais de tratamentos
+$.appCtrl = (post) ->
+	#// Requer uma lista $('[data-ctrl]')
+	temp = {"proccess":{},"erro":{},"wharning":{}, "count":{}}
+
+	temp.proccess.post = false
+
+	if post.length >= 1
+		temp.proccess.post = true
+
+	if temp.proccess.post is true
+
+		temp.count.i = 0
+		while temp.count.i < post.length
+
+			console.log post[temp.count.i]
+
+			temp.count.i++
+
+	
+	console.log post
+
+
+	# # # Inicia tratamento para selecionar os movimentos
+	# $.appCtrl.goto = (post) ->
+
+	# 	if post.id 
+	# 		console.log post.id
+
+	# 	else if post.css
+	# 		console.log post.css
+
+	# 	else if post.data
+	# 		console.log post.data
+
+	# 	if post.id 
+	# 		console.log 'oi'
+
+$.appCtrl $("[data-app-ctrl]")
+
+
+# # Inicia tratamentos dos controles  # #
+# # # # # # # # # # # # # # # # # # # # #
