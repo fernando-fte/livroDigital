@@ -12398,6 +12398,7 @@ body,
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  z-index: 1300;
 }
 .contents {
   display: block;
@@ -12602,7 +12603,7 @@ body,
   position: fixed;
   width: 100%;
   top: 0px;
-  z-index: 2000;
+  z-index: 1250;
   background-color: #FFFFFF;
 }
 .app-nav-logo img {
