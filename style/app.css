@@ -12626,6 +12626,7 @@ body,
   position: fixed;
   width: 100%;
   top: 0px;
+  left: 0px;
   z-index: 1250;
   background-color: #FFFFFF;
 }
@@ -12752,7 +12753,8 @@ body,
     float: left;
     display: none;
     width: 100%;
-    height: 90%;
+    max-height: 90%;
+    padding-bottom: 5px;
     right: 0px;
     border-radius: 6px;
     background: white;
@@ -12826,7 +12828,8 @@ body,
     float: left;
     display: none;
     width: 285px;
-    height: 290px;
+    max-height: 290px;
+    padding-bottom: 5px;
     right: -48px;
     border-radius: 6px;
     background: white;
@@ -12859,7 +12862,8 @@ body,
     float: left;
     display: none;
     width: 285px;
-    height: 290px;
+    max-height: 290px;
+    padding-bottom: 5px;
     right: -78px;
     border-radius: 6px;
     background: white;
@@ -12892,7 +12896,8 @@ body,
     float: left;
     display: none;
     width: 285px;
-    height: 290px;
+    max-height: 290px;
+    padding-bottom: 5px;
     right: -111px;
     border-radius: 6px;
     background: white;
@@ -12966,7 +12971,8 @@ body,
     float: left;
     display: none;
     width: 300px;
-    height: 290px;
+    max-height: 290px;
+    padding-bottom: 5px;
     right: -46px;
     border-radius: 6px;
     background: white;
@@ -12999,7 +13005,8 @@ body,
     float: left;
     display: none;
     width: 300px;
-    height: 290px;
+    max-height: 290px;
+    padding-bottom: 5px;
     right: -46px;
     border-radius: 6px;
     background: white;
@@ -13032,7 +13039,8 @@ body,
     float: left;
     display: none;
     width: 300px;
-    height: 290px;
+    max-height: 290px;
+    padding-bottom: 5px;
     right: -121px;
     border-radius: 6px;
     background: white;
@@ -13106,7 +13114,8 @@ body,
     float: left;
     display: none;
     width: 320px;
-    height: 290px;
+    max-height: 290px;
+    padding-bottom: 5px;
     right: -39px;
     border-radius: 6px;
     background: white;
@@ -13139,7 +13148,8 @@ body,
     float: left;
     display: none;
     width: 320px;
-    height: 290px;
+    max-height: 290px;
+    padding-bottom: 5px;
     right: -39px;
     border-radius: 6px;
     background: white;
@@ -13172,7 +13182,8 @@ body,
     float: left;
     display: none;
     width: 320px;
-    height: 290px;
+    max-height: 290px;
+    padding-bottom: 5px;
     right: -124px;
     border-radius: 6px;
     background: white;
@@ -13238,7 +13249,8 @@ body,
     float: left;
     display: none;
     width: 320px;
-    height: 290px;
+    max-height: 290px;
+    padding-bottom: 5px;
     right: -26px;
     border-radius: 6px;
     background: white;
@@ -13271,7 +13283,8 @@ body,
     float: left;
     display: none;
     width: 320px;
-    height: 290px;
+    max-height: 290px;
+    padding-bottom: 5px;
     right: -26px;
     border-radius: 6px;
     background: white;
@@ -13304,7 +13317,8 @@ body,
     float: left;
     display: none;
     width: 320px;
-    height: 290px;
+    max-height: 290px;
+    padding-bottom: 5px;
     right: -126px;
     border-radius: 6px;
     background: white;
