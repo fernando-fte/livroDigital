@@ -12417,6 +12417,22 @@ body,
   -webkit-animation-name: zoomOutLeft;
   animation-name: zoomOutLeft;
 }
+.page-display-section.top {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: fadeOutUp;
+  animation-name: fadeOutUp;
+}
+.page-display-section.down {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: fadeOutDown;
+  animation-name: fadeOutDown;
+}
 @media (max-width: 479px) {
   .contents {
     padding-top: 47px;
@@ -12622,8 +12638,27 @@ body,
   display: block;
   line-height: 30px;
 }
-.app-nav-btn-item.active .app-nav-tooltip {
+.app-nav-btn-item.app-display .app-nav-tooltip {
   display: block;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-backface-visibility: visible !important;
+  backface-visibility: visible !important;
+  -webkit-animation-name: flipInX;
+  animation-name: flipInX;
+}
+.app-nav-btn-item.app-no-display .app-nav-tooltip {
+  display: block;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: flipOutX;
+  animation-name: flipOutX;
+  -webkit-backface-visibility: visible !important;
+  backface-visibility: visible !important;
 }
 .app-nav-tooltip {
   cursor: default;
@@ -12635,6 +12670,7 @@ body,
 .app-nav-tooltip .app-nav-tooltip-control .app-ico-close {
   margin-right: 10px;
   cursor: pointer;
+  color: #A11314;
 }
 .app-nav-tooltip .app-nav-tooltip-control .app-nav-control-light-density {
   margin-bottom: 9px;
@@ -12653,7 +12689,7 @@ body,
   cursor: pointer;
   height: 62px;
 }
-.app-nav-tooltip .app-nav-tooltip-control .app-nav-control-background .app-control-background-item.active {
+.app-nav-tooltip .app-nav-tooltip-control .app-nav-control-background .app-control-background-item.app-display {
   border: 5px solid #A11314;
 }
 .app-nav-tooltip .app-nav-tooltip-more {
@@ -12685,7 +12721,7 @@ body,
     padding: 5px;
   }
   .app-nav-btn-item:hover,
-  .app-nav-btn-item.active {
+  .app-nav-btn-item.app-display {
     cursor: pointer;
     background-color: #B44243;
     color: #FFFFFF;
@@ -12695,9 +12731,14 @@ body,
     height: 44px;
     text-align: center;
   }
-  .app-nav-btn-item.active {
+  .app-nav-btn-item.app-display {
     background-color: #C77172;
     cursor: default;
+  }
+  .app-nav-btn-item .app-nav-btn-click {
+    height: 100%;
+    display: block;
+    width: 100%;
   }
   .app-nav-section-item.app-secao {
     text-transform: none;
@@ -12760,7 +12801,7 @@ body,
     padding: 6px;
   }
   .app-nav-btn-item:hover,
-  .app-nav-btn-item.active {
+  .app-nav-btn-item.app-display {
     cursor: pointer;
     background-color: #B44243;
     color: #FFFFFF;
@@ -12770,9 +12811,14 @@ body,
     height: 49px;
     text-align: center;
   }
-  .app-nav-btn-item.active {
+  .app-nav-btn-item.app-display {
     background-color: #C77172;
     cursor: default;
+  }
+  .app-nav-btn-item .app-nav-btn-click {
+    height: 100%;
+    display: block;
+    width: 100%;
   }
   .app-nav-tooltip.nav-tooltip-posicao {
     position: absolute;
@@ -12895,7 +12941,7 @@ body,
     padding: 6px;
   }
   .app-nav-btn-item:hover,
-  .app-nav-btn-item.active {
+  .app-nav-btn-item.app-display {
     cursor: pointer;
     background-color: #B44243;
     color: #FFFFFF;
@@ -12905,9 +12951,14 @@ body,
     height: 49px;
     text-align: center;
   }
-  .app-nav-btn-item.active {
+  .app-nav-btn-item.app-display {
     background-color: #C77172;
     cursor: default;
+  }
+  .app-nav-btn-item .app-nav-btn-click {
+    height: 100%;
+    display: block;
+    width: 100%;
   }
   .app-nav-tooltip.nav-tooltip-posicao {
     position: absolute;
@@ -13030,7 +13081,7 @@ body,
     padding: 7px;
   }
   .app-nav-btn-item:hover,
-  .app-nav-btn-item.active {
+  .app-nav-btn-item.app-display {
     cursor: pointer;
     background-color: #B44243;
     color: #FFFFFF;
@@ -13040,9 +13091,14 @@ body,
     height: 60px;
     text-align: center;
   }
-  .app-nav-btn-item.active {
+  .app-nav-btn-item.app-display {
     background-color: #C77172;
     cursor: default;
+  }
+  .app-nav-btn-item .app-nav-btn-click {
+    height: 100%;
+    display: block;
+    width: 100%;
   }
   .app-nav-tooltip.nav-tooltip-posicao {
     position: absolute;
@@ -13157,7 +13213,7 @@ body,
     padding: 7px;
   }
   .app-nav-btn-item:hover,
-  .app-nav-btn-item.active {
+  .app-nav-btn-item.app-display {
     cursor: pointer;
     background-color: #B44243;
     color: #FFFFFF;
@@ -13167,9 +13223,14 @@ body,
     height: 60px;
     text-align: center;
   }
-  .app-nav-btn-item.active {
+  .app-nav-btn-item.app-display {
     background-color: #C77172;
     cursor: default;
+  }
+  .app-nav-btn-item .app-nav-btn-click {
+    height: 100%;
+    display: block;
+    width: 100%;
   }
   .app-nav-tooltip.nav-tooltip-posicao {
     position: absolute;
