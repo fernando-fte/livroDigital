@@ -34,7 +34,7 @@
 			"prod": "vendor/js/perfect-scrollbar.min.js"
 		},
 
-		"ativa vendor": {
+		"Call Vendor": {
 			"dist": "js/vendors.js",
 			"prod": "scripts/vendors.js"
 		},
