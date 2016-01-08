@@ -37,7 +37,7 @@
         {
           "name": "app-ctrl",
           "value": {
-            "goto": {
+            "togo": {
               "cover": "sumario"
             }
           }
