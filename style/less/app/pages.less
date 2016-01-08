@@ -15,6 +15,10 @@ html, body, .app-page { height: 100%; overflow: hidden;}
 
 .page-out { .app-play-zoomOutLeft (); }
 
+.page-display-section {
+	&.top { .app-play-fadeOutUp (); }
+	&.down { .app-play-fadeOutDown (); }
+}
 
 //== Configruações responsivas
 // Min Min grid (XS)

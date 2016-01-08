@@ -6,7 +6,7 @@
 		height: @size; 
 		padding: ceil((@size * 0.14));
 
-		&:hover, &.active { 
+		&:hover, &.app-display { 
 			cursor: pointer;
 			background-color: @app-cor-padrao-80;
 			color: @app-cor-preto-0;
@@ -17,7 +17,9 @@
 			text-align: center;
 		}
 
-		&.active { background-color: @app-cor-padrao-60; cursor: default;}
+		&.app-display { background-color: @app-cor-padrao-60; cursor: default;}
+
+		.app-nav-btn-click {  height: 100%; display: block; width: 100%; }
 	}
 }
 //
@@ -82,7 +84,8 @@
 .app-ico-sumario, .app-ico-menu { display: block; line-height: 30px; }
 
 //** Exibe toltipe ao ativar o botão
-.app-nav-btn-item.active{ .app-nav-tooltip  { display: block; } }
+.app-nav-btn-item.app-display{ .app-nav-tooltip  { display: block; .app-play-flipInX();} }
+.app-nav-btn-item.app-no-display{ .app-nav-tooltip  { display:block; .app-play-flipOutX(); } }
 
 // ** Configuração dos conteudos de toltip
 .app-nav-tooltip {
@@ -95,6 +98,7 @@
 		.btn-app, .app-ico-close {
 	        margin-right: 10px;
 	        cursor: pointer;
+	        color: @app-cor-padrao;
 		}
 
 		// Controle de luz
@@ -113,7 +117,7 @@
 			    cursor: pointer;
 			    height: 62px;
 
-				&.active { border: 5px solid @app-cor-padrao; }
+				&.app-display { border: 5px solid @app-cor-padrao; }
 			}
 		}
 	}
