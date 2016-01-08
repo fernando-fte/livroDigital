@@ -64,42 +64,80 @@ $.appCtrl.goto = {} if !$.appCtrl.goto
 # Inicia globais de tratamentos
 $.appCtrl = (post) ->
 	#// Requer uma lista $('[data-ctrl]')
-	temp = {"proccess":{},"erro":{},"wharning":{}, "count":{}}
+	temp = {'_proccess':{'_true':false, 'goto':{}}, '_erro':{'_true':false}, '_warning':{'_true':false}, '_done':{'_true':false}, 'appCtrl':{}}
 
-	temp.proccess.post = false
 
+	# # # # # #
+	# inicia processo de post como falso
+	temp._proccess.post = false
+
+	# valida se post recebeu algo
 	if post.length >= 1
-		temp.proccess.post = true
-
-	if temp.proccess.post is true
-
-		temp.count.i = 0
-		while temp.count.i < post.length
-
-			console.log post[temp.count.i]
-
-			temp.count.i++
-
-	
-	console.log post
+		temp._proccess.post = true
+	# # # # # #
 
 
-	# # # Inicia tratamento para selecionar os movimentos
-	# $.appCtrl.goto = (post) ->
+	# # # # # #
+	#== valida se o processo de post é valido
+	if temp._proccess.post is true
 
-	# 	if post.id 
-	# 		console.log post.id
+		#== inicia loop para capiturar cada item do tipo ['data-ctrl']
+		i = 0
+		while i < post.length
 
-	# 	else if post.css
-	# 		console.log post.css
+			# adiciona content para cada instancia do post
+			temp.appCtrl[i] = {}
 
-	# 	else if post.data
-	# 		console.log post.data
+			# reserva o html
+			temp.appCtrl[i].this = $(post)[i]
 
-	# 	if post.id 
-	# 		console.log 'oi'
+			# reserva as configurações
+			temp.appCtrl[i].app = $(post).data().appCtrl
+
+			#** valida se a solicitação de controle é para navegação
+			if temp.appCtrl[i].app.goto
+
+				# define processo goto atual falso
+				temp._proccess.goto[i] = {}
+
+				#// envia os parametros para a função
+				temp._proccess.goto[i] = $.appCtrl.goto temp.appCtrl[i]
+
+			#// adiciona contador no loop
+			i++
+
+	console.log temp
+
+
+
+
+$.appCtrl.goto = (post) ->
+	#// Requer um parametro array
+	#// {"._.list":["id", "css", "cover"], "css":{"._.//":"O parametro rece uma id como referencia da navegação", "._.required":false, "._.type":["string"]}, "css":{"._.//":"O parametro recebe uma ou mais classes como referencia da navegação", "._.required":false, "._.type":["string"]}, "cover":{"._.//":"O parametro recebe o id  como referencia da navegação, e define que a capa deve ser ocultada", "._.required":false, "._.type":["array"]}}}
+
+	#// Requer uma lista $('[data-ctrl]')
+	temp = {'_proccess':{'_true':false}, '_erro':{'_true':false}, '_warning':{'_true':false}, '_done':{'_true':false}}
+
+	if post.app.goto.id 
+		#// TODO: trata quando a solicitação for id
+		temp._done = 'Ainda nao existe tratamento em ID'
+
+	else if post.app.goto.css
+		#// TODO: trata quando a solicitação for class
+		temp._done = 'Ainda nao existe tratamento em CLASS'
+
+	else if post.app.goto.cover
+		temp._proccess.cover = false
+
+		# ao clicar no botão oculta a capa
+		$(post.this).click ->
+			$('#app-capa').addClass('page-out') # adiciona classe hidden
+			temp._proccess.cover = true # define processo como um sucesso
+
+	return temp
 
 $.appCtrl $("[data-app-ctrl]")
+
 
 
 # # Inicia tratamentos dos controles  # #

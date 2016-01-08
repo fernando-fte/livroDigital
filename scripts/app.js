@@ -29,25 +29,71 @@
   }
 
   $.appCtrl = function(post) {
-    var temp;
+    var i, temp;
     temp = {
-      "proccess": {},
-      "erro": {},
-      "wharning": {},
-      "count": {}
+      '_proccess': {
+        '_true': false,
+        'goto': {}
+      },
+      '_erro': {
+        '_true': false
+      },
+      '_warning': {
+        '_true': false
+      },
+      '_done': {
+        '_true': false
+      },
+      'appCtrl': {}
     };
-    temp.proccess.post = false;
+    temp._proccess.post = false;
     if (post.length >= 1) {
-      temp.proccess.post = true;
+      temp._proccess.post = true;
     }
-    if (temp.proccess.post === true) {
-      temp.count.i = 0;
-      while (temp.count.i < post.length) {
-        console.log(post[temp.count.i]);
-        temp.count.i++;
+    if (temp._proccess.post === true) {
+      i = 0;
+      while (i < post.length) {
+        temp.appCtrl[i] = {};
+        temp.appCtrl[i]["this"] = $(post)[i];
+        temp.appCtrl[i].app = $(post).data().appCtrl;
+        if (temp.appCtrl[i].app.goto) {
+          temp._proccess.goto[i] = {};
+          temp._proccess.goto[i] = $.appCtrl.goto(temp.appCtrl[i]);
+        }
+        i++;
       }
     }
-    return console.log(post);
+    return console.log(temp);
+  };
+
+  $.appCtrl.goto = function(post) {
+    var temp;
+    temp = {
+      '_proccess': {
+        '_true': false
+      },
+      '_erro': {
+        '_true': false
+      },
+      '_warning': {
+        '_true': false
+      },
+      '_done': {
+        '_true': false
+      }
+    };
+    if (post.app.goto.id) {
+      temp._done = 'Ainda nao existe tratamento em ID';
+    } else if (post.app.goto.css) {
+      temp._done = 'Ainda nao existe tratamento em CLASS';
+    } else if (post.app.goto.cover) {
+      temp._proccess.cover = false;
+      $(post["this"]).click(function() {
+        $('#app-capa').addClass('page-out');
+        return temp._proccess.cover = true;
+      });
+    }
+    return temp;
   };
 
   $.appCtrl($("[data-app-ctrl]"));
