@@ -24,16 +24,17 @@
     $.appCtrl = {};
   }
 
-  if (!$.appCtrl.goto) {
-    $.appCtrl.goto = {};
+  if (!$.appCtrl.togo) {
+    $.appCtrl.togo = {};
   }
 
   $.appCtrl = function(post) {
-    var i, temp;
+    var i, results, temp;
     temp = {
       '_proccess': {
         '_true': false,
-        'goto': {}
+        'togo': {},
+        'display': {}
       },
       '_erro': {
         '_true': false
@@ -52,21 +53,26 @@
     }
     if (temp._proccess.post === true) {
       i = 0;
+      results = [];
       while (i < post.length) {
         temp.appCtrl[i] = {};
         temp.appCtrl[i]["this"] = $(post)[i];
-        temp.appCtrl[i].app = $(post).data().appCtrl;
-        if (temp.appCtrl[i].app.goto) {
-          temp._proccess.goto[i] = {};
-          temp._proccess.goto[i] = $.appCtrl.goto(temp.appCtrl[i]);
+        temp.appCtrl[i].app = $($(post)[i]).data().appCtrl;
+        console.log(temp.appCtrl[i]);
+        if (temp.appCtrl[i].app.togo) {
+          temp._proccess.togo[i] = {};
+          temp._proccess.togo[i] = $.appCtrl.togo(temp.appCtrl[i]);
         }
-        i++;
+        if (temp.appCtrl[i].app.display) {
+          temp._proccess.display[i] = $.appCtrl.display(temp.appCtrl[i]);
+        }
+        results.push(i++);
       }
+      return results;
     }
-    return console.log(temp);
   };
 
-  $.appCtrl.goto = function(post) {
+  $.appCtrl.togo = function(post) {
     var temp;
     temp = {
       '_proccess': {
@@ -82,17 +88,67 @@
         '_true': false
       }
     };
-    if (post.app.goto.id) {
+    if (post.app.togo.id) {
       temp._done = 'Ainda nao existe tratamento em ID';
-    } else if (post.app.goto.css) {
+    } else if (post.app.togo.css) {
       temp._done = 'Ainda nao existe tratamento em CLASS';
-    } else if (post.app.goto.cover) {
+    } else if (post.app.togo.cover) {
       temp._proccess.cover = false;
       $(post["this"]).click(function() {
         $('#app-capa').addClass('page-out');
         return temp._proccess.cover = true;
       });
     }
+    return temp;
+  };
+
+  $.appCtrl.display = function(post) {
+    var temp;
+    temp = {
+      '_proccess': {
+        'classe_base': null,
+        '_true': false
+      },
+      '_erro': {
+        '_true': false
+      },
+      '_warning': {
+        '_true': false
+      },
+      '_done': {
+        '_true': false
+      }
+    };
+    temp.classe_base = 'app-display';
+    if (post.app.display.no) {
+      temp.classe_base = 'app-no-display';
+    }
+    $(post["this"]).click(function() {
+      var i;
+      if (post.app.display.toogle) {
+        i = 0;
+        while (i < post.app.display.toogle.length) {
+          $(post.app.display.toogle[i]).removeClass('app-no-display');
+          $(post.app.display.toogle[i]).removeClass('app-display');
+          i++;
+        }
+      }
+      switch (post.app.display.who) {
+        case 'this':
+          console.log(post);
+          $(post["this"]).addClass(temp.classe_base);
+          return temp._done = true;
+        case 'closest':
+          $($(post["this"]).closest(post.app.display.put)).addClass(temp.classe_base);
+          return temp._done = true;
+        case 'child':
+          $($(post["this"]).find(post.app.display.put)).addClass(temp.classe_base);
+          return temp._done = true;
+        case 'all':
+          $(post.app.display.put).addClass(temp.classe_base);
+          return temp._done = true;
+      }
+    });
     return temp;
   };
 

@@ -59,12 +59,12 @@ $.form = (post) ->
 
 $.appCtrl = {} if !$.appCtrl
 
-$.appCtrl.goto = {} if !$.appCtrl.goto
+$.appCtrl.togo = {} if !$.appCtrl.togo
 
 # Inicia globais de tratamentos
 $.appCtrl = (post) ->
 	#// Requer uma lista $('[data-ctrl]')
-	temp = {'_proccess':{'_true':false, 'goto':{}}, '_erro':{'_true':false}, '_warning':{'_true':false}, '_done':{'_true':false}, 'appCtrl':{}}
+	temp = {'_proccess':{'_true':false, 'togo':{}, 'display':{}}, '_erro':{'_true':false}, '_warning':{'_true':false}, '_done':{'_true':false}, 'appCtrl':{}}
 
 
 	# # # # # #
@@ -92,41 +92,48 @@ $.appCtrl = (post) ->
 			temp.appCtrl[i].this = $(post)[i]
 
 			# reserva as configurações
-			temp.appCtrl[i].app = $(post).data().appCtrl
+			temp.appCtrl[i].app = $($(post)[i]).data().appCtrl
+
+			console.log temp.appCtrl[i]
 
 			#** valida se a solicitação de controle é para navegação
-			if temp.appCtrl[i].app.goto
+			if temp.appCtrl[i].app.togo
 
-				# define processo goto atual falso
-				temp._proccess.goto[i] = {}
+				# define processo togo atual falso
+				temp._proccess.togo[i] = {}
 
 				#// envia os parametros para a função
-				temp._proccess.goto[i] = $.appCtrl.goto temp.appCtrl[i]
+				temp._proccess.togo[i] = $.appCtrl.togo temp.appCtrl[i]
+
+			#** valida se a solicitação é para exibir alguma caixa de dialogo
+			if temp.appCtrl[i].app.display
+
+				# define processo togo atual falso
+				temp._proccess.display[i] = $.appCtrl.display temp.appCtrl[i]
+
 
 			#// adiciona contador no loop
 			i++
 
-	console.log temp
+	# console.log temp
 
 
-
-
-$.appCtrl.goto = (post) ->
+$.appCtrl.togo = (post) ->
 	#// Requer um parametro array
-	#// {"._.list":["id", "css", "cover"], "css":{"._.//":"O parametro rece uma id como referencia da navegação", "._.required":false, "._.type":["string"]}, "css":{"._.//":"O parametro recebe uma ou mais classes como referencia da navegação", "._.required":false, "._.type":["string"]}, "cover":{"._.//":"O parametro recebe o id  como referencia da navegação, e define que a capa deve ser ocultada", "._.required":false, "._.type":["array"]}}}
+	#// {"display":{"._.required":false,"._.list":["id","css","closset"],"._.type":["array"],"id":{"._.//":"O parametro rece uma id como referencia da navegação","._.required":false,"._.type":["string"]},"css":{"._.//":"O parametro recebe uma ou mais classes como referencia da navegação","._.required":false,"._.type":["string"]},"closset":{"._.//":"O parametro define quando \"false\" procura nos filhos e quando \"true\" procura acima, e só e valido no caso de css","._.required":false,"._.type":["boolean"],"._.relative":{"css":true}},"toogle":{"._.//":"Parametro para alternar o display caso esse esteja ativo, pode ser classe ou ID","._.required":false,"._.type":["array"]}}}
 
 	#// Requer uma lista $('[data-ctrl]')
 	temp = {'_proccess':{'_true':false}, '_erro':{'_true':false}, '_warning':{'_true':false}, '_done':{'_true':false}}
 
-	if post.app.goto.id 
+	if post.app.togo.id 
 		#// TODO: trata quando a solicitação for id
 		temp._done = 'Ainda nao existe tratamento em ID'
 
-	else if post.app.goto.css
+	else if post.app.togo.css
 		#// TODO: trata quando a solicitação for class
 		temp._done = 'Ainda nao existe tratamento em CLASS'
 
-	else if post.app.goto.cover
+	else if post.app.togo.cover
 		temp._proccess.cover = false
 
 		# ao clicar no botão oculta a capa
@@ -135,6 +142,55 @@ $.appCtrl.goto = (post) ->
 			temp._proccess.cover = true # define processo como um sucesso
 
 	return temp
+
+$.appCtrl.display = (post) ->
+	#// {{"display":{"._.required":false,"._.list":["put","who","toogle"],"._.type":["array"],"put":{"._.//":"O parametro rebe uma ID ou uma classe a ser aplicado o display","._.required":true,"._.type":["string"]},"who":{"._.//":"Define onde sera aplicado o parametro","._.required":false,"._.type":["boolean"],"._.exacly":{"string":["closset","child","this"]}},"toogle":{"._.//":"Parametro para alternar o display caso esse esteja ativo, pode ser classe ou ID","._.required":false,"._.type":["array"]}}}
+	temp = {'_proccess':{'classe_base':null, '_true':false}, '_erro':{'_true':false}, '_warning':{'_true':false}, '_done':{'_true':false}}
+
+	# define classe base
+	temp.classe_base = 'app-display';
+
+	# caso o display seja removido
+	if post.app.display.no
+		# muda classe base
+		temp.classe_base = 'app-no-display';
+
+
+
+	# console.log post
+	$(post.this).click ->
+		# caso o item deva ser o unico a ser exibido, valida se existe uma lista a ser oculta
+		if post.app.display.toogle
+			i = 0
+			while i < post.app.display.toogle.length
+				# remove a classe 
+				$(post.app.display.toogle[i]).removeClass('app-no-display')
+				$(post.app.display.toogle[i]).removeClass('app-display')
+				i++
+
+
+		# valida onde sera aplicado o display
+		switch post.app.display.who
+
+			when 'this'
+				console.log post
+				$(post.this).addClass(temp.classe_base)
+				temp._done = true
+
+			when 'closest'
+				$($(post.this).closest(post.app.display.put)).addClass(temp.classe_base)
+				temp._done = true
+
+			when 'child'
+				$($(post.this).find(post.app.display.put)).addClass(temp.classe_base)
+				temp._done = true
+
+			when 'all'
+				$(post.app.display.put).addClass(temp.classe_base)
+				temp._done = true
+
+	return temp
+
 
 $.appCtrl $("[data-app-ctrl]")
 
