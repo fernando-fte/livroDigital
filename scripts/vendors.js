@@ -10,7 +10,7 @@ function changeSize() {
 $(function() {
 	$('.add-scroll').perfectScrollbar();
 	// with vanilla JS!
-	Ps.initialize(document.getElementById('add-scroll'));
+	// Ps.initialize(document.getElementById('add-scroll'));
 });
 
 // Adiciona slider na barra do menu
