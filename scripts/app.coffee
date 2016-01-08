@@ -94,8 +94,6 @@ $.appCtrl = (post) ->
 			# reserva as configurações
 			temp.appCtrl[i].app = $($(post)[i]).data().appCtrl
 
-			console.log temp.appCtrl[i]
-
 			#** valida se a solicitação de controle é para navegação
 			if temp.appCtrl[i].app.togo
 
@@ -111,11 +109,10 @@ $.appCtrl = (post) ->
 				# define processo togo atual falso
 				temp._proccess.display[i] = $.appCtrl.display temp.appCtrl[i]
 
-
 			#// adiciona contador no loop
 			i++
 
-	# console.log temp
+	console.log temp
 
 
 $.appCtrl.togo = (post) ->
@@ -155,8 +152,6 @@ $.appCtrl.display = (post) ->
 		# muda classe base
 		temp.classe_base = 'app-no-display';
 
-
-
 	# console.log post
 	$(post.this).click ->
 		# caso o item deva ser o unico a ser exibido, valida se existe uma lista a ser oculta
@@ -168,12 +163,10 @@ $.appCtrl.display = (post) ->
 				$(post.app.display.toogle[i]).removeClass('app-display')
 				i++
 
-
 		# valida onde sera aplicado o display
 		switch post.app.display.who
 
 			when 'this'
-				console.log post
 				$(post.this).addClass(temp.classe_base)
 				temp._done = true
 

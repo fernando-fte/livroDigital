@@ -29,7 +29,7 @@
   }
 
   $.appCtrl = function(post) {
-    var i, results, temp;
+    var i, temp;
     temp = {
       '_proccess': {
         '_true': false,
@@ -53,12 +53,10 @@
     }
     if (temp._proccess.post === true) {
       i = 0;
-      results = [];
       while (i < post.length) {
         temp.appCtrl[i] = {};
         temp.appCtrl[i]["this"] = $(post)[i];
         temp.appCtrl[i].app = $($(post)[i]).data().appCtrl;
-        console.log(temp.appCtrl[i]);
         if (temp.appCtrl[i].app.togo) {
           temp._proccess.togo[i] = {};
           temp._proccess.togo[i] = $.appCtrl.togo(temp.appCtrl[i]);
@@ -66,10 +64,10 @@
         if (temp.appCtrl[i].app.display) {
           temp._proccess.display[i] = $.appCtrl.display(temp.appCtrl[i]);
         }
-        results.push(i++);
+        i++;
       }
-      return results;
     }
+    return console.log(temp);
   };
 
   $.appCtrl.togo = function(post) {
@@ -135,7 +133,6 @@
       }
       switch (post.app.display.who) {
         case 'this':
-          console.log(post);
           $(post["this"]).addClass(temp.classe_base);
           return temp._done = true;
         case 'closest':
