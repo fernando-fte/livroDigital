@@ -11715,372 +11715,1855 @@ button.close {
     transform: translate3d(0, -100%, 0);
   }
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.h1,
-.h2,
-.h3,
-.h4,
-.h5,
-.h6 {
-  font-family: "Dosis";
-  line-height: 1.1;
-  color: #19181C;
-  margin-top: 0;
-  margin-bottom: 9px;
+@media (max-width: 479px) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .h1,
+  .h2,
+  .h3,
+  .h4,
+  .h5,
+  .h6 {
+    font-family: "Dosis";
+    line-height: 1.1;
+    color: #19181C;
+    margin-top: 0;
+    margin-bottom: 8px;
+  }
+  h1 small,
+  h2 small,
+  h3 small,
+  h4 small,
+  h5 small,
+  h6 small,
+  .h1 small,
+  .h2 small,
+  .h3 small,
+  .h4 small,
+  .h5 small,
+  .h6 small,
+  h1 .small,
+  h2 .small,
+  h3 .small,
+  h4 .small,
+  h5 .small,
+  h6 .small,
+  .h1 .small,
+  .h2 .small,
+  .h3 .small,
+  .h4 .small,
+  .h5 .small,
+  .h6 .small {
+    font-weight: normal;
+    line-height: 1;
+    color: #757477;
+  }
+  h1,
+  .h1 {
+    font-size: 41px;
+    font-weight: 700;
+  }
+  h2,
+  .h2 {
+    font-size: 36px;
+    font-weight: 600;
+  }
+  h3,
+  .h3 {
+    font-size: 32px;
+    font-weight: 500;
+  }
+  h4,
+  .h4 {
+    font-size: 28px;
+    font-weight: 400;
+  }
+  h5,
+  .h5 {
+    font-size: 23px;
+    font-weight: 400;
+  }
+  h6,
+  .h6 {
+    font-size: 19px;
+    font-weight: 300;
+  }
+  h1.sub,
+  .h1-sub {
+    font-size: 23px;
+    font-weight: 600;
+    color: #757477;
+  }
+  h2.sub,
+  .h2-sub {
+    font-size: 19px;
+    font-weight: 600;
+    color: #757477;
+  }
+  h3.sub,
+  .h3-sub {
+    font-size: 15px;
+    font-weight: 600;
+    color: #757477;
+  }
+  p {
+    font-family: "Josefin Slab";
+    font-size: 17px;
+    font-weight: 600;
+    text-align: justify;
+    color: #19181C;
+    line-height: 27px;
+  }
+  cite,
+  blockquote {
+    font-family: "Josefin Sans";
+    font-size: 17px;
+    color: #47464A;
+    padding: 0px;
+    margin: 0px;
+  }
+  cite b,
+  blockquote b,
+  cite strong,
+  blockquote strong {
+    color: #D9A1A1;
+  }
+  a,
+  .link {
+    font-family: "Dosis";
+    color: #4D7CBB;
+    font-weight: bold;
+  }
+  table.tb p {
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    text-transform: inherit;
+    font-weight: inherit;
+    text-align: inherit;
+    margin-bottom: 0px;
+  }
+  .tb-header,
+  .tb-destaque,
+  .tb-titulo-result,
+  .tb-titulo-tr,
+  .tb-titulo-tr-2,
+  .tb-titulo-tr-3,
+  .tb-titulo-td,
+  .tb-titulo-td-2,
+  .tb-titulo-td-3 {
+    font-family: "Dosis";
+  }
+  .tb-td-result,
+  .tb-td,
+  .tb-td-2,
+  .tb-td-3 {
+    font-family: "Josefin Sans";
+  }
+  .tb-header,
+  .tb-destaque {
+    font-size: 20px;
+  }
+  .tb-titulo-tr,
+  .tb-titulo-td,
+  .tb-titulo-result,
+  .tb-td-result,
+  .tb-td {
+    font-size: 17px;
+  }
+  .tb-titulo-tr-2,
+  .tb-titulo-td-2,
+  .tb-td-result-2,
+  .tb-td-2 {
+    font-size: 16px;
+  }
+  .tb-titulo-tr-3,
+  .tb-titulo-td-3,
+  .tb-td-result-3,
+  .tb-td-3 {
+    font-size: 14px;
+  }
+  .tb-titulo-result,
+  .tb-titulo-td,
+  .tb-titulo-td-2,
+  .tb-titulo-td-3 {
+    font-weight: 400;
+  }
+  .tb-header,
+  .tb-titulo-tr,
+  .tb-titulo-tr-2,
+  .tb-titulo-tr-3 {
+    font-weight: bold;
+  }
+  .tb-destaque {
+    font-weight: 300;
+  }
+  .tb-header,
+  .tb-destaque,
+  .tb-titulo-tr,
+  .tb-titulo-tr-2,
+  .tb-titulo-tr-3 {
+    text-transform: uppercase;
+  }
+  .tb-header,
+  .tb-destaque {
+    color: #B44243;
+  }
+  .tb-td-result,
+  .tb-td {
+    color: #19181C;
+  }
+  .tb-titulo-tr-2,
+  .tb-td-result-2,
+  .tb-td-2 {
+    color: #47464A;
+  }
+  .tb-titulo-tr-3,
+  .tb-td-result-3,
+  .tb-td-3 {
+    color: #757477;
+  }
+  .tb-titulo-result,
+  .tb-titulo-tr,
+  .tb-titulo-td,
+  .tb-titulo-td-2,
+  .tb-titulo-td-3 {
+    color: #FFFFFF;
+  }
+  .tb-destaque,
+  .tb-titulo-tr,
+  .tb-titulo-tr-2,
+  .tb-titulo-tr-3,
+  .tb-td-result,
+  .tb-td,
+  .tb-td-2,
+  .tb-td-3 {
+    vertical-align: center;
+    text-align: center;
+  }
+  .tb-titulo-result,
+  .tb-titulo-td,
+  .tb-titulo-td-2,
+  .tb-titulo-td-3 {
+    vertical-align: center;
+    text-align: right;
+  }
+  .tb-header {
+    vertical-align: bottom;
+    text-align: left;
+  }
+  .app-legenda,
+  .app-fonte {
+    font-size: 12px;
+    color: #757477;
+    margin: 0px;
+  }
+  .app-legenda .label,
+  .app-fonte .label {
+    font-size: 12px;
+    color: #D48E82;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  .app-legenda {
+    font-family: "PF BeauSans Pro";
+  }
+  .app-fonte {
+    font-family: "Jura";
+  }
+  .atividade-enunciado,
+  .atividade-alternativa-item {
+    font-family: "Josefin Sans";
+    font-size: 17px;
+    margin-top: 17px;
+    margin-bottom: 17px;
+  }
+  .atividade-enunciado b,
+  .atividade-alternativa-item b,
+  .atividade-enunciado strong,
+  .atividade-alternativa-item strong {
+    color: #C77172;
+    font-size: 15px;
+  }
+  .atividade-alternativa-item {
+    list-style: none;
+    cursor: pointer;
+    padding-right: 17px;
+  }
+  .atividade-alternativa-item .feedback {
+    font-size: 15px;
+    font-weight: normal;
+    display: none;
+  }
+  .atividade-alternativa-item:before {
+    font-family: "FontAwesome";
+    content: "\F10C";
+    padding-right: 17px;
+    margin-left: -34px;
+  }
+  .atividade-alternativa-item:hover:before {
+    content: "\F192";
+  }
+  .atividade-alternativa-item.true,
+  .atividade-alternativa-item.false {
+    font-weight: bold;
+    cursor: default;
+  }
+  .atividade-alternativa-item.true .feedback,
+  .atividade-alternativa-item.false .feedback {
+    display: block;
+  }
+  .atividade-alternativa-item.true:hover:before,
+  .atividade-alternativa-item.false:hover:before {
+    content: inherit;
+  }
+  .atividade-alternativa-item.true {
+    color: #32824C;
+  }
+  .atividade-alternativa-item.true:before {
+    content: "\F058";
+  }
+  .atividade-alternativa-item.false {
+    color: #C0504D;
+  }
+  .atividade-alternativa-item.false:before {
+    content: "\F057";
+  }
+  .app-btn-atividade {
+    font-family: "PF BeauSans Pro";
+    font-size: 15px;
+    color: #A11314;
+    background-color: #FFFFFF;
+    border-color: #A11314;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  .app-btn-atividade:before {
+    padding-right: 15px;
+    font-size: 17px;
+    font-family: "FontAwesome";
+    content: "\F05D";
+  }
+  .app-btn-atividade:hover {
+    color: #B44243;
+  }
+  .app-btn-atividade:hover:before {
+    content: "\F058";
+  }
+  .secao {
+    background-color: #C0504D;
+    padding: 12px;
+  }
+  .secao h1,
+  .secao .h1 {
+    font-size: 19px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  .secao h1.sub,
+  .secao .h1-sub,
+  .secao h2,
+  .secao .h2 {
+    font-size: inherit;
+    font-weight: 200;
+  }
+  .secao p,
+  .secao h1 {
+    color: #FFFFFF;
+  }
+  .secao p {
+    font-family: "Josefin Sans";
+    font-size: 14px;
+    font-weight: normal;
+  }
+  .secao p b,
+  .secao p strong {
+    color: #47464A;
+  }
 }
-h1 small,
-h2 small,
-h3 small,
-h4 small,
-h5 small,
-h6 small,
-.h1 small,
-.h2 small,
-.h3 small,
-.h4 small,
-.h5 small,
-.h6 small,
-h1 .small,
-h2 .small,
-h3 .small,
-h4 .small,
-h5 .small,
-h6 .small,
-.h1 .small,
-.h2 .small,
-.h3 .small,
-.h4 .small,
-.h5 .small,
-.h6 .small {
-  font-weight: normal;
-  line-height: 1;
-  color: #757477;
+@media (min-width: 480px) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .h1,
+  .h2,
+  .h3,
+  .h4,
+  .h5,
+  .h6 {
+    font-family: "Dosis";
+    line-height: 1.1;
+    color: #19181C;
+    margin-top: 0;
+    margin-bottom: 8px;
+  }
+  h1 small,
+  h2 small,
+  h3 small,
+  h4 small,
+  h5 small,
+  h6 small,
+  .h1 small,
+  .h2 small,
+  .h3 small,
+  .h4 small,
+  .h5 small,
+  .h6 small,
+  h1 .small,
+  h2 .small,
+  h3 .small,
+  h4 .small,
+  h5 .small,
+  h6 .small,
+  .h1 .small,
+  .h2 .small,
+  .h3 .small,
+  .h4 .small,
+  .h5 .small,
+  .h6 .small {
+    font-weight: normal;
+    line-height: 1;
+    color: #757477;
+  }
+  h1,
+  .h1 {
+    font-size: 44px;
+    font-weight: 700;
+  }
+  h2,
+  .h2 {
+    font-size: 39px;
+    font-weight: 600;
+  }
+  h3,
+  .h3 {
+    font-size: 34px;
+    font-weight: 500;
+  }
+  h4,
+  .h4 {
+    font-size: 29px;
+    font-weight: 400;
+  }
+  h5,
+  .h5 {
+    font-size: 24px;
+    font-weight: 400;
+  }
+  h6,
+  .h6 {
+    font-size: 20px;
+    font-weight: 300;
+  }
+  h1.sub,
+  .h1-sub {
+    font-size: 25px;
+    font-weight: 600;
+    color: #757477;
+  }
+  h2.sub,
+  .h2-sub {
+    font-size: 20px;
+    font-weight: 600;
+    color: #757477;
+  }
+  h3.sub,
+  .h3-sub {
+    font-size: 16px;
+    font-weight: 600;
+    color: #757477;
+  }
+  p {
+    font-family: "Josefin Slab";
+    font-size: 18px;
+    font-weight: 600;
+    text-align: justify;
+    color: #19181C;
+    line-height: 28px;
+  }
+  cite,
+  blockquote {
+    font-family: "Josefin Sans";
+    font-size: 18px;
+    color: #47464A;
+    padding: 0px;
+    margin: 0px;
+  }
+  cite b,
+  blockquote b,
+  cite strong,
+  blockquote strong {
+    color: #D9A1A1;
+  }
+  a,
+  .link {
+    font-family: "Dosis";
+    color: #4D7CBB;
+    font-weight: bold;
+  }
+  table.tb p {
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    text-transform: inherit;
+    font-weight: inherit;
+    text-align: inherit;
+    margin-bottom: 0px;
+  }
+  .tb-header,
+  .tb-destaque,
+  .tb-titulo-result,
+  .tb-titulo-tr,
+  .tb-titulo-tr-2,
+  .tb-titulo-tr-3,
+  .tb-titulo-td,
+  .tb-titulo-td-2,
+  .tb-titulo-td-3 {
+    font-family: "Dosis";
+  }
+  .tb-td-result,
+  .tb-td,
+  .tb-td-2,
+  .tb-td-3 {
+    font-family: "Josefin Sans";
+  }
+  .tb-header,
+  .tb-destaque {
+    font-size: 21px;
+  }
+  .tb-titulo-tr,
+  .tb-titulo-td,
+  .tb-titulo-result,
+  .tb-td-result,
+  .tb-td {
+    font-size: 18px;
+  }
+  .tb-titulo-tr-2,
+  .tb-titulo-td-2,
+  .tb-td-result-2,
+  .tb-td-2 {
+    font-size: 17px;
+  }
+  .tb-titulo-tr-3,
+  .tb-titulo-td-3,
+  .tb-td-result-3,
+  .tb-td-3 {
+    font-size: 15px;
+  }
+  .tb-titulo-result,
+  .tb-titulo-td,
+  .tb-titulo-td-2,
+  .tb-titulo-td-3 {
+    font-weight: 400;
+  }
+  .tb-header,
+  .tb-titulo-tr,
+  .tb-titulo-tr-2,
+  .tb-titulo-tr-3 {
+    font-weight: bold;
+  }
+  .tb-destaque {
+    font-weight: 300;
+  }
+  .tb-header,
+  .tb-destaque,
+  .tb-titulo-tr,
+  .tb-titulo-tr-2,
+  .tb-titulo-tr-3 {
+    text-transform: uppercase;
+  }
+  .tb-header,
+  .tb-destaque {
+    color: #B44243;
+  }
+  .tb-td-result,
+  .tb-td {
+    color: #19181C;
+  }
+  .tb-titulo-tr-2,
+  .tb-td-result-2,
+  .tb-td-2 {
+    color: #47464A;
+  }
+  .tb-titulo-tr-3,
+  .tb-td-result-3,
+  .tb-td-3 {
+    color: #757477;
+  }
+  .tb-titulo-result,
+  .tb-titulo-tr,
+  .tb-titulo-td,
+  .tb-titulo-td-2,
+  .tb-titulo-td-3 {
+    color: #FFFFFF;
+  }
+  .tb-destaque,
+  .tb-titulo-tr,
+  .tb-titulo-tr-2,
+  .tb-titulo-tr-3,
+  .tb-td-result,
+  .tb-td,
+  .tb-td-2,
+  .tb-td-3 {
+    vertical-align: center;
+    text-align: center;
+  }
+  .tb-titulo-result,
+  .tb-titulo-td,
+  .tb-titulo-td-2,
+  .tb-titulo-td-3 {
+    vertical-align: center;
+    text-align: right;
+  }
+  .tb-header {
+    vertical-align: bottom;
+    text-align: left;
+  }
+  .app-legenda,
+  .app-fonte {
+    font-size: 12px;
+    color: #757477;
+    margin: 0px;
+  }
+  .app-legenda .label,
+  .app-fonte .label {
+    font-size: 12px;
+    color: #D48E82;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  .app-legenda {
+    font-family: "PF BeauSans Pro";
+  }
+  .app-fonte {
+    font-family: "Jura";
+  }
+  .atividade-enunciado,
+  .atividade-alternativa-item {
+    font-family: "Josefin Sans";
+    font-size: 18px;
+    margin-top: 18px;
+    margin-bottom: 18px;
+  }
+  .atividade-enunciado b,
+  .atividade-alternativa-item b,
+  .atividade-enunciado strong,
+  .atividade-alternativa-item strong {
+    color: #C77172;
+    font-size: 16px;
+  }
+  .atividade-alternativa-item {
+    list-style: none;
+    cursor: pointer;
+    padding-right: 18px;
+  }
+  .atividade-alternativa-item .feedback {
+    font-size: 15px;
+    font-weight: normal;
+    display: none;
+  }
+  .atividade-alternativa-item:before {
+    font-family: "FontAwesome";
+    content: "\F10C";
+    padding-right: 18px;
+    margin-left: -36px;
+  }
+  .atividade-alternativa-item:hover:before {
+    content: "\F192";
+  }
+  .atividade-alternativa-item.true,
+  .atividade-alternativa-item.false {
+    font-weight: bold;
+    cursor: default;
+  }
+  .atividade-alternativa-item.true .feedback,
+  .atividade-alternativa-item.false .feedback {
+    display: block;
+  }
+  .atividade-alternativa-item.true:hover:before,
+  .atividade-alternativa-item.false:hover:before {
+    content: inherit;
+  }
+  .atividade-alternativa-item.true {
+    color: #32824C;
+  }
+  .atividade-alternativa-item.true:before {
+    content: "\F058";
+  }
+  .atividade-alternativa-item.false {
+    color: #C0504D;
+  }
+  .atividade-alternativa-item.false:before {
+    content: "\F057";
+  }
+  .app-btn-atividade {
+    font-family: "PF BeauSans Pro";
+    font-size: 15px;
+    color: #A11314;
+    background-color: #FFFFFF;
+    border-color: #A11314;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  .app-btn-atividade:before {
+    padding-right: 15px;
+    font-size: 18px;
+    font-family: "FontAwesome";
+    content: "\F05D";
+  }
+  .app-btn-atividade:hover {
+    color: #B44243;
+  }
+  .app-btn-atividade:hover:before {
+    content: "\F058";
+  }
+  .secao {
+    background-color: #C0504D;
+    padding: 13px;
+  }
+  .secao h1,
+  .secao .h1 {
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  .secao h1.sub,
+  .secao .h1-sub,
+  .secao h2,
+  .secao .h2 {
+    font-size: inherit;
+    font-weight: 200;
+  }
+  .secao p,
+  .secao h1 {
+    color: #FFFFFF;
+  }
+  .secao p {
+    font-family: "Josefin Sans";
+    font-size: 15px;
+    font-weight: normal;
+  }
+  .secao p b,
+  .secao p strong {
+    color: #47464A;
+  }
 }
-h1,
-.h1 {
-  font-size: 49px;
-  font-weight: 700;
+@media (min-width: 768px) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .h1,
+  .h2,
+  .h3,
+  .h4,
+  .h5,
+  .h6 {
+    font-family: "Dosis";
+    line-height: 1.1;
+    color: #19181C;
+    margin-top: 0;
+    margin-bottom: 9px;
+  }
+  h1 small,
+  h2 small,
+  h3 small,
+  h4 small,
+  h5 small,
+  h6 small,
+  .h1 small,
+  .h2 small,
+  .h3 small,
+  .h4 small,
+  .h5 small,
+  .h6 small,
+  h1 .small,
+  h2 .small,
+  h3 .small,
+  h4 .small,
+  h5 .small,
+  h6 .small,
+  .h1 .small,
+  .h2 .small,
+  .h3 .small,
+  .h4 .small,
+  .h5 .small,
+  .h6 .small {
+    font-weight: normal;
+    line-height: 1;
+    color: #757477;
+  }
+  h1,
+  .h1 {
+    font-size: 49px;
+    font-weight: 700;
+  }
+  h2,
+  .h2 {
+    font-size: 43px;
+    font-weight: 600;
+  }
+  h3,
+  .h3 {
+    font-size: 38px;
+    font-weight: 500;
+  }
+  h4,
+  .h4 {
+    font-size: 33px;
+    font-weight: 400;
+  }
+  h5,
+  .h5 {
+    font-size: 27px;
+    font-weight: 400;
+  }
+  h6,
+  .h6 {
+    font-size: 22px;
+    font-weight: 300;
+  }
+  h1.sub,
+  .h1-sub {
+    font-size: 26px;
+    font-weight: 600;
+    color: #757477;
+  }
+  h2.sub,
+  .h2-sub {
+    font-size: 21px;
+    font-weight: 600;
+    color: #757477;
+  }
+  h3.sub,
+  .h3-sub {
+    font-size: 17px;
+    font-weight: 600;
+    color: #757477;
+  }
+  p {
+    font-family: "Josefin Slab";
+    font-size: 19px;
+    font-weight: 600;
+    text-align: justify;
+    color: #19181C;
+    line-height: 30px;
+  }
+  cite,
+  blockquote {
+    font-family: "Josefin Sans";
+    font-size: 19px;
+    color: #47464A;
+    padding: 0px;
+    margin: 0px;
+  }
+  cite b,
+  blockquote b,
+  cite strong,
+  blockquote strong {
+    color: #D9A1A1;
+  }
+  a,
+  .link {
+    font-family: "Dosis";
+    color: #4D7CBB;
+    font-weight: bold;
+  }
+  table.tb p {
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    text-transform: inherit;
+    font-weight: inherit;
+    text-align: inherit;
+    margin-bottom: 0px;
+  }
+  .tb-header,
+  .tb-destaque,
+  .tb-titulo-result,
+  .tb-titulo-tr,
+  .tb-titulo-tr-2,
+  .tb-titulo-tr-3,
+  .tb-titulo-td,
+  .tb-titulo-td-2,
+  .tb-titulo-td-3 {
+    font-family: "Dosis";
+  }
+  .tb-td-result,
+  .tb-td,
+  .tb-td-2,
+  .tb-td-3 {
+    font-family: "Josefin Sans";
+  }
+  .tb-header,
+  .tb-destaque {
+    font-size: 22px;
+  }
+  .tb-titulo-tr,
+  .tb-titulo-td,
+  .tb-titulo-result,
+  .tb-td-result,
+  .tb-td {
+    font-size: 19px;
+  }
+  .tb-titulo-tr-2,
+  .tb-titulo-td-2,
+  .tb-td-result-2,
+  .tb-td-2 {
+    font-size: 17px;
+  }
+  .tb-titulo-tr-3,
+  .tb-titulo-td-3,
+  .tb-td-result-3,
+  .tb-td-3 {
+    font-size: 15px;
+  }
+  .tb-titulo-result,
+  .tb-titulo-td,
+  .tb-titulo-td-2,
+  .tb-titulo-td-3 {
+    font-weight: 400;
+  }
+  .tb-header,
+  .tb-titulo-tr,
+  .tb-titulo-tr-2,
+  .tb-titulo-tr-3 {
+    font-weight: bold;
+  }
+  .tb-destaque {
+    font-weight: 300;
+  }
+  .tb-header,
+  .tb-destaque,
+  .tb-titulo-tr,
+  .tb-titulo-tr-2,
+  .tb-titulo-tr-3 {
+    text-transform: uppercase;
+  }
+  .tb-header,
+  .tb-destaque {
+    color: #B44243;
+  }
+  .tb-td-result,
+  .tb-td {
+    color: #19181C;
+  }
+  .tb-titulo-tr-2,
+  .tb-td-result-2,
+  .tb-td-2 {
+    color: #47464A;
+  }
+  .tb-titulo-tr-3,
+  .tb-td-result-3,
+  .tb-td-3 {
+    color: #757477;
+  }
+  .tb-titulo-result,
+  .tb-titulo-tr,
+  .tb-titulo-td,
+  .tb-titulo-td-2,
+  .tb-titulo-td-3 {
+    color: #FFFFFF;
+  }
+  .tb-destaque,
+  .tb-titulo-tr,
+  .tb-titulo-tr-2,
+  .tb-titulo-tr-3,
+  .tb-td-result,
+  .tb-td,
+  .tb-td-2,
+  .tb-td-3 {
+    vertical-align: center;
+    text-align: center;
+  }
+  .tb-titulo-result,
+  .tb-titulo-td,
+  .tb-titulo-td-2,
+  .tb-titulo-td-3 {
+    vertical-align: center;
+    text-align: right;
+  }
+  .tb-header {
+    vertical-align: bottom;
+    text-align: left;
+  }
+  .app-legenda,
+  .app-fonte {
+    font-size: 13px;
+    color: #757477;
+    margin: 0px;
+  }
+  .app-legenda .label,
+  .app-fonte .label {
+    font-size: 13px;
+    color: #D48E82;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  .app-legenda {
+    font-family: "PF BeauSans Pro";
+  }
+  .app-fonte {
+    font-family: "Jura";
+  }
+  .atividade-enunciado,
+  .atividade-alternativa-item {
+    font-family: "Josefin Sans";
+    font-size: 19px;
+    margin-top: 19px;
+    margin-bottom: 19px;
+  }
+  .atividade-enunciado b,
+  .atividade-alternativa-item b,
+  .atividade-enunciado strong,
+  .atividade-alternativa-item strong {
+    color: #C77172;
+    font-size: 17px;
+  }
+  .atividade-alternativa-item {
+    list-style: none;
+    cursor: pointer;
+    padding-right: 19px;
+  }
+  .atividade-alternativa-item .feedback {
+    font-size: 16px;
+    font-weight: normal;
+    display: none;
+  }
+  .atividade-alternativa-item:before {
+    font-family: "FontAwesome";
+    content: "\F10C";
+    padding-right: 19px;
+    margin-left: -38px;
+  }
+  .atividade-alternativa-item:hover:before {
+    content: "\F192";
+  }
+  .atividade-alternativa-item.true,
+  .atividade-alternativa-item.false {
+    font-weight: bold;
+    cursor: default;
+  }
+  .atividade-alternativa-item.true .feedback,
+  .atividade-alternativa-item.false .feedback {
+    display: block;
+  }
+  .atividade-alternativa-item.true:hover:before,
+  .atividade-alternativa-item.false:hover:before {
+    content: inherit;
+  }
+  .atividade-alternativa-item.true {
+    color: #32824C;
+  }
+  .atividade-alternativa-item.true:before {
+    content: "\F058";
+  }
+  .atividade-alternativa-item.false {
+    color: #C0504D;
+  }
+  .atividade-alternativa-item.false:before {
+    content: "\F057";
+  }
+  .app-btn-atividade {
+    font-family: "PF BeauSans Pro";
+    font-size: 16px;
+    color: #A11314;
+    background-color: #FFFFFF;
+    border-color: #A11314;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  .app-btn-atividade:before {
+    padding-right: 16px;
+    font-size: 19px;
+    font-family: "FontAwesome";
+    content: "\F05D";
+  }
+  .app-btn-atividade:hover {
+    color: #B44243;
+  }
+  .app-btn-atividade:hover:before {
+    content: "\F058";
+  }
+  .secao {
+    background-color: #C0504D;
+    padding: 14px;
+  }
+  .secao h1,
+  .secao .h1 {
+    font-size: 21px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  .secao h1.sub,
+  .secao .h1-sub,
+  .secao h2,
+  .secao .h2 {
+    font-size: inherit;
+    font-weight: 200;
+  }
+  .secao p,
+  .secao h1 {
+    color: #FFFFFF;
+  }
+  .secao p {
+    font-family: "Josefin Sans";
+    font-size: 15px;
+    font-weight: normal;
+  }
+  .secao p b,
+  .secao p strong {
+    color: #47464A;
+  }
 }
-h2,
-.h2 {
-  font-size: 43px;
-  font-weight: 600;
+@media (min-width: 992px) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .h1,
+  .h2,
+  .h3,
+  .h4,
+  .h5,
+  .h6 {
+    font-family: "Dosis";
+    line-height: 1.1;
+    color: #19181C;
+    margin-top: 0;
+    margin-bottom: 9px;
+  }
+  h1 small,
+  h2 small,
+  h3 small,
+  h4 small,
+  h5 small,
+  h6 small,
+  .h1 small,
+  .h2 small,
+  .h3 small,
+  .h4 small,
+  .h5 small,
+  .h6 small,
+  h1 .small,
+  h2 .small,
+  h3 .small,
+  h4 .small,
+  h5 .small,
+  h6 .small,
+  .h1 .small,
+  .h2 .small,
+  .h3 .small,
+  .h4 .small,
+  .h5 .small,
+  .h6 .small {
+    font-weight: normal;
+    line-height: 1;
+    color: #757477;
+  }
+  h1,
+  .h1 {
+    font-size: 49px;
+    font-weight: 700;
+  }
+  h2,
+  .h2 {
+    font-size: 43px;
+    font-weight: 600;
+  }
+  h3,
+  .h3 {
+    font-size: 38px;
+    font-weight: 500;
+  }
+  h4,
+  .h4 {
+    font-size: 33px;
+    font-weight: 400;
+  }
+  h5,
+  .h5 {
+    font-size: 27px;
+    font-weight: 400;
+  }
+  h6,
+  .h6 {
+    font-size: 22px;
+    font-weight: 300;
+  }
+  h1.sub,
+  .h1-sub {
+    font-size: 26px;
+    font-weight: 600;
+    color: #757477;
+  }
+  h2.sub,
+  .h2-sub {
+    font-size: 21px;
+    font-weight: 600;
+    color: #757477;
+  }
+  h3.sub,
+  .h3-sub {
+    font-size: 17px;
+    font-weight: 600;
+    color: #757477;
+  }
+  p {
+    font-family: "Josefin Slab";
+    font-size: 19px;
+    font-weight: 600;
+    text-align: justify;
+    color: #19181C;
+    line-height: 30px;
+  }
+  cite,
+  blockquote {
+    font-family: "Josefin Sans";
+    font-size: 19px;
+    color: #47464A;
+    padding: 0px;
+    margin: 0px;
+  }
+  cite b,
+  blockquote b,
+  cite strong,
+  blockquote strong {
+    color: #D9A1A1;
+  }
+  a,
+  .link {
+    font-family: "Dosis";
+    color: #4D7CBB;
+    font-weight: bold;
+  }
+  table.tb p {
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    text-transform: inherit;
+    font-weight: inherit;
+    text-align: inherit;
+    margin-bottom: 0px;
+  }
+  .tb-header,
+  .tb-destaque,
+  .tb-titulo-result,
+  .tb-titulo-tr,
+  .tb-titulo-tr-2,
+  .tb-titulo-tr-3,
+  .tb-titulo-td,
+  .tb-titulo-td-2,
+  .tb-titulo-td-3 {
+    font-family: "Dosis";
+  }
+  .tb-td-result,
+  .tb-td,
+  .tb-td-2,
+  .tb-td-3 {
+    font-family: "Josefin Sans";
+  }
+  .tb-header,
+  .tb-destaque {
+    font-size: 22px;
+  }
+  .tb-titulo-tr,
+  .tb-titulo-td,
+  .tb-titulo-result,
+  .tb-td-result,
+  .tb-td {
+    font-size: 19px;
+  }
+  .tb-titulo-tr-2,
+  .tb-titulo-td-2,
+  .tb-td-result-2,
+  .tb-td-2 {
+    font-size: 17px;
+  }
+  .tb-titulo-tr-3,
+  .tb-titulo-td-3,
+  .tb-td-result-3,
+  .tb-td-3 {
+    font-size: 15px;
+  }
+  .tb-titulo-result,
+  .tb-titulo-td,
+  .tb-titulo-td-2,
+  .tb-titulo-td-3 {
+    font-weight: 400;
+  }
+  .tb-header,
+  .tb-titulo-tr,
+  .tb-titulo-tr-2,
+  .tb-titulo-tr-3 {
+    font-weight: bold;
+  }
+  .tb-destaque {
+    font-weight: 300;
+  }
+  .tb-header,
+  .tb-destaque,
+  .tb-titulo-tr,
+  .tb-titulo-tr-2,
+  .tb-titulo-tr-3 {
+    text-transform: uppercase;
+  }
+  .tb-header,
+  .tb-destaque {
+    color: #B44243;
+  }
+  .tb-td-result,
+  .tb-td {
+    color: #19181C;
+  }
+  .tb-titulo-tr-2,
+  .tb-td-result-2,
+  .tb-td-2 {
+    color: #47464A;
+  }
+  .tb-titulo-tr-3,
+  .tb-td-result-3,
+  .tb-td-3 {
+    color: #757477;
+  }
+  .tb-titulo-result,
+  .tb-titulo-tr,
+  .tb-titulo-td,
+  .tb-titulo-td-2,
+  .tb-titulo-td-3 {
+    color: #FFFFFF;
+  }
+  .tb-destaque,
+  .tb-titulo-tr,
+  .tb-titulo-tr-2,
+  .tb-titulo-tr-3,
+  .tb-td-result,
+  .tb-td,
+  .tb-td-2,
+  .tb-td-3 {
+    vertical-align: center;
+    text-align: center;
+  }
+  .tb-titulo-result,
+  .tb-titulo-td,
+  .tb-titulo-td-2,
+  .tb-titulo-td-3 {
+    vertical-align: center;
+    text-align: right;
+  }
+  .tb-header {
+    vertical-align: bottom;
+    text-align: left;
+  }
+  .app-legenda,
+  .app-fonte {
+    font-size: 13px;
+    color: #757477;
+    margin: 0px;
+  }
+  .app-legenda .label,
+  .app-fonte .label {
+    font-size: 13px;
+    color: #D48E82;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  .app-legenda {
+    font-family: "PF BeauSans Pro";
+  }
+  .app-fonte {
+    font-family: "Jura";
+  }
+  .atividade-enunciado,
+  .atividade-alternativa-item {
+    font-family: "Josefin Sans";
+    font-size: 19px;
+    margin-top: 19px;
+    margin-bottom: 19px;
+  }
+  .atividade-enunciado b,
+  .atividade-alternativa-item b,
+  .atividade-enunciado strong,
+  .atividade-alternativa-item strong {
+    color: #C77172;
+    font-size: 17px;
+  }
+  .atividade-alternativa-item {
+    list-style: none;
+    cursor: pointer;
+    padding-right: 19px;
+  }
+  .atividade-alternativa-item .feedback {
+    font-size: 16px;
+    font-weight: normal;
+    display: none;
+  }
+  .atividade-alternativa-item:before {
+    font-family: "FontAwesome";
+    content: "\F10C";
+    padding-right: 19px;
+    margin-left: -38px;
+  }
+  .atividade-alternativa-item:hover:before {
+    content: "\F192";
+  }
+  .atividade-alternativa-item.true,
+  .atividade-alternativa-item.false {
+    font-weight: bold;
+    cursor: default;
+  }
+  .atividade-alternativa-item.true .feedback,
+  .atividade-alternativa-item.false .feedback {
+    display: block;
+  }
+  .atividade-alternativa-item.true:hover:before,
+  .atividade-alternativa-item.false:hover:before {
+    content: inherit;
+  }
+  .atividade-alternativa-item.true {
+    color: #32824C;
+  }
+  .atividade-alternativa-item.true:before {
+    content: "\F058";
+  }
+  .atividade-alternativa-item.false {
+    color: #C0504D;
+  }
+  .atividade-alternativa-item.false:before {
+    content: "\F057";
+  }
+  .app-btn-atividade {
+    font-family: "PF BeauSans Pro";
+    font-size: 16px;
+    color: #A11314;
+    background-color: #FFFFFF;
+    border-color: #A11314;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  .app-btn-atividade:before {
+    padding-right: 16px;
+    font-size: 19px;
+    font-family: "FontAwesome";
+    content: "\F05D";
+  }
+  .app-btn-atividade:hover {
+    color: #B44243;
+  }
+  .app-btn-atividade:hover:before {
+    content: "\F058";
+  }
+  .secao {
+    background-color: #C0504D;
+    padding: 14px;
+  }
+  .secao h1,
+  .secao .h1 {
+    font-size: 21px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  .secao h1.sub,
+  .secao .h1-sub,
+  .secao h2,
+  .secao .h2 {
+    font-size: inherit;
+    font-weight: 200;
+  }
+  .secao p,
+  .secao h1 {
+    color: #FFFFFF;
+  }
+  .secao p {
+    font-family: "Josefin Sans";
+    font-size: 15px;
+    font-weight: normal;
+  }
+  .secao p b,
+  .secao p strong {
+    color: #47464A;
+  }
 }
-h3,
-.h3 {
-  font-size: 38px;
-  font-weight: 500;
-}
-h4,
-.h4 {
-  font-size: 33px;
-  font-weight: 400;
-}
-h5,
-.h5 {
-  font-size: 27px;
-  font-weight: 400;
-}
-h6,
-.h6 {
-  font-size: 22px;
-  font-weight: 300;
-}
-h1.sub,
-.h1-sub {
-  font-size: 26px;
-  font-weight: 600;
-  color: #757477;
-}
-h2.sub,
-.h2-sub {
-  font-size: 21px;
-  font-weight: 600;
-  color: #757477;
-}
-h3.sub,
-.h3-sub {
-  font-size: 17px;
-  font-weight: 600;
-  color: #757477;
-}
-p {
-  font-family: "Josefin Slab";
-  font-size: 19px;
-  font-weight: 600;
-  text-align: justify;
-  color: #19181C;
-}
-cite,
-blockquote {
-  font-family: "Josefin Sans";
-  font-size: 19px;
-  color: #47464A;
-  padding: 0px;
-  margin: 0px;
-}
-cite b,
-blockquote b,
-cite strong,
-blockquote strong {
-  color: #D9A1A1;
-}
-a,
-.link {
-  font-family: "Dosis";
-  color: #4D7CBB;
-  font-weight: bold;
-}
-table.tb p {
-  color: inherit;
-  font-family: inherit;
-  font-size: inherit;
-  text-transform: inherit;
-  font-weight: inherit;
-  text-align: inherit;
-  margin-bottom: 0px;
-}
-.tb-header,
-.tb-destaque,
-.tb-titulo-result,
-.tb-titulo-tr,
-.tb-titulo-tr-2,
-.tb-titulo-tr-3,
-.tb-titulo-td,
-.tb-titulo-td-2,
-.tb-titulo-td-3 {
-  font-family: "Dosis";
-}
-.tb-td-result,
-.tb-td,
-.tb-td-2,
-.tb-td-3 {
-  font-family: "Josefin Sans";
-}
-.tb-header,
-.tb-destaque {
-  font-size: 22px;
-}
-.tb-titulo-tr,
-.tb-titulo-td,
-.tb-titulo-result,
-.tb-td-result,
-.tb-td {
-  font-size: 19px;
-}
-.tb-titulo-tr-2,
-.tb-titulo-td-2,
-.tb-td-result-2,
-.tb-td-2 {
-  font-size: 17px;
-}
-.tb-titulo-tr-3,
-.tb-titulo-td-3,
-.tb-td-result-3,
-.tb-td-3 {
-  font-size: 15px;
-}
-.tb-titulo-result,
-.tb-titulo-td,
-.tb-titulo-td-2,
-.tb-titulo-td-3 {
-  font-weight: 400;
-}
-.tb-header,
-.tb-titulo-tr,
-.tb-titulo-tr-2,
-.tb-titulo-tr-3 {
-  font-weight: bold;
-}
-.tb-destaque {
-  font-weight: 300;
-}
-.tb-header,
-.tb-destaque,
-.tb-titulo-tr,
-.tb-titulo-tr-2,
-.tb-titulo-tr-3 {
-  text-transform: uppercase;
-}
-.tb-header,
-.tb-destaque {
-  color: #B44243;
-}
-.tb-td-result,
-.tb-td {
-  color: #19181C;
-}
-.tb-titulo-tr-2,
-.tb-td-result-2,
-.tb-td-2 {
-  color: #47464A;
-}
-.tb-titulo-tr-3,
-.tb-td-result-3,
-.tb-td-3 {
-  color: #757477;
-}
-.tb-titulo-result,
-.tb-titulo-tr,
-.tb-titulo-td,
-.tb-titulo-td-2,
-.tb-titulo-td-3 {
-  color: #FFFFFF;
-}
-.tb-destaque,
-.tb-titulo-tr,
-.tb-titulo-tr-2,
-.tb-titulo-tr-3,
-.tb-td-result,
-.tb-td,
-.tb-td-2,
-.tb-td-3 {
-  vertical-align: center;
-  text-align: center;
-}
-.tb-titulo-result,
-.tb-titulo-td,
-.tb-titulo-td-2,
-.tb-titulo-td-3 {
-  vertical-align: center;
-  text-align: right;
-}
-.tb-header {
-  vertical-align: bottom;
-  text-align: left;
-}
-.app-legenda,
-.app-fonte {
-  font-size: 13px;
-  color: #757477;
-  margin: 0px;
-}
-.app-legenda .label,
-.app-fonte .label {
-  font-size: 13px;
-  color: #D48E82;
-  text-transform: uppercase;
-  font-weight: bold;
-}
-.app-legenda {
-  font-family: "PF BeauSans Pro";
-}
-.app-fonte {
-  font-family: "Jura";
-}
-.atividade-enunciado,
-.atividade-alternativa-item {
-  font-family: "Josefin Sans";
-  font-size: 19px;
-  margin-top: 19px;
-  margin-bottom: 19px;
-}
-.atividade-enunciado b,
-.atividade-alternativa-item b,
-.atividade-enunciado strong,
-.atividade-alternativa-item strong {
-  color: #C77172;
-  font-size: 17px;
-}
-.atividade-alternativa-item {
-  list-style: none;
-  cursor: pointer;
-  padding-right: 19px;
-}
-.atividade-alternativa-item .feedback {
-  font-size: 16px;
-  font-weight: normal;
-  display: none;
-}
-.atividade-alternativa-item:before {
-  font-family: "FontAwesome";
-  content: "\F10C";
-  padding-right: 19px;
-  margin-left: -38px;
-}
-.atividade-alternativa-item:hover:before {
-  content: "\F192";
-}
-.atividade-alternativa-item.true,
-.atividade-alternativa-item.false {
-  font-weight: bold;
-  cursor: default;
-}
-.atividade-alternativa-item.true .feedback,
-.atividade-alternativa-item.false .feedback {
-  display: block;
-}
-.atividade-alternativa-item.true:hover:before,
-.atividade-alternativa-item.false:hover:before {
-  content: inherit;
-}
-.atividade-alternativa-item.true {
-  color: #32824C;
-}
-.atividade-alternativa-item.true:before {
-  content: "\F058";
-}
-.atividade-alternativa-item.false {
-  color: #C0504D;
-}
-.atividade-alternativa-item.false:before {
-  content: "\F057";
-}
-.app-btn-atividade {
-  font-family: "PF BeauSans Pro";
-  font-size: 16px;
-  color: #A11314;
-  background-color: #FFFFFF;
-  border-color: #A11314;
-  text-transform: uppercase;
-  font-weight: bold;
-}
-.app-btn-atividade:before {
-  padding-right: 16px;
-  font-size: 19px;
-  font-family: "FontAwesome";
-  content: "\F05D";
-}
-.app-btn-atividade:hover {
-  color: #B44243;
-}
-.app-btn-atividade:hover:before {
-  content: "\F058";
-}
-.secao {
-  background-color: #C0504D;
-  padding: 14px;
-}
-.secao h1,
-.secao .h1 {
-  font-size: 21px;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-.secao h1.sub,
-.secao .h1-sub,
-.secao h2,
-.secao .h2 {
-  font-size: inherit;
-  font-weight: 200;
-}
-.secao p,
-.secao h1 {
-  color: #FFFFFF;
-}
-.secao p {
-  font-family: "Josefin Sans";
-  font-size: 15px;
-  font-weight: normal;
-}
-.secao p b,
-.secao p strong {
-  color: #47464A;
+@media (min-width: 1200px) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .h1,
+  .h2,
+  .h3,
+  .h4,
+  .h5,
+  .h6 {
+    font-family: "Dosis";
+    line-height: 1.1;
+    color: #19181C;
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  h1 small,
+  h2 small,
+  h3 small,
+  h4 small,
+  h5 small,
+  h6 small,
+  .h1 small,
+  .h2 small,
+  .h3 small,
+  .h4 small,
+  .h5 small,
+  .h6 small,
+  h1 .small,
+  h2 .small,
+  h3 .small,
+  h4 .small,
+  h5 .small,
+  h6 .small,
+  .h1 .small,
+  .h2 .small,
+  .h3 .small,
+  .h4 .small,
+  .h5 .small,
+  .h6 .small {
+    font-weight: normal;
+    line-height: 1;
+    color: #757477;
+  }
+  h1,
+  .h1 {
+    font-size: 49px;
+    font-weight: 700;
+  }
+  h2,
+  .h2 {
+    font-size: 43px;
+    font-weight: 600;
+  }
+  h3,
+  .h3 {
+    font-size: 38px;
+    font-weight: 500;
+  }
+  h4,
+  .h4 {
+    font-size: 33px;
+    font-weight: 400;
+  }
+  h5,
+  .h5 {
+    font-size: 27px;
+    font-weight: 400;
+  }
+  h6,
+  .h6 {
+    font-size: 22px;
+    font-weight: 300;
+  }
+  h1.sub,
+  .h1-sub {
+    font-size: 30px;
+    font-weight: 600;
+    color: #757477;
+  }
+  h2.sub,
+  .h2-sub {
+    font-size: 25px;
+    font-weight: 600;
+    color: #757477;
+  }
+  h3.sub,
+  .h3-sub {
+    font-size: 19px;
+    font-weight: 600;
+    color: #757477;
+  }
+  p {
+    font-family: "Josefin Slab";
+    font-size: 22px;
+    font-weight: 600;
+    text-align: justify;
+    color: #19181C;
+    line-height: 35px;
+  }
+  cite,
+  blockquote {
+    font-family: "Josefin Sans";
+    font-size: 22px;
+    color: #47464A;
+    padding: 0px;
+    margin: 0px;
+  }
+  cite b,
+  blockquote b,
+  cite strong,
+  blockquote strong {
+    color: #D9A1A1;
+  }
+  a,
+  .link {
+    font-family: "Dosis";
+    color: #4D7CBB;
+    font-weight: bold;
+  }
+  table.tb p {
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    text-transform: inherit;
+    font-weight: inherit;
+    text-align: inherit;
+    margin-bottom: 0px;
+  }
+  .tb-header,
+  .tb-destaque,
+  .tb-titulo-result,
+  .tb-titulo-tr,
+  .tb-titulo-tr-2,
+  .tb-titulo-tr-3,
+  .tb-titulo-td,
+  .tb-titulo-td-2,
+  .tb-titulo-td-3 {
+    font-family: "Dosis";
+  }
+  .tb-td-result,
+  .tb-td,
+  .tb-td-2,
+  .tb-td-3 {
+    font-family: "Josefin Sans";
+  }
+  .tb-header,
+  .tb-destaque {
+    font-size: 26px;
+  }
+  .tb-titulo-tr,
+  .tb-titulo-td,
+  .tb-titulo-result,
+  .tb-td-result,
+  .tb-td {
+    font-size: 22px;
+  }
+  .tb-titulo-tr-2,
+  .tb-titulo-td-2,
+  .tb-td-result-2,
+  .tb-td-2 {
+    font-size: 20px;
+  }
+  .tb-titulo-tr-3,
+  .tb-titulo-td-3,
+  .tb-td-result-3,
+  .tb-td-3 {
+    font-size: 18px;
+  }
+  .tb-titulo-result,
+  .tb-titulo-td,
+  .tb-titulo-td-2,
+  .tb-titulo-td-3 {
+    font-weight: 400;
+  }
+  .tb-header,
+  .tb-titulo-tr,
+  .tb-titulo-tr-2,
+  .tb-titulo-tr-3 {
+    font-weight: bold;
+  }
+  .tb-destaque {
+    font-weight: 300;
+  }
+  .tb-header,
+  .tb-destaque,
+  .tb-titulo-tr,
+  .tb-titulo-tr-2,
+  .tb-titulo-tr-3 {
+    text-transform: uppercase;
+  }
+  .tb-header,
+  .tb-destaque {
+    color: #B44243;
+  }
+  .tb-td-result,
+  .tb-td {
+    color: #19181C;
+  }
+  .tb-titulo-tr-2,
+  .tb-td-result-2,
+  .tb-td-2 {
+    color: #47464A;
+  }
+  .tb-titulo-tr-3,
+  .tb-td-result-3,
+  .tb-td-3 {
+    color: #757477;
+  }
+  .tb-titulo-result,
+  .tb-titulo-tr,
+  .tb-titulo-td,
+  .tb-titulo-td-2,
+  .tb-titulo-td-3 {
+    color: #FFFFFF;
+  }
+  .tb-destaque,
+  .tb-titulo-tr,
+  .tb-titulo-tr-2,
+  .tb-titulo-tr-3,
+  .tb-td-result,
+  .tb-td,
+  .tb-td-2,
+  .tb-td-3 {
+    vertical-align: center;
+    text-align: center;
+  }
+  .tb-titulo-result,
+  .tb-titulo-td,
+  .tb-titulo-td-2,
+  .tb-titulo-td-3 {
+    vertical-align: center;
+    text-align: right;
+  }
+  .tb-header {
+    vertical-align: bottom;
+    text-align: left;
+  }
+  .app-legenda,
+  .app-fonte {
+    font-size: 15px;
+    color: #757477;
+    margin: 0px;
+  }
+  .app-legenda .label,
+  .app-fonte .label {
+    font-size: 15px;
+    color: #D48E82;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  .app-legenda {
+    font-family: "PF BeauSans Pro";
+  }
+  .app-fonte {
+    font-family: "Jura";
+  }
+  .atividade-enunciado,
+  .atividade-alternativa-item {
+    font-family: "Josefin Sans";
+    font-size: 22px;
+    margin-top: 22px;
+    margin-bottom: 22px;
+  }
+  .atividade-enunciado b,
+  .atividade-alternativa-item b,
+  .atividade-enunciado strong,
+  .atividade-alternativa-item strong {
+    color: #C77172;
+    font-size: 19px;
+  }
+  .atividade-alternativa-item {
+    list-style: none;
+    cursor: pointer;
+    padding-right: 22px;
+  }
+  .atividade-alternativa-item .feedback {
+    font-size: 19px;
+    font-weight: normal;
+    display: none;
+  }
+  .atividade-alternativa-item:before {
+    font-family: "FontAwesome";
+    content: "\F10C";
+    padding-right: 22px;
+    margin-left: -44px;
+  }
+  .atividade-alternativa-item:hover:before {
+    content: "\F192";
+  }
+  .atividade-alternativa-item.true,
+  .atividade-alternativa-item.false {
+    font-weight: bold;
+    cursor: default;
+  }
+  .atividade-alternativa-item.true .feedback,
+  .atividade-alternativa-item.false .feedback {
+    display: block;
+  }
+  .atividade-alternativa-item.true:hover:before,
+  .atividade-alternativa-item.false:hover:before {
+    content: inherit;
+  }
+  .atividade-alternativa-item.true {
+    color: #32824C;
+  }
+  .atividade-alternativa-item.true:before {
+    content: "\F058";
+  }
+  .atividade-alternativa-item.false {
+    color: #C0504D;
+  }
+  .atividade-alternativa-item.false:before {
+    content: "\F057";
+  }
+  .app-btn-atividade {
+    font-family: "PF BeauSans Pro";
+    font-size: 19px;
+    color: #A11314;
+    background-color: #FFFFFF;
+    border-color: #A11314;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  .app-btn-atividade:before {
+    padding-right: 19px;
+    font-size: 22px;
+    font-family: "FontAwesome";
+    content: "\F05D";
+  }
+  .app-btn-atividade:hover {
+    color: #B44243;
+  }
+  .app-btn-atividade:hover:before {
+    content: "\F058";
+  }
+  .secao {
+    background-color: #C0504D;
+    padding: 16px;
+  }
+  .secao h1,
+  .secao .h1 {
+    font-size: 25px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  .secao h1.sub,
+  .secao .h1-sub,
+  .secao h2,
+  .secao .h2 {
+    font-size: inherit;
+    font-weight: 200;
+  }
+  .secao p,
+  .secao h1 {
+    color: #FFFFFF;
+  }
+  .secao p {
+    font-family: "Josefin Sans";
+    font-size: 18px;
+    font-weight: normal;
+  }
+  .secao p b,
+  .secao p strong {
+    color: #47464A;
+  }
 }
 .tb-header,
 .tb-destaque,
