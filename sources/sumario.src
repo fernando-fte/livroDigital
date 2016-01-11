@@ -1,1 +1,169 @@
-{"html":"section","id":"sumario","class":["app-sum-contents","section-page"],"content":[{"._.//":"Grupo dos pre-textuais","html":"div","class":["app-sum-section","app-sum-section-sections"],"content":[{"._.//":"Titulo do capitulo","html":"div","class":["app-sum-section-item app-sum-section-header","app-font-app","padding-none-right","col-md-12 col-sm-12 col-ss-12 col-xs-12","font-lg-2 font-md-small-2 font-sm-small-2 font-ss-small-2 font-xs-small-2"],"content":[{"._.//":"Nome da seção (unidade I|II|III / abertura ...) ","html":"span","class":["app-sum-section-secao","app-cor-black-80","text-uppercase text-bold","padding-none-width","col-md-12 col-sm-12 col-ss-12 col-xs-12","font-lg-small-4 font-md-small-3 font-sm-2 font-ss-small-4 font-xs-small-3"],"content":"Abertura"}]},{"._.//":"Itens do sumario","html":"div","class":["app-sum-section-item","app-font-header","padding-none-width","col-md-12 col-sm-12 col-ss-12 col-xs-12","font-lg-2 font-md-2 font-sm-2 font-ss-2 font-xs-2"],"content":[{"._.//":"Nome da seção","html":"span","class":["sum-section-name","app-cor-black-80","text-uppercase text-bold","col-md-11 col-sm-11 col-ss-11 col-xs-11"],"content":"Reitoria"}]}]},{"._.//":"Grupo dos capitulos","html":"div","class":"app-sum-section","content":[{"._.//":"Titulo do capitulo","html":"div","class":["app-sum-section-item app-sum-section-header","app-font-app","padding-none-right","col-md-12 col-sm-12 col-ss-12 col-xs-12","font-lg-2 font-md-small-2 font-sm-small-2 font-ss-small-2 font-xs-small-2"],"content":[{"._.//":"Nome da seção (unidade I|II|III / abertura ...)","html":"span","class":["app-sum-section-secao","app-cor-black-80","text-uppercase text-bold","padding-none-width","col-md-12 col-sm-12 col-ss-12 col-xs-12","font-lg-small-4 font-md-small-3 font-sm-2 font-ss-small-4 font-xs-small-3"],"content":"Capítulo I"},{"._.//":"Nome caso seja titulo","html":"span","class":["app-sum-section-titulo","app-cor-black-60","padding-none-width","col-md-12 col-sm-12 col-ss-12 col-xs-12","font-lg-4 font-md-3 font-sm-3 font-ss-4 font-xs-3"],"content":"A função financeira, análise das demonstrações financeiras"}]},{"._.//":"Itens do sumario","html":"div","class":["app-sum-section-item","display-sub","app-font-header","padding-none-width","col-md-12 col-sm-12 col-ss-12 col-xs-12","font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-2"],"content":[{"._.//":"Nome da seção","html":"span","class":["sum-section-name","app-cor-black-80","text-uppercase text-bold","col-md-11 col-sm-11 col-ss-11 col-xs-11"],"content":"Objetivos da administração financeira e seus conflitos"},{"._.//":"Icone do botão","html":"span","class":["app-sum-btn-icon-sub","col-md-1 col-sm-1 col-ss-1 col-xs-1","font-md-4 font-sm-4 font-ss-4 font-xs-4"]},{"._.//":"Grupo de sub-itens","html":"div","class":["app-sum-section-sub","col-md-12 col-sm-12 col-ss-12 col-xs-12"],"content":[{"html":"span","class":["app-sum-section-item app-sum-section-sub-item","col-md-12 col-sm-12 col-ss-12 col-xs-12","font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-2"],"content":"Introdução"}]}]}]}]}
+{
+  "html": "section",
+  "id": "sumario",
+  "class": [
+    "app-sum-contents",
+    "section-page",
+    "hidden"
+  ],
+  "content": [
+    {
+      "._.//": "Grupo dos pre-textuais",
+      "html": "div",
+      "class": [
+        "app-sum-section",
+        "app-sum-section-sections"
+      ],
+      "content": [
+        {
+          "._.//": "Titulo do capitulo",
+          "html": "div",
+          "class": [
+            "app-sum-section-item app-sum-section-header",
+            "app-font-app",
+            "padding-none-right",
+            "col-md-12 col-sm-12 col-ss-12 col-xs-12",
+            "font-lg-2 font-md-small-2 font-sm-small-2 font-ss-small-2 font-xs-small-2"
+          ],
+          "content": [
+            {
+              "._.//": "Nome da seção (unidade I|II|III / abertura ...) ",
+              "html": "span",
+              "class": [
+                "app-sum-section-secao",
+                "app-cor-black-80",
+                "text-uppercase text-bold",
+                "padding-none-width",
+                "col-md-12 col-sm-12 col-ss-12 col-xs-12",
+                "font-lg-small-4 font-md-small-3 font-sm-2 font-ss-small-4 font-xs-small-3"
+              ],
+              "content": "Abertura"
+            }
+          ]
+        },
+        {
+          "._.//": "Itens do sumario",
+          "html": "div",
+          "class": [
+            "app-sum-section-item",
+            "app-font-header",
+            "padding-none-width",
+            "col-md-12 col-sm-12 col-ss-12 col-xs-12",
+            "font-lg-2 font-md-2 font-sm-2 font-ss-2 font-xs-2"
+          ],
+          "content": [
+            {
+              "._.//": "Nome da seção",
+              "html": "span",
+              "class": [
+                "sum-section-name",
+                "app-cor-black-80",
+                "text-uppercase text-bold",
+                "col-md-11 col-sm-11 col-ss-11 col-xs-11"
+              ],
+              "content": "Reitoria"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "._.//": "Grupo dos capitulos",
+      "html": "div",
+      "class": "app-sum-section",
+      "content": [
+        {
+          "._.//": "Titulo do capitulo",
+          "html": "div",
+          "class": [
+            "app-sum-section-item app-sum-section-header",
+            "app-font-app",
+            "padding-none-right",
+            "col-md-12 col-sm-12 col-ss-12 col-xs-12",
+            "font-lg-2 font-md-small-2 font-sm-small-2 font-ss-small-2 font-xs-small-2"
+          ],
+          "content": [
+            {
+              "._.//": "Nome da seção (unidade I|II|III / abertura ...)",
+              "html": "span",
+              "class": [
+                "app-sum-section-secao",
+                "app-cor-black-80",
+                "text-uppercase text-bold",
+                "padding-none-width",
+                "col-md-12 col-sm-12 col-ss-12 col-xs-12",
+                "font-lg-small-4 font-md-small-3 font-sm-2 font-ss-small-4 font-xs-small-3"
+              ],
+              "content": "Capítulo I"
+            },
+            {
+              "._.//": "Nome caso seja titulo",
+              "html": "span",
+              "class": [
+                "app-sum-section-titulo",
+                "app-cor-black-60",
+                "padding-none-width",
+                "col-md-12 col-sm-12 col-ss-12 col-xs-12",
+                "font-lg-4 font-md-3 font-sm-3 font-ss-4 font-xs-3"
+              ],
+              "content": "A função financeira, análise das demonstrações financeiras"
+            }
+          ]
+        },
+        {
+          "._.//": "Itens do sumario",
+          "html": "div",
+          "class": [
+            "app-sum-section-item",
+            "display-sub",
+            "app-font-header",
+            "padding-none-width",
+            "col-md-12 col-sm-12 col-ss-12 col-xs-12",
+            "font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-2"
+          ],
+          "content": [
+            {
+              "._.//": "Nome da seção",
+              "html": "span",
+              "class": [
+                "sum-section-name",
+                "app-cor-black-80",
+                "text-uppercase text-bold",
+                "col-md-11 col-sm-11 col-ss-11 col-xs-11"
+              ],
+              "content": "Objetivos da administração financeira e seus conflitos"
+            },
+            {
+              "._.//": "Icone do botão",
+              "html": "span",
+              "class": [
+                "app-sum-btn-icon-sub",
+                "col-md-1 col-sm-1 col-ss-1 col-xs-1",
+                "font-md-4 font-sm-4 font-ss-4 font-xs-4"
+              ]
+            },
+            {
+              "._.//": "Grupo de sub-itens",
+              "html": "div",
+              "class": [
+                "app-sum-section-sub",
+                "col-md-12 col-sm-12 col-ss-12 col-xs-12"
+              ],
+              "content": [
+                {
+                  "html": "span",
+                  "class": [
+                    "app-sum-section-item app-sum-section-sub-item",
+                    "col-md-12 col-sm-12 col-ss-12 col-xs-12",
+                    "font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-2"
+                  ],
+                  "content": "Introdução"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
