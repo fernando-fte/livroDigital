@@ -9,6 +9,15 @@
 			"class":["app-apr-item", "section-page-item"],
 			"content":[
 				{
+					"._.//":"Contents do botão de toogle para texto/vídeo",
+					"html":"div",
+					"class":["app-apr-item-ctrl", "app-cor-pattern", "font-lg-6 font-md-6 font-sm-5 font-ss-4 font-xs-3"],
+					"content":[
+						{"html":"span", "class":["app-ico-video"]},
+						{"html":"span", "class":["app-ico-texto"]}
+					]
+				},
+				{
 					"._.//":"Título do item",
 					"html":"h1",
 					"class":["app-apr-item-titulo"],
@@ -23,15 +32,6 @@
 					"._.action":{
 						"._.import":{"source":"Apresentação - Sub título", "content":"replace"}
 					}
-				},
-				{
-					"._.//":"Contents do botão de toogle para texto/vídeo",
-					"html":"div",
-					"class":["app-apr-item-ctrl"],
-					"content":[
-						{"html":"span", "class":"app-ico-video"},
-						{"html":"span", "class":"app-ico-texto"}
-					]
 				},
 				{
 					"._.//":"Content do conteúdo da pagina",
