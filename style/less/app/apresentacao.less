@@ -1,3 +1,20 @@
+//** Contents dos itens da apresentação
+.app-apr-item {
+
+	//** Configura toogle de visualização
+	&.app-apr-display-video {
+		.app-apr-item-ctrl {
+			.app-ico-texto {display: none;}
+			.app-ico-video {display: block;}
+		}
+		.app-apr-item-content {
+			.app-apr-item-texto {display: none;};
+			.app-apr-item-video {display: block;}
+			.app-play-pulse ();
+		}
+	}
+}
+
 //** Configura botão toogle de vide e texto
 .app-variant-apr-item-ctrl (@height, @width, @border) {
     display: block;
@@ -8,20 +25,16 @@
     padding: @height @width;
     cursor: pointer;
 
+	.app-ico-texto {display: block;};
 	.app-ico-video {display: none;}
-	.app-ico-texto {display: block;}
-
-	&.app-display{
-		.app-ico-video {display: none;}
-		.app-ico-texto {display: block;}
-	};
-
-	&.app-no-display{
-		.app-ico-video {display: block;}
-		.app-ico-texto {display: none;}
-	}
 }
 
+//** Configura box de texto e vídeo
+.app-apr-item-content {
+
+	.app-apr-item-texto {display: block;};
+	.app-apr-item-video {display: none;}
+}
 
 
 //== Configruações responsivas

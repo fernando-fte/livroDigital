@@ -64,6 +64,9 @@
         if (temp.appCtrl[i].app.display) {
           temp._proccess.display[i] = $.appCtrl.display(temp.appCtrl[i]);
         }
+        if (temp.appCtrl[i].app.apr) {
+          temp._proccess.apr[i] = $.appCtrl.apr(temp.appCtrl[i]);
+        }
         i++;
       }
     }
@@ -145,6 +148,29 @@
           $(post.app.display.put).addClass(temp.classe_base);
           return temp._done = true;
       }
+    });
+    return temp;
+  };
+
+  $.appCtrl.apr = function(post) {
+    var temp;
+    temp = {
+      '_proccess': {
+        '_true': false
+      },
+      '_erro': {
+        '_true': false
+      },
+      '_warning': {
+        '_true': false
+      },
+      '_done': {
+        '_true': false
+      }
+    };
+    $(post["this"]).click(function() {
+      $($(this).closest('.app-apr-item')).toggleClass('app-apr-display-video');
+      return temp._done = true;
     });
     return temp;
   };

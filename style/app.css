@@ -15844,6 +15844,32 @@ body,
     color: #FFFFFF;
   }
 }
+.app-apr-item.app-apr-display-video .app-apr-item-ctrl .app-ico-texto {
+  display: none;
+}
+.app-apr-item.app-apr-display-video .app-apr-item-ctrl .app-ico-video {
+  display: block;
+}
+.app-apr-item.app-apr-display-video .app-apr-item-content {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: pulse;
+  animation-name: pulse;
+}
+.app-apr-item.app-apr-display-video .app-apr-item-content .app-apr-item-texto {
+  display: none;
+}
+.app-apr-item.app-apr-display-video .app-apr-item-content .app-apr-item-video {
+  display: block;
+}
+.app-apr-item-content .app-apr-item-texto {
+  display: block;
+}
+.app-apr-item-content .app-apr-item-video {
+  display: none;
+}
 @media (max-width: 479px) {
   .app-apr-item-ctrl {
     display: block;
@@ -15854,22 +15880,10 @@ body,
     padding: 3px 10px;
     cursor: pointer;
   }
-  .app-apr-item-ctrl .app-ico-video {
-    display: none;
-  }
   .app-apr-item-ctrl .app-ico-texto {
     display: block;
   }
-  .app-apr-item-ctrl.app-display .app-ico-video {
-    display: none;
-  }
-  .app-apr-item-ctrl.app-display .app-ico-texto {
-    display: block;
-  }
-  .app-apr-item-ctrl.app-no-display .app-ico-video {
-    display: block;
-  }
-  .app-apr-item-ctrl.app-no-display .app-ico-texto {
+  .app-apr-item-ctrl .app-ico-video {
     display: none;
   }
 }
@@ -15883,22 +15897,10 @@ body,
     padding: 2px 11px;
     cursor: pointer;
   }
-  .app-apr-item-ctrl .app-ico-video {
-    display: none;
-  }
   .app-apr-item-ctrl .app-ico-texto {
     display: block;
   }
-  .app-apr-item-ctrl.app-display .app-ico-video {
-    display: none;
-  }
-  .app-apr-item-ctrl.app-display .app-ico-texto {
-    display: block;
-  }
-  .app-apr-item-ctrl.app-no-display .app-ico-video {
-    display: block;
-  }
-  .app-apr-item-ctrl.app-no-display .app-ico-texto {
+  .app-apr-item-ctrl .app-ico-video {
     display: none;
   }
 }
@@ -15912,22 +15914,10 @@ body,
     padding: 2px 13px;
     cursor: pointer;
   }
-  .app-apr-item-ctrl .app-ico-video {
-    display: none;
-  }
   .app-apr-item-ctrl .app-ico-texto {
     display: block;
   }
-  .app-apr-item-ctrl.app-display .app-ico-video {
-    display: none;
-  }
-  .app-apr-item-ctrl.app-display .app-ico-texto {
-    display: block;
-  }
-  .app-apr-item-ctrl.app-no-display .app-ico-video {
-    display: block;
-  }
-  .app-apr-item-ctrl.app-no-display .app-ico-texto {
+  .app-apr-item-ctrl .app-ico-video {
     display: none;
   }
 }
@@ -15941,22 +15931,10 @@ body,
     padding: 2px 16px;
     cursor: pointer;
   }
-  .app-apr-item-ctrl .app-ico-video {
-    display: none;
-  }
   .app-apr-item-ctrl .app-ico-texto {
     display: block;
   }
-  .app-apr-item-ctrl.app-display .app-ico-video {
-    display: none;
-  }
-  .app-apr-item-ctrl.app-display .app-ico-texto {
-    display: block;
-  }
-  .app-apr-item-ctrl.app-no-display .app-ico-video {
-    display: block;
-  }
-  .app-apr-item-ctrl.app-no-display .app-ico-texto {
+  .app-apr-item-ctrl .app-ico-video {
     display: none;
   }
 }
@@ -15970,22 +15948,10 @@ body,
     padding: 2px 16px;
     cursor: pointer;
   }
-  .app-apr-item-ctrl .app-ico-video {
-    display: none;
-  }
   .app-apr-item-ctrl .app-ico-texto {
     display: block;
   }
-  .app-apr-item-ctrl.app-display .app-ico-video {
-    display: none;
-  }
-  .app-apr-item-ctrl.app-display .app-ico-texto {
-    display: block;
-  }
-  .app-apr-item-ctrl.app-no-display .app-ico-video {
-    display: block;
-  }
-  .app-apr-item-ctrl.app-no-display .app-ico-texto {
+  .app-apr-item-ctrl .app-ico-video {
     display: none;
   }
 }

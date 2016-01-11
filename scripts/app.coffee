@@ -109,6 +109,12 @@ $.appCtrl = (post) ->
 				# define processo togo atual falso
 				temp._proccess.display[i] = $.appCtrl.display temp.appCtrl[i]
 
+			#** valida se a solicitação é para tratar a apresentação
+			if temp.appCtrl[i].app.apr
+
+				# define processo togo atual falso
+				temp._proccess.apr[i] = $.appCtrl.apr temp.appCtrl[i]
+
 			#// adiciona contador no loop
 			i++
 
@@ -183,6 +189,19 @@ $.appCtrl.display = (post) ->
 				temp._done = true
 
 	return temp
+
+$.appCtrl.apr = (post) ->
+	# {"apr":{"._.required":false,"._.list":["method"],"._.type":["array"],"method":{"._.//":"Parametro para toogle de video e texto da apresentão","._.required":true,"._.type":["string"],"._.exacly":["video","texto"]}}}
+	temp = {'_proccess':{'_true':false}, '_erro':{'_true':false}, '_warning':{'_true':false}, '_done':{'_true':false}}
+
+	# console.log post
+	$(post.this).click ->
+		$($(this).closest('.app-apr-item')).toggleClass('app-apr-display-video')
+		temp._done = true
+
+	return temp
+
+
 
 
 $.appCtrl $("[data-app-ctrl]")
