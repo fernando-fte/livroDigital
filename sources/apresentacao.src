@@ -1,0 +1,68 @@
+{
+	"html":"div",
+	"id":"apresentacao",
+	"class":["app-apr-contents", "section-page"],
+	"content":[
+		{
+			"._.//":"Item da apresentação - Faculdade",
+			"html":"div",
+			"class":["app-apr-item", "section-page-item"],
+			"content":[
+				{
+					"._.//":"Título do item",
+					"html":"h1",
+					"class":["app-apr-item-titulo"],
+					"._.action":{
+						"._.import":{"source":"Apresentação - Título", "content":"replace"}
+					}
+				},
+				{
+					"._.//":"Sub titulo do item",
+					"html":"h1",
+					"class":["app-apr-item-sub-titulo sub"],
+					"._.action":{
+						"._.import":{"source":"Apresentação - Sub título", "content":"replace"}
+					}
+				},
+				{
+					"._.//":"Contents do botão de toogle para texto/vídeo",
+					"html":"div",
+					"class":["app-apr-item-ctrl"],
+					"content":[
+						{"html":"span", "class":"app-ico-video"},
+						{"html":"span", "class":"app-ico-texto"}
+					]
+				},
+				{
+					"._.//":"Content do conteúdo da pagina",
+					"html":"div",
+					"class":["app-apr-item-content"],
+					"content":[
+						{
+							"._.//":"Box dos textos",
+							"html":"div",
+							"class":["app-apr-item-texto"],
+							"._.action":{
+								"._.import":{
+									"source":"Apresentação - Texto",
+									"content":"replace"
+								}
+							}
+						},
+						{
+							"._.//":"Box do vídeo",
+							"html":"div",
+							"class":["app-apr-item-video"],
+							"._.action":{
+								"._.import":{
+									"source":"Apresentação - vídeo",
+									"content":"replace"
+								}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

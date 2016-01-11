@@ -90,6 +90,13 @@
 
 		"Menu": { "prod": "sources/menu-bar.src" },
 
-		"Sumário": { "prod": "sources/sumario.src" }
+		"Sumário": { "prod": "sources/sumario.src" },
+
+		"Apresentação": { "prod": "sources/apresentacao.src" },
+		"Apresentação - Texto" :{ "prod": "sources/apresentacao.text.src" },
+		"Apresentação - Título" :{ "prod": "sources/apresentacao.h1.src" },
+		"Apresentação - Sub título" :{ "prod": "sources/apresentacao.h1-sub.src" },
+		"Apresentação - vídeo" :{ "prod": "sources/apresentacao.video.src" },
+		"Apresentação - Figura" :{ "prod": "sources/apresentacao.fig.src" }
 	}
 }

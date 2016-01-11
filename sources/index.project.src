@@ -21,7 +21,8 @@
 					"class":["contents", "add-scroll"],
 					"content":[
 						{"html":null, "._.action":{"._.import":{"source":"Menu", "content":"replace" }}},
-						{"html":null, "._.action":{"._.import":{"source":"Sumário", "content":"replace" }}}
+						{"html":null, "._.action":{"._.import":{"source":"Sumário", "content":"replace" }}},
+						{"html":null, "._.action":{"._.import":{"source":"Apresentação", "content":"replace" }}}
 					]
 				}
 			]
