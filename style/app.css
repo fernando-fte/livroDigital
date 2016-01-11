@@ -15859,10 +15859,10 @@ body,
   padding-bottom: 0px;
 }
 .app-apr-item.app-apr-display-video .app-apr-item-ctrl .app-ico-texto {
-  display: none;
+  display: block;
 }
 .app-apr-item.app-apr-display-video .app-apr-item-ctrl .app-ico-video {
-  display: block;
+  display: none;
 }
 .app-apr-item.app-apr-display-video .app-apr-item-content {
   -webkit-animation-duration: 1s;
@@ -15889,10 +15889,10 @@ body,
     cursor: pointer;
   }
   .app-apr-item-ctrl .app-ico-texto {
-    display: block;
+    display: none;
   }
   .app-apr-item-ctrl .app-ico-video {
-    display: none;
+    display: block;
   }
   .app-apr-item-content .app-apr-item-texto {
     -webkit-column-count: 1;
@@ -15936,10 +15936,10 @@ body,
     cursor: pointer;
   }
   .app-apr-item-ctrl .app-ico-texto {
-    display: block;
+    display: none;
   }
   .app-apr-item-ctrl .app-ico-video {
-    display: none;
+    display: block;
   }
   .app-apr-item-content .app-apr-item-texto {
     -webkit-column-count: 1;
@@ -15983,10 +15983,10 @@ body,
     cursor: pointer;
   }
   .app-apr-item-ctrl .app-ico-texto {
-    display: block;
+    display: none;
   }
   .app-apr-item-ctrl .app-ico-video {
-    display: none;
+    display: block;
   }
   .app-apr-item-content .app-apr-item-texto {
     -webkit-column-count: 2;
@@ -16024,10 +16024,10 @@ body,
     cursor: pointer;
   }
   .app-apr-item-ctrl .app-ico-texto {
-    display: block;
+    display: none;
   }
   .app-apr-item-ctrl .app-ico-video {
-    display: none;
+    display: block;
   }
   .app-apr-item-content .app-apr-item-texto {
     -webkit-column-count: 2;
@@ -16065,10 +16065,10 @@ body,
     cursor: pointer;
   }
   .app-apr-item-ctrl .app-ico-texto {
-    display: block;
+    display: none;
   }
   .app-apr-item-ctrl .app-ico-video {
-    display: none;
+    display: block;
   }
   .app-apr-item-content .app-apr-item-texto {
     -webkit-column-count: 2;
