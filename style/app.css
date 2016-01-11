@@ -15880,7 +15880,7 @@ body,
   .app-apr-item-ctrl .app-ico-video {
     display: none;
   }
-  .app-apr-item-content {
+  .app-apr-item-content .app-apr-item-texto {
     -webkit-column-count: 1;
     /* Chrome, Safari, Opera */
     -moz-column-count: 1;
@@ -15892,8 +15892,6 @@ body,
     /* Firefox */
     column-gap: 0px;
     margin-top: 25px;
-  }
-  .app-apr-item-content .app-apr-item-texto {
     display: block;
   }
   .app-apr-item-content .app-apr-item-video {
@@ -15916,7 +15914,7 @@ body,
   .app-apr-item-ctrl .app-ico-video {
     display: none;
   }
-  .app-apr-item-content {
+  .app-apr-item-content .app-apr-item-texto {
     -webkit-column-count: 1;
     /* Chrome, Safari, Opera */
     -moz-column-count: 1;
@@ -15928,8 +15926,6 @@ body,
     /* Firefox */
     column-gap: 0px;
     margin-top: 25px;
-  }
-  .app-apr-item-content .app-apr-item-texto {
     display: block;
   }
   .app-apr-item-content .app-apr-item-video {
@@ -15952,7 +15948,7 @@ body,
   .app-apr-item-ctrl .app-ico-video {
     display: none;
   }
-  .app-apr-item-content {
+  .app-apr-item-content .app-apr-item-texto {
     -webkit-column-count: 2;
     /* Chrome, Safari, Opera */
     -moz-column-count: 2;
@@ -15964,8 +15960,6 @@ body,
     /* Firefox */
     column-gap: 40px;
     margin-top: 25px;
-  }
-  .app-apr-item-content .app-apr-item-texto {
     display: block;
   }
   .app-apr-item-content .app-apr-item-video {
@@ -15988,7 +15982,7 @@ body,
   .app-apr-item-ctrl .app-ico-video {
     display: none;
   }
-  .app-apr-item-content {
+  .app-apr-item-content .app-apr-item-texto {
     -webkit-column-count: 2;
     /* Chrome, Safari, Opera */
     -moz-column-count: 2;
@@ -16000,8 +15994,6 @@ body,
     /* Firefox */
     column-gap: 60px;
     margin-top: 25px;
-  }
-  .app-apr-item-content .app-apr-item-texto {
     display: block;
   }
   .app-apr-item-content .app-apr-item-video {
@@ -16024,7 +16016,7 @@ body,
   .app-apr-item-ctrl .app-ico-video {
     display: none;
   }
-  .app-apr-item-content {
+  .app-apr-item-content .app-apr-item-texto {
     -webkit-column-count: 2;
     /* Chrome, Safari, Opera */
     -moz-column-count: 2;
@@ -16036,8 +16028,6 @@ body,
     /* Firefox */
     column-gap: 80px;
     margin-top: 25px;
-  }
-  .app-apr-item-content .app-apr-item-texto {
     display: block;
   }
   .app-apr-item-content .app-apr-item-video {

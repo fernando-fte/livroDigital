@@ -17,13 +17,13 @@
 
 //** Configura botão toogle de vide e texto
 .app-variant-apr-item-ctrl (@height, @width, @border) {
-    display: block;
-    border: @border solid @app-cor-padrao;
-    position: relative;
-    top: 6px;
-    float: right;
-    padding: @height @width;
-    cursor: pointer;
+	display: block;
+	border: @border solid @app-cor-padrao;
+	position: relative;
+	top: 6px;
+	float: right;
+	padding: @height @width;
+	cursor: pointer;
 
 	.app-ico-texto {display: block;};
 	.app-ico-video {display: none;}
@@ -33,16 +33,18 @@
 .app-variant-apr-content-colum (@col, @gap) {
 
 	.app-apr-item-content {
-		-webkit-column-count: @col; /* Chrome, Safari, Opera */
-		-moz-column-count: @col; /* Firefox */
-		column-count: @col;
-		-webkit-column-gap: @gap; /* Chrome, Safari, Opera */
-		-moz-column-gap: @gap; /* Firefox */
-		column-gap: @gap;
 
-    	margin-top: 25px;
+		.app-apr-item-texto {
+			-webkit-column-count: @col; /* Chrome, Safari, Opera */
+			-moz-column-count: @col; /* Firefox */
+			column-count: @col;
+			-webkit-column-gap: @gap; /* Chrome, Safari, Opera */
+			-moz-column-gap: @gap; /* Firefox */
+			column-gap: @gap;
 
-		.app-apr-item-texto {display: block;};
+			margin-top: 25px;
+			display: block;
+		}
 		.app-apr-item-video {display: none;}
 	}
 }
