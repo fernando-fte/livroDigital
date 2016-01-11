@@ -20,21 +20,58 @@ html, body, .app-page { height: 100%; overflow: hidden;}
 	&.down { .app-play-fadeOutDown (); }
 }
 
+//** Configura contents da navegação
+//# Declara estrutura basica das seções / abertura, sumario, unidade ...
+.app-var-section-page (@padding-width) {
+	padding: 0 @padding-width;
+}
+
+//# declara estrutura basica dos itens / apresentacao do professor, unidade 1 -> h1
+.app-var-section-page-item () {
+
+}
+
 //== Configruações responsivas
 // Min Min grid (XS)
-@media (max-width: @screen-xs-max) { .contents { padding-top: (@app-nav-height-xs + 13); } } // TODO: COnfigruar proporção de tamanhos
+@media (max-width: @screen-xs-max) {
+
+	.contents { padding-top: (@app-nav-height-xs + 13); } // TODO: COnfigruar proporção de tamanhos
+
+	.section-page { 
+		.app-var-section-page (10%);
+		padding-left: 40px;
+		padding-right: 20px;
+	}
+} 
  
 // Min Min grid (SS)
-@media (min-width: @screen-ss-min) { .contents { padding-top: (@app-nav-height-ss + 13); } } // TODO: COnfigruar proporção de tamanhos
+@media (min-width: @screen-ss-min) { 
+	.contents { padding-top: (@app-nav-height-ss + 13); } // TODO: COnfigruar proporção de tamanhos
+
+	.section-page { .app-var-section-page (10%) }
+}
 
 // Min grid (SM)
-@media (min-width: @screen-sm-min) { .contents { padding-top: (@app-nav-height-sm + 13); } } // TODO: COnfigruar proporção de tamanhos
+@media (min-width: @screen-sm-min) { 
+	.contents { padding-top: (@app-nav-height-sm + 13); } // TODO: COnfigruar proporção de tamanhos
+
+	.section-page { .app-var-section-page (10%) }
+}
 
 // Medium grid (MD)
-@media (min-width: @screen-md-min) { .contents { padding-top: (@app-nav-height-md + 13); } } // TODO: COnfigruar proporção de tamanhos
+@media (min-width: @screen-md-min) { 
+	.contents { padding-top: (@app-nav-height-md + 13); } // TODO: COnfigruar proporção de tamanhos
+
+	.section-page { .app-var-section-page (10%) }
+}
 
 // Large grid (LG)
-@media (min-width: @screen-lg-min) { .contents { padding-top: (@app-nav-height-lg + 13); } }
+@media (min-width: @screen-lg-min) { 
+	.contents { padding-top: (@app-nav-height-lg + 13); } 
+
+	.section-page { .app-var-section-page (10%) }
+}
+
 
 
 
