@@ -22,12 +22,12 @@ html, body, .app-page { height: 100%; overflow: hidden;}
 
 //** Configura contents da navegação
 //# Declara estrutura basica das seções / abertura, sumario, unidade ...
-.app-var-section-page (@padding-width) {
+.app-variant-section-page (@padding-width) {
 	padding: 0 @padding-width;
 }
 
 //# declara estrutura basica dos itens / apresentacao do professor, unidade 1 -> h1
-.app-var-section-page-item () {
+.app-variant-section-page-item () {
 
 }
 
@@ -38,7 +38,7 @@ html, body, .app-page { height: 100%; overflow: hidden;}
 	.contents { padding-top: (@app-nav-height-xs + 13); } // TODO: COnfigruar proporção de tamanhos
 
 	.section-page { 
-		.app-var-section-page (10%);
+		.app-variant-section-page (10%);
 		padding-left: 40px;
 		padding-right: 20px;
 	}
@@ -48,28 +48,28 @@ html, body, .app-page { height: 100%; overflow: hidden;}
 @media (min-width: @screen-ss-min) { 
 	.contents { padding-top: (@app-nav-height-ss + 13); } // TODO: COnfigruar proporção de tamanhos
 
-	.section-page { .app-var-section-page (10%) }
+	.section-page { .app-variant-section-page (10%) }
 }
 
 // Min grid (SM)
 @media (min-width: @screen-sm-min) { 
 	.contents { padding-top: (@app-nav-height-sm + 13); } // TODO: COnfigruar proporção de tamanhos
 
-	.section-page { .app-var-section-page (10%) }
+	.section-page { .app-variant-section-page (10%) }
 }
 
 // Medium grid (MD)
 @media (min-width: @screen-md-min) { 
 	.contents { padding-top: (@app-nav-height-md + 13); } // TODO: COnfigruar proporção de tamanhos
 
-	.section-page { .app-var-section-page (10%) }
+	.section-page { .app-variant-section-page (10%) }
 }
 
 // Large grid (LG)
 @media (min-width: @screen-lg-min) { 
 	.contents { padding-top: (@app-nav-height-lg + 13); } 
 
-	.section-page { .app-var-section-page (10%) }
+	.section-page { .app-variant-section-page (10%) }
 }
 
 
@@ -84,3 +84,6 @@ html, body, .app-page { height: 100%; overflow: hidden;}
 
 // Adiciona sumario
 @import "sumario.less";
+
+// Adiciona apresentações
+@import "apresentacao.less";
