@@ -43,10 +43,17 @@
 							"._.//":"Box dos textos",
 							"html":"div",
 							"class":["app-apr-item-texto"],
+							"content":[
+								{
+									"html":"img",
+									"class":["app-apr-item-avatar"],
+									"src":{"source":"professor", "type":"library", "path":"prod"}
+								}
+							],
 							"._.action":{
 								"._.import":{
 									"source":"Apresentação - Texto",
-									"content":"replace"
+									"content":"after"
 								}
 							}
 						},

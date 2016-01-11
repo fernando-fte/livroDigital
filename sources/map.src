@@ -98,5 +98,13 @@
 		"Apresentação - Sub título" :{ "prod": "sources/apresentacao.h1-sub.src" },
 		"Apresentação - vídeo" :{ "prod": "sources/apresentacao.video.src" },
 		"Apresentação - Figura" :{ "prod": "sources/apresentacao.fig.src" }
+	},
+
+	"library":{
+
+		"professor":{
+			"prod":"library/avatar.professor.jpg",
+			"dist":"library/avatar.professor.jpg"
+		}
 	}
 }
