@@ -1,0 +1,1 @@
+$("img").next($(".third-item"))
