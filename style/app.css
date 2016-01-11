@@ -12243,6 +12243,14 @@ table.tb p {
   font-family: "FontAwesome";
   content: "\F186";
 }
+.app-ico-texto:after {
+  font-family: "FontAwesome";
+  content: "\F1DD";
+}
+.app-ico-video:after {
+  font-family: "FontAwesome";
+  content: "\F01D";
+}
 .add-scroll {
   overflow: scroll;
 }
