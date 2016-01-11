@@ -97,7 +97,8 @@
 		"Apresentação - Título" :{ "prod": "sources/apresentacao.h1.src" },
 		"Apresentação - Sub título" :{ "prod": "sources/apresentacao.h1-sub.src" },
 		"Apresentação - vídeo" :{ "prod": "sources/apresentacao.video.src" },
-		"Apresentação - Figura" :{ "prod": "sources/apresentacao.fig.src" }
+		"Apresentação - Figura" :{ "prod": "sources/apresentacao.fig.src" },
+		"Unidade I": { "prod": "sources/unidade-i.src" }
 	},
 
 	"library":{
