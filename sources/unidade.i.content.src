@@ -2,16 +2,55 @@
 	"html":null,
 	"content":[
 		{
-			"html":"article",
+			"html":null,
 			"content":[
-				{
-					"html":"h1",
-					"content":"a construção do conhecimento"
-				},
-				{
-					"html":"p",
-					"content":"a construção do conhecimento, a revolução educacional está entre os mais pungentes, levando as universidades a assumirem a sua missão como instituição formadora, com competência e comprometimento, optando por uma gestão mais aberta e flexível, democratizando o conhecimento científico e tecnológico, através da Educação a Distância."
-				}
+
+				{"html":"article", "class":"page-section-item", "content":[
+					{"html":"h1", "content":"O que é gestão de pessoas?"},
+					{"html":"p", "content":"Falar em gestão de pessoas não é falar somente de uma área dentro de uma organização. Isso porque atualmente a gestão de pessoas passa a ser vista como uma função (papel) desempenhada por gestores de equipes, administradores, gerentes, coordenadores ou supervisores, ou seja, por todos aqueles que detêm sob o seu comando uma equipe de trabalho."},
+					{"html":"p", "content":"O que seria então gestão de pessoas? Segundo Chiavenato (2010), a abordagem de gestão de pessoas diz respeito a um conjunto integrado de atividades de especialistas e também gestores com o intuito de proporcionar competências e competitividade à organização. Acrescenta-se ainda, que este conjunto de atividades busca o alinhamento dos objetivos da organização com os dos indivíduos que compõem a sua estrutura."},
+					{"html":"p", "content":"Estamos falando assim de uma nova abordagem. De uma nova forma de integrar os talentos humanos com as necessidades da organização, e para isso, é necessário que os gestores saiam do “casulo” e percebam o quão importante é o seu papel, por meio da atuação direta junto às suas equipes de trabalho. O trabalho de Gestão de pessoas não é meramente um jogo de xadrez, situação demonstrada na figura 1.1, mas sim um processo dinâmico, diferenciado, pois as peças não são imutáveis, são portadoras de características pessoas como a iniciativa, a criatividade, o pensamento e o conhecimento."},
+
+					{"html":"figure", "content":[
+						{"html":"p", "class":"app-legenda", "content":[
+								{"html":"span", "class":"label", "content":"1/1"},
+								{"html":null, "content":"comparativo xadrez x gestão de pessoas"}
+							]
+						},
+						{"html":"p", "class":"app-fonte", "content":[
+								{"html":"span", "class":"label", "content":"Fonte"},
+								{"html":"a", "attr":[{"href":"http://www.shutterstock.com/pt/s/Gest%C3%A3o+de+pessoas/search.html?page=2&thumb_size=mosaic&inline=145567615"}],"content":"http://www.shutterstock.com/pt/s/Gest%C3%A3o+de+pessoas/search.html?page=2&thumb_size=mosaic&inline=145567615"}
+							]
+						}
+					]},
+
+					{"html":"article", "content":[
+						{"html":"h2", "content":"Evolução da gestão de pessoas"},
+						{"html":"p", "content":"Antes mesmo de abordar sobre as ferramentas e/ou práticas de gestão de pessoas nas organizações, faz-se necessário compreender a sua evolução histórica, pois assim torna-se possível visualizar os cenários que contribuíram para a formação das teorias e perspectivas construídas e estudadas até os dias atuais."},
+						{"html":"p", "content":"Vamos remapear a evolução histórica da gestão de pessoas, trazendo à tona o “pano de fundo” de cada momento e as suas principais características. Cabe ressaltar que esta evolução da gestão de pessoas é fortemente marcada e influenciada pelas teorias organizacionais, já que a maneira como os trabalhadores de uma organização são tratados, reflete os seus modelos de gestão."},
+						{"html":"p", "content":"Para melhor compreensão, essa evolução da Gestão de Pessoas será dividida em três grandes momentos, que serão aqui denominados de “fases”: (1) Fase industrial, (2) Fase pós-industrial e (3) Fase moderna."}
+					]},
+
+					{"html":"article", "content":[
+						{"html":"h3", "content":"Fase Industrial"},
+						{"html":"p", "content":"A fase industrial é representada pelo período de ascensão da industrialização da economia, de maneira concentrada no final do século XIX até meados do século XX. O foco desta época estava na produtividade, algo que contribuiu inclusive, para os princípios de uma teoria organizacional, com personagens marcantes como Frederick W. Taylor, Henri Fayol, Henry Ford e Max Weber. "},
+						{"html":"p", "content":"Cada um deles com a sua abordagem contribuiu com o objetivo principal das organizações da época, que era: “produzir mais no menor tempo possível”. Neste período que foram instituídos inclusive os princípios da administração: conhecer, prever, organizar, comandar, coordenar e controlar."},
+						{"html":"p", "content":"Mas como este período está ligado à evolução da gestão de pessoas? Imagine você que com a mudança de uma economia quase que totalmente agrícola para uma economia industrial, o êxodo do campo para a cidade foi gigantesco. Sendo assim, a “quantidade” de mão de obra disponível era imensurável, o que levava as indústrias a recrutarem aqueles que se mostravam mais fortes (fisicamente) para atuar em suas estruturas."},
+						{"html":"p", "content":"Neste período a estrutura, o maquinário, os insumos e o tempo de produção eram o enfoque principal, as pessoas (operários) ficavam em segundo plano. Nem se cogitava nesta época em preocupar-se com a forma como os empregados seriam tratados. Algo que era estimulado inclusive, pela ausência de leis que regulamentassem o trabalho executado. Este quadro começou a mudar em meados do século XX com o fortalecimento dos sindicatos e, no caso do Brasil, com o surgimento da Consolidação das Leis do Trabalho (CLT)."},
+						{"html":"p", "content":"Outros pontos importantes desta fase que ainda merecem destaque, a partir da abordagem de Chiavenato (2010):"},
+
+						{"html":"div", "class":"secao", "content":[
+							{"html":"h2", "content":"Reflita"},
+							{"html":"p", "content":"É importante ter sempre em mãos os números dos telefones, os endereços de hospitais e de centros de atendimento de emergência; socorro especializado para emergências cardíacas; plantão da Comissão Nacional de Energia Nuclear; locais de aplicação de soros antiveneno de cobra e de outros animais peçonhentos e centro de informações tóxicofarmacológicas."}
+						]},
+						
+						{"html":"div", "class":"secao", "content":[
+							{"html":"h2", "content":"Fique por dentro"},
+							{"html":"h1", "content":"Suprimentos de primeiros socorros"},
+							{"html":"p", "content":"Alguns itens que podem ser de extrema utilidade em situações diversas devem constar em sua caixa de primeiros socorros. Esta caixa deve ser mantida sempre em lugar de fácil acesso, tanto em casa quanto no carro e deve conter: esparadrapo, água oxigenada, álcool; gazes esterilizadas, lanterna, luvas de látex, algodão, pinsa, talas, bandagens, soro fisiológico, ataduras, sabão líquido, sacos plásticos, termômetro, tesoura e vaselina esterilizada."}
+						]}
+					]}
+				]}
 			]
 		}
 	]
