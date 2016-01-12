@@ -1,6 +1,6 @@
 //== Configruações dos capítulos
 
-.app-variant-capitulo(@cap-left, @cap-width, @item-left, @item-right, @item-left-in) {
+.app-variant-capitulo(@cap-left, @cap-width, @item-left, @item-right, @item-left-in, @article-top) {
 
 	//** Contents da abertura
 	.app-cap-abertura {
@@ -51,6 +51,8 @@
 			margin-left: @item-left; // 15%;
 			margin-right: @item-right; // 5%;
 			padding-left: @item-left-in; // 11%;
+
+			article { margin-top: @article-top; }
 		}
 	}
 }
@@ -59,30 +61,30 @@
 // Min Min grid (XS) // ~ to 480
 @media (max-width: @screen-xs-max) {
 	
-	.app-variant-capitulo(-16%, 121%, 0%, 0%, 0%);
+	.app-variant-capitulo(-16%, 121%, 0%, 0%, 0%, 14%);
 }
 
 // Min Min grid (SS) // 480 to 768
 @media (min-width: @screen-ss-min) { 
 	
-	.app-variant-capitulo(-16%, 128%, 3%, 0%, 0%);
+	.app-variant-capitulo(-16%, 128%, 3%, 0%, 0%, 10%);
 }
 
 // Min grid (SM)// 768 to 992
 @media (min-width: @screen-sm-min) { 
 	
-	.app-variant-capitulo(-12%, 116%, 8%, 5%, 0%);
+	.app-variant-capitulo(-12%, 116%, 8%, 5%, 0%, 7%);
 }
 
 // Medium grid (MD) // 992 to 1199
 @media (min-width: @screen-md-min) { 
 	
-	.app-variant-capitulo(-13%, 120%, 15%, 5%, 11%);
+	.app-variant-capitulo(-13%, 120%, 15%, 5%, 11%, 7%);
 }
 
 // Large grid (LG) // 1200 to ~
 @media (min-width: @screen-lg-min) { 
 	
-	.app-variant-capitulo(-13%, 117%, 15%, 5%, 11%);
+	.app-variant-capitulo(-13%, 117%, 15%, 5%, 11%, 7%);
 }
 
