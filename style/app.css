@@ -16095,6 +16095,26 @@ body,
     display: none;
   }
 }
+.app-cap-abertura {
+  background-color: #D1D1D2;
+  display: block;
+  min-height: 50%;
+  position: relative;
+  left: -12%;
+  width: 120%;
+  margin-bottom: 5%;
+}
+.app-cap-abertura .app-cap-abertura-topo {
+  background-color: #C0504D;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.app-cap-abertura .app-cap-abertura-titulo {
+  padding: 30px 0px;
+}
+.app-cap-abertura .app-cap-abertura-autor {
+  padding: 15px 0px;
+}
 .app-cap-content .section-page-item {
   border-bottom: 1px dashed #EDD3CB;
   padding-bottom: 7%;

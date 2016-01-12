@@ -5,24 +5,51 @@
 		{
 			"._.//":"Content para o cabeçalho da abertura",
 			"html":"div",
-			"class":["app-cap-abertura"],
+			"class":[
+				"app-cap-abertura",
+				"app-cor-white app-font-app"
+            ],
 			"content":[
 				{
 					"._.//":"Capa do capítulo",
 					"html":"span",
-					"class":["app-cap-abertura-topo"],
-					"content":"Unidade I"
+					"class":[
+						"app-cap-abertura-topo",
+						"text-bold text-uppercase",
+						"padding-none-width",
+						"font-lg-6 font-md-5 font-sm-5 font-ss-4 font-xs-4",
+						"col-md-12 col-sm-12 col-ss-12 col-xs-12"
+					],
+					"content":[
+						{"html":"span", "class":"col-md-2 col-sm-2 col-ss-2 col-xs-1"},
+						{
+							"html":null,
+							"content":"Unidade I"
+						}
+					]
 				},
 				{
 					"._.//":"Título do capítulo",
 					"html":"span",
-					"class":["app-cap-abertura-titulo"],
+					"class":[
+						"app-cap-abertura-titulo",
+						"text-bold",
+						"font-lg-12 font-md-9 font-sm-8 font-ss-7 font-xs-6",
+						"col-md-8 col-sm-9 col-ss-10 col-xs-11",
+						"col-md-offset-4 col-sm-offset-3 col-ss-offset-2 col-xs-offset-1"
+					],
 					"content":"A função financeira, análise das demonstrações financeiras"
 				},
 				{
 					"._.//":"Autores",
 					"html":"span",
-					"class":["app-cap-abertura-autor"],
+					"class":[
+						"app-cap-abertura-autor",
+						"text-italic",
+						"font-lg-3 font-md-small-3 font-sm-3 font-ss-small-3 font-xs-2",
+						"col-md-8 col-sm-9 col-ss-10 col-xs-11",
+						"col-md-offset-4 col-sm-offset-3 col-ss-offset-2 col-xs-offset-1"
+					],
 					"content":"Marcela Ribeiro de Albuquerque"
 				}
 			]
