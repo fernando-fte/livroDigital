@@ -16124,6 +16124,17 @@ body,
   float: left;
   background-color: #C0504D;
 }
+.app-box.app-box-atividade .app-box-head {
+  width: 100%;
+}
+.app-box.app-box-atividade .app-box-head:before {
+  content: "\F040";
+}
+.app-box.app-box-atividade .app-box-content {
+  margin-left: 20% ;
+  width: 80%;
+  background-color: #E8E8E8;
+}
 @media (max-width: 479px) {
   .app-cap-abertura {
     background-color: #D1D1D2;
