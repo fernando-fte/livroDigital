@@ -16095,3 +16095,9 @@ body,
     display: none;
   }
 }
+.app-cap-content .section-page-item {
+  border-bottom: 1px dashed #EDD3CB;
+  padding-bottom: 7%;
+  margin-bottom: 7%;
+  min-height: 100%;
+}
