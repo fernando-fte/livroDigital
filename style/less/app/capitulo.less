@@ -1,5 +1,4 @@
 //== Configruações dos capítulos
-
 .app-variant-capitulo(@cap-left, @cap-width, @item-left, @item-right, @item-left-in, @article-top) {
 
 	//** Contents da abertura
@@ -56,6 +55,44 @@
 		}
 	}
 }
+
+//== Configruação dos box do capítulo
+.app-box {
+	font-family: @app-font-app;
+	width: 116%;
+	display: block;
+	margin-bottom: 25px;
+	margin-left: -16%;
+
+	.clearfix();
+
+	.app-box-head {
+		font-size: 20px;
+		width: 25%;
+		padding: 10px;
+		padding-left: 7px;
+		border-left: 34px solid @app-cor-padrao;
+		float: left;
+		color: @app-cor-preto-0;
+		background-color: @app-cor-padrao-fraco;
+
+		.app-var-ico-before (@app-ico-paragrafo);
+		&:before {
+			float: left;
+			display: block;
+			position: absolute;
+			margin-left: -34px;
+		}
+	}
+
+	.app-box-content {
+        width: 75%;
+	    padding: 10px;
+		float: left;
+		background-color: @app-cor-padrao-fraco;
+	}
+}
+
 
 //== Configruações responsivas
 // Min Min grid (XS) // ~ to 480

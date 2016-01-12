@@ -12054,34 +12054,30 @@ button.close {
   .app-btn-atividade:hover:before {
     content: "\F058";
   }
-  .secao {
-    background-color: #C0504D;
-    padding: 12px;
-  }
-  .secao h1,
-  .secao .h1 {
+  .app-box-section h1,
+  .app-box-section .h1 {
     font-size: 19px;
     font-weight: 700;
     text-transform: uppercase;
   }
-  .secao h1.sub,
-  .secao .h1-sub,
-  .secao h2,
-  .secao .h2 {
+  .app-box-section h1.sub,
+  .app-box-section .h1-sub,
+  .app-box-section h2,
+  .app-box-section .h2 {
     font-size: inherit;
     font-weight: 200;
   }
-  .secao p,
-  .secao h1 {
+  .app-box-section p,
+  .app-box-section h1 {
     color: #FFFFFF;
   }
-  .secao p {
+  .app-box-section p {
     font-family: "Josefin Sans";
     font-size: 14px;
     font-weight: normal;
   }
-  .secao p b,
-  .secao p strong {
+  .app-box-section p b,
+  .app-box-section p strong {
     color: #47464A;
   }
 }
@@ -12424,34 +12420,30 @@ button.close {
   .app-btn-atividade:hover:before {
     content: "\F058";
   }
-  .secao {
-    background-color: #C0504D;
-    padding: 13px;
-  }
-  .secao h1,
-  .secao .h1 {
+  .app-box-section h1,
+  .app-box-section .h1 {
     font-size: 20px;
     font-weight: 700;
     text-transform: uppercase;
   }
-  .secao h1.sub,
-  .secao .h1-sub,
-  .secao h2,
-  .secao .h2 {
+  .app-box-section h1.sub,
+  .app-box-section .h1-sub,
+  .app-box-section h2,
+  .app-box-section .h2 {
     font-size: inherit;
     font-weight: 200;
   }
-  .secao p,
-  .secao h1 {
+  .app-box-section p,
+  .app-box-section h1 {
     color: #FFFFFF;
   }
-  .secao p {
+  .app-box-section p {
     font-family: "Josefin Sans";
     font-size: 15px;
     font-weight: normal;
   }
-  .secao p b,
-  .secao p strong {
+  .app-box-section p b,
+  .app-box-section p strong {
     color: #47464A;
   }
 }
@@ -12794,34 +12786,30 @@ button.close {
   .app-btn-atividade:hover:before {
     content: "\F058";
   }
-  .secao {
-    background-color: #C0504D;
-    padding: 14px;
-  }
-  .secao h1,
-  .secao .h1 {
+  .app-box-section h1,
+  .app-box-section .h1 {
     font-size: 21px;
     font-weight: 700;
     text-transform: uppercase;
   }
-  .secao h1.sub,
-  .secao .h1-sub,
-  .secao h2,
-  .secao .h2 {
+  .app-box-section h1.sub,
+  .app-box-section .h1-sub,
+  .app-box-section h2,
+  .app-box-section .h2 {
     font-size: inherit;
     font-weight: 200;
   }
-  .secao p,
-  .secao h1 {
+  .app-box-section p,
+  .app-box-section h1 {
     color: #FFFFFF;
   }
-  .secao p {
+  .app-box-section p {
     font-family: "Josefin Sans";
     font-size: 15px;
     font-weight: normal;
   }
-  .secao p b,
-  .secao p strong {
+  .app-box-section p b,
+  .app-box-section p strong {
     color: #47464A;
   }
 }
@@ -13164,34 +13152,30 @@ button.close {
   .app-btn-atividade:hover:before {
     content: "\F058";
   }
-  .secao {
-    background-color: #C0504D;
-    padding: 14px;
-  }
-  .secao h1,
-  .secao .h1 {
+  .app-box-section h1,
+  .app-box-section .h1 {
     font-size: 21px;
     font-weight: 700;
     text-transform: uppercase;
   }
-  .secao h1.sub,
-  .secao .h1-sub,
-  .secao h2,
-  .secao .h2 {
+  .app-box-section h1.sub,
+  .app-box-section .h1-sub,
+  .app-box-section h2,
+  .app-box-section .h2 {
     font-size: inherit;
     font-weight: 200;
   }
-  .secao p,
-  .secao h1 {
+  .app-box-section p,
+  .app-box-section h1 {
     color: #FFFFFF;
   }
-  .secao p {
+  .app-box-section p {
     font-family: "Josefin Sans";
     font-size: 15px;
     font-weight: normal;
   }
-  .secao p b,
-  .secao p strong {
+  .app-box-section p b,
+  .app-box-section p strong {
     color: #47464A;
   }
 }
@@ -13534,34 +13518,30 @@ button.close {
   .app-btn-atividade:hover:before {
     content: "\F058";
   }
-  .secao {
-    background-color: #C0504D;
-    padding: 16px;
-  }
-  .secao h1,
-  .secao .h1 {
+  .app-box-section h1,
+  .app-box-section .h1 {
     font-size: 25px;
     font-weight: 700;
     text-transform: uppercase;
   }
-  .secao h1.sub,
-  .secao .h1-sub,
-  .secao h2,
-  .secao .h2 {
+  .app-box-section h1.sub,
+  .app-box-section .h1-sub,
+  .app-box-section h2,
+  .app-box-section .h2 {
     font-size: inherit;
     font-weight: 200;
   }
-  .secao p,
-  .secao h1 {
+  .app-box-section p,
+  .app-box-section h1 {
     color: #FFFFFF;
   }
-  .secao p {
+  .app-box-section p {
     font-family: "Josefin Sans";
     font-size: 18px;
     font-weight: normal;
   }
-  .secao p b,
-  .secao p strong {
+  .app-box-section p b,
+  .app-box-section p strong {
     color: #47464A;
   }
 }
@@ -16094,6 +16074,55 @@ body,
   .app-apr-item-content .app-apr-item-video {
     display: none;
   }
+}
+.app-box {
+  font-family: "PF BeauSans Pro";
+  width: 116%;
+  display: block;
+  margin-bottom: 25px;
+  margin-left: -16%;
+}
+.app-box:before,
+.app-box:after {
+  content: " ";
+  display: table;
+}
+.app-box:after {
+  clear: both;
+}
+.app-box:before,
+.app-box:after {
+  content: " ";
+  display: table;
+}
+.app-box:after {
+  clear: both;
+}
+.app-box .app-box-head {
+  font-size: 20px;
+  width: 25%;
+  padding: 10px;
+  padding-left: 7px;
+  border-left: 34px solid #A11314;
+  float: left;
+  color: #FFFFFF;
+  background-color: #C0504D;
+}
+.app-box .app-box-head:before {
+  font-family: "FontAwesome";
+  content: "\F1DD";
+}
+.app-box .app-box-head:before {
+  float: left;
+  display: block;
+  position: absolute;
+  margin-left: -34px;
+}
+.app-box .app-box-content {
+  width: 75%;
+  padding: 10px;
+  float: left;
+  background-color: #C0504D;
 }
 @media (max-width: 479px) {
   .app-cap-abertura {

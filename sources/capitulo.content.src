@@ -39,16 +39,15 @@
 						{"html":"p", "content":"Neste período a estrutura, o maquinário, os insumos e o tempo de produção eram o enfoque principal, as pessoas (operários) ficavam em segundo plano. Nem se cogitava nesta época em preocupar-se com a forma como os empregados seriam tratados. Algo que era estimulado inclusive, pela ausência de leis que regulamentassem o trabalho executado. Este quadro começou a mudar em meados do século XX com o fortalecimento dos sindicatos e, no caso do Brasil, com o surgimento da Consolidação das Leis do Trabalho (CLT)."},
 						{"html":"p", "content":"Outros pontos importantes desta fase que ainda merecem destaque, a partir da abordagem de Chiavenato (2010):"},
 
-						{"html":"div", "class":"secao", "content":[
-							{"html":"h2", "content":"Reflita"},
-							{"html":"p", "content":"É importante ter sempre em mãos os números dos telefones, os endereços de hospitais e de centros de atendimento de emergência; socorro especializado para emergências cardíacas; plantão da Comissão Nacional de Energia Nuclear; locais de aplicação de soros antiveneno de cobra e de outros animais peçonhentos e centro de informações tóxicofarmacológicas."}
-						]},
-						
-						{"html":"div", "class":"secao", "content":[
-							{"html":"h2", "content":"Fique por dentro"},
-							{"html":"h1", "content":"Suprimentos de primeiros socorros"},
-							{"html":"p", "content":"Alguns itens que podem ser de extrema utilidade em situações diversas devem constar em sua caixa de primeiros socorros. Esta caixa deve ser mantida sempre em lugar de fácil acesso, tanto em casa quanto no carro e deve conter: esparadrapo, água oxigenada, álcool; gazes esterilizadas, lanterna, luvas de látex, algodão, pinsa, talas, bandagens, soro fisiológico, ataduras, sabão líquido, sacos plásticos, termômetro, tesoura e vaselina esterilizada."}
-						]}
+						{
+							"html":null,
+							"._.action":{
+								"._.import":{
+									"source":"Box da seção",
+									"content":"replace"
+								}
+							}
+						}
 					]}
 				]}
 			]

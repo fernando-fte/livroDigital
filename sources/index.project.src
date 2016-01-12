@@ -19,6 +19,7 @@
 				{
 					"html":"div",
 					"class":["contents", "add-scroll"],
+					"css":"background-color: rgba(251, 250, 186, 0.18);",
 					"content":[
 						{"html":null, "._.action":{"._.import":{"source":"Menu", "content":"replace" }}},
 						{"html":null, "._.action":{"._.import":{"source":"Sumário", "content":"replace" }}},

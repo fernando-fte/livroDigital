@@ -99,8 +99,9 @@
 		"Apresentação - vídeo" :{ "prod": "sources/apresentacao.video.src" },
 		"Apresentação - Figura" :{ "prod": "sources/apresentacao.fig.src" },
 
-		"Unidade I": { "prod": "sources/capitulo.i.src" },
-		"Unidade I - Contents": { "prod": "sources/capitulo.i.content.src" }
+		"Unidade I": { "prod": "sources/capitulo.src" },
+		"Unidade I - Contents": { "prod": "sources/capitulo.content.src" },
+		"Box da seção": { "prod": "sources/capitulo.content.box.src" }
 	},
 
 	"library":{
