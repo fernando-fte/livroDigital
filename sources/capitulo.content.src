@@ -47,6 +47,15 @@
 									"content":"replace"
 								}
 							}
+						},
+						{
+							"html":null,
+							"._.action":{
+								"._.import":{
+									"source":"Atividades",
+									"content":"replace"
+								}
+							}
 						}
 					]}
 				]}

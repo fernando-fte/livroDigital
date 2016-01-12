@@ -11975,62 +11975,62 @@ button.close {
   .app-fonte {
     font-family: "Jura";
   }
-  .atividade-enunciado,
-  .atividade-alternativa-item {
+  .app-ati-enunciado,
+  .app-ati-alternativa-item {
     font-family: "Josefin Sans";
     font-size: 17px;
     margin-top: 17px;
     margin-bottom: 17px;
   }
-  .atividade-enunciado b,
-  .atividade-alternativa-item b,
-  .atividade-enunciado strong,
-  .atividade-alternativa-item strong {
+  .app-ati-enunciado b,
+  .app-ati-alternativa-item b,
+  .app-ati-enunciado strong,
+  .app-ati-alternativa-item strong {
     color: #C77172;
     font-size: 15px;
   }
-  .atividade-alternativa-item {
+  .app-ati-alternativa-item {
     list-style: none;
     cursor: pointer;
     padding-right: 17px;
   }
-  .atividade-alternativa-item .feedback {
+  .app-ati-alternativa-item .feedback {
     font-size: 15px;
     font-weight: normal;
     display: none;
   }
-  .atividade-alternativa-item:before {
+  .app-ati-alternativa-item:before {
     font-family: "FontAwesome";
     content: "\F10C";
     padding-right: 17px;
     margin-left: -34px;
   }
-  .atividade-alternativa-item:hover:before {
+  .app-ati-alternativa-item:hover:before {
     content: "\F192";
   }
-  .atividade-alternativa-item.true,
-  .atividade-alternativa-item.false {
+  .app-ati-alternativa-item.true,
+  .app-ati-alternativa-item.false {
     font-weight: bold;
     cursor: default;
   }
-  .atividade-alternativa-item.true .feedback,
-  .atividade-alternativa-item.false .feedback {
+  .app-ati-alternativa-item.true .feedback,
+  .app-ati-alternativa-item.false .feedback {
     display: block;
   }
-  .atividade-alternativa-item.true:hover:before,
-  .atividade-alternativa-item.false:hover:before {
+  .app-ati-alternativa-item.true:hover:before,
+  .app-ati-alternativa-item.false:hover:before {
     content: inherit;
   }
-  .atividade-alternativa-item.true {
+  .app-ati-alternativa-item.true {
     color: #32824C;
   }
-  .atividade-alternativa-item.true:before {
+  .app-ati-alternativa-item.true:before {
     content: "\F058";
   }
-  .atividade-alternativa-item.false {
+  .app-ati-alternativa-item.false {
     color: #C0504D;
   }
-  .atividade-alternativa-item.false:before {
+  .app-ati-alternativa-item.false:before {
     content: "\F057";
   }
   .app-btn-atividade {
@@ -12341,62 +12341,62 @@ button.close {
   .app-fonte {
     font-family: "Jura";
   }
-  .atividade-enunciado,
-  .atividade-alternativa-item {
+  .app-ati-enunciado,
+  .app-ati-alternativa-item {
     font-family: "Josefin Sans";
     font-size: 18px;
     margin-top: 18px;
     margin-bottom: 18px;
   }
-  .atividade-enunciado b,
-  .atividade-alternativa-item b,
-  .atividade-enunciado strong,
-  .atividade-alternativa-item strong {
+  .app-ati-enunciado b,
+  .app-ati-alternativa-item b,
+  .app-ati-enunciado strong,
+  .app-ati-alternativa-item strong {
     color: #C77172;
     font-size: 16px;
   }
-  .atividade-alternativa-item {
+  .app-ati-alternativa-item {
     list-style: none;
     cursor: pointer;
     padding-right: 18px;
   }
-  .atividade-alternativa-item .feedback {
+  .app-ati-alternativa-item .feedback {
     font-size: 15px;
     font-weight: normal;
     display: none;
   }
-  .atividade-alternativa-item:before {
+  .app-ati-alternativa-item:before {
     font-family: "FontAwesome";
     content: "\F10C";
     padding-right: 18px;
     margin-left: -36px;
   }
-  .atividade-alternativa-item:hover:before {
+  .app-ati-alternativa-item:hover:before {
     content: "\F192";
   }
-  .atividade-alternativa-item.true,
-  .atividade-alternativa-item.false {
+  .app-ati-alternativa-item.true,
+  .app-ati-alternativa-item.false {
     font-weight: bold;
     cursor: default;
   }
-  .atividade-alternativa-item.true .feedback,
-  .atividade-alternativa-item.false .feedback {
+  .app-ati-alternativa-item.true .feedback,
+  .app-ati-alternativa-item.false .feedback {
     display: block;
   }
-  .atividade-alternativa-item.true:hover:before,
-  .atividade-alternativa-item.false:hover:before {
+  .app-ati-alternativa-item.true:hover:before,
+  .app-ati-alternativa-item.false:hover:before {
     content: inherit;
   }
-  .atividade-alternativa-item.true {
+  .app-ati-alternativa-item.true {
     color: #32824C;
   }
-  .atividade-alternativa-item.true:before {
+  .app-ati-alternativa-item.true:before {
     content: "\F058";
   }
-  .atividade-alternativa-item.false {
+  .app-ati-alternativa-item.false {
     color: #C0504D;
   }
-  .atividade-alternativa-item.false:before {
+  .app-ati-alternativa-item.false:before {
     content: "\F057";
   }
   .app-btn-atividade {
@@ -12707,62 +12707,62 @@ button.close {
   .app-fonte {
     font-family: "Jura";
   }
-  .atividade-enunciado,
-  .atividade-alternativa-item {
+  .app-ati-enunciado,
+  .app-ati-alternativa-item {
     font-family: "Josefin Sans";
     font-size: 19px;
     margin-top: 19px;
     margin-bottom: 19px;
   }
-  .atividade-enunciado b,
-  .atividade-alternativa-item b,
-  .atividade-enunciado strong,
-  .atividade-alternativa-item strong {
+  .app-ati-enunciado b,
+  .app-ati-alternativa-item b,
+  .app-ati-enunciado strong,
+  .app-ati-alternativa-item strong {
     color: #C77172;
     font-size: 17px;
   }
-  .atividade-alternativa-item {
+  .app-ati-alternativa-item {
     list-style: none;
     cursor: pointer;
     padding-right: 19px;
   }
-  .atividade-alternativa-item .feedback {
+  .app-ati-alternativa-item .feedback {
     font-size: 16px;
     font-weight: normal;
     display: none;
   }
-  .atividade-alternativa-item:before {
+  .app-ati-alternativa-item:before {
     font-family: "FontAwesome";
     content: "\F10C";
     padding-right: 19px;
     margin-left: -38px;
   }
-  .atividade-alternativa-item:hover:before {
+  .app-ati-alternativa-item:hover:before {
     content: "\F192";
   }
-  .atividade-alternativa-item.true,
-  .atividade-alternativa-item.false {
+  .app-ati-alternativa-item.true,
+  .app-ati-alternativa-item.false {
     font-weight: bold;
     cursor: default;
   }
-  .atividade-alternativa-item.true .feedback,
-  .atividade-alternativa-item.false .feedback {
+  .app-ati-alternativa-item.true .feedback,
+  .app-ati-alternativa-item.false .feedback {
     display: block;
   }
-  .atividade-alternativa-item.true:hover:before,
-  .atividade-alternativa-item.false:hover:before {
+  .app-ati-alternativa-item.true:hover:before,
+  .app-ati-alternativa-item.false:hover:before {
     content: inherit;
   }
-  .atividade-alternativa-item.true {
+  .app-ati-alternativa-item.true {
     color: #32824C;
   }
-  .atividade-alternativa-item.true:before {
+  .app-ati-alternativa-item.true:before {
     content: "\F058";
   }
-  .atividade-alternativa-item.false {
+  .app-ati-alternativa-item.false {
     color: #C0504D;
   }
-  .atividade-alternativa-item.false:before {
+  .app-ati-alternativa-item.false:before {
     content: "\F057";
   }
   .app-btn-atividade {
@@ -13073,62 +13073,62 @@ button.close {
   .app-fonte {
     font-family: "Jura";
   }
-  .atividade-enunciado,
-  .atividade-alternativa-item {
+  .app-ati-enunciado,
+  .app-ati-alternativa-item {
     font-family: "Josefin Sans";
     font-size: 19px;
     margin-top: 19px;
     margin-bottom: 19px;
   }
-  .atividade-enunciado b,
-  .atividade-alternativa-item b,
-  .atividade-enunciado strong,
-  .atividade-alternativa-item strong {
+  .app-ati-enunciado b,
+  .app-ati-alternativa-item b,
+  .app-ati-enunciado strong,
+  .app-ati-alternativa-item strong {
     color: #C77172;
     font-size: 17px;
   }
-  .atividade-alternativa-item {
+  .app-ati-alternativa-item {
     list-style: none;
     cursor: pointer;
     padding-right: 19px;
   }
-  .atividade-alternativa-item .feedback {
+  .app-ati-alternativa-item .feedback {
     font-size: 16px;
     font-weight: normal;
     display: none;
   }
-  .atividade-alternativa-item:before {
+  .app-ati-alternativa-item:before {
     font-family: "FontAwesome";
     content: "\F10C";
     padding-right: 19px;
     margin-left: -38px;
   }
-  .atividade-alternativa-item:hover:before {
+  .app-ati-alternativa-item:hover:before {
     content: "\F192";
   }
-  .atividade-alternativa-item.true,
-  .atividade-alternativa-item.false {
+  .app-ati-alternativa-item.true,
+  .app-ati-alternativa-item.false {
     font-weight: bold;
     cursor: default;
   }
-  .atividade-alternativa-item.true .feedback,
-  .atividade-alternativa-item.false .feedback {
+  .app-ati-alternativa-item.true .feedback,
+  .app-ati-alternativa-item.false .feedback {
     display: block;
   }
-  .atividade-alternativa-item.true:hover:before,
-  .atividade-alternativa-item.false:hover:before {
+  .app-ati-alternativa-item.true:hover:before,
+  .app-ati-alternativa-item.false:hover:before {
     content: inherit;
   }
-  .atividade-alternativa-item.true {
+  .app-ati-alternativa-item.true {
     color: #32824C;
   }
-  .atividade-alternativa-item.true:before {
+  .app-ati-alternativa-item.true:before {
     content: "\F058";
   }
-  .atividade-alternativa-item.false {
+  .app-ati-alternativa-item.false {
     color: #C0504D;
   }
-  .atividade-alternativa-item.false:before {
+  .app-ati-alternativa-item.false:before {
     content: "\F057";
   }
   .app-btn-atividade {
@@ -13439,62 +13439,62 @@ button.close {
   .app-fonte {
     font-family: "Jura";
   }
-  .atividade-enunciado,
-  .atividade-alternativa-item {
+  .app-ati-enunciado,
+  .app-ati-alternativa-item {
     font-family: "Josefin Sans";
     font-size: 22px;
     margin-top: 22px;
     margin-bottom: 22px;
   }
-  .atividade-enunciado b,
-  .atividade-alternativa-item b,
-  .atividade-enunciado strong,
-  .atividade-alternativa-item strong {
+  .app-ati-enunciado b,
+  .app-ati-alternativa-item b,
+  .app-ati-enunciado strong,
+  .app-ati-alternativa-item strong {
     color: #C77172;
     font-size: 19px;
   }
-  .atividade-alternativa-item {
+  .app-ati-alternativa-item {
     list-style: none;
     cursor: pointer;
     padding-right: 22px;
   }
-  .atividade-alternativa-item .feedback {
+  .app-ati-alternativa-item .feedback {
     font-size: 19px;
     font-weight: normal;
     display: none;
   }
-  .atividade-alternativa-item:before {
+  .app-ati-alternativa-item:before {
     font-family: "FontAwesome";
     content: "\F10C";
     padding-right: 22px;
     margin-left: -44px;
   }
-  .atividade-alternativa-item:hover:before {
+  .app-ati-alternativa-item:hover:before {
     content: "\F192";
   }
-  .atividade-alternativa-item.true,
-  .atividade-alternativa-item.false {
+  .app-ati-alternativa-item.true,
+  .app-ati-alternativa-item.false {
     font-weight: bold;
     cursor: default;
   }
-  .atividade-alternativa-item.true .feedback,
-  .atividade-alternativa-item.false .feedback {
+  .app-ati-alternativa-item.true .feedback,
+  .app-ati-alternativa-item.false .feedback {
     display: block;
   }
-  .atividade-alternativa-item.true:hover:before,
-  .atividade-alternativa-item.false:hover:before {
+  .app-ati-alternativa-item.true:hover:before,
+  .app-ati-alternativa-item.false:hover:before {
     content: inherit;
   }
-  .atividade-alternativa-item.true {
+  .app-ati-alternativa-item.true {
     color: #32824C;
   }
-  .atividade-alternativa-item.true:before {
+  .app-ati-alternativa-item.true:before {
     content: "\F058";
   }
-  .atividade-alternativa-item.false {
+  .app-ati-alternativa-item.false {
     color: #C0504D;
   }
-  .atividade-alternativa-item.false:before {
+  .app-ati-alternativa-item.false:before {
     content: "\F057";
   }
   .app-btn-atividade {
@@ -16135,7 +16135,7 @@ body,
     clear: both;
   }
   .app-box .app-box-head {
-    font-size: 14px;
+    font-size: 18px;
     width: 100%;
     padding: 10px;
     padding-left: 7px;
@@ -16155,7 +16155,7 @@ body,
     margin-left: -34px;
   }
   .app-box .app-box-content {
-    width: 87%;
+    width: 100%;
     padding: 10px;
     float: right;
     background-color: #C0504D;
@@ -16168,8 +16168,9 @@ body,
   }
   .app-box.app-box-atividade .app-box-content {
     margin-left: 100%;
-    width: 87%;
+    width: 100%;
     background-color: #E8E8E8;
+    padding: 0 3%;
   }
 }
 @media (min-width: 480px) {
@@ -16267,6 +16268,7 @@ body,
     margin-left: 100%;
     width: 90%;
     background-color: #E8E8E8;
+    padding: 0 3%;
   }
 }
 @media (min-width: 768px) {
@@ -16364,6 +16366,7 @@ body,
     margin-left: 100%;
     width: 85%;
     background-color: #E8E8E8;
+    padding: 0 3%;
   }
 }
 @media (min-width: 992px) {
@@ -16461,6 +16464,7 @@ body,
     margin-left: 25%;
     width: 75%;
     background-color: #E8E8E8;
+    padding: 0 3%;
   }
 }
 @media (min-width: 1200px) {
@@ -16558,5 +16562,6 @@ body,
     margin-left: 25%;
     width: 75%;
     background-color: #E8E8E8;
+    padding: 0 3%;
   }
 }

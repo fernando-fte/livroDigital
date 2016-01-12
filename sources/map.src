@@ -101,7 +101,8 @@
 
 		"Unidade I": { "prod": "sources/capitulo.src" },
 		"Unidade I - Contents": { "prod": "sources/capitulo.content.src" },
-		"Box da seção": { "prod": "sources/capitulo.content.box.src" }
+		"Box da seção": { "prod": "sources/capitulo.content.box.src" },
+		"Atividades": { "prod": "sources/capitulo.content.atividade.src" }
 	},
 
 	"library":{
