@@ -1,6 +1,6 @@
 {
 	"html":"div",
-	"class":["app-unidade-section", "section-page"]
+	"class":["app-unidade-section", "section-page"],
 	"content":[
 		{
 			"._.//":"Content para o cabeçalho da abertura",
@@ -10,28 +10,33 @@
 				{
 					"._.//":"Capa da unidade",
 					"html":"span",
-					"class":["app-unidade-abertura-abeca"]
+					"class":["app-unidade-abertura-abeca"],
 					"content":"Unidade I"
 				},
 				{
 					"._.//":"Título da unidade",
 					"html":"span",
-					"class":["app-unidade-abertura-titulo"]
+					"class":["app-unidade-abertura-titulo"],
 					"content":"A função financeira, análise das demonstrações financeiras"
 				},
 				{
+					"._.//":"Autores",
 					"html":"span",
-					"class":["app-unidade-abertura-autor"]
+					"class":["app-unidade-abertura-autor"],
 					"content":"Marcela Ribeiro de Albuquerque"
 				}
 			]
 		},
 		{
+			"._.//":"Contents para os dados da unidade",
 			"html":"div",
 			"class":["app-unidade-content"],
-			"content":[
-
-			]
+			"._.action":{
+				"._.import":{
+					"source":"Unidade I - Contents",
+					"content":"replace"
+				}
+			}
 		}
 	]
 }
