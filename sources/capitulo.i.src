@@ -1,34 +1,34 @@
 {
 	"html":"div",
-	"class":["app-unidade-section", "section-page"],
+	"class":["app-cap-section", "section-page"],
 	"content":[
 		{
 			"._.//":"Content para o cabeçalho da abertura",
 			"html":"div",
-			"class":["app-unidade-abertura"],
+			"class":["app-cap-abertura"],
 			"content":[
 				{
-					"._.//":"Capa da unidade",
+					"._.//":"Capa do capítulo",
 					"html":"span",
-					"class":["app-unidade-abertura-abeca"],
+					"class":["app-cap-abertura-abeca"],
 					"content":"Unidade I"
 				},
 				{
-					"._.//":"Título da unidade",
+					"._.//":"Título do capítulo",
 					"html":"span",
-					"class":["app-unidade-abertura-titulo"],
+					"class":["app-cap-abertura-titulo"],
 					"content":"A função financeira, análise das demonstrações financeiras"
 				},
 				{
 					"._.//":"Autores",
 					"html":"span",
-					"class":["app-unidade-abertura-autor"],
+					"class":["app-cap-abertura-autor"],
 					"content":"Marcela Ribeiro de Albuquerque"
 				},
 				{
-					"._.//":"Box da introdução da unidade",
+					"._.//":"Box da introdução do capítulo",
 					"html":"div",
-					"class":"app-unidade-abertura-introducao",
+					"class":"app-cap-abertura-introducao",
 					"content":[
 						{"html":"p", "content":"No contexto da unidade I, cujo tema central de estudos é a Gestão de Pessoas e seus desdobramentos, o objetivo geral é conceituar gestão de pessoas e conhecer a sua evolução ao longo dos tempos. Os conteúdos aqui desenvolvidos serão amparados, em perspectivas de autores da área, e terão um viés para que se compreendam os modelos de gestão de pessoas, bem como a evolução histórica da área, como uma forma de se desenvolver trabalhos cooperativos nos mais diversos contextos organizacionais, objetivando resultados satisfatórios para todos os envolvidos (pessoas e organização)."},
 						{"html":"p", "content":"Com este fim, as discussões serão iniciadas de maneira sólida, trazendo à tona a percepção e pontos de vista de autores da área, de forma a apresentar as suas concepções acerca da gestão de pessoas diante dos desafios enfrentados constantemente pelas pessoas e pela sociedade como um todo. Tais concepções serão interpretadas e complementadas com novas perspectivas que permitam visualizar os cenários organizacionais."}
@@ -38,9 +38,9 @@
 			]
 		},
 		{
-			"._.//":"Contents para os dados da unidade",
+			"._.//":"Contents para os dados do capítulo",
 			"html":"div",
-			"class":["app-unidade-content"],
+			"class":["app-cap-content"],
 			"._.action":{
 				"._.import":{
 					"source":"Unidade I - Contents",
