@@ -57,84 +57,91 @@
 }
 
 //== Configruação dos box do capítulo
-.app-box {
-	font-family: @app-font-app;
-	width: 116%;
-	display: block;
-	margin-bottom: 25px;
-	margin-left: -16%;
+.app-variant-box(@font, @width, @left, @width-content, @width-head) {
 
-	.clearfix();
+	.app-box {
+		font-family: @app-font-app;
+		width: @width; // 116%;
+		display: block;
+		margin-bottom: 25px;
+		margin-left: @left; // -16%;
 
-	.app-box-head {
-		font-size: 20px;
-		width: 25%;
-		padding: 10px;
-		padding-left: 7px;
-		border-left: 34px solid @app-cor-padrao;
-		float: left;
-		color: @app-cor-preto-0;
-		background-color: @app-cor-padrao-fraco;
+		.clearfix();
 
-		.app-var-ico-before (@app-ico-paragrafo);
-		&:before {
+		.app-box-head {
+			font-size: @font; // 20px;
+			width: @width-head; // 25%;
+			padding: 10px;
+			padding-left: 7px;
+			border-left: 34px solid @app-cor-padrao;
 			float: left;
-			display: block;
-			position: absolute;
-			margin-left: -34px;
+			color: @app-cor-preto-0;
+			background-color: @app-cor-padrao-fraco;
+
+			.app-var-ico-before (@app-ico-paragrafo);
+			&:before {
+				float: left;
+				display: block;
+				position: absolute;
+				margin-left: -34px;
+			}
 		}
-	}
 
-	.app-box-content {
-        width: 75%;
-	    padding: 10px;
-		float: left;
-		background-color: @app-cor-padrao-fraco;
-	}
+		.app-box-content {
+	        width: @width-content; // 75%;
+		    padding: 10px;
+			float: right;
+			background-color: @app-cor-padrao-fraco;
+		}
 
-	//** Configruação do box para atividade
-	&.app-box-atividade {
-		.app-box-head { 
-			width: 100%;
-			&:before {content: @app-ico-atividade} 
-		};
-		.app-box-content { 
-			margin-left: 20% ;
-			width: 80%;
-			background-color: @app-cor-preto-10;
+		//** Configruação do box para atividade
+		&.app-box-atividade {
+			.app-box-head { 
+				width: 100%;
+				&:before {content: @app-ico-atividade} 
+			};
+
+			.app-box-content { 
+				margin-left: @width-head; // 20% ;
+				width: @width-content; // 80%;
+				background-color: @app-cor-preto-10;
+			}
 		}
 	}
 }
-
 
 //== Configruações responsivas
 // Min Min grid (XS) // ~ to 480
 @media (max-width: @screen-xs-max) {
 	
 	.app-variant-capitulo(-16%, 121%, 0%, 0%, 0%, 14%);
+	.app-variant-box(14px, 100%, 0%, 87%, 100%)
 }
 
 // Min Min grid (SS) // 480 to 768
 @media (min-width: @screen-ss-min) { 
 	
 	.app-variant-capitulo(-16%, 128%, 3%, 0%, 0%, 10%);
+	.app-variant-box(16px, 100%, 0%, 90%, 100%)
 }
 
 // Min grid (SM)// 768 to 992
 @media (min-width: @screen-sm-min) { 
 	
 	.app-variant-capitulo(-12%, 116%, 8%, 5%, 0%, 7%);
+	.app-variant-box(17px, 100%, 0%, 85%, 100%)
 }
 
 // Medium grid (MD) // 992 to 1199
 @media (min-width: @screen-md-min) { 
 	
 	.app-variant-capitulo(-13%, 120%, 15%, 5%, 11%, 7%);
+	.app-variant-box(14px, 116%, -16%, 75%, 25%)
 }
 
 // Large grid (LG) // 1200 to ~
 @media (min-width: @screen-lg-min) { 
 	
 	.app-variant-capitulo(-13%, 117%, 15%, 5%, 11%, 7%);
+	.app-variant-box(18px, 116%, -16%, 75%, 25%)
 }
-
