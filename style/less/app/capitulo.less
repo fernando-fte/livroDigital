@@ -133,6 +133,71 @@
 	}
 }
 
+//== Configruação dos box de imagem
+.app-graphic-content {
+	.clearfix();
+
+	border: 1px solid red;
+	font-family: "PF BeauSans Pro";
+	width: 116%;
+	display: block;
+	margin-bottom: 25px;
+	margin-left: -16%;
+    position: relative;
+
+	.app-graphic-ctrl {
+	    position: absolute;
+	    height: 100%;
+	    width: 100%;
+
+		.app-graphic-previous, .app-graphic-next {
+			height: 70%;
+			display: block;
+			width: 5%;
+			background-color: rgba(0, 0, 0, 0.36);
+			cursor: pointer;
+			margin-top: 10%;
+		}
+
+		.app-graphic-previous {
+			float: left;
+		}
+
+		.app-graphic-next {
+		    float: right;
+		}
+	}
+
+	.app-graphic-content-nav {
+
+		border: 1px solid red;
+
+
+
+		.app-graphic-item {
+		    border: 1px solid red;
+		    width: 100%;
+		    display: block;
+		}
+
+	}
+
+	.grapc-content-caption {
+
+		border: 1px solid red;
+
+		.app-legenda {
+
+			.label {
+				span:first-child { &:after { content: " / " } }
+			}
+
+			&:after { content: " - "; margin-left: 5px; }
+		}
+	}
+}
+
+
 //== Configruações responsivas
 // Min Min grid (XS) // ~ to 480
 @media (max-width: @screen-xs-max) {

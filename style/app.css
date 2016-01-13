@@ -16180,6 +16180,69 @@ body,
     display: none;
   }
 }
+.app-graphic-content {
+  border: 1px solid red;
+  font-family: "PF BeauSans Pro";
+  width: 116%;
+  display: block;
+  margin-bottom: 25px;
+  margin-left: -16%;
+  position: relative;
+}
+.app-graphic-content:before,
+.app-graphic-content:after {
+  content: " ";
+  display: table;
+}
+.app-graphic-content:after {
+  clear: both;
+}
+.app-graphic-content:before,
+.app-graphic-content:after {
+  content: " ";
+  display: table;
+}
+.app-graphic-content:after {
+  clear: both;
+}
+.app-graphic-content .app-graphic-ctrl {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+.app-graphic-content .app-graphic-ctrl .app-graphic-previous,
+.app-graphic-content .app-graphic-ctrl .app-graphic-next {
+  height: 70%;
+  display: block;
+  width: 5%;
+  background-color: rgba(0, 0, 0, 0.36);
+  cursor: pointer;
+  margin-top: 10%;
+}
+.app-graphic-content .app-graphic-ctrl .app-graphic-previous {
+  float: left;
+}
+.app-graphic-content .app-graphic-ctrl .app-graphic-next {
+  float: right;
+}
+.app-graphic-content .app-graphic-content-nav {
+  border: 1px solid red;
+}
+.app-graphic-content .app-graphic-content-nav .app-graphic-item {
+  border: 1px solid red;
+  width: 100%;
+  display: block;
+}
+.app-graphic-content .grapc-content-caption {
+  border: 1px solid red;
+}
+.app-graphic-content .grapc-content-caption .app-legenda .label span:first-child:after {
+  content: " / ";
+}
+.app-graphic-content .grapc-content-caption .app-legenda:after {
+  content: " - ";
+  margin-left: 5px;
+}
 @media (max-width: 479px) {
   .app-cap-abertura {
     background-color: #D1D1D2;
