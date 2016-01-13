@@ -16212,18 +16212,37 @@ body,
 }
 .app-graphic-content .app-graphic-ctrl .app-graphic-previous,
 .app-graphic-content .app-graphic-ctrl .app-graphic-next {
-  height: 70%;
+  height: 100%;
   display: block;
   width: 5%;
-  background-color: rgba(0, 0, 0, 0.36);
+  position: absolute;
+}
+.app-graphic-content .app-graphic-ctrl .app-graphic-previous:after,
+.app-graphic-content .app-graphic-ctrl .app-graphic-next:after {
+  display: block;
+  background-color: #565559;
+  font-size: 74px;
+  text-align: center;
+  padding: 57% 0px;
+  color: white;
+  position: absolute;
+  top: 35%;
+  width: 100%;
   cursor: pointer;
-  margin-top: 10%;
 }
 .app-graphic-content .app-graphic-ctrl .app-graphic-previous {
-  float: left;
+  left: 0px;
+}
+.app-graphic-content .app-graphic-ctrl .app-graphic-previous:after {
+  font-family: "FontAwesome";
+  content: "\F104";
 }
 .app-graphic-content .app-graphic-ctrl .app-graphic-next {
-  float: right;
+  right: 0px;
+}
+.app-graphic-content .app-graphic-ctrl .app-graphic-next:after {
+  font-family: "FontAwesome";
+  content: "\F105";
 }
 .app-graphic-content .app-graphic-content-nav {
   border: 1px solid red;
