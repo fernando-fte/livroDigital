@@ -16665,3 +16665,24 @@ body,
     line-height: normal;
   }
 }
+.app-ref-content p {
+  padding: 10px 20px;
+  background-color: #E8E8E8;
+}
+.app-ref-content .app-ref-link {
+  background-color: #F6E7E7 !important;
+  border-right: 40px solid #C77172;
+  cursor: pointer;
+}
+.app-ref-content .app-ref-link:after {
+  font-family: "FontAwesome";
+  content: "\F061";
+}
+.app-ref-content .app-ref-link:after {
+  color: #FFFFFF;
+  display: block;
+  float: right;
+  position: relative;
+  top: -12px;
+  right: -47px;
+}

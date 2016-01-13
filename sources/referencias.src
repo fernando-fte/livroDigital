@@ -28,7 +28,7 @@
 					{"html":"i", "content":"Atlas, 2003"},
 					{"html":null, "content":"."}
 				]},
-				{"html":"p", "content":[
+				{"html":"p", "class":"app-ref-link", "content":[
 					{"html":null, "content":"BRAGA, Hugo Rocha. "},
 					{"html":"b", "content":"Demonstrações Contábeis: Estrutura, Análise e Interpretação"},
 					{"html":null, "content":". 5. ed. São Paulo: "},
