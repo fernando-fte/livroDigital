@@ -8,6 +8,12 @@
 				{"html":"article", "class":"section-page-item", "content":[
 					{"html":"h1", "content":"O que é gestão de pessoas?"},
 					{"html":"p", "content":"Falar em gestão de pessoas não é falar somente de uma área dentro de uma organização. Isso porque atualmente a gestão de pessoas passa a ser vista como uma função (papel) desempenhada por gestores de equipes, administradores, gerentes, coordenadores ou supervisores, ou seja, por todos aqueles que detêm sob o seu comando uma equipe de trabalho."},
+
+					{"html":"blockquote", "content":[
+						{"html":null, "content":"[...] A administração financeira é uma ciência que objetiva, basicamente, determinar o mais eficiente processo empresarial de captação de recursos e alocação de capital. Nesse contexto, é necessário levar em conta a problemática da escassez de recursos e a realidade operacional e prática das organizações. Entretanto, não basta apenas captar e alocar capital, é necessário administrar os recursos para gerar resultados financeiros e econômicos, o que garante a continuidade da empresa e cria valor aos seus acionistas (proprietários) [...]"},
+						{"html":"span", "class":"app-fonte", "content":"Gitman - 2010 - p.4"}
+					]},
+
 					{"html":"p", "content":"O que seria então gestão de pessoas? Segundo Chiavenato (2010), a abordagem de gestão de pessoas diz respeito a um conjunto integrado de atividades de especialistas e também gestores com o intuito de proporcionar competências e competitividade à organização. Acrescenta-se ainda, que este conjunto de atividades busca o alinhamento dos objetivos da organização com os dos indivíduos que compõem a sua estrutura."},
 					{"html":"p", "content":"Estamos falando assim de uma nova abordagem. De uma nova forma de integrar os talentos humanos com as necessidades da organização, e para isso, é necessário que os gestores saiam do “casulo” e percebam o quão importante é o seu papel, por meio da atuação direta junto às suas equipes de trabalho. O trabalho de Gestão de pessoas não é meramente um jogo de xadrez, situação demonstrada na figura 1.1, mas sim um processo dinâmico, diferenciado, pois as peças não são imutáveis, são portadoras de características pessoas como a iniciativa, a criatividade, o pensamento e o conhecimento."},
 

@@ -12,13 +12,8 @@
 				},
 				{
 					"html":"div",
-					"class":["app-box-content"],
+					"class":["app-box-content", "app-ati-item"],
 					"content":[
-						{
-							"html":"div",
-							"class":"app-ati-item",
-							""
-						}
 						{
 							"html":"p",
 							"class":"app-ati-enunciado",

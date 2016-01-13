@@ -11822,7 +11822,8 @@ button.close {
   blockquote {
     font-family: "Josefin Sans";
     font-size: 17px;
-    color: #47464A;
+    color: #757477;
+    line-height: 29px;
     padding: 0px;
     margin: 0px;
   }
@@ -12188,7 +12189,8 @@ button.close {
   blockquote {
     font-family: "Josefin Sans";
     font-size: 18px;
-    color: #47464A;
+    color: #757477;
+    line-height: 30px;
     padding: 0px;
     margin: 0px;
   }
@@ -12554,7 +12556,8 @@ button.close {
   blockquote {
     font-family: "Josefin Sans";
     font-size: 19px;
-    color: #47464A;
+    color: #757477;
+    line-height: 33px;
     padding: 0px;
     margin: 0px;
   }
@@ -12920,7 +12923,8 @@ button.close {
   blockquote {
     font-family: "Josefin Sans";
     font-size: 19px;
-    color: #47464A;
+    color: #757477;
+    line-height: 33px;
     padding: 0px;
     margin: 0px;
   }
@@ -13286,7 +13290,8 @@ button.close {
   blockquote {
     font-family: "Josefin Sans";
     font-size: 22px;
-    color: #47464A;
+    color: #757477;
+    line-height: 37px;
     padding: 0px;
     margin: 0px;
   }
@@ -16171,6 +16176,25 @@ body,
     width: 100%;
     background-color: #E8E8E8;
     padding: 0 3%;
+    margin-bottom: 5%;
+  }
+  blockquote {
+    width: 100%;
+    margin: 3% 0;
+    margin-left: 0%;
+    display: block;
+    border-top: 1px solid #E8E8E8;
+  }
+  blockquote .app-fonte {
+    display: block;
+    background-color: #D1D1D2;
+    text-align: left;
+    padding: 6px 10px;
+    border-radius: 0px;
+    color: black;
+    font-weight: bold;
+    margin-top: 7px;
+    line-height: normal;
   }
 }
 @media (min-width: 480px) {
@@ -16269,6 +16293,25 @@ body,
     width: 90%;
     background-color: #E8E8E8;
     padding: 0 3%;
+    margin-bottom: 5%;
+  }
+  blockquote {
+    width: 100%;
+    margin: 3% 0;
+    margin-left: 0%;
+    display: block;
+    border-top: 1px solid #E8E8E8;
+  }
+  blockquote .app-fonte {
+    display: block;
+    background-color: #D1D1D2;
+    text-align: left;
+    padding: 6px 10px;
+    border-radius: 0px;
+    color: black;
+    font-weight: bold;
+    margin-top: 7px;
+    line-height: normal;
   }
 }
 @media (min-width: 768px) {
@@ -16367,6 +16410,25 @@ body,
     width: 85%;
     background-color: #E8E8E8;
     padding: 0 3%;
+    margin-bottom: 5%;
+  }
+  blockquote {
+    width: 100%;
+    margin: 3% 0;
+    margin-left: 0%;
+    display: block;
+    border-top: 1px solid #E8E8E8;
+  }
+  blockquote .app-fonte {
+    display: block;
+    background-color: #D1D1D2;
+    text-align: left;
+    padding: 6px 10px;
+    border-radius: 0px;
+    color: black;
+    font-weight: bold;
+    margin-top: 7px;
+    line-height: normal;
   }
 }
 @media (min-width: 992px) {
@@ -16465,6 +16527,25 @@ body,
     width: 75%;
     background-color: #E8E8E8;
     padding: 0 3%;
+    margin-bottom: 5%;
+  }
+  blockquote {
+    width: 116%;
+    margin: 3% 0;
+    margin-left: -16%;
+    display: block;
+    border-top: 1px solid #E8E8E8;
+  }
+  blockquote .app-fonte {
+    display: block;
+    background-color: #D1D1D2;
+    text-align: left;
+    padding: 6px 10px;
+    border-radius: 0px;
+    color: black;
+    font-weight: bold;
+    margin-top: 7px;
+    line-height: normal;
   }
 }
 @media (min-width: 1200px) {
@@ -16563,5 +16644,24 @@ body,
     width: 75%;
     background-color: #E8E8E8;
     padding: 0 3%;
+    margin-bottom: 5%;
+  }
+  blockquote {
+    width: 116%;
+    margin: 3% 0;
+    margin-left: -16%;
+    display: block;
+    border-top: 1px solid #E8E8E8;
+  }
+  blockquote .app-fonte {
+    display: block;
+    background-color: #D1D1D2;
+    text-align: left;
+    padding: 6px 10px;
+    border-radius: 0px;
+    color: black;
+    font-weight: bold;
+    margin-top: 7px;
+    line-height: normal;
   }
 }
