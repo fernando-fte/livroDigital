@@ -17,18 +17,15 @@
 					{"html":"p", "content":"O que seria então gestão de pessoas? Segundo Chiavenato (2010), a abordagem de gestão de pessoas diz respeito a um conjunto integrado de atividades de especialistas e também gestores com o intuito de proporcionar competências e competitividade à organização. Acrescenta-se ainda, que este conjunto de atividades busca o alinhamento dos objetivos da organização com os dos indivíduos que compõem a sua estrutura."},
 					{"html":"p", "content":"Estamos falando assim de uma nova abordagem. De uma nova forma de integrar os talentos humanos com as necessidades da organização, e para isso, é necessário que os gestores saiam do “casulo” e percebam o quão importante é o seu papel, por meio da atuação direta junto às suas equipes de trabalho. O trabalho de Gestão de pessoas não é meramente um jogo de xadrez, situação demonstrada na figura 1.1, mas sim um processo dinâmico, diferenciado, pois as peças não são imutáveis, são portadoras de características pessoas como a iniciativa, a criatividade, o pensamento e o conhecimento."},
 
-					{"html":"figure", "content":[
-						{"html":"p", "class":"app-legenda", "content":[
-								{"html":"span", "class":"label", "content":"1/1"},
-								{"html":null, "content":"comparativo xadrez x gestão de pessoas"}
-							]
-						},
-						{"html":"p", "class":"app-fonte", "content":[
-								{"html":"span", "class":"label", "content":"Fonte"},
-								{"html":"a", "attr":[{"href":"http://www.shutterstock.com/pt/s/Gest%C3%A3o+de+pessoas/search.html?page=2&thumb_size=mosaic&inline=145567615"}],"content":"http://www.shutterstock.com/pt/s/Gest%C3%A3o+de+pessoas/search.html?page=2&thumb_size=mosaic&inline=145567615"}
-							]
+					{
+						"html":null,
+						"._.action":{
+							"._.import":{
+								"source":"Box da figura",
+								"content":"replace"
+							}
 						}
-					]},
+					},
 
 					{"html":"article", "content":[
 						{"html":"h2", "content":"Evolução da gestão de pessoas"},

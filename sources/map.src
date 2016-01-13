@@ -100,8 +100,13 @@
 		"Apresentação - Figura" :{ "prod": "sources/apresentacao.fig.src" },
 
 		"Unidade I": { "prod": "sources/capitulo.src" },
+
 		"Unidade I - Contents": { "prod": "sources/capitulo.content.src" },
+
 		"Box da seção": { "prod": "sources/capitulo.content.box.src" },
+
+		"Box da figura": { "prod": "sources/capitulo.content.box.figura.src" },
+
 		"Atividades": { "prod": "sources/capitulo.content.atividade.src" },
 
 		"Referências": { "prod": "sources/referencias.src" }
@@ -112,6 +117,10 @@
 		"professor":{
 			"prod":"library/avatar.professor.jpg",
 			"dist":"library/avatar.professor.jpg"
+		},
+
+		"Figura 1.1": {
+			"prod":"library/fig.1.1.jpg"
 		}
 	}
 }
