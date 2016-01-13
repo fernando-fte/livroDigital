@@ -64,7 +64,7 @@ $.appCtrl.togo = {} if !$.appCtrl.togo
 # Inicia globais de tratamentos
 $.appCtrl = (post) ->
 	#// Requer uma lista $('[data-ctrl]')
-	temp = {'_proccess':{'_true':false, 'togo':{}, 'display':{}}, '_erro':{'_true':false}, '_warning':{'_true':false}, '_done':{'_true':false}, 'appCtrl':{}}
+	temp = {'_proccess':{'_true':false, 'togo':{}, 'display':{}, 'apr':{}, 'atividade':{}}, '_erro':{'_true':false}, '_warning':{'_true':false}, '_done':{'_true':false}, 'appCtrl':{}}
 
 
 	# # # # # #
@@ -112,8 +112,20 @@ $.appCtrl = (post) ->
 			#** valida se a solicitação é para tratar a apresentação
 			if temp.appCtrl[i].app.apr
 
+				# declara processo atual
+				temp._proccess.apr[i] = {}
+
 				# define processo togo atual falso
 				temp._proccess.apr[i] = $.appCtrl.apr temp.appCtrl[i]
+
+			#** valida se a solicitação é para tratar as atividades
+			if temp.appCtrl[i].app.atividade
+
+				# declara processo atual
+				temp._proccess.atividade[i] = {}
+
+				# define processo togo atual falso
+				temp._proccess.atividade[i] = $.appCtrl.atividade temp.appCtrl[i]
 
 			#// adiciona contador no loop
 			i++
@@ -200,6 +212,73 @@ $.appCtrl.apr = (post) ->
 		temp._done = true
 
 	return temp
+
+$.appCtrl.atividade = (post) ->
+	# {"atividade":{"._.required":true,"._.list":["change","true","avaliar"],"._.type":["array"],"change":{"._.//":"Valida se a altarnativa é valida","._.required":true,"._.type":["boolean"]},"true":{"._.//":"Valida se a alternativa é valida","._.required":true,"._.type":["boolean"]},"avaliar":{"._.//":"Ativa botão de avaliação mais próximo","._.required":false,"._.type":["boolean"],"._.exacly":{"boolean":"true"}}}}
+	# post.app.atividade
+	# post.this
+	temp = {'_proccess':{'_true':false}, '_erro':{'_true':false}, '_warning':{'_true':false}, '_done':{'_true':false}, 'btn':{}}
+
+	temp._proccess._true = true
+	# adiciona configruação caso a atividade esteja ativa
+	if post.app.atividade.change is true
+		$(post.this).addClass('true') if post.app.atividade.true is true
+		$(post.this).addClass('false') if post.app.atividade.true is false
+		temp._proccess.change = true
+	
+	# ao clicar
+	$(post.this).click ->
+
+		# caso a resposta seja automatica
+		if !post.app.atividade.avaliar
+
+			if post.app.atividade.change is false
+
+				# caso a atividade seja verdadeira
+				if post.app.atividade.true is true
+					post.app.atividade.change = true
+					$(this).addClass('true')
+					$(this).data("appCtrl", post.app)
+					# TODO: Salva dados do cliente
+
+				# caso a atividade seja  falsa
+				if post.app.atividade.true is false
+					post.app.atividade.change = true
+					$(this).addClass('false') 
+					$(this).data("appCtrl", post.app)
+					# TODO: Salva dados do cliente
+
+		# caso a resposta seja por confirmação
+		if post.app.atividade.avaliar
+
+			if post.app.atividade.change is false
+
+				$(post.this).toggleClass('on')
+
+				$(this).closest('.app-ati-item').find('.app-ati-item-change').click ->
+
+					$(post.this).closest('.app-ati-item').find('.app-ati-alternativa-item').addClass('off')
+					$(post.this).closest('.app-ati-item').find('.app-ati-alternativa-item.on').removeClass('off')
+
+					# caso a atividade seja verdadeira
+					if post.app.atividade.true is true
+						post.app.atividade.change = true
+						$(post.this).addClass('true')
+						$(post.this).removeClass('off')
+						$(post.this).data("appCtrl", post.app)
+						# TODO: Salva dados do cliente
+
+					# caso a atividade seja  falsa
+					if post.app.atividade.true is false
+						post.app.atividade.change = true
+						$(post.this).addClass('false') 
+						$(post.this).removeClass('off')
+						$(post.this).data("appCtrl", post.app)
+						# TODO: Salva dados do cliente
+
+
+	return temp
+
 
 
 

@@ -34,7 +34,9 @@
       '_proccess': {
         '_true': false,
         'togo': {},
-        'display': {}
+        'display': {},
+        'apr': {},
+        'atividade': {}
       },
       '_erro': {
         '_true': false
@@ -65,7 +67,12 @@
           temp._proccess.display[i] = $.appCtrl.display(temp.appCtrl[i]);
         }
         if (temp.appCtrl[i].app.apr) {
+          temp._proccess.apr[i] = {};
           temp._proccess.apr[i] = $.appCtrl.apr(temp.appCtrl[i]);
+        }
+        if (temp.appCtrl[i].app.atividade) {
+          temp._proccess.atividade[i] = {};
+          temp._proccess.atividade[i] = $.appCtrl.atividade(temp.appCtrl[i]);
         }
         i++;
       }
@@ -171,6 +178,73 @@
     $(post["this"]).click(function() {
       $($(this).closest('.app-apr-item')).toggleClass('app-apr-display-video');
       return temp._done = true;
+    });
+    return temp;
+  };
+
+  $.appCtrl.atividade = function(post) {
+    var temp;
+    temp = {
+      '_proccess': {
+        '_true': false
+      },
+      '_erro': {
+        '_true': false
+      },
+      '_warning': {
+        '_true': false
+      },
+      '_done': {
+        '_true': false
+      },
+      'btn': {}
+    };
+    temp._proccess._true = true;
+    if (post.app.atividade.change === true) {
+      if (post.app.atividade["true"] === true) {
+        $(post["this"]).addClass('true');
+      }
+      if (post.app.atividade["true"] === false) {
+        $(post["this"]).addClass('false');
+      }
+      temp._proccess.change = true;
+    }
+    $(post["this"]).click(function() {
+      if (!post.app.atividade.avaliar) {
+        if (post.app.atividade.change === false) {
+          if (post.app.atividade["true"] === true) {
+            post.app.atividade.change = true;
+            $(this).addClass('true');
+            $(this).data("appCtrl", post.app);
+          }
+          if (post.app.atividade["true"] === false) {
+            post.app.atividade.change = true;
+            $(this).addClass('false');
+            $(this).data("appCtrl", post.app);
+          }
+        }
+      }
+      if (post.app.atividade.avaliar) {
+        if (post.app.atividade.change === false) {
+          $(post["this"]).toggleClass('on');
+          return $(this).closest('.app-ati-item').find('.app-ati-item-change').click(function() {
+            $(post["this"]).closest('.app-ati-item').find('.app-ati-alternativa-item').addClass('off');
+            $(post["this"]).closest('.app-ati-item').find('.app-ati-alternativa-item.on').removeClass('off');
+            if (post.app.atividade["true"] === true) {
+              post.app.atividade.change = true;
+              $(post["this"]).addClass('true');
+              $(post["this"]).removeClass('off');
+              $(post["this"]).data("appCtrl", post.app);
+            }
+            if (post.app.atividade["true"] === false) {
+              post.app.atividade.change = true;
+              $(post["this"]).addClass('false');
+              $(post["this"]).removeClass('off');
+              return $(post["this"]).data("appCtrl", post.app);
+            }
+          });
+        }
+      }
     });
     return temp;
   };

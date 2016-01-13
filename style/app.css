@@ -12009,14 +12009,31 @@ button.close {
   .app-ati-alternativa-item:hover:before {
     content: "\F192";
   }
+  .app-ati-alternativa-item.on:before {
+    content: "\F192";
+  }
   .app-ati-alternativa-item.true,
   .app-ati-alternativa-item.false {
     font-weight: bold;
     cursor: default;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-backface-visibility: visible !important;
+    backface-visibility: visible !important;
+    -webkit-animation-name: flipInX;
+    animation-name: flipInX;
   }
   .app-ati-alternativa-item.true .feedback,
   .app-ati-alternativa-item.false .feedback {
     display: block;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
   }
   .app-ati-alternativa-item.true:hover:before,
   .app-ati-alternativa-item.false:hover:before {
@@ -12034,7 +12051,10 @@ button.close {
   .app-ati-alternativa-item.false:before {
     content: "\F057";
   }
-  .app-btn-atividade {
+  .app-ati-alternativa-item.off {
+    color: #757477 !important;
+  }
+  .app-ati-item-change {
     font-family: "PF BeauSans Pro";
     font-size: 15px;
     color: #A11314;
@@ -12043,16 +12063,16 @@ button.close {
     text-transform: uppercase;
     font-weight: bold;
   }
-  .app-btn-atividade:before {
+  .app-ati-item-change:before {
     padding-right: 15px;
     font-size: 17px;
     font-family: "FontAwesome";
     content: "\F05D";
   }
-  .app-btn-atividade:hover {
+  .app-ati-item-change:hover {
     color: #B44243;
   }
-  .app-btn-atividade:hover:before {
+  .app-ati-item-change:hover:before {
     content: "\F058";
   }
   .app-box-section h1,
@@ -12376,14 +12396,31 @@ button.close {
   .app-ati-alternativa-item:hover:before {
     content: "\F192";
   }
+  .app-ati-alternativa-item.on:before {
+    content: "\F192";
+  }
   .app-ati-alternativa-item.true,
   .app-ati-alternativa-item.false {
     font-weight: bold;
     cursor: default;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-backface-visibility: visible !important;
+    backface-visibility: visible !important;
+    -webkit-animation-name: flipInX;
+    animation-name: flipInX;
   }
   .app-ati-alternativa-item.true .feedback,
   .app-ati-alternativa-item.false .feedback {
     display: block;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
   }
   .app-ati-alternativa-item.true:hover:before,
   .app-ati-alternativa-item.false:hover:before {
@@ -12401,7 +12438,10 @@ button.close {
   .app-ati-alternativa-item.false:before {
     content: "\F057";
   }
-  .app-btn-atividade {
+  .app-ati-alternativa-item.off {
+    color: #757477 !important;
+  }
+  .app-ati-item-change {
     font-family: "PF BeauSans Pro";
     font-size: 15px;
     color: #A11314;
@@ -12410,16 +12450,16 @@ button.close {
     text-transform: uppercase;
     font-weight: bold;
   }
-  .app-btn-atividade:before {
+  .app-ati-item-change:before {
     padding-right: 15px;
     font-size: 18px;
     font-family: "FontAwesome";
     content: "\F05D";
   }
-  .app-btn-atividade:hover {
+  .app-ati-item-change:hover {
     color: #B44243;
   }
-  .app-btn-atividade:hover:before {
+  .app-ati-item-change:hover:before {
     content: "\F058";
   }
   .app-box-section h1,
@@ -12743,14 +12783,31 @@ button.close {
   .app-ati-alternativa-item:hover:before {
     content: "\F192";
   }
+  .app-ati-alternativa-item.on:before {
+    content: "\F192";
+  }
   .app-ati-alternativa-item.true,
   .app-ati-alternativa-item.false {
     font-weight: bold;
     cursor: default;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-backface-visibility: visible !important;
+    backface-visibility: visible !important;
+    -webkit-animation-name: flipInX;
+    animation-name: flipInX;
   }
   .app-ati-alternativa-item.true .feedback,
   .app-ati-alternativa-item.false .feedback {
     display: block;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
   }
   .app-ati-alternativa-item.true:hover:before,
   .app-ati-alternativa-item.false:hover:before {
@@ -12768,7 +12825,10 @@ button.close {
   .app-ati-alternativa-item.false:before {
     content: "\F057";
   }
-  .app-btn-atividade {
+  .app-ati-alternativa-item.off {
+    color: #757477 !important;
+  }
+  .app-ati-item-change {
     font-family: "PF BeauSans Pro";
     font-size: 16px;
     color: #A11314;
@@ -12777,16 +12837,16 @@ button.close {
     text-transform: uppercase;
     font-weight: bold;
   }
-  .app-btn-atividade:before {
+  .app-ati-item-change:before {
     padding-right: 16px;
     font-size: 19px;
     font-family: "FontAwesome";
     content: "\F05D";
   }
-  .app-btn-atividade:hover {
+  .app-ati-item-change:hover {
     color: #B44243;
   }
-  .app-btn-atividade:hover:before {
+  .app-ati-item-change:hover:before {
     content: "\F058";
   }
   .app-box-section h1,
@@ -13110,14 +13170,31 @@ button.close {
   .app-ati-alternativa-item:hover:before {
     content: "\F192";
   }
+  .app-ati-alternativa-item.on:before {
+    content: "\F192";
+  }
   .app-ati-alternativa-item.true,
   .app-ati-alternativa-item.false {
     font-weight: bold;
     cursor: default;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-backface-visibility: visible !important;
+    backface-visibility: visible !important;
+    -webkit-animation-name: flipInX;
+    animation-name: flipInX;
   }
   .app-ati-alternativa-item.true .feedback,
   .app-ati-alternativa-item.false .feedback {
     display: block;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
   }
   .app-ati-alternativa-item.true:hover:before,
   .app-ati-alternativa-item.false:hover:before {
@@ -13135,7 +13212,10 @@ button.close {
   .app-ati-alternativa-item.false:before {
     content: "\F057";
   }
-  .app-btn-atividade {
+  .app-ati-alternativa-item.off {
+    color: #757477 !important;
+  }
+  .app-ati-item-change {
     font-family: "PF BeauSans Pro";
     font-size: 16px;
     color: #A11314;
@@ -13144,16 +13224,16 @@ button.close {
     text-transform: uppercase;
     font-weight: bold;
   }
-  .app-btn-atividade:before {
+  .app-ati-item-change:before {
     padding-right: 16px;
     font-size: 19px;
     font-family: "FontAwesome";
     content: "\F05D";
   }
-  .app-btn-atividade:hover {
+  .app-ati-item-change:hover {
     color: #B44243;
   }
-  .app-btn-atividade:hover:before {
+  .app-ati-item-change:hover:before {
     content: "\F058";
   }
   .app-box-section h1,
@@ -13477,14 +13557,31 @@ button.close {
   .app-ati-alternativa-item:hover:before {
     content: "\F192";
   }
+  .app-ati-alternativa-item.on:before {
+    content: "\F192";
+  }
   .app-ati-alternativa-item.true,
   .app-ati-alternativa-item.false {
     font-weight: bold;
     cursor: default;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-backface-visibility: visible !important;
+    backface-visibility: visible !important;
+    -webkit-animation-name: flipInX;
+    animation-name: flipInX;
   }
   .app-ati-alternativa-item.true .feedback,
   .app-ati-alternativa-item.false .feedback {
     display: block;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
   }
   .app-ati-alternativa-item.true:hover:before,
   .app-ati-alternativa-item.false:hover:before {
@@ -13502,7 +13599,10 @@ button.close {
   .app-ati-alternativa-item.false:before {
     content: "\F057";
   }
-  .app-btn-atividade {
+  .app-ati-alternativa-item.off {
+    color: #757477 !important;
+  }
+  .app-ati-item-change {
     font-family: "PF BeauSans Pro";
     font-size: 19px;
     color: #A11314;
@@ -13511,16 +13611,16 @@ button.close {
     text-transform: uppercase;
     font-weight: bold;
   }
-  .app-btn-atividade:before {
+  .app-ati-item-change:before {
     padding-right: 19px;
     font-size: 22px;
     font-family: "FontAwesome";
     content: "\F05D";
   }
-  .app-btn-atividade:hover {
+  .app-ati-item-change:hover {
     color: #B44243;
   }
-  .app-btn-atividade:hover:before {
+  .app-ati-item-change:hover:before {
     content: "\F058";
   }
   .app-box-section h1,
@@ -16177,6 +16277,7 @@ body,
     background-color: #E8E8E8;
     padding: 0 3%;
     margin-bottom: 5%;
+    padding-bottom: 5%;
   }
   blockquote {
     width: 100%;
@@ -16294,6 +16395,7 @@ body,
     background-color: #E8E8E8;
     padding: 0 3%;
     margin-bottom: 5%;
+    padding-bottom: 5%;
   }
   blockquote {
     width: 100%;
@@ -16411,6 +16513,7 @@ body,
     background-color: #E8E8E8;
     padding: 0 3%;
     margin-bottom: 5%;
+    padding-bottom: 5%;
   }
   blockquote {
     width: 100%;
@@ -16528,6 +16631,7 @@ body,
     background-color: #E8E8E8;
     padding: 0 3%;
     margin-bottom: 5%;
+    padding-bottom: 5%;
   }
   blockquote {
     width: 116%;
@@ -16645,6 +16749,7 @@ body,
     background-color: #E8E8E8;
     padding: 0 3%;
     margin-bottom: 5%;
+    padding-bottom: 5%;
   }
   blockquote {
     width: 116%;

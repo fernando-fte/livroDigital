@@ -157,7 +157,9 @@
 
 		&:hover:before { content: @app-ico-alternativa-hover; }
 
-		&.true, &.false { font-weight: bold; cursor: default; .feedback {display: block;} &:hover:before { content: inherit;}}
+		&.on:before { content: @app-ico-alternativa-hover; }
+
+		&.true, &.false { font-weight: bold; cursor: default; .feedback {display: block; .app-play-fadeInDown()} &:hover:before { content: inherit;}; .app-play-flipInX();}
 
 		&.true {
 			color: @app-cor-verde;
@@ -168,9 +170,11 @@
 			color: @app-cor-vermelho;
 			&:before { content: @app-ico-alternativa-errada }
 		}
+		&.off { color: @app-cor-preto-60!important }
 	}
 
-	.app-btn-atividade {
+	// Botão de avaliação
+	.app-ati-item-change {
 		
 		font-family: @app-font-app;
 		font-size: ceil((@app-font-size-base / 1.2));
