@@ -1,0 +1,76 @@
+{
+	"html":"div",
+	"id":"referencias",
+	"class":["section-page", "app-ref"],
+	"content":[
+		{
+			"html":"div",
+			"class":["app-ref-group", "section-page-item"],
+			"content":[
+				{"html":"p", "content":[
+					{"html":null, "content":"BRAGA, Hugo Rocha. "},
+					{"html":"b", "content":"Demonstrações Contábeis: Estrutura, Análise e Interpretação"},
+					{"html":null, "content":". 5. ed. São Paulo: "},
+					{"html":"i", "content":"Atlas, 2003"},
+					{"html":null, "content":"."}
+				]},
+				{"html":"p", "content":[
+					{"html":null, "content":"BRAGA, Hugo Rocha. "},
+					{"html":"b", "content":"Demonstrações Contábeis: Estrutura, Análise e Interpretação"},
+					{"html":null, "content":". 5. ed. São Paulo: "},
+					{"html":"i", "content":"Atlas, 2003"},
+					{"html":null, "content":"."}
+				]},
+				{"html":"p", "content":[
+					{"html":null, "content":"BRAGA, Hugo Rocha. "},
+					{"html":"b", "content":"Demonstrações Contábeis: Estrutura, Análise e Interpretação"},
+					{"html":null, "content":". 5. ed. São Paulo: "},
+					{"html":"i", "content":"Atlas, 2003"},
+					{"html":null, "content":"."}
+				]},
+				{"html":"p", "content":[
+					{"html":null, "content":"BRAGA, Hugo Rocha. "},
+					{"html":"b", "content":"Demonstrações Contábeis: Estrutura, Análise e Interpretação"},
+					{"html":null, "content":". 5. ed. São Paulo: "},
+					{"html":"i", "content":"Atlas, 2003"},
+					{"html":null, "content":"."}
+				]},
+				{"html":"p", "content":[
+					{"html":null, "content":"BRAGA, Hugo Rocha. "},
+					{"html":"b", "content":"Demonstrações Contábeis: Estrutura, Análise e Interpretação"},
+					{"html":null, "content":". 5. ed. São Paulo: "},
+					{"html":"i", "content":"Atlas, 2003"},
+					{"html":null, "content":"."}
+				]},
+				{"html":"p", "content":[
+					{"html":null, "content":"BRAGA, Hugo Rocha. "},
+					{"html":"b", "content":"Demonstrações Contábeis: Estrutura, Análise e Interpretação"},
+					{"html":null, "content":". 5. ed. São Paulo: "},
+					{"html":"i", "content":"Atlas, 2003"},
+					{"html":null, "content":"."}
+				]},
+				{"html":"p", "content":[
+					{"html":null, "content":"BRAGA, Hugo Rocha. "},
+					{"html":"b", "content":"Demonstrações Contábeis: Estrutura, Análise e Interpretação"},
+					{"html":null, "content":". 5. ed. São Paulo: "},
+					{"html":"i", "content":"Atlas, 2003"},
+					{"html":null, "content":"."}
+				]},
+				{"html":"p", "content":[
+					{"html":null, "content":"BRAGA, Hugo Rocha. "},
+					{"html":"b", "content":"Demonstrações Contábeis: Estrutura, Análise e Interpretação"},
+					{"html":null, "content":". 5. ed. São Paulo: "},
+					{"html":"i", "content":"Atlas, 2003"},
+					{"html":null, "content":"."}
+				]},
+				{"html":"p", "content":[
+					{"html":null, "content":"BRAGA, Hugo Rocha. "},
+					{"html":"b", "content":"Demonstrações Contábeis: Estrutura, Análise e Interpretação"},
+					{"html":null, "content":". 5. ed. São Paulo: "},
+					{"html":"i", "content":"Atlas, 2003"},
+					{"html":null, "content":"."}
+				]}
+			]
+		}
+	]
+}

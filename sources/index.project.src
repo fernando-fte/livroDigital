@@ -24,7 +24,8 @@
 						{"html":null, "._.action":{"._.import":{"source":"Menu", "content":"replace" }}},
 						{"html":null, "._.action":{"._.import":{"source":"Sumário", "content":"replace" }}},
 						{"html":null, "._.action":{"._.import":{"source":"Apresentação", "content":"replace" }}},
-						{"html":null, "._.action":{"._.import":{"source":"Unidade I", "content":"replace" }}}
+						{"html":null, "._.action":{"._.import":{"source":"Unidade I", "content":"replace" }}},
+						{"html":null, "._.action":{"._.import":{"source":"Referências", "content":"replace" }}}
 					]
 				}
 			]
