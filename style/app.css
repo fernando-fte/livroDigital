@@ -16180,135 +16180,6 @@ body,
     display: none;
   }
 }
-.app-graphic-content {
-  width: 116%;
-  display: block;
-  margin-bottom: 25px;
-  margin-left: -16%;
-  position: relative;
-}
-.app-graphic-content:before,
-.app-graphic-content:after {
-  content: " ";
-  display: table;
-}
-.app-graphic-content:after {
-  clear: both;
-}
-.app-graphic-content:before,
-.app-graphic-content:after {
-  content: " ";
-  display: table;
-}
-.app-graphic-content:after {
-  clear: both;
-}
-.app-graphic-content .app-graphic-ctrl {
-  position: absolute;
-  height: 96%;
-  width: 100%;
-}
-.app-graphic-content .app-graphic-ctrl .app-graphic-previous,
-.app-graphic-content .app-graphic-ctrl .app-graphic-next {
-  height: 100%;
-  display: block;
-  width: 5%;
-  position: absolute;
-}
-.app-graphic-content .app-graphic-ctrl .app-graphic-previous:hover:after,
-.app-graphic-content .app-graphic-ctrl .app-graphic-next:hover:after {
-  opacity: 1;
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-  -webkit-animation-name: pulse;
-  animation-name: pulse;
-}
-.app-graphic-content .app-graphic-ctrl .app-graphic-previous:after,
-.app-graphic-content .app-graphic-ctrl .app-graphic-next:after {
-  display: block;
-  background-color: #565559;
-  font-size: 74px;
-  text-align: center;
-  padding: 57% 0px;
-  color: white;
-  position: absolute;
-  top: 35%;
-  width: 100%;
-  cursor: pointer;
-  opacity: 0.5;
-}
-.app-graphic-content .app-graphic-ctrl .app-graphic-show {
-  height: 100%;
-  display: block;
-  width: 90%;
-  position: absolute;
-  margin: 0 auto;
-  left: 5%;
-}
-.app-graphic-content .app-graphic-ctrl .app-graphic-show:after {
-  font-family: "FontAwesome";
-  content: "\F065";
-}
-.app-graphic-content .app-graphic-ctrl .app-graphic-show:hover:after {
-  display: block;
-}
-.app-graphic-content .app-graphic-ctrl .app-graphic-show:after {
-  display: none;
-  font-size: 74px;
-  color: #47464A;
-  padding: 5% 0px;
-  position: absolute;
-  top: 40%;
-  width: 20%;
-  left: 38%;
-  text-align: center;
-  cursor: pointer;
-  opacity: 0.5;
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-  -webkit-animation-name: pulse;
-  animation-name: pulse;
-}
-.app-graphic-content .app-graphic-ctrl .app-graphic-previous {
-  left: 0px;
-}
-.app-graphic-content .app-graphic-ctrl .app-graphic-previous:after {
-  font-family: "FontAwesome";
-  content: "\F104";
-}
-.app-graphic-content .app-graphic-ctrl .app-graphic-next {
-  right: 0px;
-}
-.app-graphic-content .app-graphic-ctrl .app-graphic-next:after {
-  font-family: "FontAwesome";
-  content: "\F105";
-}
-.app-graphic-content .app-graphic-content-nav {
-  height: 640px;
-  overflow: hidden;
-  background-color: #C0504D;
-  text-align: center;
-  margin-top: 5%;
-}
-.app-graphic-content .app-graphic-content-nav .app-graphic-item {
-  height: 100%;
-  display: block;
-  margin: 0 auto;
-}
-.app-graphic-content .grapc-content-caption {
-  margin-top: 14px;
-}
-.app-graphic-content .grapc-content-caption .app-legenda .label span:first-child:after {
-  content: " / ";
-}
-.app-graphic-content .grapc-content-caption .app-legenda:after {
-  content: " - ";
-  margin-left: 5px;
-}
 @media (max-width: 479px) {
   .app-cap-abertura {
     background-color: #D1D1D2;
@@ -16425,6 +16296,137 @@ body,
     font-weight: bold;
     margin-top: 7px;
     line-height: normal;
+  }
+  .app-graphic-content {
+    width: 100%;
+    display: block;
+    margin-bottom: 25px;
+    margin-left: 0%;
+    position: relative;
+  }
+  .app-graphic-content:before,
+  .app-graphic-content:after {
+    content: " ";
+    display: table;
+  }
+  .app-graphic-content:after {
+    clear: both;
+  }
+  .app-graphic-content:before,
+  .app-graphic-content:after {
+    content: " ";
+    display: table;
+  }
+  .app-graphic-content:after {
+    clear: both;
+  }
+  .app-graphic-content .app-graphic-ctrl {
+    position: absolute;
+    height: 96%;
+    width: 100%;
+  }
+  .app-graphic-content .app-graphic-ctrl .app-graphic-previous,
+  .app-graphic-content .app-graphic-ctrl .app-graphic-next {
+    height: 100%;
+    display: block;
+    width: 5%;
+    position: absolute;
+  }
+  .app-graphic-content .app-graphic-ctrl .app-graphic-previous:hover:after,
+  .app-graphic-content .app-graphic-ctrl .app-graphic-next:hover:after {
+    opacity: 1;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: pulse;
+    animation-name: pulse;
+  }
+  .app-graphic-content .app-graphic-ctrl .app-graphic-previous:after,
+  .app-graphic-content .app-graphic-ctrl .app-graphic-next:after {
+    display: block;
+    background-color: #565559;
+    font-size: 30px;
+    text-align: center;
+    padding: 57% 0px;
+    color: white;
+    position: absolute;
+    top: 35%;
+    width: 100%;
+    cursor: pointer;
+    opacity: 0.5;
+  }
+  .app-graphic-content .app-graphic-ctrl .app-graphic-show {
+    height: 100%;
+    display: block;
+    width: 90%;
+    position: absolute;
+    margin: 0 auto;
+    left: 5%;
+  }
+  .app-graphic-content .app-graphic-ctrl .app-graphic-show:after {
+    font-family: "FontAwesome";
+    content: "\F065";
+  }
+  .app-graphic-content .app-graphic-ctrl .app-graphic-show:hover:after {
+    display: block;
+  }
+  .app-graphic-content .app-graphic-ctrl .app-graphic-show:after {
+    display: none;
+    font-size: 30px;
+    color: #47464A;
+    padding: 5% 0px;
+    position: absolute;
+    top: 40%;
+    width: 20%;
+    left: 38%;
+    text-align: center;
+    cursor: pointer;
+    opacity: 0.5;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: pulse;
+    animation-name: pulse;
+  }
+  .app-graphic-content .app-graphic-ctrl .app-graphic-previous {
+    left: 0px;
+  }
+  .app-graphic-content .app-graphic-ctrl .app-graphic-previous:after {
+    font-family: "FontAwesome";
+    content: "\F104";
+  }
+  .app-graphic-content .app-graphic-ctrl .app-graphic-next {
+    right: 0px;
+  }
+  .app-graphic-content .app-graphic-ctrl .app-graphic-next:after {
+    font-family: "FontAwesome";
+    content: "\F105";
+  }
+  .app-graphic-content .app-graphic-content-nav {
+    height: 180px;
+    overflow: hidden;
+    background-color: #C0504D;
+    text-align: center;
+    margin-top: 5%;
+  }
+  .app-graphic-content .app-graphic-content-nav .app-graphic-item {
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+  }
+  .app-graphic-content .grapc-content-caption {
+    margin-top: 14px;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  .app-graphic-content .grapc-content-caption .app-legenda .label span:first-child:after {
+    content: " / ";
+  }
+  .app-graphic-content .grapc-content-caption .app-legenda:after {
+    content: " - ";
+    margin-left: 5px;
   }
 }
 @media (min-width: 480px) {
@@ -16544,6 +16546,137 @@ body,
     margin-top: 7px;
     line-height: normal;
   }
+  .app-graphic-content {
+    width: 100%;
+    display: block;
+    margin-bottom: 25px;
+    margin-left: 0%;
+    position: relative;
+  }
+  .app-graphic-content:before,
+  .app-graphic-content:after {
+    content: " ";
+    display: table;
+  }
+  .app-graphic-content:after {
+    clear: both;
+  }
+  .app-graphic-content:before,
+  .app-graphic-content:after {
+    content: " ";
+    display: table;
+  }
+  .app-graphic-content:after {
+    clear: both;
+  }
+  .app-graphic-content .app-graphic-ctrl {
+    position: absolute;
+    height: 96%;
+    width: 100%;
+  }
+  .app-graphic-content .app-graphic-ctrl .app-graphic-previous,
+  .app-graphic-content .app-graphic-ctrl .app-graphic-next {
+    height: 100%;
+    display: block;
+    width: 5%;
+    position: absolute;
+  }
+  .app-graphic-content .app-graphic-ctrl .app-graphic-previous:hover:after,
+  .app-graphic-content .app-graphic-ctrl .app-graphic-next:hover:after {
+    opacity: 1;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: pulse;
+    animation-name: pulse;
+  }
+  .app-graphic-content .app-graphic-ctrl .app-graphic-previous:after,
+  .app-graphic-content .app-graphic-ctrl .app-graphic-next:after {
+    display: block;
+    background-color: #565559;
+    font-size: 30px;
+    text-align: center;
+    padding: 57% 0px;
+    color: white;
+    position: absolute;
+    top: 35%;
+    width: 100%;
+    cursor: pointer;
+    opacity: 0.5;
+  }
+  .app-graphic-content .app-graphic-ctrl .app-graphic-show {
+    height: 100%;
+    display: block;
+    width: 90%;
+    position: absolute;
+    margin: 0 auto;
+    left: 5%;
+  }
+  .app-graphic-content .app-graphic-ctrl .app-graphic-show:after {
+    font-family: "FontAwesome";
+    content: "\F065";
+  }
+  .app-graphic-content .app-graphic-ctrl .app-graphic-show:hover:after {
+    display: block;
+  }
+  .app-graphic-content .app-graphic-ctrl .app-graphic-show:after {
+    display: none;
+    font-size: 30px;
+    color: #47464A;
+    padding: 5% 0px;
+    position: absolute;
+    top: 40%;
+    width: 20%;
+    left: 38%;
+    text-align: center;
+    cursor: pointer;
+    opacity: 0.5;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: pulse;
+    animation-name: pulse;
+  }
+  .app-graphic-content .app-graphic-ctrl .app-graphic-previous {
+    left: 0px;
+  }
+  .app-graphic-content .app-graphic-ctrl .app-graphic-previous:after {
+    font-family: "FontAwesome";
+    content: "\F104";
+  }
+  .app-graphic-content .app-graphic-ctrl .app-graphic-next {
+    right: 0px;
+  }
+  .app-graphic-content .app-graphic-ctrl .app-graphic-next:after {
+    font-family: "FontAwesome";
+    content: "\F105";
+  }
+  .app-graphic-content .app-graphic-content-nav {
+    height: 290px;
+    overflow: hidden;
+    background-color: #C0504D;
+    text-align: center;
+    margin-top: 5%;
+  }
+  .app-graphic-content .app-graphic-content-nav .app-graphic-item {
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+  }
+  .app-graphic-content .grapc-content-caption {
+    margin-top: 14px;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  .app-graphic-content .grapc-content-caption .app-legenda .label span:first-child:after {
+    content: " / ";
+  }
+  .app-graphic-content .grapc-content-caption .app-legenda:after {
+    content: " - ";
+    margin-left: 5px;
+  }
 }
 @media (min-width: 768px) {
   .app-cap-abertura {
@@ -16661,6 +16794,137 @@ body,
     font-weight: bold;
     margin-top: 7px;
     line-height: normal;
+  }
+  .app-graphic-content {
+    width: 100%;
+    display: block;
+    margin-bottom: 25px;
+    margin-left: 0%;
+    position: relative;
+  }
+  .app-graphic-content:before,
+  .app-graphic-content:after {
+    content: " ";
+    display: table;
+  }
+  .app-graphic-content:after {
+    clear: both;
+  }
+  .app-graphic-content:before,
+  .app-graphic-content:after {
+    content: " ";
+    display: table;
+  }
+  .app-graphic-content:after {
+    clear: both;
+  }
+  .app-graphic-content .app-graphic-ctrl {
+    position: absolute;
+    height: 96%;
+    width: 100%;
+  }
+  .app-graphic-content .app-graphic-ctrl .app-graphic-previous,
+  .app-graphic-content .app-graphic-ctrl .app-graphic-next {
+    height: 100%;
+    display: block;
+    width: 5%;
+    position: absolute;
+  }
+  .app-graphic-content .app-graphic-ctrl .app-graphic-previous:hover:after,
+  .app-graphic-content .app-graphic-ctrl .app-graphic-next:hover:after {
+    opacity: 1;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: pulse;
+    animation-name: pulse;
+  }
+  .app-graphic-content .app-graphic-ctrl .app-graphic-previous:after,
+  .app-graphic-content .app-graphic-ctrl .app-graphic-next:after {
+    display: block;
+    background-color: #565559;
+    font-size: 44px;
+    text-align: center;
+    padding: 57% 0px;
+    color: white;
+    position: absolute;
+    top: 35%;
+    width: 100%;
+    cursor: pointer;
+    opacity: 0.5;
+  }
+  .app-graphic-content .app-graphic-ctrl .app-graphic-show {
+    height: 100%;
+    display: block;
+    width: 90%;
+    position: absolute;
+    margin: 0 auto;
+    left: 5%;
+  }
+  .app-graphic-content .app-graphic-ctrl .app-graphic-show:after {
+    font-family: "FontAwesome";
+    content: "\F065";
+  }
+  .app-graphic-content .app-graphic-ctrl .app-graphic-show:hover:after {
+    display: block;
+  }
+  .app-graphic-content .app-graphic-ctrl .app-graphic-show:after {
+    display: none;
+    font-size: 44px;
+    color: #47464A;
+    padding: 5% 0px;
+    position: absolute;
+    top: 40%;
+    width: 20%;
+    left: 38%;
+    text-align: center;
+    cursor: pointer;
+    opacity: 0.5;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: pulse;
+    animation-name: pulse;
+  }
+  .app-graphic-content .app-graphic-ctrl .app-graphic-previous {
+    left: 0px;
+  }
+  .app-graphic-content .app-graphic-ctrl .app-graphic-previous:after {
+    font-family: "FontAwesome";
+    content: "\F104";
+  }
+  .app-graphic-content .app-graphic-ctrl .app-graphic-next {
+    right: 0px;
+  }
+  .app-graphic-content .app-graphic-ctrl .app-graphic-next:after {
+    font-family: "FontAwesome";
+    content: "\F105";
+  }
+  .app-graphic-content .app-graphic-content-nav {
+    height: 340px;
+    overflow: hidden;
+    background-color: #C0504D;
+    text-align: center;
+    margin-top: 5%;
+  }
+  .app-graphic-content .app-graphic-content-nav .app-graphic-item {
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+  }
+  .app-graphic-content .grapc-content-caption {
+    margin-top: 14px;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  .app-graphic-content .grapc-content-caption .app-legenda .label span:first-child:after {
+    content: " / ";
+  }
+  .app-graphic-content .grapc-content-caption .app-legenda:after {
+    content: " - ";
+    margin-left: 5px;
   }
 }
 @media (min-width: 992px) {
@@ -16780,6 +17044,137 @@ body,
     margin-top: 7px;
     line-height: normal;
   }
+  .app-graphic-content {
+    width: 116%;
+    display: block;
+    margin-bottom: 25px;
+    margin-left: -16%;
+    position: relative;
+  }
+  .app-graphic-content:before,
+  .app-graphic-content:after {
+    content: " ";
+    display: table;
+  }
+  .app-graphic-content:after {
+    clear: both;
+  }
+  .app-graphic-content:before,
+  .app-graphic-content:after {
+    content: " ";
+    display: table;
+  }
+  .app-graphic-content:after {
+    clear: both;
+  }
+  .app-graphic-content .app-graphic-ctrl {
+    position: absolute;
+    height: 96%;
+    width: 100%;
+  }
+  .app-graphic-content .app-graphic-ctrl .app-graphic-previous,
+  .app-graphic-content .app-graphic-ctrl .app-graphic-next {
+    height: 100%;
+    display: block;
+    width: 5%;
+    position: absolute;
+  }
+  .app-graphic-content .app-graphic-ctrl .app-graphic-previous:hover:after,
+  .app-graphic-content .app-graphic-ctrl .app-graphic-next:hover:after {
+    opacity: 1;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: pulse;
+    animation-name: pulse;
+  }
+  .app-graphic-content .app-graphic-ctrl .app-graphic-previous:after,
+  .app-graphic-content .app-graphic-ctrl .app-graphic-next:after {
+    display: block;
+    background-color: #565559;
+    font-size: 44px;
+    text-align: center;
+    padding: 57% 0px;
+    color: white;
+    position: absolute;
+    top: 35%;
+    width: 100%;
+    cursor: pointer;
+    opacity: 0.5;
+  }
+  .app-graphic-content .app-graphic-ctrl .app-graphic-show {
+    height: 100%;
+    display: block;
+    width: 90%;
+    position: absolute;
+    margin: 0 auto;
+    left: 5%;
+  }
+  .app-graphic-content .app-graphic-ctrl .app-graphic-show:after {
+    font-family: "FontAwesome";
+    content: "\F065";
+  }
+  .app-graphic-content .app-graphic-ctrl .app-graphic-show:hover:after {
+    display: block;
+  }
+  .app-graphic-content .app-graphic-ctrl .app-graphic-show:after {
+    display: none;
+    font-size: 44px;
+    color: #47464A;
+    padding: 5% 0px;
+    position: absolute;
+    top: 40%;
+    width: 20%;
+    left: 38%;
+    text-align: center;
+    cursor: pointer;
+    opacity: 0.5;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: pulse;
+    animation-name: pulse;
+  }
+  .app-graphic-content .app-graphic-ctrl .app-graphic-previous {
+    left: 0px;
+  }
+  .app-graphic-content .app-graphic-ctrl .app-graphic-previous:after {
+    font-family: "FontAwesome";
+    content: "\F104";
+  }
+  .app-graphic-content .app-graphic-ctrl .app-graphic-next {
+    right: 0px;
+  }
+  .app-graphic-content .app-graphic-ctrl .app-graphic-next:after {
+    font-family: "FontAwesome";
+    content: "\F105";
+  }
+  .app-graphic-content .app-graphic-content-nav {
+    height: 440px;
+    overflow: hidden;
+    background-color: #C0504D;
+    text-align: center;
+    margin-top: 5%;
+  }
+  .app-graphic-content .app-graphic-content-nav .app-graphic-item {
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+  }
+  .app-graphic-content .grapc-content-caption {
+    margin-top: 14px;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  .app-graphic-content .grapc-content-caption .app-legenda .label span:first-child:after {
+    content: " / ";
+  }
+  .app-graphic-content .grapc-content-caption .app-legenda:after {
+    content: " - ";
+    margin-left: 5px;
+  }
 }
 @media (min-width: 1200px) {
   .app-cap-abertura {
@@ -16897,6 +17292,137 @@ body,
     font-weight: bold;
     margin-top: 7px;
     line-height: normal;
+  }
+  .app-graphic-content {
+    width: 116%;
+    display: block;
+    margin-bottom: 25px;
+    margin-left: -16%;
+    position: relative;
+  }
+  .app-graphic-content:before,
+  .app-graphic-content:after {
+    content: " ";
+    display: table;
+  }
+  .app-graphic-content:after {
+    clear: both;
+  }
+  .app-graphic-content:before,
+  .app-graphic-content:after {
+    content: " ";
+    display: table;
+  }
+  .app-graphic-content:after {
+    clear: both;
+  }
+  .app-graphic-content .app-graphic-ctrl {
+    position: absolute;
+    height: 96%;
+    width: 100%;
+  }
+  .app-graphic-content .app-graphic-ctrl .app-graphic-previous,
+  .app-graphic-content .app-graphic-ctrl .app-graphic-next {
+    height: 100%;
+    display: block;
+    width: 5%;
+    position: absolute;
+  }
+  .app-graphic-content .app-graphic-ctrl .app-graphic-previous:hover:after,
+  .app-graphic-content .app-graphic-ctrl .app-graphic-next:hover:after {
+    opacity: 1;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: pulse;
+    animation-name: pulse;
+  }
+  .app-graphic-content .app-graphic-ctrl .app-graphic-previous:after,
+  .app-graphic-content .app-graphic-ctrl .app-graphic-next:after {
+    display: block;
+    background-color: #565559;
+    font-size: 74px;
+    text-align: center;
+    padding: 57% 0px;
+    color: white;
+    position: absolute;
+    top: 35%;
+    width: 100%;
+    cursor: pointer;
+    opacity: 0.5;
+  }
+  .app-graphic-content .app-graphic-ctrl .app-graphic-show {
+    height: 100%;
+    display: block;
+    width: 90%;
+    position: absolute;
+    margin: 0 auto;
+    left: 5%;
+  }
+  .app-graphic-content .app-graphic-ctrl .app-graphic-show:after {
+    font-family: "FontAwesome";
+    content: "\F065";
+  }
+  .app-graphic-content .app-graphic-ctrl .app-graphic-show:hover:after {
+    display: block;
+  }
+  .app-graphic-content .app-graphic-ctrl .app-graphic-show:after {
+    display: none;
+    font-size: 74px;
+    color: #47464A;
+    padding: 5% 0px;
+    position: absolute;
+    top: 40%;
+    width: 20%;
+    left: 38%;
+    text-align: center;
+    cursor: pointer;
+    opacity: 0.5;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: pulse;
+    animation-name: pulse;
+  }
+  .app-graphic-content .app-graphic-ctrl .app-graphic-previous {
+    left: 0px;
+  }
+  .app-graphic-content .app-graphic-ctrl .app-graphic-previous:after {
+    font-family: "FontAwesome";
+    content: "\F104";
+  }
+  .app-graphic-content .app-graphic-ctrl .app-graphic-next {
+    right: 0px;
+  }
+  .app-graphic-content .app-graphic-ctrl .app-graphic-next:after {
+    font-family: "FontAwesome";
+    content: "\F105";
+  }
+  .app-graphic-content .app-graphic-content-nav {
+    height: 640px;
+    overflow: hidden;
+    background-color: #C0504D;
+    text-align: center;
+    margin-top: 5%;
+  }
+  .app-graphic-content .app-graphic-content-nav .app-graphic-item {
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+  }
+  .app-graphic-content .grapc-content-caption {
+    margin-top: 14px;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  .app-graphic-content .grapc-content-caption .app-legenda .label span:first-child:after {
+    content: " / ";
+  }
+  .app-graphic-content .grapc-content-caption .app-legenda:after {
+    content: " - ";
+    margin-left: 5px;
   }
 }
 .app-ref-content p {
