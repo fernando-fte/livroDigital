@@ -21,13 +21,13 @@
 		//** Content para o titulo
 		.app-cap-abertura-titulo {
 			padding: 30px 0px;
-    		padding-right: 7%;
+			padding-right: 7%;
 		}
 
 		//** Content para o autor
 		.app-cap-abertura-autor {
 			padding-bottom: 7px;
-    		padding-right: 7%;
+			padding-right: 7%;
 		}
 	}
 
@@ -42,11 +42,11 @@
 		//** Itens principais do capítulo
 		.section-page-item {
 
-		    border-bottom: 1px dashed @app-cor-padrao-fraco-20;
-		    padding-bottom: 7%;
-		    margin-bottom: 7%;
-		    overflow-x: hidden;
-		    max-width: 100%;
+			border-bottom: 1px dashed @app-cor-padrao-fraco-20;
+			padding-bottom: 7%;
+			margin-bottom: 7%;
+			overflow-x: hidden;
+			max-width: 100%;
 			margin-left: @item-left; // 15%;
 			margin-right: @item-right; // 5%;
 			padding-left: @item-left-in; // 11%;
@@ -88,8 +88,8 @@
 		}
 
 		.app-box-content {
-	        width: @width-content; // 75%;
-		    padding: 10px;
+			width: @width-content; // 75%;
+			padding: 10px;
 			float: right;
 			background-color: @app-cor-padrao-fraco;
 		}
@@ -137,18 +137,16 @@
 .app-graphic-content {
 	.clearfix();
 
-	border: 1px solid red;
-	font-family: "PF BeauSans Pro";
 	width: 116%;
 	display: block;
 	margin-bottom: 25px;
 	margin-left: -16%;
-    position: relative;
+	position: relative;
 
 	.app-graphic-ctrl {
-	    position: absolute;
-	    height: 100%;
-	    width: 100%;
+		position: absolute;
+		height: 96%;
+		width: 100%;
 
 		.app-graphic-previous, .app-graphic-next {
 			height: 100%;
@@ -156,6 +154,7 @@
 			width: 5%;
 			position: absolute;
 
+			&:hover:after { opacity: 1; .app-play-pulse();}
 			&:after {
 				display: block;
 				background-color: rgb(86, 85, 89);
@@ -168,6 +167,35 @@
 				top: 35%;
 				width: 100%;
 				cursor: pointer;
+				opacity: 0.5;
+			}
+		}
+
+		.app-graphic-show {
+
+			height: 100%;
+			display: block;
+			width: 90%;
+			position: absolute;
+			margin: 0 auto;
+			left: 5%;
+
+			.app-var-ico (@app-ico-expande);
+
+			&:hover:after { display: block; }
+			&:after {
+				display: none;
+				font-size: 74px;
+				color: @app-cor-preto-80;
+				padding: 5% 0px;
+				position: absolute;
+				top: 40%;
+				width: 20%;
+				left: 38%;
+				text-align: center;
+				cursor: pointer;
+				opacity: 0.5;
+				.app-play-pulse();
 			}
 		}
 
@@ -178,27 +206,28 @@
 
 		.app-graphic-next {
 			right: 0px;
-		    .app-var-ico (@app-ico-v-direita);
+			.app-var-ico (@app-ico-v-direita);
 		}
 	}
 
 	.app-graphic-content-nav {
 
-		border: 1px solid red;
-
-
+		height: 640px;
+		overflow: hidden;
+		background-color: @app-cor-padrao-fraco;
+		text-align: center;
+		margin-top: 5%;
 
 		.app-graphic-item {
-		    border: 1px solid red;
-		    width: 100%;
-		    display: block;
+			height: 100%;
+			display: block;
+			margin: 0 auto;
 		}
 
 	}
 
 	.grapc-content-caption {
-
-		border: 1px solid red;
+		margin-top: 14px;
 
 		.app-legenda {
 

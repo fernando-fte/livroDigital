@@ -10,6 +10,7 @@
 
 			"content":[
 				{"html":"span", "class":["app-graphic-previous"]},
+				{"html":"span", "class":["app-graphic-show"]},
 				{"html":"span", "class":["app-graphic-next"]}
 			]
 		},
