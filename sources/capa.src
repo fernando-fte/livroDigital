@@ -18,7 +18,7 @@
             "cover-fachada",
             "app-text-livro"
           ],
-          "content": "Finanças Empresariais"
+          "content": "Fernando you are getting this message as free service for being a user of the PHP Classes site"
         },
         {
           "html": "span",
@@ -46,7 +46,8 @@
       "class": [
         "cover-btn-iniciar",
         "app-ico-iniciar",
-        "col-md-offset-5 col-md-2"
+        "col-lg-2 col-md-3 col-sm-4",
+        "col-lg-offset-5 col-md-offset-4 col-sm-offset-3"
       ]
     },
     {
