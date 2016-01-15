@@ -1,13 +1,18 @@
 .app-variant-sum-responsive (@width-contents, @width-itens) {
-	//== COnfigura pagina do sumario
+
+	//== Contrents do suma´rio
+	.app-sum-scroll {
+		padding-left: 5px;
+		padding-right: 5px;
+		min-height: 100%;
+	}
+
+	//== COnfigura tramanho do scroll do sumario
 	.app-sum-contents {
 		.clearfix();
 		min-height: 100%;
 		// width: 2490px; // R:LG
 		width: @width-contents; // R:LG
-
-		padding-left: 5px;
-		padding-right: 5px;
 	}
 
 	//** Configura blocos de itens do sumario
@@ -42,17 +47,17 @@
 	.app-sum-section-sections {
 
 		background-color: @app-cor-padrao-10;
-	    padding-top: 35px;
-	    padding-bottom: 35px;
+		padding-top: 35px;
+		padding-bottom: 35px;
 		// margin-left: 20px;
 
-	    &:before {display: none;}
+		&:before {display: none;}
 
-	    .app-sum-section-header {
-	    	margin-bottom: 0px;
-	    	margin-top: 35px;
-	    	&:first-child {margin-top: 0px;}
-	    }
+		.app-sum-section-header {
+			margin-bottom: 0px;
+			margin-top: 35px;
+			&:first-child {margin-top: 0px;}
+		}
 	}
 
 
@@ -100,14 +105,14 @@
 	//** Quando for um sub item
 	.app-sum-section-sub-item {
 
-	    border-color: @app-cor-preto-60;
-	    border-left-color: @app-cor-padrao-10;
-	    &:last-child { border-bottom: 0px; }
+		border-color: @app-cor-preto-60;
+		border-left-color: @app-cor-padrao-10;
+		&:last-child { border-bottom: 0px; }
 
-	    // configrua cor do botão
-	    &:before { color: @app-cor-padrao-80; }
+		// configrua cor do botão
+		&:before { color: @app-cor-padrao-80; }
 
-	    // Qunado clicado
+		// Qunado clicado
 		&:hover { border-left-color: @app-cor-padrao-40; }
 	}
 
@@ -128,12 +133,12 @@
 
 	.app-sum-btn-icon-sub {
 		border-left: 1px solid @app-cor-padrao-80;
-	    padding: 2px;
-	    text-align: center;
+		padding: 2px;
+		text-align: center;
 		color: @app-cor-padrao;
-	    line-height: 12px;
-	    position: absolute;
-	    bottom: 4px;
+		line-height: 12px;
+		position: absolute;
+		bottom: 4px;
 
 		.app-var-ico(@app-ico-v-baixo);
 
@@ -159,7 +164,7 @@
 	@width-contents: 100%;
 	.app-variant-sum-responsive (@width-contents, @width-itens);
 
-	.app-sum-contents { padding-left: 5%; padding-right: 5%; }
+	.app-sum-scroll { padding-left: 5%; padding-right: 5%; }
 	.app-sum-section { margin-bottom: 10%; }
 	.app-sum-section-sections { border-radius: 10px; }
 }
@@ -170,7 +175,7 @@
 	@width-contents: 100%;
 	.app-variant-sum-responsive (@width-contents, @width-itens);
 
-	.app-sum-contents { padding-left: 10%; padding-right: 10%; }
+	.app-sum-scroll { padding-left: 10%; padding-right: 10%; }
 	.app-sum-section { margin-bottom: 10%; }
 	.app-sum-section-sections { border-radius: 10px; }
 }

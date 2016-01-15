@@ -14940,11 +14940,14 @@ body,
   }
 }
 @media (max-width: 479px) {
+  .app-sum-scroll {
+    padding-left: 5px;
+    padding-right: 5px;
+    min-height: 100%;
+  }
   .app-sum-contents {
     min-height: 100%;
     width: 100%;
-    padding-left: 5px;
-    padding-right: 5px;
   }
   .app-sum-contents:before,
   .app-sum-contents:after {
@@ -15132,7 +15135,7 @@ body,
   .app-sum-item-new * {
     color: #FFFFFF;
   }
-  .app-sum-contents {
+  .app-sum-scroll {
     padding-left: 5%;
     padding-right: 5%;
   }
@@ -15144,11 +15147,14 @@ body,
   }
 }
 @media (min-width: 480px) {
+  .app-sum-scroll {
+    padding-left: 5px;
+    padding-right: 5px;
+    min-height: 100%;
+  }
   .app-sum-contents {
     min-height: 100%;
     width: 100%;
-    padding-left: 5px;
-    padding-right: 5px;
   }
   .app-sum-contents:before,
   .app-sum-contents:after {
@@ -15336,7 +15342,7 @@ body,
   .app-sum-item-new * {
     color: #FFFFFF;
   }
-  .app-sum-contents {
+  .app-sum-scroll {
     padding-left: 10%;
     padding-right: 10%;
   }
@@ -15348,11 +15354,14 @@ body,
   }
 }
 @media (min-width: 768px) {
+  .app-sum-scroll {
+    padding-left: 5px;
+    padding-right: 5px;
+    min-height: 100%;
+  }
   .app-sum-contents {
     min-height: 100%;
     width: 1600px;
-    padding-left: 5px;
-    padding-right: 5px;
   }
   .app-sum-contents:before,
   .app-sum-contents:after {
@@ -15542,11 +15551,14 @@ body,
   }
 }
 @media (min-width: 992px) {
+  .app-sum-scroll {
+    padding-left: 5px;
+    padding-right: 5px;
+    min-height: 100%;
+  }
   .app-sum-contents {
     min-height: 100%;
     width: 1800px;
-    padding-left: 5px;
-    padding-right: 5px;
   }
   .app-sum-contents:before,
   .app-sum-contents:after {
@@ -15736,11 +15748,14 @@ body,
   }
 }
 @media (min-width: 1200px) {
+  .app-sum-scroll {
+    padding-left: 5px;
+    padding-right: 5px;
+    min-height: 100%;
+  }
   .app-sum-contents {
     min-height: 100%;
     width: 2200px;
-    padding-left: 5px;
-    padding-right: 5px;
   }
   .app-sum-contents:before,
   .app-sum-contents:after {
