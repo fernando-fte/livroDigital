@@ -15087,7 +15087,7 @@ body,
   .app-sum-section-sub-item:hover {
     border-left-color: #D9A1A1;
   }
-  .app-display {
+  .app-sum-section-item.app-display {
     -webkit-animation-duration: 1s;
     animation-duration: 1s;
     -webkit-animation-fill-mode: both;
@@ -15099,10 +15099,10 @@ body,
     padding-bottom: 5px;
     background-color: #F6E7E7;
   }
-  .app-display:hover {
+  .app-sum-section-item.app-display:hover {
     background-color: #F6E7E7;
   }
-  .app-display .app-sum-section-sub {
+  .app-sum-section-item.app-display .app-sum-section-sub {
     display: block;
     -webkit-animation-duration: 1s;
     animation-duration: 1s;
@@ -15111,15 +15111,15 @@ body,
     -webkit-animation-name: slideInDown;
     animation-name: slideInDown;
   }
-  .app-display .app-sum-btn-icon-sub {
+  .app-sum-section-item.app-display .app-sum-btn-icon-sub {
     bottom: inherit;
     top: 4px;
   }
-  .app-display .app-sum-btn-icon-sub:after {
+  .app-sum-section-item.app-display .app-sum-btn-icon-sub:after {
     font-family: "FontAwesome";
     content: "\F106";
   }
-  .app-no-display {
+  .app-sum-section-item.app-no-display {
     -webkit-animation-duration: 1s;
     animation-duration: 1s;
     -webkit-animation-fill-mode: both;
@@ -15307,7 +15307,7 @@ body,
   .app-sum-section-sub-item:hover {
     border-left-color: #D9A1A1;
   }
-  .app-display {
+  .app-sum-section-item.app-display {
     -webkit-animation-duration: 1s;
     animation-duration: 1s;
     -webkit-animation-fill-mode: both;
@@ -15319,10 +15319,10 @@ body,
     padding-bottom: 5px;
     background-color: #F6E7E7;
   }
-  .app-display:hover {
+  .app-sum-section-item.app-display:hover {
     background-color: #F6E7E7;
   }
-  .app-display .app-sum-section-sub {
+  .app-sum-section-item.app-display .app-sum-section-sub {
     display: block;
     -webkit-animation-duration: 1s;
     animation-duration: 1s;
@@ -15331,15 +15331,15 @@ body,
     -webkit-animation-name: slideInDown;
     animation-name: slideInDown;
   }
-  .app-display .app-sum-btn-icon-sub {
+  .app-sum-section-item.app-display .app-sum-btn-icon-sub {
     bottom: inherit;
     top: 4px;
   }
-  .app-display .app-sum-btn-icon-sub:after {
+  .app-sum-section-item.app-display .app-sum-btn-icon-sub:after {
     font-family: "FontAwesome";
     content: "\F106";
   }
-  .app-no-display {
+  .app-sum-section-item.app-no-display {
     -webkit-animation-duration: 1s;
     animation-duration: 1s;
     -webkit-animation-fill-mode: both;
@@ -15527,7 +15527,7 @@ body,
   .app-sum-section-sub-item:hover {
     border-left-color: #D9A1A1;
   }
-  .app-display {
+  .app-sum-section-item.app-display {
     -webkit-animation-duration: 1s;
     animation-duration: 1s;
     -webkit-animation-fill-mode: both;
@@ -15539,10 +15539,10 @@ body,
     padding-bottom: 5px;
     background-color: #F6E7E7;
   }
-  .app-display:hover {
+  .app-sum-section-item.app-display:hover {
     background-color: #F6E7E7;
   }
-  .app-display .app-sum-section-sub {
+  .app-sum-section-item.app-display .app-sum-section-sub {
     display: block;
     -webkit-animation-duration: 1s;
     animation-duration: 1s;
@@ -15551,15 +15551,15 @@ body,
     -webkit-animation-name: slideInDown;
     animation-name: slideInDown;
   }
-  .app-display .app-sum-btn-icon-sub {
+  .app-sum-section-item.app-display .app-sum-btn-icon-sub {
     bottom: inherit;
     top: 4px;
   }
-  .app-display .app-sum-btn-icon-sub:after {
+  .app-sum-section-item.app-display .app-sum-btn-icon-sub:after {
     font-family: "FontAwesome";
     content: "\F106";
   }
-  .app-no-display {
+  .app-sum-section-item.app-no-display {
     -webkit-animation-duration: 1s;
     animation-duration: 1s;
     -webkit-animation-fill-mode: both;
@@ -15737,7 +15737,7 @@ body,
   .app-sum-section-sub-item:hover {
     border-left-color: #D9A1A1;
   }
-  .app-display {
+  .app-sum-section-item.app-display {
     -webkit-animation-duration: 1s;
     animation-duration: 1s;
     -webkit-animation-fill-mode: both;
@@ -15749,10 +15749,10 @@ body,
     padding-bottom: 5px;
     background-color: #F6E7E7;
   }
-  .app-display:hover {
+  .app-sum-section-item.app-display:hover {
     background-color: #F6E7E7;
   }
-  .app-display .app-sum-section-sub {
+  .app-sum-section-item.app-display .app-sum-section-sub {
     display: block;
     -webkit-animation-duration: 1s;
     animation-duration: 1s;
@@ -15761,15 +15761,15 @@ body,
     -webkit-animation-name: slideInDown;
     animation-name: slideInDown;
   }
-  .app-display .app-sum-btn-icon-sub {
+  .app-sum-section-item.app-display .app-sum-btn-icon-sub {
     bottom: inherit;
     top: 4px;
   }
-  .app-display .app-sum-btn-icon-sub:after {
+  .app-sum-section-item.app-display .app-sum-btn-icon-sub:after {
     font-family: "FontAwesome";
     content: "\F106";
   }
-  .app-no-display {
+  .app-sum-section-item.app-no-display {
     -webkit-animation-duration: 1s;
     animation-duration: 1s;
     -webkit-animation-fill-mode: both;
@@ -15947,7 +15947,7 @@ body,
   .app-sum-section-sub-item:hover {
     border-left-color: #D9A1A1;
   }
-  .app-display {
+  .app-sum-section-item.app-display {
     -webkit-animation-duration: 1s;
     animation-duration: 1s;
     -webkit-animation-fill-mode: both;
@@ -15959,10 +15959,10 @@ body,
     padding-bottom: 5px;
     background-color: #F6E7E7;
   }
-  .app-display:hover {
+  .app-sum-section-item.app-display:hover {
     background-color: #F6E7E7;
   }
-  .app-display .app-sum-section-sub {
+  .app-sum-section-item.app-display .app-sum-section-sub {
     display: block;
     -webkit-animation-duration: 1s;
     animation-duration: 1s;
@@ -15971,15 +15971,15 @@ body,
     -webkit-animation-name: slideInDown;
     animation-name: slideInDown;
   }
-  .app-display .app-sum-btn-icon-sub {
+  .app-sum-section-item.app-display .app-sum-btn-icon-sub {
     bottom: inherit;
     top: 4px;
   }
-  .app-display .app-sum-btn-icon-sub:after {
+  .app-sum-section-item.app-display .app-sum-btn-icon-sub:after {
     font-family: "FontAwesome";
     content: "\F106";
   }
-  .app-no-display {
+  .app-sum-section-item.app-no-display {
     -webkit-animation-duration: 1s;
     animation-duration: 1s;
     -webkit-animation-fill-mode: both;
