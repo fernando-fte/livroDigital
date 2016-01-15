@@ -15130,27 +15130,16 @@ body,
     animation-name: flipInX;
   }
   .app-sum-btn-icon-sub {
-    border-left: 1px solid #B44243;
+    background-color: #B44243;
     padding: 2px;
     text-align: center;
-    color: #A11314;
-    line-height: 12px;
+    color: #FFFFFF;
+    line-height: 18px;
     position: absolute;
-    bottom: 4px;
   }
   .app-sum-btn-icon-sub:after {
     font-family: "FontAwesome";
     content: "\F107";
-  }
-  .app-sum-btn-icon-sub:hover:after {
-    -webkit-animation-duration: 1s;
-    animation-duration: 1s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-    -webkit-animation-name: bounce;
-    animation-name: bounce;
-    -webkit-transform-origin: center bottom;
-    transform-origin: center bottom;
   }
   .app-sum-item-new {
     border-color: #A11314;
@@ -15361,27 +15350,16 @@ body,
     animation-name: flipInX;
   }
   .app-sum-btn-icon-sub {
-    border-left: 1px solid #B44243;
+    background-color: #B44243;
     padding: 2px;
     text-align: center;
-    color: #A11314;
-    line-height: 12px;
+    color: #FFFFFF;
+    line-height: 18px;
     position: absolute;
-    bottom: 4px;
   }
   .app-sum-btn-icon-sub:after {
     font-family: "FontAwesome";
     content: "\F107";
-  }
-  .app-sum-btn-icon-sub:hover:after {
-    -webkit-animation-duration: 1s;
-    animation-duration: 1s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-    -webkit-animation-name: bounce;
-    animation-name: bounce;
-    -webkit-transform-origin: center bottom;
-    transform-origin: center bottom;
   }
   .app-sum-item-new {
     border-color: #A11314;
@@ -15592,27 +15570,16 @@ body,
     animation-name: flipInX;
   }
   .app-sum-btn-icon-sub {
-    border-left: 1px solid #B44243;
+    background-color: #B44243;
     padding: 2px;
     text-align: center;
-    color: #A11314;
-    line-height: 12px;
+    color: #FFFFFF;
+    line-height: 18px;
     position: absolute;
-    bottom: 4px;
   }
   .app-sum-btn-icon-sub:after {
     font-family: "FontAwesome";
     content: "\F107";
-  }
-  .app-sum-btn-icon-sub:hover:after {
-    -webkit-animation-duration: 1s;
-    animation-duration: 1s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-    -webkit-animation-name: bounce;
-    animation-name: bounce;
-    -webkit-transform-origin: center bottom;
-    transform-origin: center bottom;
   }
   .app-sum-item-new {
     border-color: #A11314;
@@ -15813,27 +15780,16 @@ body,
     animation-name: flipInX;
   }
   .app-sum-btn-icon-sub {
-    border-left: 1px solid #B44243;
+    background-color: #B44243;
     padding: 2px;
     text-align: center;
-    color: #A11314;
-    line-height: 12px;
+    color: #FFFFFF;
+    line-height: 18px;
     position: absolute;
-    bottom: 4px;
   }
   .app-sum-btn-icon-sub:after {
     font-family: "FontAwesome";
     content: "\F107";
-  }
-  .app-sum-btn-icon-sub:hover:after {
-    -webkit-animation-duration: 1s;
-    animation-duration: 1s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-    -webkit-animation-name: bounce;
-    animation-name: bounce;
-    -webkit-transform-origin: center bottom;
-    transform-origin: center bottom;
   }
   .app-sum-item-new {
     border-color: #A11314;
@@ -16034,27 +15990,16 @@ body,
     animation-name: flipInX;
   }
   .app-sum-btn-icon-sub {
-    border-left: 1px solid #B44243;
+    background-color: #B44243;
     padding: 2px;
     text-align: center;
-    color: #A11314;
-    line-height: 12px;
+    color: #FFFFFF;
+    line-height: 18px;
     position: absolute;
-    bottom: 4px;
   }
   .app-sum-btn-icon-sub:after {
     font-family: "FontAwesome";
     content: "\F107";
-  }
-  .app-sum-btn-icon-sub:hover:after {
-    -webkit-animation-duration: 1s;
-    animation-duration: 1s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-    -webkit-animation-name: bounce;
-    animation-name: bounce;
-    -webkit-transform-origin: center bottom;
-    transform-origin: center bottom;
   }
   .app-sum-item-new {
     border-color: #A11314;
