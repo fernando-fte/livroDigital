@@ -119,16 +119,24 @@
 	//** Exibe sub itens
 	.app-display {
 
+		.app-play-flipInY();
+
 		// Configrua quando estiver exibindo o sub item
 		padding-bottom: 5px;
 		background-color: @app-cor-padrao-10;
 		&:hover { background-color: @app-cor-padrao-10; }
 
 		// Exibe o box do sub item
-		.app-sum-section-sub {display: block;}
+		.app-sum-section-sub {display: block; .app-play-slideInDown();}
 
 		// Configura botão sub
 		.app-sum-btn-icon-sub { .app-var-ico(@app-ico-v-cima); bottom: inherit; top: 4px;}
+	}
+
+	//** Oculta sub itens
+	.app-no-display {
+
+		.app-play-flipInX();
 	}
 
 	.app-sum-btn-icon-sub {

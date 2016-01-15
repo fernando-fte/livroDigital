@@ -15088,6 +15088,14 @@ body,
     border-left-color: #D9A1A1;
   }
   .app-display {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-backface-visibility: visible !important;
+    backface-visibility: visible !important;
+    -webkit-animation-name: flipInY;
+    animation-name: flipInY;
     padding-bottom: 5px;
     background-color: #F6E7E7;
   }
@@ -15096,6 +15104,12 @@ body,
   }
   .app-display .app-sum-section-sub {
     display: block;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: slideInDown;
+    animation-name: slideInDown;
   }
   .app-display .app-sum-btn-icon-sub {
     bottom: inherit;
@@ -15104,6 +15118,16 @@ body,
   .app-display .app-sum-btn-icon-sub:after {
     font-family: "FontAwesome";
     content: "\F106";
+  }
+  .app-no-display {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-backface-visibility: visible !important;
+    backface-visibility: visible !important;
+    -webkit-animation-name: flipInX;
+    animation-name: flipInX;
   }
   .app-sum-btn-icon-sub {
     border-left: 1px solid #B44243;
@@ -15295,6 +15319,14 @@ body,
     border-left-color: #D9A1A1;
   }
   .app-display {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-backface-visibility: visible !important;
+    backface-visibility: visible !important;
+    -webkit-animation-name: flipInY;
+    animation-name: flipInY;
     padding-bottom: 5px;
     background-color: #F6E7E7;
   }
@@ -15303,6 +15335,12 @@ body,
   }
   .app-display .app-sum-section-sub {
     display: block;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: slideInDown;
+    animation-name: slideInDown;
   }
   .app-display .app-sum-btn-icon-sub {
     bottom: inherit;
@@ -15311,6 +15349,16 @@ body,
   .app-display .app-sum-btn-icon-sub:after {
     font-family: "FontAwesome";
     content: "\F106";
+  }
+  .app-no-display {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-backface-visibility: visible !important;
+    backface-visibility: visible !important;
+    -webkit-animation-name: flipInX;
+    animation-name: flipInX;
   }
   .app-sum-btn-icon-sub {
     border-left: 1px solid #B44243;
@@ -15502,6 +15550,14 @@ body,
     border-left-color: #D9A1A1;
   }
   .app-display {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-backface-visibility: visible !important;
+    backface-visibility: visible !important;
+    -webkit-animation-name: flipInY;
+    animation-name: flipInY;
     padding-bottom: 5px;
     background-color: #F6E7E7;
   }
@@ -15510,6 +15566,12 @@ body,
   }
   .app-display .app-sum-section-sub {
     display: block;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: slideInDown;
+    animation-name: slideInDown;
   }
   .app-display .app-sum-btn-icon-sub {
     bottom: inherit;
@@ -15518,6 +15580,16 @@ body,
   .app-display .app-sum-btn-icon-sub:after {
     font-family: "FontAwesome";
     content: "\F106";
+  }
+  .app-no-display {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-backface-visibility: visible !important;
+    backface-visibility: visible !important;
+    -webkit-animation-name: flipInX;
+    animation-name: flipInX;
   }
   .app-sum-btn-icon-sub {
     border-left: 1px solid #B44243;
@@ -15699,6 +15771,14 @@ body,
     border-left-color: #D9A1A1;
   }
   .app-display {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-backface-visibility: visible !important;
+    backface-visibility: visible !important;
+    -webkit-animation-name: flipInY;
+    animation-name: flipInY;
     padding-bottom: 5px;
     background-color: #F6E7E7;
   }
@@ -15707,6 +15787,12 @@ body,
   }
   .app-display .app-sum-section-sub {
     display: block;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: slideInDown;
+    animation-name: slideInDown;
   }
   .app-display .app-sum-btn-icon-sub {
     bottom: inherit;
@@ -15715,6 +15801,16 @@ body,
   .app-display .app-sum-btn-icon-sub:after {
     font-family: "FontAwesome";
     content: "\F106";
+  }
+  .app-no-display {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-backface-visibility: visible !important;
+    backface-visibility: visible !important;
+    -webkit-animation-name: flipInX;
+    animation-name: flipInX;
   }
   .app-sum-btn-icon-sub {
     border-left: 1px solid #B44243;
@@ -15896,6 +15992,14 @@ body,
     border-left-color: #D9A1A1;
   }
   .app-display {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-backface-visibility: visible !important;
+    backface-visibility: visible !important;
+    -webkit-animation-name: flipInY;
+    animation-name: flipInY;
     padding-bottom: 5px;
     background-color: #F6E7E7;
   }
@@ -15904,6 +16008,12 @@ body,
   }
   .app-display .app-sum-section-sub {
     display: block;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: slideInDown;
+    animation-name: slideInDown;
   }
   .app-display .app-sum-btn-icon-sub {
     bottom: inherit;
@@ -15912,6 +16022,16 @@ body,
   .app-display .app-sum-btn-icon-sub:after {
     font-family: "FontAwesome";
     content: "\F106";
+  }
+  .app-no-display {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-backface-visibility: visible !important;
+    backface-visibility: visible !important;
+    -webkit-animation-name: flipInX;
+    animation-name: flipInX;
   }
   .app-sum-btn-icon-sub {
     border-left: 1px solid #B44243;
