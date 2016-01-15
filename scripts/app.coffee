@@ -159,19 +159,20 @@ $.appCtrl.togo = (post) ->
 	return temp
 
 $.appCtrl.display = (post) ->
-	#// {{"display":{"._.required":false,"._.list":["put","who","toogle"],"._.type":["array"],"put":{"._.//":"O parametro rebe uma ID ou uma classe a ser aplicado o display","._.required":true,"._.type":["string"]},"who":{"._.//":"Define onde sera aplicado o parametro","._.required":false,"._.type":["boolean"],"._.exacly":{"string":["closset","child","this"]}},"toogle":{"._.//":"Parametro para alternar o display caso esse esteja ativo, pode ser classe ou ID","._.required":false,"._.type":["array"]}}}
+	# {"display":{"._.required":false,"._.list":["put","who","toogle"],"._.type":["array"],"put":{"._.//":"Define o seletor a receber os parametros app-display, pode receber um #ID ou .class","._.required":true,"._.type":["string"]},"who":{"._.//":"Define onde sera encontrado o seletor de @{put} para aplicar os parametros","._.required":false,"._.type":["boolean"],"._.exacly":{"string":["closset","child","this"]}},"toogle":{"._.//":"Define um grupo para ser removido os parametros app-display, deve receber um #ID ou .class","._.required":false,"._.type":["array"],"._.exacly":{"array":"string"}},"no":{"._.//":"Define o parametro app-no-display no seletor de @{put}","._.required":false,"._.type":["bolean"],"._.exacly":{"bolean":"true"}},"inverse":{"._.//":"Define uma ação de ativar/desativar nos parametros de app-display, no mesmo acionador @_{this}","._.required":false,"._.type":["bolean"],"._.exacly":{"bolean":"true"}}}}
 	temp = {'_proccess':{'classe_base':null, '_true':false}, '_erro':{'_true':false}, '_warning':{'_true':false}, '_done':{'_true':false}}
-
-	# define classe base
-	temp.classe_base = 'app-display';
-
-	# caso o display seja removido
-	if post.app.display.no
-		# muda classe base
-		temp.classe_base = 'app-no-display';
 
 	# console.log post
 	$(post.this).click ->
+
+		# define classe base
+		temp.classe_base = 'app-display';
+
+		# caso o display seja removido
+		if post.app.display.no
+			# muda classe base
+			temp.classe_base = 'app-no-display';
+
 		# caso o item deva ser o unico a ser exibido, valida se existe uma lista a ser oculta
 		if post.app.display.toogle
 			i = 0
@@ -199,6 +200,17 @@ $.appCtrl.display = (post) ->
 			when 'all'
 				$(post.app.display.put).addClass(temp.classe_base)
 				temp._done = true
+
+		# configrua inversão altomática da ação do botão
+		if post.app.display.inverse
+			
+			# caso o display não esteja imprimindo
+			if !post.app.display.no
+				post.app.display.no = true
+
+			# caso o display esteja imprimindo
+			else if post.app.display.no
+				post.app.display.no = false
 
 	return temp
 

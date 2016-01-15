@@ -127,12 +127,12 @@
         '_true': false
       }
     };
-    temp.classe_base = 'app-display';
-    if (post.app.display.no) {
-      temp.classe_base = 'app-no-display';
-    }
     $(post["this"]).click(function() {
       var i;
+      temp.classe_base = 'app-display';
+      if (post.app.display.no) {
+        temp.classe_base = 'app-no-display';
+      }
       if (post.app.display.toogle) {
         i = 0;
         while (i < post.app.display.toogle.length) {
@@ -144,16 +144,26 @@
       switch (post.app.display.who) {
         case 'this':
           $(post["this"]).addClass(temp.classe_base);
-          return temp._done = true;
+          temp._done = true;
+          break;
         case 'closest':
           $($(post["this"]).closest(post.app.display.put)).addClass(temp.classe_base);
-          return temp._done = true;
+          temp._done = true;
+          break;
         case 'child':
           $($(post["this"]).find(post.app.display.put)).addClass(temp.classe_base);
-          return temp._done = true;
+          temp._done = true;
+          break;
         case 'all':
           $(post.app.display.put).addClass(temp.classe_base);
-          return temp._done = true;
+          temp._done = true;
+      }
+      if (post.app.display.inverse) {
+        if (!post.app.display.no) {
+          return post.app.display.no = true;
+        } else if (post.app.display.no) {
+          return post.app.display.no = false;
+        }
       }
     });
     return temp;
