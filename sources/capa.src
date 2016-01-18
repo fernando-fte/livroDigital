@@ -46,8 +46,8 @@
       "class": [
         "cover-btn-iniciar",
         "app-ico-iniciar",
-        "col-lg-2 col-md-3 col-sm-4",
-        "col-lg-offset-5 col-md-offset-4 col-sm-offset-3"
+        "col-lg-2 col-md-3 col-sm-4 col-ss-4",
+        "col-lg-offset-5 col-md-offset-4 col-sm-offset-3 col-ss-offset-3"
       ]
     },
     {
