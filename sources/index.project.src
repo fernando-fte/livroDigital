@@ -15,17 +15,26 @@
 		{
 			"html":"body",
 			"content":[
-				{"html":null, "._.action":{"._.import":{"source":"Capa", "content":"replace" }}},
 				{
+					"._.//":"Contents para o livro",
 					"html":"div",
-					"class":["app-contents", "add-scroll"],
-					"css":"background-color: rgba(251, 250, 186, 0.18);",
+					"class":"app-volume",
+					"id":"livroDigital",
+
 					"content":[
-						{"html":null, "._.action":{"._.import":{"source":"Menu", "content":"replace" }}},
-						{"html":null, "._.action":{"._.import":{"source":"Sumário", "content":"replace" }}},
-						{"html":null, "._.action":{"._.import":{"source":"Apresentação", "content":"replace" }}},
-						{"html":null, "._.action":{"._.import":{"source":"Unidade I", "content":"replace" }}},
-						{"html":null, "._.action":{"._.import":{"source":"Referências", "content":"replace" }}}
+						{"html":null, "._.action":{"._.import":{"source":"Capa", "content":"replace" }}},
+						{
+							"html":"div",
+							"class":["app-contents", "add-scroll"],
+							"css":"background-color: rgba(251, 250, 186, 0.18);",
+							"content":[
+								{"html":null, "._.action":{"._.import":{"source":"Menu", "content":"replace" }}},
+								{"html":null, "._.action":{"._.import":{"source":"Sumário", "content":"replace" }}},
+								{"html":null, "._.action":{"._.import":{"source":"Apresentação", "content":"replace" }}},
+								{"html":null, "._.action":{"._.import":{"source":"Unidade I", "content":"replace" }}},
+								{"html":null, "._.action":{"._.import":{"source":"Referências", "content":"replace" }}}
+							]
+						}
 					]
 				}
 			]
