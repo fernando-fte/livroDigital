@@ -11,7 +11,7 @@ html, body, .app-page { height: 100%; overflow: hidden;}
 
 .app-cover { background-size: cover; background-repeat: no-repeat; background-position: center; z-index: @app-zindex-cover}
 
-.contents { display: block; height: 100%; position: fixed; bottom: 0px; padding-top: 57px; width: 100%; z-index: @app-zindex-contents;}
+.app-contents { height: 100%; position: fixed; bottom: 0px; padding-top: 57px; width: 100%; z-index: @app-zindex-contents;}
 
 .page-out { .app-play-zoomOutLeft (); }
 
@@ -35,7 +35,7 @@ html, body, .app-page { height: 100%; overflow: hidden;}
 // Min Min grid (XS)
 @media (max-width: @screen-xs-max) {
 
-	.contents { padding-top: (@app-nav-height-xs + 13); } // TODO: COnfigruar proporção de tamanhos
+	.app-contents { padding-top: (@app-nav-height-xs + 13); } // TODO: COnfigruar proporção de tamanhos
 
 	.section-page { 
 		.app-variant-section-page (10%);
@@ -46,28 +46,28 @@ html, body, .app-page { height: 100%; overflow: hidden;}
  
 // Min Min grid (SS)
 @media (min-width: @screen-ss-min) { 
-	.contents { padding-top: (@app-nav-height-ss + 13); } // TODO: COnfigruar proporção de tamanhos
+	.app-contents { padding-top: (@app-nav-height-ss + 13); } // TODO: COnfigruar proporção de tamanhos
 
 	.section-page { .app-variant-section-page (10%) }
 }
 
 // Min grid (SM)
 @media (min-width: @screen-sm-min) { 
-	.contents { padding-top: (@app-nav-height-sm + 13); } // TODO: COnfigruar proporção de tamanhos
+	.app-contents { padding-top: (@app-nav-height-sm + 13); } // TODO: COnfigruar proporção de tamanhos
 
 	.section-page { .app-variant-section-page (10%) }
 }
 
 // Medium grid (MD)
 @media (min-width: @screen-md-min) { 
-	.contents { padding-top: (@app-nav-height-md + 13); } // TODO: COnfigruar proporção de tamanhos
+	.app-contents { padding-top: (@app-nav-height-md + 13); } // TODO: COnfigruar proporção de tamanhos
 
 	.section-page { .app-variant-section-page (10%) }
 }
 
 // Large grid (LG)
 @media (min-width: @screen-lg-min) { 
-	.contents { padding-top: (@app-nav-height-lg + 13); } 
+	.app-contents { padding-top: (@app-nav-height-lg + 13); } 
 
 	.section-page { .app-variant-section-page (10%) }
 }

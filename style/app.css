@@ -13757,15 +13757,18 @@ button.close {
 }
 .section-page,
 .section-page-item,
-.app-page {
+.app-page,
+.app-contents {
   display: none;
 }
 .section-page.app-display,
 .section-page-item.app-display,
 .app-page.app-display,
+.app-contents.app-display,
 .section-page.app-no-display,
 .section-page-item.app-no-display,
-.app-page.app-no-display {
+.app-page.app-no-display,
+.app-contents.app-no-display {
   display: block;
 }
 .section-page.app-display.after {
@@ -13853,6 +13856,26 @@ button.close {
   animation-fill-mode: both;
   -webkit-animation-name: zoomOutLeft;
   animation-name: zoomOutLeft;
+}
+.app-contents.app-display {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-backface-visibility: visible !important;
+  backface-visibility: visible !important;
+  -webkit-animation-name: flipInY;
+  animation-name: flipInY;
+}
+.app-contents.app-no-display {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-backface-visibility: visible !important;
+  backface-visibility: visible !important;
+  -webkit-animation-name: flipOutY;
+  animation-name: flipOutY;
 }
 .app-ico-menu:after {
   font-family: "FontAwesome";
@@ -14075,8 +14098,7 @@ body,
   background-position: center;
   z-index: 1300;
 }
-.contents {
-  display: block;
+.app-contents {
   height: 100%;
   position: fixed;
   bottom: 0px;
@@ -14109,7 +14131,7 @@ body,
   animation-name: fadeOutDown;
 }
 @media (max-width: 479px) {
-  .contents {
+  .app-contents {
     padding-top: 47px;
   }
   .section-page {
@@ -14119,7 +14141,7 @@ body,
   }
 }
 @media (min-width: 480px) {
-  .contents {
+  .app-contents {
     padding-top: 51px;
   }
   .section-page {
@@ -14127,7 +14149,7 @@ body,
   }
 }
 @media (min-width: 768px) {
-  .contents {
+  .app-contents {
     padding-top: 51px;
   }
   .section-page {
@@ -14135,7 +14157,7 @@ body,
   }
 }
 @media (min-width: 992px) {
-  .contents {
+  .app-contents {
     padding-top: 60px;
   }
   .section-page {
@@ -14143,7 +14165,7 @@ body,
   }
 }
 @media (min-width: 1200px) {
-  .contents {
+  .app-contents {
     padding-top: 60px;
   }
   .section-page {

@@ -21,8 +21,8 @@
 // .app-display // on
 
 
-//** Estiliza sections e a capa
-.section-page, .section-page-item, .app-page {
+//** Estiliza sections, capa e os conteudos
+.section-page, .section-page-item, .app-page, .app-contents {
 	//  Oculta
 	display: none;
 
@@ -72,7 +72,7 @@
 	}
 }
 
-//** Configura evento de pafinação para a capa
+//** Configura evento de paginação para a capa
 .app-page {
 
 	// Quando exibir
@@ -80,4 +80,14 @@
 
 	// Quando sair
 	&.app-no-display { .app-play-zoomOutLeft (); }
+}
+
+//** Configura evento de paginação para o contents
+.app-contents {
+
+	// Quando exibir
+	&.app-display { .app-play-flipInY (); }
+
+	// Quando sair
+	&.app-no-display { .app-play-flipOutY (); }
 }
