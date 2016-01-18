@@ -38,7 +38,8 @@
           "name": "app-ctrl",
           "value": {
             "togo": {
-              "cover": "sumario"
+              "to": "#sumario",
+              "cover":false
             }
           }
         }

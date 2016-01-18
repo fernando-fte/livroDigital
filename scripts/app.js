@@ -81,10 +81,14 @@
   };
 
   $.appCtrl.togo = function(post) {
-    var temp;
+    var section, temp;
     temp = {
       '_proccess': {
-        '_true': false
+        '_true': false,
+        'volume': {},
+        'capa': {},
+        'content': {},
+        'seletor': {}
       },
       '_erro': {
         '_true': false
@@ -96,19 +100,130 @@
         '_true': false
       }
     };
-    if (post.app.togo.id) {
-      temp._done = 'Ainda nao existe tratamento em ID';
-    } else if (post.app.togo.css) {
-      temp._done = 'Ainda nao existe tratamento em CLASS';
-    } else if (post.app.togo.cover) {
-      temp._proccess.cover = false;
-      $(post["this"]).click(function() {
-        $('.app-page').removeClass('app-display').queue(function() {
-          return $(this).addClass('app-no-display');
-        });
-        return temp._proccess.cover = true;
-      });
-    }
+    $(post["this"]).click(function() {
+      if (!post.app.togo.cover !== void 0) {
+        temp._proccess.volume = $(post["this"]).closest('.app-volume');
+        temp._proccess.capa = $(temp._proccess.volume).find('.app-cover');
+        temp._proccess.content = $(temp._proccess.volume).find('.app-contents');
+        if (post.app.togo.cover === true) {
+          temp._proccess.content.removeClass('app-display').queue(function(next) {
+            $(this).addClass('app-no-display').delay(1000).queue(function(next) {
+              $(this).removeClass('app-no-display');
+              return next();
+            });
+            temp._proccess.capa.removeClass('app-no-display').queue(function(next) {
+              $(this).addClass('app-display');
+              return next();
+            });
+            return next();
+          });
+        }
+        if (post.app.togo.cover === false) {
+          temp._proccess.capa.removeClass('app-display').queue(function(next) {
+            $(this).addClass('app-no-display').delay(1000).queue(function(next) {
+              $(this).removeClass('app-no-display');
+              return next();
+            });
+            temp._proccess.content.removeClass('app-no-display').queue(function(next) {
+              $(this).addClass('app-display');
+              return next();
+            });
+            return next();
+          });
+        }
+      }
+      if (!post.app.togo.to !== void 0) {
+        temp._proccess.seletor = post.app.togo.to;
+        return section(temp._proccess.seletor);
+      }
+    });
+    section = function(id) {
+      temp = {
+        'pattern': false,
+        'page': {
+          'this': false,
+          'display': false
+        },
+        'item': {
+          'this': false,
+          'display': false
+        },
+        'it': {
+          'page': {
+            'this': false
+          },
+          'item': {
+            'this': false
+          }
+        },
+        'position': {
+          'page': false,
+          'item': false
+        }
+      };
+      temp.pattern = $(id).closest('.app-volume');
+      if ($(id).hasClass('section-page')) {
+        temp.page["this"] = $(id);
+      }
+      if ($(id).hasClass('section-page-item')) {
+        temp.item["this"] = $(id);
+      }
+      if (temp.page["this"] === false) {
+        if ($(id).closest('.section-page').length) {
+          temp.page["this"] = $(id).closest('.section-page');
+        }
+      }
+      if (temp.item["this"] === false) {
+        if ($(id).closest('.section-page-item').length) {
+          temp.item["this"] = $(id).closest('.section-page-item');
+        }
+      }
+      if (temp.page["this"]) {
+        temp.page.eq = $('#' + $(temp.page["this"])[0].id).index('.section-page');
+      }
+      if (temp.item["this"]) {
+        temp.item.eq = $("#" + $(temp.item["this"])[0].id).index('.section-page-item');
+      }
+      if (!temp.page["this"] === false) {
+        if (temp.page["this"].hasClass('app-display')) {
+          temp.page.display = true;
+        }
+        if (temp.page.display === false) {
+          if ($(temp.pattern).find('.section-page.app-display').length) {
+            temp.it.page["this"] = $(temp.pattern).find('.section-page.app-display');
+          }
+          if (temp.it.page["this"]) {
+            temp.it.page.eq = $('#' + $(temp.it.page["this"])[0].id).index('.section-page');
+          }
+        }
+      }
+      if (!temp.item["this"] === false) {
+        if (temp.item["this"].hasClass('app-display')) {
+          temp.item.display = true;
+        }
+        if (temp.item.display === false) {
+          if ($(temp.pattern).find('.section-page.app-display').length) {
+            temp.it.item["this"] = $(temp.pattern).find('.section-page-item.app-display');
+          }
+          if (temp.it.item["this"]) {
+            temp.it.item.eq = $('#' + $(temp.it.item["this"])[0].id).index('.section-page-item');
+          }
+        }
+      }
+      if (temp.page.display === true) {
+        temp.position.page = 'this';
+      }
+      if (temp.page.display === false && temp.it.page["this"] === false) {
+        temp.position.page = 'first';
+      }
+      if (temp.page.eq < temp.it.page.eq) {
+        temp.position.page = 'before';
+      }
+      if (temp.page.eq > temp.it.page.eq) {
+        temp.position.page = 'after';
+      }
+      return console.log(temp);
+    };
     return temp;
   };
 

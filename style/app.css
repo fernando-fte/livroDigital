@@ -13862,20 +13862,16 @@ button.close {
   animation-duration: 1s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
-  -webkit-backface-visibility: visible !important;
-  backface-visibility: visible !important;
-  -webkit-animation-name: flipInY;
-  animation-name: flipInY;
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
 }
 .app-contents.app-no-display {
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
-  -webkit-backface-visibility: visible !important;
-  backface-visibility: visible !important;
-  -webkit-animation-name: flipOutY;
-  animation-name: flipOutY;
+  -webkit-animation-name: fadeOut;
+  animation-name: fadeOut;
 }
 .app-ico-menu:after {
   font-family: "FontAwesome";
@@ -20394,6 +20390,9 @@ body,
   left: 0px;
   z-index: 1250;
   background-color: #FFFFFF;
+}
+.app-nav-logo {
+  cursor: pointer;
 }
 .app-nav-logo img {
   max-width: 100%;

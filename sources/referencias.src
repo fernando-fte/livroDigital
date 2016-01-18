@@ -1,7 +1,7 @@
 {
 	"html":"div",
 	"id":"referencias",
-	"class":["section-page", "app-ref"],
+	"class":["section-page", "app-ref", "app-display"],
 	"content":[
 		{
 			"._.//":"Título da seção referencia",

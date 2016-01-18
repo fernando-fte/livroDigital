@@ -134,30 +134,146 @@ $.appCtrl = (post) ->
 
 $.appCtrl.togo = (post) ->
 	#// Requer um parametro array
-	#// {"display":{"._.required":false,"._.list":["id","css","closset"],"._.type":["array"],"id":{"._.//":"O parametro rece uma id como referencia da navegação","._.required":false,"._.type":["string"]},"css":{"._.//":"O parametro recebe uma ou mais classes como referencia da navegação","._.required":false,"._.type":["string"]},"closset":{"._.//":"O parametro define quando \"false\" procura nos filhos e quando \"true\" procura acima, e só e valido no caso de css","._.required":false,"._.type":["boolean"],"._.relative":{"css":true}},"toogle":{"._.//":"Parametro para alternar o display caso esse esteja ativo, pode ser classe ou ID","._.required":false,"._.type":["array"]}}}
+	#// {"._.list":["togo"],"togo":{"._.//":"Parametros para navegação nas paginas","._.list":["to","cover"],"._.type":["array"],"to":{"._.//":"Vai até esse seletor do tipo #ID ou .class","._.type":["string"]},"cover":{"._.//":"Executa a ação de a partir da capa, true para exibir, false para ocultar","._.type":["boolean"]}}}
 
 	#// Requer uma lista $('[data-ctrl]')
-	temp = {'_proccess':{'_true':false}, '_erro':{'_true':false}, '_warning':{'_true':false}, '_done':{'_true':false}}
+	temp = {'_proccess':{'_true':false, 'volume':{}, 'capa':{}, 'content':{}, 'seletor':{}}, '_erro':{'_true':false}, '_warning':{'_true':false}, '_done':{'_true':false}}
 
-	if post.app.togo.id 
-		#// TODO: trata quando a solicitação for id
-		temp._done = 'Ainda nao existe tratamento em ID'
+	# ativa como botão de disparo
+	$(post.this).click ->
 
-	else if post.app.togo.css
-		#// TODO: trata quando a solicitação for class
-		temp._done = 'Ainda nao existe tratamento em CLASS'
+		# Valida se a ação é para a capa
+		if !post.app.togo.cover != undefined
 
-	else if post.app.togo.cover
-		temp._proccess.cover = false
+			#// localiza apartir do clique o volume
+			temp._proccess.volume = $(post.this).closest('.app-volume')
 
-		# ao clicar no botão oculta a capa
-		$(post.this).click ->
+			#// localiza capa a partir de volume
+			temp._proccess.capa = $(temp._proccess.volume).find('.app-cover')
 
-			$('.app-page').removeClass('app-display').queue ->
+			#// localiza contents a partir de volume
+			temp._proccess.content = $(temp._proccess.volume).find('.app-contents')
 
-				$(this).addClass('app-no-display') # Adicioan oculta
 
-			temp._proccess.cover = true # define processo como um sucesso
+			#== valida se é para entrar na capa
+			if post.app.togo.cover is true
+
+				# remove display
+				temp._proccess.content.removeClass('app-display').queue (next) ->
+
+					# adiciona no-display
+					$(this).addClass('app-no-display').delay(1000).queue (next) ->
+
+						# remove no-display
+						$(this).removeClass('app-no-display')
+
+						next() #// Fim da espera
+
+					# remove no-display
+					temp._proccess.capa.removeClass('app-no-display').queue (next) ->
+
+						# adiciona display
+						$(this).addClass('app-display')
+
+						next() #// Fim da espera
+
+					next() #// Fim da espera
+
+			#== valida se é para entrar no conteúdo
+			if post.app.togo.cover is false
+
+				# remove display
+				temp._proccess.capa.removeClass('app-display').queue (next) ->
+
+					# adiciona no-display
+					$(this).addClass('app-no-display').delay(1000).queue (next) ->
+
+						# remove no-display
+						$(this).removeClass('app-no-display')
+
+						next() #// Fim da espera
+
+					# remove no-display
+					temp._proccess.content.removeClass('app-no-display').queue (next) ->
+
+						# adiciona display
+						$(this).addClass('app-display')
+
+						next() #// Fim da espera
+
+					next() #// Fim da espera
+
+		# Valida se a ação é para navegar
+		if !post.app.togo.to != undefined
+
+			#// reserva seletor
+			temp._proccess.seletor = post.app.togo.to
+
+			section(temp._proccess.seletor)
+			#// TODO: Função de seleção das seções
+
+	section = (id) ->
+
+		temp = {'pattern':false, 'page':{'this':false ,'display':false}, 'item':{'this':false, 'display':false}, 'it':{'page':{'this':false}, 'item':{'this':false}}, 'position':{'page':false, 'item':false}}
+
+		# localiza livro atual
+		temp.pattern = $(id).closest('.app-volume')
+
+		#== Localiza seção a partir do item e adiciona em this
+		#** valida se o item é seção
+		temp.page.this = $(id) if $(id).hasClass('section-page')
+		temp.item.this = $(id) if $(id).hasClass('section-page-item')
+
+		#** localiza a seção mais proxima
+		if temp.page.this is false
+
+			temp.page.this = $(id).closest('.section-page') if $(id).closest('.section-page').length
+		
+		if temp.item.this is false
+
+			temp.item.this = $(id).closest('.section-page-item') if $(id).closest('.section-page-item').length
+
+		#** retorna posição do item
+		temp.page.eq = $('#'+$(temp.page.this)[0].id).index('.section-page') if temp.page.this
+		temp.item.eq = $("#"+$(temp.item.this)[0].id).index('.section-page-item') if temp.item.this
+
+		#== Localiza as seções ativas
+		# Valida display na pagina
+		if !temp.page.this is false
+
+			# caso a pagina atual tenha display
+			temp.page.display = true if temp.page.this.hasClass('app-display')
+
+			# caso a pagina atual nao tenha display 
+			if temp.page.display is false
+
+				# Localiza de cima para baixo a pagina ativa
+				temp.it.page.this = $(temp.pattern).find('.section-page.app-display') if $(temp.pattern).find('.section-page.app-display').length
+				temp.it.page.eq = $('#'+$(temp.it.page.this)[0].id).index('.section-page') if temp.it.page.this
+
+		# Valida display do item
+		if !temp.item.this is false
+
+			# caso a pagina atual tenha display
+			temp.item.display = true if temp.item.this.hasClass('app-display')
+
+			# caso a pagina atual nao tenha display 
+			if temp.item.display is false
+
+				# Localiza de cima para baixo a pagina ativa
+				temp.it.item.this = $(temp.pattern).find('.section-page-item.app-display') if $(temp.pattern).find('.section-page.app-display').length
+				temp.it.item.eq = $('#'+$(temp.it.item.this)[0].id).index('.section-page-item') if temp.it.item.this
+
+		#== Valida o ponto de referencia se é after, before, this, first
+
+		# valida a direção da pagina
+		temp.position.page = 'this' if temp.page.display is true # display esta em this
+		temp.position.page = 'first' if temp.page.display is false and temp.it.page.this is false # nao foi encontrado
+		temp.position.page = 'before' if temp.page.eq < temp.it.page.eq # page=0 it=1 // page esta antes
+		temp.position.page = 'after' if temp.page.eq > temp.it.page.eq # page=3 it=1 // page esta depois
+
+		console.log temp
+
 
 	return temp
 
