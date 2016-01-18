@@ -15,8 +15,8 @@
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css);
 @font-face {
   font-family: "PF BeauSans Pro";
-  src: url('http://192.168.100.3/vg/livroDigital/fonts/pf-beau-sans-pro.eot');
-  src: url('http://192.168.100.3/vg/livroDigital/fonts/pf-beau-sans-pro.eot?#iefix') format('embedded-opentype'), url('http://192.168.100.3/vg/livroDigital/fonts/pf-beau-sans-pro.woff2') format('woff2'), url('http://192.168.100.3/vg/livroDigital/fonts/pf-beau-sans-pro.woff') format('woff'), url('http://192.168.100.3/vg/livroDigital/fonts/pf-beau-sans-pro.ttf') format('truetype'), url('http://192.168.100.3/vg/livroDigital/fonts/pf-beau-sans-pro.svg') format('svg');
+  src: url('http://10.0.0.108/livroDigital/fonts/pf-beau-sans-pro.eot');
+  src: url('http://10.0.0.108/livroDigital/fonts/pf-beau-sans-pro.eot?#iefix') format('embedded-opentype'), url('http://10.0.0.108/livroDigital/fonts/pf-beau-sans-pro.woff2') format('woff2'), url('http://10.0.0.108/livroDigital/fonts/pf-beau-sans-pro.woff') format('woff'), url('http://10.0.0.108/livroDigital/fonts/pf-beau-sans-pro.ttf') format('truetype'), url('http://10.0.0.108/livroDigital/fonts/pf-beau-sans-pro.svg') format('svg');
 }
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 html {
@@ -14051,15 +14051,239 @@ body,
     padding: 0 10%;
   }
 }
-@media (max-width: 479px) {
+@media (max-width: 479px) and (max-height: 479px) {
+  .app-cover {
+    min-height: 50px;
+  }
+  .app-text-livro,
+  .app-text-livro,
+  .cover-btn-nav {
+    font-family: "PF BeauSans Pro";
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: fadeInRight;
+    animation-name: fadeInRight;
+  }
+  .cover-contents {
+    width: 100%;
+    position: absolute;
+    top: 10%;
+  }
+  .cover-fachada {
+    padding-left: 16px;
+    padding-right: 16px;
+    width: 100%;
+    display: block;
+  }
+  .cover-fachada.app-text-livro,
+  .cover-fachada.app-text-autor {
+    color: #FFFFFF;
+    font-family: "PF BeauSans Pro";
+  }
+  .cover-fachada.app-text-livro {
+    font-size: 16px;
+    line-height: 16px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: #A11314;
+    font-weight: bold;
+  }
+  .cover-fachada.app-text-autor {
+    font-size: 13px;
+    line-height: 13px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    margin-top: -1px;
+    background-color: #C0504D;
+    font-style: italic;
+  }
   .cover-nav-bar {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: 0%;
+    float: right;
+  }
+  .cover-btn-nav {
+    display: block;
+    text-align: center;
+    padding: 10px 0px;
+    margin-bottom: 20px;
+    line-height: 25px;
+    cursor: pointer;
+  }
+  .cover-btn-nav:hover {
+    background-color: #C0504D;
+  }
+  .cover-btn-nav:hover .cover-btn-tooltip {
+    display: block;
+  }
+  .cover-btn-nav .app-ico-menu,
+  .cover-btn-nav .app-ico-sumario,
+  .cover-btn-nav .app-ico-atividade,
+  .cover-btn-nav .app-ico-marcador,
+  .cover-btn-nav .app-ico-anotacao,
+  .cover-btn-nav .app-ico-referencia {
+    font-size: 25px;
+    color: #FFFFFF;
+  }
+  .cover-btn-nav .app-ico-menu:after,
+  .cover-btn-nav .app-ico-sumario:after,
+  .cover-btn-nav .app-ico-atividade:after,
+  .cover-btn-nav .app-ico-marcador:after,
+  .cover-btn-nav .app-ico-anotacao:after,
+  .cover-btn-nav .app-ico-referencia:after {
+    display: block;
+    line-height: 25px;
+  }
+  .cover-btn-nav.btn-nav-menu {
+    margin-bottom: 119px;
+  }
+  .cover-btn-tooltip {
     display: none;
+    font-size: 15px;
+    text-transform: uppercase;
+    line-height: 15px;
+    padding: 8px 0px;
+    width: 250px;
+    height: 32px;
+    float: left;
+    position: relative;
+    top: -28px;
+    right: 267px;
+    background-color: #C0504D;
+    color: #FFFFFF;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-backface-visibility: visible !important;
+    backface-visibility: visible !important;
+    -webkit-animation-name: flipInX;
+    animation-name: flipInX;
+  }
+  .cover-btn-tooltip:before {
+    border: 16px solid transparent;
+    border-left-color: #C0504D;
+    left: 250px;
+    position: absolute;
+    content: "";
+    top: 0;
+  }
+  .cover-btn-iniciar {
+    position: absolute;
+    top: 60%;
+    display: block;
+    font-family: "PF BeauSans Pro";
+    font-size: 22px;
+    text-transform: uppercase;
+    line-height: 22px;
+    padding: 17px;
+    padding-left: 50px;
+    padding-right: 63px;
+    min-width: 340px;
+    color: #FFFFFF;
+    background-color: #D9A1A1;
+  }
+  .cover-btn-iniciar:hover {
+    cursor: pointer;
+    background-color: #C77172;
+  }
+  .cover-btn-iniciar:before {
+    content: "Iniciar Leitura";
+    text-align: center;
+  }
+  .cover-btn-iniciar:after {
+    font-family: "FontAwesome";
+    font-size: 60px;
+    content: "\F105";
+    background-color: #C77172;
+    padding: 17px 14px;
+    float: left;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+  }
+  .cover-logo-group .cover-logo-item {
+    position: absolute;
+    bottom: 5px;
+    left: 21%;
+    width: 175px;
+    text-align: center;
+  }
+  .cover-logo-group .cover-logo-item.logo-instituicao {
+    margin-left: 185px;
+  }
+  .cover-logo-item.logo-instituicao {
+    width: 185px;
+  }
+  .cover-btn-iniciar {
+    width: 10px;
+    max-width: none;
+    min-width: initial;
+    right: 0px;
+    padding: 0px;
+    top: 50%;
+  }
+  .cover-btn-iniciar:after {
+    width: 60px;
+    padding: 31px 20px;
+    background-color: #A11314;
+  }
+  .cover-logo-group .cover-logo-item.logo-instituicao {
+    background-color: #EE3435;
+    position: fixed;
+    top: 0px;
+    margin-left: 0px;
+    width: 110px;
+    padding: 5px;
+  }
+  .cover-logo-group .cover-logo-item {
+    width: 135px;
+    left: 32%;
+  }
+  .cover-nav-bar {
+    background-color: initial;
+    height: auto;
+    width: 100%;
+    float: left;
+    top: 79%;
+    text-align: center;
+  }
+  .cover-btn-nav {
+    display: inline-block;
+    text-align: center;
+    padding: 7px;
+    margin-bottom: 20px;
+    line-height: 25px;
+    cursor: pointer;
+    margin: 0px 2%;
+    background-color: rgba(255, 255, 255, 0.72);
+    border-bottom: 4px solid #C0504D;
+    width: 48px;
+  }
+  .cover-btn-nav .app-ico-sumario,
+  .cover-btn-nav .app-ico-atividade,
+  .cover-btn-nav .app-ico-marcador,
+  .cover-btn-nav .app-ico-anotacao,
+  .cover-btn-nav .app-ico-referencia {
+    color: #C0504D;
+  }
+  .cover-btn-nav.btn-nav-menu {
+    margin-bottom: inherit;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    margin: 0px;
+  }
+  .cover-btn-nav.btn-nav-menu .app-ico-menu {
+    color: #FFFFFF;
   }
 }
 @media (max-width: 479px) and (min-height: 480px) {
-  .app-cover {
-    border-top: 1px solid brown;
-  }
   .app-cover {
     min-height: 550px;
   }
@@ -14233,8 +14457,236 @@ body,
     right: 0px;
     padding: 0px;
   }
-  .cover-btn-iniciar:before {
+  .cover-btn-iniciar:after {
+    width: 60px;
+    padding: 31px 20px;
+    background-color: #A11314;
+  }
+  .cover-logo-group .cover-logo-item.logo-instituicao {
+    background-color: #EE3435;
+    position: fixed;
+    top: 0px;
+    margin-left: 0px;
+    width: 110px;
+    padding: 5px;
+  }
+  .cover-logo-group .cover-logo-item {
+    width: 135px;
+    left: 32%;
+  }
+  .cover-nav-bar {
+    background-color: initial;
+    height: auto;
+    width: 100%;
+    float: left;
+    top: 82%;
+    text-align: center;
+  }
+  .cover-btn-nav {
+    display: inline-block;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 20px;
+    line-height: 25px;
+    cursor: pointer;
+    margin: 0px 2%;
+    background-color: rgba(255, 255, 255, 0.72);
+    border-bottom: 4px solid #C0504D;
+    width: 48px;
+  }
+  .cover-btn-nav .app-ico-sumario,
+  .cover-btn-nav .app-ico-atividade,
+  .cover-btn-nav .app-ico-marcador,
+  .cover-btn-nav .app-ico-anotacao,
+  .cover-btn-nav .app-ico-referencia {
+    color: #C0504D;
+  }
+  .cover-btn-nav.btn-nav-menu {
+    margin-bottom: inherit;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    margin: 0px;
+  }
+  .cover-btn-nav.btn-nav-menu .app-ico-menu {
+    color: #FFFFFF;
+  }
+}
+@media (max-width: 479px) and (min-height: 624px) {
+  .app-cover {
+    min-height: 550px;
+  }
+  .app-text-livro,
+  .app-text-livro,
+  .cover-btn-nav {
+    font-family: "PF BeauSans Pro";
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: fadeInRight;
+    animation-name: fadeInRight;
+  }
+  .cover-contents {
+    width: 100%;
+    position: absolute;
+    top: 10%;
+  }
+  .cover-fachada {
+    padding-left: 16px;
+    padding-right: 16px;
+    width: 100%;
+    display: block;
+  }
+  .cover-fachada.app-text-livro,
+  .cover-fachada.app-text-autor {
+    color: #FFFFFF;
+    font-family: "PF BeauSans Pro";
+  }
+  .cover-fachada.app-text-livro {
+    font-size: 25px;
+    line-height: 25px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: #A11314;
+    font-weight: bold;
+  }
+  .cover-fachada.app-text-autor {
+    font-size: 14px;
+    line-height: 14px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    margin-top: -1px;
+    background-color: #C0504D;
+    font-style: italic;
+  }
+  .cover-nav-bar {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: 0%;
+    float: right;
+  }
+  .cover-btn-nav {
+    display: block;
+    text-align: center;
+    padding: 10px 0px;
+    margin-bottom: 20px;
+    line-height: 25px;
+    cursor: pointer;
+  }
+  .cover-btn-nav:hover {
+    background-color: #C0504D;
+  }
+  .cover-btn-nav:hover .cover-btn-tooltip {
+    display: block;
+  }
+  .cover-btn-nav .app-ico-menu,
+  .cover-btn-nav .app-ico-sumario,
+  .cover-btn-nav .app-ico-atividade,
+  .cover-btn-nav .app-ico-marcador,
+  .cover-btn-nav .app-ico-anotacao,
+  .cover-btn-nav .app-ico-referencia {
+    font-size: 25px;
+    color: #FFFFFF;
+  }
+  .cover-btn-nav .app-ico-menu:after,
+  .cover-btn-nav .app-ico-sumario:after,
+  .cover-btn-nav .app-ico-atividade:after,
+  .cover-btn-nav .app-ico-marcador:after,
+  .cover-btn-nav .app-ico-anotacao:after,
+  .cover-btn-nav .app-ico-referencia:after {
+    display: block;
+    line-height: 25px;
+  }
+  .cover-btn-nav.btn-nav-menu {
+    margin-bottom: 119px;
+  }
+  .cover-btn-tooltip {
     display: none;
+    font-size: 15px;
+    text-transform: uppercase;
+    line-height: 15px;
+    padding: 8px 0px;
+    width: 250px;
+    height: 32px;
+    float: left;
+    position: relative;
+    top: -28px;
+    right: 267px;
+    background-color: #C0504D;
+    color: #FFFFFF;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-backface-visibility: visible !important;
+    backface-visibility: visible !important;
+    -webkit-animation-name: flipInX;
+    animation-name: flipInX;
+  }
+  .cover-btn-tooltip:before {
+    border: 16px solid transparent;
+    border-left-color: #C0504D;
+    left: 250px;
+    position: absolute;
+    content: "";
+    top: 0;
+  }
+  .cover-btn-iniciar {
+    position: absolute;
+    top: 60%;
+    display: block;
+    font-family: "PF BeauSans Pro";
+    font-size: 22px;
+    text-transform: uppercase;
+    line-height: 22px;
+    padding: 17px;
+    padding-left: 50px;
+    padding-right: 63px;
+    min-width: 340px;
+    color: #FFFFFF;
+    background-color: #D9A1A1;
+  }
+  .cover-btn-iniciar:hover {
+    cursor: pointer;
+    background-color: #C77172;
+  }
+  .cover-btn-iniciar:before {
+    content: "Iniciar Leitura";
+    text-align: center;
+  }
+  .cover-btn-iniciar:after {
+    font-family: "FontAwesome";
+    font-size: 60px;
+    content: "\F105";
+    background-color: #C77172;
+    padding: 17px 14px;
+    float: left;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+  }
+  .cover-logo-group .cover-logo-item {
+    position: absolute;
+    bottom: 5px;
+    left: 21%;
+    width: 175px;
+    text-align: center;
+  }
+  .cover-logo-group .cover-logo-item.logo-instituicao {
+    margin-left: 185px;
+  }
+  .cover-logo-item.logo-instituicao {
+    width: 185px;
+  }
+  .cover-btn-iniciar {
+    width: 10px;
+    max-width: none;
+    min-width: initial;
+    right: 0px;
+    padding: 0px;
   }
   .cover-btn-iniciar:after {
     width: 60px;
@@ -14253,11 +14705,1756 @@ body,
     width: 135px;
     left: 32%;
   }
+  .cover-nav-bar {
+    background-color: initial;
+    height: auto;
+    width: 100%;
+    float: left;
+    top: 82%;
+    text-align: center;
+  }
+  .cover-btn-nav {
+    display: inline-block;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 20px;
+    line-height: 25px;
+    cursor: pointer;
+    margin: 0px 2%;
+    background-color: rgba(255, 255, 255, 0.72);
+    border-bottom: 4px solid #C0504D;
+    width: 48px;
+  }
+  .cover-btn-nav .app-ico-sumario,
+  .cover-btn-nav .app-ico-atividade,
+  .cover-btn-nav .app-ico-marcador,
+  .cover-btn-nav .app-ico-anotacao,
+  .cover-btn-nav .app-ico-referencia {
+    color: #C0504D;
+  }
+  .cover-btn-nav.btn-nav-menu {
+    margin-bottom: inherit;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    margin: 0px;
+  }
+  .cover-btn-nav.btn-nav-menu .app-ico-menu {
+    color: #FFFFFF;
+  }
+}
+@media (max-width: 479px) and (min-height: 768px) {
+  .app-cover {
+    min-height: 550px;
+  }
+  .app-text-livro,
+  .app-text-livro,
+  .cover-btn-nav {
+    font-family: "PF BeauSans Pro";
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: fadeInRight;
+    animation-name: fadeInRight;
+  }
+  .cover-contents {
+    width: 100%;
+    position: absolute;
+    top: 10%;
+  }
+  .cover-fachada {
+    padding-left: 16px;
+    padding-right: 16px;
+    width: 100%;
+    display: block;
+  }
+  .cover-fachada.app-text-livro,
+  .cover-fachada.app-text-autor {
+    color: #FFFFFF;
+    font-family: "PF BeauSans Pro";
+  }
+  .cover-fachada.app-text-livro {
+    font-size: 25px;
+    line-height: 25px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: #A11314;
+    font-weight: bold;
+  }
+  .cover-fachada.app-text-autor {
+    font-size: 14px;
+    line-height: 14px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    margin-top: -1px;
+    background-color: #C0504D;
+    font-style: italic;
+  }
+  .cover-nav-bar {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: 0%;
+    float: right;
+  }
+  .cover-btn-nav {
+    display: block;
+    text-align: center;
+    padding: 10px 0px;
+    margin-bottom: 20px;
+    line-height: 25px;
+    cursor: pointer;
+  }
+  .cover-btn-nav:hover {
+    background-color: #C0504D;
+  }
+  .cover-btn-nav:hover .cover-btn-tooltip {
+    display: block;
+  }
+  .cover-btn-nav .app-ico-menu,
+  .cover-btn-nav .app-ico-sumario,
+  .cover-btn-nav .app-ico-atividade,
+  .cover-btn-nav .app-ico-marcador,
+  .cover-btn-nav .app-ico-anotacao,
+  .cover-btn-nav .app-ico-referencia {
+    font-size: 25px;
+    color: #FFFFFF;
+  }
+  .cover-btn-nav .app-ico-menu:after,
+  .cover-btn-nav .app-ico-sumario:after,
+  .cover-btn-nav .app-ico-atividade:after,
+  .cover-btn-nav .app-ico-marcador:after,
+  .cover-btn-nav .app-ico-anotacao:after,
+  .cover-btn-nav .app-ico-referencia:after {
+    display: block;
+    line-height: 25px;
+  }
+  .cover-btn-nav.btn-nav-menu {
+    margin-bottom: 119px;
+  }
+  .cover-btn-tooltip {
+    display: none;
+    font-size: 15px;
+    text-transform: uppercase;
+    line-height: 15px;
+    padding: 8px 0px;
+    width: 250px;
+    height: 32px;
+    float: left;
+    position: relative;
+    top: -28px;
+    right: 267px;
+    background-color: #C0504D;
+    color: #FFFFFF;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-backface-visibility: visible !important;
+    backface-visibility: visible !important;
+    -webkit-animation-name: flipInX;
+    animation-name: flipInX;
+  }
+  .cover-btn-tooltip:before {
+    border: 16px solid transparent;
+    border-left-color: #C0504D;
+    left: 250px;
+    position: absolute;
+    content: "";
+    top: 0;
+  }
+  .cover-btn-iniciar {
+    position: absolute;
+    top: 60%;
+    display: block;
+    font-family: "PF BeauSans Pro";
+    font-size: 22px;
+    text-transform: uppercase;
+    line-height: 22px;
+    padding: 17px;
+    padding-left: 50px;
+    padding-right: 63px;
+    min-width: 340px;
+    color: #FFFFFF;
+    background-color: #D9A1A1;
+  }
+  .cover-btn-iniciar:hover {
+    cursor: pointer;
+    background-color: #C77172;
+  }
+  .cover-btn-iniciar:before {
+    content: "Iniciar Leitura";
+    text-align: center;
+  }
+  .cover-btn-iniciar:after {
+    font-family: "FontAwesome";
+    font-size: 60px;
+    content: "\F105";
+    background-color: #C77172;
+    padding: 17px 14px;
+    float: left;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+  }
+  .cover-logo-group .cover-logo-item {
+    position: absolute;
+    bottom: 5px;
+    left: 21%;
+    width: 175px;
+    text-align: center;
+  }
+  .cover-logo-group .cover-logo-item.logo-instituicao {
+    margin-left: 185px;
+  }
+  .cover-logo-item.logo-instituicao {
+    width: 185px;
+  }
+  .cover-btn-iniciar {
+    width: 10px;
+    max-width: none;
+    min-width: initial;
+    right: 0px;
+    padding: 0px;
+  }
+  .cover-btn-iniciar:after {
+    width: 60px;
+    padding: 31px 20px;
+    background-color: #A11314;
+  }
+  .cover-logo-group .cover-logo-item.logo-instituicao {
+    background-color: #EE3435;
+    position: fixed;
+    top: 0px;
+    margin-left: 0px;
+    width: 110px;
+    padding: 5px;
+  }
+  .cover-logo-group .cover-logo-item {
+    width: 135px;
+    left: 32%;
+  }
+  .cover-nav-bar {
+    background-color: initial;
+    height: auto;
+    width: 100%;
+    float: left;
+    top: 82%;
+    text-align: center;
+  }
+  .cover-btn-nav {
+    display: inline-block;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 20px;
+    line-height: 25px;
+    cursor: pointer;
+    margin: 0px 2%;
+    background-color: rgba(255, 255, 255, 0.72);
+    border-bottom: 4px solid #C0504D;
+    width: 48px;
+  }
+  .cover-btn-nav .app-ico-sumario,
+  .cover-btn-nav .app-ico-atividade,
+  .cover-btn-nav .app-ico-marcador,
+  .cover-btn-nav .app-ico-anotacao,
+  .cover-btn-nav .app-ico-referencia {
+    color: #C0504D;
+  }
+  .cover-btn-nav.btn-nav-menu {
+    margin-bottom: inherit;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    margin: 0px;
+  }
+  .cover-btn-nav.btn-nav-menu .app-ico-menu {
+    color: #FFFFFF;
+  }
+}
+@media (max-width: 479px) and (min-height: 992px) {
+  .app-cover {
+    min-height: 550px;
+  }
+  .app-text-livro,
+  .app-text-livro,
+  .cover-btn-nav {
+    font-family: "PF BeauSans Pro";
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: fadeInRight;
+    animation-name: fadeInRight;
+  }
+  .cover-contents {
+    width: 100%;
+    position: absolute;
+    top: 10%;
+  }
+  .cover-fachada {
+    padding-left: 16px;
+    padding-right: 16px;
+    width: 100%;
+    display: block;
+  }
+  .cover-fachada.app-text-livro,
+  .cover-fachada.app-text-autor {
+    color: #FFFFFF;
+    font-family: "PF BeauSans Pro";
+  }
+  .cover-fachada.app-text-livro {
+    font-size: 25px;
+    line-height: 25px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: #A11314;
+    font-weight: bold;
+  }
+  .cover-fachada.app-text-autor {
+    font-size: 14px;
+    line-height: 14px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    margin-top: -1px;
+    background-color: #C0504D;
+    font-style: italic;
+  }
+  .cover-nav-bar {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: 0%;
+    float: right;
+  }
+  .cover-btn-nav {
+    display: block;
+    text-align: center;
+    padding: 10px 0px;
+    margin-bottom: 20px;
+    line-height: 25px;
+    cursor: pointer;
+  }
+  .cover-btn-nav:hover {
+    background-color: #C0504D;
+  }
+  .cover-btn-nav:hover .cover-btn-tooltip {
+    display: block;
+  }
+  .cover-btn-nav .app-ico-menu,
+  .cover-btn-nav .app-ico-sumario,
+  .cover-btn-nav .app-ico-atividade,
+  .cover-btn-nav .app-ico-marcador,
+  .cover-btn-nav .app-ico-anotacao,
+  .cover-btn-nav .app-ico-referencia {
+    font-size: 25px;
+    color: #FFFFFF;
+  }
+  .cover-btn-nav .app-ico-menu:after,
+  .cover-btn-nav .app-ico-sumario:after,
+  .cover-btn-nav .app-ico-atividade:after,
+  .cover-btn-nav .app-ico-marcador:after,
+  .cover-btn-nav .app-ico-anotacao:after,
+  .cover-btn-nav .app-ico-referencia:after {
+    display: block;
+    line-height: 25px;
+  }
+  .cover-btn-nav.btn-nav-menu {
+    margin-bottom: 119px;
+  }
+  .cover-btn-tooltip {
+    display: none;
+    font-size: 15px;
+    text-transform: uppercase;
+    line-height: 15px;
+    padding: 8px 0px;
+    width: 250px;
+    height: 32px;
+    float: left;
+    position: relative;
+    top: -28px;
+    right: 267px;
+    background-color: #C0504D;
+    color: #FFFFFF;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-backface-visibility: visible !important;
+    backface-visibility: visible !important;
+    -webkit-animation-name: flipInX;
+    animation-name: flipInX;
+  }
+  .cover-btn-tooltip:before {
+    border: 16px solid transparent;
+    border-left-color: #C0504D;
+    left: 250px;
+    position: absolute;
+    content: "";
+    top: 0;
+  }
+  .cover-btn-iniciar {
+    position: absolute;
+    top: 60%;
+    display: block;
+    font-family: "PF BeauSans Pro";
+    font-size: 22px;
+    text-transform: uppercase;
+    line-height: 22px;
+    padding: 17px;
+    padding-left: 50px;
+    padding-right: 63px;
+    min-width: 340px;
+    color: #FFFFFF;
+    background-color: #D9A1A1;
+  }
+  .cover-btn-iniciar:hover {
+    cursor: pointer;
+    background-color: #C77172;
+  }
+  .cover-btn-iniciar:before {
+    content: "Iniciar Leitura";
+    text-align: center;
+  }
+  .cover-btn-iniciar:after {
+    font-family: "FontAwesome";
+    font-size: 60px;
+    content: "\F105";
+    background-color: #C77172;
+    padding: 17px 14px;
+    float: left;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+  }
+  .cover-logo-group .cover-logo-item {
+    position: absolute;
+    bottom: 5px;
+    left: 21%;
+    width: 175px;
+    text-align: center;
+  }
+  .cover-logo-group .cover-logo-item.logo-instituicao {
+    margin-left: 185px;
+  }
+  .cover-logo-item.logo-instituicao {
+    width: 185px;
+  }
+  .cover-btn-iniciar {
+    width: 10px;
+    max-width: none;
+    min-width: initial;
+    right: 0px;
+    padding: 0px;
+  }
+  .cover-btn-iniciar:after {
+    width: 60px;
+    padding: 31px 20px;
+    background-color: #A11314;
+  }
+  .cover-logo-group .cover-logo-item.logo-instituicao {
+    background-color: #EE3435;
+    position: fixed;
+    top: 0px;
+    margin-left: 0px;
+    width: 110px;
+    padding: 5px;
+  }
+  .cover-logo-group .cover-logo-item {
+    width: 135px;
+    left: 32%;
+  }
+  .cover-nav-bar {
+    background-color: initial;
+    height: auto;
+    width: 100%;
+    float: left;
+    top: 82%;
+    text-align: center;
+  }
+  .cover-btn-nav {
+    display: inline-block;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 20px;
+    line-height: 25px;
+    cursor: pointer;
+    margin: 0px 2%;
+    background-color: rgba(255, 255, 255, 0.72);
+    border-bottom: 4px solid #C0504D;
+    width: 48px;
+  }
+  .cover-btn-nav .app-ico-sumario,
+  .cover-btn-nav .app-ico-atividade,
+  .cover-btn-nav .app-ico-marcador,
+  .cover-btn-nav .app-ico-anotacao,
+  .cover-btn-nav .app-ico-referencia {
+    color: #C0504D;
+  }
+  .cover-btn-nav.btn-nav-menu {
+    margin-bottom: inherit;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    margin: 0px;
+  }
+  .cover-btn-nav.btn-nav-menu .app-ico-menu {
+    color: #FFFFFF;
+  }
+}
+@media (max-width: 479px) and (min-height: 1200px) {
+  .app-cover {
+    min-height: 550px;
+  }
+  .app-text-livro,
+  .app-text-livro,
+  .cover-btn-nav {
+    font-family: "PF BeauSans Pro";
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: fadeInRight;
+    animation-name: fadeInRight;
+  }
+  .cover-contents {
+    width: 100%;
+    position: absolute;
+    top: 10%;
+  }
+  .cover-fachada {
+    padding-left: 16px;
+    padding-right: 16px;
+    width: 100%;
+    display: block;
+  }
+  .cover-fachada.app-text-livro,
+  .cover-fachada.app-text-autor {
+    color: #FFFFFF;
+    font-family: "PF BeauSans Pro";
+  }
+  .cover-fachada.app-text-livro {
+    font-size: 25px;
+    line-height: 25px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: #A11314;
+    font-weight: bold;
+  }
+  .cover-fachada.app-text-autor {
+    font-size: 14px;
+    line-height: 14px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    margin-top: -1px;
+    background-color: #C0504D;
+    font-style: italic;
+  }
+  .cover-nav-bar {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: 0%;
+    float: right;
+  }
+  .cover-btn-nav {
+    display: block;
+    text-align: center;
+    padding: 10px 0px;
+    margin-bottom: 20px;
+    line-height: 25px;
+    cursor: pointer;
+  }
+  .cover-btn-nav:hover {
+    background-color: #C0504D;
+  }
+  .cover-btn-nav:hover .cover-btn-tooltip {
+    display: block;
+  }
+  .cover-btn-nav .app-ico-menu,
+  .cover-btn-nav .app-ico-sumario,
+  .cover-btn-nav .app-ico-atividade,
+  .cover-btn-nav .app-ico-marcador,
+  .cover-btn-nav .app-ico-anotacao,
+  .cover-btn-nav .app-ico-referencia {
+    font-size: 25px;
+    color: #FFFFFF;
+  }
+  .cover-btn-nav .app-ico-menu:after,
+  .cover-btn-nav .app-ico-sumario:after,
+  .cover-btn-nav .app-ico-atividade:after,
+  .cover-btn-nav .app-ico-marcador:after,
+  .cover-btn-nav .app-ico-anotacao:after,
+  .cover-btn-nav .app-ico-referencia:after {
+    display: block;
+    line-height: 25px;
+  }
+  .cover-btn-nav.btn-nav-menu {
+    margin-bottom: 119px;
+  }
+  .cover-btn-tooltip {
+    display: none;
+    font-size: 15px;
+    text-transform: uppercase;
+    line-height: 15px;
+    padding: 8px 0px;
+    width: 250px;
+    height: 32px;
+    float: left;
+    position: relative;
+    top: -28px;
+    right: 267px;
+    background-color: #C0504D;
+    color: #FFFFFF;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-backface-visibility: visible !important;
+    backface-visibility: visible !important;
+    -webkit-animation-name: flipInX;
+    animation-name: flipInX;
+  }
+  .cover-btn-tooltip:before {
+    border: 16px solid transparent;
+    border-left-color: #C0504D;
+    left: 250px;
+    position: absolute;
+    content: "";
+    top: 0;
+  }
+  .cover-btn-iniciar {
+    position: absolute;
+    top: 60%;
+    display: block;
+    font-family: "PF BeauSans Pro";
+    font-size: 22px;
+    text-transform: uppercase;
+    line-height: 22px;
+    padding: 17px;
+    padding-left: 50px;
+    padding-right: 63px;
+    min-width: 340px;
+    color: #FFFFFF;
+    background-color: #D9A1A1;
+  }
+  .cover-btn-iniciar:hover {
+    cursor: pointer;
+    background-color: #C77172;
+  }
+  .cover-btn-iniciar:before {
+    content: "Iniciar Leitura";
+    text-align: center;
+  }
+  .cover-btn-iniciar:after {
+    font-family: "FontAwesome";
+    font-size: 60px;
+    content: "\F105";
+    background-color: #C77172;
+    padding: 17px 14px;
+    float: left;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+  }
+  .cover-logo-group .cover-logo-item {
+    position: absolute;
+    bottom: 5px;
+    left: 21%;
+    width: 175px;
+    text-align: center;
+  }
+  .cover-logo-group .cover-logo-item.logo-instituicao {
+    margin-left: 185px;
+  }
+  .cover-logo-item.logo-instituicao {
+    width: 185px;
+  }
+  .cover-btn-iniciar {
+    width: 10px;
+    max-width: none;
+    min-width: initial;
+    right: 0px;
+    padding: 0px;
+  }
+  .cover-btn-iniciar:after {
+    width: 60px;
+    padding: 31px 20px;
+    background-color: #A11314;
+  }
+  .cover-logo-group .cover-logo-item.logo-instituicao {
+    background-color: #EE3435;
+    position: fixed;
+    top: 0px;
+    margin-left: 0px;
+    width: 110px;
+    padding: 5px;
+  }
+  .cover-logo-group .cover-logo-item {
+    width: 135px;
+    left: 32%;
+  }
+  .cover-nav-bar {
+    background-color: initial;
+    height: auto;
+    width: 100%;
+    float: left;
+    top: 82%;
+    text-align: center;
+  }
+  .cover-btn-nav {
+    display: inline-block;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 20px;
+    line-height: 25px;
+    cursor: pointer;
+    margin: 0px 2%;
+    background-color: rgba(255, 255, 255, 0.72);
+    border-bottom: 4px solid #C0504D;
+    width: 48px;
+  }
+  .cover-btn-nav .app-ico-sumario,
+  .cover-btn-nav .app-ico-atividade,
+  .cover-btn-nav .app-ico-marcador,
+  .cover-btn-nav .app-ico-anotacao,
+  .cover-btn-nav .app-ico-referencia {
+    color: #C0504D;
+  }
+  .cover-btn-nav.btn-nav-menu {
+    margin-bottom: inherit;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    margin: 0px;
+  }
+  .cover-btn-nav.btn-nav-menu .app-ico-menu {
+    color: #FFFFFF;
+  }
+}
+@media (min-width: 480px) and (max-height: 479px) {
+  .app-cover {
+    min-height: 550px;
+  }
+  .app-text-livro,
+  .app-text-livro,
+  .cover-btn-nav {
+    font-family: "PF BeauSans Pro";
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: fadeInRight;
+    animation-name: fadeInRight;
+  }
+  .cover-contents {
+    width: 90%;
+    position: absolute;
+    top: 10%;
+  }
+  .cover-fachada {
+    padding-left: 57px;
+    padding-right: 56px;
+    width: 100%;
+    display: block;
+  }
+  .cover-fachada.app-text-livro,
+  .cover-fachada.app-text-autor {
+    color: #FFFFFF;
+    font-family: "PF BeauSans Pro";
+  }
+  .cover-fachada.app-text-livro {
+    font-size: 25px;
+    line-height: 25px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: #A11314;
+    font-weight: bold;
+  }
+  .cover-fachada.app-text-autor {
+    font-size: 12px;
+    line-height: 12px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    margin-top: -1px;
+    background-color: #C0504D;
+    font-style: italic;
+  }
+  .cover-nav-bar {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: 10%;
+    float: right;
+  }
+  .cover-btn-nav {
+    display: block;
+    text-align: center;
+    padding: 21px 0px;
+    margin-bottom: 20px;
+    line-height: 35px;
+    cursor: pointer;
+  }
+  .cover-btn-nav:hover {
+    background-color: #C0504D;
+  }
+  .cover-btn-nav:hover .cover-btn-tooltip {
+    display: block;
+  }
+  .cover-btn-nav .app-ico-menu,
+  .cover-btn-nav .app-ico-sumario,
+  .cover-btn-nav .app-ico-atividade,
+  .cover-btn-nav .app-ico-marcador,
+  .cover-btn-nav .app-ico-anotacao,
+  .cover-btn-nav .app-ico-referencia {
+    font-size: 35px;
+    color: #FFFFFF;
+  }
+  .cover-btn-nav .app-ico-menu:after,
+  .cover-btn-nav .app-ico-sumario:after,
+  .cover-btn-nav .app-ico-atividade:after,
+  .cover-btn-nav .app-ico-marcador:after,
+  .cover-btn-nav .app-ico-anotacao:after,
+  .cover-btn-nav .app-ico-referencia:after {
+    display: block;
+    line-height: 35px;
+  }
+  .cover-btn-nav.btn-nav-menu {
+    margin-bottom: 119px;
+  }
+  .cover-btn-tooltip {
+    display: none;
+    font-size: 15px;
+    text-transform: uppercase;
+    line-height: 15px;
+    padding: 8px 0px;
+    width: 250px;
+    height: 32px;
+    float: left;
+    position: relative;
+    top: -28px;
+    right: 267px;
+    background-color: #C0504D;
+    color: #FFFFFF;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-backface-visibility: visible !important;
+    backface-visibility: visible !important;
+    -webkit-animation-name: flipInX;
+    animation-name: flipInX;
+  }
+  .cover-btn-tooltip:before {
+    border: 16px solid transparent;
+    border-left-color: #C0504D;
+    left: 250px;
+    position: absolute;
+    content: "";
+    top: 0;
+  }
+  .cover-btn-iniciar {
+    position: absolute;
+    top: 60%;
+    display: block;
+    font-family: "PF BeauSans Pro";
+    font-size: 16px;
+    text-transform: uppercase;
+    line-height: 16px;
+    padding: 11px;
+    padding-left: 50px;
+    padding-right: 63px;
+    min-width: 340px;
+    color: #FFFFFF;
+    background-color: #D9A1A1;
+  }
+  .cover-btn-iniciar:hover {
+    cursor: pointer;
+    background-color: #C77172;
+  }
+  .cover-btn-iniciar:before {
+    content: "Iniciar Leitura";
+    text-align: center;
+  }
+  .cover-btn-iniciar:after {
+    font-family: "FontAwesome";
+    font-size: 45px;
+    content: "\F105";
+    background-color: #C77172;
+    padding: 11px 9px;
+    float: left;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+  }
+  .cover-logo-group .cover-logo-item {
+    position: absolute;
+    bottom: 5px;
+    left: 21%;
+    width: 175px;
+    text-align: center;
+  }
+  .cover-logo-group .cover-logo-item.logo-instituicao {
+    margin-left: 185px;
+  }
+  .cover-contents {
+    top: 0px;
+  }
+  .cover-btn-nav {
+    display: none;
+  }
+  .cover-btn-nav.btn-nav-menu {
+    display: block;
+  }
+  .cover-btn-iniciar {
+    top: 40%;
+    min-width: 190px;
+  }
+}
+@media (min-width: 480px) and (min-height: 480px) {
+  .app-cover {
+    border-top: 1px solid red;
+  }
+  .app-cover {
+    min-height: 550px;
+  }
+  .app-text-livro,
+  .app-text-livro,
+  .cover-btn-nav {
+    font-family: "PF BeauSans Pro";
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: fadeInRight;
+    animation-name: fadeInRight;
+  }
+  .cover-contents {
+    width: 90%;
+    position: absolute;
+    top: 10%;
+  }
+  .cover-fachada {
+    padding-left: 57px;
+    padding-right: 56px;
+    width: 100%;
+    display: block;
+  }
+  .cover-fachada.app-text-livro,
+  .cover-fachada.app-text-autor {
+    color: #FFFFFF;
+    font-family: "PF BeauSans Pro";
+  }
+  .cover-fachada.app-text-livro {
+    font-size: 30px;
+    line-height: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #A11314;
+    font-weight: bold;
+  }
+  .cover-fachada.app-text-autor {
+    font-size: 14px;
+    line-height: 14px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    margin-top: -1px;
+    background-color: #C0504D;
+    font-style: italic;
+  }
+  .cover-nav-bar {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: 10%;
+    float: right;
+  }
+  .cover-btn-nav {
+    display: block;
+    text-align: center;
+    padding: 10px 0px;
+    margin-bottom: 20px;
+    line-height: 25px;
+    cursor: pointer;
+  }
+  .cover-btn-nav:hover {
+    background-color: #C0504D;
+  }
+  .cover-btn-nav:hover .cover-btn-tooltip {
+    display: block;
+  }
+  .cover-btn-nav .app-ico-menu,
+  .cover-btn-nav .app-ico-sumario,
+  .cover-btn-nav .app-ico-atividade,
+  .cover-btn-nav .app-ico-marcador,
+  .cover-btn-nav .app-ico-anotacao,
+  .cover-btn-nav .app-ico-referencia {
+    font-size: 25px;
+    color: #FFFFFF;
+  }
+  .cover-btn-nav .app-ico-menu:after,
+  .cover-btn-nav .app-ico-sumario:after,
+  .cover-btn-nav .app-ico-atividade:after,
+  .cover-btn-nav .app-ico-marcador:after,
+  .cover-btn-nav .app-ico-anotacao:after,
+  .cover-btn-nav .app-ico-referencia:after {
+    display: block;
+    line-height: 25px;
+  }
+  .cover-btn-nav.btn-nav-menu {
+    margin-bottom: 119px;
+  }
+  .cover-btn-tooltip {
+    display: none;
+    font-size: 15px;
+    text-transform: uppercase;
+    line-height: 15px;
+    padding: 8px 0px;
+    width: 250px;
+    height: 32px;
+    float: left;
+    position: relative;
+    top: -28px;
+    right: 267px;
+    background-color: #C0504D;
+    color: #FFFFFF;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-backface-visibility: visible !important;
+    backface-visibility: visible !important;
+    -webkit-animation-name: flipInX;
+    animation-name: flipInX;
+  }
+  .cover-btn-tooltip:before {
+    border: 16px solid transparent;
+    border-left-color: #C0504D;
+    left: 250px;
+    position: absolute;
+    content: "";
+    top: 0;
+  }
+  .cover-btn-iniciar {
+    position: absolute;
+    top: 60%;
+    display: block;
+    font-family: "PF BeauSans Pro";
+    font-size: 22px;
+    text-transform: uppercase;
+    line-height: 22px;
+    padding: 17px;
+    padding-left: 50px;
+    padding-right: 63px;
+    min-width: 340px;
+    color: #FFFFFF;
+    background-color: #D9A1A1;
+  }
+  .cover-btn-iniciar:hover {
+    cursor: pointer;
+    background-color: #C77172;
+  }
+  .cover-btn-iniciar:before {
+    content: "Iniciar Leitura";
+    text-align: center;
+  }
+  .cover-btn-iniciar:after {
+    font-family: "FontAwesome";
+    font-size: 60px;
+    content: "\F105";
+    background-color: #C77172;
+    padding: 17px 14px;
+    float: left;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+  }
+  .cover-logo-group .cover-logo-item {
+    position: absolute;
+    bottom: 5px;
+    left: 21%;
+    width: 175px;
+    text-align: center;
+  }
+  .cover-logo-group .cover-logo-item.logo-instituicao {
+    margin-left: 185px;
+  }
+  .cover-logo-item.logo-instituicao {
+    width: 185px;
+  }
+}
+@media (min-width: 480px) and (min-height: 624px) {
+  .app-cover {
+    border-top: 1px solid green;
+  }
+  .app-cover {
+    min-height: 550px;
+  }
+  .app-text-livro,
+  .app-text-livro,
+  .cover-btn-nav {
+    font-family: "PF BeauSans Pro";
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: fadeInRight;
+    animation-name: fadeInRight;
+  }
+  .cover-contents {
+    width: 90%;
+    position: absolute;
+    top: 10%;
+  }
+  .cover-fachada {
+    padding-left: 57px;
+    padding-right: 56px;
+    width: 100%;
+    display: block;
+  }
+  .cover-fachada.app-text-livro,
+  .cover-fachada.app-text-autor {
+    color: #FFFFFF;
+    font-family: "PF BeauSans Pro";
+  }
+  .cover-fachada.app-text-livro {
+    font-size: 30px;
+    line-height: 30px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    background-color: #A11314;
+    font-weight: bold;
+  }
+  .cover-fachada.app-text-autor {
+    font-size: 16px;
+    line-height: 16px;
+    padding-top: 7.5px;
+    padding-bottom: 7.5px;
+    margin-top: -1px;
+    background-color: #C0504D;
+    font-style: italic;
+  }
+  .cover-nav-bar {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: 10%;
+    float: right;
+  }
+  .cover-btn-nav {
+    display: block;
+    text-align: center;
+    padding: 20px 0px;
+    margin-bottom: 10px;
+    line-height: 30px;
+    cursor: pointer;
+  }
+  .cover-btn-nav:hover {
+    background-color: #C0504D;
+  }
+  .cover-btn-nav:hover .cover-btn-tooltip {
+    display: block;
+  }
+  .cover-btn-nav .app-ico-menu,
+  .cover-btn-nav .app-ico-sumario,
+  .cover-btn-nav .app-ico-atividade,
+  .cover-btn-nav .app-ico-marcador,
+  .cover-btn-nav .app-ico-anotacao,
+  .cover-btn-nav .app-ico-referencia {
+    font-size: 30px;
+    color: #FFFFFF;
+  }
+  .cover-btn-nav .app-ico-menu:after,
+  .cover-btn-nav .app-ico-sumario:after,
+  .cover-btn-nav .app-ico-atividade:after,
+  .cover-btn-nav .app-ico-marcador:after,
+  .cover-btn-nav .app-ico-anotacao:after,
+  .cover-btn-nav .app-ico-referencia:after {
+    display: block;
+    line-height: 30px;
+  }
+  .cover-btn-nav.btn-nav-menu {
+    margin-bottom: 160px;
+  }
+  .cover-btn-tooltip {
+    display: none;
+    font-size: 16px;
+    text-transform: uppercase;
+    line-height: 16px;
+    padding: 15px 0px;
+    width: 300px;
+    height: 49px;
+    float: left;
+    position: relative;
+    top: -45px;
+    right: 325px;
+    background-color: #C0504D;
+    color: #FFFFFF;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-backface-visibility: visible !important;
+    backface-visibility: visible !important;
+    -webkit-animation-name: flipInX;
+    animation-name: flipInX;
+  }
+  .cover-btn-tooltip:before {
+    border: 25px solid transparent;
+    border-left-color: #C0504D;
+    left: 300px;
+    position: absolute;
+    content: "";
+    top: 0;
+  }
+  .cover-btn-iniciar {
+    position: absolute;
+    top: 60%;
+    display: block;
+    font-family: "PF BeauSans Pro";
+    font-size: 22px;
+    text-transform: uppercase;
+    line-height: 22px;
+    padding: 17px;
+    padding-left: 50px;
+    padding-right: 63px;
+    min-width: 340px;
+    color: #FFFFFF;
+    background-color: #D9A1A1;
+  }
+  .cover-btn-iniciar:hover {
+    cursor: pointer;
+    background-color: #C77172;
+  }
+  .cover-btn-iniciar:before {
+    content: "Iniciar Leitura";
+    text-align: center;
+  }
+  .cover-btn-iniciar:after {
+    font-family: "FontAwesome";
+    font-size: 60px;
+    content: "\F105";
+    background-color: #C77172;
+    padding: 17px 14px;
+    float: left;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+  }
+  .cover-logo-group .cover-logo-item {
+    position: absolute;
+    bottom: 5px;
+    left: 21%;
+    width: 175px;
+    text-align: center;
+  }
+  .cover-logo-group .cover-logo-item.logo-instituicao {
+    margin-left: 185px;
+  }
+  .cover-logo-item.logo-instituicao {
+    width: 155px;
+    left: 11%;
+  }
+}
+@media (min-width: 480px) and (min-height: 768px) {
+  .app-cover {
+    min-height: 550px;
+  }
+  .app-text-livro,
+  .app-text-livro,
+  .cover-btn-nav {
+    font-family: "PF BeauSans Pro";
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: fadeInRight;
+    animation-name: fadeInRight;
+  }
+  .cover-contents {
+    width: 90%;
+    position: absolute;
+    top: 10%;
+  }
+  .cover-fachada {
+    padding-left: 57px;
+    padding-right: 56px;
+    width: 100%;
+    display: block;
+  }
+  .cover-fachada.app-text-livro,
+  .cover-fachada.app-text-autor {
+    color: #FFFFFF;
+    font-family: "PF BeauSans Pro";
+  }
+  .cover-fachada.app-text-livro {
+    font-size: 45px;
+    line-height: 45px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: #A11314;
+    font-weight: bold;
+  }
+  .cover-fachada.app-text-autor {
+    font-size: 16px;
+    line-height: 16px;
+    padding-top: 7.5px;
+    padding-bottom: 7.5px;
+    margin-top: -1px;
+    background-color: #C0504D;
+    font-style: italic;
+  }
+  .cover-nav-bar {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: 10%;
+    float: right;
+  }
+  .cover-btn-nav {
+    display: block;
+    text-align: center;
+    padding: 20px 0px;
+    margin-bottom: 20px;
+    line-height: 32px;
+    cursor: pointer;
+  }
+  .cover-btn-nav:hover {
+    background-color: #C0504D;
+  }
+  .cover-btn-nav:hover .cover-btn-tooltip {
+    display: block;
+  }
+  .cover-btn-nav .app-ico-menu,
+  .cover-btn-nav .app-ico-sumario,
+  .cover-btn-nav .app-ico-atividade,
+  .cover-btn-nav .app-ico-marcador,
+  .cover-btn-nav .app-ico-anotacao,
+  .cover-btn-nav .app-ico-referencia {
+    font-size: 32px;
+    color: #FFFFFF;
+  }
+  .cover-btn-nav .app-ico-menu:after,
+  .cover-btn-nav .app-ico-sumario:after,
+  .cover-btn-nav .app-ico-atividade:after,
+  .cover-btn-nav .app-ico-marcador:after,
+  .cover-btn-nav .app-ico-anotacao:after,
+  .cover-btn-nav .app-ico-referencia:after {
+    display: block;
+    line-height: 32px;
+  }
+  .cover-btn-nav.btn-nav-menu {
+    margin-bottom: 225px;
+  }
+  .cover-btn-tooltip {
+    display: none;
+    font-size: 18px;
+    text-transform: uppercase;
+    line-height: 18px;
+    padding: 20px 0px;
+    width: 300px;
+    height: 54px;
+    float: left;
+    position: relative;
+    top: -45px;
+    right: 328px;
+    background-color: #C0504D;
+    color: #FFFFFF;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-backface-visibility: visible !important;
+    backface-visibility: visible !important;
+    -webkit-animation-name: flipInX;
+    animation-name: flipInX;
+  }
+  .cover-btn-tooltip:before {
+    border: 27px solid transparent;
+    border-left-color: #C0504D;
+    left: 300px;
+    position: absolute;
+    content: "";
+    top: 0;
+  }
+  .cover-btn-iniciar {
+    position: absolute;
+    top: 60%;
+    display: block;
+    font-family: "PF BeauSans Pro";
+    font-size: 25px;
+    text-transform: uppercase;
+    line-height: 25px;
+    padding: 20px;
+    padding-left: 50px;
+    padding-right: 63px;
+    min-width: 340px;
+    color: #FFFFFF;
+    background-color: #D9A1A1;
+  }
+  .cover-btn-iniciar:hover {
+    cursor: pointer;
+    background-color: #C77172;
+  }
+  .cover-btn-iniciar:before {
+    content: "Iniciar Leitura";
+    text-align: center;
+  }
+  .cover-btn-iniciar:after {
+    font-family: "FontAwesome";
+    font-size: 70px;
+    content: "\F105";
+    background-color: #C77172;
+    padding: 20px 16px;
+    float: left;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+  }
+  .cover-logo-group .cover-logo-item {
+    position: absolute;
+    bottom: 5px;
+    left: 21%;
+    width: 175px;
+    text-align: center;
+  }
+  .cover-logo-group .cover-logo-item.logo-instituicao {
+    margin-left: 185px;
+  }
+}
+@media (min-width: 480px) and (min-height: 992px) {
+  .app-cover {
+    min-height: 550px;
+  }
+  .app-text-livro,
+  .app-text-livro,
+  .cover-btn-nav {
+    font-family: "PF BeauSans Pro";
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: fadeInRight;
+    animation-name: fadeInRight;
+  }
+  .cover-contents {
+    width: 90%;
+    position: absolute;
+    top: 10%;
+  }
+  .cover-fachada {
+    padding-left: 57px;
+    padding-right: 56px;
+    width: 100%;
+    display: block;
+  }
+  .cover-fachada.app-text-livro,
+  .cover-fachada.app-text-autor {
+    color: #FFFFFF;
+    font-family: "PF BeauSans Pro";
+  }
+  .cover-fachada.app-text-livro {
+    font-size: 45px;
+    line-height: 45px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: #A11314;
+    font-weight: bold;
+  }
+  .cover-fachada.app-text-autor {
+    font-size: 16px;
+    line-height: 16px;
+    padding-top: 7.5px;
+    padding-bottom: 7.5px;
+    margin-top: -1px;
+    background-color: #C0504D;
+    font-style: italic;
+  }
+  .cover-nav-bar {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: 10%;
+    float: right;
+  }
+  .cover-btn-nav {
+    display: block;
+    text-align: center;
+    padding: 20px 0px;
+    margin-bottom: 30px;
+    line-height: 42px;
+    cursor: pointer;
+  }
+  .cover-btn-nav:hover {
+    background-color: #C0504D;
+  }
+  .cover-btn-nav:hover .cover-btn-tooltip {
+    display: block;
+  }
+  .cover-btn-nav .app-ico-menu,
+  .cover-btn-nav .app-ico-sumario,
+  .cover-btn-nav .app-ico-atividade,
+  .cover-btn-nav .app-ico-marcador,
+  .cover-btn-nav .app-ico-anotacao,
+  .cover-btn-nav .app-ico-referencia {
+    font-size: 42px;
+    color: #FFFFFF;
+  }
+  .cover-btn-nav .app-ico-menu:after,
+  .cover-btn-nav .app-ico-sumario:after,
+  .cover-btn-nav .app-ico-atividade:after,
+  .cover-btn-nav .app-ico-marcador:after,
+  .cover-btn-nav .app-ico-anotacao:after,
+  .cover-btn-nav .app-ico-referencia:after {
+    display: block;
+    line-height: 42px;
+  }
+  .cover-btn-nav.btn-nav-menu {
+    margin-bottom: 285px;
+  }
+  .cover-btn-tooltip {
+    display: none;
+    font-size: 18px;
+    text-transform: uppercase;
+    line-height: 18px;
+    padding: 20px 0px;
+    width: 300px;
+    height: 54px;
+    float: left;
+    position: relative;
+    top: -45px;
+    right: 328px;
+    background-color: #C0504D;
+    color: #FFFFFF;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-backface-visibility: visible !important;
+    backface-visibility: visible !important;
+    -webkit-animation-name: flipInX;
+    animation-name: flipInX;
+  }
+  .cover-btn-tooltip:before {
+    border: 27px solid transparent;
+    border-left-color: #C0504D;
+    left: 300px;
+    position: absolute;
+    content: "";
+    top: 0;
+  }
+  .cover-btn-iniciar {
+    position: absolute;
+    top: 60%;
+    display: block;
+    font-family: "PF BeauSans Pro";
+    font-size: 25px;
+    text-transform: uppercase;
+    line-height: 25px;
+    padding: 20px;
+    padding-left: 50px;
+    padding-right: 63px;
+    min-width: 340px;
+    color: #FFFFFF;
+    background-color: #D9A1A1;
+  }
+  .cover-btn-iniciar:hover {
+    cursor: pointer;
+    background-color: #C77172;
+  }
+  .cover-btn-iniciar:before {
+    content: "Iniciar Leitura";
+    text-align: center;
+  }
+  .cover-btn-iniciar:after {
+    font-family: "FontAwesome";
+    font-size: 70px;
+    content: "\F105";
+    background-color: #C77172;
+    padding: 20px 16px;
+    float: left;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+  }
+  .cover-logo-group .cover-logo-item {
+    position: absolute;
+    bottom: 5px;
+    left: 21%;
+    width: 170px;
+    text-align: center;
+  }
+  .cover-logo-group .cover-logo-item.logo-instituicao {
+    margin-left: 180px;
+  }
+}
+@media (min-width: 480px) and (min-height: 1200px) {
+  .app-cover {
+    min-height: 550px;
+  }
+  .app-text-livro,
+  .app-text-livro,
+  .cover-btn-nav {
+    font-family: "PF BeauSans Pro";
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: fadeInRight;
+    animation-name: fadeInRight;
+  }
+  .cover-contents {
+    width: 90%;
+    position: absolute;
+    top: 10%;
+  }
+  .cover-fachada {
+    padding-left: 57px;
+    padding-right: 56px;
+    width: 100%;
+    display: block;
+  }
+  .cover-fachada.app-text-livro,
+  .cover-fachada.app-text-autor {
+    color: #FFFFFF;
+    font-family: "PF BeauSans Pro";
+  }
+  .cover-fachada.app-text-livro {
+    font-size: 45px;
+    line-height: 45px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-color: #A11314;
+    font-weight: bold;
+  }
+  .cover-fachada.app-text-autor {
+    font-size: 16px;
+    line-height: 16px;
+    padding-top: 7.5px;
+    padding-bottom: 7.5px;
+    margin-top: -1px;
+    background-color: #C0504D;
+    font-style: italic;
+  }
+  .cover-nav-bar {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: 10%;
+    float: right;
+  }
+  .cover-btn-nav {
+    display: block;
+    text-align: center;
+    padding: 20px 0px;
+    margin-bottom: 30px;
+    line-height: 42px;
+    cursor: pointer;
+  }
+  .cover-btn-nav:hover {
+    background-color: #C0504D;
+  }
+  .cover-btn-nav:hover .cover-btn-tooltip {
+    display: block;
+  }
+  .cover-btn-nav .app-ico-menu,
+  .cover-btn-nav .app-ico-sumario,
+  .cover-btn-nav .app-ico-atividade,
+  .cover-btn-nav .app-ico-marcador,
+  .cover-btn-nav .app-ico-anotacao,
+  .cover-btn-nav .app-ico-referencia {
+    font-size: 42px;
+    color: #FFFFFF;
+  }
+  .cover-btn-nav .app-ico-menu:after,
+  .cover-btn-nav .app-ico-sumario:after,
+  .cover-btn-nav .app-ico-atividade:after,
+  .cover-btn-nav .app-ico-marcador:after,
+  .cover-btn-nav .app-ico-anotacao:after,
+  .cover-btn-nav .app-ico-referencia:after {
+    display: block;
+    line-height: 42px;
+  }
+  .cover-btn-nav.btn-nav-menu {
+    margin-bottom: 315px;
+  }
+  .cover-btn-tooltip {
+    display: none;
+    font-size: 18px;
+    text-transform: uppercase;
+    line-height: 18px;
+    padding: 20px 0px;
+    width: 300px;
+    height: 54px;
+    float: left;
+    position: relative;
+    top: -45px;
+    right: 328px;
+    background-color: #C0504D;
+    color: #FFFFFF;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-backface-visibility: visible !important;
+    backface-visibility: visible !important;
+    -webkit-animation-name: flipInX;
+    animation-name: flipInX;
+  }
+  .cover-btn-tooltip:before {
+    border: 27px solid transparent;
+    border-left-color: #C0504D;
+    left: 300px;
+    position: absolute;
+    content: "";
+    top: 0;
+  }
+  .cover-btn-iniciar {
+    position: absolute;
+    top: 60%;
+    display: block;
+    font-family: "PF BeauSans Pro";
+    font-size: 28px;
+    text-transform: uppercase;
+    line-height: 28px;
+    padding: 25px;
+    padding-left: 50px;
+    padding-right: 63px;
+    min-width: 340px;
+    color: #FFFFFF;
+    background-color: #D9A1A1;
+  }
+  .cover-btn-iniciar:hover {
+    cursor: pointer;
+    background-color: #C77172;
+  }
+  .cover-btn-iniciar:before {
+    content: "Iniciar Leitura";
+    text-align: center;
+  }
+  .cover-btn-iniciar:after {
+    font-family: "FontAwesome";
+    font-size: 70px;
+    content: "\F105";
+    background-color: #C77172;
+    padding: 25px 20px;
+    float: left;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+  }
+  .cover-logo-group .cover-logo-item {
+    position: absolute;
+    bottom: 5px;
+    left: 21%;
+    width: 170px;
+    text-align: center;
+  }
+  .cover-logo-group .cover-logo-item.logo-instituicao {
+    margin-left: 180px;
+  }
 }
 @media (min-width: 768px) and (max-height: 479px) {
-  .app-cover {
-    border-top: 1px solid brown;
-  }
   .app-cover {
     min-height: 550px;
   }
@@ -14437,9 +16634,6 @@ body,
 }
 @media (min-width: 768px) and (min-height: 480px) {
   .app-cover {
-    border-top: 1px solid brown;
-  }
-  .app-cover {
     min-height: 550px;
   }
   .app-text-livro,
@@ -14608,9 +16802,6 @@ body,
 }
 @media (min-width: 768px) and (min-height: 624px) {
   .app-cover {
-    border-top: 1px solid orange;
-  }
-  .app-cover {
     min-height: 550px;
   }
   .app-text-livro,
@@ -14775,9 +16966,6 @@ body,
   }
 }
 @media (min-width: 768px) and (min-height: 768px) {
-  .app-cover {
-    border-top: 1px solid green;
-  }
   .app-cover {
     min-height: 550px;
   }
@@ -14944,9 +17132,6 @@ body,
 }
 @media (min-width: 768px) and (min-height: 992px) {
   .app-cover {
-    border-top: 1px solid yellow;
-  }
-  .app-cover {
     min-height: 550px;
   }
   .app-text-livro,
@@ -15112,9 +17297,6 @@ body,
 }
 @media (min-width: 768px) and (min-height: 1200px) {
   .app-cover {
-    border-top: 1px solid red;
-  }
-  .app-cover {
     min-height: 550px;
   }
   .app-text-livro,
@@ -15279,9 +17461,6 @@ body,
   }
 }
 @media (min-width: 992px) and (max-height: 479px) {
-  .app-cover {
-    border-top: 1px solid brown;
-  }
   .app-cover {
     min-height: 550px;
   }
@@ -15461,9 +17640,6 @@ body,
 }
 @media (min-width: 992px) and (min-height: 480px) {
   .app-cover {
-    border-top: 1px solid brown;
-  }
-  .app-cover {
     min-height: 550px;
   }
   .app-text-livro,
@@ -15628,9 +17804,6 @@ body,
   }
 }
 @media (min-width: 992px) and (min-height: 624px) {
-  .app-cover {
-    border-top: 1px solid orange;
-  }
   .app-cover {
     min-height: 550px;
   }
@@ -15797,9 +17970,6 @@ body,
 }
 @media (min-width: 992px) and (min-height: 768px) {
   .app-cover {
-    border-top: 1px solid green;
-  }
-  .app-cover {
     min-height: 550px;
   }
   .app-text-livro,
@@ -15965,9 +18135,6 @@ body,
 }
 @media (min-width: 992px) and (min-height: 992px) {
   .app-cover {
-    border-top: 1px solid yellow;
-  }
-  .app-cover {
     min-height: 550px;
   }
   .app-text-livro,
@@ -16132,9 +18299,6 @@ body,
   }
 }
 @media (min-width: 992px) and (min-height: 1200px) {
-  .app-cover {
-    border-top: 1px solid red;
-  }
   .app-cover {
     min-height: 550px;
   }
@@ -16474,9 +18638,6 @@ body,
 }
 @media (min-width: 1200px) and (min-height: 480px) {
   .app-cover {
-    border-top: 1px solid brown;
-  }
-  .app-cover {
     min-height: 550px;
   }
   .app-text-livro,
@@ -16642,9 +18803,6 @@ body,
 }
 @media (min-width: 1200px) and (min-height: 768px) {
   .app-cover {
-    border-top: 1px solid green;
-  }
-  .app-cover {
     min-height: 550px;
   }
   .app-text-livro,
@@ -16808,15 +18966,7 @@ body,
     margin-left: 180px;
   }
 }
-@media (min-width: 1200px) and (min-height: 992px) {
-  .app-cover {
-    border-top: 1px solid yellow;
-  }
-}
 @media (min-width: 1200px) and (min-height: 1200px) {
-  .app-cover {
-    border-top: 1px solid red;
-  }
   .app-cover {
     min-height: 550px;
   }

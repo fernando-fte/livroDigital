@@ -165,15 +165,97 @@
 
 	@width-contents: 100%;
 	@width-navbar: 0%;
-	.cover-nav-bar { display: none }
+	// .cover-nav-bar { display: none }
 
 	// Min Min grid (XS) // ~ to 480
-	@media (max-height: @screen-xs-max) {
+	@media (max-height: @screen-xs-max) { 
+
+		//** Configura tamanho minimo da capa
+		@min-height: 50px;
+
+		//** Configura a fachada da capa
+		@fachada-pdd-l: 16px;
+		@fachada-pdd-r: 16px;
+
+		@livro-font: 16px;
+		@livro-pdd: 12px;
+
+		@autor-font: 13px;
+		@autor-pdd: 6px;
+
+		//**configrua os bototoes de navegação
+		@btn-font: 25px;
+		@btn-pdd: 10px;
+		@btn-mrg: 20px;
+		@btn-mrg-menu: 119px;
+
+		//** Configrua tooltip dos botoes da navegação
+		@tooltip-font: 15px;
+		@tooltip-pdd: 8px;
+		@tooltip-top: 28px;
+		@tooltip-width: 250px;
+		@tooltip-height: 32px;
+
+		//** COnfigrua botão de iniciar leitura
+		@iniciar-font: 22px;
+		@iniciar-ico: 60px;
+		@iniciar-pdd: 17px;
+		@iniciar-pdd-l: 50px;
+		@iniciar-pdd-r: 63px;
+		@iniciar-width: 340px;
+
+		//** Configrua logos da capa
+		@logo-left: 21%; //40%
+		@logo-width: 175px; //170px
+
+		.app-variant-cover (@width-contents, @width-navbar, @min-height, @fachada-pdd-l, @fachada-pdd-r, @livro-font, @livro-pdd, @autor-font, @autor-pdd, @btn-font, @btn-pdd, @btn-mrg, @btn-mrg-menu, @tooltip-font, @tooltip-pdd, @tooltip-top, @tooltip-width, @tooltip-height, @iniciar-font, @iniciar-ico, @iniciar-pdd, @iniciar-pdd-l, @iniciar-pdd-r, @iniciar-width, @logo-left, @logo-width);	//== Configruações responsivas da autura
+		.cover-logo-item.logo-instituicao { width: 185px }
+		.cover-btn-iniciar { width: 10px; max-width: none; min-width: initial; right: 0px; padding: 0px; top: 50%}
+		// .cover-btn-iniciar:before { display: none; }
+		.cover-btn-iniciar:after { width: 60px; padding: 31px 20px; background-color: @app-cor-padrao; }
+		.cover-logo-group {
+			.cover-logo-item.logo-instituicao { background-color: @app-cor-instituicao; position: fixed; top: 0px; margin-left: 0px; width: 110px; padding: 5px; }
+			.cover-logo-item { width: 135px; left: 32%;}
+		}
+
+		.cover-nav-bar {
+			background-color: initial;
+			height: auto;
+			width: 100%;
+			float: left;
+			top: 79%;
+			text-align: center;
+		}
+
+		.cover-btn-nav {
+			display: inline-block;
+			text-align: center;
+			padding: 7px;
+			margin-bottom: 20px;
+			line-height: 25px;
+			cursor: pointer;
+			margin: 0px 2%;
+			background-color: rgba(255, 255, 255, 0.72);
+			border-bottom: 4px solid @app-cor-padrao-fraco;
+			width: 48px;
+
+			.app-ico-sumario, .app-ico-atividade, .app-ico-marcador, .app-ico-anotacao, .app-ico-referencia { color: @app-cor-padrao-fraco; }
+
+			&.btn-nav-menu {
+				margin-bottom: inherit;
+				position: fixed;
+				top: 0px;
+				right: 0px;
+				background-color: rgba(0, 0, 0, 0.5);
+				border: none;
+				margin: 0px;
+				.app-ico-menu { color: @app-cor-preto-0; }
+			}
+		}
 	}
 
 	// Min Min grid (SS1) // 480 to 623
 	@media (min-height: @screen-ss-min) { 
-		.app-cover { border-top: 1px solid brown }
 
 		//** Configura tamanho minimo da capa
 		@min-height: 550px;
@@ -216,44 +298,406 @@
 		.app-variant-cover (@width-contents, @width-navbar, @min-height, @fachada-pdd-l, @fachada-pdd-r, @livro-font, @livro-pdd, @autor-font, @autor-pdd, @btn-font, @btn-pdd, @btn-mrg, @btn-mrg-menu, @tooltip-font, @tooltip-pdd, @tooltip-top, @tooltip-width, @tooltip-height, @iniciar-font, @iniciar-ico, @iniciar-pdd, @iniciar-pdd-l, @iniciar-pdd-r, @iniciar-width, @logo-left, @logo-width);	//== Configruações responsivas da autura
 		.cover-logo-item.logo-instituicao { width: 185px }
 		.cover-btn-iniciar { width: 10px; max-width: none; min-width: initial; right: 0px; padding: 0px; }
-		.cover-btn-iniciar:before { display: none; }
+		// .cover-btn-iniciar:before { display: none; }
 		.cover-btn-iniciar:after { width: 60px; padding: 31px 20px; background-color: @app-cor-padrao; }
 		.cover-logo-group {
 			.cover-logo-item.logo-instituicao { background-color: @app-cor-instituicao; position: fixed; top: 0px; margin-left: 0px; width: 110px; padding: 5px; }
 			.cover-logo-item { width: 135px; left: 32%;}
 		}
+
+		.cover-nav-bar {
+			background-color: initial;
+			height: auto;
+			width: 100%;
+			float: left;
+			top: 82%;
+			text-align: center;
+		}
+
+		.cover-btn-nav {
+			display: inline-block;
+			text-align: center;
+			padding: 10px;
+			margin-bottom: 20px;
+			line-height: 25px;
+			cursor: pointer;
+			margin: 0px 2%;
+			background-color: rgba(255, 255, 255, 0.72);
+			border-bottom: 4px solid @app-cor-padrao-fraco;
+			width: 48px;
+
+			.app-ico-sumario, .app-ico-atividade, .app-ico-marcador, .app-ico-anotacao, .app-ico-referencia { color: @app-cor-padrao-fraco; }
+
+			&.btn-nav-menu {
+				margin-bottom: inherit;
+				position: fixed;
+				top: 0px;
+				right: 0px;
+				background-color: rgba(0, 0, 0, 0.5);
+				border: none;
+				margin: 0px;
+				.app-ico-menu { color: @app-cor-preto-0; }
+			}
+		}
 	}
 
 	// Min Min grid (SS2) // 624 to 768
-	@media (min-height: 624px) {
+	@media (min-height: 624px) { 
+
+		//** Configura tamanho minimo da capa
+		@min-height: 550px;
+
+		//** Configura a fachada da capa
+		@fachada-pdd-l: 16px;
+		@fachada-pdd-r: 16px;
+
+		@livro-font: 25px;
+		@livro-pdd: 12px;
+
+		@autor-font: 14px;
+		@autor-pdd: 6px;
+
+		//**configrua os bototoes de navegação
+		@btn-font: 25px;
+		@btn-pdd: 10px;
+		@btn-mrg: 20px;
+		@btn-mrg-menu: 119px;
+
+		//** Configrua tooltip dos botoes da navegação
+		@tooltip-font: 15px;
+		@tooltip-pdd: 8px;
+		@tooltip-top: 28px;
+		@tooltip-width: 250px;
+		@tooltip-height: 32px;
+
+		//** COnfigrua botão de iniciar leitura
+		@iniciar-font: 22px;
+		@iniciar-ico: 60px;
+		@iniciar-pdd: 17px;
+		@iniciar-pdd-l: 50px;
+		@iniciar-pdd-r: 63px;
+		@iniciar-width: 340px;
+
+		//** Configrua logos da capa
+		@logo-left: 21%; //40%
+		@logo-width: 175px; //170px
+
+		.app-variant-cover (@width-contents, @width-navbar, @min-height, @fachada-pdd-l, @fachada-pdd-r, @livro-font, @livro-pdd, @autor-font, @autor-pdd, @btn-font, @btn-pdd, @btn-mrg, @btn-mrg-menu, @tooltip-font, @tooltip-pdd, @tooltip-top, @tooltip-width, @tooltip-height, @iniciar-font, @iniciar-ico, @iniciar-pdd, @iniciar-pdd-l, @iniciar-pdd-r, @iniciar-width, @logo-left, @logo-width);	//== Configruações responsivas da autura
+		.cover-logo-item.logo-instituicao { width: 185px }
+		.cover-btn-iniciar { width: 10px; max-width: none; min-width: initial; right: 0px; padding: 0px; }
+		// .cover-btn-iniciar:before { display: none; }
+		.cover-btn-iniciar:after { width: 60px; padding: 31px 20px; background-color: @app-cor-padrao; }
+		.cover-logo-group {
+			.cover-logo-item.logo-instituicao { background-color: @app-cor-instituicao; position: fixed; top: 0px; margin-left: 0px; width: 110px; padding: 5px; }
+			.cover-logo-item { width: 135px; left: 32%;}
+		}
+
+		.cover-nav-bar {
+			background-color: initial;
+			height: auto;
+			width: 100%;
+			float: left;
+			top: 82%;
+			text-align: center;
+		}
+
+		.cover-btn-nav {
+			display: inline-block;
+			text-align: center;
+			padding: 10px;
+			margin-bottom: 20px;
+			line-height: 25px;
+			cursor: pointer;
+			margin: 0px 2%;
+			background-color: rgba(255, 255, 255, 0.72);
+			border-bottom: 4px solid @app-cor-padrao-fraco;
+			width: 48px;
+
+			.app-ico-sumario, .app-ico-atividade, .app-ico-marcador, .app-ico-anotacao, .app-ico-referencia { color: @app-cor-padrao-fraco; }
+
+			&.btn-nav-menu {
+				margin-bottom: inherit;
+				position: fixed;
+				top: 0px;
+				right: 0px;
+				background-color: rgba(0, 0, 0, 0.5);
+				border: none;
+				margin: 0px;
+				.app-ico-menu { color: @app-cor-preto-0; }
+			}
+		}
 	}
 
 	// Min grid (SM)// 768 to 992
-	@media (min-height: @screen-sm-min) { 
+	@media (min-height: @screen-sm-min) {  
+
+		//** Configura tamanho minimo da capa
+		@min-height: 550px;
+
+		//** Configura a fachada da capa
+		@fachada-pdd-l: 16px;
+		@fachada-pdd-r: 16px;
+
+		@livro-font: 25px;
+		@livro-pdd: 12px;
+
+		@autor-font: 14px;
+		@autor-pdd: 6px;
+
+		//**configrua os bototoes de navegação
+		@btn-font: 25px;
+		@btn-pdd: 10px;
+		@btn-mrg: 20px;
+		@btn-mrg-menu: 119px;
+
+		//** Configrua tooltip dos botoes da navegação
+		@tooltip-font: 15px;
+		@tooltip-pdd: 8px;
+		@tooltip-top: 28px;
+		@tooltip-width: 250px;
+		@tooltip-height: 32px;
+
+		//** COnfigrua botão de iniciar leitura
+		@iniciar-font: 22px;
+		@iniciar-ico: 60px;
+		@iniciar-pdd: 17px;
+		@iniciar-pdd-l: 50px;
+		@iniciar-pdd-r: 63px;
+		@iniciar-width: 340px;
+
+		//** Configrua logos da capa
+		@logo-left: 21%; //40%
+		@logo-width: 175px; //170px
+
+		.app-variant-cover (@width-contents, @width-navbar, @min-height, @fachada-pdd-l, @fachada-pdd-r, @livro-font, @livro-pdd, @autor-font, @autor-pdd, @btn-font, @btn-pdd, @btn-mrg, @btn-mrg-menu, @tooltip-font, @tooltip-pdd, @tooltip-top, @tooltip-width, @tooltip-height, @iniciar-font, @iniciar-ico, @iniciar-pdd, @iniciar-pdd-l, @iniciar-pdd-r, @iniciar-width, @logo-left, @logo-width);	//== Configruações responsivas da autura
+		.cover-logo-item.logo-instituicao { width: 185px }
+		.cover-btn-iniciar { width: 10px; max-width: none; min-width: initial; right: 0px; padding: 0px; }
+		// .cover-btn-iniciar:before { display: none; }
+		.cover-btn-iniciar:after { width: 60px; padding: 31px 20px; background-color: @app-cor-padrao; }
+		.cover-logo-group {
+			.cover-logo-item.logo-instituicao { background-color: @app-cor-instituicao; position: fixed; top: 0px; margin-left: 0px; width: 110px; padding: 5px; }
+			.cover-logo-item { width: 135px; left: 32%;}
+		}
+
+		.cover-nav-bar {
+			background-color: initial;
+			height: auto;
+			width: 100%;
+			float: left;
+			top: 82%;
+			text-align: center;
+		}
+
+		.cover-btn-nav {
+			display: inline-block;
+			text-align: center;
+			padding: 10px;
+			margin-bottom: 20px;
+			line-height: 25px;
+			cursor: pointer;
+			margin: 0px 2%;
+			background-color: rgba(255, 255, 255, 0.72);
+			border-bottom: 4px solid @app-cor-padrao-fraco;
+			width: 48px;
+
+			.app-ico-sumario, .app-ico-atividade, .app-ico-marcador, .app-ico-anotacao, .app-ico-referencia { color: @app-cor-padrao-fraco; }
+
+			&.btn-nav-menu {
+				margin-bottom: inherit;
+				position: fixed;
+				top: 0px;
+				right: 0px;
+				background-color: rgba(0, 0, 0, 0.5);
+				border: none;
+				margin: 0px;
+				.app-ico-menu { color: @app-cor-preto-0; }
+			}
+		}
 	}
 
 	// Medium grid (MD) // 992 to 1199
-	@media (min-height: @screen-md-min) {
+	@media (min-height: @screen-md-min) { 
+
+		//** Configura tamanho minimo da capa
+		@min-height: 550px;
+
+		//** Configura a fachada da capa
+		@fachada-pdd-l: 16px;
+		@fachada-pdd-r: 16px;
+
+		@livro-font: 25px;
+		@livro-pdd: 12px;
+
+		@autor-font: 14px;
+		@autor-pdd: 6px;
+
+		//**configrua os bototoes de navegação
+		@btn-font: 25px;
+		@btn-pdd: 10px;
+		@btn-mrg: 20px;
+		@btn-mrg-menu: 119px;
+
+		//** Configrua tooltip dos botoes da navegação
+		@tooltip-font: 15px;
+		@tooltip-pdd: 8px;
+		@tooltip-top: 28px;
+		@tooltip-width: 250px;
+		@tooltip-height: 32px;
+
+		//** COnfigrua botão de iniciar leitura
+		@iniciar-font: 22px;
+		@iniciar-ico: 60px;
+		@iniciar-pdd: 17px;
+		@iniciar-pdd-l: 50px;
+		@iniciar-pdd-r: 63px;
+		@iniciar-width: 340px;
+
+		//** Configrua logos da capa
+		@logo-left: 21%; //40%
+		@logo-width: 175px; //170px
+
+		.app-variant-cover (@width-contents, @width-navbar, @min-height, @fachada-pdd-l, @fachada-pdd-r, @livro-font, @livro-pdd, @autor-font, @autor-pdd, @btn-font, @btn-pdd, @btn-mrg, @btn-mrg-menu, @tooltip-font, @tooltip-pdd, @tooltip-top, @tooltip-width, @tooltip-height, @iniciar-font, @iniciar-ico, @iniciar-pdd, @iniciar-pdd-l, @iniciar-pdd-r, @iniciar-width, @logo-left, @logo-width);	//== Configruações responsivas da autura
+		.cover-logo-item.logo-instituicao { width: 185px }
+		.cover-btn-iniciar { width: 10px; max-width: none; min-width: initial; right: 0px; padding: 0px; }
+		// .cover-btn-iniciar:before { display: none; }
+		.cover-btn-iniciar:after { width: 60px; padding: 31px 20px; background-color: @app-cor-padrao; }
+		.cover-logo-group {
+			.cover-logo-item.logo-instituicao { background-color: @app-cor-instituicao; position: fixed; top: 0px; margin-left: 0px; width: 110px; padding: 5px; }
+			.cover-logo-item { width: 135px; left: 32%;}
+		}
+
+		.cover-nav-bar {
+			background-color: initial;
+			height: auto;
+			width: 100%;
+			float: left;
+			top: 82%;
+			text-align: center;
+		}
+
+		.cover-btn-nav {
+			display: inline-block;
+			text-align: center;
+			padding: 10px;
+			margin-bottom: 20px;
+			line-height: 25px;
+			cursor: pointer;
+			margin: 0px 2%;
+			background-color: rgba(255, 255, 255, 0.72);
+			border-bottom: 4px solid @app-cor-padrao-fraco;
+			width: 48px;
+
+			.app-ico-sumario, .app-ico-atividade, .app-ico-marcador, .app-ico-anotacao, .app-ico-referencia { color: @app-cor-padrao-fraco; }
+
+			&.btn-nav-menu {
+				margin-bottom: inherit;
+				position: fixed;
+				top: 0px;
+				right: 0px;
+				background-color: rgba(0, 0, 0, 0.5);
+				border: none;
+				margin: 0px;
+				.app-ico-menu { color: @app-cor-preto-0; }
+			}
+		}
 	}
 
 	// Large grid (LG) // 1200 to ~
-	@media (min-height: @screen-lg-min) {
+	@media (min-height: @screen-lg-min) { 
+
+		//** Configura tamanho minimo da capa
+		@min-height: 550px;
+
+		//** Configura a fachada da capa
+		@fachada-pdd-l: 16px;
+		@fachada-pdd-r: 16px;
+
+		@livro-font: 25px;
+		@livro-pdd: 12px;
+
+		@autor-font: 14px;
+		@autor-pdd: 6px;
+
+		//**configrua os bototoes de navegação
+		@btn-font: 25px;
+		@btn-pdd: 10px;
+		@btn-mrg: 20px;
+		@btn-mrg-menu: 119px;
+
+		//** Configrua tooltip dos botoes da navegação
+		@tooltip-font: 15px;
+		@tooltip-pdd: 8px;
+		@tooltip-top: 28px;
+		@tooltip-width: 250px;
+		@tooltip-height: 32px;
+
+		//** COnfigrua botão de iniciar leitura
+		@iniciar-font: 22px;
+		@iniciar-ico: 60px;
+		@iniciar-pdd: 17px;
+		@iniciar-pdd-l: 50px;
+		@iniciar-pdd-r: 63px;
+		@iniciar-width: 340px;
+
+		//** Configrua logos da capa
+		@logo-left: 21%; //40%
+		@logo-width: 175px; //170px
+
+		.app-variant-cover (@width-contents, @width-navbar, @min-height, @fachada-pdd-l, @fachada-pdd-r, @livro-font, @livro-pdd, @autor-font, @autor-pdd, @btn-font, @btn-pdd, @btn-mrg, @btn-mrg-menu, @tooltip-font, @tooltip-pdd, @tooltip-top, @tooltip-width, @tooltip-height, @iniciar-font, @iniciar-ico, @iniciar-pdd, @iniciar-pdd-l, @iniciar-pdd-r, @iniciar-width, @logo-left, @logo-width);	//== Configruações responsivas da autura
+		.cover-logo-item.logo-instituicao { width: 185px }
+		.cover-btn-iniciar { width: 10px; max-width: none; min-width: initial; right: 0px; padding: 0px; }
+		// .cover-btn-iniciar:before { display: none; }
+		.cover-btn-iniciar:after { width: 60px; padding: 31px 20px; background-color: @app-cor-padrao; }
+		.cover-logo-group {
+			.cover-logo-item.logo-instituicao { background-color: @app-cor-instituicao; position: fixed; top: 0px; margin-left: 0px; width: 110px; padding: 5px; }
+			.cover-logo-item { width: 135px; left: 32%;}
+		}
+
+		.cover-nav-bar {
+			background-color: initial;
+			height: auto;
+			width: 100%;
+			float: left;
+			top: 82%;
+			text-align: center;
+		}
+
+		.cover-btn-nav {
+			display: inline-block;
+			text-align: center;
+			padding: 10px;
+			margin-bottom: 20px;
+			line-height: 25px;
+			cursor: pointer;
+			margin: 0px 2%;
+			background-color: rgba(255, 255, 255, 0.72);
+			border-bottom: 4px solid @app-cor-padrao-fraco;
+			width: 48px;
+
+			.app-ico-sumario, .app-ico-atividade, .app-ico-marcador, .app-ico-anotacao, .app-ico-referencia { color: @app-cor-padrao-fraco; }
+
+			&.btn-nav-menu {
+				margin-bottom: inherit;
+				position: fixed;
+				top: 0px;
+				right: 0px;
+				background-color: rgba(0, 0, 0, 0.5);
+				border: none;
+				margin: 0px;
+				.app-ico-menu { color: @app-cor-preto-0; }
+			}
+		}
 	}
 }
 
 // Min Min grid (SS) // 480 to 768
 @media (min-width: @screen-ss-min) { 
-}
-
-// Min grid (SM)// 768 to 992
-@media (min-width: @screen-sm-min) { 
 
 	@width-contents: 90%;
 	@width-navbar: 10%;
 
 	// Min Min grid (XS) // ~ to 480
 	@media (max-height: @screen-xs-max) { 
-		.app-cover { border-top: 1px solid brown }
 
 		//** Configura tamanho minimo da capa
 		@min-height: 550px;
@@ -302,7 +746,6 @@
 
 	// Min Min grid (SS1) // 480 to 623
 	@media (min-height: @screen-ss-min) { 
-		.app-cover { border-top: 1px solid brown }
 
 		//** Configura tamanho minimo da capa
 		@min-height: 550px;
@@ -348,7 +791,6 @@
 
 	// Min Min grid (SS2) // 624 to 768
 	@media (min-height: 624px) { 
-		.app-cover { border-top: 1px solid orange }
 
 		//** Configura tamanho minimo da capa
 		@min-height: 550px;
@@ -393,7 +835,6 @@
 
 	// Min grid (SM)// 768 to 992
 	@media (min-height: @screen-sm-min) { 
-		.app-cover { border-top: 1px solid green }
 
 		//** Configura tamanho minimo da capa
 		@min-height: 550px;
@@ -439,7 +880,6 @@
 	// Medium grid (MD) // 992 to 1199
 	@media (min-height: @screen-md-min) {
 
-		.app-cover { border-top: 1px solid yellow }
 
 		//** Configura tamanho minimo da capa
 		@min-height: 550px;
@@ -484,7 +924,283 @@
 
 	// Large grid (LG) // 1200 to ~
 	@media (min-height: @screen-lg-min) {
-		.app-cover { border-top: 1px solid red }
+
+		//** Configura tamanho minimo da capa
+		@min-height: 550px;
+
+		//** Configura a fachada da capa
+		@fachada-pdd-l: 57px;
+		@fachada-pdd-r: 56px;
+
+		@livro-font: 45px;
+		@livro-pdd: 60px;
+
+		@autor-font: 16px;
+		@autor-pdd: 7.5px;
+
+		//**configrua os bototoes de navegação
+		@btn-font: 42px;
+		@btn-pdd: 20px;
+		@btn-mrg: 30px;
+		@btn-mrg-menu: 315px;
+
+		//** Configrua tooltip dos botoes da navegação
+		@tooltip-font: 18px;
+		@tooltip-pdd: 20px;
+		@tooltip-top: 45px;
+		@tooltip-width: 300px;
+		@tooltip-height: 54px;
+
+		//** COnfigrua botão de iniciar leitura
+		@iniciar-font: 28px;
+		@iniciar-ico: 70px;
+		@iniciar-pdd: 25px;
+		@iniciar-pdd-l: 50px;
+		@iniciar-pdd-r: 63px;
+		@iniciar-width: 340px;
+
+		//** Configrua logos da capa
+		@logo-left: 21%; //40%
+		@logo-width: 170px; //170px
+
+		.app-variant-cover (@width-contents, @width-navbar, @min-height, @fachada-pdd-l, @fachada-pdd-r, @livro-font, @livro-pdd, @autor-font, @autor-pdd, @btn-font, @btn-pdd, @btn-mrg, @btn-mrg-menu, @tooltip-font, @tooltip-pdd, @tooltip-top, @tooltip-width, @tooltip-height, @iniciar-font, @iniciar-ico, @iniciar-pdd, @iniciar-pdd-l, @iniciar-pdd-r, @iniciar-width, @logo-left, @logo-width);	//== Configruações responsivas da autura
+	}
+}
+
+// Min grid (SM)// 768 to 992
+@media (min-width: @screen-sm-min) { 
+
+	@width-contents: 90%;
+	@width-navbar: 10%;
+
+	// Min Min grid (XS) // ~ to 480
+	@media (max-height: @screen-xs-max) { 
+
+		//** Configura tamanho minimo da capa
+		@min-height: 550px;
+
+		//** Configura a fachada da capa
+		@fachada-pdd-l: 57px;
+		@fachada-pdd-r: 56px;
+
+		@livro-font: 25px;
+		@livro-pdd: 15px;
+
+		@autor-font: 12px;
+		@autor-pdd: 6px;
+
+		//**configrua os bototoes de navegação
+		@btn-font: 35px;
+		@btn-pdd: 21px;
+		@btn-mrg: 20px;
+		@btn-mrg-menu: 119px;
+
+		//** Configrua tooltip dos botoes da navegação
+		@tooltip-font: 15px;
+		@tooltip-pdd: 8px;
+		@tooltip-top: 28px;
+		@tooltip-width: 250px;
+		@tooltip-height: 32px;
+
+		//** COnfigrua botão de iniciar leitura
+		@iniciar-font: 16px;
+		@iniciar-ico: 45px;
+		@iniciar-pdd: 11px;
+		@iniciar-pdd-l: 50px;
+		@iniciar-pdd-r: 63px;
+		@iniciar-width: 340px;
+
+		//** Configrua logos da capa
+		@logo-left: 21%; //40%
+		@logo-width: 175px; //170px
+
+		.app-variant-cover (@width-contents, @width-navbar, @min-height, @fachada-pdd-l, @fachada-pdd-r, @livro-font, @livro-pdd, @autor-font, @autor-pdd, @btn-font, @btn-pdd, @btn-mrg, @btn-mrg-menu, @tooltip-font, @tooltip-pdd, @tooltip-top, @tooltip-width, @tooltip-height, @iniciar-font, @iniciar-ico, @iniciar-pdd, @iniciar-pdd-l, @iniciar-pdd-r, @iniciar-width, @logo-left, @logo-width);	//== Configruações responsivas da autura
+		.cover-contents { top: 0px }
+		.cover-btn-nav { display: none; }
+		.cover-btn-nav.btn-nav-menu { display: block; }
+		.cover-btn-iniciar { top: 40%; min-width: 190px;}
+	}
+
+	// Min Min grid (SS1) // 480 to 623
+	@media (min-height: @screen-ss-min) { 
+
+		//** Configura tamanho minimo da capa
+		@min-height: 550px;
+
+		//** Configura a fachada da capa
+		@fachada-pdd-l: 57px;
+		@fachada-pdd-r: 56px;
+
+		@livro-font: 30px;
+		@livro-pdd: 20px;
+
+		@autor-font: 14px;
+		@autor-pdd: 6px;
+
+		//**configrua os bototoes de navegação
+		@btn-font: 25px;
+		@btn-pdd: 10px;
+		@btn-mrg: 20px;
+		@btn-mrg-menu: 119px;
+
+		//** Configrua tooltip dos botoes da navegação
+		@tooltip-font: 15px;
+		@tooltip-pdd: 8px;
+		@tooltip-top: 28px;
+		@tooltip-width: 250px;
+		@tooltip-height: 32px;
+
+		//** COnfigrua botão de iniciar leitura
+		@iniciar-font: 22px;
+		@iniciar-ico: 60px;
+		@iniciar-pdd: 17px;
+		@iniciar-pdd-l: 50px;
+		@iniciar-pdd-r: 63px;
+		@iniciar-width: 340px;
+
+		//** Configrua logos da capa
+		@logo-left: 21%; //40%
+		@logo-width: 175px; //170px
+
+		.app-variant-cover (@width-contents, @width-navbar, @min-height, @fachada-pdd-l, @fachada-pdd-r, @livro-font, @livro-pdd, @autor-font, @autor-pdd, @btn-font, @btn-pdd, @btn-mrg, @btn-mrg-menu, @tooltip-font, @tooltip-pdd, @tooltip-top, @tooltip-width, @tooltip-height, @iniciar-font, @iniciar-ico, @iniciar-pdd, @iniciar-pdd-l, @iniciar-pdd-r, @iniciar-width, @logo-left, @logo-width);	//== Configruações responsivas da autura
+		.cover-logo-item.logo-instituicao { width: 185px }
+	}
+
+	// Min Min grid (SS2) // 624 to 768
+	@media (min-height: 624px) { 
+
+		//** Configura tamanho minimo da capa
+		@min-height: 550px;
+
+		//** Configura a fachada da capa
+		@fachada-pdd-l: 57px;
+		@fachada-pdd-r: 56px;
+
+		@livro-font: 40px;
+		@livro-pdd: 30px;
+
+		@autor-font: 16px;
+		@autor-pdd: 7.5px;
+
+		//**configrua os bototoes de navegação
+		@btn-font: 30px;
+		@btn-pdd: 20px;
+		@btn-mrg: 10px;
+		@btn-mrg-menu: 160px;
+
+		//** Configrua tooltip dos botoes da navegação
+		@tooltip-font: 16px;
+		@tooltip-pdd: 15px;
+		@tooltip-top: 45px;
+		@tooltip-width: 300px;
+		@tooltip-height: 49px;
+
+		//** COnfigrua botão de iniciar leitura
+		@iniciar-font: 22px;
+		@iniciar-ico: 60px;
+		@iniciar-pdd: 17px;
+		@iniciar-pdd-l: 50px;
+		@iniciar-pdd-r: 63px;
+		@iniciar-width: 340px;
+
+		//** Configrua logos da capa
+		@logo-left: 21%; //40%
+		@logo-width: 175px; //170px
+
+		.app-variant-cover (@width-contents, @width-navbar, @min-height, @fachada-pdd-l, @fachada-pdd-r, @livro-font, @livro-pdd, @autor-font, @autor-pdd, @btn-font, @btn-pdd, @btn-mrg, @btn-mrg-menu, @tooltip-font, @tooltip-pdd, @tooltip-top, @tooltip-width, @tooltip-height, @iniciar-font, @iniciar-ico, @iniciar-pdd, @iniciar-pdd-l, @iniciar-pdd-r, @iniciar-width, @logo-left, @logo-width);	//== Configruações responsivas da autura
+	}
+
+	// Min grid (SM)// 768 to 992
+	@media (min-height: @screen-sm-min) { 
+
+		//** Configura tamanho minimo da capa
+		@min-height: 550px;
+
+		//** Configura a fachada da capa
+		@fachada-pdd-l: 57px;
+		@fachada-pdd-r: 56px;
+
+		@livro-font: 45px;
+		@livro-pdd: 40px;
+
+		@autor-font: 16px;
+		@autor-pdd: 7.5px;
+
+		//**configrua os bototoes de navegação
+		@btn-font: 32px;
+		@btn-pdd: 20px;
+		@btn-mrg: 20px;
+		@btn-mrg-menu: 225px;
+
+		//** Configrua tooltip dos botoes da navegação
+		@tooltip-font: 18px;
+		@tooltip-pdd: 20px;
+		@tooltip-top: 45px;
+		@tooltip-width: 300px;
+		@tooltip-height: 54px;
+
+		//** COnfigrua botão de iniciar leitura
+		@iniciar-font: 25px;
+		@iniciar-ico: 70px;
+		@iniciar-pdd: 20px;
+		@iniciar-pdd-l: 50px;
+		@iniciar-pdd-r: 63px;
+		@iniciar-width: 340px;
+
+		//** Configrua logos da capa
+		@logo-left: 21%; //40%
+		@logo-width: 175px; //170px
+
+		.app-variant-cover (@width-contents, @width-navbar, @min-height, @fachada-pdd-l, @fachada-pdd-r, @livro-font, @livro-pdd, @autor-font, @autor-pdd, @btn-font, @btn-pdd, @btn-mrg, @btn-mrg-menu, @tooltip-font, @tooltip-pdd, @tooltip-top, @tooltip-width, @tooltip-height, @iniciar-font, @iniciar-ico, @iniciar-pdd, @iniciar-pdd-l, @iniciar-pdd-r, @iniciar-width, @logo-left, @logo-width);	//== Configruações responsivas da autura
+	}
+
+	// Medium grid (MD) // 992 to 1199
+	@media (min-height: @screen-md-min) {
+
+
+		//** Configura tamanho minimo da capa
+		@min-height: 550px;
+
+		//** Configura a fachada da capa
+		@fachada-pdd-l: 57px;
+		@fachada-pdd-r: 56px;
+
+		@livro-font: 45px;
+		@livro-pdd: 40px;
+
+		@autor-font: 16px;
+		@autor-pdd: 7.5px;
+
+		//**configrua os bototoes de navegação
+		@btn-font: 42px;
+		@btn-pdd: 20px;
+		@btn-mrg: 30px;
+		@btn-mrg-menu: 285px;
+
+		//** Configrua tooltip dos botoes da navegação
+		@tooltip-font: 18px;
+		@tooltip-pdd: 20px;
+		@tooltip-top: 45px;
+		@tooltip-width: 300px;
+		@tooltip-height: 54px;
+
+		//** COnfigrua botão de iniciar leitura
+		@iniciar-font: 25px;
+		@iniciar-ico: 70px;
+		@iniciar-pdd: 20px;
+		@iniciar-pdd-l: 50px;
+		@iniciar-pdd-r: 63px;
+		@iniciar-width: 340px;
+
+		//** Configrua logos da capa
+		@logo-left: 21%; //40%
+		@logo-width: 170px; //170px
+
+		.app-variant-cover (@width-contents, @width-navbar, @min-height, @fachada-pdd-l, @fachada-pdd-r, @livro-font, @livro-pdd, @autor-font, @autor-pdd, @btn-font, @btn-pdd, @btn-mrg, @btn-mrg-menu, @tooltip-font, @tooltip-pdd, @tooltip-top, @tooltip-width, @tooltip-height, @iniciar-font, @iniciar-ico, @iniciar-pdd, @iniciar-pdd-l, @iniciar-pdd-r, @iniciar-width, @logo-left, @logo-width);	//== Configruações responsivas da autura
+	}
+
+	// Large grid (LG) // 1200 to ~
+	@media (min-height: @screen-lg-min) {
 
 		//** Configura tamanho minimo da capa
 		@min-height: 550px;
@@ -536,7 +1252,6 @@
 
 	// Min Min grid (XS) // ~ to 480
 	@media (max-height: @screen-xs-max) { 
-		.app-cover { border-top: 1px solid brown }
 
 		//** Configura tamanho minimo da capa
 		@min-height: 550px;
@@ -585,7 +1300,6 @@
 
 	// Min Min grid (SS1) // 480 to 623
 	@media (min-height: @screen-ss-min) { 
-		.app-cover { border-top: 1px solid brown }
 
 		//** Configura tamanho minimo da capa
 		@min-height: 550px;
@@ -630,7 +1344,6 @@
 
 	// Min Min grid (SS2) // 624 to 768
 	@media (min-height: 624px) { 
-		.app-cover { border-top: 1px solid orange }
 
 		//** Configura tamanho minimo da capa
 		@min-height: 550px;
@@ -675,7 +1388,6 @@
 
 	// Min grid (SM)// 768 to 992
 	@media (min-height: @screen-sm-min) { 
-		.app-cover { border-top: 1px solid green }
 
 		//** Configura tamanho minimo da capa
 		@min-height: 550px;
@@ -721,7 +1433,6 @@
 	// Medium grid (MD) // 992 to 1199
 	@media (min-height: @screen-md-min) {
 
-		.app-cover { border-top: 1px solid yellow }
 
 		//** Configura tamanho minimo da capa
 		@min-height: 550px;
@@ -766,7 +1477,6 @@
 
 	// Large grid (LG) // 1200 to ~
 	@media (min-height: @screen-lg-min) {
-		.app-cover { border-top: 1px solid red }
 
 		//** Configura tamanho minimo da capa
 		@min-height: 550px;
@@ -865,7 +1575,6 @@
 
 	// Min Min grid (SS) // 480 to 768
 	@media (min-height: @screen-ss-min) { 
-		.app-cover { border-top: 1px solid brown }
 		@btn-font: 28px;
 		@livro-font: 44px;
 		@btn-pdd: 17px;
@@ -876,7 +1585,6 @@
 
 	// Min grid (SM)// 768 to 992
 	@media (min-height: @screen-sm-min) { 
-		.app-cover { border-top: 1px solid green }
 		@livro-font: 52px;
 		@btn-font: 38px;
 		@btn-pdd: 17px;
@@ -887,13 +1595,11 @@
 
 	// Medium grid (MD) // 992 to 1199
 	@media (min-height: @screen-md-min) { 
-		.app-cover { border-top: 1px solid yellow }
 
 	}
 
 	// Large grid (LG) // 1200 to ~
 	@media (min-height: @screen-lg-min) {
-		.app-cover { border-top: 1px solid red }
 		@livro-font: 62px;
 		@autor-font: 26px;
 		@autor-pdd: 12px;
