@@ -132,7 +132,6 @@ $.appCtrl = (post) ->
 
 	console.log temp
 
-
 $.appCtrl.togo = (post) ->
 	#// Requer um parametro array
 	#// {"display":{"._.required":false,"._.list":["id","css","closset"],"._.type":["array"],"id":{"._.//":"O parametro rece uma id como referencia da navegação","._.required":false,"._.type":["string"]},"css":{"._.//":"O parametro recebe uma ou mais classes como referencia da navegação","._.required":false,"._.type":["string"]},"closset":{"._.//":"O parametro define quando \"false\" procura nos filhos e quando \"true\" procura acima, e só e valido no caso de css","._.required":false,"._.type":["boolean"],"._.relative":{"css":true}},"toogle":{"._.//":"Parametro para alternar o display caso esse esteja ativo, pode ser classe ou ID","._.required":false,"._.type":["array"]}}}
@@ -292,11 +291,7 @@ $.appCtrl.atividade = (post) ->
 	return temp
 
 
-
-
-
 $.appCtrl $("[data-app-ctrl]")
-
 
 
 # # Inicia tratamentos dos controles  # #

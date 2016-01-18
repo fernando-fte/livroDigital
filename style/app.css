@@ -13755,6 +13755,86 @@ button.close {
 .tb-ctrl-display-td.selected:before {
   content: "\F14A";
 }
+.section-page,
+.section-page-item {
+  display: none;
+}
+.section-page.app-display,
+.section-page-item.app-display,
+.section-page.app-no-display,
+.section-page-item.app-no-display {
+  display: block;
+}
+.section-page.app-display.after {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: fadeInLeft;
+  animation-name: fadeInLeft;
+}
+.section-page.app-display.before {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: fadeInRight;
+  animation-name: fadeInRight;
+}
+.section-page.app-no-display.after {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: fadeOutRight;
+  animation-name: fadeOutRight;
+}
+.section-page.app-no-display.before {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: fadeOutLeft;
+  animation-name: fadeOutLeft;
+}
+.section-page-item.app-display {
+  opacity: 1;
+}
+.section-page-item.app-display.after {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+}
+.section-page-item.app-display.before {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}
+.section-page-item.app-no-display {
+  opacity: 0.3;
+}
+.section-page-item.app-no-display.after {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: fadeOutUp;
+  animation-name: fadeOutUp;
+}
+.section-page-item.app-no-display.before {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: fadeOutDown;
+  animation-name: fadeOutDown;
+}
 .app-ico-menu:after {
   font-family: "FontAwesome";
   content: "\F0C9";

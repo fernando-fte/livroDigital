@@ -1,0 +1,73 @@
+//== Configrua navegação da pagina
+
+// on
+// off
+// after-in // == off
+// after-out // == on
+// before-in // == off
+// before-out // == on
+
+// section-page
+// section-page-item
+
+
+// .app-display .after // in
+// .app-display .before // in
+
+// .app-no-display .before // out
+// .app-no-display .before // out
+
+// .app-no-display // off
+// .app-display // on
+
+
+//** Estiliza sections
+.section-page, .section-page-item {
+	//  Oculta
+	display: none;
+
+	// Exibe as seções e os itens ativos e a ser ativado
+	&.app-display, &.app-no-display { display: block; }
+}
+
+//** Configrua evento de paginação horizontal
+.section-page {
+
+	&.app-display { // Aplica no item off => on
+
+		// Quando exibir
+		&.after { .app-play-fadeInLeft(); }
+		&.before { .app-play-fadeInRight(); }
+	}
+
+	&.app-no-display { // Aplica no item on => off
+
+		// Quando sair
+		&.after { .app-play-fadeOutRight(); }
+		&.before { .app-play-fadeOutLeft(); }
+	}
+}
+
+//** Configrua evento de paginação vertical
+.section-page-item {
+
+	&.app-display { // Aplica no item off => on
+
+		// Remove transparencia
+		opacity: 1;
+
+		// Quando exibir
+		&.after { .app-play-fadeInDown(); }
+		&.before { .app-play-fadeInUp(); }
+	}
+
+	&.app-no-display { // Aplica no item on => off
+
+		// Adiciona transparencia
+		opacity: 0.3;
+
+		// Quando sair
+		&.after { .app-play-fadeOutUp(); }
+		&.before { .app-play-fadeOutDown(); }
+	}
+}
