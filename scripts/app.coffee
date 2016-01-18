@@ -152,7 +152,11 @@ $.appCtrl.togo = (post) ->
 
 		# ao clicar no botão oculta a capa
 		$(post.this).click ->
-			$('#app-capa').addClass('page-out') # adiciona classe hidden
+
+			$('.app-page').removeClass('app-display').queue ->
+
+				$(this).addClass('app-no-display') # Adicioan oculta
+
 			temp._proccess.cover = true # define processo como um sucesso
 
 	return temp

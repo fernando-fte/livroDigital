@@ -13756,13 +13756,16 @@ button.close {
   content: "\F14A";
 }
 .section-page,
-.section-page-item {
+.section-page-item,
+.app-page {
   display: none;
 }
 .section-page.app-display,
 .section-page-item.app-display,
+.app-page.app-display,
 .section-page.app-no-display,
-.section-page-item.app-no-display {
+.section-page-item.app-no-display,
+.app-page.app-no-display {
   display: block;
 }
 .section-page.app-display.after {
@@ -13834,6 +13837,22 @@ button.close {
   animation-fill-mode: both;
   -webkit-animation-name: fadeOutDown;
   animation-name: fadeOutDown;
+}
+.app-page.app-display {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+.app-page.app-no-display {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: zoomOutLeft;
+  animation-name: zoomOutLeft;
 }
 .app-ico-menu:after {
   font-family: "FontAwesome";

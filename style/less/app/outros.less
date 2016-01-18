@@ -21,8 +21,8 @@
 // .app-display // on
 
 
-//** Estiliza sections
-.section-page, .section-page-item {
+//** Estiliza sections e a capa
+.section-page, .section-page-item, .app-page {
 	//  Oculta
 	display: none;
 
@@ -70,4 +70,14 @@
 		&.after { .app-play-fadeOutUp(); }
 		&.before { .app-play-fadeOutDown(); }
 	}
+}
+
+//** Configura evento de pafinação para a capa
+.app-page {
+
+	// Quando exibir
+	&.app-display { .app-play-fadeIn (); }
+
+	// Quando sair
+	&.app-no-display { .app-play-zoomOutLeft (); }
 }

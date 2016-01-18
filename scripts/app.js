@@ -103,7 +103,9 @@
     } else if (post.app.togo.cover) {
       temp._proccess.cover = false;
       $(post["this"]).click(function() {
-        $('#app-capa').addClass('page-out');
+        $('.app-page').removeClass('app-display').queue(function() {
+          return $(this).addClass('app-no-display');
+        });
         return temp._proccess.cover = true;
       });
     }

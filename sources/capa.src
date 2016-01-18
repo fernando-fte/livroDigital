@@ -1,7 +1,7 @@
 {
   "html": "div",
   "id": "app-capa",
-  "class": ["app-page app-cover"],
+  "class": ["app-page", "app-cover", "app-display"],
   "css": "background-image: url(library/cover.book.jpg)",
   "content": [
     {
