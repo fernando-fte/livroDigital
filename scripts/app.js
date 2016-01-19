@@ -81,14 +81,15 @@
   };
 
   $.appCtrl.togo = function(post) {
-    var section, temp;
+    var temp;
     temp = {
       '_proccess': {
         '_true': false,
         'volume': {},
         'capa': {},
         'content': {},
-        'seletor': {}
+        'seletor': {},
+        'display': {}
       },
       '_erro': {
         '_true': false
@@ -134,96 +135,118 @@
       }
       if (!post.app.togo.to !== void 0) {
         temp._proccess.seletor = post.app.togo.to;
-        return section(temp._proccess.seletor);
+        temp._proccess.display = $.appCtrl.section(temp._proccess.seletor, 'app-display');
+        if (temp._proccess.display.position.page === 'first') {
+          $(temp._proccess.display.page["this"]).addClass('app-display').queue(function(next) {
+            $(temp._proccess.display.pattern).find('.section-page-item').removeClass('app-display app-no-display');
+            temp.eq = 0;
+            if (!temp._proccess.display.item["this"] === false) {
+              temp.eq = temp._proccess.display.item.eq - 1;
+            }
+            $(temp._proccess.display.page["this"]).find(".section-page-item:eq(" + temp.eq + ")").addClass('before').queue(function(next) {
+              $(this).addClass('app-display').delay(1000).queue(function(next) {
+                $(this).removeClass('before');
+                return next();
+              });
+              return next();
+            });
+            return next();
+          });
+        }
+        console.log(temp.eq);
+        console.log($(temp._proccess.display.page["this"]).find(".section-page-item:eq(" + temp.eq + ")"));
+        return console.log(temp._proccess.display);
       }
     });
-    section = function(id) {
-      temp = {
-        'pattern': false,
+    return temp;
+  };
+
+  $.appCtrl.section = function(id, display) {
+    var temp;
+    temp = {
+      'pattern': false,
+      'page': {
+        'this': false,
+        'display': false
+      },
+      'item': {
+        'this': false,
+        'display': false
+      },
+      'it': {
         'page': {
-          'this': false,
-          'display': false
+          'this': false
         },
         'item': {
-          'this': false,
-          'display': false
-        },
-        'it': {
-          'page': {
-            'this': false
-          },
-          'item': {
-            'this': false
-          }
-        },
-        'position': {
-          'page': false,
-          'item': false
+          'this': false
         }
-      };
-      temp.pattern = $(id).closest('.app-volume');
-      if ($(id).hasClass('section-page')) {
-        temp.page["this"] = $(id);
+      },
+      'position': {
+        'page': false,
+        'item': false
       }
-      if ($(id).hasClass('section-page-item')) {
-        temp.item["this"] = $(id);
-      }
-      if (temp.page["this"] === false) {
-        if ($(id).closest('.section-page').length) {
-          temp.page["this"] = $(id).closest('.section-page');
-        }
-      }
-      if (temp.item["this"] === false) {
-        if ($(id).closest('.section-page-item').length) {
-          temp.item["this"] = $(id).closest('.section-page-item');
-        }
-      }
-      if (temp.page["this"]) {
-        temp.page.eq = $('#' + $(temp.page["this"])[0].id).index('.section-page');
-      }
-      if (temp.item["this"]) {
-        temp.item.eq = $("#" + $(temp.item["this"])[0].id).index('.section-page-item');
-      }
-      if (!temp.page["this"] === false) {
-        if (temp.page["this"].hasClass('app-display')) {
-          temp.page.display = true;
-        }
-        if (temp.page.display === false) {
-          if ($(temp.pattern).find('.section-page.app-display').length) {
-            temp.it.page["this"] = $(temp.pattern).find('.section-page.app-display');
-          }
-          if (temp.it.page["this"]) {
-            temp.it.page.eq = $('#' + $(temp.it.page["this"])[0].id).index('.section-page');
-          }
-        }
-      }
-      if (!temp.item["this"] === false) {
-        if (temp.item["this"].hasClass('app-display')) {
-          temp.item.display = true;
-        }
-        if (temp.item.display === false) {
-          if ($(temp.pattern).find('.section-page.app-display').length) {
-            temp.it.item["this"] = $(temp.pattern).find('.section-page-item.app-display');
-          }
-          if (temp.it.item["this"]) {
-            temp.it.item.eq = $('#' + $(temp.it.item["this"])[0].id).index('.section-page-item');
-          }
-        }
-      }
-      if (temp.page.display === true) {
-        temp.position.page = 'this';
-      }
-      if (temp.page.display === false && temp.it.page["this"] === false) {
-        temp.position.page = 'first';
-      }
-      if (temp.page.eq < temp.it.page.eq) {
-        temp.position.page = 'before';
-      }
-      if (temp.page.eq > temp.it.page.eq) {
-        temp.position.page = 'after';
-      }
-      return console.log(temp);
     };
+    temp.pattern = $(id).closest('.app-volume');
+    if ($(id).hasClass('section-page')) {
+      temp.page["this"] = $(id);
+    }
+    if ($(id).hasClass('section-page-item')) {
+      temp.item["this"] = $(id);
+    }
+    if (temp.page["this"] === false) {
+      if ($(id).closest('.section-page').length) {
+        temp.page["this"] = $(id).closest('.section-page');
+      }
+    }
+    if (temp.item["this"] === false) {
+      if ($(id).closest('.section-page-item').length) {
+        temp.item["this"] = $(id).closest('.section-page-item');
+      }
+    }
+    if (temp.page["this"]) {
+      temp.page.eq = $('#' + $(temp.page["this"])[0].id).index('.section-page');
+    }
+    if (temp.item["this"]) {
+      temp.item.eq = $('#' + $(temp.item["this"])[0].id).index('.section-page-item');
+    }
+    if (!temp.page["this"] === false) {
+      if (temp.page["this"].hasClass(display)) {
+        temp.page.display = true;
+      }
+      if (temp.page.display === false) {
+        if ($(temp.pattern).find('.section-page.' + display).length) {
+          temp.it.page["this"] = $(temp.pattern).find('.section-page.' + display);
+        }
+        if (temp.it.page["this"]) {
+          temp.it.page.eq = $('#' + $(temp.it.page["this"])[0].id).index('.section-page');
+        }
+      }
+    }
+    if (!temp.item["this"] === false) {
+      if (temp.item["this"].hasClass(display)) {
+        temp.item.display = true;
+      }
+      if (temp.item.display === false) {
+        if ($(temp.pattern).find('.section-page.' + display).length) {
+          temp.it.item["this"] = $(temp.pattern).find('.section-page-item.' + display);
+        }
+        if (temp.it.item["this"]) {
+          temp.it.item.eq = $('#' + $(temp.it.item["this"])[0].id).index('.section-page-item');
+        }
+      }
+    }
+    if (temp.page.display === true) {
+      temp.position.page = 'this';
+    }
+    if (temp.page.display === false && temp.it.page["this"] === false) {
+      temp.position.page = 'first';
+    }
+    if (temp.page.eq < temp.it.page.eq) {
+      temp.position.page = 'before';
+    }
+    if (temp.page.eq > temp.it.page.eq) {
+      temp.position.page = 'after';
+    }
     return temp;
   };
 

@@ -137,7 +137,7 @@ $.appCtrl.togo = (post) ->
 	#// {"._.list":["togo"],"togo":{"._.//":"Parametros para navegação nas paginas","._.list":["to","cover"],"._.type":["array"],"to":{"._.//":"Vai até esse seletor do tipo #ID ou .class","._.type":["string"]},"cover":{"._.//":"Executa a ação de a partir da capa, true para exibir, false para ocultar","._.type":["boolean"]}}}
 
 	#// Requer uma lista $('[data-ctrl]')
-	temp = {'_proccess':{'_true':false, 'volume':{}, 'capa':{}, 'content':{}, 'seletor':{}}, '_erro':{'_true':false}, '_warning':{'_true':false}, '_done':{'_true':false}}
+	temp = {'_proccess':{'_true':false, 'volume':{}, 'capa':{}, 'content':{}, 'seletor':{}, 'display':{}}, '_erro':{'_true':false}, '_warning':{'_true':false}, '_done':{'_true':false}}
 
 	# ativa como botão de disparo
 	$(post.this).click ->
@@ -209,71 +209,103 @@ $.appCtrl.togo = (post) ->
 			#// reserva seletor
 			temp._proccess.seletor = post.app.togo.to
 
-			section(temp._proccess.seletor)
+			temp._proccess.display = $.appCtrl.section(temp._proccess.seletor, 'app-display')
+			# temp._proccess.displayNo = $.appCtrl.section(temp._proccess.seletor, '.app-no-display')
+
+			# Trata se é o unico item na cadeia
+			if temp._proccess.display.position.page is 'first'
+
+				# adiciona display na pagina
+				$(temp._proccess.display.page.this).addClass('app-display').queue (next) ->
+
+					# remove classe de todos os itens
+					$(temp._proccess.display.pattern).find('.section-page-item').removeClass('app-display app-no-display')
+
+					# posiciona eq
+					temp.eq = 0
+					temp.eq = (temp._proccess.display.item.eq - 1) if !temp._proccess.display.item.this is false
+
+					# Localiza item atual
+					$(temp._proccess.display.page.this).find(".section-page-item:eq(#{temp.eq})").addClass('before').queue (next) ->
+
+						# Exibe o item
+						$(this).addClass('app-display').delay(1000).queue (next) ->
+
+							# Remove efeito
+							$(this).removeClass('before')
+
+							next() #// Fim da espera
+
+						next() #// Fim da espera
+
+					next() #// Fim da espera
+
+
 			#// TODO: Função de seleção das seções
 
-	section = (id) ->
+	return temp
 
-		temp = {'pattern':false, 'page':{'this':false ,'display':false}, 'item':{'this':false, 'display':false}, 'it':{'page':{'this':false}, 'item':{'this':false}}, 'position':{'page':false, 'item':false}}
+$.appCtrl.section = (id, display) ->
 
-		# localiza livro atual
-		temp.pattern = $(id).closest('.app-volume')
+	temp = {'pattern':false, 'page':{'this':false ,'display':false}, 'item':{'this':false, 'display':false}, 'it':{'page':{'this':false}, 'item':{'this':false}}, 'position':{'page':false, 'item':false}}
 
-		#== Localiza seção a partir do item e adiciona em this
-		#** valida se o item é seção
-		temp.page.this = $(id) if $(id).hasClass('section-page')
-		temp.item.this = $(id) if $(id).hasClass('section-page-item')
+	# localiza livro atual
+	temp.pattern = $(id).closest('.app-volume')
 
-		#** localiza a seção mais proxima
-		if temp.page.this is false
 
-			temp.page.this = $(id).closest('.section-page') if $(id).closest('.section-page').length
-		
-		if temp.item.this is false
+	#== Localiza seção a partir do item e adiciona em this
+	#** valida se o item é seção
+	temp.page.this = $(id) if $(id).hasClass('section-page')
+	temp.item.this = $(id) if $(id).hasClass('section-page-item')
 
-			temp.item.this = $(id).closest('.section-page-item') if $(id).closest('.section-page-item').length
+	#** localiza a seção mais proxima
+	if temp.page.this is false
 
-		#** retorna posição do item
-		temp.page.eq = $('#'+$(temp.page.this)[0].id).index('.section-page') if temp.page.this
-		temp.item.eq = $("#"+$(temp.item.this)[0].id).index('.section-page-item') if temp.item.this
+		temp.page.this = $(id).closest('.section-page') if $(id).closest('.section-page').length
+	
+	if temp.item.this is false
 
-		#== Localiza as seções ativas
-		# Valida display na pagina
-		if !temp.page.this is false
+		temp.item.this = $(id).closest('.section-page-item') if $(id).closest('.section-page-item').length
 
-			# caso a pagina atual tenha display
-			temp.page.display = true if temp.page.this.hasClass('app-display')
+	#** retorna posição do item
+	temp.page.eq = $('#'+$(temp.page.this)[0].id).index('.section-page') if temp.page.this
+	temp.item.eq = $('#'+$(temp.item.this)[0].id).index('.section-page-item') if temp.item.this
 
-			# caso a pagina atual nao tenha display 
-			if temp.page.display is false
 
-				# Localiza de cima para baixo a pagina ativa
-				temp.it.page.this = $(temp.pattern).find('.section-page.app-display') if $(temp.pattern).find('.section-page.app-display').length
-				temp.it.page.eq = $('#'+$(temp.it.page.this)[0].id).index('.section-page') if temp.it.page.this
+	#== Localiza as seções ativas
+	# Valida display na pagina
+	if !temp.page.this is false
 
-		# Valida display do item
-		if !temp.item.this is false
+		# caso a pagina atual tenha display
+		temp.page.display = true if temp.page.this.hasClass(display)
 
-			# caso a pagina atual tenha display
-			temp.item.display = true if temp.item.this.hasClass('app-display')
+		# caso a pagina atual nao tenha display 
+		if temp.page.display is false
 
-			# caso a pagina atual nao tenha display 
-			if temp.item.display is false
+			# Localiza de cima para baixo a pagina ativa
+			temp.it.page.this = $(temp.pattern).find('.section-page.'+display) if $(temp.pattern).find('.section-page.'+display).length
+			temp.it.page.eq = $('#'+$(temp.it.page.this)[0].id).index('.section-page') if temp.it.page.this
 
-				# Localiza de cima para baixo a pagina ativa
-				temp.it.item.this = $(temp.pattern).find('.section-page-item.app-display') if $(temp.pattern).find('.section-page.app-display').length
-				temp.it.item.eq = $('#'+$(temp.it.item.this)[0].id).index('.section-page-item') if temp.it.item.this
+	# Valida display do item
+	if !temp.item.this is false
 
-		#== Valida o ponto de referencia se é after, before, this, first
+		# caso a pagina atual tenha display
+		temp.item.display = true if temp.item.this.hasClass(display)
 
-		# valida a direção da pagina
-		temp.position.page = 'this' if temp.page.display is true # display esta em this
-		temp.position.page = 'first' if temp.page.display is false and temp.it.page.this is false # nao foi encontrado
-		temp.position.page = 'before' if temp.page.eq < temp.it.page.eq # page=0 it=1 // page esta antes
-		temp.position.page = 'after' if temp.page.eq > temp.it.page.eq # page=3 it=1 // page esta depois
+		# caso a pagina atual nao tenha display 
+		if temp.item.display is false
 
-		console.log temp
+			# Localiza de cima para baixo a pagina ativa
+			temp.it.item.this = $(temp.pattern).find('.section-page-item.'+display) if $(temp.pattern).find('.section-page.'+display).length
+			temp.it.item.eq = $('#'+$(temp.it.item.this)[0].id).index('.section-page-item') if temp.it.item.this
 
+
+	#== Valida o ponto de referencia se é after, before, this, first
+	# valida a direção da pagina
+	temp.position.page = 'this' if temp.page.display is true # display esta em this
+	temp.position.page = 'first' if temp.page.display is false and temp.it.page.this is false # nao foi encontrado
+	temp.position.page = 'before' if temp.page.eq < temp.it.page.eq # page=0 it=1 // page esta antes
+	temp.position.page = 'after' if temp.page.eq > temp.it.page.eq # page=3 it=1 // page esta depois
 
 	return temp
 

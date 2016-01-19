@@ -1,5 +1,6 @@
 {
 	"html":"div",
+	"id":"livro1unidade1",
 	"class":["app-cap-section", "section-page"],
 	"content":[
 		{
@@ -63,6 +64,7 @@
 				{
 					"._.//":"Box da introdução do capítulo",
 					"html":"div",
+					"id":"livro1unidade1intro",
 					"class":["section-page-item", "app-cap-introducao"],
 					"content":[
 						{"html":"p", "content":"No contexto da unidade I, cujo tema central de estudos é a Gestão de Pessoas e seus desdobramentos, o objetivo geral é conceituar gestão de pessoas e conhecer a sua evolução ao longo dos tempos. Os conteúdos aqui desenvolvidos serão amparados, em perspectivas de autores da área, e terão um viés para que se compreendam os modelos de gestão de pessoas, bem como a evolução histórica da área, como uma forma de se desenvolver trabalhos cooperativos nos mais diversos contextos organizacionais, objetivando resultados satisfatórios para todos os envolvidos (pessoas e organização)."},
