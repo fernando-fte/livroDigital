@@ -134,31 +134,74 @@
         }
       }
       if (!post.app.togo.to !== void 0) {
-        temp._proccess.seletor = post.app.togo.to;
+        temp._proccess.seletor = '#' + post.app.togo.to;
         temp._proccess.display = $.appCtrl.section(temp._proccess.seletor, 'app-display');
         if (temp._proccess.display.position.page === 'first') {
-          $(temp._proccess.display.page["this"]).addClass('app-display').queue(function(next) {
-            $(temp._proccess.display.pattern).find('.section-page-item').removeClass('app-display app-no-display');
-            temp.eq = 0;
-            if (!temp._proccess.display.item["this"] === false) {
-              temp.eq = temp._proccess.display.item.eq - 1;
-            }
-            $(temp._proccess.display.page["this"]).find(".section-page-item:eq(" + temp.eq + ")").addClass('before').queue(function(next) {
-              $(this).addClass('app-display').delay(1000).queue(function(next) {
-                $(this).removeClass('before');
+          temp.eq = 0;
+          if (!temp._proccess.display.item["this"] === false) {
+            temp.eq = temp._proccess.display.item.eq;
+          }
+          $.appCtrl.sectionDisplay([[temp._proccess.display.page["this"], 'in', 'on'], [$(temp._proccess.display.pattern).find(".section-page-item:eq(" + temp.eq + ")"), 'in', 'on']]);
+        }
+        if (temp._proccess.display.position.page === 'before' || temp._proccess.display.position.page === 'after') {
+          temp.eq = 0;
+          if (!temp._proccess.display.item["this"] === false) {
+            temp.eq = temp._proccess.display.item.eq;
+          }
+          $.appCtrl.sectionDisplay([[temp._proccess.display.it.page["this"], 'out', temp._proccess.display.position.page], [temp._proccess.display.page["this"], 'in', temp._proccess.display.position.page], [$(temp._proccess.display.pattern).find(".section-page-item:eq(" + temp.eq + ")"), 'in', 'on']]);
+        }
+        if (temp._proccess.display.position.page === 'this') {
+          if (temp._proccess.display.position.item === 'first') {
+            $.appCtrl.sectionDisplay([[$(temp._proccess.display.page["this"]).find(".section-page-item:eq(0)"), 'in', 'on']]);
+          }
+          if (temp._proccess.display.position.item === 'before' || temp._proccess.display.position.item === 'after') {
+            $.appCtrl.sectionDisplay([[temp._proccess.display.it.item["this"], 'out', temp._proccess.display.position.item], [temp._proccess.display.item["this"], 'in', temp._proccess.display.position.item]]);
+          }
+          if (temp._proccess.display.position.item === 'this') {
+            $.appCtrl.sectionDisplay([[temp._proccess.display.item["this"], 'in', 'on']]);
+          }
+        }
+        return console.log(temp._proccess.display);
+      }
+    });
+    return temp;
+  };
+
+  $.appCtrl.sectionDisplay = function(post) {
+    var display, i, position, seletor;
+    i = 0;
+    while (i < post.length) {
+      seletor = post[i][0];
+      display = post[i][1];
+      position = post[i][2];
+      if (display === 'out') {
+        $(seletor).removeClass('app-display').addClass(position).queue(function(next) {
+          $(this).addClass('app-no-display').delay(700).queue(function(next) {
+            $(this).removeClass("app-no-display").delay(1000).queue(function(next) {
+              $(this).removeClass("on after before").queue(function(next) {
                 return next();
               });
               return next();
             });
             return next();
           });
-        }
-        console.log(temp.eq);
-        console.log($(temp._proccess.display.page["this"]).find(".section-page-item:eq(" + temp.eq + ")"));
-        return console.log(temp._proccess.display);
+          return next();
+        });
       }
-    });
-    return temp;
+      if (display === 'in') {
+        $(seletor).removeClass('app-no-display').addClass(position).delay(700).queue(function(next) {
+          $(this).addClass('app-display').delay(1000).queue(function(next) {
+            $(this).removeClass("on after before").queue(function(next) {
+              return next();
+            });
+            return next();
+          });
+          return next();
+        });
+      }
+      i++;
+    }
+    return i = void 0;
   };
 
   $.appCtrl.section = function(id, display) {
@@ -202,6 +245,16 @@
       if ($(id).closest('.section-page-item').length) {
         temp.item["this"] = $(id).closest('.section-page-item');
       }
+      if (!temp.page["this"] === false && temp.item["this"] === false) {
+        if ($(temp.page["this"]).find('.section-page-item.' + display).length) {
+          temp.item["this"] = $(temp.page["this"]).find('.section-page-item.' + display);
+        }
+        if (!$(temp.page["this"]).find('.section-page-item.' + display).length) {
+          if ($(temp.page["this"]).find('.section-page-item:eq(0)').length) {
+            temp.item["this"] = $(temp.page["this"]).find('.section-page-item:eq(0)');
+          }
+        }
+      }
     }
     if (temp.page["this"]) {
       temp.page.eq = $('#' + $(temp.page["this"])[0].id).index('.section-page');
@@ -214,7 +267,7 @@
         temp.page.display = true;
       }
       if (temp.page.display === false) {
-        if ($(temp.pattern).find('.section-page.' + display).length) {
+        if ($(temp.pattern).find('.section-page.' + display).length > 0) {
           temp.it.page["this"] = $(temp.pattern).find('.section-page.' + display);
         }
         if (temp.it.page["this"]) {
@@ -227,7 +280,7 @@
         temp.item.display = true;
       }
       if (temp.item.display === false) {
-        if ($(temp.pattern).find('.section-page.' + display).length) {
+        if ($(temp.pattern).find('.section-page-item.' + display).length > 0) {
           temp.it.item["this"] = $(temp.pattern).find('.section-page-item.' + display);
         }
         if (temp.it.item["this"]) {
@@ -246,6 +299,18 @@
     }
     if (temp.page.eq > temp.it.page.eq) {
       temp.position.page = 'after';
+    }
+    if (temp.item.display === true) {
+      temp.position.item = 'this';
+    }
+    if (temp.item.display === false && temp.it.item["this"] === false) {
+      temp.position.item = 'first';
+    }
+    if (temp.item.eq < temp.it.item.eq) {
+      temp.position.item = 'before';
+    }
+    if (temp.item.eq > temp.it.item.eq) {
+      temp.position.item = 'after';
     }
     return temp;
   };

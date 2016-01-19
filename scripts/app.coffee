@@ -207,32 +207,84 @@ $.appCtrl.togo = (post) ->
 		if !post.app.togo.to != undefined
 
 			#// reserva seletor
-			temp._proccess.seletor = post.app.togo.to
+			temp._proccess.seletor = '#'+post.app.togo.to
 
 			temp._proccess.display = $.appCtrl.section(temp._proccess.seletor, 'app-display')
 			# temp._proccess.displayNo = $.appCtrl.section(temp._proccess.seletor, '.app-no-display')
 
-			# Trata se é o unico item na cadeia
+			#== Trata se é a primeira pagina na estrutura
 			if temp._proccess.display.position.page is 'first'
 
-				# adiciona display na pagina
-				$(temp._proccess.display.page.this).addClass('app-display').queue (next) ->
+				# posiciona eq
+				temp.eq = 0
+				temp.eq = temp._proccess.display.item.eq if !temp._proccess.display.item.this is false
 
-					# remove classe de todos os itens
-					$(temp._proccess.display.pattern).find('.section-page-item').removeClass('app-display app-no-display')
+				$.appCtrl.sectionDisplay([
+					[temp._proccess.display.page.this, 'in', 'on'],
+					[$(temp._proccess.display.pattern).find(".section-page-item:eq(#{temp.eq})"), 'in', 'on']
+				])
 
-					# posiciona eq
-					temp.eq = 0
-					temp.eq = (temp._proccess.display.item.eq - 1) if !temp._proccess.display.item.this is false
 
-					# Localiza item atual
-					$(temp._proccess.display.page.this).find(".section-page-item:eq(#{temp.eq})").addClass('before').queue (next) ->
+			#== Trata quando já tiver uma pagina ativa
+			if temp._proccess.display.position.page is 'before' or temp._proccess.display.position.page is 'after'
 
-						# Exibe o item
-						$(this).addClass('app-display').delay(1000).queue (next) ->
+				# posiciona eq
+				temp.eq = 0
+				temp.eq = temp._proccess.display.item.eq if !temp._proccess.display.item.this is false
 
-							# Remove efeito
-							$(this).removeClass('before')
+				$.appCtrl.sectionDisplay([
+					[temp._proccess.display.it.page.this, 'out', temp._proccess.display.position.page],
+					[temp._proccess.display.page.this, 'in', temp._proccess.display.position.page],
+					[$(temp._proccess.display.pattern).find(".section-page-item:eq(#{temp.eq})"), 'in', 'on']
+				])
+
+
+			#== Trata quando a pagina estiver posucionada
+			if temp._proccess.display.position.page is 'this'
+
+				#== Valida se item tem posição
+				if temp._proccess.display.position.item is 'first'
+					$.appCtrl.sectionDisplay([[$(temp._proccess.display.page.this).find(".section-page-item:eq(0)"), 'in', 'on']])
+
+				#== valida se é antes ou depois
+				if temp._proccess.display.position.item is 'before' or temp._proccess.display.position.item is 'after'
+					$.appCtrl.sectionDisplay([
+						[temp._proccess.display.it.item.this, 'out', temp._proccess.display.position.item],
+						[temp._proccess.display.item.this, 'in', temp._proccess.display.position.item]
+					])
+
+				#== valida se é o item atual
+				if temp._proccess.display.position.item is 'this'
+					$.appCtrl.sectionDisplay([ [temp._proccess.display.item.this, 'in', 'on'] ])
+
+			console.log temp._proccess.display
+	#// retorna a função
+	return temp
+
+$.appCtrl.sectionDisplay = (post) ->
+	# # # #
+	# {"post":{"0":{"._.//":"Recebe o valor referente ao seletor","._.required":true,"._.type":["string"]},"1":{"._.//":"Recebe um valor referente ao tipo de entrada do display \"display ou no-display\"","._.required":true,"._.type":["string"],"._.exacly":{"string":{"._.//":"\"out\" para \"app-no-display\", \"in\" para \"app-display\"","text":["out","in"]}}},"2":{"._.//":"Recebe a direção da animação","._.required":true,"._.type":["string"],"._.exacly":{"string":{"._.//":"\"before\" para antes e \"after\" para depois","text":["before","after"]}}},"._.required":true,"._.list":[0,"1",2],"._.type":["array"],"._.exacly":{"array":"numeric"}}}
+
+	# inicia contagem
+	i = 0
+
+	# inicia laço para a função
+	while i < post.length
+		seletor = post[i][0]
+		display = post[i][1]
+		position = post[i][2]
+
+		#== caso seja para o processo de saida do elemento
+		if display is 'out'
+
+			#** remove os displays de outras paginas
+			$(seletor).removeClass('app-display').addClass(position).queue (next) ->
+					
+				$(this).addClass('app-no-display').delay(700).queue (next) ->
+
+					$(this).removeClass("app-no-display").delay(1000).queue (next) ->
+
+						$(this).removeClass("on after before").queue (next) ->
 
 							next() #// Fim da espera
 
@@ -240,10 +292,30 @@ $.appCtrl.togo = (post) ->
 
 					next() #// Fim da espera
 
+				next() #// Fim da espera
 
-			#// TODO: Função de seleção das seções
+		#== caso seja para o processo de entrada do elemento
+		if display is 'in'
 
-	return temp
+			#** remove os displays de outras paginas
+			$(seletor).removeClass('app-no-display').addClass(position).delay(700).queue (next) ->
+
+				$(this).addClass('app-display').delay(1000).queue (next) ->
+
+					$(this).removeClass("on after before").queue (next) ->
+
+						next() #// Fim da espera
+
+					next() #// Fim da espera
+
+				next() #// Fim da espera
+
+		# adiciona 1 no final
+		i++
+
+	#// apaga contador
+	i = undefined
+
 
 $.appCtrl.section = (id, display) ->
 
@@ -267,6 +339,16 @@ $.appCtrl.section = (id, display) ->
 
 		temp.item.this = $(id).closest('.section-page-item') if $(id).closest('.section-page-item').length
 
+		#** Resolve itens nao declarados e que passam pela mesma instancia
+		if !temp.page.this is false and temp.item.this is false
+
+			#// procura primeiro ativo de cima para baixo
+			temp.item.this = $(temp.page.this).find('.section-page-item.'+display) if $(temp.page.this).find('.section-page-item.'+display).length
+
+			#// procura primeiro ativo de baixo para cima
+			if !$(temp.page.this).find('.section-page-item.'+display).length
+				temp.item.this = $(temp.page.this).find('.section-page-item:eq(0)') if  $(temp.page.this).find('.section-page-item:eq(0)').length
+
 	#** retorna posição do item
 	temp.page.eq = $('#'+$(temp.page.this)[0].id).index('.section-page') if temp.page.this
 	temp.item.eq = $('#'+$(temp.item.this)[0].id).index('.section-page-item') if temp.item.this
@@ -283,7 +365,7 @@ $.appCtrl.section = (id, display) ->
 		if temp.page.display is false
 
 			# Localiza de cima para baixo a pagina ativa
-			temp.it.page.this = $(temp.pattern).find('.section-page.'+display) if $(temp.pattern).find('.section-page.'+display).length
+			temp.it.page.this = $(temp.pattern).find('.section-page.'+display) if $(temp.pattern).find('.section-page.'+display).length > 0
 			temp.it.page.eq = $('#'+$(temp.it.page.this)[0].id).index('.section-page') if temp.it.page.this
 
 	# Valida display do item
@@ -296,9 +378,8 @@ $.appCtrl.section = (id, display) ->
 		if temp.item.display is false
 
 			# Localiza de cima para baixo a pagina ativa
-			temp.it.item.this = $(temp.pattern).find('.section-page-item.'+display) if $(temp.pattern).find('.section-page.'+display).length
+			temp.it.item.this = $(temp.pattern).find('.section-page-item.'+display) if $(temp.pattern).find('.section-page-item.'+display).length > 0
 			temp.it.item.eq = $('#'+$(temp.it.item.this)[0].id).index('.section-page-item') if temp.it.item.this
-
 
 	#== Valida o ponto de referencia se é after, before, this, first
 	# valida a direção da pagina
@@ -306,6 +387,12 @@ $.appCtrl.section = (id, display) ->
 	temp.position.page = 'first' if temp.page.display is false and temp.it.page.this is false # nao foi encontrado
 	temp.position.page = 'before' if temp.page.eq < temp.it.page.eq # page=0 it=1 // page esta antes
 	temp.position.page = 'after' if temp.page.eq > temp.it.page.eq # page=3 it=1 // page esta depois
+
+	# valida a direção do item
+	temp.position.item = 'this' if temp.item.display is true # display esta em this
+	temp.position.item = 'first' if temp.item.display is false and temp.it.item.this is false # nao foi encontrado
+	temp.position.item = 'before' if temp.item.eq < temp.it.item.eq # item=0 it=1 // item esta antes
+	temp.position.item = 'after' if temp.item.eq > temp.it.item.eq # item=3 it=1 // item esta depois
 
 	return temp
 

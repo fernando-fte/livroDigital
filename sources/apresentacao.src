@@ -6,6 +6,7 @@
 		{
 			"._.//":"Item da apresentação - Faculdade",
 			"html":"div",
+			"id":"afaculdade",
 			"class":["app-apr-item", "section-page-item", "app-apr-display-texto"],
 			"content":[
 				{

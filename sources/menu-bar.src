@@ -141,8 +141,9 @@
       ],
       "content": [
         {
-          "._.//": "Botão para configurar leitura",
+          "._.//": "Botão de navegação para o sumário",
           "html": "div",
+          "data-html": [{"name": "app-ctrl","value": {"togo": {"to":"sumario"}}}],
           "class": [
             "app-nav-btn-item",
             "nav-btn-sumario",

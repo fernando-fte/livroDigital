@@ -30,6 +30,7 @@
 								{
 									"._.//": "Nome da seção (unidade I|II|III / abertura ...) ",
 									"html": "span",
+									"data-html": [{"name": "app-ctrl","value": {"togo": {"to":"afaculdade"}}}],
 									"class": [
 										"app-sum-section-secao",
 										"app-cor-black-80",
@@ -87,6 +88,7 @@
 								{
 									"._.//": "Nome da seção (unidade I|II|III / abertura ...)",
 									"html": "span",
+					        		"data-html": [{"name": "app-ctrl","value": {"togo": {"to":"livro1unidade1"}}}],
 									"class": [
 										"app-sum-section-secao",
 										"app-cor-black-80",
@@ -100,6 +102,7 @@
 								{
 									"._.//": "Nome caso seja titulo",
 									"html": "span",
+					        		"data-html": [{"name": "app-ctrl","value": {"togo": {"to":"livro1unidade1"}}}],
 									"class": [
 										"app-sum-section-titulo",
 										"app-cor-black-60",
@@ -125,6 +128,7 @@
 								{
 									"._.//": "Nome da seção",
 									"html": "span",
+					        		"data-html": [{"name": "app-ctrl","value": {"togo": {"to":"livro1unidade1item1"}}}],
 									"class": [
 										"sum-section-name",
 										"app-cor-black-80",

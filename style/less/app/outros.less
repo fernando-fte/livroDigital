@@ -36,15 +36,17 @@
 	&.app-display { // Aplica no item off => on
 
 		// Quando exibir
-		&.after { .app-play-fadeInLeft(); }
-		&.before { .app-play-fadeInRight(); }
+		&.after { .app-play-fadeInRight(); }
+		&.before { .app-play-fadeInLeft(); }
+		&.on { .app-play-fadeIn(); }
 	}
 
 	&.app-no-display { // Aplica no item on => off
 
 		// Quando sair
-		&.after { .app-play-fadeOutRight(); }
-		&.before { .app-play-fadeOutLeft(); }
+		&.after { .app-play-fadeOutLeft(); }
+		&.before { .app-play-fadeOutRight(); }
+		&.on { .app-play-fadeIn(); }
 	}
 }
 
@@ -59,6 +61,7 @@
 		// Quando exibir
 		&.after { .app-play-fadeInDown(); }
 		&.before { .app-play-fadeInUp(); }
+		&.on { .app-play-fadeIn(); }
 	}
 
 	&.app-no-display { // Aplica no item on => off
@@ -69,6 +72,7 @@
 		// Quando sair
 		&.after { .app-play-fadeOutUp(); }
 		&.before { .app-play-fadeOutDown(); }
+		&.on { .app-play-fadeOut(); }
 	}
 }
 

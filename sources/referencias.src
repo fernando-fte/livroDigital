@@ -12,6 +12,7 @@
 		{
 			"._.//":"Contents da lista de referencias",
 			"html":"div",
+			"id":"referencias_item",
 			"class":["app-ref-content", "section-page-item"],
 			"content":[
 				{"html":"p", "content":[
