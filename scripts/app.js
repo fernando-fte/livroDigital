@@ -148,7 +148,8 @@
           if (!temp._proccess.display.item["this"] === false) {
             temp.eq = temp._proccess.display.item.eq;
           }
-          $.appCtrl.sectionDisplay([[temp._proccess.display.it.page["this"], 'out', temp._proccess.display.position.page], [temp._proccess.display.page["this"], 'in', temp._proccess.display.position.page], [$(temp._proccess.display.pattern).find(".section-page-item:eq(" + temp.eq + ")"), 'in', 'on']]);
+          console.log(temp._proccess.display);
+          $.appCtrl.sectionDisplay([[temp._proccess.display.it.page["this"], 'out', temp._proccess.display.position.page], [temp._proccess.display.it.item["this"], 'out', temp._proccess.display.position.page], [temp._proccess.display.page["this"], 'in', temp._proccess.display.position.page], [$(temp._proccess.display.page["this"]).find(".section-page-item:eq(" + temp.eq + ")"), 'in', 'on']]);
         }
         if (temp._proccess.display.position.page === 'this') {
           if (temp._proccess.display.position.item === 'first') {
@@ -158,10 +159,9 @@
             $.appCtrl.sectionDisplay([[temp._proccess.display.it.item["this"], 'out', temp._proccess.display.position.item], [temp._proccess.display.item["this"], 'in', temp._proccess.display.position.item]]);
           }
           if (temp._proccess.display.position.item === 'this') {
-            $.appCtrl.sectionDisplay([[temp._proccess.display.item["this"], 'in', 'on']]);
+            return $.appCtrl.sectionDisplay([[temp._proccess.display.item["this"], 'in', 'on']]);
           }
         }
-        return console.log(temp._proccess.display);
       }
     });
     return temp;
@@ -245,22 +245,12 @@
       if ($(id).closest('.section-page-item').length) {
         temp.item["this"] = $(id).closest('.section-page-item');
       }
-      if (!temp.page["this"] === false && temp.item["this"] === false) {
-        if ($(temp.page["this"]).find('.section-page-item.' + display).length) {
-          temp.item["this"] = $(temp.page["this"]).find('.section-page-item.' + display);
-        }
-        if (!$(temp.page["this"]).find('.section-page-item.' + display).length) {
-          if ($(temp.page["this"]).find('.section-page-item:eq(0)').length) {
-            temp.item["this"] = $(temp.page["this"]).find('.section-page-item:eq(0)');
-          }
-        }
-      }
     }
     if (temp.page["this"]) {
       temp.page.eq = $('#' + $(temp.page["this"])[0].id).index('.section-page');
     }
-    if (temp.item["this"]) {
-      temp.item.eq = $('#' + $(temp.item["this"])[0].id).index('.section-page-item');
+    if (temp.item["this"] && temp.page["this"]) {
+      temp.item.eq = $('#' + $(temp.item["this"])[0].id).index('#' + $(temp.page["this"])[0].id + ' .section-page-item');
     }
     if (!temp.page["this"] === false) {
       if (temp.page["this"].hasClass(display)) {
@@ -283,8 +273,8 @@
         if ($(temp.pattern).find('.section-page-item.' + display).length > 0) {
           temp.it.item["this"] = $(temp.pattern).find('.section-page-item.' + display);
         }
-        if (temp.it.item["this"]) {
-          temp.it.item.eq = $('#' + $(temp.it.item["this"])[0].id).index('.section-page-item');
+        if (temp.it.item["this"] && temp.it.page["this"]) {
+          temp.it.item.eq = $('#' + $(temp.it.item["this"])[0].id).index('#' + $(temp.it.page["this"])[0].id + ' .section-page-item');
         }
       }
     }

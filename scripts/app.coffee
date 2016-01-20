@@ -234,8 +234,9 @@ $.appCtrl.togo = (post) ->
 
 				$.appCtrl.sectionDisplay([
 					[temp._proccess.display.it.page.this, 'out', temp._proccess.display.position.page],
+					[temp._proccess.display.it.item.this, 'out', temp._proccess.display.position.page],
 					[temp._proccess.display.page.this, 'in', temp._proccess.display.position.page],
-					[$(temp._proccess.display.pattern).find(".section-page-item:eq(#{temp.eq})"), 'in', 'on']
+					[$(temp._proccess.display.page.this).find(".section-page-item:eq(#{temp.eq})"), 'in', 'on']
 				])
 
 
@@ -257,7 +258,7 @@ $.appCtrl.togo = (post) ->
 				if temp._proccess.display.position.item is 'this'
 					$.appCtrl.sectionDisplay([ [temp._proccess.display.item.this, 'in', 'on'] ])
 
-			console.log temp._proccess.display
+			# console.log temp._proccess.display
 	#// retorna a função
 	return temp
 
@@ -339,19 +340,19 @@ $.appCtrl.section = (id, display) ->
 
 		temp.item.this = $(id).closest('.section-page-item') if $(id).closest('.section-page-item').length
 
-		#** Resolve itens nao declarados e que passam pela mesma instancia
-		if !temp.page.this is false and temp.item.this is false
+		# #** Resolve itens nao declarados e que passam pela mesma instancia
+		# if !temp.page.this is false and temp.item.this is false
 
-			#// procura primeiro ativo de cima para baixo
-			temp.item.this = $(temp.page.this).find('.section-page-item.'+display) if $(temp.page.this).find('.section-page-item.'+display).length
+		# 	#// procura primeiro ativo de cima para baixo
+		# 	temp.item.this = $(temp.page.this).find('.section-page-item.'+display) if $(temp.page.this).find('.section-page-item.'+display).length
 
-			#// procura primeiro ativo de baixo para cima
-			if !$(temp.page.this).find('.section-page-item.'+display).length
-				temp.item.this = $(temp.page.this).find('.section-page-item:eq(0)') if  $(temp.page.this).find('.section-page-item:eq(0)').length
+		# 	#// procura primeiro ativo de baixo para cima
+		# 	if !$(temp.page.this).find('.section-page-item.'+display).length
+		# 		temp.item.this = $(temp.page.this).find('.section-page-item:eq(0)') if  $(temp.page.this).find('.section-page-item:eq(0)').length
 
 	#** retorna posição do item
 	temp.page.eq = $('#'+$(temp.page.this)[0].id).index('.section-page') if temp.page.this
-	temp.item.eq = $('#'+$(temp.item.this)[0].id).index('.section-page-item') if temp.item.this
+	temp.item.eq = $('#'+$(temp.item.this)[0].id).index('#'+$(temp.page.this)[0].id+' .section-page-item') if temp.item.this and temp.page.this
 
 
 	#== Localiza as seções ativas
@@ -379,7 +380,7 @@ $.appCtrl.section = (id, display) ->
 
 			# Localiza de cima para baixo a pagina ativa
 			temp.it.item.this = $(temp.pattern).find('.section-page-item.'+display) if $(temp.pattern).find('.section-page-item.'+display).length > 0
-			temp.it.item.eq = $('#'+$(temp.it.item.this)[0].id).index('.section-page-item') if temp.it.item.this
+			temp.it.item.eq = $('#'+$(temp.it.item.this)[0].id).index('#'+$(temp.it.page.this)[0].id+' .section-page-item') if temp.it.item.this and temp.it.page.this
 
 	#== Valida o ponto de referencia se é after, before, this, first
 	# valida a direção da pagina
