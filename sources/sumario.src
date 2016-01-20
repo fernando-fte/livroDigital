@@ -1,7 +1,7 @@
 {
 	"html":"section",
 	"id": "sumario",
-	"class":["app-sum-scroll", "section-page", "add-scroll"],
+	"class":["app-sum-scroll", "section-page"],
 	"content":[
 		{
 			"html": "div",
