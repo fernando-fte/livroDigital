@@ -1,0 +1,414 @@
+<!-- 
+-- * Estrutura do LivroDigital
+-- * FTE Developer - VG COnsultoria
+-- * LivroDigital Beta V.0.1.0
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Livro Digital Versão 0.1.0</title>
+    <link href="css/app.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </style>
+  </head>
+  <body cz-shortcut-listen="true">
+    <div id="livroDigital" class="app-volume">
+      <div id="app-capa" style="background-image: url(library/cover.book.jpg)" class="app-page app-cover app-display">
+        <div class="cover-contents col-md-11 col-notspace">
+          <span class="cover-fachada app-text-livro">Fernando you are getting this message as free service for being a user of the PHP Classes site</span>
+          <span class="cover-fachada app-text-autor">Marcela Ribeiro de Albuquerque</span>
+        </div>
+        <span data-app-ctrl="{&quot;togo&quot;:{&quot;to&quot;:&quot;sumario&quot;,&quot;cover&quot;:false}}" class="cover-btn-iniciar app-ico-iniciar col-lg-2 col-md-3 col-sm-4 col-ss-4 col-lg-offset-5 col-md-offset-4 col-sm-offset-3 col-ss-offset-3">
+        </span>
+        <div class="cover-logo-group">
+          <img src="img/logo.pos.white.svg" class="cover-logo-item logo-pos">
+          <img src="img/logo.white.svg" class="cover-logo-item logo-instituicao">
+        </div>
+        <div class="cover-nav-bar col-md-1 col-notspace row">
+          <span class="cover-btn-nav btn-nav-menu">
+            <span class="app-ico-menu">
+            </span>
+          </span>
+          <span class="cover-btn-nav">
+            <span class="app-ico-sumario">
+            </span>
+            <span class="cover-btn-tooltip">Sumário</span>
+          </span>
+          <span class="cover-btn-nav">
+            <span class="app-ico-atividade">
+            </span>
+            <span class="cover-btn-tooltip">Atividades</span>
+          </span>
+          <span class="cover-btn-nav">
+            <span class="app-ico-marcador">
+            </span>
+            <span class="cover-btn-tooltip">Continuar de onde parei</span>
+          </span>
+          <span class="cover-btn-nav">
+            <span class="app-ico-anotacao">
+            </span>
+            <span class="cover-btn-tooltip">Anotações</span>
+          </span>
+          <span class="cover-btn-nav">
+            <span class="app-ico-referencia">
+            </span>
+            <span class="cover-btn-tooltip">Referências</span>
+          </span>
+        </div>
+      </div>
+      <div style="background-color: rgba(251, 250, 186, 0.18);" class="app-contents add-scroll">
+        <div id="bar-nav" class="app-nav-bar clearfix">
+          <div data-app-ctrl="{&quot;togo&quot;:{&quot;cover&quot;:true}}" class="app-nav-logo col-md-2 col-sm-3 hidden-ss hidden-xs">
+            <img src="img/logo.color.svg">
+          </div>
+          <div class="app-nav-section col-md-6 col-sm-5 col-ss-6 col-xs-4">
+            <div class="app-nav-section-info app-font-app">
+              <div class="app-nav-section-livro app-cor-black-80 font-md-small-2 font-sm-small-2 font-ss-1 hidden-xs">
+                <span class="app-nav-section-item app-livro text-uppercase text-bold">Finanças Empresariais</span>
+                <span class="app-nav-section-item hidden-ss hidden-xs">•</span>
+                <span class="app-nav-section-item app-autor text-italic hidden-ss hidden-xs">Albuquerque M. R</span>
+              </div>
+              <div class="app-nav-section-secao app-cor-pattern-80 font-md-small-5 font-sm-small-4 font-ss-4 font-xs-3">
+                <span class="app-nav-section-item app-secao text-uppercase text-bold">Abertura</span>
+                <span class="app-nav-section-item hidden-ss hidden-xs">•</span>
+                <span class="app-nav-section-item app-titulo hidden-ss hidden-xs">Reitoria</span>
+              </div>
+            </div>
+          </div>
+          <div class="app-nav-btn-group app-cor-pattern text-center col-md-4 col-sm-4 col-ss-6 col-xs-8 font-md-5 font-sm-4 font-ss-4 font-xs-4">
+            <div data-app-ctrl="{&quot;togo&quot;:{&quot;to&quot;:&quot;sumario&quot;}}" class="app-nav-btn-item nav-btn-sumario col-md-2 col-sm-2 col-ss-2 col-xs-2">
+              <span class="app-ico-sumario font-md-6 font-sm-5 font-ss-5 font-xs-small-4">
+              </span>
+            </div>
+            <span class="col-sm-2 col-xs-2">
+            </span>
+            <div class="app-nav-btn-item nav-btn-action text-center col-md-2 col-sm-2 col-ss-2 col-xs-2">
+              <span data-app-ctrl="{&quot;display&quot;:{&quot;put&quot;:&quot;.app-nav-btn-item&quot;,&quot;who&quot;:&quot;closest&quot;,&quot;toogle&quot;:[&quot;.app-nav-btn-item&quot;]}}" class="app-ico-config_leitura app-nav-btn-click">
+              </span>
+              <div class="app-nav-tooltip nav-tooltip-posicao clearfix">
+                <div class="app-nav-tooltip-control app-font-app col-md-12 col-sm-12 col-ss-12 col-xs-12">
+                  <span data-app-ctrl="{&quot;display&quot;:{&quot;put&quot;:&quot;.app-nav-btn-item&quot;,&quot;no&quot;:true,&quot;who&quot;:&quot;closest&quot;,&quot;toogle&quot;:[&quot;.app-nav-btn-item&quot;]}}" class="app-ico-close app-cor-patter font-lg-7 font-sm-6 font-xs-7">
+                  </span>
+                  <div class="app-nav-control-light-density col-xs-12">
+                    <span class="app-ico-light-off app-cor-pattern font-md-4 font-ss-3 font-xs-4">
+                    </span>
+                    <div class="slider slider-horizontal" id="app-nav-light-density">
+                      <div class="slider-track">
+                        <div class="slider-track-low" style="left: 0px; width: 0%;">
+                        </div>
+                        <div class="slider-selection" style="left: 0%; width: 70%;">
+                        </div>
+                        <div class="slider-track-high" style="right: 0px; width: 30%;">
+                        </div>
+                        <div class="slider-handle min-slider-handle round" role="slider" aria-valuemin="0" aria-valuemax="20" aria-valuenow="14" tabindex="0" style="left: 70%;">
+                        </div>
+                        <div class="slider-handle max-slider-handle round hide" role="slider" aria-valuemin="0" aria-valuemax="20" aria-valuenow="0" tabindex="0" style="left: 0%;">
+                        </div>
+                      </div>
+                      <div class="tooltip tooltip-main top" role="presentation" style="left: 70%; margin-left: 0px;">
+                        <div class="tooltip-arrow">
+                        </div>
+                        <div class="tooltip-inner">Densidade da luz: 14</div>
+                      </div>
+                      <div class="tooltip tooltip-min top" role="presentation">
+                        <div class="tooltip-arrow">
+                        </div>
+                        <div class="tooltip-inner">
+                        </div>
+                      </div>
+                      <div class="tooltip tooltip-max top" role="presentation">
+                        <div class="tooltip-arrow">
+                        </div>
+                        <div class="tooltip-inner">
+                        </div>
+                      </div>
+                    </div>
+                    <input data-slider-id="app-nav-light-density" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14" type="text" id="app-nav-light-density" data-value="14" value="14" style="display: none;">
+                    <span class="app-ico-light-on app-cor-pattern font-md-4 font-ss-3 font-xs-4">
+                    </span>
+                  </div>
+                  <div class="app-nav-control-background app-divisor-top col-xs-12">
+                    <div class="app-control-background-item app-bg-pattern-40 col-xs-3 col-xs-offset-1">
+                      <p class="text-center font-xs-small-6">T</p>
+                    </div>
+                    <div class="app-control-background-item active app-bg-black-40 col-xs-3 col-xs-offset-1">
+                      <p class="text-center font-xs-small-6">T</p>
+                    </div>
+                    <div class="app-control-background-item app-bg-light-40 col-xs-3 col-xs-offset-1">
+                      <p class="text-center font-xs-small-6">T</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="app-nav-btn-item nav-btn-action text-center col-md-2 col-sm-2 col-ss-2 col-xs-2">
+              <span data-app-ctrl="{&quot;display&quot;:{&quot;put&quot;:&quot;.app-nav-btn-item&quot;,&quot;who&quot;:&quot;closest&quot;,&quot;toogle&quot;:[&quot;.app-nav-btn-item&quot;]}}" class="app-ico-anotacao app-nav-btn-click">
+              </span>
+              <div class="app-nav-tooltip nav-tooltip-posicao clearfix">
+                <div class="app-nav-tooltip-control app-font-app col-md-12 col-sm-12 col-ss-12 col-xs-12">
+                  <span data-app-ctrl="{&quot;display&quot;:{&quot;put&quot;:&quot;.app-nav-btn-item&quot;,&quot;no&quot;:true,&quot;who&quot;:&quot;closest&quot;,&quot;toogle&quot;:[&quot;.app-nav-btn-item&quot;]}}" class="app-ico-close app-cor-patter font-lg-7 font-sm-6 font-xs-7">
+                  </span>
+                  <span class="app-nav-tooltip-more app-cor-blue-60 text-uppercase text-bold text-center padding-none-width col-md-12 col-sm-12 col-ss-12 col-xs-12 font-md-small-3 font-sm-small-3 font-ss-small-3 font-xs-small-3">
+                  </span>
+                </div>
+                <div class="app-nav-tooltip-contents">
+                  <span class="app-nav-tooltip-item  app-cor-black-60  col-md-12 col-sm-12 col-ss-12 col-xs-12">
+                    <span class="app-nav-tooltip-secao  app-font-app  text-uppercase  text-left  col-md-12 col-sm-12 col-ss-12 col-xs-12  font-md-small-2 font-sm-small-2 font-ss-small-2 font-xs-2">
+                      <span class="tooltip-section-item app-secao">Unidade I</span>
+                      <span class="tooltip-section-item">•</span>
+                      <span class="tooltip-section-item app-titulo">Organização da função financeira</span>
+                    </span>
+                    <span class="app-nav-tooltip-text  app-font-special  text-justify  col-md-12 col-sm-12 col-ss-12 col-xs-12  font-md-2 font-sm-2 font-ss-2 font-xs-2">A análise horizontal complementa a análise vertical, que nos informa o aumento ou diminuição da proporção</span>
+                    <span class="app-nav-tooltip-anotacao  app-divisor-top  app-font-app app-cor-pattern-60  text-left col-md-12 col-sm-12 col-ss-12 col-xs-12  font-md-2 font-sm-2 font-ss-2 font-xs-2">Anotação do leitor Anotação do leitor Anotação do leitor Anotação do leitor</span>
+                    <div class="app-nav-tooltip-control clearfix text-right col-md-12 col-sm-12 col-ss-12 col-xs-12">
+                      <span class="app-ico-lixo btn btn-xs btn-app">
+                      </span>
+                      <span class="app-ico-editar btn btn-xs btn-app">
+                      </span>
+                    </div>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="app-nav-btn-item nav-btn-action col-md-2 col-sm-2 col-ss-2 col-xs-2">
+              <span data-app-ctrl="{&quot;display&quot;:{&quot;put&quot;:&quot;.app-nav-btn-item&quot;,&quot;who&quot;:&quot;closest&quot;,&quot;toogle&quot;:[&quot;.app-nav-btn-item&quot;]}}" class="app-ico-marcador app-nav-btn-click">
+              </span>
+              <div class="app-nav-tooltip nav-tooltip-posicao clearfix">
+                <div class="app-nav-tooltip-control app-font-app  col-md-12 col-sm-12 col-ss-12 col-xs-12">
+                  <span data-app-ctrl="{&quot;display&quot;:{&quot;put&quot;:&quot;.app-nav-btn-item&quot;,&quot;no&quot;:true,&quot;who&quot;:&quot;closest&quot;,&quot;toogle&quot;:[&quot;.app-nav-btn-item&quot;]}}" class="app-ico-close app-cor-patter font-lg-7 font-sm-6 font-xs-7">
+                  </span>
+                  <span class="app-nav-tooltip-header  app-divisor-bottom padding-none-width text-italic text-uppercase app-cor-pattern-60  col-md-12 col-sm-12 col-ss-12 col-xs-12  font-md-3 font-sm-3 font-ss-3 font-xs-3">Continuar de onde parei</span>
+                </div>
+                <div style="app-nav-tooltip-contents">
+                  <span class="app-nav-tooltip-item  app-cor-black-60  col-md-12 col-sm-12 col-ss-12 col-xs-12">
+                    <span class="app-nav-tooltip-secao  app-font-app  text-uppercase  text-left  col-md-12 col-sm-12 col-ss-12 col-xs-12  font-md-small-2 font-sm-small-2 font-ss-small-2 font-xs-2">
+                      <span class="tooltip-section-item app-secao">Unidade I</span>
+                      <span class="tooltip-section-item">•</span>
+                      <span class="tooltip-section-item app-titulo">Organização da função financeira</span>
+                    </span>
+                    <span class="app-nav-tooltip-text  app-font-special  text-justify  col-md-12 col-sm-12 col-ss-12 col-xs-12  font-md-2 font-sm-2 font-ss-2 font-xs-2">A análise horizontal complementa a análise vertical, que nos informa o aumento ou diminuição da proporção</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="app-nav-btn-item nav-btn-menu col-md-2 col-sm-2 col-ss-2 col-xs-2">
+              <span class="app-ico-menu hidden-ss hidden-xs font-sm-7 font-sm-6">
+              </span>
+              <span class="app-ico-menu-short hidden-sm hidden-md hidden-lg font-ss-5">
+              </span>
+            </div>
+          </div>
+        </div>
+        <section id="sumario" class="app-sum-scroll section-page">
+          <div id="sumario" class="app-sum-contents">
+            <div class="app-sum-section app-sum-section-sections">
+              <div class="app-sum-section-item app-sum-section-header app-font-app padding-none-right col-md-12 col-sm-12 col-ss-12 col-xs-12 font-lg-2 font-md-small-2 font-sm-small-2 font-ss-small-2 font-xs-small-2">
+                <span data-app-ctrl="{&quot;togo&quot;:{&quot;to&quot;:&quot;afaculdade&quot;}}" class="app-sum-section-secao app-cor-black-80 text-uppercase text-bold padding-none-width col-md-12 col-sm-12 col-ss-12 col-xs-12 font-lg-small-4 font-md-small-3 font-sm-2 font-ss-small-4 font-xs-small-3">Abertura</span>
+              </div>
+              <div class="app-sum-section-item app-font-header padding-none-width col-md-12 col-sm-12 col-ss-12 col-xs-12 font-lg-2 font-md-2 font-sm-2 font-ss-2 font-xs-2">
+                <span class="sum-section-name app-cor-black-80 text-uppercase text-bold col-md-11 col-sm-11 col-ss-11 col-xs-11">Reitoria</span>
+              </div>
+            </div>
+            <div class="app-sum-section">
+              <div class="app-sum-section-item app-sum-section-header app-font-app padding-none-right col-md-12 col-sm-12 col-ss-12 col-xs-12 font-lg-2 font-md-small-2 font-sm-small-2 font-ss-small-2 font-xs-small-2">
+                <span data-app-ctrl="{&quot;togo&quot;:{&quot;to&quot;:&quot;livro1unidade1&quot;}}" class="app-sum-section-secao app-cor-black-80 text-uppercase text-bold padding-none-width col-md-12 col-sm-12 col-ss-12 col-xs-12 font-lg-small-4 font-md-small-3 font-sm-2 font-ss-small-4 font-xs-small-3">Capítulo I</span>
+                <span data-app-ctrl="{&quot;togo&quot;:{&quot;to&quot;:&quot;livro1unidade1&quot;}}" class="app-sum-section-titulo app-cor-black-60 padding-none-width col-md-12 col-sm-12 col-ss-12 col-xs-12 font-lg-4 font-md-3 font-sm-3 font-ss-4 font-xs-3">A função financeira, análise das demonstrações financeiras</span>
+              </div>
+              <div class="app-sum-section-item app-font-header padding-none-width col-md-12 col-sm-12 col-ss-12 col-xs-12 font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-2">
+                <span data-app-ctrl="{&quot;togo&quot;:{&quot;to&quot;:&quot;livro1unidade1item1&quot;}}" class="sum-section-name app-cor-black-80 text-uppercase text-bold col-md-11 col-sm-11 col-ss-11 col-xs-11">Objetivos da administração financeira e seus conflitos</span>
+                <span data-app-ctrl="{&quot;display&quot;:{&quot;put&quot;:&quot;.app-sum-section-item&quot;,&quot;who&quot;:&quot;closest&quot;,&quot;toogle&quot;:[&quot;.app-sum-section-item&quot;],&quot;inverse&quot;:true}}" class="app-sum-btn-icon-sub col-md-1 col-sm-1 col-ss-1 col-xs-1 font-md-4 font-sm-4 font-ss-4 font-xs-4">
+                </span>
+                <div class="app-sum-section-sub col-md-12 col-sm-12 col-ss-12 col-xs-12">
+                  <span class="app-sum-section-item app-sum-section-sub-item col-md-12 col-sm-12 col-ss-12 col-xs-12 font-lg-small-3 font-md-2 font-sm-2 font-ss-small-3 font-xs-2">Introdução</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div id="apresentacao" class="app-apr-contents section-page">
+          <div id="afaculdade" class="app-apr-item section-page-item app-apr-display-texto">
+            <div data-app-ctrl="{&quot;apr&quot;:true}" class="app-apr-item-ctrl app-cor-pattern font-lg-6 font-md-6 font-sm-5 font-ss-4 font-xs-3">
+              <span class="app-ico-video">
+              </span>
+              <span class="app-ico-texto">
+              </span>
+            </div>
+            <h1 class="app-apr-item-titulo">Reitoria</h1>
+            <h1 class="app-apr-item-sub-titulo sub">Reitor</h1>
+            <div class="app-apr-item-content">
+              <div class="app-apr-item-texto">
+                <img src="library/avatar.professor.jpg" class="app-apr-item-avatar">
+                <p>Diante dos novos desafios trazidos pelo mundo contemporâneo e o surgimento de um novo paradigma educacional frente às Tecnologias de Informação e Comunicação disponíveis que favorecem a construção do conhecimento, a revolução educacional está entre os mais pungentes, levando as universidades a assumirem a sua missão como instituição formadora, com competência e comprometimento, optando por uma gestão mais aberta e flexível, democratizando o conhecimento científico e tecnológico, através da Educação a Distância.</p>
+                <p>Sendo assim, a Universidade Paranaense - UNIPAR - atenta a este novo cenário e buscando formar profissionais cada vez mais preparados, autônomos, criativos, responsáveis, críticos e comprometidos com a formação de uma sociedade mais democrática, vem oferecer-lhe o Ensino a Distância, como uma opção dinâmica e acessível estimulando o processo de autoaprendizagem.</p>
+                <p>Como parte deste processo e dos recursos didático-pedagógicos do programa da Educação a Distância oferecida por esta universidade, este Guia Didático tem como objetivo oferecer a você, acadêmico(a), meios para que, através do autoestudo, possa construir o conhecimento e, ao mesmo tempo, refletir sobre a importância dele em sua formação profissional.</p>
+                <p>&nbsp;</p>
+                <p>Seja bem-vindo(a) ao Programa de Educação a Distância da UNIPAR.</p>
+              </div>
+              <div class="app-apr-item-video">
+                <span style="display:block; height:70%; width:100%;" class="app-bg-pattern">
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="livro1unidade1" class="app-cap-section section-page">
+          <div class="app-cap-abertura clearfix app-cor-white app-font-app">
+            <span class="app-cap-abertura-topo text-bold text-uppercase padding-none-width font-lg-6 font-md-5 font-sm-5 font-ss-4 font-xs-4 col-lg-12 col-md-12 col-sm-12 col-ss-12 col-xs-12"><span class="col-lg-2 col-md-2 col-sm-2 col-ss-2 col-xs-1"></span>Unidade I</span>
+            <span class="app-cap-abertura-titulo text-bold font-lg-12 font-md-10 font-sm-8 font-ss-7 font-xs-6 col-lg-9 col-md-8 col-sm-10 col-ss-10 col-xs-11 col-lg-offset-3 col-md-offset-3 col-sm-offset-3 col-ss-offset-2 col-xs-offset-1">A função financeira, análise das demonstrações financeiras</span>
+            <span class="app-cap-abertura-autor text-italic font-lg-4 font-md-small-3 font-sm-3 font-ss-small-3 font-xs-2 col-lg-9 col-md-8 col-sm-9 col-ss-10 col-xs-11 col-lg-offset-3 col-md-offset-4 col-sm-offset-3 col-ss-offset-2 col-xs-offset-1">Marcela Ribeiro de Albuquerque</span>
+          </div>
+          <div class="app-cap-content">
+            <div id="livro1unidade1intro" class="section-page-item app-cap-introducao">
+              <p>No contexto da unidade I, cujo tema central de estudos é a Gestão de Pessoas e seus desdobramentos, o objetivo geral é conceituar gestão de pessoas e conhecer a sua evolução ao longo dos tempos. Os conteúdos aqui desenvolvidos serão amparados, em perspectivas de autores da área, e terão um viés para que se compreendam os modelos de gestão de pessoas, bem como a evolução histórica da área, como uma forma de se desenvolver trabalhos cooperativos nos mais diversos contextos organizacionais, objetivando resultados satisfatórios para todos os envolvidos (pessoas e organização).</p>
+              <p>Com este fim, as discussões serão iniciadas de maneira sólida, trazendo à tona a percepção e pontos de vista de autores da área, de forma a apresentar as suas concepções acerca da gestão de pessoas diante dos desafios enfrentados constantemente pelas pessoas e pela sociedade como um todo. Tais concepções serão interpretadas e complementadas com novas perspectivas que permitam visualizar os cenários organizacionais.</p>
+            </div>
+            <article id="livro1unidade1item1" class="section-page-item">
+              <h1>O que é gestão de pessoas?</h1>
+              <p>Falar em gestão de pessoas não é falar somente de uma área dentro de uma organização. Isso porque atualmente a gestão de pessoas passa a ser vista como uma função (papel) desempenhada por gestores de equipes, administradores, gerentes, coordenadores ou supervisores, ou seja, por todos aqueles que detêm sob o seu comando uma equipe de trabalho.</p>
+              <blockquote>[...] A administração financeira é uma ciência que objetiva, basicamente, determinar o mais eficiente processo empresarial de captação de recursos e alocação de capital. Nesse contexto, é necessário levar em conta a problemática da escassez de recursos e a realidade operacional e prática das organizações. Entretanto, não basta apenas captar e alocar capital, é necessário administrar os recursos para gerar resultados financeiros e econômicos, o que garante a continuidade da empresa e cria valor aos seus acionistas (proprietários) [...]<span class="app-fonte">Gitman - 2010 - p.4</span>
+              </blockquote>
+              <p>O que seria então gestão de pessoas? Segundo Chiavenato (2010), a abordagem de gestão de pessoas diz respeito a um conjunto integrado de atividades de especialistas e também gestores com o intuito de proporcionar competências e competitividade à organização. Acrescenta-se ainda, que este conjunto de atividades busca o alinhamento dos objetivos da organização com os dos indivíduos que compõem a sua estrutura.</p>
+              <p>Estamos falando assim de uma nova abordagem. De uma nova forma de integrar os talentos humanos com as necessidades da organização, e para isso, é necessário que os gestores saiam do “casulo” e percebam o quão importante é o seu papel, por meio da atuação direta junto às suas equipes de trabalho. O trabalho de Gestão de pessoas não é meramente um jogo de xadrez, situação demonstrada na figura 1.1, mas sim um processo dinâmico, diferenciado, pois as peças não são imutáveis, são portadoras de características pessoas como a iniciativa, a criatividade, o pensamento e o conhecimento.</p>
+              <div class="app-graphic-content app-graphic-figure">
+                <div class="app-graphic-ctrl">
+                  <span class="app-graphic-previous">
+                  </span>
+                  <span class="app-graphic-show">
+                  </span>
+                  <span class="app-graphic-next">
+                  </span>
+                </div>
+                <div class="app-graphic-content-nav">
+                  <span class="app-graphic-previous">
+                  </span>
+                  <span class="app-graphic-next">
+                  </span>
+                  <img src="library/fig.1.1.jpg" class="app-graphic-item on">
+                </div>
+                <div class="grapc-content-caption">
+                  <span class="app-legenda">
+                    <span class="label">
+                      <span class="app-sequence-this">1</span>
+                      <span class="app-sequence-all">1</span> </span>comparativo xadrez x gestão de pessoas
+                    </span>
+                    <span class="app-fonte">
+                      <span class="label">Fonte</span>
+                      <a href="http://www.shutterstock.com/pt/s/Gest%C3%A3o+de+pessoas/search.html?page=2&amp;thumb_size=mosaic&amp;inline=145567615">http://www.shutterstock.com/pt/s/Gest%C3%A3o+de+pessoas/search.html?page=2&amp;thumb_size=mosaic&amp;inline=145567615</a>
+                    </span>
+                  </div>
+                </div>
+                <article>
+                  <h2>Evolução da gestão de pessoas</h2>
+                  <p>Antes mesmo de abordar sobre as ferramentas e/ou práticas de gestão de pessoas nas organizações, faz-se necessário compreender a sua evolução histórica, pois assim torna-se possível visualizar os cenários que contribuíram para a formação das teorias e perspectivas construídas e estudadas até os dias atuais.</p>
+                  <p>Vamos remapear a evolução histórica da gestão de pessoas, trazendo à tona o “pano de fundo” de cada momento e as suas principais características. Cabe ressaltar que esta evolução da gestão de pessoas é fortemente marcada e influenciada pelas teorias organizacionais, já que a maneira como os trabalhadores de uma organização são tratados, reflete os seus modelos de gestão.</p>
+                  <p>Para melhor compreensão, essa evolução da Gestão de Pessoas será dividida em três grandes momentos, que serão aqui denominados de “fases”: (1) Fase industrial, (2) Fase pós-industrial e (3) Fase moderna.</p>
+                </article>
+                <article>
+                  <h3>Fase Industrial</h3>
+                  <p>A fase industrial é representada pelo período de ascensão da industrialização da economia, de maneira concentrada no final do século XIX até meados do século XX. O foco desta época estava na produtividade, algo que contribuiu inclusive, para os princípios de uma teoria organizacional, com personagens marcantes como Frederick W. Taylor, Henri Fayol, Henry Ford e Max Weber. </p>
+                  <p>Cada um deles com a sua abordagem contribuiu com o objetivo principal das organizações da época, que era: “produzir mais no menor tempo possível”. Neste período que foram instituídos inclusive os princípios da administração: conhecer, prever, organizar, comandar, coordenar e controlar.</p>
+                  <p>Mas como este período está ligado à evolução da gestão de pessoas? Imagine você que com a mudança de uma economia quase que totalmente agrícola para uma economia industrial, o êxodo do campo para a cidade foi gigantesco. Sendo assim, a “quantidade” de mão de obra disponível era imensurável, o que levava as indústrias a recrutarem aqueles que se mostravam mais fortes (fisicamente) para atuar em suas estruturas.</p>
+                  <p>Neste período a estrutura, o maquinário, os insumos e o tempo de produção eram o enfoque principal, as pessoas (operários) ficavam em segundo plano. Nem se cogitava nesta época em preocupar-se com a forma como os empregados seriam tratados. Algo que era estimulado inclusive, pela ausência de leis que regulamentassem o trabalho executado. Este quadro começou a mudar em meados do século XX com o fortalecimento dos sindicatos e, no caso do Brasil, com o surgimento da Consolidação das Leis do Trabalho (CLT).</p>
+                  <p>Outros pontos importantes desta fase que ainda merecem destaque, a partir da abordagem de Chiavenato (2010):</p>
+                  <div class="app-box app-box-section">
+                    <div class="app-box-head">Reflita</div>
+                    <div class="app-box-content">
+                      <p>É importante ter sempre em mãos os números dos telefones, os endereços de hospitais e de centros de atendimento de emergência; socorro especializado para emergências cardíacas; plantão da Comissão Nacional de Energia Nuclear; locais de aplicação de soros antiveneno de cobra e de outros animais peçonhentos e centro de informações tóxicofarmacológicas.</p>
+                    </div>
+                  </div>
+                  <div class="app-box app-box-section">
+                    <div class="app-box-head">Fique por dentro</div>
+                    <div class="app-box-content">
+                      <h1>Suprimentos de primeiros socorros</h1>
+                      <p>Alguns itens que podem ser de extrema utilidade em situações diversas devem constar em sua caixa de primeiros socorros. Esta caixa deve ser mantida sempre em lugar de fácil acesso, tanto em casa quanto no carro e deve conter: esparadrapo, água oxigenada, álcool; gazes esterilizadas, lanterna, luvas de látex, algodão, pinsa, talas, bandagens, soro fisiológico, ataduras, sabão líquido, sacos plásticos, termômetro, tesoura e vaselina esterilizada.</p>
+                    </div>
+                  </div>
+                  <div class="app-box app-box-atividade">
+                    <div class="app-box-head">Atividades</div>
+                    <div class="app-box-content app-ati-item">
+                      <p id="atividade_1" class="app-ati-enunciado">Alternativa.  Etur, quis aut odit volore voluptatur mod excea voluptatio mo cum quam qui cus, tem fugit re doluptior sus, quo cus re, sim faciet ut es et de essum debitis eatenem ratem incimpo rescium anda doluptus eum accullu ptatatia solo estium as aut quibus aut omnis veriorepudi dolupiendit experov iducipi enesedi volo commolorione nimus doluptus <a>google.com.br</a> eum accullu ptatatia solo estium as aut quibus aut omnis veriorepudi dolupiendit experov iducipi enesedi volo commolorione nimus</p>
+                      <ul class="app-ati-alternativa-content">
+                        <li data-app-ctrl="{&quot;atividade&quot;:{&quot;avaliar&quot;:true,&quot;change&quot;:false,&quot;true&quot;:false}}" id="atividade_1_1" class="app-ati-alternativa-item">
+                          <span class="alternativa">Alternativa 1</span>
+                          <span class="feedback">Feedback 1</span>
+                        </li>
+                        <li data-app-ctrl="{&quot;atividade&quot;:{&quot;avaliar&quot;:true,&quot;change&quot;:false,&quot;true&quot;:false}}" id="atividade_1_2" class="app-ati-alternativa-item">
+                          <span class="alternativa">Alternativa 1</span>
+                          <span class="feedback">Feedback 1</span>
+                        </li>
+                        <li data-app-ctrl="{&quot;atividade&quot;:{&quot;avaliar&quot;:true,&quot;change&quot;:false,&quot;true&quot;:false}}" id="atividade_1_3" class="app-ati-alternativa-item">
+                          <span class="alternativa">Alternativa 1</span>
+                          <span class="feedback">Feedback 1</span>
+                        </li>
+                        <li data-app-ctrl="{&quot;atividade&quot;:{&quot;avaliar&quot;:true,&quot;change&quot;:false,&quot;true&quot;:true}}" id="atividade_1_4" class="app-ati-alternativa-item">
+                          <span class="alternativa">Alternativa 1</span>
+                          <span class="feedback">Feedback 1</span>
+                        </li>
+                        <li data-app-ctrl="{&quot;atividade&quot;:{&quot;avaliar&quot;:true,&quot;change&quot;:false,&quot;true&quot;:true}}" id="atividade_1_5" class="app-ati-alternativa-item">
+                          <span class="alternativa">Alternativa 1</span>
+                          <span class="feedback">Feedback 1</span>
+                        </li>
+                      </ul>
+                      <span class="btn btn-xs app-ati-item-change">Avaliar</span>
+                    </div>
+                    <div class="app-box-content app-ati-item">
+                      <p id="atividade_1" class="app-ati-enunciado">Alternativa.  Etur, quis aut odit volore voluptatur mod excea voluptatio mo cum quam qui cus, tem fugit re doluptior sus, quo cus re, sim faciet ut es et de essum debitis eatenem ratem incimpo rescium anda doluptus eum accullu ptatatia solo estium as aut quibus aut omnis veriorepudi dolupiendit experov iducipi enesedi volo commolorione nimus doluptus <a>google.com.br</a> eum accullu ptatatia solo estium as aut quibus aut omnis veriorepudi dolupiendit experov iducipi enesedi volo commolorione nimus</p>
+                      <ul class="app-ati-alternativa-content">
+                        <li data-app-ctrl="{&quot;atividade&quot;:{&quot;change&quot;:false,&quot;true&quot;:false}}" id="atividade_1_1" class="app-ati-alternativa-item">
+                          <span class="alternativa">Alternativa 1</span>
+                          <span class="feedback">Feedback 1</span>
+                        </li>
+                        <li data-app-ctrl="{&quot;atividade&quot;:{&quot;change&quot;:false,&quot;true&quot;:false}}" id="atividade_1_2" class="app-ati-alternativa-item">
+                          <span class="alternativa">Alternativa 1</span>
+                          <span class="feedback">Feedback 1</span>
+                        </li>
+                        <li data-app-ctrl="{&quot;atividade&quot;:{&quot;change&quot;:false,&quot;true&quot;:false}}" id="atividade_1_3" class="app-ati-alternativa-item">
+                          <span class="alternativa">Alternativa 1</span>
+                          <span class="feedback">Feedback 1</span>
+                        </li>
+                        <li data-app-ctrl="{&quot;atividade&quot;:{&quot;change&quot;:false,&quot;true&quot;:true}}" id="atividade_1_4" class="app-ati-alternativa-item">
+                          <span class="alternativa">Alternativa 1</span>
+                          <span class="feedback">Feedback 1</span>
+                        </li>
+                        <li data-app-ctrl="{&quot;atividade&quot;:{&quot;change&quot;:false,&quot;true&quot;:true}}" id="atividade_1_5" class="app-ati-alternativa-item">
+                          <span class="alternativa">Alternativa 1</span>
+                          <span class="feedback">Feedback 1</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </article>
+            </article>
+          </div>
+        </div>
+        <div id="referencias" class="section-page app-ref">
+          <h1 class="app-ref-head">Referências</h1>
+          <div id="referencias_item" class="app-ref-content section-page-item">
+            <p>BRAGA, Hugo Rocha. <b>Demonstrações Contábeis: Estrutura, Análise e Interpretação</b>. 5. ed. São Paulo: <i>Atlas, 2003</i>.</p>
+            <p>BRAGA, Hugo Rocha. <b>Demonstrações Contábeis: Estrutura, Análise e Interpretação</b>. 5. ed. São Paulo: <i>Atlas, 2003</i>.</p>
+            <p class="app-ref-link">BRAGA, Hugo Rocha. <b>Demonstrações Contábeis: Estrutura, Análise e Interpretação</b>. 5. ed. São Paulo: <i>Atlas, 2003</i>.</p>
+            <p>BRAGA, Hugo Rocha. <b>Demonstrações Contábeis: Estrutura, Análise e Interpretação</b>. 5. ed. São Paulo: <i>Atlas, 2003</i>.</p>
+            <p>BRAGA, Hugo Rocha. <b>Demonstrações Contábeis: Estrutura, Análise e Interpretação</b>. 5. ed. São Paulo: <i>Atlas, 2003</i>.</p>
+            <p>BRAGA, Hugo Rocha. <b>Demonstrações Contábeis: Estrutura, Análise e Interpretação</b>. 5. ed. São Paulo: <i>Atlas, 2003</i>.</p>
+            <p>BRAGA, Hugo Rocha. <b>Demonstrações Contábeis: Estrutura, Análise e Interpretação</b>. 5. ed. São Paulo: <i>Atlas, 2003</i>.</p>
+            <p>BRAGA, Hugo Rocha. <b>Demonstrações Contábeis: Estrutura, Análise e Interpretação</b>. 5. ed. São Paulo: <i>Atlas, 2003</i>.</p>
+            <p>BRAGA, Hugo Rocha. <b>Demonstrações Contábeis: Estrutura, Análise e Interpretação</b>. 5. ed. São Paulo: <i>Atlas, 2003</i>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/jquery.min.js" type="text/javascript"></script>
+    <script src="js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="js/bootstrap.slider.min.js" type="text/javascript"></script>
+    <script src="js/app.js" type="text/javascript"></script>
+    <script src="js/vendors.js" type="text/javascript"></script>
+  </body>
+</html>
