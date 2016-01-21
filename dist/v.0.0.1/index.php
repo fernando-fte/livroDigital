@@ -185,7 +185,7 @@
 						<div class="app-nav-tooltip-control app-font-app  col-md-12 col-sm-12 col-ss-12 col-xs-12">
 							<span class="app-ico-close  font-lg-7 font-sm-6 font-xs-7 app-cor-pattern"></span>
 
-							<span class="app-nav-tooltip-header  app-divisor-bottom padding-none-width text-italic text-uppercase app-cor-pattern-60  col-md-12 col-sm-12 col-ss-12 col-xs-12  font-md-3 font-sm-3 font-ss-3 font-xs-3">Condinuar de onde parei</span>
+							<span class="app-nav-tooltip-header  app-divisor-bottom padding-none-width text-italic text-uppercase app-cor-pattern-60  col-md-12 col-sm-12 col-ss-12 col-xs-12  font-md-3 font-sm-3 font-ss-3 font-xs-3">Continuar de onde parei</span>
 						</div>
 
 						<div class="app-nav-tooltip-contents">
