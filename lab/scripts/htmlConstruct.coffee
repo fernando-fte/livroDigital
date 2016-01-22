@@ -28,25 +28,12 @@ htmlConstruct = (post) ->
         proccess.object = false
         erro.object = 'A estrutura recebida é incompatível'
 
-    # valida se o seletor ser inserido o html existe
-    if !post.seletor is false
-      proccess.seletor = true
-
-      # caso seja uma string pega o primeiro item
-      post.seletor = $(post.seletor)[0] if typeof(post.seletor) is 'string' and $(post.seletor).length
-
-      # Valida se o seletor é valido
-      if !$(post.seletor).length > 0
-          erro.seletor = 'O seletor "'+post.seletor+'" passado não existe'
-          proccess.seletor = false
-
-
 
   # Declara tipo do processo caso post vedadeiro
   if proccess.json and proccess.dom
     proccess.start = 'constructJSON'
 
-  if proccess.html and proccess.parser_json and proccess.object and proccess.seletor
+  if proccess.html and proccess.object
     proccess.start = 'constructHTML'
 
   # # # # 
@@ -76,36 +63,76 @@ htmlConstruct = (post) ->
 
       # caso os dados estejam corretos
       if proccess.trata is true
+        temp.html = '' if temp.html is undefined
+        temp.content = ''
 
         # caso o node nao seja de texto puro
         if post.json[i].node != '@text'
           # inicia html
-          done.html = "<#{post.json[i].node}"
+          temp.html = "#{temp.html}<#{post.json[i].node}"
 
+          post.json[i].attr.class = ["viva", "vai", "ok"]
+            
+          # caso as classes estejam divididas
+          if post.json[i].attr.class
+            if typeof(post.json[i].attr.class) is 'object'
+              u = 0
+              temp.class = ''
+              while u < post.json[i].attr.class.length
+                temp.class = post.json[i].attr.class[u] if u is 0
+                temp.class = "#{temp.class} #{post.json[i].attr.class[u]}" if u > 0
+                u++
+              post.json[i].attr.class = temp.class
+              delete(temp.class)
+              u = undefined
+          # # # #
+
+          # Configura atributos do html
           u = 0
           while u < post.json[i].attr['._.list'].length
-#             console.log post.json[i].attr[post.json[i].attr['._.list'][u]]
-            if typeof(post.json[i].attr[post.json[i].attr['._.list'][u]]) != 'object'
-              done.html = "#{done.html} #{post.json[i].attr['._.list'][u]}=\"#{post.json[i].attr[post.json[i].attr['._.list'][u]]}\""
-            else
-              done.html = "#{done.html} #{post.json[i].attr['._.list'][u]}='#{JSON.stringify(post.json[i].attr[post.json[i].attr['._.list'][u]])}'"
 
-              console.log done.html
+            # caso o atributo seja simples
+            if typeof(post.json[i].attr[post.json[i].attr['._.list'][u]]) is 'string'
+              temp.html = "#{temp.html} #{post.json[i].attr['._.list'][u]}=\"#{post.json[i].attr[post.json[i].attr['._.list'][u]]}\""
+            
+            # caso o atributo seja um objeto
+            else if typeof(post.json[i].attr[post.json[i].attr['._.list'][u]]) is 'object'
+              temp.html = "#{temp.html} #{post.json[i].attr['._.list'][u]}='#{JSON.stringify(post.json[i].attr[post.json[i].attr['._.list'][u]])}'"
+            
+            # caso o atributo seja mudo
+            else if post.json[i].attr[post.json[i].attr['._.list'][u]] is false
+              temp.html = "#{temp.html} #{post.json[i].attr['._.list'][u]}"
 
             u++
           u = undefined
+          
+          if !post.json[i].content is false
+            temp.content = htmlConstruct {'start':'html', 'json':post.json[i].content, 'seletor':'#content'}
+
+            # caso content um sucesso adiciona estrutura
+            if !temp.content._erro.length > 0
+              temp.content = temp.content._done
+            else
+              temp.content = ''
+              erro[i] = {}
+              erro[i].content = 'Erro no conteúdo de contents'
+              erro[i].log = temp.content._erro
+
+          if post.json[i].node is 'input' or post.json[i].node is 'img' or post.json[i].node is 'meta' or post.json[i].node is 'br'
+            temp.html = "#{temp.html}/>#{temp.content}"
+          else
+            temp.html = "#{temp.html}>#{temp.content}</#{post.json[i].node}>"
 
         # caso o node seja texto puro
         else
-          done.html = post.json[i].content
-        
-        
+          temp.html = "#{temp.html}#{post.json[i].content}"
 
       i++
     
     i = undefined
-#     done = post.json
     
+    done = temp.html
+
   # finaliza tratamento para montagem da contrução do html do js
   # # # # 
     
@@ -159,8 +186,6 @@ htmlConstruct = (post) ->
           if post.dom[i].attributes[u].name.indexOf('data-') >= 0
             if post.dom[i].attributes[u].value.indexOf('"') >= 0
              done[i].attr[post.dom[i].attributes[u].name] = JSON.parse(post.dom[i].attributes[u].value)
-              
-
             
           # lista os atributos
           done[i].attr['._.list'].push post.dom[i].attributes[u].name
@@ -245,39 +270,14 @@ htmlConstruct = (post) ->
   # return {'_proccess':proccess, '_done':done, '_erro':erro, '_post':post}
   return {'_proccess':proccess, '_done':done, '_erro':erro}
 
-#*****#
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 element = $('#vaila')
 
-# console.log JSON.stringify(htmlConstruct {'start':'json', 'dom':element})
-# console.log htmlConstruct {'start':'json', 'dom':element}
 json = JSON.stringify((htmlConstruct {'start':'json', 'dom':element})._done)
-# console.log htmlConstruct {'start':'html', json, 'seletor':'#content'}
-htmlConstruct {'start':'html', json, 'seletor':'#content'}
-# console.log htmlConstruct {'start':'html', 'json':{'ok':true}, 'seletor':'#content'}
+html =  htmlConstruct {'start':'html', json}
 
-# a = {"ok":true, "vai":true}
-
-# delete(a.ok)
-# console.log a
-
-# http://jsbin.com/setubupuqe/2/edit?js,console
-
-
-
-###
-<!DOCTYPE html>
-<html>
-<head>
-<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>JS Bin</title>
-</head>
-<body>
-  <div id='vaila' data-teste data-ma=false data-app-json='{"ok":false}'>
-    <input type="text" value="ok" name="i"/>
-    <p id="u">dentro do "p" <b id="u">dentro do "b"</b> <i ID="outro">dentro do i</i> depois do i</p>fora da div</div>
-  <code id="content"></code>
-</body>
-</html>
-###
+$('#content').append($.parseHTML(html._done))
+console.log $('#content')[0]
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
