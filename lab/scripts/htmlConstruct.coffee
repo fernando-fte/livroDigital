@@ -37,7 +37,7 @@ htmlConstruct = (post) ->
     proccess.start = 'constructHTML'
 
   # # # # 
-  # inicia tratamento para montagem da contrução do html do js
+  # inicia construção do HTML
   if proccess.start is 'constructHTML'
 
     # seleciona a camada atual
@@ -134,12 +134,12 @@ htmlConstruct = (post) ->
     
     done = temp.html
 
-  # finaliza tratamento para montagem da contrução do html do js
+  # finaliza construção do HTML
   # # # # 
     
 
   # # # # 
-  # inicia tratamento para montagem da contrução do json do html
+  # inicia contrução do JSON
   if proccess.start is 'constructJSON'
     # define vetores para ID
     done['._.id'] = {}
@@ -203,13 +203,15 @@ htmlConstruct = (post) ->
         if done[i].attr.id
           
           # caso o ID já exista neste nível adiciona (1)
-          done[i].attr.id = done[i].attr.id+'1' if done['._.id'][done[i].attr.id]
+          done[i].attr.id = done[i].attr.id+'_' if done['._.id'][done[i].attr.id]
 
           # adiciona na lista o nome do id
           done['._.id']['._.list'].push done[i].attr.id
           
           # reserva conteudo do elemento id
-          done['._.id'][done[i].attr.id] = post.dom[i].innerText
+          done['._.id'][done[i].attr.id] = {}
+          done['._.id'][done[i].attr.id]['@text'] = post.dom[i].innerText
+          done['._.id'][done[i].attr.id]['dom'] = "#{i}"
 
       else
         done[i].attr = false
@@ -247,6 +249,9 @@ htmlConstruct = (post) ->
             u = 0
             while u < temp.content._done['._.id']['._.list'].length
 
+              # trata dom atual
+              temp.content._done['._.id'][temp.content._done['._.id']['._.list'][u]].dom = "#{i}>#{temp.content._done['._.id'][temp.content._done['._.id']['._.list'][u]].dom}"
+
               done['._.id']['._.list'][done['._.id']['._.list'].length] = temp.content._done['._.id']['._.list'][u]
               done['._.id'][temp.content._done['._.id']['._.list'][u]] = temp.content._done['._.id'][temp.content._done['._.id']['._.list'][u]]
               u++
@@ -263,7 +268,7 @@ htmlConstruct = (post) ->
     # apaga contador
     i = undefined
   
-  # finaliza
+  # finaliza construção do JSON
   # # # #
 
 
@@ -284,10 +289,6 @@ html =  htmlConstruct {'start':'html', 'json':JSON.stringify(json._done)}
 # console.log $.parseHTML(html._done)
 $('#content').append($.parseHTML(html._done))
 # console.log $('#content')[0]
-console.log json
+console.log json._done
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-
-# console.log md5 'oi'
-
-
