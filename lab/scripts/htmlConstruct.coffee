@@ -88,23 +88,24 @@ htmlConstruct = (post) ->
           # # # #
 
           # Configura atributos do html
-          u = 0
-          while u < post.json[i].attr['._.list'].length
+          if post.json[i].attr['._.list'] != undefined
+            u = 0
+            while u < post.json[i].attr['._.list'].length
 
-            # caso o atributo seja simples
-            if typeof(post.json[i].attr[post.json[i].attr['._.list'][u]]) is 'string'
-              temp.html = "#{temp.html} #{post.json[i].attr['._.list'][u]}=\"#{post.json[i].attr[post.json[i].attr['._.list'][u]]}\""
-            
-            # caso o atributo seja um objeto
-            else if typeof(post.json[i].attr[post.json[i].attr['._.list'][u]]) is 'object'
-              temp.html = "#{temp.html} #{post.json[i].attr['._.list'][u]}='#{JSON.stringify(post.json[i].attr[post.json[i].attr['._.list'][u]])}'"
-            
-            # caso o atributo seja mudo
-            else if post.json[i].attr[post.json[i].attr['._.list'][u]] is false
-              temp.html = "#{temp.html} #{post.json[i].attr['._.list'][u]}"
+              # caso o atributo seja simples
+              if typeof(post.json[i].attr[post.json[i].attr['._.list'][u]]) is 'string'
+                temp.html = "#{temp.html} #{post.json[i].attr['._.list'][u]}=\"#{post.json[i].attr[post.json[i].attr['._.list'][u]]}\""
+              
+              # caso o atributo seja um objeto
+              else if typeof(post.json[i].attr[post.json[i].attr['._.list'][u]]) is 'object'
+                temp.html = "#{temp.html} #{post.json[i].attr['._.list'][u]}='#{JSON.stringify(post.json[i].attr[post.json[i].attr['._.list'][u]])}'"
+              
+              # caso o atributo seja mudo
+              else if post.json[i].attr[post.json[i].attr['._.list'][u]] is false
+                temp.html = "#{temp.html} #{post.json[i].attr['._.list'][u]}"
 
-            u++
-          u = undefined
+              u++
+            u = undefined
           
           if !post.json[i].content is false
             temp.content = htmlConstruct {'start':'html', 'json':post.json[i].content, 'seletor':'#content'}
@@ -166,7 +167,11 @@ htmlConstruct = (post) ->
         done[i].attr = false
 
       # adiciona na lista o done
-      done['._.list'].push done[i].node
+      done['._.list'].push post.dom[i]
+
+      # Adiciona ID nos elementos sem ID
+      if post.dom[i].id is '' and !post.dom[i].id and  done[i].node != '@text' and  done[i].node != 'input' and done[i].node != 'meta' and done[i].node != 'img'
+        $(post.dom[i]).attr('id', md5(microtime() + post.dom[i]))
 
       # inicia tratamento de atributos      
       if !done[i].attr is false and post.dom[i].attributes.length > 0
@@ -205,7 +210,7 @@ htmlConstruct = (post) ->
           
           # reserva conteudo do elemento id
           done['._.id'][done[i].attr.id] = post.dom[i].innerText
-        
+
       else
         done[i].attr = false
       
@@ -274,10 +279,15 @@ htmlConstruct = (post) ->
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 element = $('#vaila')
 
-json = JSON.stringify((htmlConstruct {'start':'json', 'dom':element})._done)
-html =  htmlConstruct {'start':'html', json}
-
+json = htmlConstruct {'start':'json', 'dom':element}
+html =  htmlConstruct {'start':'html', 'json':JSON.stringify(json._done)}
+# console.log $.parseHTML(html._done)
 $('#content').append($.parseHTML(html._done))
-console.log $('#content')[0]
+# console.log $('#content')[0]
+console.log json
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+
+# console.log md5 'oi'
+
+
