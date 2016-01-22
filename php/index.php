@@ -30,6 +30,8 @@
 
 		# define done como null
 		$ajax = null;
+		error_reporting(0);
+		ini_set('display_errors', 0 );
 
 		# # # 
 		# valida se o parametro é de selção ou de inserção
@@ -63,6 +65,13 @@
 
 			# apaga temp=>less
 			unset($temp['less']);
+		}
+
+		$ajax = 'oi';
+		$b = $a;
+		if ($ajax == null or gettype($ajax) != 'object') {
+
+			$ajax = '{"done":false, "erro":{"post":'.json_encode($post['ajax']).', "feed":"Os parametros recebidos ainda nao podem ser tratados"}}';
 		}
 
 		# imprime valores para o ajax
