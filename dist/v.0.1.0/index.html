@@ -23,7 +23,7 @@
     <div id="livroDigital" class="app-volume">
       <div id="app-capa" style="background-image: url(library/cover.book.jpg)" class="app-page app-cover app-display">
         <div class="cover-contents col-md-11 col-notspace">
-          <span class="cover-fachada app-text-livro">Fernando you are getting this message as free service for being a user of the PHP Classes site</span>
+          <span class="cover-fachada app-text-livro">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dolor quam, porttitor eu blandit eu</span>
           <span class="cover-fachada app-text-autor">Marcela Ribeiro de Albuquerque</span>
         </div>
         <span data-app-ctrl="{&quot;togo&quot;:{&quot;to&quot;:&quot;sumario&quot;,&quot;cover&quot;:false}}" class="cover-btn-iniciar app-ico-iniciar col-lg-2 col-md-3 col-sm-4 col-ss-4 col-lg-offset-5 col-md-offset-4 col-sm-offset-3 col-ss-offset-3">
@@ -37,7 +37,7 @@
             <span class="app-ico-menu">
             </span>
           </span>
-          <span class="cover-btn-nav">
+          <span data-app-ctrl='{"togo":{"to":"sumario","cover":false}}' class="cover-btn-nav">
             <span class="app-ico-sumario">
             </span>
             <span class="cover-btn-tooltip">Sumário</span>
@@ -160,7 +160,7 @@
                   </span>
                 </div>
                 <div class="app-nav-tooltip-contents">
-                  <span class="app-nav-tooltip-item  app-cor-black-60  col-md-12 col-sm-12 col-ss-12 col-xs-12">
+                  <span data-app-ctrl='{"togo":{"to":"livro1unidade1item1"}}' class="app-nav-tooltip-item  app-cor-black-60  col-md-12 col-sm-12 col-ss-12 col-xs-12">
                     <span class="app-nav-tooltip-secao  app-font-app  text-uppercase  text-left  col-md-12 col-sm-12 col-ss-12 col-xs-12  font-md-small-2 font-sm-small-2 font-ss-small-2 font-xs-2">
                       <span class="tooltip-section-item app-secao">Unidade I</span>
                       <span class="tooltip-section-item">•</span>
@@ -188,7 +188,7 @@
                   <span class="app-nav-tooltip-header  app-divisor-bottom padding-none-width text-italic text-uppercase app-cor-pattern-60  col-md-12 col-sm-12 col-ss-12 col-xs-12  font-md-3 font-sm-3 font-ss-3 font-xs-3">Continuar de onde parei</span>
                 </div>
                 <div style="app-nav-tooltip-contents">
-                  <span class="app-nav-tooltip-item  app-cor-black-60  col-md-12 col-sm-12 col-ss-12 col-xs-12">
+                  <span data-app-ctrl='{"togo":{"to":"livro1unidade1item1"}}' class="app-nav-tooltip-item  app-cor-black-60  col-md-12 col-sm-12 col-ss-12 col-xs-12">
                     <span class="app-nav-tooltip-secao  app-font-app  text-uppercase  text-left  col-md-12 col-sm-12 col-ss-12 col-xs-12  font-md-small-2 font-sm-small-2 font-ss-small-2 font-xs-2">
                       <span class="tooltip-section-item app-secao">Unidade I</span>
                       <span class="tooltip-section-item">•</span>
@@ -253,7 +253,8 @@
                 <p>Seja bem-vindo(a) ao Programa de Educação a Distância da UNIPAR.</p>
               </div>
               <div class="app-apr-item-video">
-                <span style="display:block; height:70%; width:100%;" class="app-bg-pattern">
+                <span class="app-bg-pattern">
+                  <iframe width="100%" height="100%" src="https://drive.google.com/file/d/0B0saOBoxeYS_Y1A3TkhvWFAyS0k/preview"></iframe>
                 </span>
               </div>
             </div>
@@ -300,14 +301,28 @@
                       <span class="app-sequence-all">1</span> </span>comparativo xadrez x gestão de pessoas
                     </span>
                     <span class="app-fonte">
-                      <span class="label">Fonte</span>
-                      <a href="http://www.shutterstock.com/pt/s/Gest%C3%A3o+de+pessoas/search.html?page=2&amp;thumb_size=mosaic&amp;inline=145567615">http://www.shutterstock.com/pt/s/Gest%C3%A3o+de+pessoas/search.html?page=2&amp;thumb_size=mosaic&amp;inline=145567615</a>
+                      <span class="label">Fonte:</span>
+                      <a href="http://www.shutterstock.com/pt/s/Gest%C3%A3o+de+pessoas/search.html?page=2&amp;thumb_size=mosaic&amp;inline=145567615">Shutterstock</a>
                     </span>
                   </div>
                 </div>
                 <article>
                   <h2>Evolução da gestão de pessoas</h2>
                   <p>Antes mesmo de abordar sobre as ferramentas e/ou práticas de gestão de pessoas nas organizações, faz-se necessário compreender a sua evolução histórica, pois assim torna-se possível visualizar os cenários que contribuíram para a formação das teorias e perspectivas construídas e estudadas até os dias atuais.</p>
+
+                <div class="app-graphic-content app-graphic-figure">
+                  <div class="app-graphic-content-nav">
+                    <iframe width="100%" height="100%" class="app-graphic-item on" src="https://drive.google.com/file/d/0B0saOBoxeYS_NEFWSXJvbTZYMWc/preview"></iframe>
+                  </div>
+                  <div class="grapc-content-caption">
+                    <span class="app-legenda">
+                      <span class="label">
+                        <span class="app-sequence-this">1</span>
+                        <span class="app-sequence-all">4</span> </span>O que é Negócio
+                      </span>
+                      <!-- <span class="app-fonte"></span> -->
+                    </div>
+                  </div>
                   <p>Vamos remapear a evolução histórica da gestão de pessoas, trazendo à tona o “pano de fundo” de cada momento e as suas principais características. Cabe ressaltar que esta evolução da gestão de pessoas é fortemente marcada e influenciada pelas teorias organizacionais, já que a maneira como os trabalhadores de uma organização são tratados, reflete os seus modelos de gestão.</p>
                   <p>Para melhor compreensão, essa evolução da Gestão de Pessoas será dividida em três grandes momentos, que serão aqui denominados de “fases”: (1) Fase industrial, (2) Fase pós-industrial e (3) Fase moderna.</p>
                 </article>
@@ -315,6 +330,99 @@
                   <h3>Fase Industrial</h3>
                   <p>A fase industrial é representada pelo período de ascensão da industrialização da economia, de maneira concentrada no final do século XIX até meados do século XX. O foco desta época estava na produtividade, algo que contribuiu inclusive, para os princípios de uma teoria organizacional, com personagens marcantes como Frederick W. Taylor, Henri Fayol, Henry Ford e Max Weber. </p>
                   <p>Cada um deles com a sua abordagem contribuiu com o objetivo principal das organizações da época, que era: “produzir mais no menor tempo possível”. Neste período que foram instituídos inclusive os princípios da administração: conhecer, prever, organizar, comandar, coordenar e controlar.</p>
+                  <div class="app-graphic-content app-graphic-table">
+                    <div class="app-graphic-content-nav">
+                      <table data-book-graphic-item class="tb">
+                        <tr>
+                          <td class="tb-titulo-tr">
+                            <p>Estratégias Empresariais</p>
+                          </td>
+                          <td class="tb-titulo-tr">
+                            <p>Nível Institucional</p>
+                            <p><span class="corpo-especial-small">Problema Empresarial</span></p>
+                          </td>
+                          <td class="tb-titulo-tr">
+                            <p>Nível Intermediário </p>
+                            <p><span class="corpo-especial-small">Problema Administrativo</span></p>
+                          </td>
+                          <td class="tb-titulo-tr">
+                            <p>Nível Operacional</p>
+                            <p><span class="corpo-especial-small">Problema Técnico</span></p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="tb-titulo-td">
+                            <p>Defensiva </p>
+                            <p><span class="corpo-especial-small">Manutenção do atual domínio</span></p>
+                          </td>
+                          <td class="tb-td">
+                            <p>Garantir e conservar o domínio atual de produtos/mercados. Defesa do domínio.</p>
+                          </td>
+                          <td class="tb-td">
+                            <p>Planejamento e controle das Operações para garantir Eficiência. Conservadorismo.</p>
+                          </td>
+                          <td class="tb-td">
+                            <p>Busca de eficiência na produção para intensificar a tecnologia atual. Ênfase na tecnologia utilizado.</p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="tb-titulo-td">
+                            <p>Ofensiva </p>
+                            <p><span class="corpo-especial-small">Ampliação e busca de novos domínios</span></p>
+                          </td>
+                          <td class="tb-td">
+                            <p>Explorar e localizar novos domínios ainda que transitórios. </p>
+                          </td>
+                          <td class="tb-td">
+                            <p>Coordenar as constantes Mudanças nas atividades da empresa. Mudança organizacional. </p>
+                          </td>
+                          <td class="tb-td">
+                            <p>Flexibilidade nas tecnologias para acompanhar as mudanças. Flexibilidade da tecnologia.</p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="tb-titulo-td">
+                            <p>Analítica</p>
+                            <p><span class="corpo-especial-small">Manutenção do domínio atual e busca de novos domínios</span></p>
+                          </td>
+                          <td class="tb-td">
+                            <p>Garantir um domínio atual e simultaneamente localizar e explorar novos domínios. </p>
+                          </td>
+                          <td class="tb-td">
+                            <p>Diferenciar a estrutura para acomodar e equilibrar áreas estáveis e dinâmicas. Conservação x mudança</p>
+                          </td>
+                          <td class="tb-td">
+                            <p>Adotar tecnologia dual para servir a um domínio híbrido: estável e instável. Complexidade tecnológica.</p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="tb-titulo-td">
+                            <p>Reativa</p>
+                          </td>
+                          <td class="tb-td">
+                            <p>Resposta empresarial despreparada e improvisada.</p>
+                          </td>
+                          <td class="tb-td">
+                            <p>Falta de consonância entre estratégia e estrutura. Dificuldade de integração.</p>
+                          </td>
+                          <td class="tb-td">
+                            <p>Pouca eficiência nas operações. </p>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                    <div class="grapc-content-caption">
+                      <span class="app-legenda">
+                        <span class="label">
+                          <span class="app-sequence-this">1</span>
+                          <span class="app-sequence-all">1</span> </span>comparativo xadrez x gestão de pessoas
+                      </span>
+                      <span class="app-fonte">
+                        <span class="label">Fonte:</span>
+                        <a href="http://www.shutterstock.com/pt/s/Gest%C3%A3o+de+pessoas/search.html?page=2&amp;thumb_size=mosaic&amp;inline=145567615">Shutterstock</a>
+                      </span>
+                    </div>
+                  </div>
                   <p>Mas como este período está ligado à evolução da gestão de pessoas? Imagine você que com a mudança de uma economia quase que totalmente agrícola para uma economia industrial, o êxodo do campo para a cidade foi gigantesco. Sendo assim, a “quantidade” de mão de obra disponível era imensurável, o que levava as indústrias a recrutarem aqueles que se mostravam mais fortes (fisicamente) para atuar em suas estruturas.</p>
                   <p>Neste período a estrutura, o maquinário, os insumos e o tempo de produção eram o enfoque principal, as pessoas (operários) ficavam em segundo plano. Nem se cogitava nesta época em preocupar-se com a forma como os empregados seriam tratados. Algo que era estimulado inclusive, pela ausência de leis que regulamentassem o trabalho executado. Este quadro começou a mudar em meados do século XX com o fortalecimento dos sindicatos e, no caso do Brasil, com o surgimento da Consolidação das Leis do Trabalho (CLT).</p>
                   <p>Outros pontos importantes desta fase que ainda merecem destaque, a partir da abordagem de Chiavenato (2010):</p>

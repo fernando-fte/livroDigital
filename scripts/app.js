@@ -148,7 +148,6 @@
           if (!temp._proccess.display.item["this"] === false) {
             temp.eq = temp._proccess.display.item.eq;
           }
-          console.log(temp._proccess.display);
           $.appCtrl.sectionDisplay([[temp._proccess.display.it.page["this"], 'out', temp._proccess.display.position.page], [temp._proccess.display.it.item["this"], 'out', temp._proccess.display.position.page], [temp._proccess.display.page["this"], 'in', temp._proccess.display.position.page], [$(temp._proccess.display.page["this"]).find(".section-page-item:eq(" + temp.eq + ")"), 'in', 'on']]);
         }
         if (temp._proccess.display.position.page === 'this') {
