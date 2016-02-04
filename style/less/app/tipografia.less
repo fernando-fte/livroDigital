@@ -33,14 +33,14 @@
 	h5, .h5 { font-size: @app-font-size-h5; font-weight: 400; }
 	h6, .h6 { font-size: @app-font-size-h6; font-weight: 300; }
 
-	h1.sub, .h1-sub { font-size: @app-font-size-h1-sub; font-weight: 600; color: @app-titulo-cor-fraco}
-	h2.sub, .h2-sub { font-size: @app-font-size-h2-sub; font-weight: 600; color: @app-titulo-cor-fraco}
-	h3.sub, .h3-sub { font-size: @app-font-size-h3-sub; font-weight: 600; color: @app-titulo-cor-fraco}
+	h1.sub, .h1-sub { font-family: @app-titulo-font; font-size: @app-font-size-h1-sub; font-weight: 600; color: @app-titulo-cor-fraco}
+	h2.sub, .h2-sub { font-family: @app-titulo-font; font-size: @app-font-size-h2-sub; font-weight: 600; color: @app-titulo-cor-fraco}
+	h3.sub, .h3-sub {font-family: @app-titulo-font;  font-size: @app-font-size-h3-sub; font-weight: 600; color: @app-titulo-cor-fraco}
 
 
 	// Configuração padrão do texto
 	// -------------------------
-	p {
+	li, p {
 
 		font-family: @app-font-normal;
 		font-size: @app-font-size-base;
@@ -70,7 +70,7 @@
 	// Configuração da tabela
 	// zera paragrafo
 	table.tb {
-		p {
+		li, p {
 			color: inherit;
 			font-family: inherit;
 			font-size: inherit;
@@ -202,23 +202,33 @@
 	// .referencias-item { } // estilo do texto normal
 
 	// COnfigruação da seção
-	.app-box-section {
+	.app-box-section, .app-box-leitura {
 
 		// background-color: @app-cor-padrao-fraco;
 		// padding: @app-size-base;
 
 		h1, .h1 { font-size: ceil((@app-font-size-base * 1.10)); font-weight: 700; text-transform: uppercase;}
 		
-		h1.sub, .h1-sub, h2, .h2 { font-size: inherit; font-weight: 200;}
+		h1.sub, .h1-sub, h2, .h2 { font-size: inherit; font-weight: 400;}
 
-		p, h1 { color: @app-cor-preto-0; }
+		li, p, h1 { color: @app-cor-preto-0; }
 
-		p { 
+		li, p { 
 			font-family: @app-font-especial; 
 			font-size: ceil((@app-font-size-base * 0.78));
 		    font-weight: normal;
 			b, strong { color: @app-cor-preto-80; }
 		}
+
+		a, .link {
+			color: @app-cor-azul-60;
+		}
+	}
+
+	// Configrua titulacao
+	.app-titulacao {
+		font-size: ceil(@app-font-size-base * 0.789);
+		display: block;
 	}
 }
 

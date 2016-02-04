@@ -94,6 +94,14 @@
 			background-color: @app-cor-padrao-fraco;
 		}
 
+		//** Configura box de leitura
+		&.app-box-leitura {
+			.app-box-head { 
+				width: 100%;
+				&:before {content: @app-ico-leitura} 
+			};
+		}
+
 		//** Configruação do box para atividade
 		&.app-box-atividade {
 			.app-box-head { 
@@ -225,13 +233,12 @@
 				display: block;
 				margin: 0 auto;
 			}
-
 		}
 
-		.grapc-content-caption {
+		.app-grapc-content-caption {
 			margin-top: 14px;
 			max-width: 100%;
-			overflow-x: hidden;
+			overflow: hidden;
 
 			.app-legenda {
 
@@ -240,6 +247,18 @@
 				}
 
 				&:after { content: " - "; margin-left: 5px; }
+			}
+		}
+
+		&.app-graphic-video {
+
+			.app-grapc-content-caption {display: none}
+		}
+		&.app-graphic-table {
+			.app-graphic-content-nav {
+				overflow: auto;
+				background-color: inherit;
+				margin-right: -17px;
 			}
 		}
 	}
