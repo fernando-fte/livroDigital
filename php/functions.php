@@ -5,6 +5,118 @@
 */
 
 
+
+function insert_book($post, $return) {
+
+	$temp['._.process'] = false;
+	$temp['._.success'] = false;
+	$temp['._.erro'] = false;
+	$temp['._.warning'] = false;
+	$temp['._.reserve'] = false;
+	$temp['._.done'] = null;
+	$temp['._.backup'] = $post;
+
+
+	// MAPA SELECT
+	// {"._.list":["table","where","return","regra"],"table":{"._.//":"Dados para tabela a ser selecionada","._.required":true,"._.type":["string"]},"where":{"._.//":"Campos vs valores dos campos da tabela","._.required":true,"._.type":["array"]},"return":{"._.//":"Campos a ser retornado, caso todos use um asterisco \"*\"","._.required":true,"._.type":["string","array"]},"regra":{"._.//":"Conjunto de regras para solicitação do sql","._.required":false,"._.type":["array"],"._.list":["order","limit"],"order":{"._.//":"Ordena as respostas recebidas a partir de array(\"to\", \"by\")","._.required":false,"._.type":["array"],"._.list":["to","by"],"to":{"._.//":"Define o campo a ser ordenado","._.required":false,"._.type":["string"]},"by":{"._.//":"Define a ordem ASC (crescente) ou DESC (decrecente)","._.required":false,"._.type":["string"]}},"limit":{"._.//":"Por default o limite é \"1\", para exibir todos defina como \"0\" ou o numero de respostas que deseja","._.required":false,"._.type":["integer"]}}}
+
+
+
+// 0 => SKU = md5($nome-do-livro+$autor+date-time())
+// 2 => Segmento = Livro
+// 3 => Grupo = $nome-do-livro
+// 4 => Classe = index
+// 5 => Ordem = 0
+
+	# micro função de converção para seleção
+	function parse_seletores($post) {
+		// Recebe apenas a lista de seletores
+		$done = false;
+
+		if (array_key_exists('sku', $post)) {
+			$done[0] = $post['sku'];
+		}
+		if (array_key_exists('valores', $post)) {
+			$done[1] = $post['valores'];
+		}
+		if (array_key_exists('segmento', $post)) {
+			$done[2] = $post['segmento'];
+		}
+		if (array_key_exists('grupo', $post)) {
+			$done[3] = $post['grupo'];
+		}
+		if (array_key_exists('classe', $post)) {
+			$done[4] = $post['classe'];
+		}
+		if (array_key_exists('ordem', $post)) {
+			$done[5] = $post['ordem'];
+		}
+
+		return $done;
+	}
+
+	if (array_key_exists('type', $post)) {
+
+		$temp['select']['table'] = 'base';
+		// $temp['._.done'] = $post;
+
+		if ($post['type'] == 'select') {
+
+			// Estrutura seletor
+			$temp['._.process']['F:parse_seletores'] = parse_seletores($post['where']);
+
+			// Valida se o parametro do seletor é valido
+			if ($temp['._.process']['F:parse_seletores'] == true) {
+
+				// Monta condição de seleção
+				$temp['select']['where'] = $temp['._.process']['F:parse_seletores'];
+
+				// Monta retorno
+				if ($post['return'] == '._.sku') {
+					$temp['select']['return'] = "0";
+				}
+
+				else if (array_key_exists('values', $post['where']['return'])) {
+					$temp['select']['return'] = "1";
+				}
+
+				// Monta limite
+				if (array_key_exists('limit', $post)) {
+					$temp['select']['regra']['limit'] = $post['limit'];
+				}
+			}
+
+			else {
+				$temp['._.erro']['F:parse_seletores']['feed'] = 'Os seletores enviados não são copatíveis com a lista';
+				$temp['._.erro']['F:parse_seletores']['post'] = $post;
+			}
+
+			// $temp['._.done'] = $temp['select'];
+			$temp['result'] = select($temp['select'], false);
+			if ($temp['result']['success'] == true) {
+
+				if ($temp['result']['result']['length'] > 0) {
+					$temp['._.done'] = $temp['result']['result'];
+				}
+			}
+			else {
+				$temp['._.erro']['select']['feed'] = 'Algo não saiu como o esperado';
+				$temp['._.erro']['select']['log'] = $temp['result'];
+			}
+		}
+	}
+
+	else {
+		$temp['._.process']['post'] = false;
+		$temp['._.erro']['post']['feed'] = 'Não existe o valor para type';
+		$temp['._.erro']['post']['post'] = $post;
+	}
+
+
+
+	return retorna_funcao($temp, $return);
+}
+
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # # # # # # # # # # # # # IMPORTA PAGINAS # # # # # # # # # # # # # #
 function load_pages($post, $return) {

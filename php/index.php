@@ -35,11 +35,17 @@
 
 		# # # 
 		# valida se o parametro é de selção ou de inserção
-		if ($post['ajax']['action']['type'] == 'select' or $post['ajax']['action']['type'] == 'insert' or $post['ajax']['action']['type'] == 'update' or $post['ajax']['action']['type'] == 'delete') {
+		// if ($post['ajax']['action']['type'] == 'select' or $post['ajax']['action']['type'] == 'insert' or $post['ajax']['action']['type'] == 'update' or $post['ajax']['action']['type'] == 'delete') {
 
-			$ajax = form_livro($post['ajax'], false);
+		// 	$ajax = form_livro($post['ajax'], false);
 
-			// TODO: Validar os erros antes de retornar em $ajax
+		// 	// TODO: Validar os erros antes de retornar em $ajax
+		// }
+
+		if ($post['ajax']['action']['type'] == 'add livro') {
+
+			$ajax = insert_book($post['ajax']['action']['content'], false);
+			// $ajax =json_encode($post['ajax']);
 		}
 
 		if ($post['ajax']['action']['type'] == 'less to css') {
@@ -67,10 +73,7 @@
 			unset($temp['less']);
 		}
 
-		$ajax = 'oi';
-		$b = $a;
-		if ($ajax == null or gettype($ajax) != 'object') {
-
+		if ($ajax == null) {
 			$ajax = '{"done":false, "erro":{"post":'.json_encode($post['ajax']).', "feed":"Os parametros recebidos ainda nao podem ser tratados"}}';
 		}
 
