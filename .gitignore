@@ -5,9 +5,11 @@ _src?
 _projeto
 _projeto?
 fonts
+fonts?
 temp
 temp?
-fonts?
+render
+render?
 
 # OS generated files #
 ######################
