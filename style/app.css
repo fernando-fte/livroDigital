@@ -11794,22 +11794,26 @@ button.close {
   }
   h1.sub,
   .h1-sub {
+    font-family: "Dosis";
     font-size: 23px;
     font-weight: 600;
     color: #757477;
   }
   h2.sub,
   .h2-sub {
+    font-family: "Dosis";
     font-size: 19px;
     font-weight: 600;
     color: #757477;
   }
   h3.sub,
   .h3-sub {
+    font-family: "Dosis";
     font-size: 15px;
     font-weight: 600;
     color: #757477;
   }
+  li,
   p {
     font-family: "Josefin Slab";
     font-size: 17px;
@@ -11839,10 +11843,12 @@ button.close {
     color: #4D7CBB;
     font-weight: bold;
   }
+  table.tb li,
   table.tb p {
     color: inherit;
     font-family: inherit;
-    font-size: inherit;
+    font-size: 13.991px;
+    line-height: 13.991px;
     text-transform: inherit;
     font-weight: inherit;
     text-align: inherit;
@@ -12076,30 +12082,59 @@ button.close {
     content: "\F058";
   }
   .app-box-section h1,
-  .app-box-section .h1 {
+  .app-box-leitura h1,
+  .app-box-section .h1,
+  .app-box-leitura .h1 {
     font-size: 19px;
     font-weight: 700;
     text-transform: uppercase;
   }
   .app-box-section h1.sub,
+  .app-box-leitura h1.sub,
   .app-box-section .h1-sub,
+  .app-box-leitura .h1-sub,
   .app-box-section h2,
-  .app-box-section .h2 {
+  .app-box-leitura h2,
+  .app-box-section .h2,
+  .app-box-leitura .h2 {
     font-size: inherit;
-    font-weight: 200;
+    font-weight: 400;
   }
+  .app-box-section li,
+  .app-box-leitura li,
   .app-box-section p,
-  .app-box-section h1 {
+  .app-box-leitura p,
+  .app-box-section h1,
+  .app-box-leitura h1 {
     color: #FFFFFF;
   }
-  .app-box-section p {
+  .app-box-section li,
+  .app-box-leitura li,
+  .app-box-section p,
+  .app-box-leitura p {
     font-family: "Josefin Sans";
     font-size: 14px;
     font-weight: normal;
   }
+  .app-box-section li b,
+  .app-box-leitura li b,
   .app-box-section p b,
-  .app-box-section p strong {
+  .app-box-leitura p b,
+  .app-box-section li strong,
+  .app-box-leitura li strong,
+  .app-box-section p strong,
+  .app-box-leitura p strong {
     color: #47464A;
+  }
+  .app-box-section a,
+  .app-box-leitura a,
+  .app-box-section .link,
+  .app-box-leitura .link {
+    color: #94B0D6;
+  }
+  .app-titulacao {
+    font-size: 14px;
+    display: block;
   }
 }
 @media (min-width: 480px) {
@@ -12181,22 +12216,26 @@ button.close {
   }
   h1.sub,
   .h1-sub {
+    font-family: "Dosis";
     font-size: 25px;
     font-weight: 600;
     color: #757477;
   }
   h2.sub,
   .h2-sub {
+    font-family: "Dosis";
     font-size: 20px;
     font-weight: 600;
     color: #757477;
   }
   h3.sub,
   .h3-sub {
+    font-family: "Dosis";
     font-size: 16px;
     font-weight: 600;
     color: #757477;
   }
+  li,
   p {
     font-family: "Josefin Slab";
     font-size: 18px;
@@ -12226,10 +12265,12 @@ button.close {
     color: #4D7CBB;
     font-weight: bold;
   }
+  table.tb li,
   table.tb p {
     color: inherit;
     font-family: inherit;
-    font-size: inherit;
+    font-size: 14.814px;
+    line-height: 14.814px;
     text-transform: inherit;
     font-weight: inherit;
     text-align: inherit;
@@ -12463,30 +12504,59 @@ button.close {
     content: "\F058";
   }
   .app-box-section h1,
-  .app-box-section .h1 {
+  .app-box-leitura h1,
+  .app-box-section .h1,
+  .app-box-leitura .h1 {
     font-size: 20px;
     font-weight: 700;
     text-transform: uppercase;
   }
   .app-box-section h1.sub,
+  .app-box-leitura h1.sub,
   .app-box-section .h1-sub,
+  .app-box-leitura .h1-sub,
   .app-box-section h2,
-  .app-box-section .h2 {
+  .app-box-leitura h2,
+  .app-box-section .h2,
+  .app-box-leitura .h2 {
     font-size: inherit;
-    font-weight: 200;
+    font-weight: 400;
   }
+  .app-box-section li,
+  .app-box-leitura li,
   .app-box-section p,
-  .app-box-section h1 {
+  .app-box-leitura p,
+  .app-box-section h1,
+  .app-box-leitura h1 {
     color: #FFFFFF;
   }
-  .app-box-section p {
+  .app-box-section li,
+  .app-box-leitura li,
+  .app-box-section p,
+  .app-box-leitura p {
     font-family: "Josefin Sans";
     font-size: 15px;
     font-weight: normal;
   }
+  .app-box-section li b,
+  .app-box-leitura li b,
   .app-box-section p b,
-  .app-box-section p strong {
+  .app-box-leitura p b,
+  .app-box-section li strong,
+  .app-box-leitura li strong,
+  .app-box-section p strong,
+  .app-box-leitura p strong {
     color: #47464A;
+  }
+  .app-box-section a,
+  .app-box-leitura a,
+  .app-box-section .link,
+  .app-box-leitura .link {
+    color: #94B0D6;
+  }
+  .app-titulacao {
+    font-size: 15px;
+    display: block;
   }
 }
 @media (min-width: 768px) {
@@ -12568,22 +12638,26 @@ button.close {
   }
   h1.sub,
   .h1-sub {
+    font-family: "Dosis";
     font-size: 26px;
     font-weight: 600;
     color: #757477;
   }
   h2.sub,
   .h2-sub {
+    font-family: "Dosis";
     font-size: 21px;
     font-weight: 600;
     color: #757477;
   }
   h3.sub,
   .h3-sub {
+    font-family: "Dosis";
     font-size: 17px;
     font-weight: 600;
     color: #757477;
   }
+  li,
   p {
     font-family: "Josefin Slab";
     font-size: 19px;
@@ -12613,10 +12687,12 @@ button.close {
     color: #4D7CBB;
     font-weight: bold;
   }
+  table.tb li,
   table.tb p {
     color: inherit;
     font-family: inherit;
-    font-size: inherit;
+    font-size: 15.637px;
+    line-height: 15.637px;
     text-transform: inherit;
     font-weight: inherit;
     text-align: inherit;
@@ -12850,30 +12926,59 @@ button.close {
     content: "\F058";
   }
   .app-box-section h1,
-  .app-box-section .h1 {
+  .app-box-leitura h1,
+  .app-box-section .h1,
+  .app-box-leitura .h1 {
     font-size: 21px;
     font-weight: 700;
     text-transform: uppercase;
   }
   .app-box-section h1.sub,
+  .app-box-leitura h1.sub,
   .app-box-section .h1-sub,
+  .app-box-leitura .h1-sub,
   .app-box-section h2,
-  .app-box-section .h2 {
+  .app-box-leitura h2,
+  .app-box-section .h2,
+  .app-box-leitura .h2 {
     font-size: inherit;
-    font-weight: 200;
+    font-weight: 400;
   }
+  .app-box-section li,
+  .app-box-leitura li,
   .app-box-section p,
-  .app-box-section h1 {
+  .app-box-leitura p,
+  .app-box-section h1,
+  .app-box-leitura h1 {
     color: #FFFFFF;
   }
-  .app-box-section p {
+  .app-box-section li,
+  .app-box-leitura li,
+  .app-box-section p,
+  .app-box-leitura p {
     font-family: "Josefin Sans";
     font-size: 15px;
     font-weight: normal;
   }
+  .app-box-section li b,
+  .app-box-leitura li b,
   .app-box-section p b,
-  .app-box-section p strong {
+  .app-box-leitura p b,
+  .app-box-section li strong,
+  .app-box-leitura li strong,
+  .app-box-section p strong,
+  .app-box-leitura p strong {
     color: #47464A;
+  }
+  .app-box-section a,
+  .app-box-leitura a,
+  .app-box-section .link,
+  .app-box-leitura .link {
+    color: #94B0D6;
+  }
+  .app-titulacao {
+    font-size: 15px;
+    display: block;
   }
 }
 @media (min-width: 992px) {
@@ -12955,22 +13060,26 @@ button.close {
   }
   h1.sub,
   .h1-sub {
+    font-family: "Dosis";
     font-size: 26px;
     font-weight: 600;
     color: #757477;
   }
   h2.sub,
   .h2-sub {
+    font-family: "Dosis";
     font-size: 21px;
     font-weight: 600;
     color: #757477;
   }
   h3.sub,
   .h3-sub {
+    font-family: "Dosis";
     font-size: 17px;
     font-weight: 600;
     color: #757477;
   }
+  li,
   p {
     font-family: "Josefin Slab";
     font-size: 19px;
@@ -13000,10 +13109,12 @@ button.close {
     color: #4D7CBB;
     font-weight: bold;
   }
+  table.tb li,
   table.tb p {
     color: inherit;
     font-family: inherit;
-    font-size: inherit;
+    font-size: 15.637px;
+    line-height: 15.637px;
     text-transform: inherit;
     font-weight: inherit;
     text-align: inherit;
@@ -13237,30 +13348,59 @@ button.close {
     content: "\F058";
   }
   .app-box-section h1,
-  .app-box-section .h1 {
+  .app-box-leitura h1,
+  .app-box-section .h1,
+  .app-box-leitura .h1 {
     font-size: 21px;
     font-weight: 700;
     text-transform: uppercase;
   }
   .app-box-section h1.sub,
+  .app-box-leitura h1.sub,
   .app-box-section .h1-sub,
+  .app-box-leitura .h1-sub,
   .app-box-section h2,
-  .app-box-section .h2 {
+  .app-box-leitura h2,
+  .app-box-section .h2,
+  .app-box-leitura .h2 {
     font-size: inherit;
-    font-weight: 200;
+    font-weight: 400;
   }
+  .app-box-section li,
+  .app-box-leitura li,
   .app-box-section p,
-  .app-box-section h1 {
+  .app-box-leitura p,
+  .app-box-section h1,
+  .app-box-leitura h1 {
     color: #FFFFFF;
   }
-  .app-box-section p {
+  .app-box-section li,
+  .app-box-leitura li,
+  .app-box-section p,
+  .app-box-leitura p {
     font-family: "Josefin Sans";
     font-size: 15px;
     font-weight: normal;
   }
+  .app-box-section li b,
+  .app-box-leitura li b,
   .app-box-section p b,
-  .app-box-section p strong {
+  .app-box-leitura p b,
+  .app-box-section li strong,
+  .app-box-leitura li strong,
+  .app-box-section p strong,
+  .app-box-leitura p strong {
     color: #47464A;
+  }
+  .app-box-section a,
+  .app-box-leitura a,
+  .app-box-section .link,
+  .app-box-leitura .link {
+    color: #94B0D6;
+  }
+  .app-titulacao {
+    font-size: 15px;
+    display: block;
   }
 }
 @media (min-width: 1200px) {
@@ -13342,22 +13482,26 @@ button.close {
   }
   h1.sub,
   .h1-sub {
+    font-family: "Dosis";
     font-size: 30px;
     font-weight: 600;
     color: #757477;
   }
   h2.sub,
   .h2-sub {
+    font-family: "Dosis";
     font-size: 25px;
     font-weight: 600;
     color: #757477;
   }
   h3.sub,
   .h3-sub {
+    font-family: "Dosis";
     font-size: 19px;
     font-weight: 600;
     color: #757477;
   }
+  li,
   p {
     font-family: "Josefin Slab";
     font-size: 22px;
@@ -13387,10 +13531,12 @@ button.close {
     color: #4D7CBB;
     font-weight: bold;
   }
+  table.tb li,
   table.tb p {
     color: inherit;
     font-family: inherit;
-    font-size: inherit;
+    font-size: 18.106px;
+    line-height: 18.106px;
     text-transform: inherit;
     font-weight: inherit;
     text-align: inherit;
@@ -13624,30 +13770,59 @@ button.close {
     content: "\F058";
   }
   .app-box-section h1,
-  .app-box-section .h1 {
+  .app-box-leitura h1,
+  .app-box-section .h1,
+  .app-box-leitura .h1 {
     font-size: 25px;
     font-weight: 700;
     text-transform: uppercase;
   }
   .app-box-section h1.sub,
+  .app-box-leitura h1.sub,
   .app-box-section .h1-sub,
+  .app-box-leitura .h1-sub,
   .app-box-section h2,
-  .app-box-section .h2 {
+  .app-box-leitura h2,
+  .app-box-section .h2,
+  .app-box-leitura .h2 {
     font-size: inherit;
-    font-weight: 200;
+    font-weight: 400;
   }
+  .app-box-section li,
+  .app-box-leitura li,
   .app-box-section p,
-  .app-box-section h1 {
+  .app-box-leitura p,
+  .app-box-section h1,
+  .app-box-leitura h1 {
     color: #FFFFFF;
   }
-  .app-box-section p {
+  .app-box-section li,
+  .app-box-leitura li,
+  .app-box-section p,
+  .app-box-leitura p {
     font-family: "Josefin Sans";
     font-size: 18px;
     font-weight: normal;
   }
+  .app-box-section li b,
+  .app-box-leitura li b,
   .app-box-section p b,
-  .app-box-section p strong {
+  .app-box-leitura p b,
+  .app-box-section li strong,
+  .app-box-leitura li strong,
+  .app-box-section p strong,
+  .app-box-leitura p strong {
     color: #47464A;
+  }
+  .app-box-section a,
+  .app-box-leitura a,
+  .app-box-section .link,
+  .app-box-leitura .link {
+    color: #94B0D6;
+  }
+  .app-titulacao {
+    font-size: 18px;
+    display: block;
   }
 }
 .tb-header,
@@ -13755,6 +13930,9 @@ button.close {
 .tb-ctrl-display-td.selected:before {
   content: "\F14A";
 }
+iframe {
+  border: none;
+}
 .section-page,
 .section-page-item,
 .app-page,
@@ -13846,6 +14024,12 @@ button.close {
   -webkit-animation-name: fadeIn;
   animation-name: fadeIn;
 }
+.section-page-item.app-display.after,
+.section-page-item.app-display.before,
+.section-page-item.app-display.on {
+  -webkit-animation-duration: 0.6s;
+  animation-duration: 0.6s;
+}
 .section-page-item.app-no-display {
   opacity: 0.3;
 }
@@ -13904,6 +14088,13 @@ button.close {
   animation-fill-mode: both;
   -webkit-animation-name: fadeOut;
   animation-name: fadeOut;
+}
+.app-ati .app-box {
+  width: 100%;
+  margin-left: 0%;
+}
+.app-ati .app-box .app-box-content {
+  width: 100%!important;
 }
 .app-ico-menu:after {
   font-family: "FontAwesome";
@@ -13968,6 +14159,22 @@ button.close {
 .app-ico-video:after {
   font-family: "FontAwesome";
   content: "\F01D";
+}
+.app-ico-leitura:after {
+  font-family: "FontAwesome";
+  content: "\F02D";
+}
+.app-ico-download:after {
+  font-family: "FontAwesome";
+  content: "\F019";
+}
+.app-ico-autor:after {
+  font-family: "FontAwesome";
+  content: "\F19D";
+}
+.app-ico-capa:after {
+  font-family: "FontAwesome";
+  content: "\F090";
 }
 .add-scroll {
   overflow: scroll;
@@ -14133,6 +14340,7 @@ body,
   padding-top: 57px;
   width: 100%;
   z-index: 1200;
+  overflow: hidden;
 }
 .page-out {
   -webkit-animation-duration: 1s;
@@ -14164,6 +14372,9 @@ body,
   }
   .section-page {
     padding: 0 10%;
+    height: 100%;
+    overflow: hidden;
+    overflow-y: auto;
     padding-left: 40px;
     padding-right: 20px;
   }
@@ -14174,6 +14385,9 @@ body,
   }
   .section-page {
     padding: 0 10%;
+    height: 100%;
+    overflow: hidden;
+    overflow-y: auto;
   }
 }
 @media (min-width: 768px) {
@@ -14182,6 +14396,9 @@ body,
   }
   .section-page {
     padding: 0 10%;
+    height: 100%;
+    overflow: hidden;
+    overflow-y: auto;
   }
 }
 @media (min-width: 992px) {
@@ -14190,6 +14407,9 @@ body,
   }
   .section-page {
     padding: 0 10%;
+    height: 100%;
+    overflow: hidden;
+    overflow-y: auto;
   }
 }
 @media (min-width: 1200px) {
@@ -14198,6 +14418,9 @@ body,
   }
   .section-page {
     padding: 0 10%;
+    height: 100%;
+    overflow: hidden;
+    overflow-y: auto;
   }
 }
 @media (max-width: 479px) {
@@ -14278,24 +14501,28 @@ body,
   }
   .cover-btn-nav .app-ico-menu,
   .cover-btn-nav .app-ico-sumario,
+  .cover-btn-nav .app-ico-autor,
   .cover-btn-nav .app-ico-atividade,
   .cover-btn-nav .app-ico-marcador,
   .cover-btn-nav .app-ico-anotacao,
-  .cover-btn-nav .app-ico-referencia {
+  .cover-btn-nav .app-ico-referencia,
+  .cover-btn-nav .app-ico-autor {
     font-size: 25px;
     color: #FFFFFF;
   }
   .cover-btn-nav .app-ico-menu:after,
   .cover-btn-nav .app-ico-sumario:after,
+  .cover-btn-nav .app-ico-autor:after,
   .cover-btn-nav .app-ico-atividade:after,
   .cover-btn-nav .app-ico-marcador:after,
   .cover-btn-nav .app-ico-anotacao:after,
-  .cover-btn-nav .app-ico-referencia:after {
+  .cover-btn-nav .app-ico-referencia:after,
+  .cover-btn-nav .app-ico-autor:after {
     display: block;
     line-height: 25px;
   }
   .cover-btn-nav.btn-nav-menu {
-    margin-bottom: 119px;
+    display: none;
   }
   .cover-btn-tooltip {
     display: none;
@@ -14424,7 +14651,8 @@ body,
   .cover-btn-nav .app-ico-atividade,
   .cover-btn-nav .app-ico-marcador,
   .cover-btn-nav .app-ico-anotacao,
-  .cover-btn-nav .app-ico-referencia {
+  .cover-btn-nav .app-ico-referencia,
+  .cover-btn-nav .app-ico-autor {
     color: #C0504D;
   }
   .cover-btn-nav.btn-nav-menu {
@@ -14510,24 +14738,28 @@ body,
   }
   .cover-btn-nav .app-ico-menu,
   .cover-btn-nav .app-ico-sumario,
+  .cover-btn-nav .app-ico-autor,
   .cover-btn-nav .app-ico-atividade,
   .cover-btn-nav .app-ico-marcador,
   .cover-btn-nav .app-ico-anotacao,
-  .cover-btn-nav .app-ico-referencia {
+  .cover-btn-nav .app-ico-referencia,
+  .cover-btn-nav .app-ico-autor {
     font-size: 25px;
     color: #FFFFFF;
   }
   .cover-btn-nav .app-ico-menu:after,
   .cover-btn-nav .app-ico-sumario:after,
+  .cover-btn-nav .app-ico-autor:after,
   .cover-btn-nav .app-ico-atividade:after,
   .cover-btn-nav .app-ico-marcador:after,
   .cover-btn-nav .app-ico-anotacao:after,
-  .cover-btn-nav .app-ico-referencia:after {
+  .cover-btn-nav .app-ico-referencia:after,
+  .cover-btn-nav .app-ico-autor:after {
     display: block;
     line-height: 25px;
   }
   .cover-btn-nav.btn-nav-menu {
-    margin-bottom: 119px;
+    display: none;
   }
   .cover-btn-tooltip {
     display: none;
@@ -14655,7 +14887,8 @@ body,
   .cover-btn-nav .app-ico-atividade,
   .cover-btn-nav .app-ico-marcador,
   .cover-btn-nav .app-ico-anotacao,
-  .cover-btn-nav .app-ico-referencia {
+  .cover-btn-nav .app-ico-referencia,
+  .cover-btn-nav .app-ico-autor {
     color: #C0504D;
   }
   .cover-btn-nav.btn-nav-menu {
@@ -14741,24 +14974,28 @@ body,
   }
   .cover-btn-nav .app-ico-menu,
   .cover-btn-nav .app-ico-sumario,
+  .cover-btn-nav .app-ico-autor,
   .cover-btn-nav .app-ico-atividade,
   .cover-btn-nav .app-ico-marcador,
   .cover-btn-nav .app-ico-anotacao,
-  .cover-btn-nav .app-ico-referencia {
+  .cover-btn-nav .app-ico-referencia,
+  .cover-btn-nav .app-ico-autor {
     font-size: 25px;
     color: #FFFFFF;
   }
   .cover-btn-nav .app-ico-menu:after,
   .cover-btn-nav .app-ico-sumario:after,
+  .cover-btn-nav .app-ico-autor:after,
   .cover-btn-nav .app-ico-atividade:after,
   .cover-btn-nav .app-ico-marcador:after,
   .cover-btn-nav .app-ico-anotacao:after,
-  .cover-btn-nav .app-ico-referencia:after {
+  .cover-btn-nav .app-ico-referencia:after,
+  .cover-btn-nav .app-ico-autor:after {
     display: block;
     line-height: 25px;
   }
   .cover-btn-nav.btn-nav-menu {
-    margin-bottom: 119px;
+    display: none;
   }
   .cover-btn-tooltip {
     display: none;
@@ -14886,7 +15123,8 @@ body,
   .cover-btn-nav .app-ico-atividade,
   .cover-btn-nav .app-ico-marcador,
   .cover-btn-nav .app-ico-anotacao,
-  .cover-btn-nav .app-ico-referencia {
+  .cover-btn-nav .app-ico-referencia,
+  .cover-btn-nav .app-ico-autor {
     color: #C0504D;
   }
   .cover-btn-nav.btn-nav-menu {
@@ -14972,24 +15210,28 @@ body,
   }
   .cover-btn-nav .app-ico-menu,
   .cover-btn-nav .app-ico-sumario,
+  .cover-btn-nav .app-ico-autor,
   .cover-btn-nav .app-ico-atividade,
   .cover-btn-nav .app-ico-marcador,
   .cover-btn-nav .app-ico-anotacao,
-  .cover-btn-nav .app-ico-referencia {
+  .cover-btn-nav .app-ico-referencia,
+  .cover-btn-nav .app-ico-autor {
     font-size: 25px;
     color: #FFFFFF;
   }
   .cover-btn-nav .app-ico-menu:after,
   .cover-btn-nav .app-ico-sumario:after,
+  .cover-btn-nav .app-ico-autor:after,
   .cover-btn-nav .app-ico-atividade:after,
   .cover-btn-nav .app-ico-marcador:after,
   .cover-btn-nav .app-ico-anotacao:after,
-  .cover-btn-nav .app-ico-referencia:after {
+  .cover-btn-nav .app-ico-referencia:after,
+  .cover-btn-nav .app-ico-autor:after {
     display: block;
     line-height: 25px;
   }
   .cover-btn-nav.btn-nav-menu {
-    margin-bottom: 119px;
+    display: none;
   }
   .cover-btn-tooltip {
     display: none;
@@ -15117,7 +15359,8 @@ body,
   .cover-btn-nav .app-ico-atividade,
   .cover-btn-nav .app-ico-marcador,
   .cover-btn-nav .app-ico-anotacao,
-  .cover-btn-nav .app-ico-referencia {
+  .cover-btn-nav .app-ico-referencia,
+  .cover-btn-nav .app-ico-autor {
     color: #C0504D;
   }
   .cover-btn-nav.btn-nav-menu {
@@ -15203,24 +15446,28 @@ body,
   }
   .cover-btn-nav .app-ico-menu,
   .cover-btn-nav .app-ico-sumario,
+  .cover-btn-nav .app-ico-autor,
   .cover-btn-nav .app-ico-atividade,
   .cover-btn-nav .app-ico-marcador,
   .cover-btn-nav .app-ico-anotacao,
-  .cover-btn-nav .app-ico-referencia {
+  .cover-btn-nav .app-ico-referencia,
+  .cover-btn-nav .app-ico-autor {
     font-size: 25px;
     color: #FFFFFF;
   }
   .cover-btn-nav .app-ico-menu:after,
   .cover-btn-nav .app-ico-sumario:after,
+  .cover-btn-nav .app-ico-autor:after,
   .cover-btn-nav .app-ico-atividade:after,
   .cover-btn-nav .app-ico-marcador:after,
   .cover-btn-nav .app-ico-anotacao:after,
-  .cover-btn-nav .app-ico-referencia:after {
+  .cover-btn-nav .app-ico-referencia:after,
+  .cover-btn-nav .app-ico-autor:after {
     display: block;
     line-height: 25px;
   }
   .cover-btn-nav.btn-nav-menu {
-    margin-bottom: 119px;
+    display: none;
   }
   .cover-btn-tooltip {
     display: none;
@@ -15348,7 +15595,8 @@ body,
   .cover-btn-nav .app-ico-atividade,
   .cover-btn-nav .app-ico-marcador,
   .cover-btn-nav .app-ico-anotacao,
-  .cover-btn-nav .app-ico-referencia {
+  .cover-btn-nav .app-ico-referencia,
+  .cover-btn-nav .app-ico-autor {
     color: #C0504D;
   }
   .cover-btn-nav.btn-nav-menu {
@@ -15434,24 +15682,28 @@ body,
   }
   .cover-btn-nav .app-ico-menu,
   .cover-btn-nav .app-ico-sumario,
+  .cover-btn-nav .app-ico-autor,
   .cover-btn-nav .app-ico-atividade,
   .cover-btn-nav .app-ico-marcador,
   .cover-btn-nav .app-ico-anotacao,
-  .cover-btn-nav .app-ico-referencia {
+  .cover-btn-nav .app-ico-referencia,
+  .cover-btn-nav .app-ico-autor {
     font-size: 25px;
     color: #FFFFFF;
   }
   .cover-btn-nav .app-ico-menu:after,
   .cover-btn-nav .app-ico-sumario:after,
+  .cover-btn-nav .app-ico-autor:after,
   .cover-btn-nav .app-ico-atividade:after,
   .cover-btn-nav .app-ico-marcador:after,
   .cover-btn-nav .app-ico-anotacao:after,
-  .cover-btn-nav .app-ico-referencia:after {
+  .cover-btn-nav .app-ico-referencia:after,
+  .cover-btn-nav .app-ico-autor:after {
     display: block;
     line-height: 25px;
   }
   .cover-btn-nav.btn-nav-menu {
-    margin-bottom: 119px;
+    display: none;
   }
   .cover-btn-tooltip {
     display: none;
@@ -15579,7 +15831,8 @@ body,
   .cover-btn-nav .app-ico-atividade,
   .cover-btn-nav .app-ico-marcador,
   .cover-btn-nav .app-ico-anotacao,
-  .cover-btn-nav .app-ico-referencia {
+  .cover-btn-nav .app-ico-referencia,
+  .cover-btn-nav .app-ico-autor {
     color: #C0504D;
   }
   .cover-btn-nav.btn-nav-menu {
@@ -15665,24 +15918,28 @@ body,
   }
   .cover-btn-nav .app-ico-menu,
   .cover-btn-nav .app-ico-sumario,
+  .cover-btn-nav .app-ico-autor,
   .cover-btn-nav .app-ico-atividade,
   .cover-btn-nav .app-ico-marcador,
   .cover-btn-nav .app-ico-anotacao,
-  .cover-btn-nav .app-ico-referencia {
+  .cover-btn-nav .app-ico-referencia,
+  .cover-btn-nav .app-ico-autor {
     font-size: 25px;
     color: #FFFFFF;
   }
   .cover-btn-nav .app-ico-menu:after,
   .cover-btn-nav .app-ico-sumario:after,
+  .cover-btn-nav .app-ico-autor:after,
   .cover-btn-nav .app-ico-atividade:after,
   .cover-btn-nav .app-ico-marcador:after,
   .cover-btn-nav .app-ico-anotacao:after,
-  .cover-btn-nav .app-ico-referencia:after {
+  .cover-btn-nav .app-ico-referencia:after,
+  .cover-btn-nav .app-ico-autor:after {
     display: block;
     line-height: 25px;
   }
   .cover-btn-nav.btn-nav-menu {
-    margin-bottom: 119px;
+    display: none;
   }
   .cover-btn-tooltip {
     display: none;
@@ -15814,7 +16071,8 @@ body,
   .cover-btn-nav .app-ico-atividade,
   .cover-btn-nav .app-ico-marcador,
   .cover-btn-nav .app-ico-anotacao,
-  .cover-btn-nav .app-ico-referencia {
+  .cover-btn-nav .app-ico-referencia,
+  .cover-btn-nav .app-ico-autor {
     color: #C0504D;
   }
   .cover-btn-nav.btn-nav-menu {
@@ -15906,24 +16164,28 @@ body,
   }
   .cover-btn-nav .app-ico-menu,
   .cover-btn-nav .app-ico-sumario,
+  .cover-btn-nav .app-ico-autor,
   .cover-btn-nav .app-ico-atividade,
   .cover-btn-nav .app-ico-marcador,
   .cover-btn-nav .app-ico-anotacao,
-  .cover-btn-nav .app-ico-referencia {
+  .cover-btn-nav .app-ico-referencia,
+  .cover-btn-nav .app-ico-autor {
     font-size: 25px;
     color: #FFFFFF;
   }
   .cover-btn-nav .app-ico-menu:after,
   .cover-btn-nav .app-ico-sumario:after,
+  .cover-btn-nav .app-ico-autor:after,
   .cover-btn-nav .app-ico-atividade:after,
   .cover-btn-nav .app-ico-marcador:after,
   .cover-btn-nav .app-ico-anotacao:after,
-  .cover-btn-nav .app-ico-referencia:after {
+  .cover-btn-nav .app-ico-referencia:after,
+  .cover-btn-nav .app-ico-autor:after {
     display: block;
     line-height: 25px;
   }
   .cover-btn-nav.btn-nav-menu {
-    margin-bottom: 119px;
+    display: none;
   }
   .cover-btn-tooltip {
     display: none;
@@ -16074,24 +16336,28 @@ body,
   }
   .cover-btn-nav .app-ico-menu,
   .cover-btn-nav .app-ico-sumario,
+  .cover-btn-nav .app-ico-autor,
   .cover-btn-nav .app-ico-atividade,
   .cover-btn-nav .app-ico-marcador,
   .cover-btn-nav .app-ico-anotacao,
-  .cover-btn-nav .app-ico-referencia {
+  .cover-btn-nav .app-ico-referencia,
+  .cover-btn-nav .app-ico-autor {
     font-size: 30px;
     color: #FFFFFF;
   }
   .cover-btn-nav .app-ico-menu:after,
   .cover-btn-nav .app-ico-sumario:after,
+  .cover-btn-nav .app-ico-autor:after,
   .cover-btn-nav .app-ico-atividade:after,
   .cover-btn-nav .app-ico-marcador:after,
   .cover-btn-nav .app-ico-anotacao:after,
-  .cover-btn-nav .app-ico-referencia:after {
+  .cover-btn-nav .app-ico-referencia:after,
+  .cover-btn-nav .app-ico-autor:after {
     display: block;
     line-height: 30px;
   }
   .cover-btn-nav.btn-nav-menu {
-    margin-bottom: 160px;
+    display: none;
   }
   .cover-btn-tooltip {
     display: none;
@@ -16239,24 +16505,28 @@ body,
   }
   .cover-btn-nav .app-ico-menu,
   .cover-btn-nav .app-ico-sumario,
+  .cover-btn-nav .app-ico-autor,
   .cover-btn-nav .app-ico-atividade,
   .cover-btn-nav .app-ico-marcador,
   .cover-btn-nav .app-ico-anotacao,
-  .cover-btn-nav .app-ico-referencia {
+  .cover-btn-nav .app-ico-referencia,
+  .cover-btn-nav .app-ico-autor {
     font-size: 32px;
     color: #FFFFFF;
   }
   .cover-btn-nav .app-ico-menu:after,
   .cover-btn-nav .app-ico-sumario:after,
+  .cover-btn-nav .app-ico-autor:after,
   .cover-btn-nav .app-ico-atividade:after,
   .cover-btn-nav .app-ico-marcador:after,
   .cover-btn-nav .app-ico-anotacao:after,
-  .cover-btn-nav .app-ico-referencia:after {
+  .cover-btn-nav .app-ico-referencia:after,
+  .cover-btn-nav .app-ico-autor:after {
     display: block;
     line-height: 32px;
   }
   .cover-btn-nav.btn-nav-menu {
-    margin-bottom: 225px;
+    display: none;
   }
   .cover-btn-tooltip {
     display: none;
@@ -16404,24 +16674,28 @@ body,
   }
   .cover-btn-nav .app-ico-menu,
   .cover-btn-nav .app-ico-sumario,
+  .cover-btn-nav .app-ico-autor,
   .cover-btn-nav .app-ico-atividade,
   .cover-btn-nav .app-ico-marcador,
   .cover-btn-nav .app-ico-anotacao,
-  .cover-btn-nav .app-ico-referencia {
+  .cover-btn-nav .app-ico-referencia,
+  .cover-btn-nav .app-ico-autor {
     font-size: 32px;
     color: #FFFFFF;
   }
   .cover-btn-nav .app-ico-menu:after,
   .cover-btn-nav .app-ico-sumario:after,
+  .cover-btn-nav .app-ico-autor:after,
   .cover-btn-nav .app-ico-atividade:after,
   .cover-btn-nav .app-ico-marcador:after,
   .cover-btn-nav .app-ico-anotacao:after,
-  .cover-btn-nav .app-ico-referencia:after {
+  .cover-btn-nav .app-ico-referencia:after,
+  .cover-btn-nav .app-ico-autor:after {
     display: block;
     line-height: 32px;
   }
   .cover-btn-nav.btn-nav-menu {
-    margin-bottom: 285px;
+    display: none;
   }
   .cover-btn-tooltip {
     display: none;
@@ -16569,24 +16843,28 @@ body,
   }
   .cover-btn-nav .app-ico-menu,
   .cover-btn-nav .app-ico-sumario,
+  .cover-btn-nav .app-ico-autor,
   .cover-btn-nav .app-ico-atividade,
   .cover-btn-nav .app-ico-marcador,
   .cover-btn-nav .app-ico-anotacao,
-  .cover-btn-nav .app-ico-referencia {
+  .cover-btn-nav .app-ico-referencia,
+  .cover-btn-nav .app-ico-autor {
     font-size: 42px;
     color: #FFFFFF;
   }
   .cover-btn-nav .app-ico-menu:after,
   .cover-btn-nav .app-ico-sumario:after,
+  .cover-btn-nav .app-ico-autor:after,
   .cover-btn-nav .app-ico-atividade:after,
   .cover-btn-nav .app-ico-marcador:after,
   .cover-btn-nav .app-ico-anotacao:after,
-  .cover-btn-nav .app-ico-referencia:after {
+  .cover-btn-nav .app-ico-referencia:after,
+  .cover-btn-nav .app-ico-autor:after {
     display: block;
     line-height: 42px;
   }
   .cover-btn-nav.btn-nav-menu {
-    margin-bottom: 315px;
+    display: none;
   }
   .cover-btn-tooltip {
     display: none;
@@ -16734,24 +17012,28 @@ body,
   }
   .cover-btn-nav .app-ico-menu,
   .cover-btn-nav .app-ico-sumario,
+  .cover-btn-nav .app-ico-autor,
   .cover-btn-nav .app-ico-atividade,
   .cover-btn-nav .app-ico-marcador,
   .cover-btn-nav .app-ico-anotacao,
-  .cover-btn-nav .app-ico-referencia {
+  .cover-btn-nav .app-ico-referencia,
+  .cover-btn-nav .app-ico-autor {
     font-size: 25px;
     color: #FFFFFF;
   }
   .cover-btn-nav .app-ico-menu:after,
   .cover-btn-nav .app-ico-sumario:after,
+  .cover-btn-nav .app-ico-autor:after,
   .cover-btn-nav .app-ico-atividade:after,
   .cover-btn-nav .app-ico-marcador:after,
   .cover-btn-nav .app-ico-anotacao:after,
-  .cover-btn-nav .app-ico-referencia:after {
+  .cover-btn-nav .app-ico-referencia:after,
+  .cover-btn-nav .app-ico-autor:after {
     display: block;
     line-height: 25px;
   }
   .cover-btn-nav.btn-nav-menu {
-    margin-bottom: 119px;
+    display: none;
   }
   .cover-btn-tooltip {
     display: none;
@@ -16883,7 +17165,8 @@ body,
   .cover-btn-nav .app-ico-atividade,
   .cover-btn-nav .app-ico-marcador,
   .cover-btn-nav .app-ico-anotacao,
-  .cover-btn-nav .app-ico-referencia {
+  .cover-btn-nav .app-ico-referencia,
+  .cover-btn-nav .app-ico-autor {
     color: #C0504D;
   }
   .cover-btn-nav.btn-nav-menu {
@@ -16975,24 +17258,28 @@ body,
   }
   .cover-btn-nav .app-ico-menu,
   .cover-btn-nav .app-ico-sumario,
+  .cover-btn-nav .app-ico-autor,
   .cover-btn-nav .app-ico-atividade,
   .cover-btn-nav .app-ico-marcador,
   .cover-btn-nav .app-ico-anotacao,
-  .cover-btn-nav .app-ico-referencia {
+  .cover-btn-nav .app-ico-referencia,
+  .cover-btn-nav .app-ico-autor {
     font-size: 25px;
     color: #FFFFFF;
   }
   .cover-btn-nav .app-ico-menu:after,
   .cover-btn-nav .app-ico-sumario:after,
+  .cover-btn-nav .app-ico-autor:after,
   .cover-btn-nav .app-ico-atividade:after,
   .cover-btn-nav .app-ico-marcador:after,
   .cover-btn-nav .app-ico-anotacao:after,
-  .cover-btn-nav .app-ico-referencia:after {
+  .cover-btn-nav .app-ico-referencia:after,
+  .cover-btn-nav .app-ico-autor:after {
     display: block;
     line-height: 25px;
   }
   .cover-btn-nav.btn-nav-menu {
-    margin-bottom: 119px;
+    display: none;
   }
   .cover-btn-tooltip {
     display: none;
@@ -17143,24 +17430,28 @@ body,
   }
   .cover-btn-nav .app-ico-menu,
   .cover-btn-nav .app-ico-sumario,
+  .cover-btn-nav .app-ico-autor,
   .cover-btn-nav .app-ico-atividade,
   .cover-btn-nav .app-ico-marcador,
   .cover-btn-nav .app-ico-anotacao,
-  .cover-btn-nav .app-ico-referencia {
+  .cover-btn-nav .app-ico-referencia,
+  .cover-btn-nav .app-ico-autor {
     font-size: 30px;
     color: #FFFFFF;
   }
   .cover-btn-nav .app-ico-menu:after,
   .cover-btn-nav .app-ico-sumario:after,
+  .cover-btn-nav .app-ico-autor:after,
   .cover-btn-nav .app-ico-atividade:after,
   .cover-btn-nav .app-ico-marcador:after,
   .cover-btn-nav .app-ico-anotacao:after,
-  .cover-btn-nav .app-ico-referencia:after {
+  .cover-btn-nav .app-ico-referencia:after,
+  .cover-btn-nav .app-ico-autor:after {
     display: block;
     line-height: 30px;
   }
   .cover-btn-nav.btn-nav-menu {
-    margin-bottom: 160px;
+    display: none;
   }
   .cover-btn-tooltip {
     display: none;
@@ -17308,24 +17599,28 @@ body,
   }
   .cover-btn-nav .app-ico-menu,
   .cover-btn-nav .app-ico-sumario,
+  .cover-btn-nav .app-ico-autor,
   .cover-btn-nav .app-ico-atividade,
   .cover-btn-nav .app-ico-marcador,
   .cover-btn-nav .app-ico-anotacao,
-  .cover-btn-nav .app-ico-referencia {
+  .cover-btn-nav .app-ico-referencia,
+  .cover-btn-nav .app-ico-autor {
     font-size: 32px;
     color: #FFFFFF;
   }
   .cover-btn-nav .app-ico-menu:after,
   .cover-btn-nav .app-ico-sumario:after,
+  .cover-btn-nav .app-ico-autor:after,
   .cover-btn-nav .app-ico-atividade:after,
   .cover-btn-nav .app-ico-marcador:after,
   .cover-btn-nav .app-ico-anotacao:after,
-  .cover-btn-nav .app-ico-referencia:after {
+  .cover-btn-nav .app-ico-referencia:after,
+  .cover-btn-nav .app-ico-autor:after {
     display: block;
     line-height: 32px;
   }
   .cover-btn-nav.btn-nav-menu {
-    margin-bottom: 225px;
+    display: none;
   }
   .cover-btn-tooltip {
     display: none;
@@ -17473,24 +17768,28 @@ body,
   }
   .cover-btn-nav .app-ico-menu,
   .cover-btn-nav .app-ico-sumario,
+  .cover-btn-nav .app-ico-autor,
   .cover-btn-nav .app-ico-atividade,
   .cover-btn-nav .app-ico-marcador,
   .cover-btn-nav .app-ico-anotacao,
-  .cover-btn-nav .app-ico-referencia {
+  .cover-btn-nav .app-ico-referencia,
+  .cover-btn-nav .app-ico-autor {
     font-size: 42px;
     color: #FFFFFF;
   }
   .cover-btn-nav .app-ico-menu:after,
   .cover-btn-nav .app-ico-sumario:after,
+  .cover-btn-nav .app-ico-autor:after,
   .cover-btn-nav .app-ico-atividade:after,
   .cover-btn-nav .app-ico-marcador:after,
   .cover-btn-nav .app-ico-anotacao:after,
-  .cover-btn-nav .app-ico-referencia:after {
+  .cover-btn-nav .app-ico-referencia:after,
+  .cover-btn-nav .app-ico-autor:after {
     display: block;
     line-height: 42px;
   }
   .cover-btn-nav.btn-nav-menu {
-    margin-bottom: 285px;
+    display: none;
   }
   .cover-btn-tooltip {
     display: none;
@@ -17638,24 +17937,28 @@ body,
   }
   .cover-btn-nav .app-ico-menu,
   .cover-btn-nav .app-ico-sumario,
+  .cover-btn-nav .app-ico-autor,
   .cover-btn-nav .app-ico-atividade,
   .cover-btn-nav .app-ico-marcador,
   .cover-btn-nav .app-ico-anotacao,
-  .cover-btn-nav .app-ico-referencia {
+  .cover-btn-nav .app-ico-referencia,
+  .cover-btn-nav .app-ico-autor {
     font-size: 42px;
     color: #FFFFFF;
   }
   .cover-btn-nav .app-ico-menu:after,
   .cover-btn-nav .app-ico-sumario:after,
+  .cover-btn-nav .app-ico-autor:after,
   .cover-btn-nav .app-ico-atividade:after,
   .cover-btn-nav .app-ico-marcador:after,
   .cover-btn-nav .app-ico-anotacao:after,
-  .cover-btn-nav .app-ico-referencia:after {
+  .cover-btn-nav .app-ico-referencia:after,
+  .cover-btn-nav .app-ico-autor:after {
     display: block;
     line-height: 42px;
   }
   .cover-btn-nav.btn-nav-menu {
-    margin-bottom: 315px;
+    display: none;
   }
   .cover-btn-tooltip {
     display: none;
@@ -17803,24 +18106,28 @@ body,
   }
   .cover-btn-nav .app-ico-menu,
   .cover-btn-nav .app-ico-sumario,
+  .cover-btn-nav .app-ico-autor,
   .cover-btn-nav .app-ico-atividade,
   .cover-btn-nav .app-ico-marcador,
   .cover-btn-nav .app-ico-anotacao,
-  .cover-btn-nav .app-ico-referencia {
+  .cover-btn-nav .app-ico-referencia,
+  .cover-btn-nav .app-ico-autor {
     font-size: 35px;
     color: #FFFFFF;
   }
   .cover-btn-nav .app-ico-menu:after,
   .cover-btn-nav .app-ico-sumario:after,
+  .cover-btn-nav .app-ico-autor:after,
   .cover-btn-nav .app-ico-atividade:after,
   .cover-btn-nav .app-ico-marcador:after,
   .cover-btn-nav .app-ico-anotacao:after,
-  .cover-btn-nav .app-ico-referencia:after {
+  .cover-btn-nav .app-ico-referencia:after,
+  .cover-btn-nav .app-ico-autor:after {
     display: block;
     line-height: 35px;
   }
   .cover-btn-nav.btn-nav-menu {
-    margin-bottom: 119px;
+    display: none;
   }
   .cover-btn-tooltip {
     display: none;
@@ -17981,24 +18288,28 @@ body,
   }
   .cover-btn-nav .app-ico-menu,
   .cover-btn-nav .app-ico-sumario,
+  .cover-btn-nav .app-ico-autor,
   .cover-btn-nav .app-ico-atividade,
   .cover-btn-nav .app-ico-marcador,
   .cover-btn-nav .app-ico-anotacao,
-  .cover-btn-nav .app-ico-referencia {
+  .cover-btn-nav .app-ico-referencia,
+  .cover-btn-nav .app-ico-autor {
     font-size: 25px;
     color: #FFFFFF;
   }
   .cover-btn-nav .app-ico-menu:after,
   .cover-btn-nav .app-ico-sumario:after,
+  .cover-btn-nav .app-ico-autor:after,
   .cover-btn-nav .app-ico-atividade:after,
   .cover-btn-nav .app-ico-marcador:after,
   .cover-btn-nav .app-ico-anotacao:after,
-  .cover-btn-nav .app-ico-referencia:after {
+  .cover-btn-nav .app-ico-referencia:after,
+  .cover-btn-nav .app-ico-autor:after {
     display: block;
     line-height: 25px;
   }
   .cover-btn-nav.btn-nav-menu {
-    margin-bottom: 119px;
+    display: none;
   }
   .cover-btn-tooltip {
     display: none;
@@ -18149,24 +18460,28 @@ body,
   }
   .cover-btn-nav .app-ico-menu,
   .cover-btn-nav .app-ico-sumario,
+  .cover-btn-nav .app-ico-autor,
   .cover-btn-nav .app-ico-atividade,
   .cover-btn-nav .app-ico-marcador,
   .cover-btn-nav .app-ico-anotacao,
-  .cover-btn-nav .app-ico-referencia {
+  .cover-btn-nav .app-ico-referencia,
+  .cover-btn-nav .app-ico-autor {
     font-size: 30px;
     color: #FFFFFF;
   }
   .cover-btn-nav .app-ico-menu:after,
   .cover-btn-nav .app-ico-sumario:after,
+  .cover-btn-nav .app-ico-autor:after,
   .cover-btn-nav .app-ico-atividade:after,
   .cover-btn-nav .app-ico-marcador:after,
   .cover-btn-nav .app-ico-anotacao:after,
-  .cover-btn-nav .app-ico-referencia:after {
+  .cover-btn-nav .app-ico-referencia:after,
+  .cover-btn-nav .app-ico-autor:after {
     display: block;
     line-height: 30px;
   }
   .cover-btn-nav.btn-nav-menu {
-    margin-bottom: 160px;
+    display: none;
   }
   .cover-btn-tooltip {
     display: none;
@@ -18314,24 +18629,28 @@ body,
   }
   .cover-btn-nav .app-ico-menu,
   .cover-btn-nav .app-ico-sumario,
+  .cover-btn-nav .app-ico-autor,
   .cover-btn-nav .app-ico-atividade,
   .cover-btn-nav .app-ico-marcador,
   .cover-btn-nav .app-ico-anotacao,
-  .cover-btn-nav .app-ico-referencia {
+  .cover-btn-nav .app-ico-referencia,
+  .cover-btn-nav .app-ico-autor {
     font-size: 32px;
     color: #FFFFFF;
   }
   .cover-btn-nav .app-ico-menu:after,
   .cover-btn-nav .app-ico-sumario:after,
+  .cover-btn-nav .app-ico-autor:after,
   .cover-btn-nav .app-ico-atividade:after,
   .cover-btn-nav .app-ico-marcador:after,
   .cover-btn-nav .app-ico-anotacao:after,
-  .cover-btn-nav .app-ico-referencia:after {
+  .cover-btn-nav .app-ico-referencia:after,
+  .cover-btn-nav .app-ico-autor:after {
     display: block;
     line-height: 32px;
   }
   .cover-btn-nav.btn-nav-menu {
-    margin-bottom: 225px;
+    display: none;
   }
   .cover-btn-tooltip {
     display: none;
@@ -18479,24 +18798,28 @@ body,
   }
   .cover-btn-nav .app-ico-menu,
   .cover-btn-nav .app-ico-sumario,
+  .cover-btn-nav .app-ico-autor,
   .cover-btn-nav .app-ico-atividade,
   .cover-btn-nav .app-ico-marcador,
   .cover-btn-nav .app-ico-anotacao,
-  .cover-btn-nav .app-ico-referencia {
+  .cover-btn-nav .app-ico-referencia,
+  .cover-btn-nav .app-ico-autor {
     font-size: 42px;
     color: #FFFFFF;
   }
   .cover-btn-nav .app-ico-menu:after,
   .cover-btn-nav .app-ico-sumario:after,
+  .cover-btn-nav .app-ico-autor:after,
   .cover-btn-nav .app-ico-atividade:after,
   .cover-btn-nav .app-ico-marcador:after,
   .cover-btn-nav .app-ico-anotacao:after,
-  .cover-btn-nav .app-ico-referencia:after {
+  .cover-btn-nav .app-ico-referencia:after,
+  .cover-btn-nav .app-ico-autor:after {
     display: block;
     line-height: 42px;
   }
   .cover-btn-nav.btn-nav-menu {
-    margin-bottom: 285px;
+    display: none;
   }
   .cover-btn-tooltip {
     display: none;
@@ -18644,24 +18967,28 @@ body,
   }
   .cover-btn-nav .app-ico-menu,
   .cover-btn-nav .app-ico-sumario,
+  .cover-btn-nav .app-ico-autor,
   .cover-btn-nav .app-ico-atividade,
   .cover-btn-nav .app-ico-marcador,
   .cover-btn-nav .app-ico-anotacao,
-  .cover-btn-nav .app-ico-referencia {
+  .cover-btn-nav .app-ico-referencia,
+  .cover-btn-nav .app-ico-autor {
     font-size: 42px;
     color: #FFFFFF;
   }
   .cover-btn-nav .app-ico-menu:after,
   .cover-btn-nav .app-ico-sumario:after,
+  .cover-btn-nav .app-ico-autor:after,
   .cover-btn-nav .app-ico-atividade:after,
   .cover-btn-nav .app-ico-marcador:after,
   .cover-btn-nav .app-ico-anotacao:after,
-  .cover-btn-nav .app-ico-referencia:after {
+  .cover-btn-nav .app-ico-referencia:after,
+  .cover-btn-nav .app-ico-autor:after {
     display: block;
     line-height: 42px;
   }
   .cover-btn-nav.btn-nav-menu {
-    margin-bottom: 315px;
+    display: none;
   }
   .cover-btn-tooltip {
     display: none;
@@ -18809,24 +19136,28 @@ body,
   }
   .cover-btn-nav .app-ico-menu,
   .cover-btn-nav .app-ico-sumario,
+  .cover-btn-nav .app-ico-autor,
   .cover-btn-nav .app-ico-atividade,
   .cover-btn-nav .app-ico-marcador,
   .cover-btn-nav .app-ico-anotacao,
-  .cover-btn-nav .app-ico-referencia {
+  .cover-btn-nav .app-ico-referencia,
+  .cover-btn-nav .app-ico-autor {
     font-size: 35px;
     color: #FFFFFF;
   }
   .cover-btn-nav .app-ico-menu:after,
   .cover-btn-nav .app-ico-sumario:after,
+  .cover-btn-nav .app-ico-autor:after,
   .cover-btn-nav .app-ico-atividade:after,
   .cover-btn-nav .app-ico-marcador:after,
   .cover-btn-nav .app-ico-anotacao:after,
-  .cover-btn-nav .app-ico-referencia:after {
+  .cover-btn-nav .app-ico-referencia:after,
+  .cover-btn-nav .app-ico-autor:after {
     display: block;
     line-height: 35px;
   }
   .cover-btn-nav.btn-nav-menu {
-    margin-bottom: 119px;
+    display: none;
   }
   .cover-btn-tooltip {
     display: none;
@@ -18987,24 +19318,28 @@ body,
   }
   .cover-btn-nav .app-ico-menu,
   .cover-btn-nav .app-ico-sumario,
+  .cover-btn-nav .app-ico-autor,
   .cover-btn-nav .app-ico-atividade,
   .cover-btn-nav .app-ico-marcador,
   .cover-btn-nav .app-ico-anotacao,
-  .cover-btn-nav .app-ico-referencia {
+  .cover-btn-nav .app-ico-referencia,
+  .cover-btn-nav .app-ico-autor {
     font-size: 25px;
     color: #FFFFFF;
   }
   .cover-btn-nav .app-ico-menu:after,
   .cover-btn-nav .app-ico-sumario:after,
+  .cover-btn-nav .app-ico-autor:after,
   .cover-btn-nav .app-ico-atividade:after,
   .cover-btn-nav .app-ico-marcador:after,
   .cover-btn-nav .app-ico-anotacao:after,
-  .cover-btn-nav .app-ico-referencia:after {
+  .cover-btn-nav .app-ico-referencia:after,
+  .cover-btn-nav .app-ico-autor:after {
     display: block;
     line-height: 25px;
   }
   .cover-btn-nav.btn-nav-menu {
-    margin-bottom: 119px;
+    display: none;
   }
   .cover-btn-tooltip {
     display: none;
@@ -19152,24 +19487,28 @@ body,
   }
   .cover-btn-nav .app-ico-menu,
   .cover-btn-nav .app-ico-sumario,
+  .cover-btn-nav .app-ico-autor,
   .cover-btn-nav .app-ico-atividade,
   .cover-btn-nav .app-ico-marcador,
   .cover-btn-nav .app-ico-anotacao,
-  .cover-btn-nav .app-ico-referencia {
+  .cover-btn-nav .app-ico-referencia,
+  .cover-btn-nav .app-ico-autor {
     font-size: 30px;
     color: #FFFFFF;
   }
   .cover-btn-nav .app-ico-menu:after,
   .cover-btn-nav .app-ico-sumario:after,
+  .cover-btn-nav .app-ico-autor:after,
   .cover-btn-nav .app-ico-atividade:after,
   .cover-btn-nav .app-ico-marcador:after,
   .cover-btn-nav .app-ico-anotacao:after,
-  .cover-btn-nav .app-ico-referencia:after {
+  .cover-btn-nav .app-ico-referencia:after,
+  .cover-btn-nav .app-ico-autor:after {
     display: block;
     line-height: 30px;
   }
   .cover-btn-nav.btn-nav-menu {
-    margin-bottom: 160px;
+    display: none;
   }
   .cover-btn-tooltip {
     display: none;
@@ -19317,24 +19656,28 @@ body,
   }
   .cover-btn-nav .app-ico-menu,
   .cover-btn-nav .app-ico-sumario,
+  .cover-btn-nav .app-ico-autor,
   .cover-btn-nav .app-ico-atividade,
   .cover-btn-nav .app-ico-marcador,
   .cover-btn-nav .app-ico-anotacao,
-  .cover-btn-nav .app-ico-referencia {
+  .cover-btn-nav .app-ico-referencia,
+  .cover-btn-nav .app-ico-autor {
     font-size: 32px;
     color: #FFFFFF;
   }
   .cover-btn-nav .app-ico-menu:after,
   .cover-btn-nav .app-ico-sumario:after,
+  .cover-btn-nav .app-ico-autor:after,
   .cover-btn-nav .app-ico-atividade:after,
   .cover-btn-nav .app-ico-marcador:after,
   .cover-btn-nav .app-ico-anotacao:after,
-  .cover-btn-nav .app-ico-referencia:after {
+  .cover-btn-nav .app-ico-referencia:after,
+  .cover-btn-nav .app-ico-autor:after {
     display: block;
     line-height: 32px;
   }
   .cover-btn-nav.btn-nav-menu {
-    margin-bottom: 225px;
+    display: none;
   }
   .cover-btn-tooltip {
     display: none;
@@ -19482,24 +19825,28 @@ body,
   }
   .cover-btn-nav .app-ico-menu,
   .cover-btn-nav .app-ico-sumario,
+  .cover-btn-nav .app-ico-autor,
   .cover-btn-nav .app-ico-atividade,
   .cover-btn-nav .app-ico-marcador,
   .cover-btn-nav .app-ico-anotacao,
-  .cover-btn-nav .app-ico-referencia {
+  .cover-btn-nav .app-ico-referencia,
+  .cover-btn-nav .app-ico-autor {
     font-size: 42px;
     color: #FFFFFF;
   }
   .cover-btn-nav .app-ico-menu:after,
   .cover-btn-nav .app-ico-sumario:after,
+  .cover-btn-nav .app-ico-autor:after,
   .cover-btn-nav .app-ico-atividade:after,
   .cover-btn-nav .app-ico-marcador:after,
   .cover-btn-nav .app-ico-anotacao:after,
-  .cover-btn-nav .app-ico-referencia:after {
+  .cover-btn-nav .app-ico-referencia:after,
+  .cover-btn-nav .app-ico-autor:after {
     display: block;
     line-height: 42px;
   }
   .cover-btn-nav.btn-nav-menu {
-    margin-bottom: 285px;
+    display: none;
   }
   .cover-btn-tooltip {
     display: none;
@@ -19647,24 +19994,28 @@ body,
   }
   .cover-btn-nav .app-ico-menu,
   .cover-btn-nav .app-ico-sumario,
+  .cover-btn-nav .app-ico-autor,
   .cover-btn-nav .app-ico-atividade,
   .cover-btn-nav .app-ico-marcador,
   .cover-btn-nav .app-ico-anotacao,
-  .cover-btn-nav .app-ico-referencia {
+  .cover-btn-nav .app-ico-referencia,
+  .cover-btn-nav .app-ico-autor {
     font-size: 42px;
     color: #FFFFFF;
   }
   .cover-btn-nav .app-ico-menu:after,
   .cover-btn-nav .app-ico-sumario:after,
+  .cover-btn-nav .app-ico-autor:after,
   .cover-btn-nav .app-ico-atividade:after,
   .cover-btn-nav .app-ico-marcador:after,
   .cover-btn-nav .app-ico-anotacao:after,
-  .cover-btn-nav .app-ico-referencia:after {
+  .cover-btn-nav .app-ico-referencia:after,
+  .cover-btn-nav .app-ico-autor:after {
     display: block;
     line-height: 42px;
   }
   .cover-btn-nav.btn-nav-menu {
-    margin-bottom: 315px;
+    display: none;
   }
   .cover-btn-tooltip {
     display: none;
@@ -19812,24 +20163,28 @@ body,
   }
   .cover-btn-nav .app-ico-menu,
   .cover-btn-nav .app-ico-sumario,
+  .cover-btn-nav .app-ico-autor,
   .cover-btn-nav .app-ico-atividade,
   .cover-btn-nav .app-ico-marcador,
   .cover-btn-nav .app-ico-anotacao,
-  .cover-btn-nav .app-ico-referencia {
+  .cover-btn-nav .app-ico-referencia,
+  .cover-btn-nav .app-ico-autor {
     font-size: 42px;
     color: #FFFFFF;
   }
   .cover-btn-nav .app-ico-menu:after,
   .cover-btn-nav .app-ico-sumario:after,
+  .cover-btn-nav .app-ico-autor:after,
   .cover-btn-nav .app-ico-atividade:after,
   .cover-btn-nav .app-ico-marcador:after,
   .cover-btn-nav .app-ico-anotacao:after,
-  .cover-btn-nav .app-ico-referencia:after {
+  .cover-btn-nav .app-ico-referencia:after,
+  .cover-btn-nav .app-ico-autor:after {
     display: block;
     line-height: 42px;
   }
   .cover-btn-nav.btn-nav-menu {
-    margin-bottom: 285px;
+    display: none;
   }
   .cover-btn-tooltip {
     display: none;
@@ -19985,24 +20340,28 @@ body,
   }
   .cover-btn-nav .app-ico-menu,
   .cover-btn-nav .app-ico-sumario,
+  .cover-btn-nav .app-ico-autor,
   .cover-btn-nav .app-ico-atividade,
   .cover-btn-nav .app-ico-marcador,
   .cover-btn-nav .app-ico-anotacao,
-  .cover-btn-nav .app-ico-referencia {
+  .cover-btn-nav .app-ico-referencia,
+  .cover-btn-nav .app-ico-autor {
     font-size: 28px;
     color: #FFFFFF;
   }
   .cover-btn-nav .app-ico-menu:after,
   .cover-btn-nav .app-ico-sumario:after,
+  .cover-btn-nav .app-ico-autor:after,
   .cover-btn-nav .app-ico-atividade:after,
   .cover-btn-nav .app-ico-marcador:after,
   .cover-btn-nav .app-ico-anotacao:after,
-  .cover-btn-nav .app-ico-referencia:after {
+  .cover-btn-nav .app-ico-referencia:after,
+  .cover-btn-nav .app-ico-autor:after {
     display: block;
     line-height: 28px;
   }
   .cover-btn-nav.btn-nav-menu {
-    margin-bottom: 109px;
+    display: none;
   }
   .cover-btn-tooltip {
     display: none;
@@ -20150,24 +20509,28 @@ body,
   }
   .cover-btn-nav .app-ico-menu,
   .cover-btn-nav .app-ico-sumario,
+  .cover-btn-nav .app-ico-autor,
   .cover-btn-nav .app-ico-atividade,
   .cover-btn-nav .app-ico-marcador,
   .cover-btn-nav .app-ico-anotacao,
-  .cover-btn-nav .app-ico-referencia {
+  .cover-btn-nav .app-ico-referencia,
+  .cover-btn-nav .app-ico-autor {
     font-size: 38px;
     color: #FFFFFF;
   }
   .cover-btn-nav .app-ico-menu:after,
   .cover-btn-nav .app-ico-sumario:after,
+  .cover-btn-nav .app-ico-autor:after,
   .cover-btn-nav .app-ico-atividade:after,
   .cover-btn-nav .app-ico-marcador:after,
   .cover-btn-nav .app-ico-anotacao:after,
-  .cover-btn-nav .app-ico-referencia:after {
+  .cover-btn-nav .app-ico-referencia:after,
+  .cover-btn-nav .app-ico-autor:after {
     display: block;
     line-height: 38px;
   }
   .cover-btn-nav.btn-nav-menu {
-    margin-bottom: 245px;
+    display: none;
   }
   .cover-btn-tooltip {
     display: none;
@@ -20315,24 +20678,28 @@ body,
   }
   .cover-btn-nav .app-ico-menu,
   .cover-btn-nav .app-ico-sumario,
+  .cover-btn-nav .app-ico-autor,
   .cover-btn-nav .app-ico-atividade,
   .cover-btn-nav .app-ico-marcador,
   .cover-btn-nav .app-ico-anotacao,
-  .cover-btn-nav .app-ico-referencia {
+  .cover-btn-nav .app-ico-referencia,
+  .cover-btn-nav .app-ico-autor {
     font-size: 52px;
     color: #FFFFFF;
   }
   .cover-btn-nav .app-ico-menu:after,
   .cover-btn-nav .app-ico-sumario:after,
+  .cover-btn-nav .app-ico-autor:after,
   .cover-btn-nav .app-ico-atividade:after,
   .cover-btn-nav .app-ico-marcador:after,
   .cover-btn-nav .app-ico-anotacao:after,
-  .cover-btn-nav .app-ico-referencia:after {
+  .cover-btn-nav .app-ico-referencia:after,
+  .cover-btn-nav .app-ico-autor:after {
     display: block;
     line-height: 52px;
   }
   .cover-btn-nav.btn-nav-menu {
-    margin-bottom: 285px;
+    display: none;
   }
   .cover-btn-tooltip {
     display: none;
@@ -21147,6 +21514,8 @@ body,
     padding-left: 5px;
     padding-right: 5px;
     min-height: 100%;
+    overflow: hidden;
+    overflow-x: auto;
   }
   .app-sum-contents {
     min-height: 100%;
@@ -21354,6 +21723,8 @@ body,
   .app-sum-scroll {
     padding-left: 5%;
     padding-right: 5%;
+    overflow-y: scroll;
+    overflow-x: hidden;
   }
   .app-sum-section {
     margin-bottom: 10%;
@@ -21367,6 +21738,8 @@ body,
     padding-left: 5px;
     padding-right: 5px;
     min-height: 100%;
+    overflow: hidden;
+    overflow-x: auto;
   }
   .app-sum-contents {
     min-height: 100%;
@@ -21574,6 +21947,8 @@ body,
   .app-sum-scroll {
     padding-left: 10%;
     padding-right: 10%;
+    overflow-y: scroll;
+    overflow-x: hidden;
   }
   .app-sum-section {
     margin-bottom: 10%;
@@ -21587,6 +21962,8 @@ body,
     padding-left: 5px;
     padding-right: 5px;
     min-height: 100%;
+    overflow: hidden;
+    overflow-x: auto;
   }
   .app-sum-contents {
     min-height: 100%;
@@ -21797,6 +22174,8 @@ body,
     padding-left: 5px;
     padding-right: 5px;
     min-height: 100%;
+    overflow: hidden;
+    overflow-x: auto;
   }
   .app-sum-contents {
     min-height: 100%;
@@ -22007,6 +22386,8 @@ body,
     padding-left: 5px;
     padding-right: 5px;
     min-height: 100%;
+    overflow: hidden;
+    overflow-x: auto;
   }
   .app-sum-contents {
     min-height: 100%;
@@ -22285,6 +22666,7 @@ body,
   }
   .app-apr-item-content .app-apr-item-video {
     display: none;
+    height: 250px;
   }
   .app-apr-item-avatar {
     text-align: center;
@@ -22332,6 +22714,7 @@ body,
   }
   .app-apr-item-content .app-apr-item-video {
     display: none;
+    height: 300px;
   }
   .app-apr-item-avatar {
     text-align: center;
@@ -22379,6 +22762,7 @@ body,
   }
   .app-apr-item-content .app-apr-item-video {
     display: none;
+    height: 500px;
   }
 }
 @media (min-width: 992px) {
@@ -22420,6 +22804,7 @@ body,
   }
   .app-apr-item-content .app-apr-item-video {
     display: none;
+    height: 600px;
   }
 }
 @media (min-width: 1200px) {
@@ -22461,12 +22846,12 @@ body,
   }
   .app-apr-item-content .app-apr-item-video {
     display: none;
+    height: 700px;
   }
 }
 @media (max-width: 479px) {
   .app-cap-abertura {
-    background-color: #D1D1D2;
-    display: block;
+    display: none;
     min-height: 50%;
     position: relative;
     left: -16%;
@@ -22477,6 +22862,7 @@ body,
     background-color: #C0504D;
     padding-top: 10px;
     padding-bottom: 10px;
+    margin-bottom: 20%;
   }
   .app-cap-abertura .app-cap-abertura-titulo {
     padding: 30px 0px;
@@ -22485,6 +22871,38 @@ body,
   .app-cap-abertura .app-cap-abertura-autor {
     padding-bottom: 7px;
     padding-right: 7%;
+  }
+  .app-cap-abertura .app-cap-abertura-titulo,
+  .app-cap-abertura .app-cap-abertura-autor {
+    text-shadow: 1px 1px 4px #000000;
+  }
+  .app-cap-abertura .app-cap-capa {
+    background-color: #D1D1D2;
+    display: block;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 12%;
+    margin-bottom: 5%;
+  }
+  .app-cap-abertura .app-cap-capa:before,
+  .app-cap-abertura .app-cap-capa:after {
+    content: " ";
+    display: table;
+  }
+  .app-cap-abertura .app-cap-capa:after {
+    clear: both;
+  }
+  .app-cap-abertura .app-cap-capa:before,
+  .app-cap-abertura .app-cap-capa:after {
+    content: " ";
+    display: table;
+  }
+  .app-cap-abertura .app-cap-capa:after {
+    clear: both;
+  }
+  .app-cap-abertura .app-cap-introducao {
+    display: block;
+    margin-bottom: 10%;
   }
   .app-cap-content .section-page-item {
     border-bottom: 1px dashed #EDD3CB;
@@ -22495,6 +22913,7 @@ body,
     margin-left: 0%;
     margin-right: 0%;
     padding-left: 0%;
+    margin-top: 5%;
   }
   .app-cap-content .section-page-item article {
     margin-top: 14%;
@@ -22505,6 +22924,7 @@ body,
     display: block;
     margin-bottom: 25px;
     margin-left: 0%;
+    margin-top: 10%;
   }
   .app-box:before,
   .app-box:after {
@@ -22539,14 +22959,19 @@ body,
   .app-box .app-box-head:before {
     float: left;
     display: block;
-    position: absolute;
-    margin-left: -34px;
+    margin-left: -31px;
   }
   .app-box .app-box-content {
     width: 100%;
     padding: 10px;
     float: right;
     background-color: #C0504D;
+  }
+  .app-box.app-box-leitura .app-box-head {
+    width: 100%;
+  }
+  .app-box.app-box-leitura .app-box-head:before {
+    content: "\F02D";
   }
   .app-box.app-box-atividade .app-box-head {
     width: 100%;
@@ -22699,23 +23124,53 @@ body,
     display: block;
     margin: 0 auto;
   }
-  .app-graphic-content .grapc-content-caption {
+  .app-graphic-content .app-grapc-content-caption {
     margin-top: 14px;
     max-width: 100%;
-    overflow-x: hidden;
+    overflow: hidden;
   }
-  .app-graphic-content .grapc-content-caption .app-legenda .label span:first-child:after {
+  .app-graphic-content .app-grapc-content-caption .app-legenda .label span:first-child:after {
     content: " / ";
   }
-  .app-graphic-content .grapc-content-caption .app-legenda:after {
+  .app-graphic-content .app-grapc-content-caption .app-legenda:after {
     content: " - ";
     margin-left: 5px;
+  }
+  .app-graphic-content.app-graphic-video .app-grapc-content-caption {
+    display: none;
+  }
+  .app-graphic-content.app-graphic-video .app-graphic-content-nav:after {
+    font-family: "FontAwesome";
+    content: "\F01D";
+  }
+  .app-graphic-content.app-graphic-video .app-graphic-content-nav:after {
+    color: #FFFFFF;
+    position: absolute;
+    top: 46%;
+    left: 47%;
+    font-size: 60px;
+  }
+  .app-graphic-content.app-graphic-table .app-graphic-content-nav {
+    overflow: auto;
+    background-color: inherit;
+    margin-right: -17px;
+    display: table;
+  }
+  .app-graphic-content.app-graphic-table .app-graphic-content-nav .app-graphic-item {
+    height: auto;
+    display: table-footer-group;
+  }
+  .app-graphic-table .app-graphic-content-nav {
+    margin-right: 0px;
+  }
+  .app-cap-content .section-page-item {
+    margin-bottom: 15%;
+    margin-top: 18%;
   }
 }
 @media (min-width: 480px) {
   .app-cap-abertura {
-    background-color: #D1D1D2;
-    display: block;
+    display: none;
     min-height: 50%;
     position: relative;
     left: -16%;
@@ -22726,6 +23181,7 @@ body,
     background-color: #C0504D;
     padding-top: 10px;
     padding-bottom: 10px;
+    margin-bottom: 20%;
   }
   .app-cap-abertura .app-cap-abertura-titulo {
     padding: 30px 0px;
@@ -22734,6 +23190,38 @@ body,
   .app-cap-abertura .app-cap-abertura-autor {
     padding-bottom: 7px;
     padding-right: 7%;
+  }
+  .app-cap-abertura .app-cap-abertura-titulo,
+  .app-cap-abertura .app-cap-abertura-autor {
+    text-shadow: 1px 1px 4px #000000;
+  }
+  .app-cap-abertura .app-cap-capa {
+    background-color: #D1D1D2;
+    display: block;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 12%;
+    margin-bottom: 5%;
+  }
+  .app-cap-abertura .app-cap-capa:before,
+  .app-cap-abertura .app-cap-capa:after {
+    content: " ";
+    display: table;
+  }
+  .app-cap-abertura .app-cap-capa:after {
+    clear: both;
+  }
+  .app-cap-abertura .app-cap-capa:before,
+  .app-cap-abertura .app-cap-capa:after {
+    content: " ";
+    display: table;
+  }
+  .app-cap-abertura .app-cap-capa:after {
+    clear: both;
+  }
+  .app-cap-abertura .app-cap-introducao {
+    display: block;
+    margin-bottom: 10%;
   }
   .app-cap-content .section-page-item {
     border-bottom: 1px dashed #EDD3CB;
@@ -22744,6 +23232,7 @@ body,
     margin-left: 3%;
     margin-right: 0%;
     padding-left: 0%;
+    margin-top: 5%;
   }
   .app-cap-content .section-page-item article {
     margin-top: 10%;
@@ -22754,6 +23243,7 @@ body,
     display: block;
     margin-bottom: 25px;
     margin-left: 0%;
+    margin-top: 10%;
   }
   .app-box:before,
   .app-box:after {
@@ -22788,14 +23278,19 @@ body,
   .app-box .app-box-head:before {
     float: left;
     display: block;
-    position: absolute;
-    margin-left: -34px;
+    margin-left: -31px;
   }
   .app-box .app-box-content {
     width: 90%;
     padding: 10px;
     float: right;
     background-color: #C0504D;
+  }
+  .app-box.app-box-leitura .app-box-head {
+    width: 100%;
+  }
+  .app-box.app-box-leitura .app-box-head:before {
+    content: "\F02D";
   }
   .app-box.app-box-atividade .app-box-head {
     width: 100%;
@@ -22948,23 +23443,53 @@ body,
     display: block;
     margin: 0 auto;
   }
-  .app-graphic-content .grapc-content-caption {
+  .app-graphic-content .app-grapc-content-caption {
     margin-top: 14px;
     max-width: 100%;
-    overflow-x: hidden;
+    overflow: hidden;
   }
-  .app-graphic-content .grapc-content-caption .app-legenda .label span:first-child:after {
+  .app-graphic-content .app-grapc-content-caption .app-legenda .label span:first-child:after {
     content: " / ";
   }
-  .app-graphic-content .grapc-content-caption .app-legenda:after {
+  .app-graphic-content .app-grapc-content-caption .app-legenda:after {
     content: " - ";
     margin-left: 5px;
+  }
+  .app-graphic-content.app-graphic-video .app-grapc-content-caption {
+    display: none;
+  }
+  .app-graphic-content.app-graphic-video .app-graphic-content-nav:after {
+    font-family: "FontAwesome";
+    content: "\F01D";
+  }
+  .app-graphic-content.app-graphic-video .app-graphic-content-nav:after {
+    color: #FFFFFF;
+    position: absolute;
+    top: 46%;
+    left: 47%;
+    font-size: 60px;
+  }
+  .app-graphic-content.app-graphic-table .app-graphic-content-nav {
+    overflow: auto;
+    background-color: inherit;
+    margin-right: -17px;
+    display: table;
+  }
+  .app-graphic-content.app-graphic-table .app-graphic-content-nav .app-graphic-item {
+    height: auto;
+    display: table-footer-group;
+  }
+  .app-graphic-table .app-graphic-content-nav {
+    margin-right: 0px;
+  }
+  .app-cap-content .section-page-item {
+    margin-bottom: 15%;
+    margin-top: 18%;
   }
 }
 @media (min-width: 768px) {
   .app-cap-abertura {
-    background-color: #D1D1D2;
-    display: block;
+    display: none;
     min-height: 50%;
     position: relative;
     left: -12%;
@@ -22975,6 +23500,7 @@ body,
     background-color: #C0504D;
     padding-top: 10px;
     padding-bottom: 10px;
+    margin-bottom: 20%;
   }
   .app-cap-abertura .app-cap-abertura-titulo {
     padding: 30px 0px;
@@ -22983,6 +23509,38 @@ body,
   .app-cap-abertura .app-cap-abertura-autor {
     padding-bottom: 7px;
     padding-right: 7%;
+  }
+  .app-cap-abertura .app-cap-abertura-titulo,
+  .app-cap-abertura .app-cap-abertura-autor {
+    text-shadow: 1px 1px 4px #000000;
+  }
+  .app-cap-abertura .app-cap-capa {
+    background-color: #D1D1D2;
+    display: block;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 12%;
+    margin-bottom: 5%;
+  }
+  .app-cap-abertura .app-cap-capa:before,
+  .app-cap-abertura .app-cap-capa:after {
+    content: " ";
+    display: table;
+  }
+  .app-cap-abertura .app-cap-capa:after {
+    clear: both;
+  }
+  .app-cap-abertura .app-cap-capa:before,
+  .app-cap-abertura .app-cap-capa:after {
+    content: " ";
+    display: table;
+  }
+  .app-cap-abertura .app-cap-capa:after {
+    clear: both;
+  }
+  .app-cap-abertura .app-cap-introducao {
+    display: block;
+    margin-bottom: 10%;
   }
   .app-cap-content .section-page-item {
     border-bottom: 1px dashed #EDD3CB;
@@ -22993,6 +23551,7 @@ body,
     margin-left: 8%;
     margin-right: 5%;
     padding-left: 0%;
+    margin-top: 5%;
   }
   .app-cap-content .section-page-item article {
     margin-top: 7%;
@@ -23003,6 +23562,7 @@ body,
     display: block;
     margin-bottom: 25px;
     margin-left: 0%;
+    margin-top: 10%;
   }
   .app-box:before,
   .app-box:after {
@@ -23037,14 +23597,19 @@ body,
   .app-box .app-box-head:before {
     float: left;
     display: block;
-    position: absolute;
-    margin-left: -34px;
+    margin-left: -31px;
   }
   .app-box .app-box-content {
     width: 85%;
     padding: 10px;
     float: right;
     background-color: #C0504D;
+  }
+  .app-box.app-box-leitura .app-box-head {
+    width: 100%;
+  }
+  .app-box.app-box-leitura .app-box-head:before {
+    content: "\F02D";
   }
   .app-box.app-box-atividade .app-box-head {
     width: 100%;
@@ -23197,23 +23762,46 @@ body,
     display: block;
     margin: 0 auto;
   }
-  .app-graphic-content .grapc-content-caption {
+  .app-graphic-content .app-grapc-content-caption {
     margin-top: 14px;
     max-width: 100%;
-    overflow-x: hidden;
+    overflow: hidden;
   }
-  .app-graphic-content .grapc-content-caption .app-legenda .label span:first-child:after {
+  .app-graphic-content .app-grapc-content-caption .app-legenda .label span:first-child:after {
     content: " / ";
   }
-  .app-graphic-content .grapc-content-caption .app-legenda:after {
+  .app-graphic-content .app-grapc-content-caption .app-legenda:after {
     content: " - ";
     margin-left: 5px;
+  }
+  .app-graphic-content.app-graphic-video .app-grapc-content-caption {
+    display: none;
+  }
+  .app-graphic-content.app-graphic-video .app-graphic-content-nav:after {
+    font-family: "FontAwesome";
+    content: "\F01D";
+  }
+  .app-graphic-content.app-graphic-video .app-graphic-content-nav:after {
+    color: #FFFFFF;
+    position: absolute;
+    top: 46%;
+    left: 47%;
+    font-size: 60px;
+  }
+  .app-graphic-content.app-graphic-table .app-graphic-content-nav {
+    overflow: auto;
+    background-color: inherit;
+    margin-right: -17px;
+    display: table;
+  }
+  .app-graphic-content.app-graphic-table .app-graphic-content-nav .app-graphic-item {
+    height: auto;
+    display: table-footer-group;
   }
 }
 @media (min-width: 992px) {
   .app-cap-abertura {
-    background-color: #D1D1D2;
-    display: block;
+    display: none;
     min-height: 50%;
     position: relative;
     left: -13%;
@@ -23224,6 +23812,7 @@ body,
     background-color: #C0504D;
     padding-top: 10px;
     padding-bottom: 10px;
+    margin-bottom: 20%;
   }
   .app-cap-abertura .app-cap-abertura-titulo {
     padding: 30px 0px;
@@ -23232,6 +23821,38 @@ body,
   .app-cap-abertura .app-cap-abertura-autor {
     padding-bottom: 7px;
     padding-right: 7%;
+  }
+  .app-cap-abertura .app-cap-abertura-titulo,
+  .app-cap-abertura .app-cap-abertura-autor {
+    text-shadow: 1px 1px 4px #000000;
+  }
+  .app-cap-abertura .app-cap-capa {
+    background-color: #D1D1D2;
+    display: block;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 12%;
+    margin-bottom: 5%;
+  }
+  .app-cap-abertura .app-cap-capa:before,
+  .app-cap-abertura .app-cap-capa:after {
+    content: " ";
+    display: table;
+  }
+  .app-cap-abertura .app-cap-capa:after {
+    clear: both;
+  }
+  .app-cap-abertura .app-cap-capa:before,
+  .app-cap-abertura .app-cap-capa:after {
+    content: " ";
+    display: table;
+  }
+  .app-cap-abertura .app-cap-capa:after {
+    clear: both;
+  }
+  .app-cap-abertura .app-cap-introducao {
+    display: block;
+    margin-bottom: 10%;
   }
   .app-cap-content .section-page-item {
     border-bottom: 1px dashed #EDD3CB;
@@ -23242,6 +23863,7 @@ body,
     margin-left: 15%;
     margin-right: 5%;
     padding-left: 11%;
+    margin-top: 5%;
   }
   .app-cap-content .section-page-item article {
     margin-top: 7%;
@@ -23252,6 +23874,7 @@ body,
     display: block;
     margin-bottom: 25px;
     margin-left: -16%;
+    margin-top: 10%;
   }
   .app-box:before,
   .app-box:after {
@@ -23286,14 +23909,19 @@ body,
   .app-box .app-box-head:before {
     float: left;
     display: block;
-    position: absolute;
-    margin-left: -34px;
+    margin-left: -31px;
   }
   .app-box .app-box-content {
     width: 75%;
     padding: 10px;
     float: right;
     background-color: #C0504D;
+  }
+  .app-box.app-box-leitura .app-box-head {
+    width: 100%;
+  }
+  .app-box.app-box-leitura .app-box-head:before {
+    content: "\F02D";
   }
   .app-box.app-box-atividade .app-box-head {
     width: 100%;
@@ -23446,23 +24074,46 @@ body,
     display: block;
     margin: 0 auto;
   }
-  .app-graphic-content .grapc-content-caption {
+  .app-graphic-content .app-grapc-content-caption {
     margin-top: 14px;
     max-width: 100%;
-    overflow-x: hidden;
+    overflow: hidden;
   }
-  .app-graphic-content .grapc-content-caption .app-legenda .label span:first-child:after {
+  .app-graphic-content .app-grapc-content-caption .app-legenda .label span:first-child:after {
     content: " / ";
   }
-  .app-graphic-content .grapc-content-caption .app-legenda:after {
+  .app-graphic-content .app-grapc-content-caption .app-legenda:after {
     content: " - ";
     margin-left: 5px;
+  }
+  .app-graphic-content.app-graphic-video .app-grapc-content-caption {
+    display: none;
+  }
+  .app-graphic-content.app-graphic-video .app-graphic-content-nav:after {
+    font-family: "FontAwesome";
+    content: "\F01D";
+  }
+  .app-graphic-content.app-graphic-video .app-graphic-content-nav:after {
+    color: #FFFFFF;
+    position: absolute;
+    top: 46%;
+    left: 47%;
+    font-size: 60px;
+  }
+  .app-graphic-content.app-graphic-table .app-graphic-content-nav {
+    overflow: auto;
+    background-color: inherit;
+    margin-right: -17px;
+    display: table;
+  }
+  .app-graphic-content.app-graphic-table .app-graphic-content-nav .app-graphic-item {
+    height: auto;
+    display: table-footer-group;
   }
 }
 @media (min-width: 1200px) {
   .app-cap-abertura {
-    background-color: #D1D1D2;
-    display: block;
+    display: none;
     min-height: 50%;
     position: relative;
     left: -13%;
@@ -23473,6 +24124,7 @@ body,
     background-color: #C0504D;
     padding-top: 10px;
     padding-bottom: 10px;
+    margin-bottom: 20%;
   }
   .app-cap-abertura .app-cap-abertura-titulo {
     padding: 30px 0px;
@@ -23481,6 +24133,38 @@ body,
   .app-cap-abertura .app-cap-abertura-autor {
     padding-bottom: 7px;
     padding-right: 7%;
+  }
+  .app-cap-abertura .app-cap-abertura-titulo,
+  .app-cap-abertura .app-cap-abertura-autor {
+    text-shadow: 1px 1px 4px #000000;
+  }
+  .app-cap-abertura .app-cap-capa {
+    background-color: #D1D1D2;
+    display: block;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 12%;
+    margin-bottom: 5%;
+  }
+  .app-cap-abertura .app-cap-capa:before,
+  .app-cap-abertura .app-cap-capa:after {
+    content: " ";
+    display: table;
+  }
+  .app-cap-abertura .app-cap-capa:after {
+    clear: both;
+  }
+  .app-cap-abertura .app-cap-capa:before,
+  .app-cap-abertura .app-cap-capa:after {
+    content: " ";
+    display: table;
+  }
+  .app-cap-abertura .app-cap-capa:after {
+    clear: both;
+  }
+  .app-cap-abertura .app-cap-introducao {
+    display: block;
+    margin-bottom: 10%;
   }
   .app-cap-content .section-page-item {
     border-bottom: 1px dashed #EDD3CB;
@@ -23491,6 +24175,7 @@ body,
     margin-left: 15%;
     margin-right: 5%;
     padding-left: 11%;
+    margin-top: 5%;
   }
   .app-cap-content .section-page-item article {
     margin-top: 7%;
@@ -23501,6 +24186,7 @@ body,
     display: block;
     margin-bottom: 25px;
     margin-left: -16%;
+    margin-top: 10%;
   }
   .app-box:before,
   .app-box:after {
@@ -23535,14 +24221,19 @@ body,
   .app-box .app-box-head:before {
     float: left;
     display: block;
-    position: absolute;
-    margin-left: -34px;
+    margin-left: -31px;
   }
   .app-box .app-box-content {
     width: 75%;
     padding: 10px;
     float: right;
     background-color: #C0504D;
+  }
+  .app-box.app-box-leitura .app-box-head {
+    width: 100%;
+  }
+  .app-box.app-box-leitura .app-box-head:before {
+    content: "\F02D";
   }
   .app-box.app-box-atividade .app-box-head {
     width: 100%;
@@ -23695,17 +24386,41 @@ body,
     display: block;
     margin: 0 auto;
   }
-  .app-graphic-content .grapc-content-caption {
+  .app-graphic-content .app-grapc-content-caption {
     margin-top: 14px;
     max-width: 100%;
-    overflow-x: hidden;
+    overflow: hidden;
   }
-  .app-graphic-content .grapc-content-caption .app-legenda .label span:first-child:after {
+  .app-graphic-content .app-grapc-content-caption .app-legenda .label span:first-child:after {
     content: " / ";
   }
-  .app-graphic-content .grapc-content-caption .app-legenda:after {
+  .app-graphic-content .app-grapc-content-caption .app-legenda:after {
     content: " - ";
     margin-left: 5px;
+  }
+  .app-graphic-content.app-graphic-video .app-grapc-content-caption {
+    display: none;
+  }
+  .app-graphic-content.app-graphic-video .app-graphic-content-nav:after {
+    font-family: "FontAwesome";
+    content: "\F01D";
+  }
+  .app-graphic-content.app-graphic-video .app-graphic-content-nav:after {
+    color: #FFFFFF;
+    position: absolute;
+    top: 46%;
+    left: 47%;
+    font-size: 60px;
+  }
+  .app-graphic-content.app-graphic-table .app-graphic-content-nav {
+    overflow: auto;
+    background-color: inherit;
+    margin-right: -17px;
+    display: table;
+  }
+  .app-graphic-content.app-graphic-table .app-graphic-content-nav .app-graphic-item {
+    height: auto;
+    display: table-footer-group;
   }
 }
 .app-ref-content p {
@@ -23716,6 +24431,11 @@ body,
   background-color: #F6E7E7 !important;
   border-right: 40px solid #C77172;
   cursor: pointer;
+}
+.app-ref-content .app-ref-link a {
+  max-width: 100%;
+  overflow: hidden;
+  display: block;
 }
 .app-ref-content .app-ref-link:after {
   font-family: "FontAwesome";

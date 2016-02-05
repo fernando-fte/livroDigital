@@ -3,8 +3,7 @@
 
 	//** Contents da abertura
 	.app-cap-abertura {
-		background-color: @app-cor-preto-20;
-		display: block;
+		display: none;
 		min-height: 50%;
 		position: relative;
 		left: @cap-left;
@@ -16,6 +15,7 @@
 			background-color: @app-cor-padrao-fraco;
 			padding-top: 10px;
 			padding-bottom: 10px;
+			margin-bottom: 20%;
 		}
 
 		//** Content para o titulo
@@ -29,15 +29,29 @@
 			padding-bottom: 7px;
 			padding-right: 7%;
 		}
+		.app-cap-abertura-titulo, .app-cap-abertura-autor {text-shadow: 1px 1px 4px rgba(0, 0, 0, 1);}
+
+		//** COnfigura content da capa
+		.app-cap-capa {
+			background-color: @app-cor-preto-20;
+			display: block;
+			background-repeat: no-repeat;
+			background-size: cover;
+			padding-bottom: 12%;
+			margin-bottom: 5%;
+			.clearfix()
+		}
+
+		//** Contents da introdução do capítulo
+		.app-cap-introducao {
+			display: block;
+			margin-bottom: 10%;
+		}
 	}
 
 	//** Contents para os conteúdos do capítulo
 	.app-cap-content {
 
-		//** Contents da introdução do capítulo
-		.app-cap-introducao {
-
-		}
 
 		//** Itens principais do capítulo
 		.section-page-item {
@@ -50,6 +64,8 @@
 			margin-left: @item-left; // 15%;
 			margin-right: @item-right; // 5%;
 			padding-left: @item-left-in; // 11%;
+		    margin-top: 5%;
+
 
 			article { margin-top: @article-top; }
 		}
@@ -65,6 +81,8 @@
 		display: block;
 		margin-bottom: 25px;
 		margin-left: @left; // -16%;
+		// margin-left: -16%;
+		margin-top: 10%;
 
 		.clearfix();
 
@@ -82,8 +100,8 @@
 			&:before {
 				float: left;
 				display: block;
-				position: absolute;
-				margin-left: -34px;
+				// position: absolute;
+				margin-left: -31px;
 			}
 		}
 
@@ -253,12 +271,27 @@
 		&.app-graphic-video {
 
 			.app-grapc-content-caption {display: none}
+			.app-graphic-content-nav {
+				.app-var-ico (@app-ico-video);
+				&:after {
+					color: @app-cor-preto-0;
+					position: absolute;
+					top: 46%;
+					left: 47%;
+					font-size: 60px;
+    		 }
+			}
 		}
 		&.app-graphic-table {
+
 			.app-graphic-content-nav {
+
+				.app-graphic-item { height: auto; display: table-footer-group; }
+
 				overflow: auto;
 				background-color: inherit;
 				margin-right: -17px;
+				display: table;
 			}
 		}
 	}
@@ -272,6 +305,8 @@
 	.app-variant-capitulo(-16%, 121%, 0%, 0%, 0%, 14%);
 	.app-variant-box(18px, 100%, 0%, 100%, 100%);
 	.app-variant-graphic-content(100%, 180px, 0%, 30px);
+	.app-graphic-table .app-graphic-content-nav { margin-right: 0px;}
+	.app-cap-content .section-page-item { margin-bottom: 15%; margin-top: 18%;}
 }
 
 // Min Min grid (SS) // 480 to 768
@@ -280,6 +315,8 @@
 	.app-variant-capitulo(-16%, 128%, 3%, 0%, 0%, 10%);
 	.app-variant-box(16px, 100%, 0%, 90%, 100%);
 	.app-variant-graphic-content(100%, 290px, 0%, 30px);
+	.app-graphic-table .app-graphic-content-nav { margin-right: 0px;}
+	.app-cap-content .section-page-item { margin-bottom: 15%; margin-top: 18%;}
 }
 
 // Min grid (SM)// 768 to 992

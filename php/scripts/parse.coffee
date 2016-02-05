@@ -498,7 +498,7 @@ trata_html_basico = (seletor) ->
 				when 3
 					temp.graphic.classe = 'app-graphic-video'
 
-					temp.graphic.content = "<iframe width=\"100%\" height=\"100%\" src=\"https://drive.google.com/file/d/#{$($(graphic[i]).find('[data-book-graphic-item]')).text()}/preview\"></iframe>"
+					temp.graphic.content = "<iframe width=\"100%\" height=\"100%\" data-video-src=\"https://drive.google.com/file/d/#{$($(graphic[i]).find('[data-book-graphic-item]')).text()}/preview\"></iframe>"
 
 					temp.graphic.legenda = ''
 
@@ -675,17 +675,20 @@ compia_html_basico = (seletor) ->
 		# console.log htmlConstruct {'start':'json', 'dom':$(unidade[i]).find('[data-book-unidade-content]')}
 
 		temp.unidade.content = (htmlConstruct {'start':'json', 'dom':$.parseHTML $(unidade[i]).find('[data-book-unidade-content]').html()})['_done']
-		temp.unidade.id = md5 microtime() + $(unidade[i]).find('[data-book-unidade-content]').html()
+		temp.unidade.id = md5 "#{$(seletor).find('[data-book-livro]').text()} - Unidade #{temp.unidade.numero[($(unidade[i]).data('book-unidade') - 1)]}"
 
+		# console.log md5 "#{$(seletor).find('[data-book-livro]').text()} - Unidade #{temp.unidade.numero[($(unidade[i]).data('book-unidade') - 1)]}"
 		render.unidade.push "
 		<div id=\"#{temp.unidade.id}\" class=\"app-cap-section section-page\">
-			<div style=\"background-image: url(library/#{(md5 $($('#parse').find('[data-book-livro]')).text())}/#{$(unidade[i]).find('[data-book-unidade-capa]').attr('src')})\" class=\"app-cap-abertura clearfix app-cor-white app-font-app\">
-				<span class=\"app-cap-abertura-topo text-bold text-uppercase padding-none-width font-lg-6 font-md-5 font-sm-5 font-ss-4 font-xs-4 col-lg-12 col-md-12 col-sm-12 col-ss-12 col-xs-12\"><span class=\"col-lg-2 col-md-2 col-sm-2 col-ss-2 col-xs-1\"></span>Unidade #{temp.unidade.numero[i]}</span>
-				<span class=\"app-cap-abertura-titulo text-bold font-lg-12 font-md-10 font-sm-8 font-ss-7 font-xs-6 col-lg-9 col-md-8 col-sm-10 col-ss-10 col-xs-11 col-lg-offset-3 col-md-offset-3 col-sm-offset-3 col-ss-offset-2 col-xs-offset-1\">#{$(unidade[i]).find('[data-book-unidade-titulo]').html()}</span>
-				#{temp.unidade.autor}
+			<div data-app-ctrl='{\"navigation\":{\"section\":\"Unidade #{temp.unidade.numero[($(unidade[i]).data('book-unidade') - 1)]}\",\"page\":\"Introdução\"}}' class=\"app-cap-abertura section-page-item clearfix app-cor-white app-font-app\">
+				<div class=\"app-cap-capa\" style=\"background-image: url(library/#{(md5 $($('#parse').find('[data-book-livro]')).text())}/#{$(unidade[i]).find('[data-book-unidade-capa]').attr('src')})\">
+					<span class=\"app-cap-abertura-topo text-bold text-uppercase padding-none-width font-lg-6 font-md-5 font-sm-5 font-ss-4 font-xs-4 col-lg-12 col-md-12 col-sm-12 col-ss-12 col-xs-12\"><span class=\"col-lg-2 col-md-2 col-sm-2 col-ss-2 col-xs-1\"></span>Unidade #{temp.unidade.numero[($(unidade[i]).data('book-unidade') - 1)]}</span>
+					<span class=\"app-cap-abertura-titulo text-bold font-lg-12 font-md-10 font-sm-8 font-ss-7 font-xs-6 col-lg-9 col-md-8 col-sm-10 col-ss-10 col-xs-11 col-lg-offset-3 col-md-offset-3 col-sm-offset-3 col-ss-offset-2 col-xs-offset-1\">#{$(unidade[i]).find('[data-book-unidade-titulo]').html()}</span>
+					#{temp.unidade.autor}
+				</div>
+				<div id=\"#{md5 microtime() + $(unidade[i]).find('[data-book-unidade-introducao]').html()}\" class=\"app-cap-introducao col-lg-9 col-md-8 col-sm-9 col-ss-10 col-xs-11 col-lg-offset-3 col-md-offset-3 col-sm-offset-3 col-ss-offset-2 col-xs-offset-1\">#{$(unidade[i]).find('[data-book-unidade-introducao]').html()}</div>
 			</div>
 			<div class=\"app-cap-content\">
-				<div id=\"#{md5 microtime() + $(unidade[i]).find('[data-book-unidade-introducao]').html()}\" class=\"section-page-item app-cap-introducao\">#{$(unidade[i]).find('[data-book-unidade-introducao]').html()}</div>
 				#{(htmlConstruct {'start':'html', 'json':temp.unidade.content})['_done']}
 			</div>
 		</div>
@@ -698,7 +701,7 @@ compia_html_basico = (seletor) ->
 		temp.sumario.content += "
 			<div class=\"app-sum-section\">
 				<div class=\"app-sum-section-item app-sum-section-header app-font-app padding-none-right col-md-12 col-sm-12 col-ss-12 col-xs-12 font-lg-2 font-md-small-2 font-sm-small-2 font-ss-small-2 font-xs-small-2\">
-					<span data-app-ctrl='{\"togo\":{\"to\":\"#{temp.unidade.id}\"}}' class=\"app-sum-section-secao app-cor-black-80 text-uppercase text-bold padding-none-width col-md-12 col-sm-12 col-ss-12 col-xs-12 font-lg-small-4 font-md-small-3 font-sm-2 font-ss-small-4 font-xs-small-3\">Unidade #{temp.unidade.numero[i]}</span>
+					<span data-app-ctrl='{\"togo\":{\"to\":\"#{temp.unidade.id}\"}}' class=\"app-sum-section-secao app-cor-black-80 text-uppercase text-bold padding-none-width col-md-12 col-sm-12 col-ss-12 col-xs-12 font-lg-small-4 font-md-small-3 font-sm-2 font-ss-small-4 font-xs-small-3\">Unidade #{temp.unidade.numero[($(unidade[i]).data('book-unidade') - 1)]}</span>
 					<span data-app-ctrl='{\"togo\":{\"to\":\"#{temp.unidade.id}\"}}' class=\"app-sum-section-titulo app-cor-black-60 padding-none-width col-md-12 col-sm-12 col-ss-12 col-xs-12 font-lg-4 font-md-3 font-sm-3 font-ss-4 font-xs-3\">#{$(unidade[i]).find('[data-book-unidade-titulo]').html()}</span>
 				</div>
 		"
@@ -804,12 +807,12 @@ compia_html_basico = (seletor) ->
 		u = undefined
 
 		temp.autores.content += "
-		<div id=\"#{md5 $(($(seletor).find('[data-book-autor]'))[i]).find('[data-book-autor-nome]').text()}\" class=\"app-apr-item section-page-item app-apr-display-texto\">
+		<div id=\"#{md5 $(($(seletor).find('[data-book-autor]'))[i]).find('[data-book-autor-nome]').text()}\" data-app-ctrl='{\"navigation\":{\"section\":\"Autores\",\"page\":\"#{$(($(seletor).find('[data-book-autor]'))[i]).find('[data-book-autor-nome]').text()}\"}}' class=\"app-apr-item section-page-item app-apr-display-texto\">
 			<h1 class=\"app-apr-item-titulo\">#{$(($(seletor).find('[data-book-autor]'))[i]).find('[data-book-autor-nome]').text()}</h1>
 			#{temp.autores.titulacao}
 			<div class=\"app-apr-item-content\">
 				<div class=\"app-apr-item-texto\">
-					<img src=\"#{$(($(seletor).find('[data-book-autor]'))[i]).find('[data-book-autor-img]').attr('src')}\" class=\"app-apr-item-avatar\">
+					<img src=\"library/#{(md5 $($('#parse').find('[data-book-livro]')).text())}/#{$(($(seletor).find('[data-book-autor]'))[i]).find('[data-book-autor-img]').attr('src')}\" class=\"app-apr-item-avatar\">
 					#{$($(($(seletor).find('[data-book-autor]'))[i]).find('[data-book-autor-info]')).html()}
 				</div>
 			</div>
@@ -839,7 +842,7 @@ compia_html_basico = (seletor) ->
 		#{temp.sum_header}
 
 		<div class=\"app-sum-section-item app-sum-section-header app-font-app padding-none-right col-md-12 col-sm-12 col-ss-12 col-xs-12 font-lg-2 font-md-small-2 font-sm-small-2 font-ss-small-2 font-xs-small-2\">
-			<span  data-app-ctrl='{\"togo\":{\"to\":\"introducao\"}}' class=\"app-sum-section-secao app-cor-black-80 text-uppercase text-bold padding-none-width col-md-12 col-sm-12 col-ss-12 col-xs-12 font-lg-small-4 font-md-small-3 font-sm-2 font-ss-small-4 font-xs-small-3\">Introducao</span>
+			<span  data-app-ctrl='{\"togo\":{\"to\":\"introducao\"}}' class=\"app-sum-section-secao app-cor-black-80 text-uppercase text-bold padding-none-width col-md-12 col-sm-12 col-ss-12 col-xs-12 font-lg-small-4 font-md-small-3 font-sm-2 font-ss-small-4 font-xs-small-3\">Introdução</span>
 		</div>
 
 		<div class=\"app-sum-section-item app-sum-section-header app-font-app padding-none-right col-md-12 col-sm-12 col-ss-12 col-xs-12 font-lg-2 font-md-small-2 font-sm-small-2 font-ss-small-2 font-xs-small-2\">
@@ -860,7 +863,7 @@ compia_html_basico = (seletor) ->
 	render.referencias = "
 	<div id=\"referencias\" class=\"section-page app-ref\">
 		<h1 class=\"app-ref-head\">Referências</h1>
-		<div id=\"referencias_item\" class=\"app-ref-content section-page-item\">
+		<div id=\"referencias_item\" data-app-ctrl='{\"navigation\":{\"section\":\"Referências\",\"page\":false}}' class=\"app-ref-content section-page-item\">
 			#{$($(seletor).find '[data-book-referencias]').html()}
 		</div>
 	</div>
@@ -870,19 +873,19 @@ compia_html_basico = (seletor) ->
 	render.introducao = "
 	<div id=\"introducao\" class=\"app-apr-contents section-page\">
 
-		<div id=\"#{md5 $($(seletor).find('[data-book-introducao-text]')).html()}\" class=\"app-apr-item section-page-item app-apr-display-texto\">
+		<div id=\"#{md5 $($(seletor).find('[data-book-introducao-text]')).html()}\" data-app-ctrl='{\"navigation\":{\"section\":\"Introdução\",\"page\":false}}' class=\"app-apr-item section-page-item app-apr-display-texto\">
 			<div data-app-ctrl='{\"apr\":true}' class=\"app-apr-item-ctrl app-cor-pattern font-lg-6 font-md-6 font-sm-5 font-ss-4 font-xs-3\">
 				<span class=\"app-ico-video\"></span>
 				<span class=\"app-ico-texto\"></span>
 			</div>
-			<h1 class=\"app-apr-item-titulo\">introdução</h1>
+			<h1 class=\"app-apr-item-titulo\">Introdução</h1>
 			<div class=\"app-apr-item-content\">
 				<div class=\"app-apr-item-texto\">
 					#{$($(seletor).find('[data-book-introducao-text]')).html()}
 				</div>
 				<div class=\"app-apr-item-video\">
 					<span class=\"app-bg-pattern\">
-						<iframe width=\"100%\" height=\"100%\" src=\"https://drive.google.com/file/d/#{$(seletor).find('[data-book-introducao-video]').data().bookIntroducaoVideo}/preview\"></iframe>
+						<iframe width=\"100%\" height=\"100%\" data-video-src=\"https://drive.google.com/file/d/#{$(seletor).find('[data-book-introducao-video]').data().bookIntroducaoVideo}/preview\"></iframe>
 					</span>
 				</div>
 			</div>
@@ -893,19 +896,19 @@ compia_html_basico = (seletor) ->
 	# console.log $(render.introducao)[0]
 	render.conclusao = "
 	<div id=\"conclusao\" class=\"app-apr-contents section-page\">
-		<div id=\"#{md5 $($(seletor).find('[data-book-conclusao-text]')).html()}\" class=\"app-apr-item section-page-item app-apr-display-texto\">
+		<div id=\"#{md5 $($(seletor).find('[data-book-conclusao-text]')).html()}\" data-app-ctrl='{\"navigation\":{\"section\":\"Conclusão\",\"page\":false}}' class=\"app-apr-item section-page-item app-apr-display-texto\">
 			<div data-app-ctrl='{\"apr\":true}' class=\"app-apr-item-ctrl app-cor-pattern font-lg-6 font-md-6 font-sm-5 font-ss-4 font-xs-3\">
 				<span class=\"app-ico-video\"></span>
 				<span class=\"app-ico-texto\"></span>
 			</div>
-			<h1 class=\"app-apr-item-titulo\">introdução</h1>
+			<h1 class=\"app-apr-item-titulo\">Conclusão</h1>
 			<div class=\"app-apr-item-content\">
 				<div class=\"app-apr-item-texto\">
 					#{$($(seletor).find('[data-book-conclusao-text]')).html()}
 				</div>
 				<div class=\"app-apr-item-video\">
 					<span class=\"app-bg-pattern\">
-						<iframe width=\"100%\" height=\"100%\" src=\"https://drive.google.com/file/d/#{$(seletor).find('[data-book-conclusao-video]').data().bookconclusaoVideo}/preview\"></iframe>
+						<iframe width=\"100%\" height=\"100%\" data-video-src=\"https://drive.google.com/file/d/#{$(seletor).find('[data-book-conclusao-video]').data().bookconclusaoVideo}/preview\"></iframe>
 					</span>
 				</div>
 			</div>
@@ -919,13 +922,13 @@ compia_html_basico = (seletor) ->
 	render.atividades = "
 	<div id=\"atividades\" class=\"section-page app-ati\">
 		<h1 class=\"app-ati-head\">Atividades</h1>
-		<div id=\"atividades_item\" class=\"app-ref-content section-page-item\">
+		<div id=\"atividades_item\" data-app-ctrl='{\"navigation\":{\"section\":\"Atividades\",\"page\":false}}' class=\"app-ref-content section-page-item\">
 	"
 	i = 0
 	while i < $(seletor).find('[data-book-unidade]').length
 		render.atividades += "
 		<div class=\"app-box app-box-atividade\">
-			<div class=\"app-box-head\">Atividades - Unidade #{temp.unidade.numero[i]}</div>
+			<div class=\"app-box-head\">Atividades - Unidade #{temp.unidade.numero[($(unidade[i]).data('book-unidade') - 1)]}</div>
 		"
 		u = 0
 		while u < $($(seletor).find('[data-book-unidade]')[i]).find('.app-box.app-box-atividade').length
@@ -957,24 +960,29 @@ monta = compia_html_basico $('#parse')
 construct_book = (monta) ->
 
 	livro = "
-	<!DOCTYPE html>
-	<html>
-		<head>
-			<meta charset=\"utf-8\">
-			<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
-			<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
-			<title>#{$('#parse').find('[data-book-livro]').text()}</title>
-			<link href=\"http://192.168.100.3/vg/livroDigital/style/app.css\" rel=\"stylesheet\">
-			<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-			<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-			<!--[if lt IE 9]>
-				<script src=\"https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js\"></script>
-				<script src=\"https://oss.maxcdn.com/respond/1.4.2/respond.min.js\"></script>
-			<![endif]-->
-		</head>
+<!-- 
+-- * Estrutura do LivroDigital
+-- * FTE Developer - VG Consultoria
+-- * LivroDigital Beta V.0.1.1
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset=\"utf-8\">
+		<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
+		<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
+		<title>Planejamento Estratégico de Negócios</title>
+		<link href=\"css/app.css\" rel=\"stylesheet\">
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src=\"https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js\"></script>
+			<script src=\"https://oss.maxcdn.com/respond/1.4.2/respond.min.js\"></script>
+		<![endif]-->
+	</head>
+	<body cz-shortcut-listen=\"true\">
 
-		<body cz-shortcut-listen=\"true\">
-			<div id=\"livroDigital\" class=\"app-volume\">
+			<div id=\"#{md5 $('#parse').find('[data-book-livro]').text()}\" class=\"app-volume\">
 				#{monta.capa}
 				<div style=\"background-color: rgba(251, 250, 186, 0.18);\" class=\"app-contents add-scroll\">
 
@@ -985,14 +993,14 @@ construct_book = (monta) ->
 						<div data-app-ctrl='{\"togo\":{\"to\":\"sumario\"}}' class=\"app-nav-section col-md-6 col-sm-5 col-ss-6 col-xs-4\">
 							<div class=\"app-nav-section-info app-font-app\">
 								<div class=\"app-nav-section-livro app-cor-black-80 font-md-small-2 font-sm-small-2 font-ss-1 hidden-xs\">
-									<span class=\"app-nav-section-item app-livro text-uppercase text-bold\">Finanças Empresariais</span>
+									<span class=\"app-nav-section-item app-livro text-uppercase text-bold\">#{$($('#parse').find('[data-book-livro]')).text()}</span>
 									<span class=\"app-nav-section-item hidden-ss hidden-xs\">•</span>
-									<span class=\"app-nav-section-item app-autor text-italic hidden-ss hidden-xs\">Albuquerque M. R</span>
+									<span class=\"app-nav-section-item app-autor text-italic hidden-ss hidden-xs\">#{$($('#parse').find('[data-book-autor-nome]')).text()}</span>
 								</div>
 								<div class=\"app-nav-section-secao app-cor-pattern-80 font-md-small-5 font-sm-small-4 font-ss-4 font-xs-3\">
-									<span class=\"app-nav-section-item app-secao text-uppercase text-bold\">Abertura</span>
-									<span class=\"app-nav-section-item hidden-ss hidden-xs\">•</span>
-									<span class=\"app-nav-section-item app-titulo hidden-ss hidden-xs\">Reitoria</span>
+									<span class=\"app-nav-section-item app-secao text-uppercase text-bold\">Bem Vindo</span>
+									<span class=\"app-nav-section-item app-marker hidden-ss hidden-xs\"></span>
+									<span class=\"app-nav-section-item app-titulo hidden-ss hidden-xs\"></span>
 								</div>
 							</div>
 						</div>
@@ -1001,11 +1009,15 @@ construct_book = (monta) ->
 							<div data-app-ctrl='{\"togo\":{\"to\":\"sumario\"}}' class=\"app-nav-btn-item nav-btn-sumario col-md-2 col-sm-2 col-ss-2 col-xs-2\">
 								<span class=\"app-ico-sumario font-md-6 font-sm-5 font-ss-5 font-xs-small-4\"></span>
 							</div>
-							<span class=\"col-md-8 col-sm-8 col-ss-8 col-xs-8\"></span>
+							<span class=\"col-md-6 col-sm-6 col-ss-6 col-xs-6\"></span>
 
 							<div class=\"app-nav-btn-item nav-btn-menu col-md-2 col-sm-2 col-ss-2 col-xs-2\">
 								<span class=\"app-ico-download hidden-ss hidden-xs font-sm-7 font-sm-6\"></span>
 								<span class=\"app-ico-download-short hidden-sm hidden-md hidden-lg font-ss-5\"></span>
+							</div>
+
+							<div data-app-ctrl='{\"togo\":{\"cover\":true}}' class=\"app-nav-btn-item nav-btn-menu col-md-2 col-sm-2 col-ss-2 col-xs-2\">
+								<span class=\"app-ico-capa font-md-6 font-sm-5 font-ss-5 font-xs-small-4\"></span>
 							</div>
 						</div>
 					</div>
@@ -1037,18 +1049,21 @@ construct_book = (monta) ->
 					#{monta.atividades}
 				</div>
 			</div>
-			<script src=\"js/jquery.min.js\" type=\"text/javascript\"></script>
-			<script src=\"js/bootstrap.min.js\" type=\"text/javascript\"></script>
-			<script src=\"js/bootstrap.slider.min.js\" type=\"text/javascript\"></script>
-			<script src=\"http://192.168.100.3/vg/livroDigital/scripts/app.js\" type=\"text/javascript\"></script>
-			<script src=\"js/vendors.js\" type=\"text/javascript\"></script>
-		</body>
-	</html>
+
+		<script src=\"js/jquery.min.js\" type=\"text/javascript\"></script>
+		<script src=\"js/bootstrap.min.js\" type=\"text/javascript\"></script>
+		<script src=\"js/bootstrap.slider.min.js\" type=\"text/javascript\"></script>
+		<script src=\"http://192.168.100.3/vg/livroDigital/scripts/app.js\" type=\"text/javascript\"></script>
+		<script src=\"js/vendors.js\" type=\"text/javascript\"></script>
+	</body>
+</html>
+
 	"
 	return livro
 
 links = construct_book compia_html_basico $('#parse')
-console.log links
+$('#parse').addClass('hidden')
+$('#done').text(links)
 
 # $(links).find('img').length
 # console.log livro

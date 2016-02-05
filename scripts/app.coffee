@@ -130,7 +130,7 @@ $.appCtrl = (post) ->
 			#// adiciona contador no loop
 			i++
 
-	console.log temp
+	# console.log temp
 
 $.appCtrl.togo = (post) ->
 	#// Requer um parametro array
@@ -141,6 +141,7 @@ $.appCtrl.togo = (post) ->
 
 	# ativa como botão de disparo
 	$(post.this).click ->
+
 
 		# Valida se a ação é para a capa
 		if !post.app.togo.cover != undefined
@@ -199,6 +200,10 @@ $.appCtrl.togo = (post) ->
 						# adiciona display
 						$(this).addClass('app-display')
 
+						$('.app-nav-section-item.app-secao').text('Sumário')
+						$('.app-nav-section-item.app-marker').text('')
+						$('.app-nav-section-item.app-titulo').text('')
+
 						next() #// Fim da espera
 
 					next() #// Fim da espera
@@ -232,14 +237,36 @@ $.appCtrl.togo = (post) ->
 				temp.eq = 0
 				temp.eq = temp._proccess.display.item.eq if !temp._proccess.display.item.this is false
 
+				if temp.eq > 0
+					$('.app-cap-section').removeClass('app-display')
+
+				if $(temp._proccess.display.page.this).find(".section-page-item:eq(#{temp.eq})").data() != undefined
+					temp.a = $(temp._proccess.display.page.this).find(".section-page-item:eq(#{temp.eq})").data().appCtrl.navigation.section
+					temp.b = $(temp._proccess.display.page.this).find(".section-page-item:eq(#{temp.eq})").data().appCtrl.navigation.page
+					temp.c = '•'
+					if $(temp._proccess.display.page.this).find(".section-page-item:eq(#{temp.eq})").data().appCtrl.navigation.page is false
+						temp.b = ''
+						temp.c = ''
+
+				else
+					temp.a = 'Sumário'
+					temp.b = ''
+					temp.c = ''
+
+				$('.app-nav-section-item.app-secao').text(temp.a)
+				$('.app-nav-section-item.app-marker').text(temp.c)
+				$('.app-nav-section-item.app-titulo').text(temp.b)
+
+				delete(temp.a)
+				delete(temp.b)
+				delete(temp.c)
+
 				$.appCtrl.sectionDisplay([
 					[temp._proccess.display.it.page.this, 'out', temp._proccess.display.position.page],
 					[temp._proccess.display.it.item.this, 'out', temp._proccess.display.position.page],
 					[temp._proccess.display.page.this, 'in', temp._proccess.display.position.page],
 					[$(temp._proccess.display.page.this).find(".section-page-item:eq(#{temp.eq})"), 'in', 'on']
 				])
-
-
 			#== Trata quando a pagina estiver posucionada
 			if temp._proccess.display.position.page is 'this'
 
@@ -278,6 +305,8 @@ $.appCtrl.sectionDisplay = (post) ->
 		#== caso seja para o processo de saida do elemento
 		if display is 'out'
 
+			$(post[i][3]['this']).scrollTop(post[i][3]['position']) if post[i][3] != undefined
+
 			#** remove os displays de outras paginas
 			$(seletor).removeClass('app-display').addClass(position).queue (next) ->
 					
@@ -286,6 +315,8 @@ $.appCtrl.sectionDisplay = (post) ->
 					$(this).removeClass("app-no-display").delay(1000).queue (next) ->
 
 						$(this).removeClass("on after before").queue (next) ->
+
+							# $(this).scrollTop(0)
 
 							next() #// Fim da espera
 
@@ -298,12 +329,16 @@ $.appCtrl.sectionDisplay = (post) ->
 		#== caso seja para o processo de entrada do elemento
 		if display is 'in'
 
+			$(post[i][3]['this']).scrollTop(post[i][3]['position']) if post[i][3] != undefined
+
 			#** remove os displays de outras paginas
 			$(seletor).removeClass('app-no-display').addClass(position).delay(700).queue (next) ->
 
 				$(this).addClass('app-display').delay(1000).queue (next) ->
 
 					$(this).removeClass("on after before").queue (next) ->
+
+						# $(this).scrollTop(0)
 
 						next() #// Fim da espera
 
@@ -316,7 +351,6 @@ $.appCtrl.sectionDisplay = (post) ->
 
 	#// apaga contador
 	i = undefined
-
 
 $.appCtrl.section = (id, display) ->
 
@@ -533,6 +567,46 @@ $.appCtrl.atividade = (post) ->
 
 $.appCtrl $("[data-app-ctrl]")
 
+$.appScroll = false
+
+$('.app-cap-section').bind "scroll", ->
+	section =  $(this)
+
+	itens = section.find('.section-page-item')
+
+	if $.appScroll is false
+		i = 0
+		while i < itens.length
+
+			# console.log $(itens[i]).offset().top != 0 and (section.height() + ($(itens[i]).offset().top * -1)) if $(itens[i]).offset().top != 0
+			# console.log $(itens[i]).height() if $(itens[i]).offset().top != 0
+			if $(itens[i]).offset().top != 0 and (section.height() + ($(itens[i]).offset().top * -1)) > $(itens[i]).height()
+
+				proximo = $($(itens[i]).next())
+				proximo.addClass('app-no-display')
+
+				if (section.height() + ($(itens[i]).offset().top * -1)) > ($(itens[i]).height() + (section.height() - (section.height() / 2)))
+
+					$.appScroll = true
+					$(itens[i]).removeClass('app-display').queue (next) ->
+						$.appScroll = false
+	
+						$('.app-nav-section-item.app-secao').text($(proximo).data().appCtrl.navigation.section)
+						$('.app-nav-section-item.app-marker').text('•')
+						$('.app-nav-section-item.app-titulo').text($(proximo).data().appCtrl.navigation.page)
+
+						$.appCtrl.sectionDisplay([
+							[$(proximo), 'in', 'before', {'this':section, 'position':10}]
+						])
+
+						next()
+			i++
+	i = undefined
 
 # # Inicia tratamentos dos controles  # #
 # # # # # # # # # # # # # # # # # # # # #
+console.log "
+ * LivroDigital\n
+* FTE Developer - VG Consultoria\n
+* LivroDigital Beta V.0.1.1\n
+"

@@ -11,7 +11,7 @@ html, body, .app-page { height: 100%; overflow: hidden;}
 
 .app-cover { background-size: cover; background-repeat: no-repeat; background-position: center; z-index: @app-zindex-cover}
 
-.app-contents { height: 100%; position: fixed; bottom: 0px; padding-top: 57px; width: 100%; z-index: @app-zindex-contents;}
+.app-contents { height: 100%; position: fixed; bottom: 0px; padding-top: 57px; width: 100%; z-index: @app-zindex-contents; overflow: hidden;}
 
 .page-out { .app-play-zoomOutLeft (); }
 
@@ -24,6 +24,9 @@ html, body, .app-page { height: 100%; overflow: hidden;}
 //# Declara estrutura basica das seções / abertura, sumario, unidade ...
 .app-variant-section-page (@padding-width) {
 	padding: 0 @padding-width;
+	height: 100%;
+	overflow: hidden;
+	overflow-y: auto;
 }
 
 //# declara estrutura basica dos itens / apresentacao do professor, unidade 1 -> h1

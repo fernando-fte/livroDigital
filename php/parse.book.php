@@ -8,8 +8,11 @@
 
 	<body>
 
-	<!-- Adiciona book.html -->
-	<?php include 'temp/book.html'; ?>
+	<div id="parse">
+		<!-- Adiciona book.html -->
+		<?php include 'temp/book.html'; ?>
+	</div>
+	<textarea style="margin-top:10%; height: 500px" id="done" class="form-control"></textarea>
 
 	<!-- Import Scripts -->
 	<script src="<?php echo $GLOBALS['settings']['wwwroot'];?>vendor/js/jquery.min.js" type="text/javascript"></script>

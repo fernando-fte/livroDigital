@@ -5,6 +5,8 @@
 		padding-left: 5px;
 		padding-right: 5px;
 		min-height: 100%;
+		overflow: hidden;
+		overflow-x: auto;
 	}
 
 	//== COnfigura tramanho do scroll do sumario
@@ -173,7 +175,7 @@
 	@width-contents: 100%;
 	.app-variant-sum-responsive (@width-contents, @width-itens);
 
-	.app-sum-scroll { padding-left: 5%; padding-right: 5%; }
+	.app-sum-scroll { padding-left: 5%; padding-right: 5%; overflow-y: scroll; overflow-x: hidden; }
 	.app-sum-section { margin-bottom: 10%; }
 	.app-sum-section-sections { border-radius: 10px; }
 }
@@ -184,7 +186,7 @@
 	@width-contents: 100%;
 	.app-variant-sum-responsive (@width-contents, @width-itens);
 
-	.app-sum-scroll { padding-left: 10%; padding-right: 10%; }
+	.app-sum-scroll { padding-left: 10%; padding-right: 10%; overflow-y: scroll; overflow-x: hidden; }
 	.app-sum-section { margin-bottom: 10%; }
 	.app-sum-section-sections { border-radius: 10px; }
 }

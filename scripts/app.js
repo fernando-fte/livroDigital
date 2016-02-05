@@ -29,7 +29,7 @@
   }
 
   $.appCtrl = function(post) {
-    var i, temp;
+    var i, results, temp;
     temp = {
       '_proccess': {
         '_true': false,
@@ -55,6 +55,7 @@
     }
     if (temp._proccess.post === true) {
       i = 0;
+      results = [];
       while (i < post.length) {
         temp.appCtrl[i] = {};
         temp.appCtrl[i]["this"] = $(post)[i];
@@ -74,10 +75,10 @@
           temp._proccess.atividade[i] = {};
           temp._proccess.atividade[i] = $.appCtrl.atividade(temp.appCtrl[i]);
         }
-        i++;
+        results.push(i++);
       }
+      return results;
     }
-    return console.log(temp);
   };
 
   $.appCtrl.togo = function(post) {
@@ -127,6 +128,9 @@
             });
             temp._proccess.content.removeClass('app-no-display').queue(function(next) {
               $(this).addClass('app-display');
+              $('.app-nav-section-item.app-secao').text('Sumário');
+              $('.app-nav-section-item.app-marker').text('');
+              $('.app-nav-section-item.app-titulo').text('');
               return next();
             });
             return next();
@@ -148,6 +152,28 @@
           if (!temp._proccess.display.item["this"] === false) {
             temp.eq = temp._proccess.display.item.eq;
           }
+          if (temp.eq > 0) {
+            $('.app-cap-section').removeClass('app-display');
+          }
+          if ($(temp._proccess.display.page["this"]).find(".section-page-item:eq(" + temp.eq + ")").data() !== void 0) {
+            temp.a = $(temp._proccess.display.page["this"]).find(".section-page-item:eq(" + temp.eq + ")").data().appCtrl.navigation.section;
+            temp.b = $(temp._proccess.display.page["this"]).find(".section-page-item:eq(" + temp.eq + ")").data().appCtrl.navigation.page;
+            temp.c = '•';
+            if ($(temp._proccess.display.page["this"]).find(".section-page-item:eq(" + temp.eq + ")").data().appCtrl.navigation.page === false) {
+              temp.b = '';
+              temp.c = '';
+            }
+          } else {
+            temp.a = 'Sumário';
+            temp.b = '';
+            temp.c = '';
+          }
+          $('.app-nav-section-item.app-secao').text(temp.a);
+          $('.app-nav-section-item.app-marker').text(temp.c);
+          $('.app-nav-section-item.app-titulo').text(temp.b);
+          delete temp.a;
+          delete temp.b;
+          delete temp.c;
           $.appCtrl.sectionDisplay([[temp._proccess.display.it.page["this"], 'out', temp._proccess.display.position.page], [temp._proccess.display.it.item["this"], 'out', temp._proccess.display.position.page], [temp._proccess.display.page["this"], 'in', temp._proccess.display.position.page], [$(temp._proccess.display.page["this"]).find(".section-page-item:eq(" + temp.eq + ")"), 'in', 'on']]);
         }
         if (temp._proccess.display.position.page === 'this') {
@@ -174,6 +200,9 @@
       display = post[i][1];
       position = post[i][2];
       if (display === 'out') {
+        if (post[i][3] !== void 0) {
+          $(post[i][3]['this']).scrollTop(post[i][3]['position']);
+        }
         $(seletor).removeClass('app-display').addClass(position).queue(function(next) {
           $(this).addClass('app-no-display').delay(700).queue(function(next) {
             $(this).removeClass("app-no-display").delay(1000).queue(function(next) {
@@ -188,6 +217,9 @@
         });
       }
       if (display === 'in') {
+        if (post[i][3] !== void 0) {
+          $(post[i][3]['this']).scrollTop(post[i][3]['position']);
+        }
         $(seletor).removeClass('app-no-display').addClass(position).delay(700).queue(function(next) {
           $(this).addClass('app-display').delay(1000).queue(function(next) {
             $(this).removeClass("on after before").queue(function(next) {
@@ -454,5 +486,44 @@
   };
 
   $.appCtrl($("[data-app-ctrl]"));
+
+  $.appScroll = false;
+
+  $('.app-cap-section').bind("scroll", function() {
+    var i, itens, proximo, section;
+    section = $(this);
+    itens = section.find('.section-page-item');
+    if ($.appScroll === false) {
+      i = 0;
+      while (i < itens.length) {
+        if ($(itens[i]).offset().top !== 0 && (section.height() + ($(itens[i]).offset().top * -1)) > $(itens[i]).height()) {
+          proximo = $($(itens[i]).next());
+          proximo.addClass('app-no-display');
+          if ((section.height() + ($(itens[i]).offset().top * -1)) > ($(itens[i]).height() + (section.height() - (section.height() / 2)))) {
+            $.appScroll = true;
+            $(itens[i]).removeClass('app-display').queue(function(next) {
+              $.appScroll = false;
+              $('.app-nav-section-item.app-secao').text($(proximo).data().appCtrl.navigation.section);
+              $('.app-nav-section-item.app-marker').text('•');
+              $('.app-nav-section-item.app-titulo').text($(proximo).data().appCtrl.navigation.page);
+              $.appCtrl.sectionDisplay([
+                [
+                  $(proximo), 'in', 'before', {
+                    'this': section,
+                    'position': 10
+                  }
+                ]
+              ]);
+              return next();
+            });
+          }
+        }
+        i++;
+      }
+    }
+    return i = void 0;
+  });
+
+  console.log("* LivroDigital\n * FTE Developer - VG Consultoria\n * LivroDigital Beta V.0.1.1\n");
 
 }).call(this);
