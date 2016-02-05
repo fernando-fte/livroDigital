@@ -652,7 +652,7 @@ trata_html_basico = (seletor) ->
 trata_html_basico $('#parse')
 
 
-compia_html_basico = (seletor) ->
+compila_html_basico = (seletor) ->
 	unidade = $(seletor).find('[data-book-unidade]')
 	render = {}
 	render.unidade = []
@@ -661,7 +661,6 @@ compia_html_basico = (seletor) ->
 	temp.unidade = {}
 	temp.unidade.numero = ['I', 'II', 'III', 'IV']
 	temp.sumario = {}
-
 	i= 0
 	while i < unidade.length
 
@@ -752,10 +751,14 @@ compia_html_basico = (seletor) ->
 		i++
 	i = undefined
 
+	temp.capa.unidade = ''
+	if $(seletor).find('[data-book-unidade]').length is 1
+		temp.capa.unidade = "<br><span class=\"small\">Unidade #{temp.unidade.numero[($(seletor).find('[data-book-unidade]').data('book-unidade') - 1)]}</span>"
+
 	render.capa = "
 	<div id=\"app-capa\" style=\"background-image: url(library/#{(md5 $($('#parse').find('[data-book-livro]')).text())}/#{$($(seletor).find '[data-book-capa]').attr('src')})\" class=\"app-page app-cover app-display\">
 		<div class=\"cover-contents col-md-11 col-notspace\">
-			<span class=\"cover-fachada app-text-livro\">#{$($(seletor).find '[data-book-livro]').text()}</span>
+			<span class=\"cover-fachada app-text-livro\">#{$($(seletor).find '[data-book-livro]').text()}#{temp.capa.unidade}</span>
 			#{temp.capa.autor}
 		</div>
 		<span data-app-ctrl='{\"togo\":{\"to\":\"sumario\",\"cover\":false}}' class=\"cover-btn-iniciar app-ico-iniciar col-lg-2 col-md-3 col-sm-4 col-ss-4 col-lg-offset-5 col-md-offset-4 col-sm-offset-3 col-ss-offset-3\">
@@ -892,7 +895,6 @@ compia_html_basico = (seletor) ->
 		</div>
 	</div>
 	"
-
 	# console.log $(render.introducao)[0]
 	render.conclusao = "
 	<div id=\"conclusao\" class=\"app-apr-contents section-page\">
@@ -908,7 +910,7 @@ compia_html_basico = (seletor) ->
 				</div>
 				<div class=\"app-apr-item-video\">
 					<span class=\"app-bg-pattern\">
-						<iframe width=\"100%\" height=\"100%\" data-video-src=\"https://drive.google.com/file/d/#{$(seletor).find('[data-book-conclusao-video]').data().bookconclusaoVideo}/preview\"></iframe>
+						<iframe width=\"100%\" height=\"100%\" data-video-src=\"https://drive.google.com/file/d/#{$(seletor).find('[data-book-conclusao-video]').data('book-conclusao-video')}/preview\"></iframe>
 					</span>
 				</div>
 			</div>
@@ -953,7 +955,7 @@ compia_html_basico = (seletor) ->
 	"
 	return render
 
-monta = compia_html_basico $('#parse')
+monta = compila_html_basico $('#parse')
 
 
 # console.log monta
@@ -972,7 +974,7 @@ construct_book = (monta) ->
 		<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
 		<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
 		<title>Planejamento Estratégico de Negócios</title>
-		<link href=\"css/app.css\" rel=\"stylesheet\">
+		<link href=\"http://192.168.100.13/vg/livroDigital/style/app.css\" rel=\"stylesheet\">
 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 		<!--[if lt IE 9]>
@@ -1053,7 +1055,7 @@ construct_book = (monta) ->
 		<script src=\"js/jquery.min.js\" type=\"text/javascript\"></script>
 		<script src=\"js/bootstrap.min.js\" type=\"text/javascript\"></script>
 		<script src=\"js/bootstrap.slider.min.js\" type=\"text/javascript\"></script>
-		<script src=\"http://192.168.100.3/vg/livroDigital/scripts/app.js\" type=\"text/javascript\"></script>
+		<script src=\"http://192.168.100.13/vg/livroDigital/scripts/app.js\" type=\"text/javascript\"></script>
 		<script src=\"js/vendors.js\" type=\"text/javascript\"></script>
 	</body>
 </html>
@@ -1061,7 +1063,7 @@ construct_book = (monta) ->
 	"
 	return livro
 
-links = construct_book compia_html_basico $('#parse')
+links = construct_book compila_html_basico $('#parse')
 $('#parse').addClass('hidden')
 $('#done').text(links)
 

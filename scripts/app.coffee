@@ -494,6 +494,11 @@ $.appCtrl.apr = (post) ->
 	# console.log post
 	$(post.this).click ->
 		$($(this).closest('.app-apr-item')).toggleClass('app-apr-display-video')
+
+		if $($(this).closest('.app-apr-item')).find('iframe').attr('data-video-src') != undefined
+			$($(this).closest('.app-apr-item')).find('iframe').attr('src', $($(this).closest('.app-apr-item')).find('iframe').data().videoSrc)
+			$($(this).closest('.app-apr-item')).find('iframe').removeAttr('data-video-src')
+
 		temp._done = true
 
 	return temp
@@ -578,6 +583,14 @@ $('.app-cap-section').bind "scroll", ->
 		i = 0
 		while i < itens.length
 
+			u = 0
+			while u < section.find('iframe').length
+				if $(section.find('iframe')[u]).offset().top < (section.height() + 10) and $(section.find('iframe')[u]).offset().top > 0
+					if $(section.find('iframe')[u]).attr('data-video-src') != undefined
+						$(section.find('iframe')[u]).attr('src', $(section.find('iframe')[u]).data().videoSrc)
+						$(section.find('iframe')[u]).removeAttr('data-video-src')
+				u++
+			u = undefined
 			# console.log $(itens[i]).offset().top != 0 and (section.height() + ($(itens[i]).offset().top * -1)) if $(itens[i]).offset().top != 0
 			# console.log $(itens[i]).height() if $(itens[i]).offset().top != 0
 			if $(itens[i]).offset().top != 0 and (section.height() + ($(itens[i]).offset().top * -1)) > $(itens[i]).height()
@@ -605,8 +618,11 @@ $('.app-cap-section').bind "scroll", ->
 
 # # Inicia tratamentos dos controles  # #
 # # # # # # # # # # # # # # # # # # # # #
+###
 console.log "
  * LivroDigital\n
 * FTE Developer - VG Consultoria\n
 * LivroDigital Beta V.0.1.1\n
 "
+###
+

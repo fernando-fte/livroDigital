@@ -413,6 +413,10 @@
     };
     $(post["this"]).click(function() {
       $($(this).closest('.app-apr-item')).toggleClass('app-apr-display-video');
+      if ($($(this).closest('.app-apr-item')).find('iframe').attr('data-video-src') !== void 0) {
+        $($(this).closest('.app-apr-item')).find('iframe').attr('src', $($(this).closest('.app-apr-item')).find('iframe').data().videoSrc);
+        $($(this).closest('.app-apr-item')).find('iframe').removeAttr('data-video-src');
+      }
       return temp._done = true;
     });
     return temp;
@@ -490,12 +494,23 @@
   $.appScroll = false;
 
   $('.app-cap-section').bind("scroll", function() {
-    var i, itens, proximo, section;
+    var i, itens, proximo, section, u;
     section = $(this);
     itens = section.find('.section-page-item');
     if ($.appScroll === false) {
       i = 0;
       while (i < itens.length) {
+        u = 0;
+        while (u < section.find('iframe').length) {
+          if ($(section.find('iframe')[u]).offset().top < (section.height() + 10) && $(section.find('iframe')[u]).offset().top > 0) {
+            if ($(section.find('iframe')[u]).attr('data-video-src') !== void 0) {
+              $(section.find('iframe')[u]).attr('src', $(section.find('iframe')[u]).data().videoSrc);
+              $(section.find('iframe')[u]).removeAttr('data-video-src');
+            }
+          }
+          u++;
+        }
+        u = void 0;
         if ($(itens[i]).offset().top !== 0 && (section.height() + ($(itens[i]).offset().top * -1)) > $(itens[i]).height()) {
           proximo = $($(itens[i]).next());
           proximo.addClass('app-no-display');
@@ -524,6 +539,13 @@
     return i = void 0;
   });
 
-  console.log("* LivroDigital\n * FTE Developer - VG Consultoria\n * LivroDigital Beta V.0.1.1\n");
+
+  /*
+  console.log "
+   * LivroDigital\n
+  * FTE Developer - VG Consultoria\n
+  * LivroDigital Beta V.0.1.1\n
+  "
+   */
 
 }).call(this);

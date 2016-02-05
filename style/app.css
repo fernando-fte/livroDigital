@@ -15,8 +15,8 @@
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css);
 @font-face {
   font-family: "PF BeauSans Pro";
-  src: url('http://192.168.100.3/vg/livroDigital/fonts/pf-beau-sans-pro.eot');
-  src: url('http://192.168.100.3/vg/livroDigital/fonts/pf-beau-sans-pro.eot?#iefix') format('embedded-opentype'), url('http://192.168.100.3/vg/livroDigital/fonts/pf-beau-sans-pro.woff2') format('woff2'), url('http://192.168.100.3/vg/livroDigital/fonts/pf-beau-sans-pro.woff') format('woff'), url('http://192.168.100.3/vg/livroDigital/fonts/pf-beau-sans-pro.ttf') format('truetype'), url('http://192.168.100.3/vg/livroDigital/fonts/pf-beau-sans-pro.svg') format('svg');
+  src: url('../fonts/pf-beau-sans-pro.eot');
+  src: url('../fonts/pf-beau-sans-pro.eot?#iefix') format('embedded-opentype'), url('../fonts/pf-beau-sans-pro.woff2') format('woff2'), url('../fonts/pf-beau-sans-pro.woff') format('woff'), url('../fonts/pf-beau-sans-pro.ttf') format('truetype'), url('../fonts/pf-beau-sans-pro.svg') format('svg');
 }
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 html {
@@ -22667,6 +22667,10 @@ body,
   .app-apr-item-content .app-apr-item-video {
     display: none;
     height: 250px;
+    background-color: #B44243;
+    background-image: url('../img/ico.video.svg');
+    background-repeat: no-repeat;
+    background-position: center;
   }
   .app-apr-item-avatar {
     text-align: center;
@@ -22715,6 +22719,10 @@ body,
   .app-apr-item-content .app-apr-item-video {
     display: none;
     height: 300px;
+    background-color: #B44243;
+    background-image: url('../img/ico.video.svg');
+    background-repeat: no-repeat;
+    background-position: center;
   }
   .app-apr-item-avatar {
     text-align: center;
@@ -22763,6 +22771,10 @@ body,
   .app-apr-item-content .app-apr-item-video {
     display: none;
     height: 500px;
+    background-color: #B44243;
+    background-image: url('../img/ico.video.svg');
+    background-repeat: no-repeat;
+    background-position: center;
   }
 }
 @media (min-width: 992px) {
@@ -22805,6 +22817,10 @@ body,
   .app-apr-item-content .app-apr-item-video {
     display: none;
     height: 600px;
+    background-color: #B44243;
+    background-image: url('../img/ico.video.svg');
+    background-repeat: no-repeat;
+    background-position: center;
   }
 }
 @media (min-width: 1200px) {
@@ -22847,6 +22863,10 @@ body,
   .app-apr-item-content .app-apr-item-video {
     display: none;
     height: 700px;
+    background-color: #B44243;
+    background-image: url('../img/ico.video.svg');
+    background-repeat: no-repeat;
+    background-position: center;
   }
 }
 @media (max-width: 479px) {
@@ -23139,16 +23159,10 @@ body,
   .app-graphic-content.app-graphic-video .app-grapc-content-caption {
     display: none;
   }
-  .app-graphic-content.app-graphic-video .app-graphic-content-nav:after {
-    font-family: "FontAwesome";
-    content: "\F01D";
-  }
-  .app-graphic-content.app-graphic-video .app-graphic-content-nav:after {
-    color: #FFFFFF;
-    position: absolute;
-    top: 46%;
-    left: 47%;
-    font-size: 60px;
+  .app-graphic-content.app-graphic-video .app-graphic-content-nav {
+    background-image: url('../img/ico.video.svg');
+    background-repeat: no-repeat;
+    background-position: center;
   }
   .app-graphic-content.app-graphic-table .app-graphic-content-nav {
     overflow: auto;
@@ -23458,16 +23472,10 @@ body,
   .app-graphic-content.app-graphic-video .app-grapc-content-caption {
     display: none;
   }
-  .app-graphic-content.app-graphic-video .app-graphic-content-nav:after {
-    font-family: "FontAwesome";
-    content: "\F01D";
-  }
-  .app-graphic-content.app-graphic-video .app-graphic-content-nav:after {
-    color: #FFFFFF;
-    position: absolute;
-    top: 46%;
-    left: 47%;
-    font-size: 60px;
+  .app-graphic-content.app-graphic-video .app-graphic-content-nav {
+    background-image: url('../img/ico.video.svg');
+    background-repeat: no-repeat;
+    background-position: center;
   }
   .app-graphic-content.app-graphic-table .app-graphic-content-nav {
     overflow: auto;
@@ -23777,16 +23785,10 @@ body,
   .app-graphic-content.app-graphic-video .app-grapc-content-caption {
     display: none;
   }
-  .app-graphic-content.app-graphic-video .app-graphic-content-nav:after {
-    font-family: "FontAwesome";
-    content: "\F01D";
-  }
-  .app-graphic-content.app-graphic-video .app-graphic-content-nav:after {
-    color: #FFFFFF;
-    position: absolute;
-    top: 46%;
-    left: 47%;
-    font-size: 60px;
+  .app-graphic-content.app-graphic-video .app-graphic-content-nav {
+    background-image: url('../img/ico.video.svg');
+    background-repeat: no-repeat;
+    background-position: center;
   }
   .app-graphic-content.app-graphic-table .app-graphic-content-nav {
     overflow: auto;
@@ -24089,16 +24091,10 @@ body,
   .app-graphic-content.app-graphic-video .app-grapc-content-caption {
     display: none;
   }
-  .app-graphic-content.app-graphic-video .app-graphic-content-nav:after {
-    font-family: "FontAwesome";
-    content: "\F01D";
-  }
-  .app-graphic-content.app-graphic-video .app-graphic-content-nav:after {
-    color: #FFFFFF;
-    position: absolute;
-    top: 46%;
-    left: 47%;
-    font-size: 60px;
+  .app-graphic-content.app-graphic-video .app-graphic-content-nav {
+    background-image: url('../img/ico.video.svg');
+    background-repeat: no-repeat;
+    background-position: center;
   }
   .app-graphic-content.app-graphic-table .app-graphic-content-nav {
     overflow: auto;
@@ -24401,16 +24397,10 @@ body,
   .app-graphic-content.app-graphic-video .app-grapc-content-caption {
     display: none;
   }
-  .app-graphic-content.app-graphic-video .app-graphic-content-nav:after {
-    font-family: "FontAwesome";
-    content: "\F01D";
-  }
-  .app-graphic-content.app-graphic-video .app-graphic-content-nav:after {
-    color: #FFFFFF;
-    position: absolute;
-    top: 46%;
-    left: 47%;
-    font-size: 60px;
+  .app-graphic-content.app-graphic-video .app-graphic-content-nav {
+    background-image: url('../img/ico.video.svg');
+    background-repeat: no-repeat;
+    background-position: center;
   }
   .app-graphic-content.app-graphic-table .app-graphic-content-nav {
     overflow: auto;
