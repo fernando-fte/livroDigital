@@ -1,67 +1,3 @@
-# # #
-# Função de tratamento de post para o php
-$.form = (post) ->
-
-	# FUNÇÃO ENVIAR PARA PHP #
-	$.form.send = (post) ->
-		# # #
-		# value = valores para conexao e busca no banco
-		# # #
-
-		# Função ajax
-		$.ajax(
-			type: "post"
-			url: "index.php" #local no php
-			cache: false
-			data: post
-			async: false
-		)
-
-		# resultado de retorno
-		.done (data) -> 
-			# console.log data # exibe valor de data
-			post = data
-			# console.log post
-		# retorna post a solicitação com 'eval()'
-		# return $.parseJSON(post)
-		return post
-		# return post
-
-	# # # # # # # # # # # # #
-	done = {}
-	proccess = {}
-	erro = false
-	temp = {}
-	reserve = {'post':post}
-
-	# valida se foi passado um paramero de action
-	if post.action
-		proccess.action = true
-
-		if post.action.type
-			proccess.type = true
-
-		else
-			done = false
-			erro = {} if !erro
-			erro.fatal = 'Declare o "type" da ação a ser executada pelo php'
-	else
-		done = false
-		erro = {} if !erro
-		erro.fatal = 'Declare "action" para a ação a ser executada pelo php'
-
-	# valida se os requisitos minimos existem
-	if proccess.action is true and proccess.type is true
-
-		done = $.form.send {"ajax":post}
-
-		console.log done
-		# console.log $.parseJSON(done)
-
-	change = {'done':done, 'proccess':proccess, 'erro':erro, 'temp':temp, 'reserve':reserve}
-	return change
-
-
 htmlConstruct = (post) ->
 	done = {}
 	proccess = {}
@@ -378,6 +314,14 @@ trata_html_basico = (seletor) ->
 	sections = $(seletor).find '[data-book-section]'
 		# console.log this
 
+	i = 0
+	while i < $(seletor).find('img').length
+		
+		$($(seletor).find('img')[i]).attr('src', "library/#{(md5 $($('#parse').find('[data-book-livro]')).text())}/#{$($(seletor).find('img')[i]).attr('src')}")
+		i++
+	i = undefined
+
+	$(seletor).find('a').attr('target', '_blank')
 
 	# # # 
 	# Configura labels
@@ -448,64 +392,27 @@ trata_html_basico = (seletor) ->
 	while u < unidade.length
 
 		# reconfigura todos os elementos graficos
-		graphic = $(unidade[u]).find '[data-book-graphic]'
+		graphic = $(unidade[u]).find '[data-book-graphic=1]'
 		temp.graphic = {}
 		i = 0
 		while i < graphic.length
 
-			switch $(graphic[i]).data().bookGraphic
+			temp.graphic.classe = 'app-graphic-table'
+			temp.graphic.content = "<table class=\"app-graphic-item on tb\">#{$(graphic[i]).find('[data-book-graphic-item]').html()}</table>"
+			temp.graphic.legenda = "#{$(graphic[i]).find('[data-book-legenda]').html()}"
+			temp.graphic.ctrl = false
+			temp.graphic.fonte = $(graphic[i]).find('[data-book-fonte]')
 
-				when 1
-					temp.graphic.classe = 'app-graphic-table'
-					temp.graphic.content = "<table class=\"app-graphic-item on tb\">#{$(graphic[i]).find('[data-book-graphic-item]').html()}</table>"
-					temp.graphic.legenda = "#{$(graphic[i]).find('[data-book-legenda]').html()}"
-					temp.graphic.ctrl = false
-					temp.graphic.fonte = $(graphic[i]).find('[data-book-fonte]')
+			if $(temp.graphic.fonte).length > 0
+				temp.graphic.fonte_content = ''
+				x = 0
+				while x < $(temp.graphic.fonte).length
 
-					if $(temp.graphic.fonte).length > 0
-						temp.graphic.fonte_content = ''
-						x = 0
-						while x < $(temp.graphic.fonte).length
-
-							temp.graphic.fonte_label = 'Fonte' if $(temp.graphic.fonte[x]).data().bookFonte is 'fonte'
-							temp.graphic.fonte_label = 'Último acesso' if $(temp.graphic.fonte[x]).data().bookFonte is 'acesso'
-							temp.graphic.fonte_content = temp.graphic.fonte_content+"<span class=\"app-fonte\"><span class=\"label\">#{temp.graphic.fonte_label}</span>#{$(temp.graphic.fonte[x]).html()}</span>"
-							x++
-						x = undefined 
-
-				when 2
-					temp.graphic.classe = 'app-graphic-figure'
-					temp.graphic.content = "<img src=\"library/#{(md5 $($('#parse').find('[data-book-livro]')).text())}/#{$(graphic[i]).find('[data-book-graphic-item]').attr('src')}\" class=\"app-graphic-item on\"/>"
-					temp.graphic.legenda = "#{$(graphic[i]).find('[data-book-legenda]').html()}"
-
-					# TODO: Valida todas as figruas
-					temp.graphic.ctrl = false
-
-					temp.graphic.fonte = $(graphic[i]).find('[data-book-fonte]')
-
-					if $(temp.graphic.fonte).length > 0
-
-						temp.graphic.fonte_content = ''
-						x = 0
-						while x < $(temp.graphic.fonte).length
-
-							temp.graphic.fonte_label = 'Fonte' if $(temp.graphic.fonte[x]).data().bookFonte is 'fonte'
-							temp.graphic.fonte_label = 'Último acesso' if $(temp.graphic.fonte[x]).data().bookFonte is 'acesso'
-							temp.graphic.fonte_content = temp.graphic.fonte_content+"<span class=\"app-fonte\"><span class=\"label\">#{temp.graphic.fonte_label}</span>#{$(temp.graphic.fonte[x]).html()}</span>"
-							x++
-						x = undefined
-
-				when 3
-					temp.graphic.classe = 'app-graphic-video'
-
-					temp.graphic.content = "<iframe width=\"100%\" height=\"100%\" data-video-src=\"https://drive.google.com/file/d/#{$($(graphic[i]).find('[data-book-graphic-item]')).text()}/preview\"></iframe>"
-
-					temp.graphic.legenda = ''
-
-					# TODO: Valida todas as figruas
-					temp.graphic.ctrl = false
-
-					temp.graphic.fonte_content = ''
+					temp.graphic.fonte_label = 'Fonte' if $(temp.graphic.fonte[x]).data().bookFonte is 'fonte'
+					temp.graphic.fonte_label = 'Último acesso' if $(temp.graphic.fonte[x]).data().bookFonte is 'acesso'
+					temp.graphic.fonte_content = temp.graphic.fonte_content+"<span class=\"app-fonte\"><span class=\"label\">#{temp.graphic.fonte_label}</span>#{$(temp.graphic.fonte[x]).html()}</span>"
+					x++
+				x = undefined 
 
 			val = "
 			<div class=\"app-graphic-content #{temp.graphic.classe}\">
@@ -533,7 +440,101 @@ trata_html_basico = (seletor) ->
 
 		i = undefined
 
+		# reconfigura todos os elementos graficos
+		graphic = $(unidade[u]).find '[data-book-graphic=2]'
+		temp.graphic = {}
+		i = 0
 
+		while i < graphic.length
+			temp.graphic.classe = 'app-graphic-figure'
+			temp.graphic.content = "<img src=\"#{$(graphic[i]).find('[data-book-graphic-item]').attr('src')}\" class=\"app-graphic-item on\"/>"
+			temp.graphic.legenda = "#{$(graphic[i]).find('[data-book-legenda]').html()}"
+
+			# TODO: Valida todas as figruas
+			temp.graphic.ctrl = false
+
+			temp.graphic.fonte = $(graphic[i]).find('[data-book-fonte]')
+
+			if $(temp.graphic.fonte).length > 0
+
+				temp.graphic.fonte_content = ''
+				x = 0
+				while x < $(temp.graphic.fonte).length
+
+					temp.graphic.fonte_label = 'Fonte' if $(temp.graphic.fonte[x]).data().bookFonte is 'fonte'
+					temp.graphic.fonte_label = 'Último acesso' if $(temp.graphic.fonte[x]).data().bookFonte is 'acesso'
+					temp.graphic.fonte_content = temp.graphic.fonte_content+"<span class=\"app-fonte\"><span class=\"label\">#{temp.graphic.fonte_label}</span>#{$(temp.graphic.fonte[x]).html()}</span>"
+					x++
+				x = undefined
+
+			val = "
+			<div class=\"app-graphic-content #{temp.graphic.classe}\">
+				#{
+			if temp.graphic.ctrl is true
+				'<div class=\"app-graphic-ctrl\"><span class=\"app-graphic-previous\"></span><span class=\"app-graphic-show\"></span><span class=\"app-graphic-next\"></span></div>'
+			else
+				''
+				}
+
+				<div class=\"app-graphic-content-nav\">#{temp.graphic.content}</div>
+
+				<div class=\"app-grapc-content-caption\">
+					<span class=\"app-legenda\">
+						<span class=\"label\"><span class=\"app-sequence-this\">#{(i+1)}</span><span class=\"app-sequence-all\">#{graphic.length}</span></span>#{temp.graphic.legenda}
+					</span>
+
+					#{temp.graphic.fonte_content}
+				</div>
+			</div>
+			"
+			$(graphic[i]).replaceWith($.parseHTML val)
+
+			i++
+
+		i = undefined
+
+		# reconfigura todos os elementos graficos
+		graphic = $(unidade[u]).find '[data-book-graphic=3]'
+		temp.graphic = {}
+		i = 0
+		while i < graphic.length
+
+			temp.graphic.classe = 'app-graphic-video'
+
+			temp.graphic.content = "<iframe width=\"100%\" height=\"100%\" data-video-src=\"https://drive.google.com/file/d/#{$($(graphic[i]).find('[data-book-graphic-item]')).text()}/preview\"></iframe>"
+
+			temp.graphic.legenda = "#{$(graphic[i]).find('[data-book-legenda]').html()}"
+
+			# TODO: Valida todas as figruas
+			temp.graphic.ctrl = false
+
+			temp.graphic.fonte_content = ''
+
+			val = "
+			<div class=\"app-graphic-content #{temp.graphic.classe}\">
+				#{
+			if temp.graphic.ctrl is true
+				'<div class=\"app-graphic-ctrl\"><span class=\"app-graphic-previous\"></span><span class=\"app-graphic-show\"></span><span class=\"app-graphic-next\"></span></div>'
+			else
+				''
+				}
+
+				<div class=\"app-graphic-content-nav\">#{temp.graphic.content}</div>
+
+				<div class=\"app-grapc-content-caption\">
+					<span class=\"app-legenda\">
+						<span class=\"label\"><span class=\"app-sequence-this\">#{(i+1)}</span><span class=\"app-sequence-all\">#{graphic.length}</span></span>#{temp.graphic.legenda}
+					</span>
+
+					#{temp.graphic.fonte_content}
+				</div>
+			</div>
+			"
+			$(graphic[i]).replaceWith($.parseHTML val)
+
+			i++
+
+		i = undefined
 
 		u++
 
@@ -680,7 +681,7 @@ compila_html_basico = (seletor) ->
 		render.unidade.push "
 		<div id=\"#{temp.unidade.id}\" class=\"app-cap-section section-page\">
 			<div data-app-ctrl='{\"navigation\":{\"section\":\"Unidade #{temp.unidade.numero[($(unidade[i]).data('book-unidade') - 1)]}\",\"page\":\"Introdução\"}}' class=\"app-cap-abertura section-page-item clearfix app-cor-white app-font-app\">
-				<div class=\"app-cap-capa\" style=\"background-image: url(library/#{(md5 $($('#parse').find('[data-book-livro]')).text())}/#{$(unidade[i]).find('[data-book-unidade-capa]').attr('src')})\">
+				<div class=\"app-cap-capa\" style=\"background-image: url(#{$(unidade[i]).find('[data-book-unidade-capa]').attr('src')})\">
 					<span class=\"app-cap-abertura-topo text-bold text-uppercase padding-none-width font-lg-6 font-md-5 font-sm-5 font-ss-4 font-xs-4 col-lg-12 col-md-12 col-sm-12 col-ss-12 col-xs-12\"><span class=\"col-lg-2 col-md-2 col-sm-2 col-ss-2 col-xs-1\"></span>Unidade #{temp.unidade.numero[($(unidade[i]).data('book-unidade') - 1)]}</span>
 					<span class=\"app-cap-abertura-titulo text-bold font-lg-12 font-md-10 font-sm-8 font-ss-7 font-xs-6 col-lg-9 col-md-8 col-sm-10 col-ss-10 col-xs-11 col-lg-offset-3 col-md-offset-3 col-sm-offset-3 col-ss-offset-2 col-xs-offset-1\">#{$(unidade[i]).find('[data-book-unidade-titulo]').html()}</span>
 					#{temp.unidade.autor}
@@ -756,7 +757,7 @@ compila_html_basico = (seletor) ->
 		temp.capa.unidade = "<br><span class=\"small\">Unidade #{temp.unidade.numero[($(seletor).find('[data-book-unidade]').data('book-unidade') - 1)]}</span>"
 
 	render.capa = "
-	<div id=\"app-capa\" style=\"background-image: url(library/#{(md5 $($('#parse').find('[data-book-livro]')).text())}/#{$($(seletor).find '[data-book-capa]').attr('src')})\" class=\"app-page app-cover app-display\">
+	<div id=\"app-capa\" style=\"background-image: url(#{$($(seletor).find '[data-book-capa]').attr('src')})\" class=\"app-page app-cover app-display\">
 		<div class=\"cover-contents col-md-11 col-notspace\">
 			<span class=\"cover-fachada app-text-livro\">#{$($(seletor).find '[data-book-livro]').text()}#{temp.capa.unidade}</span>
 			#{temp.capa.autor}
@@ -815,7 +816,7 @@ compila_html_basico = (seletor) ->
 			#{temp.autores.titulacao}
 			<div class=\"app-apr-item-content\">
 				<div class=\"app-apr-item-texto\">
-					<img src=\"library/#{(md5 $($('#parse').find('[data-book-livro]')).text())}/#{$(($(seletor).find('[data-book-autor]'))[i]).find('[data-book-autor-img]').attr('src')}\" class=\"app-apr-item-avatar\">
+					<img src=\"#{$(($(seletor).find('[data-book-autor]'))[i]).find('[data-book-autor-img]').attr('src')}\" class=\"app-apr-item-avatar\">
 					#{$($(($(seletor).find('[data-book-autor]'))[i]).find('[data-book-autor-info]')).html()}
 				</div>
 			</div>
@@ -957,10 +958,16 @@ compila_html_basico = (seletor) ->
 
 monta = compila_html_basico $('#parse')
 
-
 # console.log monta
 construct_book = (monta) ->
-
+	temp = {}
+	temp.unidade = ''
+	temp.unidade_short = ''
+	temp.algarismos = ['I', 'II', 'III', 'IV']
+	if $('#parse').find('[data-book-unidade]').length is 1
+		temp.unidade = " - Unidade #{temp.algarismos[($('[data-book-unidade]').data('book-unidade') - 1)]}"
+		temp.unidade_short = " - #{temp.algarismos[($('[data-book-unidade]').data('book-unidade') - 1)]}"
+		
 	livro = "
 <!-- 
 -- * Estrutura do LivroDigital
@@ -973,8 +980,8 @@ construct_book = (monta) ->
 		<meta charset=\"utf-8\">
 		<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
 		<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
-		<title>Planejamento Estratégico de Negócios</title>
-		<link href=\"http://192.168.100.13/vg/livroDigital/style/app.css\" rel=\"stylesheet\">
+		<title>#{$('[data-book-livro]').text()}#{temp.unidade}</title>
+		<link href=\"css/app.css\" rel=\"stylesheet\">
 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 		<!--[if lt IE 9]>
@@ -995,7 +1002,7 @@ construct_book = (monta) ->
 						<div data-app-ctrl='{\"togo\":{\"to\":\"sumario\"}}' class=\"app-nav-section col-md-6 col-sm-5 col-ss-6 col-xs-4\">
 							<div class=\"app-nav-section-info app-font-app\">
 								<div class=\"app-nav-section-livro app-cor-black-80 font-md-small-2 font-sm-small-2 font-ss-1 hidden-xs\">
-									<span class=\"app-nav-section-item app-livro text-uppercase text-bold\">#{$($('#parse').find('[data-book-livro]')).text()}</span>
+									<span class=\"app-nav-section-item app-livro text-uppercase text-bold\">#{$($('#parse').find('[data-book-livro]')).text()}#{temp.unidade_short}</span>
 									<span class=\"app-nav-section-item hidden-ss hidden-xs\">•</span>
 									<span class=\"app-nav-section-item app-autor text-italic hidden-ss hidden-xs\">#{$($('#parse').find('[data-book-autor-nome]')).text()}</span>
 								</div>
@@ -1055,17 +1062,20 @@ construct_book = (monta) ->
 		<script src=\"js/jquery.min.js\" type=\"text/javascript\"></script>
 		<script src=\"js/bootstrap.min.js\" type=\"text/javascript\"></script>
 		<script src=\"js/bootstrap.slider.min.js\" type=\"text/javascript\"></script>
-		<script src=\"http://192.168.100.13/vg/livroDigital/scripts/app.js\" type=\"text/javascript\"></script>
+		<script src=\"js/app.js\" type=\"text/javascript\"></script>
 		<script src=\"js/vendors.js\" type=\"text/javascript\"></script>
 	</body>
 </html>
 
 	"
+
 	return livro
+
 
 links = construct_book compila_html_basico $('#parse')
 $('#parse').addClass('hidden')
 $('#done').text(links)
+
 
 # $(links).find('img').length
 # console.log livro
