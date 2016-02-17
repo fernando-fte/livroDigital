@@ -21003,6 +21003,9 @@ body,
     display: block;
     width: 100%;
   }
+  .app-nav-btn-item a {
+    color: inherit;
+  }
   .app-nav-section {
     overflow: hidden;
   }
@@ -21086,6 +21089,9 @@ body,
     height: 100%;
     display: block;
     width: 100%;
+  }
+  .app-nav-btn-item a {
+    color: inherit;
   }
   .app-nav-section {
     overflow: hidden;
@@ -21233,6 +21239,9 @@ body,
     display: block;
     width: 100%;
   }
+  .app-nav-btn-item a {
+    color: inherit;
+  }
   .app-nav-section {
     overflow: hidden;
   }
@@ -21379,6 +21388,9 @@ body,
     display: block;
     width: 100%;
   }
+  .app-nav-btn-item a {
+    color: inherit;
+  }
   .app-nav-section {
     overflow: hidden;
   }
@@ -21516,6 +21528,9 @@ body,
     height: 100%;
     display: block;
     width: 100%;
+  }
+  .app-nav-btn-item a {
+    color: inherit;
   }
   .app-nav-section {
     overflow: hidden;
