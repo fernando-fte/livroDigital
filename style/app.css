@@ -12083,53 +12083,72 @@ button.close {
   }
   .app-box-section h1,
   .app-box-leitura h1,
+  .app-box-filme h1,
   .app-box-section .h1,
-  .app-box-leitura .h1 {
+  .app-box-leitura .h1,
+  .app-box-filme .h1 {
+    font-family: "Dosis";
     font-size: 19px;
     font-weight: 700;
     text-transform: uppercase;
   }
   .app-box-section h1.sub,
   .app-box-leitura h1.sub,
+  .app-box-filme h1.sub,
   .app-box-section .h1-sub,
   .app-box-leitura .h1-sub,
+  .app-box-filme .h1-sub,
   .app-box-section h2,
   .app-box-leitura h2,
+  .app-box-filme h2,
   .app-box-section .h2,
-  .app-box-leitura .h2 {
+  .app-box-leitura .h2,
+  .app-box-filme .h2 {
+    font-family: "Dosis";
     font-size: inherit;
     font-weight: 400;
   }
   .app-box-section li,
   .app-box-leitura li,
+  .app-box-filme li,
   .app-box-section p,
   .app-box-leitura p,
+  .app-box-filme p,
   .app-box-section h1,
-  .app-box-leitura h1 {
+  .app-box-leitura h1,
+  .app-box-filme h1 {
     color: #FFFFFF;
   }
   .app-box-section li,
   .app-box-leitura li,
+  .app-box-filme li,
   .app-box-section p,
-  .app-box-leitura p {
+  .app-box-leitura p,
+  .app-box-filme p {
     font-family: "Josefin Sans";
     font-size: 14px;
     font-weight: normal;
   }
   .app-box-section li b,
   .app-box-leitura li b,
+  .app-box-filme li b,
   .app-box-section p b,
   .app-box-leitura p b,
+  .app-box-filme p b,
   .app-box-section li strong,
   .app-box-leitura li strong,
+  .app-box-filme li strong,
   .app-box-section p strong,
-  .app-box-leitura p strong {
+  .app-box-leitura p strong,
+  .app-box-filme p strong {
     color: #47464A;
   }
   .app-box-section a,
   .app-box-leitura a,
+  .app-box-filme a,
   .app-box-section .link,
-  .app-box-leitura .link {
+  .app-box-leitura .link,
+  .app-box-filme .link {
     color: #94B0D6;
   }
   .app-titulacao {
@@ -12505,53 +12524,72 @@ button.close {
   }
   .app-box-section h1,
   .app-box-leitura h1,
+  .app-box-filme h1,
   .app-box-section .h1,
-  .app-box-leitura .h1 {
+  .app-box-leitura .h1,
+  .app-box-filme .h1 {
+    font-family: "Dosis";
     font-size: 20px;
     font-weight: 700;
     text-transform: uppercase;
   }
   .app-box-section h1.sub,
   .app-box-leitura h1.sub,
+  .app-box-filme h1.sub,
   .app-box-section .h1-sub,
   .app-box-leitura .h1-sub,
+  .app-box-filme .h1-sub,
   .app-box-section h2,
   .app-box-leitura h2,
+  .app-box-filme h2,
   .app-box-section .h2,
-  .app-box-leitura .h2 {
+  .app-box-leitura .h2,
+  .app-box-filme .h2 {
+    font-family: "Dosis";
     font-size: inherit;
     font-weight: 400;
   }
   .app-box-section li,
   .app-box-leitura li,
+  .app-box-filme li,
   .app-box-section p,
   .app-box-leitura p,
+  .app-box-filme p,
   .app-box-section h1,
-  .app-box-leitura h1 {
+  .app-box-leitura h1,
+  .app-box-filme h1 {
     color: #FFFFFF;
   }
   .app-box-section li,
   .app-box-leitura li,
+  .app-box-filme li,
   .app-box-section p,
-  .app-box-leitura p {
+  .app-box-leitura p,
+  .app-box-filme p {
     font-family: "Josefin Sans";
     font-size: 15px;
     font-weight: normal;
   }
   .app-box-section li b,
   .app-box-leitura li b,
+  .app-box-filme li b,
   .app-box-section p b,
   .app-box-leitura p b,
+  .app-box-filme p b,
   .app-box-section li strong,
   .app-box-leitura li strong,
+  .app-box-filme li strong,
   .app-box-section p strong,
-  .app-box-leitura p strong {
+  .app-box-leitura p strong,
+  .app-box-filme p strong {
     color: #47464A;
   }
   .app-box-section a,
   .app-box-leitura a,
+  .app-box-filme a,
   .app-box-section .link,
-  .app-box-leitura .link {
+  .app-box-leitura .link,
+  .app-box-filme .link {
     color: #94B0D6;
   }
   .app-titulacao {
@@ -12927,53 +12965,72 @@ button.close {
   }
   .app-box-section h1,
   .app-box-leitura h1,
+  .app-box-filme h1,
   .app-box-section .h1,
-  .app-box-leitura .h1 {
+  .app-box-leitura .h1,
+  .app-box-filme .h1 {
+    font-family: "Dosis";
     font-size: 21px;
     font-weight: 700;
     text-transform: uppercase;
   }
   .app-box-section h1.sub,
   .app-box-leitura h1.sub,
+  .app-box-filme h1.sub,
   .app-box-section .h1-sub,
   .app-box-leitura .h1-sub,
+  .app-box-filme .h1-sub,
   .app-box-section h2,
   .app-box-leitura h2,
+  .app-box-filme h2,
   .app-box-section .h2,
-  .app-box-leitura .h2 {
+  .app-box-leitura .h2,
+  .app-box-filme .h2 {
+    font-family: "Dosis";
     font-size: inherit;
     font-weight: 400;
   }
   .app-box-section li,
   .app-box-leitura li,
+  .app-box-filme li,
   .app-box-section p,
   .app-box-leitura p,
+  .app-box-filme p,
   .app-box-section h1,
-  .app-box-leitura h1 {
+  .app-box-leitura h1,
+  .app-box-filme h1 {
     color: #FFFFFF;
   }
   .app-box-section li,
   .app-box-leitura li,
+  .app-box-filme li,
   .app-box-section p,
-  .app-box-leitura p {
+  .app-box-leitura p,
+  .app-box-filme p {
     font-family: "Josefin Sans";
     font-size: 15px;
     font-weight: normal;
   }
   .app-box-section li b,
   .app-box-leitura li b,
+  .app-box-filme li b,
   .app-box-section p b,
   .app-box-leitura p b,
+  .app-box-filme p b,
   .app-box-section li strong,
   .app-box-leitura li strong,
+  .app-box-filme li strong,
   .app-box-section p strong,
-  .app-box-leitura p strong {
+  .app-box-leitura p strong,
+  .app-box-filme p strong {
     color: #47464A;
   }
   .app-box-section a,
   .app-box-leitura a,
+  .app-box-filme a,
   .app-box-section .link,
-  .app-box-leitura .link {
+  .app-box-leitura .link,
+  .app-box-filme .link {
     color: #94B0D6;
   }
   .app-titulacao {
@@ -13349,53 +13406,72 @@ button.close {
   }
   .app-box-section h1,
   .app-box-leitura h1,
+  .app-box-filme h1,
   .app-box-section .h1,
-  .app-box-leitura .h1 {
+  .app-box-leitura .h1,
+  .app-box-filme .h1 {
+    font-family: "Dosis";
     font-size: 21px;
     font-weight: 700;
     text-transform: uppercase;
   }
   .app-box-section h1.sub,
   .app-box-leitura h1.sub,
+  .app-box-filme h1.sub,
   .app-box-section .h1-sub,
   .app-box-leitura .h1-sub,
+  .app-box-filme .h1-sub,
   .app-box-section h2,
   .app-box-leitura h2,
+  .app-box-filme h2,
   .app-box-section .h2,
-  .app-box-leitura .h2 {
+  .app-box-leitura .h2,
+  .app-box-filme .h2 {
+    font-family: "Dosis";
     font-size: inherit;
     font-weight: 400;
   }
   .app-box-section li,
   .app-box-leitura li,
+  .app-box-filme li,
   .app-box-section p,
   .app-box-leitura p,
+  .app-box-filme p,
   .app-box-section h1,
-  .app-box-leitura h1 {
+  .app-box-leitura h1,
+  .app-box-filme h1 {
     color: #FFFFFF;
   }
   .app-box-section li,
   .app-box-leitura li,
+  .app-box-filme li,
   .app-box-section p,
-  .app-box-leitura p {
+  .app-box-leitura p,
+  .app-box-filme p {
     font-family: "Josefin Sans";
     font-size: 15px;
     font-weight: normal;
   }
   .app-box-section li b,
   .app-box-leitura li b,
+  .app-box-filme li b,
   .app-box-section p b,
   .app-box-leitura p b,
+  .app-box-filme p b,
   .app-box-section li strong,
   .app-box-leitura li strong,
+  .app-box-filme li strong,
   .app-box-section p strong,
-  .app-box-leitura p strong {
+  .app-box-leitura p strong,
+  .app-box-filme p strong {
     color: #47464A;
   }
   .app-box-section a,
   .app-box-leitura a,
+  .app-box-filme a,
   .app-box-section .link,
-  .app-box-leitura .link {
+  .app-box-leitura .link,
+  .app-box-filme .link {
     color: #94B0D6;
   }
   .app-titulacao {
@@ -13771,53 +13847,72 @@ button.close {
   }
   .app-box-section h1,
   .app-box-leitura h1,
+  .app-box-filme h1,
   .app-box-section .h1,
-  .app-box-leitura .h1 {
+  .app-box-leitura .h1,
+  .app-box-filme .h1 {
+    font-family: "Dosis";
     font-size: 25px;
     font-weight: 700;
     text-transform: uppercase;
   }
   .app-box-section h1.sub,
   .app-box-leitura h1.sub,
+  .app-box-filme h1.sub,
   .app-box-section .h1-sub,
   .app-box-leitura .h1-sub,
+  .app-box-filme .h1-sub,
   .app-box-section h2,
   .app-box-leitura h2,
+  .app-box-filme h2,
   .app-box-section .h2,
-  .app-box-leitura .h2 {
+  .app-box-leitura .h2,
+  .app-box-filme .h2 {
+    font-family: "Dosis";
     font-size: inherit;
     font-weight: 400;
   }
   .app-box-section li,
   .app-box-leitura li,
+  .app-box-filme li,
   .app-box-section p,
   .app-box-leitura p,
+  .app-box-filme p,
   .app-box-section h1,
-  .app-box-leitura h1 {
+  .app-box-leitura h1,
+  .app-box-filme h1 {
     color: #FFFFFF;
   }
   .app-box-section li,
   .app-box-leitura li,
+  .app-box-filme li,
   .app-box-section p,
-  .app-box-leitura p {
+  .app-box-leitura p,
+  .app-box-filme p {
     font-family: "Josefin Sans";
     font-size: 18px;
     font-weight: normal;
   }
   .app-box-section li b,
   .app-box-leitura li b,
+  .app-box-filme li b,
   .app-box-section p b,
   .app-box-leitura p b,
+  .app-box-filme p b,
   .app-box-section li strong,
   .app-box-leitura li strong,
+  .app-box-filme li strong,
   .app-box-section p strong,
-  .app-box-leitura p strong {
+  .app-box-leitura p strong,
+  .app-box-filme p strong {
     color: #47464A;
   }
   .app-box-section a,
   .app-box-leitura a,
+  .app-box-filme a,
   .app-box-section .link,
-  .app-box-leitura .link {
+  .app-box-leitura .link,
+  .app-box-filme .link {
     color: #94B0D6;
   }
   .app-titulacao {
@@ -14175,6 +14270,10 @@ iframe {
 .app-ico-capa:after {
   font-family: "FontAwesome";
   content: "\F090";
+}
+.app-ico-filme:after {
+  font-family: "FontAwesome";
+  content: "\F008";
 }
 .add-scroll {
   overflow: scroll;
@@ -20904,6 +21003,9 @@ body,
     display: block;
     width: 100%;
   }
+  .app-nav-section {
+    overflow: hidden;
+  }
   .app-nav-section-item.app-secao {
     text-transform: none;
     margin-top: 8px;
@@ -20984,6 +21086,9 @@ body,
     height: 100%;
     display: block;
     width: 100%;
+  }
+  .app-nav-section {
+    overflow: hidden;
   }
   .app-nav-tooltip.nav-tooltip-posicao {
     position: absolute;
@@ -21128,6 +21233,9 @@ body,
     display: block;
     width: 100%;
   }
+  .app-nav-section {
+    overflow: hidden;
+  }
   .app-nav-tooltip.nav-tooltip-posicao {
     position: absolute;
     top: 71px;
@@ -21271,6 +21379,9 @@ body,
     display: block;
     width: 100%;
   }
+  .app-nav-section {
+    overflow: hidden;
+  }
   .app-nav-tooltip.nav-tooltip-posicao {
     position: absolute;
     top: 80px;
@@ -21405,6 +21516,9 @@ body,
     height: 100%;
     display: block;
     width: 100%;
+  }
+  .app-nav-section {
+    overflow: hidden;
   }
   .app-nav-tooltip.nav-tooltip-posicao {
     position: absolute;
@@ -22993,6 +23107,12 @@ body,
   .app-box.app-box-leitura .app-box-head:before {
     content: "\F02D";
   }
+  .app-box.app-box-filme .app-box-head {
+    width: 100%;
+  }
+  .app-box.app-box-filme .app-box-head:before {
+    content: "\F008";
+  }
   .app-box.app-box-atividade .app-box-head {
     width: 100%;
   }
@@ -23141,6 +23261,8 @@ body,
   }
   .app-graphic-content .app-graphic-content-nav .app-graphic-item {
     height: 100%;
+    max-height: 100%;
+    max-width: 100%;
     display: block;
     margin: 0 auto;
   }
@@ -23156,13 +23278,13 @@ body,
     content: " - ";
     margin-left: 5px;
   }
-  .app-graphic-content.app-graphic-video .app-grapc-content-caption {
-    display: none;
-  }
   .app-graphic-content.app-graphic-video .app-graphic-content-nav {
     background-image: url('../img/ico.video.svg');
     background-repeat: no-repeat;
     background-position: center;
+  }
+  .app-graphic-content.app-graphic-video .app-grapc-content-caption .app-legenda:after {
+    display: none;
   }
   .app-graphic-content.app-graphic-table .app-graphic-content-nav {
     overflow: auto;
@@ -23305,6 +23427,12 @@ body,
   }
   .app-box.app-box-leitura .app-box-head:before {
     content: "\F02D";
+  }
+  .app-box.app-box-filme .app-box-head {
+    width: 100%;
+  }
+  .app-box.app-box-filme .app-box-head:before {
+    content: "\F008";
   }
   .app-box.app-box-atividade .app-box-head {
     width: 100%;
@@ -23454,6 +23582,8 @@ body,
   }
   .app-graphic-content .app-graphic-content-nav .app-graphic-item {
     height: 100%;
+    max-height: 100%;
+    max-width: 100%;
     display: block;
     margin: 0 auto;
   }
@@ -23469,13 +23599,13 @@ body,
     content: " - ";
     margin-left: 5px;
   }
-  .app-graphic-content.app-graphic-video .app-grapc-content-caption {
-    display: none;
-  }
   .app-graphic-content.app-graphic-video .app-graphic-content-nav {
     background-image: url('../img/ico.video.svg');
     background-repeat: no-repeat;
     background-position: center;
+  }
+  .app-graphic-content.app-graphic-video .app-grapc-content-caption .app-legenda:after {
+    display: none;
   }
   .app-graphic-content.app-graphic-table .app-graphic-content-nav {
     overflow: auto;
@@ -23618,6 +23748,12 @@ body,
   }
   .app-box.app-box-leitura .app-box-head:before {
     content: "\F02D";
+  }
+  .app-box.app-box-filme .app-box-head {
+    width: 100%;
+  }
+  .app-box.app-box-filme .app-box-head:before {
+    content: "\F008";
   }
   .app-box.app-box-atividade .app-box-head {
     width: 100%;
@@ -23767,6 +23903,8 @@ body,
   }
   .app-graphic-content .app-graphic-content-nav .app-graphic-item {
     height: 100%;
+    max-height: 100%;
+    max-width: 100%;
     display: block;
     margin: 0 auto;
   }
@@ -23782,13 +23920,13 @@ body,
     content: " - ";
     margin-left: 5px;
   }
-  .app-graphic-content.app-graphic-video .app-grapc-content-caption {
-    display: none;
-  }
   .app-graphic-content.app-graphic-video .app-graphic-content-nav {
     background-image: url('../img/ico.video.svg');
     background-repeat: no-repeat;
     background-position: center;
+  }
+  .app-graphic-content.app-graphic-video .app-grapc-content-caption .app-legenda:after {
+    display: none;
   }
   .app-graphic-content.app-graphic-table .app-graphic-content-nav {
     overflow: auto;
@@ -23924,6 +24062,12 @@ body,
   }
   .app-box.app-box-leitura .app-box-head:before {
     content: "\F02D";
+  }
+  .app-box.app-box-filme .app-box-head {
+    width: 100%;
+  }
+  .app-box.app-box-filme .app-box-head:before {
+    content: "\F008";
   }
   .app-box.app-box-atividade .app-box-head {
     width: 100%;
@@ -24073,6 +24217,8 @@ body,
   }
   .app-graphic-content .app-graphic-content-nav .app-graphic-item {
     height: 100%;
+    max-height: 100%;
+    max-width: 100%;
     display: block;
     margin: 0 auto;
   }
@@ -24088,13 +24234,13 @@ body,
     content: " - ";
     margin-left: 5px;
   }
-  .app-graphic-content.app-graphic-video .app-grapc-content-caption {
-    display: none;
-  }
   .app-graphic-content.app-graphic-video .app-graphic-content-nav {
     background-image: url('../img/ico.video.svg');
     background-repeat: no-repeat;
     background-position: center;
+  }
+  .app-graphic-content.app-graphic-video .app-grapc-content-caption .app-legenda:after {
+    display: none;
   }
   .app-graphic-content.app-graphic-table .app-graphic-content-nav {
     overflow: auto;
@@ -24230,6 +24376,12 @@ body,
   }
   .app-box.app-box-leitura .app-box-head:before {
     content: "\F02D";
+  }
+  .app-box.app-box-filme .app-box-head {
+    width: 100%;
+  }
+  .app-box.app-box-filme .app-box-head:before {
+    content: "\F008";
   }
   .app-box.app-box-atividade .app-box-head {
     width: 100%;
@@ -24379,6 +24531,8 @@ body,
   }
   .app-graphic-content .app-graphic-content-nav .app-graphic-item {
     height: 100%;
+    max-height: 100%;
+    max-width: 100%;
     display: block;
     margin: 0 auto;
   }
@@ -24394,13 +24548,13 @@ body,
     content: " - ";
     margin-left: 5px;
   }
-  .app-graphic-content.app-graphic-video .app-grapc-content-caption {
-    display: none;
-  }
   .app-graphic-content.app-graphic-video .app-graphic-content-nav {
     background-image: url('../img/ico.video.svg');
     background-repeat: no-repeat;
     background-position: center;
+  }
+  .app-graphic-content.app-graphic-video .app-grapc-content-caption .app-legenda:after {
+    display: none;
   }
   .app-graphic-content.app-graphic-table .app-graphic-content-nav {
     overflow: auto;

@@ -120,6 +120,14 @@
 			};
 		}
 
+		//** Configura box de filme
+		&.app-box-filme {
+			.app-box-head { 
+				width: 100%;
+				&:before {content: @app-ico-filme} 
+			};
+		}
+
 		//** Configruação do box para atividade
 		&.app-box-atividade {
 			.app-box-head { 
@@ -248,6 +256,8 @@
 
 			.app-graphic-item {
 				height: 100%;
+				max-height: 100%;
+				max-width: 100%;
 				display: block;
 				margin: 0 auto;
 			}
@@ -269,9 +279,9 @@
 		}
 
 		&.app-graphic-video {
-
-			.app-grapc-content-caption {display: none}
+			// .app-grapc-content-caption {display: none}
 			.app-graphic-content-nav { background-image: url('@{wwwpattern}img/ico.video.svg'); background-repeat: no-repeat; background-position: center;}
+			.app-grapc-content-caption .app-legenda:after { display: none; }
 		}
 		&.app-graphic-table {
 
