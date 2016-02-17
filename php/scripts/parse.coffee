@@ -315,9 +315,9 @@ trata_html_basico = (seletor) ->
 		# console.log this
 
 	i = 0
-	while i < $(seletor).find('img').length
+	while i < $(seletor).find('[src]').length
 		
-		$($(seletor).find('img')[i]).attr('src', "library/#{(md5 $($('#parse').find('[data-book-livro]')).text())}/#{$($(seletor).find('img')[i]).attr('src')}")
+		$($(seletor).find('[src]')[i]).attr('src', "library/#{(md5 $($('#parse').find('[data-book-livro]')).text())}/#{$($(seletor).find('[src]')[i]).attr('src')}")
 		i++
 	i = undefined
 
@@ -954,6 +954,10 @@ compila_html_basico = (seletor) ->
 		</div>
 	</div>
 	"
+
+	render.download = "<a href=\"#{$($(seletor).find('[data-book-pdf]')).attr('src')}\" target=\"_blank\" class=\"app-ico-download hidden-ss hidden-xs font-sm-7 font-sm-6\"></a><a href=\"#{$($(seletor).find('[data-book-pdf]')).attr('src')}\" target=\"_blank\" class=\"app-ico-download-short hidden-sm hidden-md hidden-lg font-ss-5\"></a>" if $($(seletor).find('[data-book-pdf]')).attr('src') != undefined
+	render.download = "<span class=\"app-ico-download hidden-ss hidden-xs font-sm-7 font-sm-6\"></span><span class=\"app-ico-download-short hidden-sm hidden-md hidden-lg font-ss-5\"></span>" if $($(seletor).find('[data-book-pdf]')).attr('src') is undefined
+
 	return render
 
 monta = compila_html_basico $('#parse')
@@ -1020,10 +1024,7 @@ construct_book = (monta) ->
 							</div>
 							<span class=\"col-md-6 col-sm-6 col-ss-6 col-xs-6\"></span>
 
-							<div class=\"app-nav-btn-item nav-btn-menu col-md-2 col-sm-2 col-ss-2 col-xs-2\">
-								<span class=\"app-ico-download hidden-ss hidden-xs font-sm-7 font-sm-6\"></span>
-								<span class=\"app-ico-download-short hidden-sm hidden-md hidden-lg font-ss-5\"></span>
-							</div>
+							<div class=\"app-nav-btn-item nav-btn-menu col-md-2 col-sm-2 col-ss-2 col-xs-2\">#{monta.download}</div>
 
 							<div data-app-ctrl='{\"togo\":{\"cover\":true}}' class=\"app-nav-btn-item nav-btn-menu col-md-2 col-sm-2 col-ss-2 col-xs-2\">
 								<span class=\"app-ico-capa font-md-6 font-sm-5 font-ss-5 font-xs-small-4\"></span>
