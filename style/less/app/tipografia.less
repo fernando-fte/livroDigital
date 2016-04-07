@@ -214,13 +214,19 @@
 
 		li, p, h1 { color: @app-cor-preto-0; }
 
-		li, p { 
+		li, p, blockquote { 
 			font-family: @app-font-especial; 
 			font-size: ceil((@app-font-size-base * 0.78));
 		    font-weight: normal;
 			b, strong { color: @app-cor-preto-80; }
 		}
+    	cite, blockquote { 
+			color: @app-cor-padrao-10;
 
+			.app-fonte {
+				background-color: @app-cor-preto-0;
+			}
+		}
 		a, .link {
 			color: @app-cor-azul-60;
 		}

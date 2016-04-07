@@ -12124,7 +12124,10 @@ button.close {
   .app-box-filme li,
   .app-box-section p,
   .app-box-leitura p,
-  .app-box-filme p {
+  .app-box-filme p,
+  .app-box-section blockquote,
+  .app-box-leitura blockquote,
+  .app-box-filme blockquote {
     font-family: "Josefin Sans";
     font-size: 14px;
     font-weight: normal;
@@ -12135,13 +12138,35 @@ button.close {
   .app-box-section p b,
   .app-box-leitura p b,
   .app-box-filme p b,
+  .app-box-section blockquote b,
+  .app-box-leitura blockquote b,
+  .app-box-filme blockquote b,
   .app-box-section li strong,
   .app-box-leitura li strong,
   .app-box-filme li strong,
   .app-box-section p strong,
   .app-box-leitura p strong,
-  .app-box-filme p strong {
+  .app-box-filme p strong,
+  .app-box-section blockquote strong,
+  .app-box-leitura blockquote strong,
+  .app-box-filme blockquote strong {
     color: #47464A;
+  }
+  .app-box-section cite,
+  .app-box-leitura cite,
+  .app-box-filme cite,
+  .app-box-section blockquote,
+  .app-box-leitura blockquote,
+  .app-box-filme blockquote {
+    color: #F6E7E7;
+  }
+  .app-box-section cite .app-fonte,
+  .app-box-leitura cite .app-fonte,
+  .app-box-filme cite .app-fonte,
+  .app-box-section blockquote .app-fonte,
+  .app-box-leitura blockquote .app-fonte,
+  .app-box-filme blockquote .app-fonte {
+    background-color: #FFFFFF;
   }
   .app-box-section a,
   .app-box-leitura a,
@@ -12565,7 +12590,10 @@ button.close {
   .app-box-filme li,
   .app-box-section p,
   .app-box-leitura p,
-  .app-box-filme p {
+  .app-box-filme p,
+  .app-box-section blockquote,
+  .app-box-leitura blockquote,
+  .app-box-filme blockquote {
     font-family: "Josefin Sans";
     font-size: 15px;
     font-weight: normal;
@@ -12576,13 +12604,35 @@ button.close {
   .app-box-section p b,
   .app-box-leitura p b,
   .app-box-filme p b,
+  .app-box-section blockquote b,
+  .app-box-leitura blockquote b,
+  .app-box-filme blockquote b,
   .app-box-section li strong,
   .app-box-leitura li strong,
   .app-box-filme li strong,
   .app-box-section p strong,
   .app-box-leitura p strong,
-  .app-box-filme p strong {
+  .app-box-filme p strong,
+  .app-box-section blockquote strong,
+  .app-box-leitura blockquote strong,
+  .app-box-filme blockquote strong {
     color: #47464A;
+  }
+  .app-box-section cite,
+  .app-box-leitura cite,
+  .app-box-filme cite,
+  .app-box-section blockquote,
+  .app-box-leitura blockquote,
+  .app-box-filme blockquote {
+    color: #F6E7E7;
+  }
+  .app-box-section cite .app-fonte,
+  .app-box-leitura cite .app-fonte,
+  .app-box-filme cite .app-fonte,
+  .app-box-section blockquote .app-fonte,
+  .app-box-leitura blockquote .app-fonte,
+  .app-box-filme blockquote .app-fonte {
+    background-color: #FFFFFF;
   }
   .app-box-section a,
   .app-box-leitura a,
@@ -13006,7 +13056,10 @@ button.close {
   .app-box-filme li,
   .app-box-section p,
   .app-box-leitura p,
-  .app-box-filme p {
+  .app-box-filme p,
+  .app-box-section blockquote,
+  .app-box-leitura blockquote,
+  .app-box-filme blockquote {
     font-family: "Josefin Sans";
     font-size: 15px;
     font-weight: normal;
@@ -13017,13 +13070,35 @@ button.close {
   .app-box-section p b,
   .app-box-leitura p b,
   .app-box-filme p b,
+  .app-box-section blockquote b,
+  .app-box-leitura blockquote b,
+  .app-box-filme blockquote b,
   .app-box-section li strong,
   .app-box-leitura li strong,
   .app-box-filme li strong,
   .app-box-section p strong,
   .app-box-leitura p strong,
-  .app-box-filme p strong {
+  .app-box-filme p strong,
+  .app-box-section blockquote strong,
+  .app-box-leitura blockquote strong,
+  .app-box-filme blockquote strong {
     color: #47464A;
+  }
+  .app-box-section cite,
+  .app-box-leitura cite,
+  .app-box-filme cite,
+  .app-box-section blockquote,
+  .app-box-leitura blockquote,
+  .app-box-filme blockquote {
+    color: #F6E7E7;
+  }
+  .app-box-section cite .app-fonte,
+  .app-box-leitura cite .app-fonte,
+  .app-box-filme cite .app-fonte,
+  .app-box-section blockquote .app-fonte,
+  .app-box-leitura blockquote .app-fonte,
+  .app-box-filme blockquote .app-fonte {
+    background-color: #FFFFFF;
   }
   .app-box-section a,
   .app-box-leitura a,
@@ -13447,7 +13522,10 @@ button.close {
   .app-box-filme li,
   .app-box-section p,
   .app-box-leitura p,
-  .app-box-filme p {
+  .app-box-filme p,
+  .app-box-section blockquote,
+  .app-box-leitura blockquote,
+  .app-box-filme blockquote {
     font-family: "Josefin Sans";
     font-size: 15px;
     font-weight: normal;
@@ -13458,13 +13536,35 @@ button.close {
   .app-box-section p b,
   .app-box-leitura p b,
   .app-box-filme p b,
+  .app-box-section blockquote b,
+  .app-box-leitura blockquote b,
+  .app-box-filme blockquote b,
   .app-box-section li strong,
   .app-box-leitura li strong,
   .app-box-filme li strong,
   .app-box-section p strong,
   .app-box-leitura p strong,
-  .app-box-filme p strong {
+  .app-box-filme p strong,
+  .app-box-section blockquote strong,
+  .app-box-leitura blockquote strong,
+  .app-box-filme blockquote strong {
     color: #47464A;
+  }
+  .app-box-section cite,
+  .app-box-leitura cite,
+  .app-box-filme cite,
+  .app-box-section blockquote,
+  .app-box-leitura blockquote,
+  .app-box-filme blockquote {
+    color: #F6E7E7;
+  }
+  .app-box-section cite .app-fonte,
+  .app-box-leitura cite .app-fonte,
+  .app-box-filme cite .app-fonte,
+  .app-box-section blockquote .app-fonte,
+  .app-box-leitura blockquote .app-fonte,
+  .app-box-filme blockquote .app-fonte {
+    background-color: #FFFFFF;
   }
   .app-box-section a,
   .app-box-leitura a,
@@ -13888,7 +13988,10 @@ button.close {
   .app-box-filme li,
   .app-box-section p,
   .app-box-leitura p,
-  .app-box-filme p {
+  .app-box-filme p,
+  .app-box-section blockquote,
+  .app-box-leitura blockquote,
+  .app-box-filme blockquote {
     font-family: "Josefin Sans";
     font-size: 18px;
     font-weight: normal;
@@ -13899,13 +14002,35 @@ button.close {
   .app-box-section p b,
   .app-box-leitura p b,
   .app-box-filme p b,
+  .app-box-section blockquote b,
+  .app-box-leitura blockquote b,
+  .app-box-filme blockquote b,
   .app-box-section li strong,
   .app-box-leitura li strong,
   .app-box-filme li strong,
   .app-box-section p strong,
   .app-box-leitura p strong,
-  .app-box-filme p strong {
+  .app-box-filme p strong,
+  .app-box-section blockquote strong,
+  .app-box-leitura blockquote strong,
+  .app-box-filme blockquote strong {
     color: #47464A;
+  }
+  .app-box-section cite,
+  .app-box-leitura cite,
+  .app-box-filme cite,
+  .app-box-section blockquote,
+  .app-box-leitura blockquote,
+  .app-box-filme blockquote {
+    color: #F6E7E7;
+  }
+  .app-box-section cite .app-fonte,
+  .app-box-leitura cite .app-fonte,
+  .app-box-filme cite .app-fonte,
+  .app-box-section blockquote .app-fonte,
+  .app-box-leitura blockquote .app-fonte,
+  .app-box-filme blockquote .app-fonte {
+    background-color: #FFFFFF;
   }
   .app-box-section a,
   .app-box-leitura a,
@@ -23116,6 +23241,10 @@ body,
     float: right;
     background-color: #C0504D;
   }
+  .app-box .app-box-content blockquote {
+    width: 100%!important;
+    margin-left: 0px!important;
+  }
   .app-box.app-box-leitura .app-box-head {
     width: 100%;
   }
@@ -23436,6 +23565,10 @@ body,
     padding: 10px;
     float: right;
     background-color: #C0504D;
+  }
+  .app-box .app-box-content blockquote {
+    width: 100%!important;
+    margin-left: 0px!important;
   }
   .app-box.app-box-leitura .app-box-head {
     width: 100%;
@@ -23758,6 +23891,10 @@ body,
     float: right;
     background-color: #C0504D;
   }
+  .app-box .app-box-content blockquote {
+    width: 100%!important;
+    margin-left: 0px!important;
+  }
   .app-box.app-box-leitura .app-box-head {
     width: 100%;
   }
@@ -24072,6 +24209,10 @@ body,
     float: right;
     background-color: #C0504D;
   }
+  .app-box .app-box-content blockquote {
+    width: 100%!important;
+    margin-left: 0px!important;
+  }
   .app-box.app-box-leitura .app-box-head {
     width: 100%;
   }
@@ -24385,6 +24526,10 @@ body,
     padding: 10px;
     float: right;
     background-color: #C0504D;
+  }
+  .app-box .app-box-content blockquote {
+    width: 100%!important;
+    margin-left: 0px!important;
   }
   .app-box.app-box-leitura .app-box-head {
     width: 100%;

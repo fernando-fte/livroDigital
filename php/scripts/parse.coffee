@@ -1076,6 +1076,7 @@ construct_book = (monta) ->
 links = construct_book compila_html_basico $('#parse')
 $('#parse').addClass('hidden')
 $('#done').text(links)
+$('title').text($('[data-book-livro]').text())
 
 
 # $(links).find('img').length
