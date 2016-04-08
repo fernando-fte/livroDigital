@@ -64,13 +64,6 @@
           temp._proccess.togo[i] = {};
           temp._proccess.togo[i] = $.appCtrl.togo(temp.appCtrl[i]);
         }
-        if (temp.appCtrl[i].app.display) {
-          temp._proccess.display[i] = $.appCtrl.display(temp.appCtrl[i]);
-        }
-        if (temp.appCtrl[i].app.apr) {
-          temp._proccess.apr[i] = {};
-          temp._proccess.apr[i] = $.appCtrl.apr(temp.appCtrl[i]);
-        }
         if (temp.appCtrl[i].app.atividade) {
           temp._proccess.atividade[i] = {};
           temp._proccess.atividade[i] = $.appCtrl.atividade(temp.appCtrl[i]);
@@ -547,5 +540,7 @@
   * LivroDigital Beta V.0.1.1\n
   "
    */
+
+  console.log('oi');
 
 }).call(this);
