@@ -15,10 +15,46 @@
       <div id="d0e0afe33a15226ac3cbd4dff3abb445" class="app-volume">
 
          <div id="app-capa" style="background-image: url(library/d0e0afe33a15226ac3cbd4dff3abb445/capa.jpg)" class="app-page app-cover app-display">
-            <div class="cover-contents col-md-11 col-notspace"> <span class="cover-fachada app-text-livro">Metodologia da Pesquisa Científica</span> <span class="cover-fachada app-text-autor">Carlos Antônio Bonamigo</span><span class="cover-fachada app-text-autor">Siderly do Carmo Dahle de Almeda</span> </div>
+
+            <div class="cover-contents col-md-11 col-notspace">
+               <span class="cover-fachada app-text-livro">Metodologia da Pesquisa Científica</span>
+               <span class="cover-fachada app-text-autor">Carlos Antônio Bonamigo</span>
+               <span class="cover-fachada app-text-autor">Siderly do Carmo Dahle de Almeda</span>
+            </div>
+
             <span data-app-ctrl='{"togo":{"to":"sumario","cover":false}}' class="cover-btn-iniciar app-ico-iniciar col-lg-2 col-md-3 col-sm-4 col-ss-4 col-lg-offset-5 col-md-offset-4 col-sm-offset-3 col-ss-offset-3"> </span> 
-            <div class="cover-logo-group"> <img src="img/logo.pos.white.svg" class="cover-logo-item logo-pos"> <img src="img/logo.white.svg" class="cover-logo-item logo-instituicao"> </div>
-            <div class="cover-nav-bar col-md-1 col-notspace row"> <span class="cover-btn-nav btn-nav-menu"> <span class="app-ico-menu"></span> </span> <span data-app-ctrl='{"togo":{"to":"sumario","cover":false}}' class="cover-btn-nav"> <span class="app-ico-sumario"></span> <span class="cover-btn-tooltip">Sumário</span> </span> <span data-app-ctrl='{"togo":{"to":"atividades","cover":false}}' class="cover-btn-nav"> <span class="app-ico-atividade"></span> <span class="cover-btn-tooltip">Atividades</span> </span> <span data-app-ctrl='{"togo":{"to":"autor","cover":false}}' class="cover-btn-nav"> <span class="app-ico-autor"></span> <span class="cover-btn-tooltip">Autores</span> </span> <span data-app-ctrl='{"togo":{"to":"referencias","cover":false}}' class="cover-btn-nav"> <span class="app-ico-referencia"></span> <span class="cover-btn-tooltip">Referências</span> </span> </div>
+
+            <div class="cover-logo-group">
+               <img src="img/logo.pos.white.svg" class="cover-logo-item logo-pos">
+               <img src="img/logo.white.svg" class="cover-logo-item logo-instituicao">
+            </div>
+
+            <div class="cover-nav-bar col-md-1 col-notspace row">
+
+               <span class="cover-btn-nav btn-nav-menu">
+                  <span class="app-ico-menu"></span>
+               </span>
+
+               <span data-app-ctrl='{"togo":{"to":"sumario","cover":false}}' class="cover-btn-nav">
+                  <span class="app-ico-sumario"></span>
+                  <span class="cover-btn-tooltip">Sumário</span>
+               </span>
+
+               <span data-app-ctrl='{"togo":{"to":"atividades","cover":false}}' class="cover-btn-nav">
+                  <span class="app-ico-atividade"></span>
+                  <span class="cover-btn-tooltip">Atividades</span>
+               </span>
+
+               <span data-app-ctrl='{"togo":{"to":"autor","cover":false}}' class="cover-btn-nav">
+                  <span class="app-ico-autor"></span>
+                  <span class="cover-btn-tooltip">Autores</span>
+               </span>
+
+               <span data-app-ctrl='{"togo":{"to":"referencias","cover":false}}' class="cover-btn-nav">
+                  <span class="app-ico-referencia"></span>
+                  <span class="cover-btn-tooltip">Referências</span>
+               </span>
+            </div>
          </div>
 
          <div style="background-color: rgba(251, 250, 186, 0.18);" class="app-contents add-scroll">
@@ -217,7 +253,12 @@
             <div id="a82793b2dd2614c881e3afb63a5a5a08" class="app-cap-section section-page">
                <div data-app-ctrl='{"navigation":{"section":"Unidade I","page":"Introdução"}}' class="app-cap-abertura section-page-item clearfix app-cor-white app-font-app">
 
-                  <div class="app-cap-capa" style="background-image: url(library/d0e0afe33a15226ac3cbd4dff3abb445/unidade.1.jpg)"> <span class="app-cap-abertura-topo text-bold text-uppercase padding-none-width font-lg-6 font-md-5 font-sm-5 font-ss-4 font-xs-4 col-lg-12 col-md-12 col-sm-12 col-ss-12 col-xs-12"><span class="col-lg-2 col-md-2 col-sm-2 col-ss-2 col-xs-1"></span>Unidade I</span> <span class="app-cap-abertura-titulo text-bold font-lg-12 font-md-10 font-sm-8 font-ss-7 font-xs-6 col-lg-9 col-md-8 col-sm-10 col-ss-10 col-xs-11 col-lg-offset-3 col-md-offset-3 col-sm-offset-3 col-ss-offset-2 col-xs-offset-1">Metodologia da pesquisa: ciência e conhecimento</span> <span class="app-cap-abertura-autor text-italic font-lg-4 font-md-small-3 font-sm-3 font-ss-small-3 font-xs-2 col-lg-9 col-md-8 col-sm-9 col-ss-10 col-xs-11 col-lg-offset-3 col-md-offset-4 col-sm-offset-3 col-ss-offset-2 col-xs-offset-1">Carlos Antônio Bonamigo</span><span class="app-cap-abertura-autor text-italic font-lg-4 font-md-small-3 font-sm-3 font-ss-small-3 font-xs-2 col-lg-9 col-md-8 col-sm-9 col-ss-10 col-xs-11 col-lg-offset-3 col-md-offset-4 col-sm-offset-3 col-ss-offset-2 col-xs-offset-1">Siderly do Carmo Dahle de Almeida</span> </div>
+                  <div class="app-cap-capa" style="background-image: url(library/d0e0afe33a15226ac3cbd4dff3abb445/unidade.1.jpg)"> 
+                     <span class="app-cap-abertura-topo text-bold text-uppercase padding-none-width font-lg-6 font-md-5 font-sm-5 font-ss-4 font-xs-4 col-lg-12 col-md-12 col-sm-12 col-ss-12 col-xs-12">
+                        <span class="col-lg-2 col-md-2 col-sm-2 col-ss-2 col-xs-1"></span>Unidade I</span>
+                        <span class="app-cap-abertura-titulo text-bold font-lg-12 font-md-10 font-sm-8 font-ss-7 font-xs-6 col-lg-9 col-md-8 col-sm-10 col-ss-10 col-xs-11 col-lg-offset-3 col-md-offset-3 col-sm-offset-3 col-ss-offset-2 col-xs-offset-1">Metodologia da pesquisa: ciência e conhecimento</span> 
+                        <span class="app-cap-abertura-autor text-italic font-lg-4 font-md-small-3 font-sm-3 font-ss-small-3 font-xs-2 col-lg-9 col-md-8 col-sm-9 col-ss-10 col-xs-11 col-lg-offset-3 col-md-offset-4 col-sm-offset-3 col-ss-offset-2 col-xs-offset-1">Carlos Antônio Bonamigo</span><span class="app-cap-abertura-autor text-italic font-lg-4 font-md-small-3 font-sm-3 font-ss-small-3 font-xs-2 col-lg-9 col-md-8 col-sm-9 col-ss-10 col-xs-11 col-lg-offset-3 col-md-offset-4 col-sm-offset-3 col-ss-offset-2 col-xs-offset-1">Siderly do Carmo Dahle de Almeida</span> 
+                  </div>
 
                   <div id="64efa7194188880d569e46c366e5149b" class="app-cap-introducao col-lg-9 col-md-8 col-sm-9 col-ss-10 col-xs-11 col-lg-offset-3 col-md-offset-3 col-sm-offset-3 col-ss-offset-2 col-xs-offset-1">
                      <p>A sociedade contemporânea é marcada por profundas transformações, em todas as suas dimensões, desde as inovações inseridas no processo produtivo, passando pelas mudanças nos valores culturais, nas modificações das configurações sociais, familiares e religiosas, nas contínuas rupturas tecnológicas das comunicações e da informática, às novas exigências e anseios na política e na organização social. Todas essas transformações têm colocado como exigência primeira a todos os indivíduos a apropriação, o domínio e a capacidade de produção do conhecimento científico. </p>
@@ -2007,6 +2048,7 @@
                   </article>
                </div>
             </div>
+
             <div id="conclusao" class="app-apr-contents section-page">
                <div id="aa2b4f8bd7dc37c8ecc89f365c17bbf7" data-app-ctrl='{"navigation":{"section":"Conclusão","page":false}}' class="app-apr-item section-page-item app-apr-display-texto">
                   <div data-app-ctrl='{"apr":true}' class="app-apr-item-ctrl app-cor-pattern font-lg-6 font-md-6 font-sm-5 font-ss-4 font-xs-3"> <span class="app-ico-video"></span> <span class="app-ico-texto"></span> </div>

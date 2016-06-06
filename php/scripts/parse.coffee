@@ -556,9 +556,10 @@ trata_html_basico = (seletor) ->
 
 			$(temp.atividade.item[u]).data().bookAtividadeItem = null if $(temp.atividade.item[u]).data().bookAtividadeItem is ''
 
-			temp.atividade.content += "<li data-app-ctrl=\'{\"atividade\":{\"avaliar\":false,\"change\":false,\"true\":#{$(temp.atividade.item[u]).data().bookAtividadeItem}}}\' class=\"app-ati-alternativa-item\">
+			temp.atividade.content += "
+			<li data-app-ctrl=\'{\"atividade\":{\"avaliar\":false,\"change\":false,\"true\":#{$(temp.atividade.item[u]).data().bookAtividadeItem}}}\' class=\"app-ati-alternativa-item\">
 				<span class=\"alternativa\">#{$(temp.atividade.item[u]).find('[data-book-atividade-alternativa]').html()}</span>
-				<span class=\"feedback\">#{$(temp.atividade.item[u]).find('[data-book-atividade-feed]').html()}</span>
+				<div class=\"feedback\">#{$(temp.atividade.item[u]).find('[data-book-atividade-feed]').html()}</div>
 			</li>"
 
 			u++
@@ -566,10 +567,11 @@ trata_html_basico = (seletor) ->
 
 
 		# console.log atividade[i]
-		val = "<div class=\"app-box app-box-atividade\">
+		val = "
+		<div class=\"app-box app-box-atividade\">
 			<div class=\"app-box-head\">Atividades</div>
 			<div class=\"app-box-content app-ati-item\">
-				<p class=\"app-ati-enunciado\">#{$(atividade[i]).find('[data-book-atividade-questao]').html()}</p>
+				<div class=\"app-ati-enunciado\">#{$(atividade[i]).find('[data-book-atividade-questao]').html()}</div>
 				<ul class=\"app-ati-alternativa-content\">
 					#{temp.atividade.content}
 				</ul>
@@ -958,6 +960,21 @@ compila_html_basico = (seletor) ->
 	render.download = "<a href=\"#{$($(seletor).find('[data-book-pdf]')).attr('src')}\" target=\"_blank\" class=\"app-ico-download hidden-ss hidden-xs font-sm-7 font-sm-6\"></a><a href=\"#{$($(seletor).find('[data-book-pdf]')).attr('src')}\" target=\"_blank\" class=\"app-ico-download-short hidden-sm hidden-md hidden-lg font-ss-5\"></a>" if $($(seletor).find('[data-book-pdf]')).attr('src') != undefined
 	render.download = "<span class=\"app-ico-download hidden-ss hidden-xs font-sm-7 font-sm-6\"></span><span class=\"app-ico-download-short hidden-sm hidden-md hidden-lg font-ss-5\"></span>" if $($(seletor).find('[data-book-pdf]')).attr('src') is undefined
 
+	render.mathjax = ''
+	if $('[data-book-mathjax]')[0]
+		render.mathjax = "
+		\n\t\t<script type=\"text/x-mathjax-config\">\n\t\t\t\tMathJax.Hub.Config({tex2jax: {inlineMath: [['_math_','_math_'], ['\\\\(','\\\\)']]}});\n\t\t</script>\n\t\t<script type=\"text/javascript\" async\n\t\t\tsrc=\"https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML\">\n\t\t</script>
+		"
+
+	# Trata elementos que precisam de scrool
+	i = 0
+	while i < $('[data-book-inline]').length
+
+		$($('[data-book-inline]')[i]).after("<div class=\"app-content-scroll-x\">\n<table class=\"tb\">#{$($('[data-book-inline]')[i])[0].innerHTML}</table></div>")
+		$($('.app-content-scroll-x')[i])[0]
+		i++ 
+	$('[data-book-inline').remove()
+
 	return render
 
 monta = compila_html_basico $('#parse')
@@ -973,68 +990,69 @@ construct_book = (monta) ->
 		temp.unidade_short = " - #{temp.algarismos[($('[data-book-unidade]').data('book-unidade') - 1)]}"
 		
 	livro = "
-<!-- 
--- * Estrutura do LivroDigital
--- * FTE Developer - VG Consultoria
--- * LivroDigital Beta V.0.1.1
--->
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset=\"utf-8\">
-		<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
-		<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
-		<title>#{$('[data-book-livro]').text()}#{temp.unidade}</title>
-		<link href=\"css/app.css\" rel=\"stylesheet\">
-		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-		<!--[if lt IE 9]>
-			<script src=\"https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js\"></script>
-			<script src=\"https://oss.maxcdn.com/respond/1.4.2/respond.min.js\"></script>
-		<![endif]-->
-	</head>
-	<body cz-shortcut-listen=\"true\">
-
-			<div id=\"#{md5 $('#parse').find('[data-book-livro]').text()}\" class=\"app-volume\">
-				#{monta.capa}
-				<div style=\"background-color: rgba(251, 250, 186, 0.18);\" class=\"app-contents add-scroll\">
-
-					<div id=\"bar-nav\" class=\"app-nav-bar clearfix\">
-						<div data-app-ctrl='{\"togo\":{\"cover\":true}}' class=\"app-nav-logo col-md-2 col-sm-3 hidden-ss hidden-xs\">
-							<img src=\"img/logo.color.svg\">
-						</div>
-						<div data-app-ctrl='{\"togo\":{\"to\":\"sumario\"}}' class=\"app-nav-section col-md-6 col-sm-5 col-ss-6 col-xs-4\">
-							<div class=\"app-nav-section-info app-font-app\">
-								<div class=\"app-nav-section-livro app-cor-black-80 font-md-small-2 font-sm-small-2 font-ss-1 hidden-xs\">
-									<span class=\"app-nav-section-item app-livro text-uppercase text-bold\">#{$($('#parse').find('[data-book-livro]')).text()}#{temp.unidade_short}</span>
-									<span class=\"app-nav-section-item hidden-ss hidden-xs\">•</span>
-									<span class=\"app-nav-section-item app-autor text-italic hidden-ss hidden-xs\">#{$($('#parse').find('[data-book-autor-nome]')).text()}</span>
-								</div>
-								<div class=\"app-nav-section-secao app-cor-pattern-80 font-md-small-5 font-sm-small-4 font-ss-4 font-xs-3\">
-									<span class=\"app-nav-section-item app-secao text-uppercase text-bold\">Bem Vindo</span>
-									<span class=\"app-nav-section-item app-marker hidden-ss hidden-xs\"></span>
-									<span class=\"app-nav-section-item app-titulo hidden-ss hidden-xs\"></span>
-								</div>
-							</div>
-						</div>
-						<div class=\"app-nav-btn-group app-cor-pattern text-center col-md-4 col-sm-4 col-ss-6 col-xs-8 font-md-5 font-sm-4 font-ss-4 font-xs-4\">
-
-							<div data-app-ctrl='{\"togo\":{\"to\":\"sumario\"}}' class=\"app-nav-btn-item nav-btn-sumario col-md-2 col-sm-2 col-ss-2 col-xs-2\">
-								<span class=\"app-ico-sumario font-md-6 font-sm-5 font-ss-5 font-xs-small-4\"></span>
-							</div>
-							<span class=\"col-md-6 col-sm-6 col-ss-6 col-xs-6\"></span>
-
-							<div class=\"app-nav-btn-item nav-btn-menu col-md-2 col-sm-2 col-ss-2 col-xs-2\">#{monta.download}</div>
-
-							<div data-app-ctrl='{\"togo\":{\"cover\":true}}' class=\"app-nav-btn-item nav-btn-menu col-md-2 col-sm-2 col-ss-2 col-xs-2\">
-								<span class=\"app-ico-capa font-md-6 font-sm-5 font-ss-5 font-xs-small-4\"></span>
-							</div>
-						</div>
-					</div>
-
-					<section id=\"sumario\" class=\"app-sum-scroll section-page\">
-						<div id=\"sumario\" class=\"app-sum-contents\">
-	"
+\n<!-- 
+\n-- * Estrutura do LivroDigital
+\n-- * FTE Developer - VG Consultoria
+\n-- * LivroDigital Beta V.0.1.1
+\n-->
+\n<!DOCTYPE html>
+\n<html>
+\n\t<head>
+\n\t\t<meta charset=\"utf-8\">
+\n\t\t<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
+\n\t\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
+\n\t\t<title>#{$('[data-book-livro]').text()}#{temp.unidade}</title>
+\n\t\t<link href=\"css/app.css\" rel=\"stylesheet\">
+\n\t\t<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+\n\t\t<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+\n\t\t<!--[if lt IE 9]>
+\n\t\t\t<script src=\"https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js\"></script>
+\n\t\t\t<script src=\"https://oss.maxcdn.com/respond/1.4.2/respond.min.js\"></script>
+\n\t\t<![endif]-->
+\n\t\t#{monta.mathjax}
+\n\t</head>
+\n\t<body cz-shortcut-listen=\"true\">
+\n
+\n\t\t\t<div id=\"#{md5 $('#parse').find('[data-book-livro]').text()}\" class=\"app-volume\">
+\n\t\t\t\t#{monta.capa}
+\n\t\t\t\t<div style=\"background-color: rgba(251, 250, 186, 0.18);\" class=\"app-contents add-scroll\">
+\n
+\n\t\t\t\t\t<div id=\"bar-nav\" class=\"app-nav-bar clearfix\">
+\n\t\t\t\t\t\t<div data-app-ctrl='{\"togo\":{\"cover\":true}}' class=\"app-nav-logo col-md-2 col-sm-3 hidden-ss hidden-xs\">
+\n\t\t\t\t\t\t\t<img src=\"img/logo.color.svg\">
+\n\t\t\t\t\t\t</div>
+\n\t\t\t\t\t\t<div data-app-ctrl='{\"togo\":{\"to\":\"sumario\"}}' class=\"app-nav-section col-md-6 col-sm-5 col-ss-6 col-xs-4\">
+\n\t\t\t\t\t\t\t<div class=\"app-nav-section-info app-font-app\">
+\n\t\t\t\t\t\t\t\t<div class=\"app-nav-section-livro app-cor-black-80 font-md-small-2 font-sm-small-2 font-ss-1 hidden-xs\">
+\n\t\t\t\t\t\t\t\t\t<span class=\"app-nav-section-item app-livro text-uppercase text-bold\">#{$($('#parse').find('[data-book-livro]')).text()}#{temp.unidade_short}</span>
+\n\t\t\t\t\t\t\t\t\t<span class=\"app-nav-section-item hidden-ss hidden-xs\">•</span>
+\n\t\t\t\t\t\t\t\t\t<span class=\"app-nav-section-item app-autor text-italic hidden-ss hidden-xs\">#{$($('#parse').find('[data-book-autor-nome]')).text()}</span>
+\n\t\t\t\t\t\t\t\t</div>
+\n\t\t\t\t\t\t\t\t<div class=\"app-nav-section-secao app-cor-pattern-80 font-md-small-5 font-sm-small-4 font-ss-4 font-xs-3\">
+\n\t\t\t\t\t\t\t\t\t<span class=\"app-nav-section-item app-secao text-uppercase text-bold\">Bem Vindo</span>
+\n\t\t\t\t\t\t\t\t\t<span class=\"app-nav-section-item app-marker hidden-ss hidden-xs\"></span>
+\n\t\t\t\t\t\t\t\t\t<span class=\"app-nav-section-item app-titulo hidden-ss hidden-xs\"></span>
+\n\t\t\t\t\t\t\t\t</div>
+\n\t\t\t\t\t\t\t</div>
+\n\t\t\t\t\t\t</div>
+\n\t\t\t\t\t\t<div class=\"app-nav-btn-group app-cor-pattern text-center col-md-4 col-sm-4 col-ss-6 col-xs-8 font-md-5 font-sm-4 font-ss-4 font-xs-4\">
+\n
+\n\t\t\t\t\t\t\t<div data-app-ctrl='{\"togo\":{\"to\":\"sumario\"}}' class=\"app-nav-btn-item nav-btn-sumario col-md-2 col-sm-2 col-ss-2 col-xs-2\">
+\n\t\t\t\t\t\t\t\t<span class=\"app-ico-sumario font-md-6 font-sm-5 font-ss-5 font-xs-small-4\"></span>
+\n\t\t\t\t\t\t\t</div>
+\n\t\t\t\t\t\t\t<span class=\"col-md-6 col-sm-6 col-ss-6 col-xs-6\"></span>
+\n
+\n\t\t\t\t\t\t\t<div class=\"app-nav-btn-item nav-btn-menu col-md-2 col-sm-2 col-ss-2 col-xs-2\">#{monta.download}</div>
+\n
+\n\t\t\t\t\t\t\t<div data-app-ctrl='{\"togo\":{\"cover\":true}}' class=\"app-nav-btn-item nav-btn-menu col-md-2 col-sm-2 col-ss-2 col-xs-2\">
+\n\t\t\t\t\t\t\t\t<span class=\"app-ico-capa font-md-6 font-sm-5 font-ss-5 font-xs-small-4\"></span>
+\n\t\t\t\t\t\t\t</div>
+\n\t\t\t\t\t\t</div>
+\n\t\t\t\t\t</div>
+\n
+\n\t\t\t\t\t<section id=\"sumario\" class=\"app-sum-scroll section-page\">
+\n\t\t\t\t\t\t<div id=\"sumario\" class=\"app-sum-contents\">
+\n\t"
 	i = 0
 	while i < monta.sumario.length
 		livro += "#{monta.sumario[i]}"
@@ -1057,18 +1075,17 @@ construct_book = (monta) ->
 					#{monta.conclusao}
 					#{monta.referencias}
 					#{monta.atividades}
-				</div>
-			</div>
-
-		<script src=\"js/jquery.min.js\" type=\"text/javascript\"></script>
-		<script src=\"js/bootstrap.min.js\" type=\"text/javascript\"></script>
-		<script src=\"js/bootstrap.slider.min.js\" type=\"text/javascript\"></script>
-		<script src=\"js/app.js\" type=\"text/javascript\"></script>
-		<script src=\"js/vendors.js\" type=\"text/javascript\"></script>
-	</body>
-</html>
-
-	"
+\n\t\t\t\t</div>
+\n\t\t\t</div>
+\n
+\n\t\t<script src=\"js/jquery.min.js\" type=\"text/javascript\"></script>
+\n\t\t<script src=\"js/bootstrap.min.js\" type=\"text/javascript\"></script>
+\n\t\t<script src=\"js/bootstrap.slider.min.js\" type=\"text/javascript\"></script>
+\n\t\t<script src=\"js/app.js\" type=\"text/javascript\"></script>
+\n\t\t<script src=\"js/vendors.js\" type=\"text/javascript\"></script>
+\n\t</body>
+\n</html>
+"
 
 	return livro
 
@@ -1081,3 +1098,10 @@ $('title').text($('[data-book-livro]').text())
 
 # $(links).find('img').length
 # console.log livro
+
+
+###
+<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});</script>
+<script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML"></script>
+###
+
