@@ -339,9 +339,9 @@ trata_html_basico = (seletor) ->
 	i = 0
 	while i < sections.length
 
-		if $(sections[i]).find('[data-book-fonte]').length > 0
+		if $(sections[i]).find('[data-book-fonte="fonte"]').length > 0
 			$(sections[i]).append($.parseHTML "<span class=\"app-fonte\"><span class=\"label\">Fonte</span>#{$(sections[i]).find('[data-book-fonte]').html()}</span>")
-			$(sections[i]).find('[data-book-fonte]').remove()
+			$(sections[i]).find('[data-book-fonte="fonte"]').remove()
 
 		switch $(sections[i]).data().bookSection
 			when 1
@@ -446,8 +446,12 @@ trata_html_basico = (seletor) ->
 		i = 0
 
 		while i < graphic.length
+			temp.graphic.incorpore = ''
+			if $(graphic[i]).find('[data-book-graphic-item]').data('book-icorpore') != undefined
+				temp.graphic.incorpore = 'data-app-ctrl=\'{"incorporar":"src"}\''
+
 			temp.graphic.classe = 'app-graphic-figure'
-			temp.graphic.content = "<img src=\"#{$(graphic[i]).find('[data-book-graphic-item]').attr('src')}\" class=\"app-graphic-item on\"/>"
+			temp.graphic.content = "<img #{temp.graphic.incorpore} src=\"#{$(graphic[i]).find('[data-book-graphic-item]').attr('src')}\" class=\"app-graphic-item on\"/>"
 			temp.graphic.legenda = "#{$(graphic[i]).find('[data-book-legenda]').html()}"
 
 			# TODO: Valida todas as figruas

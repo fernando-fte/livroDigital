@@ -36,7 +36,8 @@
         'togo': {},
         'display': {},
         'apr': {},
-        'atividade': {}
+        'atividade': {},
+        'incorporar': {}
       },
       '_erro': {
         '_true': false
@@ -64,9 +65,19 @@
           temp._proccess.togo[i] = {};
           temp._proccess.togo[i] = $.appCtrl.togo(temp.appCtrl[i]);
         }
+        if (temp.appCtrl[i].app.display) {
+          temp._proccess.display[i] = $.appCtrl.display(temp.appCtrl[i]);
+        }
+        if (temp.appCtrl[i].app.apr) {
+          temp._proccess.apr[i] = {};
+          temp._proccess.apr[i] = $.appCtrl.apr(temp.appCtrl[i]);
+        }
         if (temp.appCtrl[i].app.atividade) {
           temp._proccess.atividade[i] = {};
           temp._proccess.atividade[i] = $.appCtrl.atividade(temp.appCtrl[i]);
+        }
+        if (temp.appCtrl[i].app.incorporar) {
+          temp._proccess.incorporar[i] = {};
         }
         results.push(i++);
       }
@@ -482,6 +493,14 @@
     return temp;
   };
 
+  $.appCtrl.incorporar = function(post) {
+    if (post.app.incorporar === 'src') {
+      $(post["this"]).after("<objec data-object class=\"" + ($(post["this"])[0].className) + "\"></object>");
+      $('[data-object]').load($(post["this"])[0].currentSrc);
+      return $(post["this"]).remove();
+    }
+  };
+
   $.appCtrl($("[data-app-ctrl]"));
 
   $.appScroll = false;
@@ -540,7 +559,5 @@
   * LivroDigital Beta V.0.1.1\n
   "
    */
-
-  console.log('oi');
 
 }).call(this);

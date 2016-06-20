@@ -64,7 +64,7 @@ $.appCtrl.togo = {} if !$.appCtrl.togo
 # Inicia globais de tratamentos
 $.appCtrl = (post) ->
 	#// Requer uma lista $('[data-ctrl]')
-	temp = {'_proccess':{'_true':false, 'togo':{}, 'display':{}, 'apr':{}, 'atividade':{}}, '_erro':{'_true':false}, '_warning':{'_true':false}, '_done':{'_true':false}, 'appCtrl':{}}
+	temp = {'_proccess':{'_true':false, 'togo':{}, 'display':{}, 'apr':{}, 'atividade':{}, 'incorporar':{}}, '_erro':{'_true':false}, '_warning':{'_true':false}, '_done':{'_true':false}, 'appCtrl':{}}
 
 
 	# # # # # #
@@ -126,6 +126,16 @@ $.appCtrl = (post) ->
 
 				# define processo togo atual falso
 				temp._proccess.atividade[i] = $.appCtrl.atividade temp.appCtrl[i]
+
+			#** valida se a solicitação é para tratar elementos SVG iterativo
+			if temp.appCtrl[i].app.incorporar
+
+				# declara processo atual
+				temp._proccess.incorporar[i] = {}
+
+				# define processo togo atual falso
+				# temp._proccess.incorporar[i] = $.appCtrl.incorporar temp.appCtrl[i]
+
 
 			#// adiciona contador no loop
 			i++
@@ -568,6 +578,13 @@ $.appCtrl.atividade = (post) ->
 
 
 	return temp
+
+$.appCtrl.incorporar = (post) ->
+	# console.log post
+	if post.app.incorporar is 'src'
+		$(post.this).after("<objec data-object class=\"#{$(post.this)[0].className}\"></object>")
+		$('[data-object]').load($(post.this)[0].currentSrc)
+		$(post.this).remove()
 
 
 $.appCtrl $("[data-app-ctrl]")
