@@ -1,0 +1,139 @@
+//
+// Utility classes
+// --------------------------------------------------
+
+
+// Floats
+// -------------------------
+
+.clearfix {
+  .clearfix();
+}
+.center-block {
+  .center-block();
+}
+.pull-right {
+  float: right !important;
+}
+.pull-left {
+  float: left !important;
+}
+
+
+// Toggling content
+// -------------------------
+
+// Note: Deprecated .hide in favor of .hidden or .sr-only (as appropriate) in v3.0.1
+.hide {
+  display: none !important;
+}
+.show {
+  display: block !important;
+}
+.invisible {
+  visibility: hidden;
+}
+.text-hide {
+  .text-hide();
+}
+
+
+// Hide from screenreaders and browsers
+//
+// Credit: HTML5 Boilerplate
+
+.hidden {
+  display: none !important;
+}
+
+
+// For Affix plugin
+// -------------------------
+
+.affix {
+  position: fixed;
+}
+
+// Box contents centralizado
+
+.center-vertical() {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.center-vertical {
+
+  .center-vertical();
+}
+
+//
+//
+//== Configrua botões do aplicativo
+.btn-app {
+  font-family: @app-font-app;
+  text-transform: uppercase;
+  border: 1px solid @app-cor-padrao;
+  background-color: @app-cor-preto-0;
+  color: @app-cor-padrao;
+
+  &:hover {
+    background-color:  @app-cor-padrao;
+    color: @app-cor-preto-0;
+  }
+}
+
+//** Botão azul
+.btn-app-new {
+  font-family: @app-font-app;
+  text-transform: uppercase;
+  border: 1px solid @app-cor-azul;
+  background-color: @app-cor-preto-0;
+  color: @app-cor-azul;
+
+  &:hover {
+    background-color:  @app-cor-azul;
+    color: @app-cor-preto-0;
+  }
+}
+
+//** Botão verde
+.btn-app-change {
+  font-family: @app-font-app;
+  text-transform: uppercase;
+  border: 1px solid @app-cor-verde;
+  background-color: @app-cor-preto-0;
+  color: @app-cor-verde;
+
+  &:hover {
+    background-color:  @app-cor-verde;
+    color: @app-cor-preto-0;
+  }
+}
+
+//
+//
+//== Divisor de itens
+.app-variant-divisor(@direction) {
+  border-@{direction}: 1px solid @app-cor-preto-10;
+    margin-@{direction}: 5px;
+}
+
+.app-divisor-bottom { .app-variant-divisor(bottom); }
+.app-divisor-top { .app-variant-divisor(top); }
+.app-divisor-left { .app-variant-divisor(left); }
+.app-divisor-right { .app-variant-divisor(right); }
+
+//== Configuração de padding
+.padding-variant-none (@direction) {
+  padding-@{direction}: 0px;
+}
+
+.padding-none-top { .padding-variant-none(top); }
+.padding-none-bottom { .padding-variant-none(bottom); }
+.padding-none-left { .padding-variant-none(left); }
+.padding-none-right { .padding-variant-none(right); }
+
+.padding-none-height { .padding-variant-none(top); .padding-variant-none(bottom); }
+.padding-none-width { .padding-variant-none(left); .padding-variant-none(right); }
+.padding-none-all { .padding-variant-none(top); .padding-variant-none(bottom); .padding-variant-none(left); .padding-variant-none(right); }
+

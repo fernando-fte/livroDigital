@@ -1,0 +1,186 @@
+// Framework grid generation
+//
+// Used only by Bootstrap to generate the correct number of grid classes given
+// any value of `@grid-columns`.
+
+//== GRID COLS
+.make-grid-columns() {
+  // Common styles for all sizes of grid columns, widths 1-12
+  .col(@index) { // initial
+    @item: ~".col-xs-@{index}, .col-sm-@{index}, .col-md-@{index}, .col-lg-@{index}";
+    .col((@index + 1), @item);
+  }
+  .col(@index, @list) when (@index =< @grid-columns) { // general; "=<" isn't a typo
+    @item: ~".col-xs-@{index}, .col-sm-@{index}, .col-md-@{index}, .col-lg-@{index}";
+    .col((@index + 1), ~"@{list}, @{item}");
+  }
+  .col(@index, @list) when (@index > @grid-columns) { // terminal
+    @{list} {
+      position: relative;
+      // Prevent columns from collapsing when empty
+      min-height: 1px;
+      // Inner gutter via padding
+      padding-left:  ceil((@grid-gutter-width / 2));
+      padding-right: floor((@grid-gutter-width / 2));
+    }
+  }
+  .col(1); // kickstart it
+}
+
+.float-grid-columns(@class) {
+  .col(@index) { // initial
+    @item: ~".col-@{class}-@{index}";
+    .col((@index + 1), @item);
+  }
+  .col(@index, @list) when (@index =< @grid-columns) { // general
+    @item: ~".col-@{class}-@{index}";
+    .col((@index + 1), ~"@{list}, @{item}");
+  }
+  .col(@index, @list) when (@index > @grid-columns) { // terminal
+    @{list} {
+      float: left;
+    }
+  }
+  .col(1); // kickstart it
+}
+
+.calc-grid-column(@index, @class, @type) when (@type = width) and (@index > 0) {
+  .col-@{class}-@{index} {
+    width: percentage((@index / @grid-columns));
+  }
+}
+.calc-grid-column(@index, @class, @type) when (@type = push) and (@index > 0) {
+  .col-@{class}-push-@{index} {
+    left: percentage((@index / @grid-columns));
+  }
+}
+.calc-grid-column(@index, @class, @type) when (@type = push) and (@index = 0) {
+  .col-@{class}-push-0 {
+    left: auto;
+  }
+}
+.calc-grid-column(@index, @class, @type) when (@type = pull) and (@index > 0) {
+  .col-@{class}-pull-@{index} {
+    right: percentage((@index / @grid-columns));
+  }
+}
+.calc-grid-column(@index, @class, @type) when (@type = pull) and (@index = 0) {
+  .col-@{class}-pull-0 {
+    right: auto;
+  }
+}
+.calc-grid-column(@index, @class, @type) when (@type = offset) {
+  .col-@{class}-offset-@{index} {
+    margin-left: percentage((@index / @grid-columns));
+  }
+}
+
+// Basic looping in LESS
+.loop-grid-columns(@index, @class, @type) when (@index >= 0) {
+  .calc-grid-column(@index, @class, @type);
+  // next iteration
+  .loop-grid-columns((@index - 1), @class, @type);
+}
+
+
+//== GRID ROWNS
+.float-row(@class) {
+  .row(@index) { // initial
+    @item: ~".row-@{class}-@{index}";
+    .row((@index + 1), @item);
+  }
+  .row(@index, @list) when (@index =< @grid-columns) { // general
+    @item: ~".row-@{class}-@{index}";
+    .row((@index + 1), ~"@{list}, @{item}");
+  }
+  .row(@index, @list) when (@index > @grid-columns) { // terminal
+    @{list} {
+      // float: left;
+    }
+  }
+  .row(1); // kickstart it
+}
+
+.calc-row(@index, @class, @type) when (@type = min) {
+  .row-@{class}-@{index} {
+    min-height: percentage((@index / @grid-columns));
+  }
+}
+.calc-row(@index, @class, @type) when (@type = fix) {
+  .row-@{class}-fix-@{index} {
+    height: percentage((@index / @grid-columns));
+  }
+}
+
+// Basic looping in LESS
+.loop-row(@index, @class, @type) when (@index >= 0) {
+  .calc-row(@index, @class, @type);
+  // next iteration
+  .loop-row((@index - 1), @class, @type);
+}
+
+
+//== FONTS
+.float-font(@class) {
+  .font(@index) { // initial
+    @item: ~".font-@{class}-@{index}";
+    .font((@index + 1), @item);
+  }
+  .font(@index, @list) when (@index =< @grid-columns) { // general
+    @item: ~".font-@{class}-@{index}";
+    .font((@index + 1), ~"@{list}, @{item}");
+  }
+  .font(@index, @list) when (@index > @grid-columns) { // terminal
+    @{list} {
+      // float: left;
+    }
+  }
+  .font(1); // kickstart it
+}
+
+.calc-font(@index, @class, @type) when (@type = sizes) {
+  .font-@{class}-@{index} {
+    font-size: 4px + (4 * @index); // 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52
+  }
+}
+
+.calc-font(@index, @class, @type) when (@type = small) {
+  .font-@{class}-small-@{index} {
+    font-size: 2px + (4 * @index); // 6, 10, 14, 18, 22, 26, 30, 34, 38, 42, 46, 50
+  }
+}
+
+.calc-font(@index, @class, @type) when (@type = double) {
+  .font-@{class}-double-@{index} {
+    font-size: 4px + (8 * @index); // 12, 20, 28, 36, 44, 52, 60, 68, 76, 84, 92, 100
+  }
+}
+
+// Basic looping in LESS
+.loop-font(@index, @class, @type) when (@index >= 0) {
+  .calc-font(@index, @class, @type);
+  // next iteration
+  .loop-font((@index - 1), @class, @type);
+}
+
+
+//== RENDER GRIDES
+.make-grid(@class) {
+  //Grids
+  .float-grid-columns(@class);
+  .loop-grid-columns(@grid-columns, @class, width);
+  .loop-grid-columns(@grid-columns, @class, pull);
+  .loop-grid-columns(@grid-columns, @class, push);
+  .loop-grid-columns(@grid-columns, @class, offset);
+
+  //Cols
+  .float-row(@class);
+  .loop-row(@grid-columns, @class, min);
+  .loop-row(@grid-columns, @class, fix);
+
+  //Fonts
+  .float-font(@class);
+  .loop-font(@grid-columns, @class, sizes);
+  .loop-font(@grid-columns, @class, small);
+  .loop-font(@grid-columns, @class, double);
+}

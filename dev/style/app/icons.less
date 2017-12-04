@@ -1,0 +1,116 @@
+//== Pre configura icones
+
+//== Icones
+//
+@app-ico-alternativa: "\F10C";
+@app-ico-alternativa-hover: "\F192";
+@app-ico-alternativa-certa: "\F058";
+@app-ico-alternativa-errada: "\F057";
+@app-ico-alternativa-avaliar: "\F05D";
+@app-ico-alternativa-avaliar-hover: "\F058";
+
+@app-ico-v-baixo: "\F107";
+@app-ico-v-cima: "\F106";
+@app-ico-v-esquerda: "\F104";
+@app-ico-v-direita: "\F105";
+
+@app-ico-expande: "\F065";
+
+@app-ico-check-on: "\F14A";
+@app-ico-check-off: "\F096";
+
+@app-ico-menu: "\F0C9";
+@app-ico-menu-short: "\F142";
+@app-ico-menu-text: "Menu";
+
+@app-ico-sumario: "\F0CA";
+@app-ico-sumario-text: "Sumário";
+
+@app-ico-atividade: "\F040";
+@app-ico-atividade-text: "Atividades";
+
+@app-ico-marcador: "\F041";
+@app-ico-marcador-text: "Continuar de onde parei";
+
+@app-ico-anotacao: "\F097";
+@app-ico-anotacao-text: "Anotações";
+
+@app-ico-referencia: "\F20E";
+@app-ico-referencia-text: "Referências";
+
+@app-ico-iniciar: @app-ico-v-direita;
+@app-ico-iniciar-text: "Iniciar Leitura";
+
+@app-ico-config_leitura: "\F1DE";
+@app-ico-config_leitura-text: "Configurar leitura";
+
+@app-ico-x-on: "\F057";
+@app-ico-x-off: "\F05C";
+@app-ico-x-text: "Fechar";
+
+@app-ico-mais-on: "\F057";
+@app-ico-mais-off: "\F05C";
+@app-ico-mais-text: "Adicionar";
+
+@app-ico-lixo: "\F1F8";
+@app-ico-lixo-text: "Apagar";
+
+@app-ico-ir: "\F061";
+@app-ico-ir-text: "Ir";
+
+@app-ico-light-on: "\F185";
+@app-ico-light-off: "\F186";
+
+@app-ico-paragrafo: "\F1DD";
+@app-ico-paragrafo-text: "Texto";
+
+@app-ico-video: "\F01D";
+@app-ico-video-text: "Vídeo";
+
+@app-ico-filme: "\F008";
+@app-ico-filme-text: "Filme";
+
+@app-ico-leitura: "\F02D";
+@app-ico-leitura-text: "Leitura";
+
+@app-ico-download: "\F019";
+@app-ico-download-text: "Download";
+
+@app-ico-autor: "\F19D";
+@app-ico-autor-text: "Professor";
+
+@app-ico-capa: "\F090";
+@app-ico-capa-text: "Capa";
+
+
+
+//** Variavel de configuração para icones
+.app-var-ico (@ico) {
+
+	&:after { font-family: @app-font-ico; content: @ico; }
+}
+
+.app-var-ico-before (@ico) { &:before { font-family: @app-font-ico; content: @ico; } }
+
+.app-ico-menu { .app-var-ico (@app-ico-menu);}
+.app-ico-menu-short { .app-var-ico (@app-ico-menu-short);}
+.app-ico-sumario { .app-var-ico (@app-ico-sumario); }
+.app-ico-atividade { .app-var-ico (@app-ico-atividade); }
+.app-ico-marcador { .app-var-ico (@app-ico-marcador); }
+.app-ico-anotacao { .app-var-ico (@app-ico-anotacao); }
+.app-ico-referencia { .app-var-ico (@app-ico-referencia); }
+.app-ico-config_leitura { .app-var-ico (@app-ico-config_leitura); }
+.app-ico-close { .app-var-ico (@app-ico-x-on) }
+.app-ico-lixo { .app-var-ico (@app-ico-lixo) }
+.app-ico-editar { .app-var-ico (@app-ico-atividade) }
+.app-ico-acessar { .app-var-ico (@app-ico-ir) }
+.app-ico-light-on { .app-var-ico (@app-ico-light-on) }
+.app-ico-light-off { .app-var-ico (@app-ico-light-off) }
+.app-ico-texto { .app-var-ico (@app-ico-paragrafo) }
+.app-ico-video { .app-var-ico (@app-ico-video) }
+.app-ico-leitura { .app-var-ico (@app-ico-leitura) }
+.app-ico-download { .app-var-ico (@app-ico-download) }
+.app-ico-autor { .app-var-ico (@app-ico-autor) }
+.app-ico-capa { .app-var-ico (@app-ico-capa) }
+.app-ico-filme { .app-var-ico (@app-ico-filme) }
+

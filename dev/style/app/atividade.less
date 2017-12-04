@@ -1,0 +1,92 @@
+// Atvidades
+.app-ati-enunciado, .app-ati-alternativa-item {
+
+	font-family: @app-font-especial;
+	font-size: @app-font-size-base;
+	margin-top: ceil((@app-size-base * 1.35));
+	margin-bottom: ceil((@app-size-base * 1.35));
+	font-weight: bold;
+
+	b, strong { color: @app-cor-padrao-60; font-size: @app-font-size-small;}
+
+	p {
+		font-family: @app-font-especial;
+		font-size: @app-font-size-base;
+		margin-top: ceil((@app-size-base * 1.35));
+		margin-bottom: ceil((@app-size-base * 1.35));
+		font-weight: bold;
+	}
+}
+
+.app-ati-enunciado {
+	font-weight: bold;
+}
+
+// 
+.app-ati-alternativa-item {
+
+	list-style: none;
+	cursor: pointer;
+	padding-right: @app-font-size-base;
+	color: @app-cor-preto-80;
+
+	.alternativa {
+		font-family: @app-font-especial;
+		font-size: ceil((@app-font-size-base * 0.894));
+	}
+
+	.feedback {
+		font-size: ceil((@app-font-size-base / 1.2));
+		font-weight: normal;
+		display: none;
+	}
+
+	&:before {
+		font-family: @app-font-ico;
+		content: @app-ico-alternativa;
+		padding-right:  @app-font-size-base;
+		margin-left:  -(@app-font-size-base * 2);
+	}
+
+	&:hover:before { content: @app-ico-alternativa-hover; }
+
+	&.on:before { content: @app-ico-alternativa-hover; }
+
+	&.true, &.false { font-weight: bold; cursor: default; .feedback {display: block; .app-play-fadeInDown()} &:hover:before { content: inherit;}; .app-play-flipInX();}
+
+	&.true {
+		color: @app-cor-verde;
+		&:before { content: @app-ico-alternativa-certa }
+	}
+
+	&.false {
+		color: @app-cor-vermelho;
+		&:before { content: @app-ico-alternativa-errada }
+	}
+	&.off { color: @app-cor-preto-60!important }
+}
+
+// Botão de avaliação
+.app-ati-item-change {
+	
+	font-family: @app-font-app;
+	font-size: ceil((@app-font-size-base / 1.2));
+    color: @app-cor-padrao;
+    background-color: @app-cor-preto-0;
+    border-color: @app-cor-padrao;
+    text-transform: uppercase;
+    font-weight: bold;
+
+	&:before {
+		padding-right: ceil((@app-font-size-base / 1.2));
+		font-size: @app-font-size-base;
+		font-family: @app-font-ico;
+		content: @app-ico-alternativa-avaliar;
+	}
+
+    &:hover { 
+		color: @app-cor-padrao-80;
+
+		&:before { content: @app-ico-alternativa-avaliar-hover; }
+	}
+}

@@ -1,0 +1,107 @@
+//== Configruações dos capítulos
+.app-variant-capitulo(@cap-left, @cap-width, @item-left, @item-right, @item-left-in, @article-top) {
+
+	//** Contents da abertura
+	.app-cap-abertura {
+		display: none;
+		min-height: 50%;
+		position: relative;
+		left: @cap-left;
+		width: @cap-width;
+		margin-bottom: 5%;
+
+		//** Topo onde fica o número e indicador da unidade
+		.app-cap-abertura-topo {
+			background-color: @app-cor-padrao-fraco;
+			padding-top: 10px;
+			padding-bottom: 10px;
+			margin-bottom: 20%;
+		}
+
+		//** Content para o titulo
+		.app-cap-abertura-titulo {
+			padding: 30px 0px;
+			padding-right: 7%;
+		}
+
+		//** Content para o autor
+		.app-cap-abertura-autor {
+			padding-bottom: 7px;
+			padding-right: 7%;
+		}
+		.app-cap-abertura-titulo, .app-cap-abertura-autor {text-shadow: 1px 1px 4px rgba(0, 0, 0, 1);}
+
+		//** COnfigura content da capa
+		.app-cap-capa {
+			background-color: @app-cor-preto-20;
+			display: block;
+			background-repeat: no-repeat;
+			background-size: cover;
+			padding-bottom: 12%;
+			margin-bottom: 5%;
+			.clearfix()
+		}
+
+		//** Contents da introdução do capítulo
+		.app-cap-introducao {
+			display: block;
+			margin-bottom: 10%;
+		}
+	}
+
+	//** Contents para os conteúdos do capítulo
+	.app-cap-content {
+
+
+		//** Itens principais do capítulo
+		.section-page-item {
+
+			border-bottom: 1px dashed @app-cor-padrao-fraco-20;
+			padding-bottom: 7%;
+			margin-bottom: 7%;
+			overflow-x: hidden;
+			max-width: 100%;
+			margin-left: @item-left; // 15%;
+			margin-right: @item-right; // 5%;
+			padding-left: @item-left-in; // 11%;
+		    margin-top: 5%;
+
+
+			article { margin-top: @article-top; }
+		}
+	}
+}
+
+
+//== Configruações responsivas
+// Min Min grid (XS) // ~ to 480
+@media (max-width: @screen-xs-max) {
+	
+	.app-variant-capitulo(-16%, 121%, 0%, 0%, 0%, 14%);
+	.app-cap-content .section-page-item { margin-bottom: 15%; margin-top: 18%;}
+}
+
+// Min Min grid (SS) // 480 to 768
+@media (min-width: @screen-ss-min) { 
+
+	.app-variant-capitulo(-16%, 128%, 3%, 0%, 0%, 10%);
+	.app-cap-content .section-page-item { margin-bottom: 15%; margin-top: 18%;}
+}
+
+// Min grid (SM)// 768 to 992
+@media (min-width: @screen-sm-min) { 
+	
+	.app-variant-capitulo(-12%, 116%, 8%, 5%, 0%, 7%);
+}
+
+// Medium grid (MD) // 992 to 1199
+@media (min-width: @screen-md-min) { 
+	
+	.app-variant-capitulo(-13%, 120%, 15%, 5%, 11%, 7%);
+}
+
+// Large grid (LG) // 1200 to ~
+@media (min-width: @screen-lg-min) { 
+	
+	.app-variant-capitulo(-13%, 117%, 15%, 5%, 11%, 7%);
+}

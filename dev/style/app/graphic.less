@@ -1,0 +1,196 @@
+
+
+//== Configruação dos box de imagem
+.app-variant-graphic-content(@width, @height, @left, @font) {
+
+	.app-graphic-content {
+		.clearfix();
+
+		width: @width;
+		display: block;
+		margin-bottom: 25px;
+		margin-left: @left;
+		position: relative;
+
+		.app-graphic-ctrl {
+			position: absolute;
+			height: 96%;
+			width: 100%;
+
+			.app-graphic-previous, .app-graphic-next {
+				height: 100%;
+				display: block;
+				width: 5%;
+				position: absolute;
+
+				&:hover:after { opacity: 1; .app-play-pulse();}
+				&:after {
+					display: block;
+					background-color: rgb(86, 85, 89);
+					cursor: pointer;
+					font-size: @font;
+					text-align: center;
+					padding: 57% 0px;
+					color: white;
+					position: absolute;
+					top: 35%;
+					width: 100%;
+					cursor: pointer;
+					opacity: 0.5;
+				}
+			}
+
+			.app-graphic-show {
+
+				height: 100%;
+				display: block;
+				width: 90%;
+				position: absolute;
+				margin: 0 auto;
+				left: 5%;
+
+				.app-var-ico (@app-ico-expande);
+
+				&:hover:after { display: block; }
+				&:after {
+					display: none;
+					font-size: @font; //74px;
+					color: @app-cor-preto-80;
+					padding: 5% 0px;
+					position: absolute;
+					top: 40%;
+					width: 20%;
+					left: 38%;
+					text-align: center;
+					cursor: pointer;
+					opacity: 0.5;
+					.app-play-pulse();
+				}
+			}
+
+			.app-graphic-previous {
+				left: 0px;
+				.app-var-ico (@app-ico-v-esquerda);
+			}
+
+			.app-graphic-next {
+				right: 0px;
+				.app-var-ico (@app-ico-v-direita);
+			}
+		}
+
+		.app-graphic-content-nav {
+
+			height: @height;// 640px;
+			overflow: hidden;
+			background-color: @app-cor-padrao-fraco;
+			text-align: center;
+			margin-top: 5%;
+
+			.app-graphic-item {
+				height: 100%;
+				max-height: 100%;
+				max-width: 100%;
+				display: block;
+				margin: 0 auto;
+			}
+		}
+
+		.app-grapc-content-caption {
+			margin-top: 14px;
+			max-width: 100%;
+			overflow: hidden;
+
+			.app-legenda {
+
+				.label {
+					// .app-sequence-this { &:after {content: " / ";} }
+					.app-sequence-chapter { &:after {content: ".";} }
+					.app-sequence-all { 
+						display: none;
+						&:before {content: "/";} 
+					}
+					
+					&:after { content: ": "}
+				}
+			}
+
+			.app-fonte {
+				&:before { content: " - "; margin-left: 5px; }
+			}
+		}
+
+		&.app-graphic-video {
+			// .app-grapc-content-caption {display: none}
+			.app-graphic-content-nav { background-image: url('../img/ico.video.svg'); background-repeat: no-repeat; background-position: center;}
+			.app-grapc-content-caption .app-legenda:after { display: none; }
+
+			// Configura Nome da etiqueta
+			.app-grapc-content-caption  .app-legenda  .label  .app-sequence-chapter { &:before {content: "Vídeo ";} }
+		}
+		&.app-graphic-table {
+
+			.app-graphic-content-nav {
+
+				.app-graphic-item { height: auto; display: table-footer-group; }
+
+				overflow: auto;
+				background-color: inherit;
+				margin-right: -17px;
+				display: inline-block;
+				height: auto;
+				width: 100%;
+			}
+
+			// Configura Nome da etiqueta
+			.app-grapc-content-caption  .app-legenda  .label  .app-sequence-chapter { &:before {content: "Tabela ";} }
+		}
+		&.app-graphic-figure {
+
+			// Configura Nome da etiqueta
+			.app-grapc-content-caption  .app-legenda  .label  .app-sequence-chapter { &:before {content: "Figura ";} }
+		}
+		&.app-graphic-graphic {
+
+			// Configura Nome da etiqueta
+			.app-grapc-content-caption  .app-legenda  .label  .app-sequence-chapter { &:before {content: "Gráfico ";} }
+		}
+	}
+}
+
+
+
+
+//== Configruações responsivas
+// Min Min grid (XS) // ~ to 480
+@media (max-width: @screen-xs-max) {
+	
+	.app-variant-graphic-content(100%, 180px, 0%, 30px);
+	.app-graphic-table .app-graphic-content-nav { margin-right: 0px;}
+}
+
+// Min Min grid (SS) // 480 to 768
+@media (min-width: @screen-ss-min) { 
+
+	.app-variant-graphic-content(100%, 290px, 0%, 30px);
+	.app-graphic-table .app-graphic-content-nav { margin-right: 0px;}
+}
+
+// Min grid (SM)// 768 to 992
+@media (min-width: @screen-sm-min) { 
+	
+	.app-variant-graphic-content(100%, 340px, 0%, 44px);
+}
+
+// Medium grid (MD) // 992 to 1199
+@media (min-width: @screen-md-min) { 
+	
+	.app-variant-graphic-content(116%, 440px, -16%, 44px);
+}
+
+// Large grid (LG) // 1200 to ~
+@media (min-width: @screen-lg-min) { 
+	
+	.app-variant-graphic-content(116%, 640px, -16%, 74px);
+}
+

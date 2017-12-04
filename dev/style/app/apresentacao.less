@@ -1,0 +1,128 @@
+//** Contents dos itens da apresentação
+.app-apr-item {
+
+	min-height: 105%;
+	padding-top: 15px;
+
+	border-bottom: 5px dashed @app-cor-padrao-80;
+	margin-bottom: 10%;
+	padding-bottom: 10%;
+
+    &:only-child, &:last-child{
+    	min-height: 100%;
+		margin-bottom: 0px;
+		border-bottom: 0px;
+		padding-bottom: 0px;
+    }
+
+	//** Configura toogle de visualização
+	&.app-apr-display-video {
+		.app-apr-item-ctrl {
+			.app-ico-texto {display: block;}
+			.app-ico-video {display: none;}
+		}
+		.app-apr-item-content {
+			.app-apr-item-texto {display: none;};
+			.app-apr-item-video {display: block;}
+			.app-play-pulse ();
+		}
+	}
+}
+
+//** Configura botão toogle de vide e texto
+.app-variant-apr-item-ctrl (@height, @width, @border) {
+	display: block;
+	border: @border solid @app-cor-padrao;
+	position: relative;
+	top: 6px;
+	float: right;
+	padding: @height @width;
+	cursor: pointer;
+
+	.app-ico-texto {display: none;};
+	.app-ico-video {display: block;}
+}
+
+//** Configura box de texto e vídeo
+.app-variant-apr-content-colum (@col, @gap, @avatar-size, @avatar-padding, @avatar-float, @video) {
+
+	.app-apr-item-content {
+
+		.app-apr-item-texto {
+
+			.app-apr-item-avatar {
+				float: @avatar-float;
+				padding-right: @avatar-padding;
+				padding-bottom: @avatar-padding;
+				width: @avatar-size;
+				height: ceil(@avatar-size * 1.3);
+			}
+
+			-webkit-column-count: @col; /* Chrome, Safari, Opera */
+			-moz-column-count: @col; /* Firefox */
+			column-count: @col;
+			-webkit-column-gap: @gap; /* Chrome, Safari, Opera */
+			-moz-column-gap: @gap; /* Firefox */
+			column-gap: @gap;
+
+			margin-top: 25px;
+			display: block;
+		}
+		.app-apr-item-video { 
+			display: none;
+			height: @video;
+			background-color: @app-cor-padrao-80;
+			background-image: url('../img/ico.video.svg');
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+	}
+}
+
+
+//== Configruações responsivas
+// Min Min grid (XS)
+@media (max-width: @screen-xs-max) {
+
+	.app-apr-item-ctrl { .app-variant-apr-item-ctrl(3px, 10px, 4px); }
+	.app-variant-apr-content-colum (1, 0px, 200px, 0%, none, 250px);
+	.app-apr-item-avatar {
+		text-align: center;
+		margin: 0 auto;
+		display: block;
+		margin-bottom: 8%;
+	}
+}
+
+// Min Min grid (SS)
+@media (min-width: @screen-ss-min) { 
+
+	.app-apr-item-ctrl { .app-variant-apr-item-ctrl(2px, 11px, 5px); }
+	.app-variant-apr-content-colum (1, 0px, 200px, 0%, none, 300px);
+	.app-apr-item-avatar {
+		text-align: center;
+		margin: 0 auto;
+		display: block;
+		margin-bottom: 8%;
+	}
+}
+
+// Min grid (SM)
+@media (min-width: @screen-sm-min) { 
+
+	.app-apr-item-ctrl { .app-variant-apr-item-ctrl(2px, 13px, 5px); }
+	.app-variant-apr-content-colum (2, 40px, 150px, 5%, left, 500px)
+}
+
+// Medium grid (MD)
+@media (min-width: @screen-md-min) { 
+
+	.app-apr-item-ctrl { .app-variant-apr-item-ctrl(2px, 16px, 5px); }
+	.app-variant-apr-content-colum (2, 60px, 200px, 5%, left, 600px)
+}
+
+// Large grid (LG)
+@media (min-width: @screen-lg-min) { 
+	.app-apr-item-ctrl { .app-variant-apr-item-ctrl(2px, 16px, 6px); }
+	.app-variant-apr-content-colum (2, 80px, 250px, 5%, left, 700px)
+}

@@ -1,0 +1,119 @@
+//== Configrua navegação da pagina
+
+// on
+// off
+// after-in // == off
+// after-out // == on
+// before-in // == off
+// before-out // == on
+
+// section-page
+// section-page-item
+
+
+// .app-display .after // in
+// .app-display .before // in
+
+// .app-no-display .before // out
+// .app-no-display .before // out
+
+// .app-no-display // off
+// .app-display // on
+
+iframe { border: none }
+
+//** Estiliza sections, capa e os conteudos
+.section-page, .section-page-item, .app-page, .app-contents {
+	//  Oculta
+	display: none;
+
+	// Exibe as seções e os itens ativos e a ser ativado
+	&.app-display, &.app-no-display { display: block; }
+}
+
+//** Configrua evento de paginação horizontal
+.section-page {
+
+	&.app-display { // Aplica no item off => on
+
+		// Quando exibir
+		&.after { .app-play-fadeInRight(); }
+		&.before { .app-play-fadeInLeft(); }
+		&.on { .app-play-fadeIn(); }
+	}
+
+	&.app-no-display { // Aplica no item on => off
+
+		// Quando sair
+		&.after { .app-play-fadeOutLeft(); }
+		&.before { .app-play-fadeOutRight(); }
+		&.on { .app-play-fadeIn(); }
+	}
+}
+
+//** Configrua evento de paginação vertical
+.section-page-item {
+
+	&.app-display { // Aplica no item off => on
+
+		// Remove transparencia
+		opacity: 1;
+
+		// Quando exibir
+		&.after { .app-play-fadeInDown(); }
+		&.before { .app-play-fadeInUp(); }
+		&.on { .app-play-fadeIn(); }
+		&.after, &.before, &.on {-webkit-animation-duration: 0.6s; animation-duration: 0.6s; }
+	}
+
+	&.app-no-display { // Aplica no item on => off
+
+		// Adiciona transparencia
+		opacity: 0.3;
+
+		// Quando sair
+		&.after { .app-play-fadeOutUp(); }
+		&.before { .app-play-fadeOutDown(); }
+		&.on { .app-play-fadeOut(); }
+	}
+}
+
+//** Configura evento de paginação para a capa
+.app-page {
+
+	// Quando exibir
+	&.app-display { .app-play-fadeIn (); }
+
+	// Quando sair
+	&.app-no-display { .app-play-zoomOutLeft (); }
+}
+
+//** Configura evento de paginação para o contents
+.app-contents {
+
+	// Quando exibir
+	&.app-display { .app-play-fadeIn (); }
+
+	// Quando sair
+	&.app-no-display { .app-play-fadeOut (); }
+}
+
+
+//** Configura seção de atividades
+.app-ati {
+
+	.app-box {
+		width: 100%;
+	    margin-left: 0%;
+
+	    .app-box-content {width: 100%!important;}
+	}
+
+}
+.app-content-scroll-x {
+    width: 100%;
+    display: block;
+    overflow-x: scroll;
+    max-height: 100%;
+}
+

@@ -1,0 +1,215 @@
+.app-variant-sum-responsive (@width-contents, @width-itens) {
+
+	//== Contrents do suma´rio
+	.app-sum-scroll {
+		padding-left: 5px;
+		padding-right: 5px;
+		min-height: 100%;
+		overflow: hidden;
+		overflow-x: auto;
+	}
+
+	//== COnfigura tramanho do scroll do sumario
+	.app-sum-contents {
+		.clearfix();
+		min-height: 100%;
+		// width: 2490px; // R:LG
+		width: @width-contents; // R:LG
+	}
+
+	//** Configura blocos de itens do sumario
+	.app-sum-section {
+		.clearfix();
+		width: @width-itens; // 5 sections
+		margin-top: 5px;
+
+		padding-top: 5px;
+		padding-left: 10px;
+		padding-right: 10px;
+
+		float: left;
+
+		&:before {
+			content: " ";
+			display: block;
+			width: 100%;
+			margin-bottom: 5px;
+			margin-top: 5px;
+			border-bottom: 8px solid @app-cor-padrao;
+		}
+	}
+
+	//** Configrua bloco de sub itens
+	.app-sum-section-sub {
+		display: none;
+		margin-top: 10px;
+	}
+
+	//**Configura o bloco de pre textuais
+	.app-sum-section-sections {
+
+		background-color: @app-cor-padrao-40;
+		padding-top: 35px;
+		padding-bottom: 35px;
+		// margin-left: 20px;
+
+		&:before {display: none;}
+
+		.app-sum-section-header {
+			margin-bottom: 0px;
+			margin-top: 35px;
+			&:first-child {margin-top: 0px;}
+		}
+	}
+
+
+	//== Configura todos os itens do sumario
+	.app-sum-section-item {
+		.clearfix();
+		padding-top: 5px;
+		padding-bottom: 5px;
+
+		margin-bottom: 1px;
+
+		border-left: 25px solid @app-cor-padrao-40;
+		border-bottom: 1px solid @app-cor-padrao-40;
+
+		//** Configrua botão
+		.app-var-ico-before(@app-ico-ir);
+		&:before {
+			display: block;
+			position: absolute;
+			float: left;
+			top: 5px;
+			left: -18px;
+			color: white;
+		}
+		&.app-sum-marcador { .app-var-ico-before(@app-ico-marcador) }
+		&.app-sum-atividade { .app-var-ico-before(@app-ico-atividade) }
+
+		&:hover { cursor: pointer; background-color: @app-cor-padrao-40; }
+	}
+
+	//** Item quando for titulo da seção
+	.app-sum-section-header {
+
+		margin-bottom: 25px;
+
+		border-color: @app-cor-preto-60;
+		border-bottom: 0px;
+
+		&:hover { 
+			background-color: @app-cor-padrao-80; 
+			* {color: @app-cor-preto-0;} 
+		}
+	}
+
+	//** Quando for um sub item
+	.app-sum-section-sub-item {
+
+		border-color: @app-cor-preto-60;
+		border-left-color: @app-cor-padrao-10;
+		&:last-child { border-bottom: 0px; }
+
+		// configrua cor do botão
+		&:before { color: @app-cor-padrao-80; }
+
+		// Qunado clicado
+		&:hover { border-left-color: @app-cor-padrao-40; }
+	}
+	.app-sum-section-item {
+		//** Exibe sub itens
+		&.app-display {
+
+			.app-play-flipInY();
+
+			// Configrua quando estiver exibindo o sub item
+			padding-bottom: 5px;
+			background-color: @app-cor-padrao-10;
+			&:hover { background-color: @app-cor-padrao-10; }
+
+			// Exibe o box do sub item
+			.app-sum-section-sub {display: block; .app-play-slideInDown();}
+
+			// Configura botão sub
+			.app-sum-btn-icon-sub { .app-var-ico(@app-ico-v-cima); bottom: inherit; top: 4px;}
+		}
+
+		//** Oculta sub itens
+		&.app-no-display {
+
+			.app-play-flipInX();
+		}
+	}
+
+	.app-sum-btn-icon-sub {
+		// background-color: @app-cor-padrao-80;
+		padding: 2px;
+		text-align: center;
+		color: @app-cor-padrao-80;
+		line-height: 18px;
+		position: absolute;
+		// bottom: 4px;
+
+		.app-var-ico(@app-ico-v-baixo);
+
+		// Quando encima
+		// &:hover:after{.app-play-bounce()};
+	}
+
+	// Quando um item for novo
+	.app-sum-item-new {
+
+		border-color: @app-cor-padrao;
+		background-color: @app-cor-padrao;
+		*{ color: @app-cor-preto-0; }
+	}
+}
+
+
+
+//== Configruações responsivas
+// Min Min grid (XS)
+@media (max-width: @screen-xs-max) {
+	@width-itens: 100%; // 5 sections
+	@width-contents: 100%;
+	.app-variant-sum-responsive (@width-contents, @width-itens);
+
+	.app-sum-scroll { padding-left: 5%; padding-right: 5%; overflow-y: scroll; overflow-x: hidden; }
+	.app-sum-section { margin-bottom: 10%; }
+	.app-sum-section-sections { border-radius: 10px; }
+}
+ 
+// Min Min grid (SS)
+@media (min-width: @screen-ss-min) {
+	@width-itens: 100%; // 5 sections
+	@width-contents: 100%;
+	.app-variant-sum-responsive (@width-contents, @width-itens);
+
+	.app-sum-scroll { padding-left: 10%; padding-right: 10%; overflow-y: scroll; overflow-x: hidden; }
+	.app-sum-section { margin-bottom: 10%; }
+	.app-sum-section-sections { border-radius: 10px; }
+}
+
+// Min grid (SM)
+@media (min-width: @screen-sm-min) {
+	@width-itens: (100% / 5); // 5 sections
+	@width-contents: 1600px;
+	.app-variant-sum-responsive (@width-contents, @width-itens);
+}
+
+// Medium grid (MD)
+@media (min-width: @screen-md-min) {
+	@width-itens: (100% / 5); // 5 sections
+	@width-contents: 1800px;
+	.app-variant-sum-responsive (@width-contents, @width-itens);
+}
+
+// Large grid (LG)
+@media (min-width: @screen-lg-min) {
+	@width-itens: (100% / 5); // 5 sections
+	@width-contents: 2200px;
+	.app-variant-sum-responsive (@width-contents, @width-itens);
+}
+
+

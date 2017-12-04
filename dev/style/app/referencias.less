@@ -1,0 +1,23 @@
+//== Configruações dos 
+.app-ref-content {
+
+	p { padding: 10px 20px; background-color: #E8E8E8; }
+
+	.app-ref-link {
+		background-color: @app-cor-padrao-10!important;
+	    border-right: 40px solid @app-cor-padrao-60;
+	    cursor: pointer;
+
+	    a { max-width: 100%; overflow: hidden; display: block;}
+
+		.app-var-ico (@app-ico-ir);
+		&:after {
+			color: @app-cor-preto-0;
+			display: block;
+			float: right;
+			position: relative;
+			top: -12px;
+			right: -47px;
+		}
+	}
+}

@@ -1,0 +1,98 @@
+//== Configura paginas
+html > * { display: none; }
+html > body { display: block; }
+html, body, .app-page { height: 100%; overflow: hidden;}
+
+//** Remove os espaços das colunas responsivas
+//TODO: Substituir por paddin-none
+.col-notspace { margin: 0px; padding: 0;}
+
+.app-page { background-color: @app-cor-preto; position: fixed; width: 100%; }
+
+.app-cover { background-size: cover; background-repeat: no-repeat; background-position: center; z-index: @app-zindex-cover}
+
+.app-contents { height: 100%; position: fixed; bottom: 0px; padding-top: 57px; width: 100%; z-index: @app-zindex-contents; overflow: hidden;}
+
+.page-out { .app-play-zoomOutLeft (); }
+
+.page-display-section {
+	&.top { .app-play-fadeOutUp (); }
+	&.down { .app-play-fadeOutDown (); }
+}
+
+//** Configura contents da navegação
+//# Declara estrutura basica das seções / abertura, sumario, unidade ...
+.app-variant-section-page (@padding-width) {
+	padding: 0 @padding-width;
+	height: 100%;
+	overflow: hidden;
+	overflow-y: auto;
+}
+
+//# declara estrutura basica dos itens / apresentacao do professor, unidade 1 -> h1
+.app-variant-section-page-item () {
+
+}
+
+//== Configruações responsivas
+// Min Min grid (XS)
+@media (max-width: @screen-xs-max) {
+
+	.app-contents { padding-top: (@app-nav-height-xs + 13); } // TODO: COnfigruar proporção de tamanhos
+
+	.section-page { 
+		.app-variant-section-page (10%);
+		padding-left: 40px;
+		padding-right: 20px;
+	}
+} 
+ 
+// Min Min grid (SS)
+@media (min-width: @screen-ss-min) { 
+	.app-contents { padding-top: (@app-nav-height-ss + 13); } // TODO: COnfigruar proporção de tamanhos
+
+	.section-page { .app-variant-section-page (10%) }
+}
+
+// Min grid (SM)
+@media (min-width: @screen-sm-min) { 
+	.app-contents { padding-top: (@app-nav-height-sm + 13); } // TODO: COnfigruar proporção de tamanhos
+
+	.section-page { .app-variant-section-page (10%) }
+}
+
+// Medium grid (MD)
+@media (min-width: @screen-md-min) { 
+	.app-contents { padding-top: (@app-nav-height-md + 13); } // TODO: COnfigruar proporção de tamanhos
+
+	.section-page { .app-variant-section-page (10%) }
+}
+
+// Large grid (LG)
+@media (min-width: @screen-lg-min) { 
+	.app-contents { padding-top: (@app-nav-height-lg + 13); } 
+
+	.section-page { .app-variant-section-page (10%) }
+}
+
+
+
+
+
+// Adiciona configruação da capa
+@import "capa.less";
+
+// Adiciona configurações da barra de menu
+@import "nav-bar.less";
+
+// Adiciona sumario
+@import "sumario.less";
+
+// Adiciona apresentações
+@import "apresentacao.less";
+
+// Adiciona Capítulo
+@import "capitulo.less";
+
+// Adiciona Referências
+@import "referencias.less";

@@ -1,0 +1,206 @@
+//
+// Variables
+// --------------------------------------------------
+
+//== Cores
+//
+// //## Cor padrão do aplicativo (vermelho escuro derivada da UNIPAR), e lista de derivações menos densa.
+// @app-cor-padrao: #A11314;
+// @app-cor-padrao-80: #B44243;
+// @app-cor-padrao-60: #C77172;
+// @app-cor-padrao-40: #D9A1A1;
+// @app-cor-padrao-20: #ECD0D0;
+// @app-cor-padrao-10: #F6E7E7;
+
+// //## Cor mais clara padrão do aplicativo (vermelho escuro derivada da UNIPAR), e lista de derivações menos densa.
+// // @app-cor-padrao-fraco: #C0504D;
+// @app-cor-padrao-fraco-80: #CA7066;
+// @app-cor-padrao-fraco-60: #D48E82;
+// @app-cor-padrao-fraco-40: #E0AFA4;
+// @app-cor-padrao-fraco-20: #EDD3CB;
+// @app-cor-padrao-fraco-10: #F4E6E2;
+
+// //## Cor preto padrão do aplicativo (vermelho escuro derivada da UNIPAR), e lista de derivações menos densa.
+// // @app-cor-preto: #19181C;
+// @app-cor-preto-80: #47464A;
+// @app-cor-preto-60: #757477;
+// @app-cor-preto-40: #A3A2A4;
+// @app-cor-preto-20: #D1D1D2;
+// @app-cor-preto-10: #E8E8E8;
+// @app-cor-preto-0: #FFFFFF;
+
+// //## Cor da instituição (UNIPAR), e lista de derivações menos densa.
+// // @app-cor-instituicao: #EE3435;
+// @app-cor-instituicao-80: #F25D5E;
+// @app-cor-instituicao-60: #F58586;
+// @app-cor-instituicao-40: #F8AEAE;
+// @app-cor-instituicao-20: #FCD6D7;
+// @app-cor-instituicao-10: #FDEBEB;
+
+// //## Cor verde padrão do aplicativo
+// // @app-cor-verde: #32824C;
+// @app-cor-verde-80: #5B9B70;
+// @app-cor-verde-60: #84B494;
+// @app-cor-verde-40: #ADCDB7;
+// @app-cor-verde-20: #D6E6DB;
+// @app-cor-verde-10: #EAF3ED;
+
+// //## Cor azul padrão do aplicativo
+// // @app-cor-azul: #4D7CBB;
+// @app-cor-azul-80: #7196C9;
+// @app-cor-azul-60: #94B0D6;
+// @app-cor-azul-40: #B8CBE4;
+// @app-cor-azul-20: #DBE5F1;
+// @app-cor-azul-10: #EDF2F8;
+
+// //## Cor vermelho padrão do aplicativo
+// // @app-cor-vermelho: @app-cor-padrao-fraco;
+// @app-cor-vermelho-80: @app-cor-padrao-fraco-80;
+// @app-cor-vermelho-60: @app-cor-padrao-fraco-60;
+// @app-cor-vermelho-40: @app-cor-padrao-fraco-40;
+// @app-cor-vermelho-20: @app-cor-padrao-fraco-20;
+// @app-cor-vermelho-10: @app-cor-padrao-fraco-10;
+
+//== Typography
+//
+//## Font, line-height, and color for body text, headings, and more.
+
+// //** Familia de fontes padrão do aplicativo
+// @app-font-app: "PF BeauSans Pro";
+// @app-font-app-path: '@{wwwroot}/fonts/';
+// @app-font-app-file: "pf-beau-sans-pro";
+// //
+// // Importa fontes padrão
+// @font-face {
+//   font-family: @app-font-app;
+//   src: url('@{app-font-app-path}@{app-font-app-file}.eot');
+//   src: url('@{app-font-app-path}@{app-font-app-file}.eot?#iefix') format('embedded-opentype'),
+//        url('@{app-font-app-path}@{app-font-app-file}.woff2') format('woff2'),
+//        url('@{app-font-app-path}@{app-font-app-file}.woff') format('woff'),
+//        url('@{app-font-app-path}@{app-font-app-file}.ttf') format('truetype'),
+//        url('@{app-font-app-path}@{app-font-app-file}.svg') format('svg');
+// };
+
+
+// //** Familia de fontes do texto
+// @app-font-normal: "Josefin Slab";
+// @app-font-especial: "Josefin Sans";
+// @app-font-titulo: "Dosis";
+// @app-font-legenda: "Maven Pro";
+// @app-font-fonte: "Jura";
+// @app-font-ico: "FontAwesome";
+
+// // Importa "Josefin Slab"
+// @import url(https://fonts.googleapis.com/css?family=Josefin+Slab:400,100,100italic,300,300italic,400italic,600,600italic,700,700italic);
+
+// // Importa "Josefin Sans"
+// @import url(https://fonts.googleapis.com/css?family=Josefin+Sans:400,100italic,100,300,300italic,400italic,600,600italic,700,700italic);
+
+// // Importa "Dosis"
+// @import url(https://fonts.googleapis.com/css?family=Dosis:400,200,300,500,600,700,800);
+
+// // Importa "Maven Pro"
+// @import url(https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900);
+
+// // Importa "Jura"
+// @import url(https://fonts.googleapis.com/css?family=Jura:400,300,500,600);
+
+// //== Icones
+// //
+// Importa FontAwesome
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css);
+
+
+//** Configura tamanhos
+
+// @app-size-base: 14px;
+@app-size-base: 14px;
+
+@app-font-size-h: ceil((@app-size-base * 1.35)); // ~19px
+@app-font-size-base: ceil((@app-size-base * 1.35)); // ~19px
+@app-font-size-large: ceil((@app-font-size-base * 1.25)); // ~18px
+@app-font-size-small: ceil((@app-font-size-base * 0.85)); // ~12px
+
+@app-font-size-h1: floor((@app-font-size-h * 2.6)); // ~36px
+@app-font-size-h2: floor((@app-font-size-h * 2.3)); // ~32px
+@app-font-size-h3: floor((@app-font-size-h * 2)); // ~28px
+@app-font-size-h4: ceil((@app-font-size-h * 1.7)); // ~24px
+@app-font-size-h5: ceil((@app-font-size-h * 1.4)); // ~20px
+@app-font-size-h6: ceil((@app-font-size-h * 1.14)); // ~16px
+
+@app-font-size-h1-sub: floor((@app-font-size-base * 1.4)); // ~20px
+@app-font-size-h2-sub: floor((@app-font-size-base * 1.14)); // ~16px
+@app-font-size-h3-sub: ceil((@app-font-size-base * 0.85)); // ~12px
+
+@app-font-size-tb-1: @app-font-size-base; // ~19px
+@app-font-size-tb-2: ceil((@app-font-size-base * 0.89)); // ~17px
+@app-font-size-tb-3: ceil((@app-font-size-base * 0.78)); // ~15px
+@app-font-size-tb-h1: ceil((@app-font-size-base * 1.15)); // ~22px
+
+
+//** Unit-less `line-height` for use in components like buttons.
+@app-line-height-base: 1.428571429; // 20/14
+
+//** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
+@app-line-height-computed: floor((@app-font-size-base * @app-line-height-base)); // ~20px
+
+//** By default, this inherits from the `<body>`.
+@app-titulo-font: @app-font-titulo;
+
+// @app-titulo-font-weight: 700;
+@app-titulo-line-height: 1.1;
+@app-titulo-cor: @app-cor-preto;
+@app-titulo-cor-fraco: @app-cor-preto-60;
+
+
+
+//== Trata elementos da capa
+@app-font-size-app: ceil((@app-size-base * 1.42)); // ~20px
+@app-height-size-app: @app-font-size-app; // ~20px
+
+
+//** Configura a fachada da capa
+@app-cover-fachada-pdd-l: ceil((@app-height-size-app * 8.35)); // ~167px
+@app-cover-fachada-pdd-r: ceil((@app-height-size-app * 9.8)); // ~196px
+
+@app-cover-livro-font: ceil((@app-font-size-app * 2.6)); // ~52px
+@app-cover-livro-pdd: ceil((@app-height-size-app * 3)); // ~60px
+
+@app-cover-autor-font: ceil((@app-font-size-app * 0.8)); // ~16px
+@app-cover-autor-pdd: ceil((@app-height-size-app * 0.37)); // ~7.5px
+
+//**configrua os bototoes de navegação
+@app-cover-btn-font: ceil((@app-font-size-app * 2.1)); // ~42px
+@app-cover-btn-pdd: ceil((@app-height-size-app * 1)); // ~20px
+@app-cover-btn-mrg: ceil((@app-height-size-app * 1.5)); // ~30px
+@app-cover-btn-mrg-menu: ceil((@app-cover-btn-mrg * 7.33 )); //250px
+
+//** Configrua tooltip dos botoes da navegação
+@app-cover-tooltip-font: ceil((@app-font-size-app * 0.9));//~18px
+@app-cover-tooltip-pdd: ceil((@app-cover-btn-pdd + ((@app-cover-btn-font - @app-cover-tooltip-font) / 2)) * 0.55); //~20px
+@app-cover-tooltip-top: ceil((@app-height-size-app * 2.25)); //~45px
+@app-cover-tooltip-width: ceil((@app-font-size-app * 15)); //~300px
+@app-cover-tooltip-height: ceil((@app-cover-tooltip-font + (@app-cover-tooltip-pdd*2))); //~54px
+
+
+//** COnfigrua botão de iniciar leitura
+@app-cover-iniciar-font: ceil((@app-font-size-app * 1.4)); // ~28px
+@app-cover-iniciar-ico: ceil((@app-cover-iniciar-font * 2.5)); // ~70px
+@app-cover-iniciar-pdd: ceil((@app-height-size-app * 1.25)); // ~25px
+@app-cover-iniciar-pdd-l: ceil((@app-height-size-app * 2.5)); // ~50px
+@app-cover-iniciar-pdd-r: ceil((@app-height-size-app * 3.15)); // ~63px
+@app-cover-iniciar-width: ceil((@app-cover-iniciar-font * 12.14)); // ~340px
+
+//** Configrua logos da capa
+@app-cover-logo-left: 40%; //40%
+@app-cover-logo-width: 170px; //170px
+
+
+
+//== Globais do menu
+@app-nav-height-xs: 34px;
+@app-nav-height-ss: 38px;
+@app-nav-height-sm: 38px;
+@app-nav-height-md: 47px;
+@app-nav-height-lg: 47px;
+

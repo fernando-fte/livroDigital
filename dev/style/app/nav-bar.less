@@ -1,0 +1,306 @@
+//
+//** Variavel para configurações
+.app-variant-nav-grid (@size) {
+	.app-nav-logo, .app-nav-section, .app-nav-btn-group, .app-nav-btn-group-item, .app-nav-menu { height: @size;}
+	.app-nav-btn-item { 
+		height: @size; 
+		padding: ceil((@size * 0.14));
+
+		&:hover, &.app-display { 
+			cursor: pointer;
+			background-color: @app-cor-padrao-80;
+			color: @app-cor-preto-0;
+			margin-top: -(ceil((@size * 0.14))); //-7px; => 47
+			padding-top: ceil((@size * 0.27)); // 13px; => 47
+			display: block;
+			height: ceil((@size * 1.27)); // 59px => 47
+			text-align: center;
+		}
+
+		&.app-display { background-color: @app-cor-padrao-60; cursor: default;}
+
+		.app-nav-btn-click {  height: 100%; display: block; width: 100%; }
+
+		a { color: inherit}
+	}
+	.app-nav-section {
+		overflow: hidden;
+
+		// Configura content para as informações do livro
+		.app-nav-section-livro {
+
+			display: block;
+			overflow: hidden;
+			max-height: 13px;
+		}
+	}
+}
+//
+//** Variavel para configruações do box de toltip
+.app-variant-nav-tooltip (@top, @width, @height, @right, @dir) {
+
+		position: absolute;
+		top: @top; // 31px;
+		float: left;
+		// display: block;
+		display: none;
+
+		width: @width; // 253px;
+
+		max-height: @height; // 290px;
+		padding-bottom: 5px;
+		// max-height: 90%;
+
+		right: @right; // 110px;
+
+		border-radius: 6px;
+		background: white;
+
+		-webkit-box-shadow: 0px 2px 14px -2px rgba(0, 0, 0, 0.66);
+		-moz-box-shadow: 0px 2px 14px -2px rgba(0, 0, 0, 0.66);
+		box-shadow: 0px 2px 14px -2px rgba(0, 0, 0, 0.66);
+
+		&:before, &:after { content: ""; border: 10px solid transparent; position: absolute; }
+
+		&:before {
+			border-width: 25px;
+			border-bottom-color: black;
+			left: @dir; // ~113px;
+			top: -49px;
+			opacity: 0.1;
+		}
+
+		&:after {
+			border-width: 23px;
+			border-bottom-color: #FFFFFF;
+			left: @dir + 2; // ~115px;
+			top: -44px;
+		}
+}
+
+//** Configrua barra de navegação
+.app-nav-bar {
+	display: block;
+	-webkit-box-shadow: 0px 2px 14px -2px rgba(0,0,0,0.66);
+	-moz-box-shadow: 0px 2px 14px -2px rgba(0,0,0,0.66);
+	box-shadow: 0px 2px 14px -2px rgba(0,0,0,0.66);
+	padding: 5px 0;
+	display: block;
+	position: fixed;
+	width: 100%;
+	top: 0px;
+	left: 0px;
+    z-index: @app-zindex-navbar;
+    background-color: @app-cor-preto-0;
+}
+
+//** Configura menu e capa
+.app-nav-logo{
+	cursor: pointer;
+	img { max-width: 100%;  max-height: 100%; }
+}
+.app-ico-sumario, .app-ico-menu { display: block; line-height: 30px; }
+
+//** Exibe toltipe ao ativar o botão
+.app-nav-btn-item.app-display{ .app-nav-tooltip  { display: block; .app-play-flipInX();} }
+.app-nav-btn-item.app-no-display{ .app-nav-tooltip  { display:block; .app-play-flipOutX(); } }
+
+// ** Configuração dos conteudos de toltip
+.app-nav-tooltip {
+    cursor: default;
+
+	.app-nav-tooltip-control {
+	    text-align: left;
+
+	    // Icones e botões
+		.btn-app, .app-ico-close {
+	        margin-right: 10px;
+	        cursor: pointer;
+	        color: @app-cor-padrao;
+		}
+
+		// Controle de luz
+		.app-nav-control-light-density {
+			margin-bottom: 9px;
+			.slider { width: 70%; margin-right: 10px; margin-left: 10px; }
+		}
+
+		// Controle de background
+		.app-nav-control-background {
+			padding: 10px;
+
+			.app-control-background-item { 
+			    padding-top: 10px;
+			    text-align: center;
+			    cursor: pointer;
+			    height: 62px;
+
+				&.app-display { border: 5px solid @app-cor-padrao; }
+			}
+		}
+	}
+
+	// BOtão de adicionar
+	.app-nav-tooltip-more { cursor: pointer; padding-bottom: 5px; }
+
+	// Itens do tooltip
+	.app-nav-tooltip-item {
+		cursor: pointer;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		margin-bottom: 5px;
+
+		&:hover { background-color: @app-cor-padrao-fraco-10 }
+		
+		.app-nav-tooltip-control {
+			padding-top: 5px;
+			// padding-bottom: 5px;
+		}
+	}
+}
+
+//== Configruações responsivas
+// Min Min grid (XS)
+@media (max-width: @screen-xs-max) {
+	.app-variant-nav-grid (@app-nav-height-xs); // 34px
+	.app-nav-section-item.app-secao { text-transform: none; margin-top: 8px; display: block; font-weight: normal;}
+
+	.app-nav-tooltip {
+		@top: 42px;
+		@width: 100%;
+		@height: 90%;
+		@position: 0px;
+		@dir: -123px;
+
+		.app-variant-nav-tooltip(@top, @width, @height, @position, @dir);
+		&:before, &:after { display: none; }
+		
+		position: fixed;
+	    border-top: 7px solid @app-cor-padrao-80;
+	    border-top-left-radius: 0px;
+	    border-top-right-radius: 0px;
+	}
+}
+
+// Min Min grid (SS)
+@media (min-width: @screen-ss-min) {
+	.app-variant-nav-grid (@app-nav-height-ss); // 38px
+
+	.app-nav-tooltip {
+		@top: 71px;
+		@width: 285px;
+		@height: 290px;
+
+		&.nav-tooltip-posicao {
+			@position: -48px;
+			@dir: 186px;
+			.app-variant-nav-tooltip(@top, @width, @height, @position, @dir);
+		} 
+
+		&.nav-tooltip-anotacao {
+			@position: -78px;
+			@dir: 155px;
+			.app-variant-nav-tooltip(@top, @width, @height, @position, @dir);
+		}
+
+		&.nav-tooltip-leitura {
+			@position: -111px;
+			@dir: 125px;
+			.app-variant-nav-tooltip(@top, @width, @height, @position, @dir);
+		} 
+
+		&:before { border-width: 22px; top: -39px; }
+
+		&:after { border-width: 20px; top: -44px; }
+	}
+}
+
+// Min grid (SM)
+@media (min-width: @screen-sm-min) {
+	.app-variant-nav-grid (@app-nav-height-sm); // 38px
+
+	.app-nav-tooltip {
+		@top: 71px;
+		@width: 300px;
+		@height: 290px;
+		@position: -46px;
+		@dir: 208px;
+
+		&.nav-tooltip-posicao {
+			.app-variant-nav-tooltip(@top, @width, @height, @position, @dir);
+		} 
+
+		&.nav-tooltip-anotacao {
+			.app-variant-nav-tooltip(@top, @width, @height, @position, @dir);
+		}
+
+		&.nav-tooltip-leitura {
+			@position: -121px;
+			@dir: 130px;
+			.app-variant-nav-tooltip(@top, @width, @height, @position, @dir);
+		} 
+
+		&:before { border-width: 22px; top: -39px; }
+
+		&:after { border-width: 20px; top: -44px; }
+	}
+}
+
+
+// Medium grid (MD)
+@media (min-width: @screen-md-min) {
+	.app-variant-nav-grid (@app-nav-height-md); // 47px
+
+
+	.app-nav-tooltip {
+
+		@top: 80px;
+		@width: 320px;
+		@height: 290px;
+		@position: -39px;
+		@dir: 226px;
+
+		&.nav-tooltip-posicao {
+			.app-variant-nav-tooltip(@top, @width, @height, @position, @dir);
+		} 
+
+		&.nav-tooltip-anotacao {
+			.app-variant-nav-tooltip(@top, @width, @height, @position, @dir);
+		}
+
+		&.nav-tooltip-leitura {
+			@position: -124px;
+			@dir: 148px;
+			.app-variant-nav-tooltip(@top, @width, @height, @position, @dir);
+		} 
+	}
+}
+
+// Large grid (LG)
+@media (min-width: @screen-lg-min) {
+  .app-variant-nav-grid (@app-nav-height-lg); // 47px
+
+	.app-nav-tooltip {
+
+		@top: 80px;
+		@width: 320px;
+		@height: 290px;
+		@position: -26px;
+		@dir: 226px;
+
+		&.nav-tooltip-posicao {
+			.app-variant-nav-tooltip(@top, @width, @height, @position, @dir);
+		} 
+
+		&.nav-tooltip-anotacao {
+			.app-variant-nav-tooltip(@top, @width, @height, @position, @dir);
+		}
+
+		&.nav-tooltip-leitura {
+			@position: -126px;
+			@dir: 130px;
+			.app-variant-nav-tooltip(@top, @width, @height, @position, @dir);
+		} 
+	}
+}
+
