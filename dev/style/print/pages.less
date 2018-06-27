@@ -1,0 +1,42 @@
+//== Configura paginas
+html > * { display: none; overflow: none;}
+html > body { display: block;  overflow: scroll; width: 210mm; height: 297mm;}
+html, body, .app-page { height: 100%;}
+
+//** Remove os espaços das colunas responsivas
+//TODO: Substituir por paddin-none
+
+* {
+	widows: 3;
+	orphans: 3;
+	word-wrap: break-word;
+}
+#sumario, #bar-nav, .app-graphic-video, .app-apr-item-ctrl {display: none;}
+
+#introducao{
+display: block;
+width: 210mm;
+height: 297mm;
+page-break-before: always;
+}
+// .app-cap-content article {
+// 	.config_pagina();
+// }
+
+// // Adiciona configruação da capa
+// @import "capa.less";
+
+// // Adiciona configurações da barra de menu
+// @import "nav-bar.less";
+
+// // Adiciona sumario
+// @import "sumario.less";
+
+// // Adiciona apresentações
+// @import "apresentacao.less";
+
+// // Adiciona Capítulo
+// @import "capitulo.less";
+
+// // Adiciona Referências
+// @import "referencias.less";

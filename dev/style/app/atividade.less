@@ -52,7 +52,22 @@
 
 	&.on:before { content: @app-ico-alternativa-hover; }
 
-	&.true, &.false { font-weight: bold; cursor: default; .feedback {display: block; .app-play-fadeInDown()} &:hover:before { content: inherit;}; .app-play-flipInX();}
+	/*
+	// 19/02
+	&.true, &.false { 
+		font-weight: bold; 
+		cursor: default; 
+
+		.feedback {
+			display: block; 
+			.app-play-fadeInDown()
+		} 
+
+		&:hover:before {
+			content: inherit;
+		}; 
+		.app-play-flipInX();
+	}
 
 	&.true {
 		color: @app-cor-verde;
@@ -63,6 +78,7 @@
 		color: @app-cor-vermelho;
 		&:before { content: @app-ico-alternativa-errada }
 	}
+	*/
 	&.off { color: @app-cor-preto-60!important }
 }
 
