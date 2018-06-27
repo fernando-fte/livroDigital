@@ -1,0 +1,149 @@
+// CONFIGURAÇÃO DA TABELA
+
+//** Tipografia
+
+// zera paragrafo
+table.tb {
+	li, p {
+		color: inherit;
+		font-family: inherit;
+		font-size: (@app-font-size-base * 0.823);
+		line-height: (@app-font-size-base * 0.823);
+		text-transform: inherit;
+		font-weight: inherit;
+		text-align: inherit;
+		margin-bottom: 0px;
+	}
+}
+
+//** tipo da fonte
+.tb-header, .tb-destaque, .tb-titulo-result,
+.tb-titulo-tr, .tb-titulo-tr-2, .tb-titulo-tr-3,
+.tb-titulo-td, .tb-titulo-td-2, .tb-titulo-td-3 { font-family: @app-font-titulo; }
+.tb-td-result, .tb-td, .tb-td-2, .tb-td-3 { font-family: @app-font-especial; }
+
+//** tamanhos da fonte
+.tb-header, .tb-destaque { font-size: @app-font-size-tb-h1; }
+.tb-titulo-tr, .tb-titulo-td, .tb-titulo-result, .tb-td-result, .tb-td { font-size: @app-font-size-tb-1; }
+.tb-titulo-tr-2, .tb-titulo-td-2, .tb-td-result-2, .tb-td-2 { font-size: @app-font-size-tb-2; }
+.tb-titulo-tr-3, .tb-titulo-td-3, .tb-td-result-3, .tb-td-3 { font-size: @app-font-size-tb-3; }
+
+//** força da fonte
+.tb-titulo-result, .tb-titulo-td, .tb-titulo-td-2, .tb-titulo-td-3 { font-weight: 400; }
+.tb-header, .tb-titulo-tr, .tb-titulo-tr-2, .tb-titulo-tr-3 { font-weight: bold; }
+.tb-destaque { font-weight: 300; }
+
+//** sentese case // upercase
+.tb-header, .tb-destaque, .tb-titulo-tr, .tb-titulo-tr-2, .tb-titulo-tr-3 { text-transform: uppercase; }
+
+//** cor da fonte
+.tb-header, .tb-destaque { color: @app-cor-vermelho-80; }
+.tb-td-result, .tb-td { color: @app-cor-preto; }
+.tb-titulo-tr-2, .tb-td-result-2, .tb-td-2 { color: @app-cor-preto-80; }
+.tb-titulo-tr-3, .tb-td-result-3, .tb-td-3 { color: @app-cor-preto-60; }
+.tb-titulo-result, .tb-titulo-tr, .tb-titulo-td, .tb-titulo-td-2, .tb-titulo-td-3 { color: @app-cor-preto-0; }
+
+//** alinhamento da fonte
+.tb-destaque, .tb-titulo-tr, .tb-titulo-tr-2, .tb-titulo-tr-3,
+.tb-td-result, .tb-td, .tb-td-2, .tb-td-3 { vertical-align: center; text-align: center; }
+.tb-titulo-result, .tb-titulo-td, .tb-titulo-td-2, .tb-titulo-td-3 { vertical-align: center; text-align: right; }
+.tb-header { vertical-align: bottom; text-align: left; }
+
+
+
+// ESTRUTURA
+.tb-header, .tb-destaque, .tb-titulo-result,
+.tb-titulo-tr, .tb-titulo-tr-2, .tb-titulo-tr-3,
+.tb-titulo-td, .tb-titulo-td-2, .tb-titulo-td-3,
+.tb-td, .tb-td-2, .tb-td-3, .tb-td-result, .tb-ctrl-td { 
+
+	padding: ceil((@app-size-base * 0.35)) ceil((@app-size-base * 0.71));
+	border:  ceil((@app-size-base * 0.35)) solid @app-cor-preto-0;
+	width: ceil((@app-size-base * 50%));
+	min-width: ceil((@app-size-base * 7.14));
+}
+
+.tb-header {
+	background-color: @app-cor-preto-0;
+	border-bottom-color: @app-cor-padrao-80;
+	padding-bottom: ceil((@app-size-base * 0.14));
+}
+
+.tb-destaque { background-color: @app-cor-preto-0; }
+
+.tb-titulo-result { background-color: @app-cor-azul-80; }
+
+.tb-td-result { background-color: @app-cor-azul-40; }
+
+.tb-titulo-tr { background-color: @app-cor-padrao-fraco-80; }
+
+.tb-titulo-tr-2 { background-color: @app-cor-padrao-fraco-60; }
+
+.tb-titulo-tr-3 { background-color: @app-cor-padrao-fraco-40; }
+
+.tb-titulo-td { background-color: @app-cor-padrao-80; }
+
+.tb-titulo-td-2 { background-color: @app-cor-padrao-60; }
+
+.tb-titulo-td-3 { background-color: @app-cor-padrao-40; }
+
+.tb-td { background-color: @app-cor-preto-40; }
+
+.tb-td-2 { background-color: @app-cor-preto-20; }
+
+.tb-td-3 { background-color: @app-cor-preto-10; }
+
+.tb-titulo-result, .tb-titulo-td, .tb-titulo-td-2, .tb-titulo-td-3 { padding-right: ceil((@app-size-base * 2.14)); min-width: ceil((@app-size-base * 10.71));}
+
+.tb-ctrl-sub {
+
+    float: right;
+    display: block;
+    
+    margin-top: -(ceil((@app-size-base * 0.07))); // ~-1;
+    margin-bottom:  -(ceil((@app-size-base * 0.5))); // ~-7px
+    margin-left:  ceil((@app-size-base * 0.35)); // ~5px
+    margin-right:  -(ceil((@app-size-base * 1.57))); // ~-22px
+
+    padding-left: ceil((@app-size-base * 0.35)); // ~5px
+    
+    border-left: ceil((@app-size-base * 0.14)) solid white;
+    cursor: pointer;
+
+
+	&:before {
+
+		// padding-right: ceil((@app-font-size-base / 1.2));
+		font-family: @app-font-ico;
+		font-size: @app-font-size-base;
+		content: @app-ico-v-baixo;
+	}
+
+	&.cima:before { content: @app-ico-v-cima; }
+}
+
+.tb-ctrl-td {
+
+	background-color: none;
+	padding: 0;
+	text-align: center;
+	vertical-align: center;
+}
+
+.tb-ctrl-display-td {
+	cursor: pointer;
+
+	&:before {
+
+		// padding-right: ceil((@app-font-size-base / 1.2));
+		font-family: @app-font-ico;
+		font-size: @app-font-size-base;
+		font-weight: bold;
+		color: @app-cor-vermelho;
+		content: @app-ico-check-off;
+	}
+
+	&.selected:before { content: @app-ico-check-on; }
+}
+
+

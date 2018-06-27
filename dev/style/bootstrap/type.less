@@ -1,0 +1,468 @@
+//
+// Typography
+// --------------------------------------------------
+
+
+// Headings
+// -------------------------
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: @headings-font-family;
+  font-weight: @headings-font-weight;
+  line-height: @headings-line-height;
+  color: @headings-color;
+
+  small,
+  .small {
+    font-weight: normal;
+    line-height: 1;
+    color: @headings-small-color;
+  }
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3 {
+  margin-top: @line-height-computed;
+  margin-bottom: (@line-height-computed / 2);
+
+  small,
+  .small {
+    font-size: 65%;
+  }
+}
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  margin-top: (@line-height-computed / 2);
+  margin-bottom: (@line-height-computed / 2);
+
+  small,
+  .small {
+    font-size: 75%;
+  }
+}
+
+h1, .h1 { font-size: @font-size-h1; }
+h2, .h2 { font-size: @font-size-h2; }
+h3, .h3 { font-size: @font-size-h3; }
+h4, .h4 { font-size: @font-size-h4; }
+h5, .h5 { font-size: @font-size-h5; }
+h6, .h6 { font-size: @font-size-h6; }
+
+
+// Body text
+// -------------------------
+
+p {
+  margin: 0 0 (@line-height-computed / 2);
+}
+
+.lead {
+  margin-bottom: @line-height-computed;
+  font-size: floor((@font-size-base * 1.15));
+  font-weight: 300;
+  line-height: 1.4;
+
+  @media (min-width: @screen-sm-min) {
+    font-size: (@font-size-base * 1.5);
+  }
+}
+
+
+// Emphasis & misc
+// -------------------------
+
+// Ex: (12px small font / 14px base font) * 100% = about 85%
+small,
+.small {
+  font-size: floor((100% * @font-size-small / @font-size-base));
+}
+
+mark,
+.mark {
+  background-color: @state-warning-bg;
+  padding: .2em;
+}
+
+// Fonts
+.app-font-app { font-family: @app-font-app; }
+.app-font-header { font-family: @app-font-titulo; }
+.app-font-special { font-family: @app-font-especial; }
+
+
+// Alignment
+.text-left           { text-align: left; }
+.text-right          { text-align: right; }
+.text-center         { text-align: center; }
+.text-justify        { text-align: justify; }
+.text-nowrap         { white-space: nowrap; }
+
+// Transformation
+.text-lowercase      { text-transform: lowercase; }
+.text-uppercase      { text-transform: uppercase; }
+.text-capitalize     { text-transform: capitalize; }
+
+// TYpe
+.text-bold { font-weight: bold; }
+.text-normal { font-weight: normal; }
+.text-light { font-weight: 400; }
+.text-italic { font-style: italic; }
+
+// Contextual colors
+.text-muted {
+  color: @text-muted;
+}
+.text-primary {
+  .text-emphasis-variant(@brand-primary);
+}
+.text-success {
+  .text-emphasis-variant(@state-success-text);
+}
+.text-info {
+  .text-emphasis-variant(@state-info-text);
+}
+.text-warning {
+  .text-emphasis-variant(@state-warning-text);
+}
+.text-danger {
+  .text-emphasis-variant(@state-danger-text);
+}
+.app-cor-pattern { .text-emphasis-variant(@app-cor-padrao); }
+.app-cor-pattern-80 { .text-emphasis-variant(@app-cor-padrao-80); }
+.app-cor-pattern-60 { .text-emphasis-variant(@app-cor-padrao-60); }
+.app-cor-pattern-40 { .text-emphasis-variant(@app-cor-padrao-40); }
+.app-cor-pattern-20 { .text-emphasis-variant(@app-cor-padrao-20); }
+.app-cor-pattern-10 { .text-emphasis-variant(@app-cor-padrao-10); }
+
+.app-cor-weak { .text-emphasis-variant(@app-cor-padrao-fraco); }
+.app-cor-weak-80 { .text-emphasis-variant(@app-cor-padrao-fraco-80); }
+.app-cor-weak-60 { .text-emphasis-variant(@app-cor-padrao-fraco-60); }
+.app-cor-weak-40 { .text-emphasis-variant(@app-cor-padrao-fraco-40); }
+.app-cor-weak-20 { .text-emphasis-variant(@app-cor-padrao-fraco-20); }
+.app-cor-weak-10 { .text-emphasis-variant(@app-cor-padrao-fraco-10); }
+
+.app-cor-black { .text-emphasis-variant(@app-cor-preto); }
+.app-cor-black-80 { .text-emphasis-variant(@app-cor-preto-80); }
+.app-cor-black-60 { .text-emphasis-variant(@app-cor-preto-60); }
+.app-cor-black-40 { .text-emphasis-variant(@app-cor-preto-40); }
+.app-cor-black-20 { .text-emphasis-variant(@app-cor-preto-20); }
+.app-cor-black-10 { .text-emphasis-variant(@app-cor-preto-10); }
+
+.app-cor-inst { .text-emphasis-variant(@app-cor-instituicao); }
+.app-cor-inst-80 { .text-emphasis-variant(@app-cor-instituicao-80); }
+.app-cor-inst-60 { .text-emphasis-variant(@app-cor-instituicao-60); }
+.app-cor-inst-40 { .text-emphasis-variant(@app-cor-instituicao-40); }
+.app-cor-inst-20 { .text-emphasis-variant(@app-cor-instituicao-20); }
+.app-cor-inst-10 { .text-emphasis-variant(@app-cor-instituicao-10); }
+
+.app-cor-green { .text-emphasis-variant(@app-cor-verde); }
+.app-cor-green-80 { .text-emphasis-variant(@app-cor-verde-80); }
+.app-cor-green-60 { .text-emphasis-variant(@app-cor-verde-60); }
+.app-cor-green-40 { .text-emphasis-variant(@app-cor-verde-40); }
+.app-cor-green-20 { .text-emphasis-variant(@app-cor-verde-20); }
+.app-cor-green-10 { .text-emphasis-variant(@app-cor-verde-10); }
+
+.app-cor-blue { .text-emphasis-variant(@app-cor-azul); }
+.app-cor-blue-80 { .text-emphasis-variant(@app-cor-azul-80); }
+.app-cor-blue-60 { .text-emphasis-variant(@app-cor-azul-60); }
+.app-cor-blue-40 { .text-emphasis-variant(@app-cor-azul-40); }
+.app-cor-blue-20 { .text-emphasis-variant(@app-cor-azul-20); }
+.app-cor-blue-10 { .text-emphasis-variant(@app-cor-azul-10); }
+
+.app-cor-light { .text-emphasis-variant(@app-cor-light); }
+.app-cor-light-80 { .text-emphasis-variant(@app-cor-light-80); }
+.app-cor-light-60 { .text-emphasis-variant(@app-cor-light-60); }
+.app-cor-light-40 { .text-emphasis-variant(@app-cor-light-40); }
+.app-cor-light-20 { .text-emphasis-variant(@app-cor-light-20); }
+.app-cor-light-10 { .text-emphasis-variant(@app-cor-light-10); }
+
+.app-cor-white { .text-emphasis-variant(@app-cor-preto-0); }
+
+// Contextual backgrounds
+// For now we'll leave these alongside the text classes until v4 when we can
+// safely shift things around (per SemVer rules).
+.bg-primary {
+  // Given the contrast here, this is the only class to have its color inverted
+  // automatically.
+  color: #fff;
+  .bg-variant(@brand-primary);
+}
+.bg-success {
+  .bg-variant(@state-success-bg);
+}
+.bg-info {
+  .bg-variant(@state-info-bg);
+}
+.bg-warning {
+  .bg-variant(@state-warning-bg);
+}
+.bg-danger {
+  .bg-variant(@state-danger-bg);
+}
+
+.app-bg-pattern { .bg-variant(@app-cor-padrao); }
+.app-bg-pattern-80 { .bg-variant(@app-cor-padrao-80); }
+.app-bg-pattern-60 { .bg-variant(@app-cor-padrao-60); }
+.app-bg-pattern-40 { .bg-variant(@app-cor-padrao-40); }
+.app-bg-pattern-20 { .bg-variant(@app-cor-padrao-20); }
+.app-bg-pattern-10 { .bg-variant(@app-cor-padrao-10); }
+
+.app-bg-weak { .bg-variant(@app-cor-padrao-fraco); }
+.app-bg-weak-80 { .bg-variant(@app-cor-padrao-fraco-80); }
+.app-bg-weak-60 { .bg-variant(@app-cor-padrao-fraco-60); }
+.app-bg-weak-40 { .bg-variant(@app-cor-padrao-fraco-40); }
+.app-bg-weak-20 { .bg-variant(@app-cor-padrao-fraco-20); }
+.app-bg-weak-10 { .bg-variant(@app-cor-padrao-fraco-10); }
+
+.app-bg-black { .bg-variant(@app-cor-preto); }
+.app-bg-black-80 { .bg-variant(@app-cor-preto-80); }
+.app-bg-black-60 { .bg-variant(@app-cor-preto-60); }
+.app-bg-black-40 { .bg-variant(@app-cor-preto-40); }
+.app-bg-black-20 { .bg-variant(@app-cor-preto-20); }
+.app-bg-black-10 { .bg-variant(@app-cor-preto-10); }
+
+.app-bg-inst { .bg-variant(@app-cor-instituicao); }
+.app-bg-inst-80 { .bg-variant(@app-cor-instituicao-80); }
+.app-bg-inst-60 { .bg-variant(@app-cor-instituicao-60); }
+.app-bg-inst-40 { .bg-variant(@app-cor-instituicao-40); }
+.app-bg-inst-20 { .bg-variant(@app-cor-instituicao-20); }
+.app-bg-inst-10 { .bg-variant(@app-cor-instituicao-10); }
+
+.app-bg-green { .bg-variant(@app-cor-verde); }
+.app-bg-green-80 { .bg-variant(@app-cor-verde-80); }
+.app-bg-green-60 { .bg-variant(@app-cor-verde-60); }
+.app-bg-green-40 { .bg-variant(@app-cor-verde-40); }
+.app-bg-green-20 { .bg-variant(@app-cor-verde-20); }
+.app-bg-green-10 { .bg-variant(@app-cor-verde-10); }
+
+.app-bg-blue { .bg-variant(@app-cor-azul); }
+.app-bg-blue-80 { .bg-variant(@app-cor-azul-80); }
+.app-bg-blue-60 { .bg-variant(@app-cor-azul-60); }
+.app-bg-blue-40 { .bg-variant(@app-cor-azul-40); }
+.app-bg-blue-20 { .bg-variant(@app-cor-azul-20); }
+.app-bg-blue-10 { .bg-variant(@app-cor-azul-10); }
+
+.app-bg-light { .bg-variant(@app-cor-light); }
+.app-bg-light-80 { .bg-variant(@app-cor-light-80); }
+.app-bg-light-60 { .bg-variant(@app-cor-light-60); }
+.app-bg-light-40 { .bg-variant(@app-cor-light-40); }
+.app-bg-light-20 { .bg-variant(@app-cor-light-20); }
+.app-bg-light-10 { .bg-variant(@app-cor-light-10); }
+
+.app-bg-white { .bg-variant(@app-cor-preto-0); }
+
+
+.app-border-pattern { .border-variant(@app-cor-padrao); }
+.app-border-pattern-80 { .border-variant(@app-cor-padrao-80); }
+.app-border-pattern-60 { .border-variant(@app-cor-padrao-60); }
+.app-border-pattern-40 { .border-variant(@app-cor-padrao-40); }
+.app-border-pattern-20 { .border-variant(@app-cor-padrao-20); }
+.app-border-pattern-10 { .border-variant(@app-cor-padrao-10); }
+
+.app-border-weak { .border-variant(@app-cor-padrao-fraco); }
+.app-border-weak-80 { .border-variant(@app-cor-padrao-fraco-80); }
+.app-border-weak-60 { .border-variant(@app-cor-padrao-fraco-60); }
+.app-border-weak-40 { .border-variant(@app-cor-padrao-fraco-40); }
+.app-border-weak-20 { .border-variant(@app-cor-padrao-fraco-20); }
+.app-border-weak-10 { .border-variant(@app-cor-padrao-fraco-10); }
+
+.app-border-black { .border-variant(@app-cor-preto); }
+.app-border-black-80 { .border-variant(@app-cor-preto-80); }
+.app-border-black-60 { .border-variant(@app-cor-preto-60); }
+.app-border-black-40 { .border-variant(@app-cor-preto-40); }
+.app-border-black-20 { .border-variant(@app-cor-preto-20); }
+.app-border-black-10 { .border-variant(@app-cor-preto-10); }
+
+.app-border-inst { .border-variant(@app-cor-instituicao); }
+.app-border-inst-80 { .border-variant(@app-cor-instituicao-80); }
+.app-border-inst-60 { .border-variant(@app-cor-instituicao-60); }
+.app-border-inst-40 { .border-variant(@app-cor-instituicao-40); }
+.app-border-inst-20 { .border-variant(@app-cor-instituicao-20); }
+.app-border-inst-10 { .border-variant(@app-cor-instituicao-10); }
+
+.app-border-green { .border-variant(@app-cor-verde); }
+.app-border-green-80 { .border-variant(@app-cor-verde-80); }
+.app-border-green-60 { .border-variant(@app-cor-verde-60); }
+.app-border-green-40 { .border-variant(@app-cor-verde-40); }
+.app-border-green-20 { .border-variant(@app-cor-verde-20); }
+.app-border-green-10 { .border-variant(@app-cor-verde-10); }
+
+.app-border-blue { .border-variant(@app-cor-azul); }
+.app-border-blue-80 { .border-variant(@app-cor-azul-80); }
+.app-border-blue-60 { .border-variant(@app-cor-azul-60); }
+.app-border-blue-40 { .border-variant(@app-cor-azul-40); }
+.app-border-blue-20 { .border-variant(@app-cor-azul-20); }
+.app-border-blue-10 { .border-variant(@app-cor-azul-10); }
+
+.app-border-light { .border-variant(@app-cor-light); }
+.app-border-light-80 { .border-variant(@app-cor-light-80); }
+.app-border-light-60 { .border-variant(@app-cor-light-60); }
+.app-border-light-40 { .border-variant(@app-cor-light-40); }
+.app-border-light-20 { .border-variant(@app-cor-light-20); }
+.app-border-light-10 { .border-variant(@app-cor-light-10); }
+
+.app-border-white { .border-variant(@app-cor-preto-0); }
+
+
+// Page header
+// -------------------------
+
+.page-header {
+  padding-bottom: ((@line-height-computed / 2) - 1);
+  margin: (@line-height-computed * 2) 0 @line-height-computed;
+  border-bottom: 1px solid @page-header-border-color;
+}
+
+
+// Lists
+// -------------------------
+
+// Unordered and Ordered lists
+ul,
+ol {
+  margin-top: 0;
+  margin-bottom: (@line-height-computed / 2);
+  ul,
+  ol {
+    margin-bottom: 0;
+  }
+}
+
+// List options
+
+// Unstyled keeps list items block level, just removes default browser padding and list-style
+.list-unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+
+// Inline turns list items into inline-block
+.list-inline {
+  .list-unstyled();
+  margin-left: -5px;
+
+  > li {
+    display: inline-block;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+
+// Description Lists
+dl {
+  margin-top: 0; // Remove browser default
+  margin-bottom: @line-height-computed;
+}
+dt,
+dd {
+  line-height: @line-height-base;
+}
+dt {
+  font-weight: bold;
+}
+dd {
+  margin-left: 0; // Undo browser default
+}
+
+// Horizontal description lists
+//
+// Defaults to being stacked without any of the below styles applied, until the
+// grid breakpoint is reached (default of ~768px).
+
+.dl-horizontal {
+  dd {
+    &:extend(.clearfix all); // Clear the floated `dt` if an empty `dd` is present
+  }
+
+  @media (min-width: @dl-horizontal-breakpoint) {
+    dt {
+      float: left;
+      width: (@dl-horizontal-offset - 20);
+      clear: left;
+      text-align: right;
+      .text-overflow();
+    }
+    dd {
+      margin-left: @dl-horizontal-offset;
+    }
+  }
+}
+
+
+// Misc
+// -------------------------
+
+// Abbreviations and acronyms
+abbr[title],
+// Add data-* attribute to help out our tooltip plugin, per https://github.com/twbs/bootstrap/issues/5257
+abbr[data-original-title] {
+  cursor: help;
+  border-bottom: 1px dotted @abbr-border-color;
+}
+.initialism {
+  font-size: 90%;
+  .text-uppercase();
+}
+
+// Blockquotes
+blockquote {
+  // padding: (@line-height-computed / 2) @line-height-computed;
+  // margin: 0 0 @line-height-computed;
+  // font-size: @blockquote-font-size;
+  // border-left: 5px solid @blockquote-border-color;
+  border: 0px solid red;
+
+  p,
+  ul,
+  ol {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  // Note: Deprecated small and .small as of v3.1.0
+  // Context: https://github.com/twbs/bootstrap/issues/11660
+  footer,
+  small,
+  .small {
+    display: block;
+    font-size: 80%; // back to default font-size
+    line-height: @line-height-base;
+    color: @blockquote-small-color;
+
+    &:before {
+      content: '\2014 \00A0'; // em dash, nbsp
+    }
+  }
+}
+
+// Opposite alignment of blockquote
+//
+// Heads up: `blockquote.pull-right` has been deprecated as of v3.1.0.
+.blockquote-reverse,
+blockquote.pull-right {
+  // padding-right: 15px;
+  // padding-left: 0;
+  // border-right: 5px solid @blockquote-border-color;
+  // border-left: 0;
+  // text-align: right;
+
+  // Account for citation
+  footer,
+  small,
+  .small {
+    &:before { content: ''; }
+    &:after {
+      content: '\00A0 \2014'; // nbsp, em dash
+    }
+  }
+}
+
+// Addresses
+address {
+  margin-bottom: @line-height-computed;
+  font-style: normal;
+  line-height: @line-height-base;
+}
