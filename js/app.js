@@ -520,13 +520,20 @@
 				u = 0;
 				while (u < section.find('iframe').length) {
 					if ($(section.find('iframe')[u]).offset().top < (section.height() + 10) && $(section.find('iframe')[u]).offset().top > 0) {
+
 						if ($(section.find('iframe')[u]).attr('data-video-src') !== void 0) {
 							$(section.find('iframe')[u]).attr('src', $(section.find('iframe')[u]).data().videoSrc);
 							$(section.find('iframe')[u]).removeAttr('data-video-src');
 						}
+
+						if ($(section.find('iframe')[u]).attr('data-load-src') !== void 0) {
+							$(section.find('iframe')[u]).attr('src', $(section.find('iframe')[u]).data().videoSrc);
+							$(section.find('iframe')[u]).removeAttr('data-load-src');
+						}
 					}
 					u++;
 				}
+
 				u = void 0;
 				if ($(itens[i]).offset().top !== 0 && (section.height() + ($(itens[i]).offset().top * -1)) > $(itens[i]).height()) {
 					proximo = $($(itens[i]).next());
